@@ -1,0 +1,84 @@
+.formItem {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.formItem > input,
+.formItem > textarea {
+    border: none;
+    width: 100%;
+    padding: 0.4rem;
+    background-color: var(--color-background-dark);
+    border-bottom: var(--color-background-main) 2px solid;
+
+    color: var(--color-text);
+    letter-spacing: 1px;
+    font-size: 1.04rem;
+    border-left: var(--color-primary-main) 2px solid;
+    border-right: var(--color-primary-main) 2px solid;
+    border-bottom: var(--color-background-main) 2px solid;
+    box-shadow: var(--color-shadow);
+}
+.formItem > input:focus,
+.formItem > textarea:focus {
+    border-bottom: var(--color-primary-main) 2px solid;
+    outline: none;
+}
+
+.errorContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.errorContainer > small {
+    /* margin-left: 2rem; */
+    font-size: 0.8rem;
+}
+
+.errorContainer > h1 {
+    font-size: 1rem;
+}
+
+.container {
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.insideButton {
+    position: relative;
+    height: 2.5rem;
+}
+
+.insideButton > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0.85rem;
+}
+.insideButton > button {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+    padding: 0 0.5rem;
+    height: calc(100% - 1rem);
+    display: flex;
+    align-items: center;
+    background: var(--color-primary-dark);
+    color: white;
+    z-index: 5;
+    outline: none;
+    border: none;
+}
+.insideButton > button :hover {
+    background: var(--color-primary-light);
+}

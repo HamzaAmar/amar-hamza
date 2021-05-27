@@ -1,0 +1,51 @@
+@keyframes animation {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  50% {
+    transform: translate(10%, 10%);
+  }
+  100% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.navList {
+  display: flex;
+}
+.navList > li {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 1rem;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.navList > li::before {
+  content: '';
+  background: var(--color-primary-main);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  border-radius: 30%;
+  /* transform: rotate(45deg) translateX(-40%) translateY(30%); */
+  transform: rotate(45deg) translate(-120%, 0);
+  z-index: -1;
+}
+
+.navList > li:hover::before {
+  animation: animation 1s 1 forwards;
+}
+.navList > li:hover svg {
+  fill: var(--color-background);
+}

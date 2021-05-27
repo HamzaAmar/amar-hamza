@@ -1,0 +1,20 @@
+{
+  "name": "Hamza Miloud Amar",
+  "short_name": "HMA",
+  "start_url": "/",
+  "background_color": "#663399",
+  "theme_color": "#663399",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/favicons/me-192X192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/me-512X512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

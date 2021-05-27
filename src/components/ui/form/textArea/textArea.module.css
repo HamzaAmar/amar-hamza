@@ -1,0 +1,17 @@
+.textArea {
+  width: 100%;
+  height: calc(100% - 3px);
+  padding-left: 0.4rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-bottom: 3px;
+  outline: none;
+  border: none;
+  border-top: transparent 2px solid;
+}
+
+.textArea:focus {
+  height: calc(100% - 5px);
+  margin-top: 2px;
+  border-top: none;
+}

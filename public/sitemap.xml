@@ -1,0 +1,54 @@
+
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+              
+                          <url>
+                              <loc>https://yoursitehere.com/404</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/contact</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/curriculum_vitae</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/hello</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/hireMe</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/challenge/index</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/challenge/[slug]</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/tutorial/index</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/tutorial/[slug]</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/blogs/index</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/blogs/[slug]</loc>
+                          </url>
+                      
+          </urlset>
+      

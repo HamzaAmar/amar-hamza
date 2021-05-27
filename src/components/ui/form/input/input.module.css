@@ -1,0 +1,45 @@
+.container {
+  margin: var(--spacing-md) var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0 var(--spacing-md);
+  width: 100%;
+  background-color: orange;
+}
+.label {
+  width: 10ch;
+}
+
+.inputContainer {
+  flex: 1;
+  height: 2.4rem;
+  background: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-sm);
+  font-size: 0.8rem;
+  font-style: italic;
+  outline: none;
+  border: none;
+  border-top: transparent 2px solid;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.input:focus + .inputContainer {
+  padding-bottom: 3px;
+  height: calc(100% - 3px);
+}
