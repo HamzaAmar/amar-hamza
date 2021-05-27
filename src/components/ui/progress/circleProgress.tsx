@@ -2,33 +2,23 @@ import React, { CSSProperties, FC, ReactNode } from 'react';
 import style from './circleProgress.module.css';
 import cn from 'classnames';
 
-type Color = 'green' | 'red' | 'purple' | 'yellow' | 'orange';
-
-type Props = {
+interface Props extends React.SVGProps<SVGSVGElement> {
   children: ReactNode;
   lvl: number;
-  color: Color;
-  styles?: CSSProperties;
-  width: number;
-  height: number;
-};
+}
 
-const circleProgress: FC<Props> = ({
+const circleProgress = ({
   children,
   color = '#DAA45C',
   lvl,
-  styles,
-  width,
-  height,
-}) => {
+  ...rest
+}: Props) => {
   return (
     <div className={style.chartSvg}>
       <svg
         viewBox="0 0 36 36"
-        width={width}
-        height={height}
         className={cn(style.circularChart, style[color])}
-        style={styles}
+        {...rest}
       >
         <path
           className={style.circleBg}

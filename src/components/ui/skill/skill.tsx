@@ -29,8 +29,8 @@ const SkillsContainer = () => {
                     </div>
                     <div className={style.progressContainer}>
                       <CircleProgress
-                        width={100}
-                        height={100}
+                        width="100%"
+                        height="100%"
                         color="orange"
                         lvl={list.level}
                       >

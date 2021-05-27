@@ -122,28 +122,7 @@
   margin-left: auto;
   display: flex;
   justify-content: center;
-}
-
-@media (max-width: 600px) {
-  .skill {
-    flex-direction: column;
-    margin: 0.4rem 0;
-    padding: 0.3rem 0.6rem;
-  }
-
-  .skill > svg {
-    width: 3rem;
-    height: 3rem;
-  }
-  .skillIconTitle {
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0;
-  }
-  .skillsList {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+  flex: 1;
 }
 
 .skillContainer {
@@ -152,15 +131,17 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 1rem;
-  flex: 60%;
+  padding: 1rem 0.3rem;
+  /* flex: 60%; */
+  flex: 1;
 }
 
 .skillIconTitle {
   color: var(--color-primary-light);
-  font-size: 1.75rem;
-  font-variation-settings: 'wght' 400;
+  font-size: 0.8rem;
   margin-top: 0.8rem;
+  font-variation-settings: 'wght' 600;
+  text-transform: uppercase;
 }
 
 .skillContainer > svg {
@@ -177,18 +158,75 @@
   letter-spacing: 1px;
   font-style: italic;
 }
+@media (max-width: 1000px) {
+  .skillsList {
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-gap: 1rem;
+  }
+  .skill {
+    padding: 1rem;
+  }
+  .skillTitle {
+    margin-right: 1rem;
+  }
+  .skill > svg {
+    font-size: 1rem;
+  }
+}
 @media (max-width: 800px) {
+  .skillsList {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
   .skillContainer {
     padding: 1rem;
   }
 
-  .skillContainer > h2 {
-    font-weight: 200;
-    font-size: 1.1rem;
-  }
   .skillContainer > h4 {
     font-weight: 600;
     font-style: italic;
+  }
+}
+
+@media (max-width: 600px) {
+  .skill {
+    flex-direction: column;
+    margin: 0.4rem 0;
+    padding: 0.3rem 0;
+  }
+  .skillTitle {
+    writing-mode: horizontal-tb;
+    margin: 1rem 0;
+  }
+
+  .skillIconTitle {
+    font-size: 0.7rem;
+    letter-spacing: 0;
+  }
+  .skillsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 468px) {
+  .skillsList {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+  .skill {
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem 3rem;
+  }
+
+  .skillIconTitle {
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+  .skillTitle {
+    font-weight: 700;
+    letter-spacing: 0.4rem;
   }
 }
 
