@@ -27,6 +27,14 @@
                           </url>
                       
                           <url>
+                              <loc>https://yoursitehere.com/blogs/index</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://yoursitehere.com/blogs/[slug]</loc>
+                          </url>
+                      
+                          <url>
                               <loc>https://yoursitehere.com/challenge/index</loc>
                           </url>
                       
@@ -40,14 +48,6 @@
                       
                           <url>
                               <loc>https://yoursitehere.com/tutorial/[slug]</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://yoursitehere.com/blogs/index</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://yoursitehere.com/blogs/[slug]</loc>
                           </url>
                       
           </urlset>
