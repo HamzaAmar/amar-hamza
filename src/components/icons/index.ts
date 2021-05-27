@@ -18,3 +18,6 @@ export { default as Gatsby } from './gatsby';
 export { default as Email } from './email';
 export { default as Call } from './call';
 export { default as Map } from './map';
+export { default as Fast } from './fast';
+export { default as BackEnd } from './backend';
+export { default as FrontEnd } from './frontend';
