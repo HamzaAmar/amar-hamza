@@ -4,17 +4,14 @@ import { getFiles, getFileBySlug } from '@lib/mdx';
 import { getTweets } from '@lib/twitter';
 import { Layout } from '@components/core';
 import Image from 'next/image';
+import { ReadingLayout } from '@components/core';
 
 export default function Blog({ mdxSource, frontMatter }) {
   return (
     <Layout>
-      <div
-        style={{
-          padding: '4rem',
-        }}
-      >
+      <ReadingLayout {...frontMatter}>
         <MDXRemote components={{ Image }} {...mdxSource} />
-      </div>
+      </ReadingLayout>
     </Layout>
   );
 }

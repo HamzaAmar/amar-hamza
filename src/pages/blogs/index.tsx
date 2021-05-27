@@ -5,6 +5,7 @@ import { Layout } from '@components/core';
 import styles from '@styles/blog.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { formatDate } from 'utils/formatDate';
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog');
@@ -35,7 +36,7 @@ const Article = ({ image, excerpt, title, date, slug }) => {
           </div>
         </div>
         <div className={styles.contentInfo}>
-          <small className={styles.date}>{date}</small>
+          <small className={styles.date}>{formatDate(date)}</small>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.description}>{excerpt}</p>
         </div>
