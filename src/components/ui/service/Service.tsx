@@ -1,46 +1,43 @@
+import { BackEnd, Fast, FrontEnd } from '@components/icons';
 import React from 'react';
 // import { FiTrendingUp, FiZap, FiDatabase, FiAirplay } from 'react-icons/fi'
-import style from './Service.module.css';
+import styles from './Service.module.css';
+
+const servicesData = [
+  {
+    id: 1,
+    icon: <Fast width={60} />,
+    title: 'fast',
+    description:
+      ' create High perforament website and improve performance to website nice score and work with the latest technology',
+  },
+  {
+    id: 3,
+    icon: <BackEnd width={60} />,
+    title: 'BackEnd',
+    description:
+      ' create High perforament website and improve performance to website nice score and work with the latest technology',
+  },
+  {
+    id: 4,
+    icon: <FrontEnd width={60} />,
+    title: 'FontEnd',
+    description:
+      ' create High perforament website and improve performance to website nice score and work with the latest technology',
+  },
+];
 
 const services = () => {
   return (
-    <div className={style.container}>
-      <div className={style.service}>
-        {/* <FiZap size={35} /> */}
-        icons
-        <h1>Fast</h1>
-        <p>
-          create High performent website and improve performance to
-          website nice score and work with the latest technology
-        </p>
-      </div>
-      <div className={style.service}>
-        {/* <FiTrendingUp size={35} /> */}
-        icons
-        <h1>SEO</h1>
-        <p>
-          hello world my name is hamza miloud amar i am a full stack
-          javascript developper hello world
-        </p>
-      </div>
-      <div className={style.service}>
-        {/* <FiDatabase size={35} /> */}
-        icons
-        <h1>BackEnd </h1>
-        <p>
-          hello world my name is hamza miloud amar i am a full stack
-          javascript developper hello world
-        </p>
-      </div>
-      <div className={style.service}>
-        {/* <FiAirplay size={35} /> */}
-        icons
-        <h1>FrontEnd </h1>
-        <p>
-          hello world my name is hamza miloud amar i am a full stack
-          javascript developer hello world
-        </p>
-      </div>
+    <div className={styles.container}>
+      {servicesData.map(({ id, title, icon, description }) => (
+        <div className={styles.service} key={id}>
+          <div className={styles.iconContainer}>{icon}</div>
+
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </div>
+      ))}
     </div>
   );
 };
