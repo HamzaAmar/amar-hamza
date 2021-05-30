@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Facebook,
-  Twitter,
-  Github,
-  Linkdin,
-} from '@components/icons';
 import { Layout } from '@components/core';
-import { Select, Text } from '@components/ui';
 import styles from '../styles/hireMe.module.css';
 import { Input, TextArea } from '@components/ui/form';
 

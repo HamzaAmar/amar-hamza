@@ -6,14 +6,26 @@ import styles from '@styles/blog.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { formatDate } from 'utils/formatDate';
+import { GetStaticProps } from 'next';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllFilesFrontMatter('blog');
 
   return { props: { posts } };
+};
+
+interface IProps {
+  author: { name: string; picture: string };
+  coverImage: string;
+  date: string;
+  excerpt: string;
+  image: string;
+  slug: string;
+  tag: string;
+  title: string;
 }
 
-const Article = ({ image, excerpt, title, date, slug }) => {
+const Article = ({ image, excerpt, title, date, slug }: IProps) => {
   const { pathname } = useRouter();
   console.log(`${pathname}/${slug}`);
 
@@ -46,7 +58,7 @@ const Article = ({ image, excerpt, title, date, slug }) => {
   );
 };
 
-export default function Blog({ posts }) {
+export default function Blog({ posts }: { posts: IProps[] }) {
   return (
     <Layout>
       <div className={styles.content}>

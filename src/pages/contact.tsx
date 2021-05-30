@@ -29,7 +29,9 @@ const contact = () => {
                   height={20}
                   fill="var(--color-primary-light)"
                 />
-                <div className={styles.infoParagraph}>Hello</div>
+                <div className={styles.infoParagraph}>
+                  +212 6 3037 1320
+                </div>
               </div>
               <div className={styles.itemInfo}>
                 <Email
@@ -37,7 +39,9 @@ const contact = () => {
                   height={20}
                   fill="var(--color-primary-light)"
                 />
-                <div className={styles.infoParagraph}>Hello</div>
+                <div className={styles.infoParagraph}>
+                  hamzamiloudamar@gmail.com
+                </div>
               </div>
               <div className={styles.itemInfo}>
                 <Call
@@ -45,7 +49,9 @@ const contact = () => {
                   height={20}
                   fill="var(--color-primary-light)"
                 />
-                <div className={styles.infoParagraph}>Hello</div>
+                <div className={styles.infoParagraph}>
+                  Morocco Marrakesh
+                </div>
               </div>
             </div>
             <div className={styles.socialContainer}>
@@ -58,19 +64,37 @@ const contact = () => {
           </div>
           <div className={styles.right}>
             <div>
-              <Input name="hello" label="helllo" />
+              <Input
+                name="name"
+                label="Name"
+                placeholder="type your name"
+              />
             </div>
             <div>
-              <Input name="hello" label="helllo" />
+              <Input
+                name="email"
+                label="Email"
+                type="email"
+                // leftIcon={}
+                placeholder="type your name"
+              />
             </div>
             <div>
-              <Input name="hello" label="helllo" />
+              <Input
+                name="subject"
+                label="Subject"
+                placeholder="type your name"
+              />
             </div>
             <div>
-              <TextArea name="hello" label="helllo" />
+              <TextArea
+                name="subject"
+                label="Subject"
+                placeholder="type your name"
+              />
             </div>
             <div>
-              <Button>Hello</Button>
+              <Button size="fluid">Contact Me</Button>
             </div>
           </div>
         </div>

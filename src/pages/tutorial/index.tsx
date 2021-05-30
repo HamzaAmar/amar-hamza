@@ -1,5 +1,5 @@
 import { Layout } from '@components/core';
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import styles from '@styles/tutorial.module.css';
 import { CSS, Node, ReactIcon, TypeScript } from '@components/icons';
 
@@ -16,7 +16,11 @@ const programing = [
     title: 'TypeScript',
     icon: <TypeScript width="60%" height="60%" />,
   },
-  { id: 5, title: 'Css', icon: <CSS width="60%" height="60%" /> },
+  {
+    id: 5,
+    title: 'Css',
+    icon: <CSS width="60%" height="60%" />,
+  },
 ];
 
 const Item = () => {
@@ -43,7 +47,12 @@ const Item = () => {
   );
 };
 
-const ProgramingLanguageList = ({ title, icon }) => {
+interface IProps {
+  title: string;
+  icon: ReactNode;
+}
+
+const ProgramingLanguageList = ({ title, icon }: IProps) => {
   // const [type, setType] = useState(null);
 
   return (

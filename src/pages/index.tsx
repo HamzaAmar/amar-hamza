@@ -3,8 +3,9 @@ import React from 'react';
 import { Service, Project, About, Skill } from '../components/ui';
 import { Layout } from '../components/core';
 import style from '@styles/home.module.css';
+import { ThemeProvider } from 'next-themes';
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <>
       <Layout>
