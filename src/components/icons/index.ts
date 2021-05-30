@@ -21,3 +21,8 @@ export { default as Map } from './map';
 export { default as Fast } from './fast';
 export { default as BackEnd } from './backend';
 export { default as FrontEnd } from './frontend';
+export { default as Success } from './success';
+export { default as Notification } from './notification';
+export { default as Warning } from './warning';
+export { default as Danger } from './danger';
+export { default as Close } from './close';

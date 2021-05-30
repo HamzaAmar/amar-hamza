@@ -1,24 +1,8 @@
 import React, { CSSProperties, FC } from 'react';
 
-type Props = {
-  width?: number;
-  height?: number;
-  style?: CSSProperties;
-};
-
-const css: FC<Props> = ({ width, height, style }) => {
+const css = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      version="1.1"
-      id="Capa_1"
-      x="0px"
-      y="0px"
-      width={width}
-      height={height}
-      style={style}
-      viewBox="0 0 512 512"
-      xmlSpace="preserve"
-    >
+    <svg viewBox="0 0 512 512" {...props}>
       <polygon
         style={{ fill: '#2196F3' }}
         points="32,0 72.8,460.8 256,512 439.136,460.832 480,0 "
