@@ -20,9 +20,6 @@ interface IMeta {
 }
 
 const Layout = (props: IProps) => {
-  // const [mode, setMode] = useMode()
-  const [searchVisible, setSearchVisible] = useState(false);
-
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta: IMeta = {
@@ -64,11 +61,7 @@ const Layout = (props: IProps) => {
           />
         )}
       </Head>
-      <Header
-        setSearch={setSearchVisible}
-        // setMode={setMode}
-        // mode={mode}
-      />
+      <Header />
       <main className={style.main}>{children}</main>
       <Footer />
     </div>

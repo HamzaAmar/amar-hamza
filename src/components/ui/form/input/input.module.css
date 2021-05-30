@@ -1,4 +1,4 @@
-.container {
+/* .container {
   margin: var(--spacing-md) var(--spacing-sm);
   display: flex;
   align-items: center;
@@ -6,7 +6,8 @@
   flex-direction: column;
   padding: 0 var(--spacing-md);
   width: 100%;
-  background-color: orange;
+  
+  height: 3rem;
 }
 .label {
   width: 10ch;
@@ -23,11 +24,11 @@
   overflow: hidden;
   width: 100%;
   position: relative;
+  background-color: green;
 }
 
 .input {
   width: 100%;
-  height: 100%;
   padding: var(--spacing-sm);
   font-size: 0.8rem;
   font-style: italic;
@@ -37,9 +38,58 @@
   position: absolute;
   left: 0;
   top: 0;
+  display: block;
+  padding: 1rem 0;
+  height: 10rem;
 }
 
 .input:focus + .inputContainer {
   padding-bottom: 3px;
   height: calc(100% - 3px);
+} */
+
+.container {
+  position: relative;
+  height: 4.5rem;
+  margin: 0.3rem;
+}
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80%;
+  width: 100%;
+}
+.label {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+.input {
+  padding: 0.5rem 0.2rem;
+  color: grey;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid transparent;
+  height: 100%;
+}
+.input:focus {
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+.messageContainer {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  height: 40%;
+  width: 100%;
+  /* transform: translateY(-50%); */
+}
+
+.message {
+  color: red;
+  font-size: 0.75rem;
 }

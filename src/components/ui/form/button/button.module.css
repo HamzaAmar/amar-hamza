@@ -3,7 +3,7 @@
   border: none;
   outline: none;
   color: var(--secondary-text-light);
-  margin: var(--spacing-md) var(--spacing-sm);
+  /* margin: var(--spacing-md) var(--spacing-sm); */
   font-family: 'Montserrat';
   font-size: 1rem;
   box-shadow: 0 0 3px var(--secondary-color-opacity);
@@ -24,8 +24,8 @@
   border-radius: var(--border-radius-md);
 }
 .fluid {
-  width: 90%;
-  padding: var(--spacingsmsmall) 0;
+  width: 100%;
+  padding: var(--spacing-sm) 0;
   border-radius: var(--border-radius-large);
 }
 

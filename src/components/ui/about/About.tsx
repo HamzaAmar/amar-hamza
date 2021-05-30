@@ -2,13 +2,13 @@ import React from 'react';
 
 import style from './About.module.css';
 import cn from 'classnames';
-import { Button } from '@styles/styles';
 import {
   Facebook,
   Github,
   Linkdin,
   Twitter,
 } from '@components/icons';
+import { Button } from '../form';
 
 const About = () => {
   return (
@@ -72,8 +72,8 @@ const About = () => {
       </div>
 
       <div className={cn(style.connect, style.article)}>
-        <button className="button">see My CV</button>
-        <button className="button">Download CV</button>
+        <Button size="fluid">see My CV</Button>
+        <Button size="fluid">Download CV</Button>
       </div>
     </div>
   );

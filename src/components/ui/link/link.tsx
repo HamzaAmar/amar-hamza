@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './link.module.css';
 
-export default ({ href, children }) => {
+interface IProps {
+  href: string;
+  children: ReactElement;
+}
+
+export default ({ href, children }: IProps) => {
   const router = useRouter();
 
   let className = children.props.className || '';

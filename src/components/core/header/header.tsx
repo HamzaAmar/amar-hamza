@@ -6,8 +6,9 @@ import { TypeScript } from '@components/icons';
 import style from './header.module.css';
 import menu from '@constants/menu';
 import { Switcher } from '@components/ui';
+import { useTheme } from 'next-themes';
 
-const Header = ({ setSearch, ...rest }) => {
+const Header = () => {
   const [visible, setVisible] = useState(false);
 
   return (

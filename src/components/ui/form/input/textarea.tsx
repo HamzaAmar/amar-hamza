@@ -55,7 +55,6 @@ interface Input {
   type?: string;
   name: string;
   label: string;
-  leftIcon?: ReactNode;
 }
 
 const input = ({
@@ -70,14 +69,7 @@ const input = ({
     <div className={styles.container}>
       <div className={styles.inputContainer}>
         <label className={styles.label}>{label}</label>
-        <input
-          id={name}
-          type={type}
-          name={name}
-          value={inputValue}
-          placeholder={placeholder}
-          className={styles.input}
-        />
+        <textarea>{inputValue}</textarea>
       </div>
 
       {message ? (

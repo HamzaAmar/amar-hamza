@@ -8,12 +8,18 @@ import React, { ReactNode } from 'react';
 import { formatDate } from 'utils/formatDate';
 import styles from './readingLayout.module.css';
 
+interface IAuthor {
+  name: string;
+  picture: string;
+}
+
 interface Props {
   children: ReactNode;
   title: string;
   coverImage: string;
   date: string;
   readingTime: any;
+  author: IAuthor;
 }
 
 const readingLayout = ({
@@ -24,6 +30,7 @@ const readingLayout = ({
   author,
   readingTime,
 }: Props) => {
+  console.log(readingTime);
   return (
     <div className={styles.container}>
       <div className={styles.readingContent}>

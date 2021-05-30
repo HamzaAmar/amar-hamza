@@ -9,7 +9,11 @@ import Image from 'next/image';
 // import YouTube from '@/components/metrics/Youtube';
 // import Step from '@/components/Step';
 
-const CustomLink = (props) => {
+interface IProps {
+  href: string;
+}
+
+const CustomLink = (props: IProps) => {
   const href = props.href;
   const isInternalLink =
     href && (href.startsWith('/') || href.startsWith('#'));

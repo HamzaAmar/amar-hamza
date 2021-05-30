@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import style from './skill.module.css';
 
 import { skills } from '../../../constants';
 import { CircleProgress } from '..';
 
+interface IList {
+  title: string;
+  level: number;
+  icon: ReactNode;
+}
+
 const SkillsContainer = () => {
   return (
     <div className={style.container}>
-      {skills.map(([skill, lists]) => {
+      {(skills as [[string, IList[]]]).map(([skill, lists]) => {
         return (
           <div className={style.skill}>
             <h1 className={style.skillTitle}> {skill} </h1>
