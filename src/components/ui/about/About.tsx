@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import style from './About.module.css';
 import cn from 'classnames';
@@ -9,6 +9,32 @@ import {
   Twitter,
 } from '@components/icons';
 import { Button } from '../form';
+import facebook from '@components/icons/facebook';
+
+interface IProps {
+  name: string;
+  icon: ReactNode;
+}
+
+const item = [
+  { id: 1, icon: <Facebook />, name: 'Facebook' },
+  { id: 2, icon: <Twitter />, name: 'Twitter' },
+  { id: 3, icon: <Linkdin />, name: 'Linkdin' },
+  { id: 4, icon: <Github />, name: 'Github' },
+];
+
+const Item = ({ name, icon }: IProps) => {
+  return (
+    <li className={style.articleItem}>
+      <div className={style.iconContainer}>
+        <div className={style.mediaIconContainer}>{icon}</div>
+      </div>
+      <div className={style.articleMediaContainer}>
+        <p>{name}</p>
+      </div>
+    </li>
+  );
+};
 
 const About = () => {
   return (
@@ -18,56 +44,19 @@ const About = () => {
         <h1 className={style.myName}>Hamza Amar</h1>
       </div>
       <div className={cn(style.myDescription, style.article)}>
-        <div className={style.paragraphDescription}>
+        <p className={style.paragraphDescription}>
           i am a full stack javascript developer am good at react ,
           javascript , css , nodeJs
-        </div>
+        </p>
       </div>
       <div className={cn(style.infoContent, style.article)}>
         <img src="https://picsum.photos/id/111/300/300" />{' '}
       </div>
       <div className={cn(style.media, style.article)}>
         <ul className={style.articleItems}>
-          <li className={style.articleItem}>
-            <div className={style.iconContainer}>
-              <div className={style.mediaIconContainer}>
-                <Facebook />
-              </div>
-            </div>
-            <div className={style.articleMediaContainer}>
-              <p>Facebook</p>
-            </div>
-          </li>
-          <li className={style.articleItem}>
-            <div className={style.iconContainer}>
-              <div className={style.mediaIconContainer}>
-                <Twitter />
-              </div>
-            </div>
-            <div className={style.articleMediaContainer}>
-              <p>Twitter</p>
-            </div>
-          </li>
-          <li className={style.articleItem}>
-            <div className={style.iconContainer}>
-              <div className={style.mediaIconContainer}>
-                <Linkdin />
-              </div>
-            </div>
-            <div className={style.articleMediaContainer}>
-              <p>Linkdin</p>
-            </div>
-          </li>
-          <li className={style.articleItem}>
-            <div className={style.iconContainer}>
-              <div className={style.mediaIconContainer}>
-                <Github />
-              </div>
-            </div>
-            <div className={style.articleMediaContainer}>
-              <p>Github</p>
-            </div>
-          </li>
+          {item.map(({ id, ...rest }) => (
+            <Item key={id} {...rest} />
+          ))}
         </ul>
       </div>
 
