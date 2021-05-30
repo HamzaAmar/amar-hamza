@@ -1,15 +1,17 @@
 .parent {
-  height: 95vh;
-  padding: 2rem 0;
+  padding: 0.6rem 0;
   width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
+  /* display: flow-root; */
+  margin-top: 1rem;
   background-color: var(--color-background-light);
+  height: calc(100vh - var(--shared-value) - 2rem);
 }
 .content {
-  height: 90%;
+  height: 100%;
   width: 90%;
   display: flex;
   padding: var(--spacing-lg);
@@ -24,12 +26,14 @@
 
 .right {
   flex: 1;
-  background-color: red;
-  /* height: 90%; */
-  padding: var(--spacing-md);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  padding: var(--spacing-lg);
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
 }
 .infoContainer {
 }
@@ -38,7 +42,6 @@
   align-items: center;
   margin: var(--spacing-md) 0;
   padding: var(--spacing-md) var(--spacing-sm);
-  width: 60%;
   border-radius: 1rem;
   border: 2px solid transparent;
 }
