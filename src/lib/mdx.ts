@@ -7,16 +7,12 @@ import mdxPrism from 'mdx-prism';
 
 const root = process.cwd();
 const rootWithSrcFolder = path.join(root, 'src');
-console.log(
-  'this is the value of rootwithsrcfolder',
-  rootWithSrcFolder,
-);
 
-export async function getFiles(type) {
+export async function getFiles(type: string) {
   return fs.readdirSync(path.join(rootWithSrcFolder, 'data', type));
 }
 
-export async function getFileBySlug(type, slug) {
+export async function getFileBySlug(type: string, slug: string) {
   const source = slug
     ? fs.readFileSync(
         path.join(rootWithSrcFolder, 'data', type, `${slug}.mdx`),
@@ -57,24 +53,25 @@ export async function getFileBySlug(type, slug) {
   };
 }
 
-export async function getAllFilesFrontMatter(type) {
+export async function getAllFilesFrontMatter(type: string) {
   const files = fs.readdirSync(
     path.join(rootWithSrcFolder, 'data', type),
   );
 
-  return files.reduce((allPosts, postSlug) => {
+  console.log(files, 'this is the value of files hello wolrd');
+
+  const arr = [];
+
+  for (let post of files) {
     const source = fs.readFileSync(
-      path.join(rootWithSrcFolder, 'data', type, postSlug),
+      path.join(rootWithSrcFolder, 'data', type, post),
       'utf8',
     );
     const { data } = matter(source);
-
-    return [
-      {
-        ...data,
-        slug: postSlug.replace('.mdx', ''),
-      },
-      ...allPosts,
-    ];
-  }, []);
+    arr.push({
+      ...data,
+      slug: post.replace('.mdx', ''),
+    });
+  }
+  return arr;
 }

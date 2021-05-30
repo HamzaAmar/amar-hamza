@@ -25,6 +25,12 @@
       "@types/*": ["types/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "declarations.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

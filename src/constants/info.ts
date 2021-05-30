@@ -1,4 +1,4 @@
-const baseUrl = 'https://phiilu.com';
+const baseUrl = 'localhost:3000';
 const date = new Date();
 
 const myInfo = {
@@ -14,3 +14,5 @@ const myInfo = {
   pubDate: new Date().toLocaleString(),
   ttl: '60',
 };
+
+export default myInfo;

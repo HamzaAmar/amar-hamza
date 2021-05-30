@@ -1,5 +1,6 @@
-const fs = require('fs');
-const globby = require('globby');
+//  require('fs');
+import fs from 'fs';
+import globby from 'globby';
 
 (async () => {
   //   const pages = await globby([
