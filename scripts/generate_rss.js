@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { promises: fs } = require('fs');
 const path = require('path');
 const RSS = require('rss');
 const matter = require('gray-matter');
@@ -16,20 +16,19 @@ async function generate() {
     site_url: 'https://hello.io',
     feed_url: 'https://hello.io/feed.xml',
   });
-
   try {
     const posts = await fs.readdir(pathFromRootToBlog);
 
     await Promise.all(
-      posts.map(async (name) => {
+      posts.map(async (post) => {
         const content = await fs.readFile(
-          path.join(pathFromRootToBlog, name),
+          path.join(pathFromRootToBlog, post),
         );
         const frontmatter = matter(content);
 
         feed.item({
           title: frontmatter.data.title,
-          url: `https://leerob.io/blog + ${name.replace(
+          url: `https://leerob.io/blog + ${post.replace(
             /\.mdx?/,
             '',
           )}`,
