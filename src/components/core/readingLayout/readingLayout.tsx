@@ -5,7 +5,7 @@ import {
   Twitter,
 } from '@components/icons';
 import React, { ReactNode } from 'react';
-import { formatDate } from 'utils/formatDate';
+import { formatDate } from '@utils/formatDate';
 import styles from './readingLayout.module.css';
 
 interface IAuthor {
