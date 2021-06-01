@@ -5,7 +5,7 @@ import { Layout } from '@components/core';
 import styles from '@styles/blog.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { formatDate } from 'utils/formatDate';
+import { formatDate } from '@utils/formatDate';
 import { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = async () => {
