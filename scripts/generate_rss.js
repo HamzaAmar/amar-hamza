@@ -12,30 +12,40 @@ const pathFromRootToBlog = path.join(
 
 async function generate() {
   const feed = new RSS({
-    title: 'Lee Robinson',
-    site_url: 'https://leerob.io',
-    feed_url: 'https://leerob.io/feed.xml',
+    title: 'Hamza Miloud Amar',
+    site_url: 'https://hello.io',
+    feed_url: 'https://hello.io/feed.xml',
   });
 
-  const posts = await fs.readdir(pathFromRootToBlog);
+  try {
+    const posts = await fs.readdir(pathFromRootToBlog);
 
-  await Promise.all(
-    posts.map(async (name) => {
-      const content = await fs.readFile(
-        path.join(pathFromRootToBlog, name),
-      );
-      const frontmatter = matter(content);
+    await Promise.all(
+      posts.map(async (name) => {
+        const content = await fs.readFile(
+          path.join(pathFromRootToBlog, name),
+        );
+        const frontmatter = matter(content);
 
-      feed.item({
-        title: frontmatter.data.title,
-        url: `https://leerob.io/blog + ${name.replace(/\.mdx?/, '')}`,
-        date: frontmatter.data.publishedAt,
-        description: frontmatter.data.summary,
-      });
-    }),
-  );
+        feed.item({
+          title: frontmatter.data.title,
+          url: `https://leerob.io/blog + ${name.replace(
+            /\.mdx?/,
+            '',
+          )}`,
+          date: frontmatter.data.publishedAt,
+          description: frontmatter.data.summary,
+        });
+      }),
+    );
 
-  await fs.writeFile('./public/feed.xml', feed.xml({ indent: true }));
+    await fs.writeFile(
+      './public/feed.xml',
+      feed.xml({ indent: true }),
+    );
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 generate();
