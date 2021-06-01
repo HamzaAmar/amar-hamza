@@ -30,8 +30,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.js",
+    // "**/*.js",
     "declarations.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "scripts/*"]
 }
