@@ -1,14 +1,7 @@
-//  require('fs');
-import fs from 'fs';
-import globby from 'globby';
+const fs = require('fs');
+const globby = require('globby');
 
 (async () => {
-  //   const pages = await globby([
-  //     // 'pages/**/*{.tsx,.mdx}',
-  //     // '../pages/**/*{.*}',
-  //     // '!pages/_*.tsx',
-  //     // '!pages/api',
-  //   ]);
   const pages = await globby([
     'src/pages/**/*{.ts,.tsx,.mdx}',
     '!src/pages/_*.tsx',

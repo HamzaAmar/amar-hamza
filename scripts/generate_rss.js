@@ -1,11 +1,7 @@
-// const { promises: fs } = require('fs');
-import { promises as fs } from 'fs';
-// const path = require('path');
-import path from 'path';
-// const RSS = require('rss');
-import RSS from 'rss';
-// const matter = require('gray-matter');
-import matter from 'gray-matter';
+const fs = require('fs');
+const path = require('path');
+const RSS = require('rss');
+const matter = require('gray-matter');
 
 const pathFromRootToBlog = path.join(
   process.cwd(),
@@ -32,7 +28,7 @@ async function generate() {
 
       feed.item({
         title: frontmatter.data.title,
-        url: 'https://leerob.io/blog/' + name.replace(/\.mdx?/, ''),
+        url: `https://leerob.io/blog + ${name.replace(/\.mdx?/, '')}`,
         date: frontmatter.data.publishedAt,
         description: frontmatter.data.summary,
       });

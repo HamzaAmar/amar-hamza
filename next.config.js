@@ -2,11 +2,9 @@
 module.exports = {
   webpack: (config, { isServer }) => {
     if (isServer) {
-      // // eslint-disable-next-line global-require
-      require('./scripts/generate_sitemap.ts');
-      require('./scripts/generate_rss.ts');
+      require('./scripts/generate_sitemap');
+      require('./scripts/generate_rss');
     }
-
     return config;
   },
 };
