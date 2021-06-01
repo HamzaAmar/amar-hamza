@@ -55,24 +55,20 @@ interface Params extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as Params;
 
-  const post = await getFileBySlug('blog', slug);
+  const post = await getFileBySlug('challenge', slug);
 
   return { props: { ...post } };
 };
 
 export async function getStaticPaths() {
-  const posts = await getFiles('blog');
+  const challenge = await getFiles('challenge');
 
   return {
-    paths: [
-      {
-        paths: posts.map((p) => ({
-          params: {
-            slug: p.replace(/\.mdx/, ''),
-          },
-        })),
+    paths: challenge.map((p) => ({
+      params: {
+        slug: p.replace(/\.mdx/, ''),
       },
-    ],
+    })),
 
     fallback: false,
   };

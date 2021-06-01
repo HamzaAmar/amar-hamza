@@ -9,9 +9,8 @@ import { formatDate } from '@utils/formatDate';
 import { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllFilesFrontMatter('blog');
-
-  return { props: { posts } };
+  const challenges = await getAllFilesFrontMatter('challenge');
+  return { props: { challenges } };
 };
 
 interface IProps {
@@ -58,11 +57,15 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
   );
 };
 
-export default function Blog({ posts }: { posts: IProps[] }) {
+export default function Blog({
+  challenges,
+}: {
+  challenges: IProps[];
+}) {
   return (
     <Layout>
       <div className={styles.content}>
-        {posts.map((post) => (
+        {challenges.map((post) => (
           <Article key={post.slug} {...post} />
         ))}
       </div>

@@ -64,15 +64,11 @@ export async function getStaticPaths() {
   const posts = await getFiles('blog');
 
   return {
-    paths: [
-      {
-        paths: posts.map((p) => ({
-          params: {
-            slug: p.replace(/\.mdx/, ''),
-          },
-        })),
+    paths: posts.map((p) => ({
+      params: {
+        slug: p.replace(/\.mdx/, ''),
       },
-    ],
+    })),
 
     fallback: false,
   };
