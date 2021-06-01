@@ -3,7 +3,7 @@ import React from 'react';
 const gatsby = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      enable-background="new 0 0 2500 2500"
+      enableBackground="new 0 0 2500 2500"
       viewBox="0 0 2500 2500"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
