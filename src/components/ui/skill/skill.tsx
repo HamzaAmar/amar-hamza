@@ -15,7 +15,7 @@ const SkillsContainer = () => {
     <div className={style.container}>
       {(skills as [[string, IList[]]]).map(([skill, lists]) => {
         return (
-          <div className={style.skill}>
+          <div className={style.skill} key={skill}>
             <h1 className={style.skillTitle}> {skill} </h1>
             <ul className={style.skillsList}>
               {lists.map((list) => {
