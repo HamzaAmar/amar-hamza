@@ -4,12 +4,12 @@
         <description><![CDATA[Hamza Miloud Amar]]></description>
         <link>https://hello.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 01 Jun 2021 18:22:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 06 Jun 2021 18:34:25 GMT</lastBuildDate>
         <atom:link href="https://hello.io/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Grid Part 1]]></title>
-            <link>https://leerob.io/blog + grid-1</link>
-            <guid isPermaLink="true">https://leerob.io/blog + grid-1</guid>
+            <title><![CDATA[Grid Part 2]]></title>
+            <link>https://leerob.io/blog + grid-2</link>
+            <guid isPermaLink="true">https://leerob.io/blog + grid-2</guid>
         </item>
         <item>
             <title><![CDATA[Dynamic Routing and Static Generation]]></title>
@@ -17,14 +17,9 @@
             <guid isPermaLink="true">https://leerob.io/blog + dynamic-routing</guid>
         </item>
         <item>
-            <title><![CDATA[Grid Part 3]]></title>
-            <link>https://leerob.io/blog + grid-3</link>
-            <guid isPermaLink="true">https://leerob.io/blog + grid-3</guid>
-        </item>
-        <item>
-            <title><![CDATA[Grid Part 2]]></title>
-            <link>https://leerob.io/blog + grid-2</link>
-            <guid isPermaLink="true">https://leerob.io/blog + grid-2</guid>
+            <title><![CDATA[Grid Part 1]]></title>
+            <link>https://leerob.io/blog + grid-1</link>
+            <guid isPermaLink="true">https://leerob.io/blog + grid-1</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 4]]></title>
@@ -32,14 +27,19 @@
             <guid isPermaLink="true">https://leerob.io/blog + grid-4</guid>
         </item>
         <item>
-            <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
-            <link>https://leerob.io/blog + hello-world</link>
-            <guid isPermaLink="true">https://leerob.io/blog + hello-world</guid>
+            <title><![CDATA[Grid Part 3]]></title>
+            <link>https://leerob.io/blog + grid-3</link>
+            <guid isPermaLink="true">https://leerob.io/blog + grid-3</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 5]]></title>
             <link>https://leerob.io/blog + grid-5</link>
             <guid isPermaLink="true">https://leerob.io/blog + grid-5</guid>
+        </item>
+        <item>
+            <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
+            <link>https://leerob.io/blog + hello-world</link>
+            <guid isPermaLink="true">https://leerob.io/blog + hello-world</guid>
         </item>
         <item>
             <title><![CDATA[Preview]]></title>

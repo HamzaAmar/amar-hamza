@@ -69,7 +69,6 @@ export async function getStaticPaths() {
         slug: p.replace(/\.mdx/, ''),
       },
     })),
-
     fallback: false,
   };
 }
