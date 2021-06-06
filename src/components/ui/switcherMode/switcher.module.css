@@ -18,18 +18,9 @@
 
   width: var(--size);
   height: var(--size);
-  box-shadow: inset #eee calc(var(--size) * 0.4)
-    calc(var(--size) * -0.25) 0;
-  border-radius: 999px;
-  transition: box-shadow 400ms;
-}
-
-.toggle:checked {
   --ray-size: calc(var(--size) * -0.4);
   --offset-orthogonal: calc(var(--size) * 0.65);
   --offset-diagonal: calc(var(--size) * 0.45);
-
-  transform: scale(0.75);
   color: hsl(40, 100%, 50%);
   box-shadow: inset 0 0 0 var(--size),
     calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
@@ -43,4 +34,15 @@
       var(--ray-size),
     var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0
       var(--ray-size);
+
+  border-radius: 999px;
+  transition: box-shadow 400ms;
+}
+
+.toggle:checked {
+  --size: 1rem;
+
+  box-shadow: inset rgb(151, 147, 147) calc(var(--size) * 0.4)
+    calc(var(--size) * -0.25) 0;
+  transform: scale(0.75);
 }

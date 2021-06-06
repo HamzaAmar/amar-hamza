@@ -52,24 +52,18 @@ import styles from './input.module.css';
 
 interface Input {
   placeholder?: string;
-  type?: string;
   name: string;
   label: string;
 }
 
-const input = ({
-  name,
-  type = 'text',
-  placeholder,
-  label,
-}: Input) => {
+const input = ({ name, placeholder, label }: Input) => {
   const [inputValue, setInputValue] = React.useState();
   const [message, setMessage] = React.useState(null);
   return (
     <div className={styles.container}>
       <div className={styles.inputContainer}>
         <label className={styles.label}>{label}</label>
-        <textarea>{inputValue}</textarea>
+        <textarea rows={40}>{inputValue}</textarea>
       </div>
 
       {message ? (
