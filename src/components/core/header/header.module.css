@@ -128,6 +128,11 @@
 .item {
   cursor: pointer;
   position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.8rem;
 }
 
 .item::before {
@@ -149,20 +154,21 @@
   transform-origin: left;
 }
 
-.item:hover::before {
+.item:hover::before,
+.item.activeLink::before {
   transform: scale(1);
+}
+
+.item.activeLink {
+  color: var(--color-primary-light);
+  font-variation-settings: 'wght' 700;
 }
 
 .item:hover > a {
   color: var(--color-primary-light);
 }
 .itemLink {
-  width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1.3rem;
   font-variation-settings: 'wght' 500;
 }
 
@@ -311,7 +317,6 @@
     display: none;
   }
   .menuMobile {
-    background-color: red;
     width: 100%;
     height: 100vh;
     position: fixed;

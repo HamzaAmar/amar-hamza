@@ -6,7 +6,30 @@ import { TypeScript } from '@components/icons';
 import styles from './header.module.css';
 import menu from '@constants/menu';
 import { Switcher } from '@components/ui';
-import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
+
+interface IPropsItem {
+  name: string;
+  path: string;
+}
+
+const Item = ({ name, path }: IPropsItem) => {
+  const router = useRouter();
+
+  return (
+    <Link href={path}>
+      <a className={cn(styles.itemLink)}>
+        <li
+          className={cn(styles.item, {
+            [styles.activeLink]: router.pathname === path,
+          })}
+        >
+          {name}
+        </li>
+      </a>
+    </Link>
+  );
+};
 
 const Header = () => {
   const [visible, setVisible] = useState(false);
@@ -31,13 +54,7 @@ const Header = () => {
       </h1>
       <ul className={styles.nav}>
         {menu.map(({ id, name, path }) => {
-          return (
-            <li key={id} className={cn(styles.item)}>
-              <Link href={path}>
-                <a className={styles.itemLink}>{name}</a>
-              </Link>
-            </li>
-          );
+          return <Item key={id} name={name} path={path} />;
         })}
       </ul>
       <div className={styles.iconContainer}>
@@ -66,11 +83,19 @@ const Header = () => {
               </div>
               {menu.map(({ id, name, path }) => {
                 return (
-                  <li key={id} className={cn(styles.menuMobileItem)}>
-                    <Link href={path}>
-                      <a className={styles.itemLink}>{name}</a>
-                    </Link>
-                  </li>
+                  <Link href={path}>
+                    <a
+                      className={styles.itemLink}
+                      style={{ background: 'red' }}
+                    >
+                      <li
+                        key={id}
+                        className={cn(styles.menuMobileItem)}
+                      >
+                        {name}
+                      </li>
+                    </a>
+                  </Link>
                 );
               })}
             </ul>
