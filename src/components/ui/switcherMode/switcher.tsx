@@ -4,7 +4,6 @@ import styles from './switcher.module.css';
 
 const switcher = () => {
   const { resolvedTheme, setTheme } = useTheme();
-  console.log(resolvedTheme);
 
   return (
     <label className={styles.parent} htmlFor="toggle">

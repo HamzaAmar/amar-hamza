@@ -1,14 +1,14 @@
-.button {
+/* .button {
   padding: var(--spacing-XS) var(--spacing-XXL);
   border: none;
   outline: none;
   color: var(--secondary-text-light);
-  /* margin: var(--spacing-md) var(--spacing-sm); */
   font-family: 'Montserrat';
   font-size: 1rem;
   box-shadow: 0 0 3px var(--secondary-color-opacity);
   cursor: pointer;
-  /* margin:var(--spacing-XXS) var() */
+  display: flex;
+  align-items: center;
 }
 
 .small {
@@ -71,12 +71,34 @@
     var(--warning-color-dark)
   );
 }
+ */
 
-/* .button:hover {
-    background: linear-gradient(
-      to right,
-      var(--tertiary-color-main),
-      var(--secondary-color-main)
-    );
-    box-shadow: 0 0 15px var(--secondary-color-opacity);
-  } */
+.root {
+  background: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  border: none;
+  padding: 0.7em 2em;
+  font-family: inherit;
+  border-radius: 0.8em;
+  color: currentColor;
+  font-weight: 500;
+  box-shadow: 0 1px 0 1px var(--color-primary-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.iconContainer {
+  margin-right: 0.7rem;
+}
+
+.root:hover {
+  /* background: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  ); */
+  box-shadow: 0 1px 0 1px var(--color-primary-dark);
+}

@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+}
+
+.dot {
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.firstDot {
+  animation: scaleBall 1s infinite 1.2s;
+}
+.secondDot {
+  animation: scaleBall 1s infinite 0.4s;
+}
+.thirdDot {
+  /* animation-delay: 0.6s; */
+  animation: scaleBall 1s infinite 0.8s;
+}
+
+.dot:not(:first-child) {
+  margin-left: 0.3rem;
+}
+
+@keyframes scaleBall {
+  0% {
+    transform: scale(0.2) translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(20%);
+    opacity: 1;
+  }
+}

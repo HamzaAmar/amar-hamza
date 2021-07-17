@@ -19,8 +19,7 @@
 }
 
 .skill:not(:last-child) {
-  padding-bottom: 4rem;
-  border-bottom: var(--color-primary-light) 3px solid;
+  padding-bottom: 3rem;
 }
 
 .skillTitle {

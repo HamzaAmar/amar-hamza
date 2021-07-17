@@ -88,6 +88,13 @@
   width: 100%;
   /* transform: translateY(-50%); */
 }
+.abbr {
+  color: red;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
 
 .message {
   color: red;
