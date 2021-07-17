@@ -1,6 +1,5 @@
 .container {
   display: grid;
-  grid-gap: 2rem;
 }
 .section {
   padding: 3rem 1rem;
@@ -10,6 +9,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section:nth-child(odd) {

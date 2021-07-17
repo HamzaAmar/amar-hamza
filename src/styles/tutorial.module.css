@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  margin: 1rem;
 }
 
 .left {
   flex: 0 0 20%;
-  background-color: var(--color-background-dark);
   padding: 1rem 0;
   position: relative;
 }
@@ -105,7 +105,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.listItem::after {
+/* .listItem::after {
   content: '';
   position: absolute;
   right: 0;
@@ -113,13 +113,14 @@
   width: 3px;
   height: 100%;
   background-color: var(--color-primary-light);
-}
+} */
 .listItemIconContainer {
-  width: 4rem;
-  height: 4rem;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 1rem;
 }
 .listItemHeading {
   font-size: 1rem;
