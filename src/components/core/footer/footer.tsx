@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className={style.container}>
       <div className={style.contact}>
-        <h3>Thank you</h3>
+        <h2>Thank you</h2>
         <p>
           Hello thank you for the visit if you like my website and you
           want to see more staff about me please follow me in social
@@ -14,7 +14,7 @@ const Footer = () => {
       </div>
 
       <div className={style.subscription}>
-        <h3>Join the Newsletter</h3>
+        <h2>Join the Newsletter</h2>
         <p>Please subscribe to our web site to see all new stuff</p>
       </div>
       <div className={style.copyRight}>
