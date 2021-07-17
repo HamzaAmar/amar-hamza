@@ -6,7 +6,11 @@ const switcher = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <label className={styles.parent} htmlFor="toggle">
+    <label
+      className={styles.parent}
+      aria-label="light and dark mode switcher"
+      htmlFor="toggle"
+    >
       <input
         id="toggle"
         className={styles.toggle}

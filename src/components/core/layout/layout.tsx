@@ -31,6 +31,7 @@ const Layout = (props: IProps) => {
     type: 'website',
     ...customMeta,
   };
+  const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
 
   return (
     <div className={style.container}>
@@ -40,11 +41,11 @@ const Layout = (props: IProps) => {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://leerob.io${router.asPath}`}
+          content={`${NEXT_PUBLIC_DOMAIN_NAME}${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://leerob.io${router.asPath}`}
+          href={`${NEXT_PUBLIC_DOMAIN_NAME}${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Lee Robinson" />
