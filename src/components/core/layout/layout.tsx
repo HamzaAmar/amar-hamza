@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './layout.module.css';
 import { Footer, Header } from '..';
 import { useRouter } from 'next/router';
+import cn from 'classnames';
+import { Cursor } from '@components/ui';
 
 interface IProps {
   children: React.ReactNode;
@@ -61,6 +63,7 @@ const Layout = (props: IProps) => {
           />
         )}
       </Head>
+      <Cursor />
       <Header />
       <main className={style.main}>{children}</main>
       <Footer />

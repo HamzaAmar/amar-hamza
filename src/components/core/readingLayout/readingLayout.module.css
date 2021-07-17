@@ -6,7 +6,7 @@
 
 .readingContent {
   margin-top: 0.5rem;
-  width: 50%;
+  width: 60%;
 }
 
 .blogImageContainer {
@@ -86,4 +86,16 @@
 }
 .title {
   text-align: center;
+}
+
+@media (max-width: 800px) {
+  .readingContent {
+    width: 75%;
+  }
+}
+
+@media (max-width: 468px) {
+  .readingContent {
+    width: 90%;
+  }
 }

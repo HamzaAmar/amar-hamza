@@ -8,10 +8,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10000000000;
+  z-index: 1100;
   background: var(--color-background-main);
   box-shadow: var(--color-shadow);
   grid-area: header;
+}
+
+.container a {
+  color: var(--color-text);
+  font-variation-settings: 'wght' 600;
 }
 
 .logoContent {
@@ -126,7 +131,6 @@
 }
 
 .item {
-  cursor: pointer;
   position: relative;
   height: 100%;
   display: flex;
@@ -170,6 +174,7 @@
 .itemLink {
   height: 100%;
   font-variation-settings: 'wght' 500;
+  color: white;
 }
 
 .logoContainer {
@@ -183,7 +188,6 @@
   overflow: hidden;
   border-radius: 1rem;
   position: relative;
-  cursor: pointer;
 }
 
 .logoContainer::before {
@@ -347,7 +351,6 @@
     position: absolute;
     right: 1rem;
     top: 1rem;
-    cursor: pointer;
   }
 }
 

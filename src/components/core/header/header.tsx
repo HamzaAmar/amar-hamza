@@ -11,17 +11,16 @@ import { useRouter } from 'next/router';
 interface IPropsItem {
   name: string;
   path: string;
+  pathname: string;
 }
 
-const Item = ({ name, path }: IPropsItem) => {
-  const router = useRouter();
-
+const Item = ({ name, path, pathname }: IPropsItem) => {
   return (
     <Link href={path}>
       <a className={cn(styles.itemLink)}>
         <li
           className={cn(styles.item, {
-            [styles.activeLink]: router.pathname === path,
+            [styles.activeLink]: pathname === path,
           })}
         >
           {name}
@@ -31,8 +30,17 @@ const Item = ({ name, path }: IPropsItem) => {
   );
 };
 
+const getFirstPathInTheUrl = (pathname: string) => {
+  const pathNames = pathname.slice(1);
+  const firstPathWithSlash = `/${pathNames.split('/')[0]}`;
+  return firstPathWithSlash;
+};
+
 const Header = () => {
   const [visible, setVisible] = useState(false);
+  const router = useRouter();
+
+  const pathname = getFirstPathInTheUrl(router.pathname);
 
   return (
     <div className={styles.container}>
@@ -54,7 +62,14 @@ const Header = () => {
       </h1>
       <ul className={styles.nav}>
         {menu.map(({ id, name, path }) => {
-          return <Item key={id} name={name} path={path} />;
+          return (
+            <Item
+              key={id}
+              name={name}
+              path={path}
+              pathname={pathname}
+            />
+          );
         })}
       </ul>
       <div className={styles.iconContainer}>
