@@ -1,3 +1,4 @@
+import { PROJECTS } from '@constants/project';
 import React from 'react';
 import style from './Project.module.css';
 
@@ -6,12 +7,13 @@ const Projects = () => {
 
   return (
     <div className={style.container}>
-      {new Array(12).fill(9).map((_, index) => (
-        <div className={style.card} key={index}>
+      {PROJECTS.map(({ id, img }) => (
+        <div className={style.card} key={id}>
           <div className={style.imageContainer}>
             <img
               className={style.image}
-              src={`https://picsum.photos/id/${121 + index}/400/2000`}
+              src={img.src}
+              alt={img.alt}
               ref={imageRef}
             />
           </div>
