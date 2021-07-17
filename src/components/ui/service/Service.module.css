@@ -34,7 +34,6 @@
 }
 
 .service > h1 {
-  color: var(--color-primary-main);
   font-weight: 750;
   letter-spacing: 2px;
 }

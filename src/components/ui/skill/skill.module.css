@@ -136,7 +136,7 @@
 }
 
 .skillIconTitle {
-  color: var(--color-primary-light);
+  /* color: var(--color-primary-light); */
   font-size: 0.8rem;
   margin-top: 0.8rem;
   font-variation-settings: 'wght' 600;

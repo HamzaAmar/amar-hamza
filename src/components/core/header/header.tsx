@@ -55,8 +55,8 @@ const Header = () => {
                 borderRadius: '0.2rem',
               }}
             />
-            <h5 className={styles.name}>amar</h5>
-            <h6 className={styles.extension}>.tsx</h6>
+            <h1 className={styles.name}>amar</h1>
+            <p className={styles.extension}>.tsx</p>
           </a>
         </Link>
       </h1>

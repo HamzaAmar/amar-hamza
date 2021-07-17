@@ -4,18 +4,8 @@
         <description><![CDATA[Hamza Miloud Amar]]></description>
         <link>https://hello.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 17 Jul 2021 01:59:45 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 17 Jul 2021 15:06:04 GMT</lastBuildDate>
         <atom:link href="https://hello.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <item>
-            <title><![CDATA[Dynamic Routing and Static Generation]]></title>
-            <link>https://leerob.io/blog + dynamic-routing</link>
-            <guid isPermaLink="true">https://leerob.io/blog + dynamic-routing</guid>
-        </item>
-        <item>
-            <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
-            <link>https://leerob.io/blog + hello-world</link>
-            <guid isPermaLink="true">https://leerob.io/blog + hello-world</guid>
-        </item>
         <item>
             <title><![CDATA[Grid Part 2]]></title>
             <link>https://leerob.io/blog + grid-2</link>
@@ -25,6 +15,11 @@
             <title><![CDATA[Grid Part 1]]></title>
             <link>https://leerob.io/blog + grid-1</link>
             <guid isPermaLink="true">https://leerob.io/blog + grid-1</guid>
+        </item>
+        <item>
+            <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
+            <link>https://leerob.io/blog + hello-world</link>
+            <guid isPermaLink="true">https://leerob.io/blog + hello-world</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 3]]></title>
@@ -45,6 +40,11 @@
             <title><![CDATA[Preview]]></title>
             <link>https://leerob.io/blog + preview</link>
             <guid isPermaLink="true">https://leerob.io/blog + preview</guid>
+        </item>
+        <item>
+            <title><![CDATA[Dynamic Routing and Static Generation]]></title>
+            <link>https://leerob.io/blog + dynamic-routing</link>
+            <guid isPermaLink="true">https://leerob.io/blog + dynamic-routing</guid>
         </item>
     </channel>
 </rss>
