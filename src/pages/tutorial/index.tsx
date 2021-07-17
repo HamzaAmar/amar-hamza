@@ -2,8 +2,14 @@ import { Layout } from '@components/core';
 import React, { ReactNode, useState } from 'react';
 import styles from '@styles/tutorial.module.css';
 import { CSS, Node, ReactIcon, TypeScript } from '@components/icons';
-import { getAllFilesFrontMatter } from '@lib/mdx';
+import {
+  getAllFilesFrontMatter,
+  getFileBySlug,
+  getFiles,
+} from '@lib/mdx';
 import { GetStaticProps } from 'next';
+import path from 'path';
+import Link from 'next/link';
 
 const programing = [
   { id: 1, title: 'Node', icon: <Node width="60%" height="60%" /> },
@@ -43,21 +49,25 @@ interface IProps {
   icon: ReactNode;
 }
 
-const Item = ({ image, title }: IProps) => {
+const Item = ({ image, title, slug }: IProps) => {
   return (
     <div className={styles.itemContainer}>
-      <div className={styles.imageContainer}>
-        <img className={styles.image} src={image} />
-      </div>
-
-      <div className={styles.itemContent}>
-        <div className={styles.itemContentParent}>
-          <div className={styles.iconContainer}>
-            <ReactIcon width="70%" height="70%" />
+      <Link href={`tutorial/${slug}`}>
+        <a>
+          <div className={styles.imageContainer}>
+            <img className={styles.image} src={image} />
           </div>
-          <h3 className={styles.heading}>{title}</h3>
-        </div>
-      </div>
+
+          <div className={styles.itemContent}>
+            <div className={styles.itemContentParent}>
+              <div className={styles.iconContainer}>
+                <ReactIcon width="70%" height="70%" />
+              </div>
+              <h3 className={styles.heading}>{title}</h3>
+            </div>
+          </div>
+        </a>
+      </Link>
     </div>
   );
 };
@@ -73,12 +83,13 @@ const ProgramingLanguageList = ({ title, icon }: IProgramming) => {
   return (
     <li className={styles.listItem}>
       <div className={styles.listItemIconContainer}>{icon}</div>
-      <h4 className={styles.listItemHeading}>{title}</h4>
+      <p className={styles.listItemHeading}>{title}</p>
     </li>
   );
 };
 
 const index = ({ tutorials }: { tutorials: IProps[] }) => {
+  console.log(tutorials);
   return (
     <Layout>
       <div className={styles.container}>

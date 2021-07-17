@@ -2,28 +2,28 @@ import React from 'react';
 
 import { Service, Project, About, Skill } from '../components/ui';
 import { Layout } from '../components/core';
-import style from '@styles/home.module.css';
+import styles from '@styles/home.module.css';
 
 const IndexPage = () => {
   return (
     <>
       <Layout>
-        <div className={style.container}>
-          <div className={style.section}>
+        <div className={styles.container}>
+          <div className={styles.about}>
             <About />
           </div>
-          <div className={style.section}>
-            <h1 className={style.heading}>Services</h1>
+          <section className={styles.section}>
+            <h1 className={styles.heading}>Services</h1>
             <Service />
-          </div>
-          <div className={style.section}>
-            <h1 className={style.heading}>Skills</h1>
+          </section>
+          <section className={styles.section}>
+            <h1 className={styles.heading}>Skills</h1>
             <Skill />
-          </div>
-          <div className={style.section}>
-            <h3 className={style.heading}>Projects</h3>
+          </section>
+          <section className={styles.section}>
+            <h1 className={styles.heading}>Projects</h1>
             <Project />
-          </div>
+          </section>
         </div>
       </Layout>
     </>

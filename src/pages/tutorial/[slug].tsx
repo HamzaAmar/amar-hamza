@@ -5,7 +5,7 @@ import { getFiles, getFileBySlug } from '@lib/mdx';
 import { Layout } from '@components/core';
 import Image from 'next/image';
 import { ReadingLayout } from '@components/core';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 
 interface IFrontMatter {
@@ -35,10 +35,6 @@ interface Props {
 }
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
-  console.log(
-    'This is the value of frontmatter helo wolrd',
-    frontMatter,
-  );
   return (
     <Layout>
       <ReadingLayout {...frontMatter}>
@@ -55,6 +51,8 @@ interface Params extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as Params;
 
+  console.log(slug, 'this is the value of slug');
+
   const post = await getFileBySlug('tutorial', slug);
 
   return { props: { ...post } };
@@ -69,6 +67,7 @@ export async function getStaticPaths() {
         slug: p.replace(/\.mdx/, ''),
       },
     })),
+
     fallback: false,
   };
 }
