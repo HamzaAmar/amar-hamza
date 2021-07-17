@@ -26,3 +26,4 @@ export { default as Notification } from './notification';
 export { default as Warning } from './warning';
 export { default as Danger } from './danger';
 export { default as Close } from './close';
+export { default as Send } from './send';
