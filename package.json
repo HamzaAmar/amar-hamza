@@ -6,9 +6,12 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch"
+    "type-check:watch": "npm run type-check -- --watch",
+    "eslint": "eslint",
+    "eslint-check": "eslint --quiet"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.5",
     "@types/rss": "0.0.28",
     "classnames": "^2.2.6",
     "date-fns": "2.16.1",

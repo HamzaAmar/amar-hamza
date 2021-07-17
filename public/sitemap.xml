@@ -23,11 +23,11 @@
                           </url>
                       
                           <url>
-                              <loc>https://yoursitehere.com/blogs/index</loc>
+                              <loc>https://yoursitehere.com/tutorial/index</loc>
                           </url>
                       
                           <url>
-                              <loc>https://yoursitehere.com/blogs/[slug]</loc>
+                              <loc>https://yoursitehere.com/tutorial/[slug]</loc>
                           </url>
                       
                           <url>
@@ -39,11 +39,11 @@
                           </url>
                       
                           <url>
-                              <loc>https://yoursitehere.com/tutorial/index</loc>
+                              <loc>https://yoursitehere.com/blogs/index</loc>
                           </url>
                       
                           <url>
-                              <loc>https://yoursitehere.com/tutorial/[slug]</loc>
+                              <loc>https://yoursitehere.com/blogs/[slug]</loc>
                           </url>
                       
           </urlset>

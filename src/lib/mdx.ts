@@ -12,6 +12,13 @@ export async function getFiles(type: string) {
   return fs.readdirSync(path.join(rootWithSrcFolder, 'data', type));
 }
 
+// export async function getFile(type: string[]) {
+//   return fs.readFileSync(
+//     path.join(rootWithSrcFolder, 'data', ...type),
+//     'utf8',
+//   );
+// }
+
 export async function getFileBySlug(type: string, slug: string) {
   const source = slug
     ? fs.readFileSync(
@@ -24,6 +31,7 @@ export async function getFileBySlug(type: string, slug: string) {
       );
 
   const { data, content } = matter(source);
+
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
@@ -34,31 +42,20 @@ export async function getFileBySlug(type: string, slug: string) {
       rehypePlugins: [mdxPrism],
     },
   });
-  // const tweetMatches = content.match(
-  //   /<StaticTweet\sid="[0-9]+"\s\/>/g,
-  // );
-  // const tweetIDs = tweetMatches?.map(
-  //   (tweet) => tweet.match(/[0-9]+/g)[0],
-  // );
 
   return {
     mdxSource,
-    // tweetIDs: tweetIDs || [],
     frontMatter: {
+      ...data,
       wordCount: content.split(/\s+/gu).length,
       readingTime: readingTime(content),
       slug: slug || null,
-      ...data,
     },
   };
 }
 
 export async function getAllFilesFrontMatter(type: string) {
-  const files = fs.readdirSync(
-    path.join(rootWithSrcFolder, 'data', type),
-  );
-
-  console.log(files, 'this is the value of files hello wolrd');
+  const files = await getFiles(type);
 
   const arr = [];
 

@@ -1,0 +1,57 @@
+---
+title: 'Hello world From Challange Page'
+excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+date: '2020-03-16T05:35:07.322Z'
+author:
+  name: Hamza Miloud Amar
+  picture: '/assets/blog/authors/jj.jpeg'
+image: '/assets/blog/dynamic-routing/cover.jpg'
+tag: ['React']
+---
+
+# Intro
+
+Linting is one of the best tools that can help you and your team make a cleaner code also prevent you from a lot of _programming errors_ and save a lot of your time (programming errors mean more debugging time) but for me, what I like about linting more then make my code clean and prevent me from a certain type of error. It also helps me know new stuff that I think is going to take a lot of time to get to know them. When I see lint errors, I get happy because it means new stuff to learn.
+
+# Prerequisites
+
+1. Here's what you need to have in order to follow along:
+
+2. A code editor installed (psst- VS Code is ideal)
+   An existing codebase (if you need to get setup, you can follow "How to Setup a TypeScript + Node.js Project first and then come back to this article)
+
+# Installation and setup
+
+Run the following commands to setup ESLint in your TypeScript project.
+
+```
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+Create an `.eslintrc` file.
+
+In it, use the following starter config.
+
+```
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}
+```
+
+# Ignoring files we don't want to lint
+
+Create an `.eslintignore` in order to prevent ESLint from linting stuff we don't want it to.
+
+```
+touch .eslintignore
+```

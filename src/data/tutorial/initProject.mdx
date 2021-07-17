@@ -1,0 +1,57 @@
+---
+title: 'Initialize Node js project'
+excerpt: 'Initialize node js project '
+coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+date: '2020-03-16T05:35:07.322Z'
+author:
+  name: JJ Kasper
+  picture: '/assets/blog/authors/jj.jpeg'
+image: '/assets/blog/dynamic-routing/cover.jpg'
+tag: ['React']
+---
+
+# What is Node
+
+> Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+
+# Prerequisites
+
+1. Here's what you need to have in order to follow along:
+
+2. A code editor installed (psst- VS Code is ideal)
+   An existing codebase (if you need to get setup, you can follow "How to Setup a TypeScript + Node.js Project first and then come back to this article)
+
+# Installation and setup
+
+Run the following commands to setup ESLint in your TypeScript project.
+
+```
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+Create an `.eslintrc` file.
+
+In it, use the following starter config.
+
+```
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}
+```
+
+# Ignoring files we don't want to lint
+
+Create an `.eslintignore` in order to prevent ESLint from linting stuff we don't want it to.
+
+```
+touch .eslintignore
+```
