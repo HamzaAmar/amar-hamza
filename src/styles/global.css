@@ -65,7 +65,7 @@
 html {
   font-size: 16px;
   height: 100%;
-  /* cursor: none; */
+  cursor: none;
 }
 
 body {
@@ -142,7 +142,7 @@ input,
 textarea,
 select,
 button {
-  font-family: inherit;
+  font: inherit;
 }
 
 a > code {

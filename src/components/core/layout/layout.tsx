@@ -24,6 +24,10 @@ interface IMeta {
 const Layout = (props: IProps) => {
   const { children, ...customMeta } = props;
   const router = useRouter();
+  const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
+
+  console.log('NEXT_PUBLIC_DOMAIN_NAME', NEXT_PUBLIC_DOMAIN_NAME);
+
   const meta: IMeta = {
     title: 'Hamza Miloud Amar – JavaScript Developer',
     description: `Full Stack Developer how like to work React , Next , Css , Node `,
@@ -31,7 +35,6 @@ const Layout = (props: IProps) => {
     type: 'website',
     ...customMeta,
   };
-  const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
 
   return (
     <div className={style.container}>
