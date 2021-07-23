@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from '@components/core';
 import styles from '../styles/hireMe.module.css';
-import { Input, TextArea } from '@components/ui/form';
+import { Input, Textarea } from '@components/ui';
 
 const hireMe = () => {
   return (
@@ -27,7 +27,7 @@ const hireMe = () => {
               name="email"
               placeholder="please type your Email"
             />
-            <TextArea
+            <Textarea
               label="Message"
               name="message"
               placeholder="please type your Message"

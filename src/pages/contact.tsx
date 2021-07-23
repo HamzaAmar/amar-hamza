@@ -9,7 +9,7 @@ import {
   Send,
   Twitter,
 } from '@components/icons';
-import { Button, Input, TextArea } from '@components/ui';
+import { Button, Input, Textarea } from '@components/ui';
 import React from 'react';
 import styles from '@styles/contact.module.css';
 import { useForm } from '@hooks/useForm';
@@ -147,11 +147,30 @@ const contact = () => {
             </div>
           </div>
           <div className={styles.socialContainer}>
-            <Facebook width={25} height={25} />
-            <Twitter width={25} height={25} />
-            <Instagram width={25} height={25} />
-            <Github width={25} height={25} />
-            <Linkdin width={25} height={25} />
+            <a href="https://www.facebook.com" target="_blank">
+              <Facebook width={25} height={25} />
+            </a>
+            <a
+              href="https://twitter.com/HamzaMiloudAma1"
+              target="_blank"
+            >
+              <Twitter width={25} height={25} />
+            </a>
+            <a
+              href="https://www.instagram.com/amar_dev_js"
+              target="_blank"
+            >
+              <Instagram width={25} height={25} />
+            </a>
+            <a href="https://github.com/HamzaAmar" target="_blank">
+              <Github width={25} height={25} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/hamza-miloud-amar-463b24167"
+              target="_blank"
+            >
+              <Linkdin width={25} height={25} />
+            </a>
           </div>
         </div>
         <div className={styles.right}>
@@ -190,7 +209,7 @@ const contact = () => {
               />
             </div>
             <div className={styles.inputContainer}>
-              <TextArea
+              <Textarea
                 name="message"
                 label="Message"
                 onChange={onChange}
