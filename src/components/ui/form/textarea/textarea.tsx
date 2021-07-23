@@ -1,22 +1,23 @@
 import React, { FC, ReactNode, TextareaHTMLAttributes } from 'react';
-import styles from './input.module.css';
+import styles from './textarea.module.css';
 
 interface TextArea
   extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
 }
 
-const input = ({
+const textarea = ({
   name,
   placeholder,
   label,
   onChange,
   required,
+  rows = 10,
 }: TextArea) => {
   const [message, setMessage] = React.useState(null);
   return (
     <div className={styles.container}>
-      <div className={styles.inputContainer}>
+      <div className={styles.textareaContainer}>
         <label className={styles.label}>
           {label}
           {required ? (
@@ -31,8 +32,8 @@ const input = ({
         <textarea
           placeholder={placeholder}
           onChange={onChange}
-          rows={5}
           name={name}
+          rows={rows}
         ></textarea>
       </div>
 
@@ -45,4 +46,4 @@ const input = ({
   );
 };
 
-export default input;
+export default textarea;
