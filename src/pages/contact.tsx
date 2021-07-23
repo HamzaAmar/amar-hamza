@@ -201,9 +201,9 @@ const contact = () => {
             <div className={styles.inputContainer}>
               <Button
                 status={state.status}
-                icon={<Send width="20" fill="currentColor" />}
+                icon={<Send width="15" fill="currentColor" />}
               >
-                Contact Me
+                Contact
               </Button>
             </div>
           </form>
