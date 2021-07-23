@@ -5,10 +5,6 @@
   padding: var(--spacing-XXL) calc(var(--spacing-XXL) * 1.6);
 }
 
-.article {
-  cursor: pointer;
-}
-
 .article:hover .image {
   transform: scale(1);
 }

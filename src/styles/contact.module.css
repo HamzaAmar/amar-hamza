@@ -31,13 +31,9 @@
   margin: var(--spacing-md) 0;
   padding: var(--spacing-md) var(--spacing-sm);
   border-radius: 1rem;
-  border: 2px solid transparent;
   width: fit-content;
 }
 
-.itemInfo:hover {
-  border: 2px solid var(--info-color-light);
-}
 .infoParagraph {
   margin-left: var(--spacing-lg);
 }
