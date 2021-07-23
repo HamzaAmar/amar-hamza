@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { TypeScript } from '@components/icons';
 
 import styles from './header.module.css';
-import menu from '@constants/menu';
+import MENU from '@constants/menu';
 import { Switcher } from '@components/ui';
 import { useRouter } from 'next/router';
 
@@ -61,7 +61,7 @@ const Header = () => {
         </Link>
       </h1>
       <ul className={styles.nav}>
-        {menu.map(({ id, name, path }) => {
+        {MENU.map(({ id, name, path }) => {
           return (
             <Item
               key={id}
@@ -97,19 +97,15 @@ const Header = () => {
               >
                 Close
               </button>
-              {menu.map(({ id, name, path }) => {
-                console.log(pathname, path, pathname === path);
+              {MENU.map(({ id, name, path }) => {
                 return (
-                  <Link href={path}>
+                  <Link href={path} key={id}>
                     <a
                       className={cn(styles.itemLink, {
                         [styles.activeMobileLink]: pathname === path,
                       })}
                     >
-                      <li
-                        key={id}
-                        className={cn(styles.menuMobileItem)}
-                      >
+                      <li className={cn(styles.menuMobileItem)}>
                         {name}
                       </li>
                     </a>
