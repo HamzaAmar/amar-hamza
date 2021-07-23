@@ -5,10 +5,10 @@
   position: fixed;
   transform: translate(-50%, -50%) scale(1);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999;
   opacity: 1;
   mix-blend-mode: difference;
-  transition: transform 150ms ease, opacity 150ms ease;
+  transition: transform 100ms ease, opacity 100ms ease;
 }
 
 .outer {
