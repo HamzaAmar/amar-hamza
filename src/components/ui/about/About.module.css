@@ -91,9 +91,13 @@
   top: 2em;
   color: var(--color-text);
 }
+.socialItem {
+  display: block;
+  color: currentColor;
+}
 
 .socialItem:not(:last-child) {
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 }
 .socialItem > svg {
   width: 1.7em;
