@@ -77,6 +77,7 @@ import {
   Linkdin,
   Twitter,
 } from '@components/icons';
+import { Button } from '../form';
 
 interface Socials {
   id: number;
@@ -104,6 +105,9 @@ const About = () => {
             <strong className={styles.strong}>HTML</strong> ,
             <strong className={styles.strong}>CSS</strong>
           </p>
+          <div className={styles.buttonContainer}>
+            <Button>Hire Me</Button>
+          </div>
         </div>
       </div>
       <div className={`${styles.title} ${styles.top}`}>

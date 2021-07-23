@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(95vh - 7rem);
+  height: calc(95vh - 6rem);
   width: 90vw;
   background-color: orange;
   margin: 2rem 0;
+  font-size: 1em;
   background: linear-gradient(
         to right,
         currentColor 4px,
@@ -33,21 +34,41 @@
   display: flex;
   align-items: center;
   width: 50%;
+  text-align: center;
 }
 .description {
-  margin-left: 1rem;
+  margin-left: 1em;
+  display: grid;
+  place-items: center;
 }
 .strong {
   position: relative;
   overflow: hidden;
   color: var(--color-primary-light);
+  margin: 0.4em;
+}
+/* .strong::before {
+  position: absolute;
+  content: '';
+  width: 115%;
+  height: 115%;
+  border: 2px solid;
+  left: -7.5%;
+  top: -7.5%;
+  border-radius: 1em;
+  background-color: transparent;
+  z-index: -1;
+} */
+
+.buttonContainer {
+  margin-top: 1em;
 }
 
 .myPictureContainer {
   overflow: hidden;
   width: 400px;
   height: 400px;
-  border-radius: 1rem;
+  border-radius: 1em;
 }
 .myPicture {
   width: 100%;
@@ -56,31 +77,32 @@
   display: inline-block;
 }
 .info {
-  font-size: 1.7rem;
+  font-size: 1.7em;
 }
 .myName {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   text-align: center;
 }
 /* socials section styles */
 
 .socials {
   position: absolute;
-  left: 2rem;
-  top: 2rem;
+  left: 2em;
+  top: 2em;
   color: var(--color-text);
 }
 
 .socialItem:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 .socialItem > svg {
-  width: 25px;
-  height: 25px;
+  width: 1.7em;
+  height: 1.7em;
 }
 .title {
-  padding: 0.2rem 1rem;
+  padding: 0.2em 1em;
   width: 30ch;
+  font-size: 1.1em;
 }
 
 .top {
@@ -96,7 +118,7 @@
 .topTitle {
   position: relative;
   background: var(--color-background-main);
-  padding: 0.4rem 1rem;
+  padding: 0.4em 1em;
   width: 30vw;
   text-align: center;
 }
@@ -124,7 +146,7 @@
 .bottomTitle {
   position: relative;
   background: var(--color-background-main);
-  padding: 0.4rem 1rem;
+  padding: 0.4em 1em;
   width: 25vw;
   text-align: center;
 }
@@ -159,22 +181,17 @@
   }
 }
 
-@media (max-width: 468px) {
-  .info {
-    font-size: 1rem;
-  }
-  .myName {
-    font-size: 1.5rem;
+@media (max-width: 868px) {
+  .container {
+    font-size: 0.75em;
   }
   .heroContent {
-    width: 70%;
+    width: 80%;
   }
-  .socials {
-    left: 1rem;
-    top: 1rem;
-  }
-  .socialItem > svg {
-    width: 20px;
-    height: 20px;
+}
+
+@media (max-width: 468px) {
+  .container {
+    font-size: 0.65em;
   }
 }
