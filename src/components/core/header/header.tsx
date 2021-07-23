@@ -90,18 +90,21 @@ const Header = () => {
             })}
           >
             <ul className={styles.menuMobileList}>
-              <div
+              <button
+                type="button"
                 className={styles.closeMenu}
                 onClick={() => setVisible(false)}
               >
                 Close
-              </div>
+              </button>
               {menu.map(({ id, name, path }) => {
+                console.log(pathname, path, pathname === path);
                 return (
                   <Link href={path}>
                     <a
-                      className={styles.itemLink}
-                      style={{ background: 'red' }}
+                      className={cn(styles.itemLink, {
+                        [styles.activeMobileLink]: pathname === path,
+                      })}
                     >
                       <li
                         key={id}
