@@ -39,12 +39,12 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
               className={styles.image}
               src="https://picsum.photos/id/200/1000/1000"
             />
-            <div className={styles.tagContainer}>
-              <div className={styles.tag}>Hello</div>
-              <div className={styles.tag}>Hello</div>
-              <div className={styles.tag}>Hello</div>
-              <div className={styles.tag}>Hello</div>
-            </div>
+          </div>
+          <div className={styles.tagContainer}>
+            <div className={styles.tag}>Hello</div>
+            <div className={styles.tag}>Hello</div>
+            <div className={styles.tag}>Hello</div>
+            <div className={styles.tag}>Hello</div>
           </div>
         </div>
         <div className={styles.contentInfo}>
