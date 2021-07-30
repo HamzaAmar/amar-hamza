@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://amar-hamza-nine.vercel.app/sitemap.xml
+Sitemap: https://www.miloudamar.com/sitemap.xml
