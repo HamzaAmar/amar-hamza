@@ -4,7 +4,7 @@ import style from './layout.module.css';
 import { Footer, Header } from '..';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
-import { Cursor } from '@components/ui';
+// import { Cursor } from '@components/ui';
 
 interface IProps {
   children: React.ReactNode;
@@ -67,7 +67,7 @@ const Layout = (props: IProps) => {
           />
         )}
       </Head>
-      <Cursor />
+      {/* <Cursor /> */}
       <Header />
       <main className={style.main}>{children}</main>
       <Footer />
