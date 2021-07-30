@@ -1,11 +1,18 @@
 .content {
   display: grid;
   grid-template-columns: repeat(
-    auto-fill,
+    auto-fit,
     minmax(min(100%, 16rem), 1fr)
   );
   grid-gap: var(--spacing-lg);
   padding: 2rem 9vw;
+}
+
+.article {
+  height: 30em;
+}
+.date {
+  margin-top: 5rem;
 }
 
 .contentImage {
@@ -46,4 +53,22 @@
   margin: 0.2em;
   background-color: var(--color-background-main);
   font-variation-settings: 'wght' 500;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-variation-settings: 'wght' 800;
+  letter-spacing: 1px;
+  color: var(--color-primary-light);
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

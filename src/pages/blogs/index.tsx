@@ -30,31 +30,35 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
   console.log(`${pathname}/${slug}`);
 
   return (
-    <Link href={`${pathname}/${slug}`}>
-      {/* <a className={styles.href}> */}
-      <article className={styles.article}>
-        <div className={styles.contentImage}>
-          <div className={styles.imageContainer}>
-            <img
-              className={styles.image}
-              src="https://picsum.photos/id/200/1000/1000"
-            />
-          </div>
-          <div className={styles.tagContainer}>
-            <div className={styles.tag}>Hello</div>
-            <div className={styles.tag}>Hello</div>
-            <div className={styles.tag}>Hello</div>
-            <div className={styles.tag}>Hello</div>
-          </div>
+    <article className={styles.article}>
+      <div className={styles.contentImage}>
+        <Link href={`${pathname}/${slug}`}>
+          <a className={styles.href}>
+            <div className={styles.imageContainer}>
+              <img
+                className={styles.image}
+                src="https://picsum.photos/id/200/1000/1000"
+              />
+            </div>
+          </a>
+        </Link>
+        <div className={styles.tagContainer}>
+          <div className={styles.tag}>Hello</div>
+          <div className={styles.tag}>Hello</div>
+          <div className={styles.tag}>Hello</div>
+          <div className={styles.tag}>Hello</div>
         </div>
-        <div className={styles.contentInfo}>
-          <small className={styles.date}>{formatDate(date)}</small>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.description}>{excerpt}</p>
-        </div>
-      </article>
-      {/* </a> */}
-    </Link>
+      </div>
+      <div className={styles.contentInfo}>
+        <time dateTime={date} className={styles.date}>
+          {formatDate(date)}
+        </time>
+        <Link href={`${pathname}/${slug}`}>
+          <a className={styles.title}>{title}</a>
+        </Link>
+        <p className={styles.description}>{excerpt}</p>
+      </div>
+    </article>
   );
 };
 
