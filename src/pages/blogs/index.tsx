@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { formatDate } from '@utils/formatDate';
 import { GetStaticProps } from 'next';
+import Image from 'next/image';
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllFilesFrontMatter('blog');
@@ -35,9 +36,13 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
         <Link href={`${pathname}/${slug}`}>
           <a className={styles.href}>
             <div className={styles.imageContainer}>
-              <img
-                className={styles.image}
-                src="https://picsum.photos/id/200/1000/1000"
+              <Image
+                src="/assets/blog/hello-world/cover.jpg"
+                alt="Hello world"
+                objectFit="cover"
+                layout="fill"
+                className={styles.cover}
+                objectPosition="center top"
               />
             </div>
           </a>
