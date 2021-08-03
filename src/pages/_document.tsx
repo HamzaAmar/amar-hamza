@@ -29,6 +29,10 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@300..800&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

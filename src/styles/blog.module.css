@@ -22,7 +22,6 @@
   overflow: hidden;
   border-radius: 1em;
   position: relative;
-  border-radius: 1rem;
 }
 .contentImage img {
   transform: scale(1);

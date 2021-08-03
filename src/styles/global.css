@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap');
 :root {
   --spacing-XXS: 0.1rem;
   --spacing-XS: 0.25rem;
@@ -74,7 +73,7 @@ body {
   background-color: var(--color-background-main);
   -webkit-font-smoothing: antialiased;
   font-family: 'Hepta Slab', sans-serif;
-  font-weight: 300;
+  font-variation-settings: 'wght' 300;
   height: 100%;
 }
 
