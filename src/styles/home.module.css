@@ -2,11 +2,10 @@
   display: grid;
 }
 .section {
-  padding: 5vmin 1vw;
+  padding: 5vmin 5vw;
   font-size: 1rem;
   background: var(--color-background-main);
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
