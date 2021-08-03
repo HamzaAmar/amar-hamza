@@ -1,65 +1,22 @@
 .container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
   height: 100%;
-}
-.skill {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  padding: 1em 2em;
-  position: relative;
-}
-
-.skill:not(:last-child) {
-  padding-bottom: 3em;
-}
-
-.skillTitle {
-  writing-mode: vertical-lr;
-  margin-right: 4em;
-  font-weight: 800;
-  text-align: center;
-  letter-spacing: 0.8em;
-  background: linear-gradient(
-    to bottom,
-    var(--color-primary-light),
-    var(--color-primary-dark),
-    var(--color-primary-light)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-}
-.skill > svg {
-  font-size: 4em;
 }
 
 .skillsList {
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   grid-gap: 2em;
-  width: 100%;
-  height: 100%;
-  align-items: center;
 }
 .skillItem {
   background: var(--color-background-light);
   border-radius: 1em;
-  height: 10em;
-  min-width: 8.5em;
   box-shadow: var(--color-shadow);
   display: flex;
   align-items: center;
   justify-content: space-between;
   transform: rotate(0) scale(1);
   transition: transform 0.5s ease-in-out;
+  padding: 1rem;
 }
 .skillItem:hover {
   transform: rotate(5deg) scale(1.04);
@@ -68,11 +25,6 @@
 .skillItem:hover .icon {
   animation: vibrate 1s ease-out 0s alternate;
 }
-/* 
-.skillItem:hover .iconContainer::before {
-  opacity: 1;
-  transform: scale(1);
-} */
 
 .iconContainer {
   width: 5em;
@@ -133,33 +85,15 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 1em 0.3em;
-  /* flex: 60%; */
   flex: 1;
 }
 
 .skillIconTitle {
-  /* color: var(--color-primary-light); */
   font-size: 0.8em;
-  margin-top: 0.8em;
   font-variation-settings: 'wght' 600;
   text-transform: uppercase;
 }
 
-.skillContainer > svg {
-  margin: 1em 0;
-  padding: 0.3em;
-}
-
-.skillContainer > h2 {
-  font-weight: 200;
-  letter-spacing: 1px;
-}
-.skillContainer > h4 {
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-style: italic;
-}
 @media (max-width: 800px) {
   .skillTitle {
     writing-mode: initial;
