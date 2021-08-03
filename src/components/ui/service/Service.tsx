@@ -7,21 +7,21 @@ const servicesData = [
   {
     id: 1,
     icon: <Fast width={60} />,
-    title: 'fast',
+    title: 'High Performance',
     description:
       ' create High perforament website and improve performance to website nice score and work with the latest technology',
   },
   {
     id: 3,
     icon: <BackEnd width={60} />,
-    title: 'BackEnd',
+    title: 'Accessible',
     description:
-      ' create High perforament website and improve performance to website nice score and work with the latest technology',
+      'website designed and developed to provide equal access and equal opportunity to people with disabilities',
   },
   {
     id: 4,
     icon: <FrontEnd width={60} />,
-    title: 'FontEnd',
+    title: 'UI/UX',
     description:
       ' create High perforament website and improve performance to website nice score and work with the latest technology',
   },
