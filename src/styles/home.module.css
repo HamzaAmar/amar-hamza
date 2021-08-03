@@ -46,6 +46,7 @@
     var(--color-primary-light),
     var(--color-primary-main)
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;

@@ -112,17 +112,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 a {
-  font-family: 'Hepta Slab', sans-serif;
   text-decoration: none;
-  font-variation-settings: 'wght' 350;
   color: var(--danger-color-main);
   box-shadow: inset 0 -5px 0 1px var(--color-tex),
     inset 0 -8px 0 1px red;
 }
 ul {
-  font-family: 'Hepta Slab', sans-serif;
   list-style: none;
-  font-weight: 400;
 }
 
 h1,
