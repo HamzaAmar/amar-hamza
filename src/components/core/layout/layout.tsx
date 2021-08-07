@@ -6,13 +6,6 @@ import { useRouter } from 'next/router';
 import cn from 'classnames';
 // import { Cursor } from '@components/ui';
 
-interface IProps {
-  children: React.ReactNode;
-  title?: string;
-  description?: string;
-  date?: string;
-}
-
 interface IMeta {
   title?: string;
   description?: string;
@@ -20,17 +13,25 @@ interface IMeta {
   type?: string;
   date?: string;
 }
+interface IProps extends IMeta {
+  children: React.ReactNode;
+}
 
 const Layout = (props: IProps) => {
-  const { children, title, description, ...customMeta } = props;
+  const {
+    children,
+    title,
+    description,
+    image,
+    ...customMeta
+  } = props;
   const router = useRouter();
   const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
 
   const meta: IMeta = {
-    title: `Hamza Miloud Amar – ${title}`,
-    description: description,
-    image: 'https://miloudamar.com/myImage.jpg',
-    type: 'website',
+    title: `${title} – Hamza Miloud Amar`,
+    description,
+    image: `https://miloudamar.com/${image}`,
     ...customMeta,
   };
 
@@ -48,6 +49,7 @@ const Layout = (props: IProps) => {
           rel="canonical"
           href={`${NEXT_PUBLIC_DOMAIN_NAME}${router.asPath}`}
         />
+
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Hamza Miloud Amar" />
         <meta property="og:description" content={meta.description} />
@@ -58,6 +60,7 @@ const Layout = (props: IProps) => {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+
         {meta.date && (
           <meta
             property="article:published_time"
@@ -74,7 +77,9 @@ const Layout = (props: IProps) => {
 };
 Layout.defaultProps = {
   title: 'JavaScript Developer',
-  description: `Full Stack Developer how like to work React , Next , Css , Node `,
+  description: `Senior Front End Developer I like every think about it but I am in love with React HTML CSS`,
+  image: 'myImage.jpg',
+  type: 'website',
 };
 
 export default Layout;
