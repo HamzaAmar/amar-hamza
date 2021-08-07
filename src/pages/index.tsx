@@ -7,7 +7,7 @@ import styles from '@styles/home.module.css';
 const IndexPage = () => {
   return (
     <>
-      <Layout>
+      <Layout title="Home Page">
         <div className={styles.container}>
           <div className={styles.about}>
             <About />

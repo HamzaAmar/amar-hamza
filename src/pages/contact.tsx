@@ -103,7 +103,7 @@ const contact = () => {
   };
 
   return (
-    <Layout>
+    <Layout title="Contact Page">
       <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.titleContainer}>

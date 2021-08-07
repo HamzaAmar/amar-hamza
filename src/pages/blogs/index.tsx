@@ -69,7 +69,7 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
 
 export default function Blog({ posts }: { posts: IProps[] }) {
   return (
-    <Layout>
+    <Layout title="Blog Page">
       <div className={styles.content}>
         {posts.map((post) => (
           <Article key={post.slug} {...post} />
