@@ -27,3 +27,6 @@ export { default as Warning } from './warning';
 export { default as Danger } from './danger';
 export { default as Close } from './close';
 export { default as Send } from './send';
+export { default as Menu } from './menu';
+export { default as Sun } from './sun';
+export { default as Moon } from './moon';
