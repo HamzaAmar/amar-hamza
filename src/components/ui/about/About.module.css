@@ -61,7 +61,7 @@
 } */
 
 .buttonContainer {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .myPictureContainer {
@@ -77,7 +77,7 @@
   display: inline-block;
 }
 .info {
-  font-size: 1.7em;
+  font-size: 2.1em;
 }
 .myName {
   font-size: 4em;
@@ -87,8 +87,7 @@
   /* text-shadow: 3px 3px 0 var(--color-text), -1px -1px 0 transparent,
     1px -1px 0 transparent, -1px 1px 0 transparent,
     1px 1px 0 transparent; */
-  text-shadow: 0.05em 0.05em 0 var(--color-text),
-    0.04em 0.04em 0.1em var(--color-primary-light);
+  text-shadow: 0.035em 0.035em 0 var(--color-text);
 }
 /* socials section styles */
 
@@ -98,7 +97,7 @@
   top: 2em;
   color: var(--color-text);
 }
-.socialItem {
+.socialItemLink {
   display: block;
   color: currentColor;
 }
@@ -106,9 +105,9 @@
 .socialItem:not(:last-child) {
   margin-bottom: 0.8em;
 }
-.socialItem > svg {
-  width: 1.7em;
-  height: 1.7em;
+.socialItem svg {
+  width: 1.8em;
+  height: 1.8em;
 }
 .title {
   padding: 0.2em 1em;

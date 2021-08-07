@@ -16,7 +16,6 @@
 
 .container a {
   color: var(--color-text);
-  font-variation-settings: 'wght' 600;
 }
 
 .logoContent {
@@ -24,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-variation-settings: 'wght' 500;
+  font-weight: 500;
 }
 .name {
   font-size: calc(var(--font-size) * 0.9);

@@ -14,24 +14,22 @@ interface IProps {
 }
 
 interface IMeta {
-  title: string;
-  description: string;
-  image: string;
-  type: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
   date?: string;
 }
 
 const Layout = (props: IProps) => {
-  const { children, ...customMeta } = props;
+  const { children, title, description, ...customMeta } = props;
   const router = useRouter();
   const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
 
-  console.log('NEXT_PUBLIC_DOMAIN_NAME', NEXT_PUBLIC_DOMAIN_NAME);
-
   const meta: IMeta = {
-    title: 'Hamza Miloud Amar – JavaScript Developer',
-    description: `Full Stack Developer how like to work React , Next , Css , Node `,
-    image: 'https://leerob.io/static/images/banner.png',
+    title: `Hamza Miloud Amar – ${title}`,
+    description: description,
+    image: 'https://miloudamar.com/myImage.jpg',
     type: 'website',
     ...customMeta,
   };
@@ -51,12 +49,12 @@ const Layout = (props: IProps) => {
           href={`${NEXT_PUBLIC_DOMAIN_NAME}${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Lee Robinson" />
+        <meta property="og:site_name" content="Hamza Miloud Amar" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@leeerob" />
+        <meta name="twitter:site" content="@HamzaMiloudAma1" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -73,6 +71,10 @@ const Layout = (props: IProps) => {
       <Footer />
     </div>
   );
+};
+Layout.defaultProps = {
+  title: 'JavaScript Developer',
+  description: `Full Stack Developer how like to work React , Next , Css , Node `,
 };
 
 export default Layout;

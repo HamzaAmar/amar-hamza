@@ -57,10 +57,10 @@ const About = () => {
         <div className={styles.description}>
           <h1 className={styles.myName}>Hamza Amar</h1>
           <p className={styles.info}>
-            Senior Front End Developer I Like to write Accessible and
-            high performance website With{' '}
-            <strong className={styles.strong}>React</strong> ,
-            <strong className={styles.strong}>HTML</strong> ,
+            Senior Front End Developer I like every think about it but
+            I am in love with
+            <strong className={styles.strong}>React</strong>
+            <strong className={styles.strong}>HTML</strong>
             <strong className={styles.strong}>CSS</strong>
           </p>
           <div className={styles.buttonContainer}>
@@ -82,14 +82,15 @@ const About = () => {
       </div>
       <ul className={styles.socials}>
         {socials.map(({ id, icon, link }) => (
-          <a
-            href={link}
-            target="_blank"
-            className={styles.socialItem}
-            key={id}
-          >
-            <li>{icon}</li>
-          </a>
+          <li key={id} className={styles.socialItem}>
+            <a
+              href={link}
+              target="_blank"
+              className={styles.socialItemLink}
+            >
+              {icon}
+            </a>
+          </li>
         ))}
       </ul>
     </div>

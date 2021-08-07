@@ -27,8 +27,8 @@
 }
 
 .iconContainer {
-  width: 5em;
-  height: 5em;
+  width: 4em;
+  height: 4em;
   position: relative;
 }
 
@@ -92,16 +92,6 @@
   font-size: 0.8em;
   font-variation-settings: 'wght' 600;
   text-transform: uppercase;
-}
-
-@media (max-width: 800px) {
-  .skillTitle {
-    writing-mode: initial;
-    margin-right: 0;
-  }
-  .skill {
-    flex-direction: column;
-  }
 }
 
 @keyframes vibrate {
