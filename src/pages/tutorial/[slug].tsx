@@ -35,8 +35,16 @@ interface Props {
 }
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
+  const { title, excerpt, coverImage, date } = frontMatter;
+
   return (
-    <Layout>
+    <Layout
+      title={title}
+      description={excerpt}
+      image={coverImage}
+      date={new Date(date).toISOString()}
+      type="article"
+    >
       <ReadingLayout {...frontMatter}>
         <MDXRemote components={{ Image }} {...mdxSource} />
       </ReadingLayout>

@@ -91,7 +91,7 @@ const ProgramingLanguageList = ({ title, icon }: IProgramming) => {
 const index = ({ tutorials }: { tutorials: IProps[] }) => {
   console.log(tutorials);
   return (
-    <Layout>
+    <Layout title="Tutorial Page">
       <div className={styles.container}>
         <div className={styles.left}>
           <ul className={styles.list}>

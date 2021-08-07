@@ -63,7 +63,7 @@ export default function Blog({
   challenges: IProps[];
 }) {
   return (
-    <Layout>
+    <Layout title="Challenge Page">
       <div className={styles.content}>
         {challenges.map((post) => (
           <Article key={post.slug} {...post} />
