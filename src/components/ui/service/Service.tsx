@@ -34,7 +34,7 @@ const services = () => {
         <div className={styles.service} key={id}>
           <div className={styles.iconContainer}>{icon}</div>
 
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <p>{description}</p>
         </div>
       ))}
