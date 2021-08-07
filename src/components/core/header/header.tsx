@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
-import { TypeScript } from '@components/icons';
+import { Menu, TypeScript } from '@components/icons';
 
 import styles from './header.module.css';
 import MENU from '@constants/menu';
@@ -16,17 +16,15 @@ interface IPropsItem {
 
 const Item = ({ name, path, pathname }: IPropsItem) => {
   return (
-    <Link href={path}>
-      <a className={cn(styles.itemLink)}>
-        <li
-          className={cn(styles.item, {
-            [styles.activeLink]: pathname === path,
-          })}
-        >
-          {name}
-        </li>
-      </a>
-    </Link>
+    <li
+      className={cn(styles.item, {
+        [styles.activeLink]: pathname === path,
+      })}
+    >
+      <Link href={path}>
+        <a className={styles.itemLink}>{name}</a>
+      </Link>
+    </li>
   );
 };
 
@@ -44,78 +42,77 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.logo}>
-        <Link href="/">
-          <a className={styles.logoContent}>
-            <TypeScript
-              width={25}
-              height={25}
-              style={{
-                marginRight: '0.7rem',
-                borderRadius: '0.2rem',
-              }}
-            />
-            <h1 className={styles.name}>amar</h1>
-            <p className={styles.extension}>.tsx</p>
-          </a>
-        </Link>
-      </h1>
-      <ul className={styles.nav}>
-        {MENU.map(({ id, name, path }) => {
-          return (
-            <Item
-              key={id}
-              name={name}
-              path={path}
-              pathname={pathname}
-            />
-          );
-        })}
-      </ul>
-      <div className={styles.iconContainer}>
-        <div>
-          <div
-            className={styles.logoContainer}
-            onClick={() => setVisible(true)}
-          >
-            <div
-              className={cn(styles.menu, {
-                ['.menu_transform']: visible,
-              })}
-            />
-          </div>
-          <div
-            className={cn(styles.menuMobile, {
-              [styles.visible]: visible === true,
-            })}
-          >
-            <ul className={styles.menuMobileList}>
-              <button
-                type="button"
-                className={styles.closeMenu}
-                onClick={() => setVisible(false)}
-              >
-                Close
-              </button>
-              {MENU.map(({ id, name, path }) => {
-                return (
-                  <Link href={path} key={id}>
-                    <a
-                      className={cn(styles.itemLink, {
-                        [styles.activeMobileLink]: pathname === path,
-                      })}
-                    >
-                      <li className={cn(styles.menuMobileItem)}>
-                        {name}
-                      </li>
-                    </a>
-                  </Link>
-                );
-              })}
-            </ul>
-          </div>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <Link href="/">
+            <a className={styles.logoContent}>
+              <TypeScript
+                width={25}
+                height={25}
+                style={{
+                  marginRight: '0.7rem',
+                  borderRadius: '0.2rem',
+                }}
+              />
+              <div className={styles.name}>amar</div>
+              <div className={styles.extension}>.tsx</div>
+            </a>
+          </Link>
         </div>
-        <Switcher />
+        <ul className={styles.nav}>
+          {MENU.map(({ id, name, path }) => {
+            return (
+              <Item
+                key={id}
+                name={name}
+                path={path}
+                pathname={pathname}
+              />
+            );
+          })}
+        </ul>
+        <div className={styles.rightSide}>
+          <button
+            type="button"
+            className={`${styles.menuMobileIcon}`}
+            // className={`${styles.menuMobileIcon} ${styles.buttonReset}`}
+            onClick={() => setVisible(true)}
+            aria-label="Toggle Menu"
+          >
+            <Menu width="30" focusable="false" aria-hidden="true" />
+          </button>
+          <Switcher />
+        </div>
+      </header>
+      <div
+        className={cn(styles.menuMobile, {
+          [styles.visible]: visible === true,
+        })}
+      >
+        <ul className={styles.menuMobileList}>
+          <button
+            type="button"
+            className={styles.closeMenu}
+            onClick={() => setVisible(false)}
+          >
+            Close
+          </button>
+          {MENU.map(({ id, name, path }) => {
+            return (
+              <li className={cn(styles.menuMobileItem)}>
+                <Link href={path} key={id}>
+                  <a
+                    className={cn(styles.itemLink, {
+                      [styles.activeMobileLink]: pathname === path,
+                    })}
+                  >
+                    {name}
+                  </a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
