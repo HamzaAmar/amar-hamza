@@ -24,9 +24,17 @@ interface IProps {
   slug: string;
   tag: string;
   title: string;
+  tags: string[];
 }
 
-const Article = ({ image, excerpt, title, date, slug }: IProps) => {
+const Article = ({
+  image,
+  excerpt,
+  title,
+  date,
+  slug,
+  tags,
+}: IProps) => {
   const { pathname } = useRouter();
   console.log(`${pathname}/${slug}`);
 
@@ -48,10 +56,11 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
           </a>
         </Link>
         <div className={styles.tagContainer}>
-          <div className={styles.tag}>Hello</div>
-          <div className={styles.tag}>Hello</div>
-          <div className={styles.tag}>Hello</div>
-          <div className={styles.tag}>Hello</div>
+          {tags.map((tag) => (
+            <div key={tag} className={styles.tag}>
+              {tag}
+            </div>
+          ))}
         </div>
       </div>
       <div className={styles.contentInfo}>
@@ -59,7 +68,9 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
           {formatDate(date)}
         </time>
         <Link href={`${pathname}/${slug}`}>
-          <a className={styles.title}>{title}</a>
+          <h1>
+            <a className={styles.title}>{title}</a>
+          </h1>
         </Link>
         <p className={styles.description}>{excerpt}</p>
       </div>
