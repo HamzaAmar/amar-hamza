@@ -2,6 +2,8 @@ const fs = require('fs');
 const globby = require('globby');
 
 (async () => {
+  const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
+
   try {
     const pages = await globby([
       'src/pages/**/*{.ts,.tsx,.mdx}',
@@ -14,15 +16,23 @@ const globby = require('globby');
               ${pages
                 .map((page) => {
                   const path = page
-                    .replace('pages', '')
+                    .replace('pages/', '')
                     .replace('src/', '')
                     .replace('.tsx', '')
                     .replace('.mdx', '');
+
                   const route = path === '/index' ? '' : path;
+
+                  console.log(
+                    NEXT_PUBLIC_DOMAIN_NAME,
+                    'FULL LINK',
+                    `${NEXT_PUBLIC_DOMAIN_NAME}${route}`,
+                    page,
+                  );
 
                   return `
                           <url>
-                              <loc>${`https://yoursitehere.com${route}`}</loc>
+                              <loc>${`https://www.miloudamar.com/${route}`}</loc>
                           </url>
                       `;
                 })

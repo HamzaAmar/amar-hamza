@@ -9,12 +9,14 @@ const pathFromRootToBlog = path.join(
   'data',
   'blog',
 );
+const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
+console.log(NEXT_PUBLIC_DOMAIN_NAME);
 
 async function generate() {
   const feed = new RSS({
     title: 'Hamza Miloud Amar',
-    site_url: 'https://hello.io',
-    feed_url: 'https://hello.io/feed.xml',
+    site_url: 'https://www.miloudamar.com',
+    feed_url: 'https://www.miloudamar.com/feed.xml',
   });
   try {
     const posts = await fs.readdir(pathFromRootToBlog);
@@ -28,7 +30,7 @@ async function generate() {
 
         feed.item({
           title: frontmatter.data.title,
-          url: `https://leerob.io/blog + ${post.replace(
+          url: `https://www.miloudamar.com/blog + ${post.replace(
             /\.mdx?/,
             '',
           )}`,
