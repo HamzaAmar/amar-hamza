@@ -36,7 +36,7 @@ const globby = require('globby');
                       `;
                 })
                 .join('')}
-          </urlset>`;
+          </urlset>`.trim();
 
     fs.writeFileSync('public/sitemap.xml', sitemap);
   } catch (err) {

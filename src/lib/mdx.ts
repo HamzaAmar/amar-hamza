@@ -39,9 +39,10 @@ export async function getFileBySlug(type: string, slug: string) {
         require('remark-slug'),
         require('remark-code-titles'),
       ],
-      rehypePlugins: [mdxPrism],
     },
   });
+
+  console.log(mdxSource);
 
   return {
     mdxSource,

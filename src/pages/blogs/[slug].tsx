@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ReadingLayout } from '@components/core';
 import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
+import { components } from '@components/ui';
 
 interface IFrontMatter {
   author: {
@@ -44,7 +45,7 @@ export default function Blog({ mdxSource, frontMatter }: Props) {
       type="article"
     >
       <ReadingLayout {...frontMatter}>
-        <MDXRemote components={{ Image }} {...mdxSource} />
+        <MDXRemote components={components} {...mdxSource} />
       </ReadingLayout>
     </Layout>
   );

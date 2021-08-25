@@ -5,14 +5,12 @@
   padding: 0.5em 1.5em;
   font-family: inherit;
   border-radius: 0.3em;
-  color: currentColor;
+  color: white;
   font-weight: 300;
-  /* box-shadow: 0 1px 0 1px var(--color-primary-main); */
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 6rem;
-  box-shadow: 0 0 0.5em var(--color-primary-main);
   text-transform: uppercase;
   letter-spacing: 2px;
   word-spacing: 2px;

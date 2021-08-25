@@ -2,49 +2,54 @@
     <channel>
         <title><![CDATA[Hamza Miloud Amar]]></title>
         <description><![CDATA[Hamza Miloud Amar]]></description>
-        <link>https://hello.io</link>
+        <link>https://www.miloudamar.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 08 Aug 2021 10:17:56 GMT</lastBuildDate>
-        <atom:link href="https://hello.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 25 Aug 2021 01:23:27 GMT</lastBuildDate>
+        <atom:link href="https://www.miloudamar.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Grid Part 4]]></title>
-            <link>https://leerob.io/blog + grid-4</link>
-            <guid isPermaLink="true">https://leerob.io/blog + grid-4</guid>
-        </item>
-        <item>
-            <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
-            <link>https://leerob.io/blog + hello-world</link>
-            <guid isPermaLink="true">https://leerob.io/blog + hello-world</guid>
-        </item>
-        <item>
-            <title><![CDATA[Grid Part 3]]></title>
-            <link>https://leerob.io/blog + grid-3</link>
-            <guid isPermaLink="true">https://leerob.io/blog + grid-3</guid>
-        </item>
-        <item>
-            <title><![CDATA[Grid Part 5]]></title>
-            <link>https://leerob.io/blog + grid-5</link>
-            <guid isPermaLink="true">https://leerob.io/blog + grid-5</guid>
+            <title><![CDATA[How to write dry css code]]></title>
+            <link>https://www.miloudamar.com/blog + dynamic-routing</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + dynamic-routing</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 2]]></title>
-            <link>https://leerob.io/blog + grid-2</link>
-            <guid isPermaLink="true">https://leerob.io/blog + grid-2</guid>
+            <link>https://www.miloudamar.com/blog + grid-2</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-2</guid>
         </item>
         <item>
-            <title><![CDATA[Preview]]></title>
-            <link>https://leerob.io/blog + preview</link>
-            <guid isPermaLink="true">https://leerob.io/blog + preview</guid>
+            <title><![CDATA[Grid Part 3]]></title>
+            <link>https://www.miloudamar.com/blog + grid-3</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-3</guid>
+        </item>
+        <item>
+            <title><![CDATA[Grid Part 4]]></title>
+            <link>https://www.miloudamar.com/blog + grid-4</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-4</guid>
+        </item>
+        <item>
+            <title><![CDATA[Grid Part 5]]></title>
+            <link>https://www.miloudamar.com/blog + grid-5</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-5</guid>
+        </item>
+        <item>
+            <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
+            <link>https://www.miloudamar.com/blog + hello-world</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + hello-world</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 1]]></title>
-            <link>https://leerob.io/blog + inhertence</link>
-            <guid isPermaLink="true">https://leerob.io/blog + inhertence</guid>
+            <link>https://www.miloudamar.com/blog + inhertence</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + inhertence</guid>
         </item>
         <item>
-            <title><![CDATA[Every Thing you want to know about Inheritance]]></title>
-            <link>https://leerob.io/blog + dynamic-routing</link>
-            <guid isPermaLink="true">https://leerob.io/blog + dynamic-routing</guid>
+            <title><![CDATA[This is the best blog post]]></title>
+            <link>https://www.miloudamar.com/blog + stack</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + stack</guid>
+        </item>
+        <item>
+            <title><![CDATA[Preview]]></title>
+            <link>https://www.miloudamar.com/blog + preview</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + preview</guid>
         </item>
     </channel>
 </rss>

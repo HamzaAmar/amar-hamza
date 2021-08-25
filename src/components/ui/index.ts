@@ -10,3 +10,9 @@ export { Button, Input, Textarea } from './form';
 export { default as Switcher } from './switcherMode';
 export { default as Loading } from './loading';
 export { default as Cursor } from './cursor';
+export {
+  components,
+  CodeContainer,
+  CopyButton,
+  Highlight,
+} from './mdxComponent';
