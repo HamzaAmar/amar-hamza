@@ -1,9 +1,15 @@
 import React from 'react';
-import BaseHighlight, { defaultProps } from 'prism-react-renderer';
+import BaseHighlight, { defaultProps, Language } from 'prism-react-renderer';
 import styles from './highlight.module.css';
 import customTheme from '@constants/myCustomPrismTheme';
 
-const highlight = ({ children, className, showLines, ...rest }) => {
+interface HighlightProps {
+  children:string;
+  className:string;
+  showLines:string
+}
+
+const highlight = ({ children, className, showLines, ...rest }:HighlightProps) => {
   const codeString = children.trim();
   const language = className?.replace(/language-/, '');
 
@@ -11,7 +17,7 @@ const highlight = ({ children, className, showLines, ...rest }) => {
     <BaseHighlight
       {...defaultProps}
       code={codeString}
-      language={language}
+      language={language as Language}
       theme={customTheme}
       {...rest}
     >

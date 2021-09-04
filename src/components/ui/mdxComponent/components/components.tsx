@@ -1,12 +1,13 @@
 import { Highlight } from '@components/ui';
 import Image from 'next/image';
 // import { CodeContainer, Hello, Highlight } from '..'
+import {PreProps} from './components.type'
 
 const components = {
   Image,
   // code: CodeContainer,
   code: (props: any) => <Highlight {...props} />,
-  pre: ({ children, props }) => (
+  pre: ({ children , ...props}:PreProps) => (
     <div
       style={{
         borderRadius: '1rem',
