@@ -1,17 +1,18 @@
 import { Clipboard, Check } from '@components/icons';
-import React, { useState } from 'react';
-import copy from 'copy-to-clipboard';
+import React, { ButtonHTMLAttributes, useState } from 'react';
+import { useClipboard } from '@hooks/useClipboard';
 
-const copyButton = () => {
-  const [hasCopied, setHasCopied] = useState(false);
-  const copiedData = copy('Hello world');
+interface CopyButtonProps  {
+  code: string
+}
 
-  console.log(copiedData);
+const copyButton = ({code}:CopyButtonProps) => {
+const { hasCopied, onCopy } = useClipboard(code);
 
   return (
     <button
       aria-label="copy Button"
-      onClick={() => setHasCopied(true)}
+      onClick={onCopy}
     >
       {hasCopied ? (
         <Clipboard

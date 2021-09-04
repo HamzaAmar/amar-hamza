@@ -1,7 +1,6 @@
+import { Highlight } from '@components/ui';
 import Image from 'next/image';
-import { CodeContainer, Hello, Highlight } from '..';
-
-console.log(Highlight);
+// import { CodeContainer, Hello, Highlight } from '..'
 
 const components = {
   Image,

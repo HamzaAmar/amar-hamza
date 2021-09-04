@@ -22,15 +22,11 @@
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/blogs/index</loc>
-                          </url>
-                      
-                          <url>
                               <loc>https://www.miloudamar.com/blogs/[slug]</loc>
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/challenge/index</loc>
+                              <loc>https://www.miloudamar.com/blogs/index</loc>
                           </url>
                       
                           <url>
@@ -38,11 +34,15 @@
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/tutorial/index</loc>
+                              <loc>https://www.miloudamar.com/challenge/index</loc>
                           </url>
                       
                           <url>
                               <loc>https://www.miloudamar.com/tutorial/[slug]</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://www.miloudamar.com/tutorial/index</loc>
                           </url>
                       
           </urlset>

@@ -34,7 +34,7 @@ const highlight = ({ children, className, showLines, ...rest }) => {
                 <div {...lineProps} className={styles.line}>
                   {showLines && (
                     <span className={styles.lineNumber}>
-                      {i + 1}-{' '}
+                      {i + 1}
                     </span>
                   )}
                   {line.map((token, key) => (

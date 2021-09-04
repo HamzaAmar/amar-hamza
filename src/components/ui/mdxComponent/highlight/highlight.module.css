@@ -1,45 +1,17 @@
-/* .pre {
-  padding: 1rem;
+.pre {
+  padding: 1rem 1.5rem;
   border-radius: 0.5rem;
+  font-size: 0.95rem;
 }
 
 .line {
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.15rem;
 }
 
 .lineNumber {
   display: inline-block;
   padding-right: 1rem;
-  opacity: 0.6;
-} */
-
-.button {
-  padding: 1rem 2rem;
-}
-
-.contained {
-}
-
-.outline {
-}
-
-.text {
-}
-
-.primary {
-}
-
-.secondary {
-}
-
-.small {
-}
-
-.medium {
-}
-
-.large {
-}
-
-.fluid {
+  opacity: 0.3;
+  color: var(--color-text);
+  margin-right: 1rem;
 }
