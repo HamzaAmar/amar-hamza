@@ -1,6 +1,7 @@
-import fs from 'fs';
-import matter from 'gray-matter';
 import path from 'path';
+import fs from 'fs';
+
+import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { serialize } from 'next-mdx-remote/serialize';
 import mdxPrism from 'mdx-prism';
@@ -8,7 +9,7 @@ import mdxPrism from 'mdx-prism';
 const root = process.cwd();
 const rootWithSrcFolder = path.join(root, 'src');
 
-export async function getFiles(type: string) {
+export function getFiles(type: string) {
   return fs.readdirSync(path.join(rootWithSrcFolder, 'data', type));
 }
 
@@ -55,12 +56,12 @@ export async function getFileBySlug(type: string, slug: string) {
   };
 }
 
-export async function getAllFilesFrontMatter(type: string) {
-  const files = await getFiles(type);
+export function getAllFilesFrontMatter(type: string) {
+  const files = getFiles(type);
 
   const arr = [];
 
-  for (let post of files) {
+  for (const post of files) {
     const source = fs.readFileSync(
       path.join(rootWithSrcFolder, 'data', type, post),
       'utf8',

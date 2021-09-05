@@ -1,7 +1,7 @@
 import React from 'react';
 
-const curriculum_vitae = () => {
+const curriculumVitae = () => {
   return <div>curriculum vitae</div>;
 };
 
-export default curriculum_vitae;
+export default curriculumVitae;

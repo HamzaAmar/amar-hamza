@@ -23,17 +23,17 @@ interface State {
   error: Error | null;
   status: 'idle' | 'loading' | 'success' | 'error';
 }
-type Fetching = {
+interface Fetching {
   type: 'fetching';
-};
-type Fetched = {
+}
+interface Fetched {
   type: 'fetched';
   data: Data;
-};
-type ErrorType = {
+}
+interface ErrorType {
   type: 'error';
   error: Error;
-};
+}
 
 interface InitialValue {
   name: string;
@@ -60,7 +60,7 @@ function fetchReducer(state: State, action: Action): State {
   }
 }
 
-const contact = () => {
+const Contact = () => {
   const { onChange, onSubmit, values } = useForm<InitialValue>({
     initialValues: {
       name: '',
@@ -74,21 +74,22 @@ const contact = () => {
     error: null,
     status: 'idle',
   });
+  const message = state.data ? state.data.message : null;
 
-  const handleSubmit = async (values: InitialValue) => {
+  const handleSubmit = (values: InitialValue) => {
     dispatch({ type: 'fetching' });
     fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(values),
     })
-      .then((r) => (r.ok ? r : Promise.reject(r)))
+      .then((res: any) => (res.ok ? res : Promise.reject(res)))
       .then(
         async (response) => {
           const data = await response.json();
           dispatch({ type: 'fetched', data });
         },
-        async (error) => {
+        (error) => {
           try {
             dispatch({
               type: 'error',
@@ -99,7 +100,10 @@ const contact = () => {
             dispatch({ type: 'error', error });
           }
         },
-      );
+      )
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -147,36 +151,47 @@ const contact = () => {
             </div>
           </div>
           <div className={styles.socialContainer}>
-            <a href="https://www.facebook.com" target="_blank">
+            <a
+              href="https://www.facebook.com"
+              rel="noreferrer"
+              target="_blank"
+            >
               <Facebook width={25} height={25} />
             </a>
             <a
               href="https://twitter.com/HamzaMiloudAma1"
               target="_blank"
+              rel="noreferrer"
             >
               <Twitter width={25} height={25} />
             </a>
             <a
               href="https://www.instagram.com/amar_dev_js"
               target="_blank"
+              rel="noreferrer"
             >
               <Instagram width={25} height={25} />
             </a>
-            <a href="https://github.com/HamzaAmar" target="_blank">
+            <a
+              href="https://github.com/HamzaAmar"
+              rel="noreferrer"
+              target="_blank"
+            >
               <Github width={25} height={25} />
             </a>
             <a
               href="https://www.linkedin.com/in/hamza-miloud-amar-463b24167"
               target="_blank"
+              rel="noreferrer"
             >
               <Linkdin width={25} height={25} />
             </a>
           </div>
         </div>
         <div className={styles.right}>
-          <div>{state.data ? state.data.message : null}</div>
+          <div>{message}</div>
           <form
-            onSubmit={(e) => onSubmit(e, handleSubmit)}
+            onSubmit={(event: any) => onSubmit(event, handleSubmit)}
             className={styles.form}
           >
             <div className={styles.inputContainer}>
@@ -232,4 +247,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

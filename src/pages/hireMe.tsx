@@ -1,12 +1,13 @@
 import React from 'react';
 import { Layout } from '@components/core';
-import styles from '../styles/hireMe.module.css';
 import { Input, Textarea } from '@components/ui';
+
+import styles from '../styles/hireMe.module.css';
 
 const hireMe = () => {
   return (
     <Layout>
-      <div>
+      <>
         <section className={styles.container}>
           <form className={styles.formContainer}>
             <h2 className={styles.heading}>
@@ -33,8 +34,8 @@ const hireMe = () => {
               placeholder="please type your Message"
             />
             <div className={styles.buttonWrapper}>
-              <button>hireMe Me</button>
-              <button> clear</button>
+              <button type="button">hireMe Me</button>
+              <button type="button"> clear</button>
             </div>
           </form>
         </section>
@@ -46,7 +47,7 @@ const hireMe = () => {
           <h1>HEllo </h1>
           <h1>HEllo </h1>
         </section>
-      </div>
+      </>
     </Layout>
   );
 };

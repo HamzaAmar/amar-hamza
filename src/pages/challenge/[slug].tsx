@@ -1,14 +1,14 @@
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-
-import { getFiles, getFileBySlug } from '@lib/mdx';
-// import { getTweets } from '@lib/twitter';
-import { Layout } from '@components/core';
-import Image from 'next/image';
-import { ReadingLayout } from '@components/core';
-import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 
-interface IFrontMatter {
+import React from 'react';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { getFiles, getFileBySlug } from '@lib/mdx';
+// import { getTweets } from '@lib/twitter';
+import Image from 'next/image';
+import { ReadingLayout, Layout } from '@components/core';
+import { GetStaticPaths, GetStaticProps } from 'next';
+
+interface FrontMatter {
   author: {
     name: string;
     picture: string;
@@ -31,7 +31,7 @@ interface IFrontMatter {
 
 interface Props {
   mdxSource: MDXRemoteSerializeResult;
-  frontMatter: IFrontMatter;
+  frontMatter: FrontMatter;
 }
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
@@ -65,12 +65,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export async function getStaticPaths() {
-  const challenge = await getFiles('challenge');
+  const challenges = await getFiles('challenge');
 
   return {
-    paths: challenge.map((p) => ({
+    paths: challenges.map((challange) => ({
       params: {
-        slug: p.replace(/\.mdx/, ''),
+        slug: challange.replace(/\.mdx/, ''),
       },
     })),
 

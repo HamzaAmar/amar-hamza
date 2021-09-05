@@ -1,14 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Layout } from '@components/core';
 import React, { ReactNode, useState } from 'react';
 import styles from '@styles/tutorial.module.css';
-import { CSS, Node, ReactIcon, TypeScript } from '@components/icons';
+import { Css, Node, ReactIcon, TypeScript } from '@components/icons';
 import {
   getAllFilesFrontMatter,
   getFileBySlug,
   getFiles,
 } from '@lib/mdx';
 import { GetStaticProps } from 'next';
-import path from 'path';
 import Link from 'next/link';
 
 const programing = [
@@ -27,7 +27,7 @@ const programing = [
   {
     id: 5,
     title: 'Css',
-    icon: <CSS width="60%" height="60%" />,
+    icon: <Css width="60%" height="60%" />,
   },
 ];
 
@@ -37,25 +37,25 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { tutorials } };
 };
 
-interface IProps {
-  author: { name: string; picture: string };
-  coverImage: string;
-  date: string;
-  excerpt: string;
+interface ItemProps {
+  // author: { name: string; picture: string };
+  // coverImage: string;
+  // date: string;
+  // excerpt: string;
   image: string;
   slug: string;
-  tag: string;
+  // tag: string;
   title: string;
-  icon: ReactNode;
+  // icon: ReactNode;
 }
 
-const Item = ({ image, title, slug }: IProps) => {
+const Item = ({ image, title, slug }: ItemProps) => {
   return (
     <div className={styles.itemContainer}>
       <Link href={`tutorial/${slug}`}>
         <a>
           <div className={styles.imageContainer}>
-            <img className={styles.image} src={image} />
+            <img className={styles.image} src={image} alt="" />
           </div>
 
           <div className={styles.itemContent}>
@@ -72,12 +72,15 @@ const Item = ({ image, title, slug }: IProps) => {
   );
 };
 
-interface IProgramming {
+interface ProgrammingProps {
   title: string;
   icon: ReactNode;
 }
 
-const ProgramingLanguageList = ({ title, icon }: IProgramming) => {
+const ProgramingLanguageList = ({
+  title,
+  icon,
+}: ProgrammingProps) => {
   // const [type, setType] = useState(null);
 
   return (
@@ -88,8 +91,7 @@ const ProgramingLanguageList = ({ title, icon }: IProgramming) => {
   );
 };
 
-const index = ({ tutorials }: { tutorials: IProps[] }) => {
-  console.log(tutorials);
+const index = ({ tutorials }: { tutorials: ItemProps[] }) => {
   return (
     <Layout title="Tutorial Page">
       <div className={styles.container}>

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react';
 import { getAllFilesFrontMatter } from '@lib/mdx';
 import { Layout } from '@components/core';
 // import { Article } from '@components/ui';
@@ -15,14 +16,14 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { posts } };
 };
 
-interface IProps {
-  author: { name: string; picture: string };
-  coverImage: string;
+interface BlogProps {
+  // author: { name: string; picture: string };
+  // coverImage: string;
   date: string;
   excerpt: string;
   image: string;
   slug: string;
-  tag: string;
+  // tag: string;
   title: string;
   tags: string[];
 }
@@ -34,9 +35,8 @@ const Article = ({
   date,
   slug,
   tags,
-}: IProps) => {
+}: BlogProps) => {
   const { pathname } = useRouter();
-  console.log(`${pathname}/${slug}`);
 
   return (
     <article className={styles.article}>
@@ -78,7 +78,7 @@ const Article = ({
   );
 };
 
-export default function Blog({ posts }: { posts: IProps[] }) {
+export default function Blog({ posts }: { posts: BlogProps[] }) {
   return (
     <Layout title="Blog Page">
       <div className={styles.content}>

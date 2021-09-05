@@ -1,11 +1,13 @@
 import { ParsedUrlQuery } from 'querystring';
+
+import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { GetStaticProps } from 'next';
 import { getFiles, getFileBySlug } from '@lib/mdx';
 import { components } from '@components/ui';
-import { Layout , ReadingLayout} from '@components/core';
+import { Layout, ReadingLayout } from '@components/core';
 
-interface IFrontMatter {
+interface FrontMatter {
   author: {
     name: string;
     picture: string;
@@ -28,7 +30,7 @@ interface IFrontMatter {
 
 interface Props {
   mdxSource: MDXRemoteSerializeResult;
-  frontMatter: IFrontMatter;
+  frontMatter: FrontMatter;
 }
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
@@ -64,9 +66,9 @@ export async function getStaticPaths() {
   const posts = await getFiles('blog');
 
   return {
-    paths: posts.map((p) => ({
+    paths: posts.map((post) => ({
       params: {
-        slug: p.replace(/\.mdx/, ''),
+        slug: post.replace(/\.mdx/, ''),
       },
     })),
 

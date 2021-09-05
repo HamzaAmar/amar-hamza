@@ -1,14 +1,14 @@
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-
-import { getFiles, getFileBySlug } from '@lib/mdx';
-// import { getTweets } from '@lib/twitter';
-import { Layout } from '@components/core';
-import Image from 'next/image';
-import { ReadingLayout } from '@components/core';
-import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 
-interface IFrontMatter {
+import React from 'react';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { getFiles, getFileBySlug } from '@lib/mdx';
+// import { getTweets } from '@lib/twitter';
+import Image from 'next/image';
+import { ReadingLayout, Layout } from '@components/core';
+import { GetStaticProps } from 'next';
+
+interface FrontMatter {
   author: {
     name: string;
     picture: string;
@@ -31,7 +31,7 @@ interface IFrontMatter {
 
 interface Props {
   mdxSource: MDXRemoteSerializeResult;
-  frontMatter: IFrontMatter;
+  frontMatter: FrontMatter;
 }
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
@@ -59,8 +59,6 @@ interface Params extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as Params;
 
-  console.log(slug, 'this is the value of slug');
-
   const post = await getFileBySlug('tutorial', slug);
 
   return { props: { ...post } };
@@ -70,9 +68,9 @@ export async function getStaticPaths() {
   const posts = await getFiles('tutorial');
 
   return {
-    paths: posts.map((p) => ({
+    paths: posts.map((post: any) => ({
       params: {
-        slug: p.replace(/\.mdx/, ''),
+        slug: post.replace(/\.mdx/, ''),
       },
     })),
 

@@ -1,22 +1,19 @@
-  
-
-  
-type Author = {
-    name: string
-    picture: string
-  }
-
-type PostType = {
-  slug: string
-  title: string
-  date: string
-  coverImage: string
-  author: Author
-  excerpt: string
-  ogImage: {
-    url: string
-  }
-  content: string
+interface Author {
+  name: string;
+  picture: string;
 }
 
-export default PostType
+interface PostType {
+  slug: string;
+  title: string;
+  date: string;
+  coverImage: string;
+  author: Author;
+  excerpt: string;
+  ogImage: {
+    url: string;
+  };
+  content: string;
+}
+
+export default PostType;

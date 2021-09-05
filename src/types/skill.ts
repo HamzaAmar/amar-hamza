@@ -1,3 +1,3 @@
-type skill = {}
+interface Skill {}
 
-export default skill
+export default Skill;

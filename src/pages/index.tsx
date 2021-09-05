@@ -1,8 +1,7 @@
-import React from 'react';
-
-import { Service, Project, About, Skill } from '../components/ui';
-import { Layout } from '../components/core';
 import styles from '@styles/home.module.css';
+import React from 'react';
+import { Service, Project, About, Skill } from '@components/ui';
+import { Layout } from '@components/core';
 
 const IndexPage = () => {
   return (

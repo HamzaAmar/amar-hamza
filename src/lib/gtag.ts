@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 
-interface IEvent {
+interface EventProps {
   action: string;
   category: string;
   label: string;
@@ -16,10 +17,15 @@ export const pageview = (url: string) => {
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({ action, category, label, value }: IEvent) => {
+export const event = ({
+  action,
+  category,
+  label,
+  value,
+}: EventProps) => {
   (window as any).gtag('event', action, {
     event_category: category,
     event_label: label,
-    value: value,
+    value,
   });
 };

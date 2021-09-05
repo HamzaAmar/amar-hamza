@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { getAllFilesFrontMatter } from '@lib/mdx';
 import { Layout } from '@components/core';
 // import { Article } from '@components/ui';
@@ -13,20 +13,25 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { challenges } };
 };
 
-interface IProps {
-  author: { name: string; picture: string };
-  coverImage: string;
+interface ChallangeProps {
+  // author: { name: string; picture: string };
+  // coverImage: string;
   date: string;
   excerpt: string;
   image: string;
   slug: string;
-  tag: string;
+  // tag?: string;
   title: string;
 }
 
-const Article = ({ image, excerpt, title, date, slug }: IProps) => {
+const Article = ({
+  image,
+  excerpt,
+  title,
+  date,
+  slug,
+}: ChallangeProps) => {
   const { pathname } = useRouter();
-  console.log(`${pathname}/${slug}`);
 
   return (
     <Link href={`${pathname}/${slug}`}>
@@ -37,6 +42,7 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
             <img
               className={styles.image}
               src="https://picsum.photos/id/200/1000/1000"
+              alt=""
             />
             <div className={styles.tagContainer}>
               <div className={styles.tag}>Hello</div>
@@ -60,7 +66,7 @@ const Article = ({ image, excerpt, title, date, slug }: IProps) => {
 export default function Blog({
   challenges,
 }: {
-  challenges: IProps[];
+  challenges: ChallangeProps[];
 }) {
   return (
     <Layout title="Challenge Page">
