@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './About.module.css';
 import {
   Facebook,
   Github,
@@ -7,7 +6,10 @@ import {
   Twitter,
   Instagram,
 } from '@components/icons';
+
 import { Button } from '../form';
+
+import styles from './About.module.css';
 
 interface Socials {
   id: number;
@@ -87,6 +89,7 @@ const About = () => {
               href={link}
               target="_blank"
               className={styles.socialItemLink}
+              rel="noreferrer"
             >
               {icon}
             </a>

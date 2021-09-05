@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './loading.module.css';
 
 const loading = () => {
@@ -7,9 +8,9 @@ const loading = () => {
       className={styles.container}
       //   style={{ width: '50px', height: '50px' }}
     >
-      <div className={`${styles.dot} ${styles.firstDot}`}></div>
-      <div className={`${styles.dot} ${styles.secondDot}`}></div>
-      <div className={`${styles.dot} ${styles.thirdDot}`}></div>
+      <div className={`${styles.dot} ${styles.firstDot}`} />
+      <div className={`${styles.dot} ${styles.secondDot}`} />
+      <div className={`${styles.dot} ${styles.thirdDot}`} />
     </div>
   );
 };

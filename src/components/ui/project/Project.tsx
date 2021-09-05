@@ -1,5 +1,6 @@
 import { PROJECTS } from '@constants/project';
 import React from 'react';
+
 import style from './Project.module.css';
 
 const Projects = () => {

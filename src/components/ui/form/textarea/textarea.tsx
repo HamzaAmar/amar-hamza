@@ -1,49 +1,51 @@
-import React, { FC, ReactNode, TextareaHTMLAttributes } from 'react';
+import React, { TextareaHTMLAttributes } from 'react';
+
 import styles from './textarea.module.css';
 
-interface TextArea
+interface TextAreaProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
 }
 
-const textarea = ({
+const Textarea = ({
   name,
   placeholder,
   label,
   onChange,
   required,
   rows = 10,
-}: TextArea) => {
-  const [message, setMessage] = React.useState(null);
+}: TextAreaProps) => {
+  const [message, setMessage] = React.useState<string | null>(null);
+  const messageError = message ? (
+    <div className={styles.messageContainer}>
+      <small className={styles.message}>{message}</small>
+    </div>
+  ) : null;
+  const requiredLabel = required ? (
+    <abbr className={styles.abbr} title={`${name} field is required`}>
+      *
+    </abbr>
+  ) : null;
   return (
     <div className={styles.container}>
       <div className={styles.textareaContainer}>
         <label className={styles.label}>
           {label}
-          {required ? (
-            <abbr
-              className={styles.abbr}
-              title={`${name} field is required`}
-            >
-              *
-            </abbr>
-          ) : null}
+          {requiredLabel}
         </label>
         <textarea
           placeholder={placeholder}
           onChange={onChange}
           name={name}
           rows={rows}
-        ></textarea>
+        >
+          {}
+        </textarea>
       </div>
 
-      {message ? (
-        <div className={styles.messageContainer}>
-          <small className={styles.message}>{message}</small>
-        </div>
-      ) : null}
+      {messageError}
     </div>
   );
 };
 
-export default textarea;
+export default Textarea;

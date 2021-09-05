@@ -1,4 +1,4 @@
-export default {
+const mode = {
   light: {
     text: 'black',
     background: 'white',
@@ -10,3 +10,4 @@ export default {
     primary: 'rebeccapurple',
   },
 };
+export default mode;

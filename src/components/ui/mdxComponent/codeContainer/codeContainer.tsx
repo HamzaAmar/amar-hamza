@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react';
-import { CopyButton, Highlight } from '..';
+import React from 'react';
 
 const codeContainer = (props: {
   children: any;
@@ -8,19 +7,17 @@ const codeContainer = (props: {
 }) => {
   const { className, children, viewlines } = props;
 
-  console.log(props, props.children);
-
   const language = className?.replace(/language-/, '');
   const rawCode = children;
   return (
-    <div>
+    <>
       {/* <Highlight
         code={rawCode}
         language={language}
         showLines={viewlines}
       /> */}
       {/* <CopyButton /> */}
-    </div>
+    </>
   );
 };
 

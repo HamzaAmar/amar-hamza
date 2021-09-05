@@ -1,11 +1,17 @@
 import { Moon, Sun } from '@components/icons';
-import { NONAME } from 'dns';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
+
 import styles from './switcher.module.css';
 
-const switcher = () => {
+const Switcher = () => {
   const { resolvedTheme, setTheme } = useTheme();
+  const icon =
+    resolvedTheme === 'dark' ? (
+      <Sun width="30" aria-hidden="true" focusable="false" />
+    ) : (
+      <Moon width="30" aria-hidden="true" focusable="false" />
+    );
 
   return (
     <button
@@ -13,15 +19,12 @@ const switcher = () => {
       onClick={() =>
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }
+      type="button"
       aria-label={`Switch Mode ${resolvedTheme}`}
     >
-      {resolvedTheme !== 'dark' ? (
-        <Sun width="30" aria-hidden="true" focusable="false" />
-      ) : (
-        <Moon width="30" aria-hidden="true" focusable="false" />
-      )}
+      {icon}
     </button>
   );
 };
 
-export default switcher;
+export default Switcher;

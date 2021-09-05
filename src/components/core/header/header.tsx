@@ -1,20 +1,21 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
 import { Menu, TypeScript } from '@components/icons';
-
-import styles from './header.module.css';
 import MENU from '@constants/menu';
 import { Switcher } from '@components/ui';
 import { useRouter } from 'next/router';
 
-interface IPropsItem {
+import styles from './header.module.css';
+
+interface ItemProps {
   name: string;
   path: string;
   pathname: string;
 }
 
-const Item = ({ name, path, pathname }: IPropsItem) => {
+const Item = ({ name, path, pathname }: ItemProps) => {
   return (
     <li
       className={cn(styles.item, {
@@ -99,8 +100,8 @@ const Header = () => {
           </button>
           {MENU.map(({ id, name, path }) => {
             return (
-              <li className={cn(styles.menuMobileItem)}>
-                <Link href={path} key={id}>
+              <li className={cn(styles.menuMobileItem)} key={id}>
+                <Link href={path}>
                   <a
                     className={cn(styles.itemLink, {
                       [styles.activeMobileLink]: pathname === path,

@@ -160,8 +160,9 @@
 // export default CursorCore;
 
 import React, { useEffect, useState } from 'react';
-import styles from './cursor.module.css';
 import cn from 'classnames';
+
+import styles from './cursor.module.css';
 
 const Cursor = () => {
   const [{ x, y }, setPosition] = useState({ x: 100, y: 100 });

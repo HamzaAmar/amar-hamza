@@ -1,6 +1,7 @@
 import React, { CSSProperties, FC, ReactNode } from 'react';
-import style from './circleProgress.module.css';
 import cn from 'classnames';
+
+import style from './circleProgress.module.css';
 
 interface Props extends React.SVGProps<SVGSVGElement> {
   children: ReactNode;
@@ -25,14 +26,14 @@ const circleProgress = ({
           d="M18 2.0845
   a 15.9155 15.9155 0 0 1 0 31.831
   a 15.9155 15.9155 0 0 1 0 -31.831"
-        ></path>
+        />
         <path
           className={style.circle}
           strokeDasharray={`${lvl} 100`}
           d="M18 2.0845
   a 15.9155 15.9155 0 0 1 0 31.831
   a 15.9155 15.9155 0 0 1 0 -31.831"
-        ></path>
+        />
         <text x="18" y="20.35" className={style.percentage}>
           {children}
         </text>

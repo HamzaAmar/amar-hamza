@@ -79,7 +79,7 @@
 
 import { PrismTheme } from 'prism-react-renderer';
 
-var theme: PrismTheme = {
+const theme: PrismTheme = {
   plain: {
     color: 'var(--warning-color)',
     backgroundColor: 'var(--color-background-dark)',

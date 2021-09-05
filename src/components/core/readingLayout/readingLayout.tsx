@@ -6,9 +6,10 @@ import {
 } from '@components/icons';
 import React, { ReactNode } from 'react';
 import { formatDate } from '@utils/formatDate';
+
 import styles from './readingLayout.module.css';
 
-interface IAuthor {
+interface Author {
   name: string;
   picture: string;
 }
@@ -19,7 +20,7 @@ interface Props {
   coverImage: string;
   date: string;
   readingTime: any;
-  author: IAuthor;
+  author: Author;
 }
 
 const readingLayout = ({
@@ -30,7 +31,6 @@ const readingLayout = ({
   author,
   readingTime,
 }: Props) => {
-  console.log(readingTime);
   return (
     <div className={styles.container}>
       <div className={styles.readingContent}>
@@ -43,6 +43,7 @@ const readingLayout = ({
               <img
                 className={styles.authorImage}
                 src={author.picture}
+                alt="hello"
               />
             </div>
             <div className={styles.authorInfo}>
@@ -63,13 +64,13 @@ const readingLayout = ({
               </ul>
             </div>
           </div>
-          <div>
+          <>
             <p>{readingTime.text}</p>
             <p>{formatDate(date)}</p>
-          </div>
+          </>
         </div>
         <div className={styles.blogImageContainer}>
-          <img className={styles.blogImage} src={coverImage} />
+          <img className={styles.blogImage} src={coverImage} alt="" />
         </div>
 
         <div>{children}</div>

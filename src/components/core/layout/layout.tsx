@@ -1,23 +1,26 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
-import style from './layout.module.css';
-import { Footer, Header } from '..';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
+
+import { Footer, Header } from '..';
+
+import style from './layout.module.css';
+
 // import { Cursor } from '@components/ui';
 
-interface IMeta {
+interface Meta {
   title?: string;
   description?: string;
   image?: string;
   type?: string;
   date?: string;
 }
-interface IProps extends IMeta {
+interface LayoutProps extends Meta {
   children: React.ReactNode;
 }
 
-const Layout = (props: IProps) => {
+const Layout = (props: LayoutProps) => {
   const {
     children,
     title,
@@ -28,7 +31,7 @@ const Layout = (props: IProps) => {
   const router = useRouter();
   const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
 
-  const meta: IMeta = {
+  const meta: Meta = {
     title: `${title} – Hamza Miloud Amar`,
     description,
     image: `https://miloudamar.com/${image}`,

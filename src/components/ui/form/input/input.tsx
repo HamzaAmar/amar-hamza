@@ -1,34 +1,40 @@
-import React, { FC, InputHTMLAttributes, ReactNode } from 'react';
+import React, {
+  InputHTMLAttributes,
+  ReactNode,
+  useState,
+} from 'react';
+
 import styles from './input.module.css';
 
-interface Input extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   leftIcon?: ReactNode;
 }
 
-const input = ({
+const Input = ({
   name,
   type = 'text',
   placeholder,
   label,
   onChange,
   required,
-}: Input) => {
-  const [message, setMessage] = React.useState(null);
+  leftIcon,
+}: InputProps) => {
+  const [message, setMessage] = useState<string | null>(null);
+  const requiredSign = required ? (
+    <abbr className={styles.abbr} title={`${name} field is required`}>
+      *
+    </abbr>
+  ) : null;
+  const messageError = message ? (
+    <div className={styles.messageContainer}>
+      <small className={styles.message}>{message}</small>
+    </div>
+  ) : null;
   return (
     <div className={styles.container}>
       <div className={styles.inputContainer}>
-        <label className={styles.label}>
-          {label}
-          {required ? (
-            <abbr
-              className={styles.abbr}
-              title={`${name} field is required`}
-            >
-              *
-            </abbr>
-          ) : null}
-        </label>
+        <label className={styles.label}>{label}</label>
         <input
           id={name}
           type={type}
@@ -40,13 +46,9 @@ const input = ({
         />
       </div>
 
-      {message ? (
-        <div className={styles.messageContainer}>
-          <small className={styles.message}>{message}</small>
-        </div>
-      ) : null}
+      {messageError}
     </div>
   );
 };
 
-export default input;
+export default Input;

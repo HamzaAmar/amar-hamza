@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
-import { Layout } from '../components/core';
+import { Layout } from '@components/core';
 import style from '@styles/notFound.module.css';
 
 const NotFoundPage = () => {

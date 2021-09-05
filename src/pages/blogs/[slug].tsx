@@ -1,12 +1,9 @@
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-
-import { getFiles, getFileBySlug } from '@lib/mdx';
-import { Layout } from '@components/core';
-import Image from 'next/image';
-import { ReadingLayout } from '@components/core';
-import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { GetStaticProps } from 'next';
+import { getFiles, getFileBySlug } from '@lib/mdx';
 import { components } from '@components/ui';
+import { Layout , ReadingLayout} from '@components/core';
 
 interface IFrontMatter {
   author: {

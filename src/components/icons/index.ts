@@ -10,8 +10,8 @@ export { default as Instagram } from './instagram';
 // Programming Language Icon
 
 export { default as Tailwind } from './tailwind';
-export { default as CSS } from './css';
-export { default as HTML } from './html';
+export { default as Css } from './css';
+export { default as Html } from './html';
 export { default as Node } from './node';
 export { default as NextIcon } from './next';
 export { default as ReactIcon } from './react';

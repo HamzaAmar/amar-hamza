@@ -3,12 +3,15 @@ import {
   ReactIcon,
   NextIcon,
   TypeScript,
-  HTML,
-  CSS,
+  Html,
+  Css,
   Graphql,
   Gatsby,
-  Node,Express,Mongodb
+  Node,
+  Express,
+  Mongodb,
 } from '@components/icons';
+
 const skills = [
   {
     title: 'React',
@@ -28,15 +31,15 @@ const skills = [
   {
     title: 'HTML',
     level: 90,
-    icon: <HTML />,
+    icon: <Html />,
   },
 
   {
     title: 'CSS',
     level: 90,
-    icon: <CSS />,
+    icon: <Css />,
   },
-   {
+  {
     title: 'Gatsby',
     level: 80,
     icon: <Gatsby />,
@@ -46,8 +49,8 @@ const skills = [
     level: 70,
     icon: <Graphql />,
   },
- 
-   {
+
+  {
     title: 'Node js',
     level: 60,
     icon: <Node />,

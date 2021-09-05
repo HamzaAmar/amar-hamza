@@ -1,6 +1,7 @@
 import { BackEnd, Fast, FrontEnd } from '@components/icons';
 import React from 'react';
 // import { FiTrendingUp, FiZap, FiDatabase, FiAirplay } from 'react-icons/fi'
+
 import styles from './Service.module.css';
 
 const servicesData = [

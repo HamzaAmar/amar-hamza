@@ -1,17 +1,29 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
-import BaseHighlight, { defaultProps, Language } from 'prism-react-renderer';
-import styles from './highlight.module.css';
+import BaseHighlight, {
+  defaultProps,
+  Language,
+} from 'prism-react-renderer';
 import customTheme from '@constants/myCustomPrismTheme';
 
+import styles from './highlight.module.css';
+
 interface HighlightProps {
-  children:string;
-  className:string;
-  showLines:string
+  children: string;
+  className: string;
+  showLines: string;
 }
 
-const highlight = ({ children, className, showLines, ...rest }:HighlightProps) => {
+const highlight = ({
+  children,
+  className,
+  showLines,
+  ...rest
+}: HighlightProps) => {
   const codeString = children.trim();
-  const language = className?.replace(/language-/, '');
+  const language = className.replace(/language-/, '');
+  const lines = (i: number) =>
+    showLines && <span className={styles.lineNumber}>{i + 1}</span>;
 
   return (
     <BaseHighlight
@@ -35,16 +47,12 @@ const highlight = ({ children, className, showLines, ...rest }:HighlightProps) =
             style={style}
           >
             {tokens.map((line, i) => {
-              const lineProps = getLineProps({ line, key: i });
               return (
-                <div {...lineProps} className={styles.line}>
-                  {showLines && (
-                    <span className={styles.lineNumber}>
-                      {i + 1}
-                    </span>
-                  )}
+                <div key={i} {...line} className={styles.line}>
+                  {lines(i)}
                   {line.map((token, key) => (
                     <span
+                      key={key}
                       {...getTokenProps({ token, key })}
                       className={styles.lineContent}
                     />
