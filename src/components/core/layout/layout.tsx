@@ -21,13 +21,8 @@ interface LayoutProps extends Meta {
 }
 
 const Layout = (props: LayoutProps) => {
-  const {
-    children,
-    title,
-    description,
-    image,
-    ...customMeta
-  } = props;
+  const { children, title, description, image, ...customMeta } =
+    props;
   const router = useRouter();
   const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
 

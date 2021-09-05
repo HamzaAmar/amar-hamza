@@ -31,8 +31,8 @@ const programing = [
   },
 ];
 
-export const getStaticProps: GetStaticProps = async () => {
-  const tutorials = await getAllFilesFrontMatter('tutorial');
+export const getStaticProps: GetStaticProps = () => {
+  const tutorials = getAllFilesFrontMatter('tutorial');
 
   return { props: { tutorials } };
 };

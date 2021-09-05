@@ -62,8 +62,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return { props: { ...post } };
 };
 
-export async function getStaticPaths() {
-  const posts = await getFiles('blog');
+export function getStaticPaths() {
+  const posts = getFiles('blog');
 
   return {
     paths: posts.map((post) => ({

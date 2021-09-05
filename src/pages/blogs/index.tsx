@@ -10,8 +10,8 @@ import { formatDate } from '@utils/formatDate';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllFilesFrontMatter('blog');
+export const getStaticProps: GetStaticProps = () => {
+  const posts = getAllFilesFrontMatter('blog');
 
   return { props: { posts } };
 };

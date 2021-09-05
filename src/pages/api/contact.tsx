@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-const sgMail = require('@sendgrid/mail');
+import sgMail from '@sendgrid/mail';
 
 const sendEmail = (
   name: string,
@@ -8,7 +7,7 @@ const sendEmail = (
   subject: string,
   text: string,
 ) => {
-  sgMail.setApiKey(process.env.SENDGRID_KEY);
+  sgMail.setApiKey(process.env.SENDGRID_KEY as string);
 
   const msg = {
     to: 'hamzamiloudamar@gmail.com',
@@ -23,19 +22,19 @@ const sendEmail = (
   sgMail.send(msg);
 };
 
-export default async function handler(
+export default function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
   const { name, subject, email, message } = req.body;
   if (req.method === 'POST') {
     try {
-      await sendEmail(name, email, subject, message);
+      sendEmail(name, email, subject, message);
       return res.status(200).json({
         message:
           'Email send with success thanks i am going to answer you as mush a possible ',
       });
-    } catch (err) {
+    } catch (err: any) {
       res.status(500).json({
         message: err.message,
       });

@@ -1,15 +1,15 @@
-import { useState, useCallback, useEffect } from "react"
-import copy from "copy-to-clipboard"
+import { useState, useCallback, useEffect } from 'react';
+import copy from 'copy-to-clipboard';
 
 export interface UseClipboardOptions {
   /**
    * timeout delay (in ms) to switch back to initial state once copied.
    */
-  timeout?: number
+  timeout?: number;
   /**
    * Set the desired MIME type
    */
-  format?: string
+  format?: string;
 }
 
 /**
@@ -25,33 +25,33 @@ export function useClipboard(
   text: string,
   optionsOrTimeout: number | UseClipboardOptions = {},
 ) {
-  const [hasCopied, setHasCopied] = useState(false)
+  const [hasCopied, setHasCopied] = useState(false);
 
   const { timeout = 1500, ...copyOptions } =
-    typeof optionsOrTimeout === "number"
+    typeof optionsOrTimeout === 'number'
       ? { timeout: optionsOrTimeout }
-      : optionsOrTimeout
+      : optionsOrTimeout;
 
   const onCopy = useCallback(() => {
-    const didCopy = copy(text, copyOptions)
-    setHasCopied(didCopy)
-  }, [text, copyOptions])
+    const didCopy = copy(text, copyOptions);
+    setHasCopied(didCopy);
+  }, [text, copyOptions]);
 
   useEffect(() => {
-    let timeoutId: number | null = null
+    let timeoutId: number | null = null;
 
     if (hasCopied) {
       timeoutId = window.setTimeout(() => {
-        setHasCopied(false)
-      }, timeout)
+        setHasCopied(false);
+      }, timeout);
     }
 
     return () => {
       if (timeoutId) {
-        window.clearTimeout(timeoutId)
+        window.clearTimeout(timeoutId);
       }
-    }
-  }, [timeout, hasCopied])
+    };
+  }, [timeout, hasCopied]);
 
-  return { value: text, onCopy, hasCopied }
+  return { value: text, onCopy, hasCopied };
 }

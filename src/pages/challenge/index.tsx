@@ -8,8 +8,8 @@ import { useRouter } from 'next/router';
 import { formatDate } from '@utils/formatDate';
 import { GetStaticProps } from 'next';
 
-export const getStaticProps: GetStaticProps = async () => {
-  const challenges = await getAllFilesFrontMatter('challenge');
+export const getStaticProps: GetStaticProps = () => {
+  const challenges = getAllFilesFrontMatter('challenge');
   return { props: { challenges } };
 };
 
