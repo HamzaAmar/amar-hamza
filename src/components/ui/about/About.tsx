@@ -55,6 +55,21 @@ const socials: Socials[] = [
 const About = () => {
   return (
     <div className={styles.container}>
+      <ul className={styles.socials}>
+        {socials.map(({ id, icon, link, name }) => (
+          <li key={id} className={styles.socialItem}>
+            <a
+              href={link}
+              target="_blank"
+              className={styles.socialItemLink}
+              rel="noreferrer"
+              aria-label={`${name} icon`}
+            >
+              {icon}
+            </a>
+          </li>
+        ))}
+      </ul>
       <div className={styles.heroContent}>
         <div className={styles.description}>
           <h1 className={styles.myName}>Hamza Amar</h1>
@@ -82,20 +97,6 @@ const About = () => {
       <div className={styles.right}>
         <p className={styles.rightTitle}>scroll Down</p>
       </div>
-      <ul className={styles.socials}>
-        {socials.map(({ id, icon, link }) => (
-          <li key={id} className={styles.socialItem}>
-            <a
-              href={link}
-              target="_blank"
-              className={styles.socialItemLink}
-              rel="noreferrer"
-            >
-              {icon}
-            </a>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
