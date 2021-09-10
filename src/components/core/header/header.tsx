@@ -16,14 +16,18 @@ interface ItemProps {
 }
 
 const Item = ({ name, path, pathname }: ItemProps) => {
+  const isCurrentLink = pathname === path;
+  const ariaCurrent = isCurrentLink ? { 'aria-current': 'page' } : {};
   return (
     <li
       className={cn(styles.item, {
-        [styles.activeLink]: pathname === path,
+        [styles.activeLink]: isCurrentLink,
       })}
     >
       <Link href={path}>
-        <a className={styles.itemLink}>{name}</a>
+        <a {...ariaCurrent} className={styles.itemLink}>
+          {name}
+        </a>
       </Link>
     </li>
   );
