@@ -1,15 +1,6 @@
 import { Layout } from '@components/core';
-import {
-  Call,
-  Email,
-  Facebook,
-  Github,
-  Instagram,
-  Linkdin,
-  Send,
-  Twitter,
-} from '@components/icons';
-import { Button, Input, Textarea } from '@components/ui';
+import { Call, Email, Send } from '@components/icons';
+import { Button, Input, Social, Textarea } from '@components/ui';
 import React from 'react';
 import styles from '@styles/contact.module.css';
 import { useForm } from '@hooks/useForm';
@@ -114,7 +105,8 @@ const Contact = () => {
             <h1 className={styles.heading}>get in touch</h1>
 
             <p className={styles.paragraph}>
-              Fill up this form and am gonna be happy to answer
+              Fill up this form if you wanna hire me or ask me some
+              question and am gonna be happy to answer
             </p>
           </div>
 
@@ -150,43 +142,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className={styles.socialContainer}>
-            <a
-              href="https://www.facebook.com"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Facebook width={25} height={25} />
-            </a>
-            <a
-              href="https://twitter.com/HamzaMiloudAma1"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Twitter width={25} height={25} />
-            </a>
-            <a
-              href="https://www.instagram.com/amar_dev_js"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Instagram width={25} height={25} />
-            </a>
-            <a
-              href="https://github.com/HamzaAmar"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Github width={25} height={25} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/hamza-miloud-amar-463b24167"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Linkdin width={25} height={25} />
-            </a>
-          </div>
+          <Social />
         </div>
         <div className={styles.right}>
           <div>{message}</div>
