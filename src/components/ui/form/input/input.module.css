@@ -1,0 +1,12 @@
+.input {
+  padding: 0.5rem;
+  color: var(--color-text);
+  border: none;
+  outline: none;
+  border-bottom: 0.2rem solid transparent;
+  height: 100%;
+}
+
+.input:focus {
+  border-bottom: 0.2rem solid var(--color-primary-light);
+}

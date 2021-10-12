@@ -1,4 +1,10 @@
-import React, { TextareaHTMLAttributes } from 'react';
+import React, {
+  TextareaHTMLAttributes,
+  ReactNode,
+  useState,
+} from 'react';
+
+import { FormContainer } from '..';
 
 import styles from './textarea.module.css';
 
@@ -7,45 +13,21 @@ interface TextAreaProps
   label: string;
 }
 
-const Textarea = ({
-  name,
-  placeholder,
-  label,
-  onChange,
-  required,
-  rows = 10,
-}: TextAreaProps) => {
-  const [message, setMessage] = React.useState<string | null>(null);
-  const messageError = message ? (
-    <div className={styles.messageContainer}>
-      <small className={styles.message}>{message}</small>
-    </div>
-  ) : null;
-  const requiredLabel = required ? (
-    <abbr className={styles.abbr} title={`${name} field is required`}>
-      *
-    </abbr>
-  ) : null;
+const TextArea = (props: TextAreaProps) => {
+  const { name, placeholder, label, onChange, required } = props;
   return (
-    <div className={styles.container}>
-      <div className={styles.textareaContainer}>
-        <label className={styles.label}>
-          {label}
-          {requiredLabel}
-        </label>
-        <textarea
-          placeholder={placeholder}
-          onChange={onChange}
-          name={name}
-          rows={rows}
-        >
-          {}
-        </textarea>
-      </div>
-
-      {messageError}
-    </div>
+    <FormContainer name={name} label={label} required={required}>
+      <textarea
+        id={name}
+        name={name}
+        placeholder={placeholder}
+        className={styles.textarea}
+        onChange={onChange}
+        required
+        rows={5}
+      />
+    </FormContainer>
   );
 };
 
-export default Textarea;
+export default TextArea;
