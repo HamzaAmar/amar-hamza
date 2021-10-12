@@ -1,0 +1,99 @@
+---
+title: 'How to make a border gradient'
+excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+date: '2020-03-11T05:35:07.322Z'
+author:
+  name: Hamza Miloud amar
+  picture: '/assets/blog/authors/jj.jpeg'
+image: '/assets/blog/dynamic-routing/cover.jpg'
+tags: ['CSS']
+---
+
+To make gradient in css we add [linear](<https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient()> 'Linear Gradient MDN')
+[radial](<https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient()> 'Radial Gradient MDN')
+[conic](<https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient()> 'Conic Gradient MDN')
+gradient to the element depend on your situation you have for move info about gradient this is a small definition from the spec
+
+> A gradient is an image that smoothly fades from one color to another. These are commonly used for subtle shading in background images, buttons, and many other things. The gradient functions described in this section allow an author to specify such an image in a terse syntax, so that the UA can generate the image automatically when rendering the page.
+
+we understand that gradient is for image that means we can't apply gradient to
+border because border is shorthand for `border-width` , `border-style` and **`border-color`**
+this where border image came in handy but also have same limitation this what we gonna discover
+from this blog post
+
+## Border image
+
+the simplest way to add gradient border in css is to use border-image property but it has
+some limitation we can't add radius to the element this is a small difinition from the spec
+
+> Authors can specify an image to be used in place of the border styles. In this case, the border’s design is taken from the sides and corners of an image specified with border-image-source, whose pieces may be sliced, scaled and stretched in various ways to fit the size of the border image area. The border-image properties do not affect layout: layout of the box, its content, and surrounding content is based on the border-width and border-style properties only.
+
+```react
+import React from 'react';
+
+const Button = ({children , ...rest}) => {
+  return(
+    <button className="btn--gradient-border" {...rest}>
+      {children}
+    </button>
+  )
+}
+```
+
+```css
+.btn--gradient-border {
+  border-width: 0.5rem;
+  border-image: linear-gradient(to right, pink, blue) 1;
+  padding: 1rem 2rem;
+}
+```
+
+### When to use Border Image
+
+1. When You want the background color of the element (in our example the button) to be transparent;
+1. when you don't want to work with radius property
+
+## border image With background
+
+We can make a border gradient color with only background property this kind of hack
+
+```react
+import React from 'react';
+
+const Button = ({children , ...rest}) => {
+  return(
+    <button className="btn--gradient-border" {...rest}>
+      {children}
+    </button>
+  )
+}
+```
+
+```css
+:root {
+  --primary-color: #eee;
+}
+
+body {
+  background: var(--primary-color);
+}
+
+.btn--gradient-border {
+  border: 0.5rem solid transparent;
+
+  // this background property is shorthand for background-image and background-clip
+
+  background: linear-gradient(
+        var(--primary-color),
+        var(--primary-color)
+      ) padding-box, linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--primary-color)
+      ) border-box;
+  padding: 1rem 2rem;
+}
+```
+
+to explain the code above first we add
