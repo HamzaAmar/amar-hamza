@@ -1,6 +1,8 @@
 type Direction = 'horizontal' | 'vertical';
 
-export interface SocialType {
+interface SocialProps {
   className?: string;
   direction?: Direction;
 }
+
+export default SocialProps;

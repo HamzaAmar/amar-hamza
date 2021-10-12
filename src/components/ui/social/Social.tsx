@@ -3,13 +3,20 @@ import SOCIALS from '@constants/socialMenu';
 import cn from 'classnames';
 
 import styles from './social.module.css';
-import { SocialType } from './social.type';
+import SocialProps from './social.type';
 
 const Social = ({
   className,
   direction = 'horizontal',
-}: SocialType) => {
-  const rootStyle = `${styles.socials} ${styles[direction]} ${className}`;
+}: SocialProps) => {
+  const rootStyle = cn(
+    styles.socials,
+    {
+      [styles.vertical]: direction === 'vertical',
+      [styles.horizontal]: direction === 'horizontal',
+    },
+    className,
+  );
   return (
     <ul className={rootStyle}>
       {SOCIALS.map(({ id, icon, link, name }) => (
