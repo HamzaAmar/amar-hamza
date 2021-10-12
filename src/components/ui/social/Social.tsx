@@ -1,39 +1,33 @@
-import {
-  Facebook,
-  Github,
-  Instagram,
-  Linkdin,
-  Twitter,
-} from '@components/icons';
 import React from 'react';
+import SOCIALS from '@constants/socialMenu';
+import cn from 'classnames';
 
-// import {
-//     FaFacebook,
-//     FaTwitter,
-//     FaLinkedin,
-//     FaGithub,
-//     FaInstagram,
-// } from 'react-icons/fa'
-import style from './Social.module.css';
+import styles from './social.module.css';
+import { SocialType } from './social.type';
 
-const Social = () => {
+const Social = ({
+  className,
+  direction = 'horizontal',
+}: SocialType) => {
+  const rootStyle = cn(styles.socials, className, {
+    [styles.vertical]: direction === 'vertical',
+    [styles.horizontal]: direction === 'horizontal',
+  });
   return (
-    <ul className={style.navList}>
-      <li>
-        <Facebook width={20} height={20} />
-      </li>
-      <li>
-        <Twitter width={20} height={20} />
-      </li>
-      <li>
-        <Linkdin width={20} height={20} />
-      </li>
-      <li>
-        <Github width={20} height={20} />
-      </li>
-      <li>
-        <Instagram width={20} height={20} />
-      </li>
+    <ul className={rootStyle}>
+      {SOCIALS.map(({ id, icon, link, name }) => (
+        <li key={id} className={styles.socialItem}>
+          <a
+            href={link}
+            target="_blank"
+            className={styles.socialItemLink}
+            rel="noreferrer"
+            aria-label={`${name} icon`}
+          >
+            {icon}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 };
