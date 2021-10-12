@@ -56,21 +56,30 @@ export async function getFileBySlug(type: string, slug: string) {
   };
 }
 
-export function getAllFilesFrontMatter(type: string) {
+export function getAllFilesFrontMatter(
+  type: string,
+  length?: number,
+) {
   const files = getFiles(type);
+
+  length = length ?? files.length - 1;
+
+  console.log('this value is from mdx file');
+  console.log('length number', length);
 
   const arr = [];
 
-  for (const post of files) {
+  for (let i = 0; i < length; i++) {
     const source = fs.readFileSync(
-      path.join(rootWithSrcFolder, 'data', type, post),
+      path.join(rootWithSrcFolder, 'data', type, files[i]),
       'utf8',
     );
     const { data } = matter(source);
     arr.push({
       ...data,
-      slug: post.replace('.mdx', ''),
+      slug: files[i].replace('.mdx', ''),
     });
   }
+
   return arr;
 }

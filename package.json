@@ -5,11 +5,15 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "eslint": "eslint",
-    "eslint-check": "eslint --quiet",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|graphql|md|mdx)\""
+    "lint:fix": "npm run lint --fix",
+    "lint:check": "npm run lint --quiet",
+    "prettier:base": "prettier --parser typescript --single-quote",
+    "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
+    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
+    "validation": "npm run type-check && npm run lint:check && npm run prettier:check"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.5",

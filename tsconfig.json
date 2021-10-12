@@ -22,7 +22,7 @@
       "@constants/*": ["./constants/*"],
       "@styles/*": ["./styles/*"],
       "@hooks/*": ["./hooks/*"],
-      "@types/*": ["./types/*"],
+      "@type/*": ["./type/*"],
       "@utils/*": ["./utils/*"],
       "@helpers/*": ["./helpers/*"]
     }
