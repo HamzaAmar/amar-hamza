@@ -13,17 +13,20 @@ interface ItemProps {
   name: string;
   path: string;
   pathname: string;
+  mobile?: boolean;
 }
 
-const Item = ({ name, path, pathname }: ItemProps) => {
+const Item = ({ name, path, pathname, mobile }: ItemProps) => {
   const isCurrentLink = pathname === path;
   const currentLink = isCurrentLink ? 'page' : false;
+
+  const classNames = cn(styles.item, {
+    [styles.activeLink]: isCurrentLink,
+    [styles.mobile]: mobile,
+  });
+
   return (
-    <li
-      className={cn(styles.item, {
-        [styles.activeLink]: isCurrentLink,
-      })}
-    >
+    <li className={classNames}>
       <Link href={path}>
         <a aria-current={currentLink} className={styles.itemLink}>
           {name}
@@ -89,36 +92,43 @@ const Header = () => {
           <Switcher />
         </div>
       </header>
-      <div
+      <nav
         className={cn(styles.menuMobile, {
           [styles.visible]: visible === true,
         })}
       >
+        <button
+          type="button"
+          className={styles.closeMenu}
+          onClick={() => setVisible(false)}
+        >
+          Close
+        </button>
         <ul className={styles.menuMobileList}>
-          <button
-            type="button"
-            className={styles.closeMenu}
-            onClick={() => setVisible(false)}
-          >
-            Close
-          </button>
           {MENU.map(({ id, name, path }) => {
             return (
-              <li className={cn(styles.menuMobileItem)} key={id}>
-                <Link href={path}>
-                  <a
-                    className={cn(styles.itemLink, {
-                      [styles.activeMobileLink]: pathname === path,
-                    })}
-                  >
-                    {name}
-                  </a>
-                </Link>
-              </li>
+              // <li className={cn(styles.menuMobileItem)} key={id}>
+              //   <Link href={path}>
+              //     <a
+              //       className={cn(styles.itemLink, {
+              //         [styles.activeMobileLink]: pathname === path,
+              //       })}
+              //     >
+              //       {name}
+              //     </a>
+              //   </Link>
+              // </li>
+              <Item
+                key={id}
+                name={name}
+                path={path}
+                pathname={pathname}
+                mobile
+              />
             );
           })}
         </ul>
-      </div>
+      </nav>
     </div>
   );
 };

@@ -52,13 +52,25 @@
 }
 .item {
   position: relative;
-  height: 100%;
   margin: 0 0.25em;
   overflow: hidden;
   padding: 0 0.2rem;
 }
 
-.item::after {
+.item:not(.mobile) {
+  height: 100%;
+}
+.mobile.item {
+  font-size: 2rem;
+  margin-bottom: 1.25em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.mobile.item:hover {
+  color: var(--color-primary-light);
+}
+
+.item:not(.mobile)::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -99,15 +111,22 @@
 .menuMobile {
   visibility: hidden;
   opacity: 0;
-  transform: scale(0);
-  transition: transform 0.3s, opacity 0.2s;
+  transform: rotate(90deg);
+  transition: transform 0.25s, opacity 0.25s;
   width: 100%;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
+  transform-origin: left top;
   background-color: var(--color-background-main);
   z-index: 12;
+}
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.3s, opacity 0.2s;
 }
 
 .menuMobileList {
@@ -122,15 +141,6 @@
   font-size: 1.5em;
   display: flex;
   align-items: center;
-}
-
-.visible {
-  visibility: visible;
-  /* position: tatic; */
-  opacity: 1;
-  transform: scale(1);
-  transform-origin: top;
-  transition: transform 0.3s, opacity 0.2s;
 }
 
 .menuMobileIcon {
