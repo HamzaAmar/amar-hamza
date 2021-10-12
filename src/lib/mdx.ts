@@ -62,14 +62,11 @@ export function getAllFilesFrontMatter(
 ) {
   const files = getFiles(type);
 
-  length = length ?? files.length - 1;
-
-  console.log('this value is from mdx file');
-  console.log('length number', length);
+  const fileLength = length ?? files.length;
 
   const arr = [];
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < fileLength; i++) {
     const source = fs.readFileSync(
       path.join(rootWithSrcFolder, 'data', type, files[i]),
       'utf8',
