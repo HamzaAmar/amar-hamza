@@ -8,7 +8,6 @@ import styles from './About.module.css';
 const About = () => {
   return (
     <div className={styles.container}>
-      {/* Social Section */}
       <Social className={styles.absolute} direction="vertical" />
       <div className={styles.heroContent}>
         <div className={styles.description}>

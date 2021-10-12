@@ -9,10 +9,7 @@ const Social = ({
   className,
   direction = 'horizontal',
 }: SocialType) => {
-  const rootStyle = cn(styles.socials, className, {
-    [styles.vertical]: direction === 'vertical',
-    [styles.horizontal]: direction === 'horizontal',
-  });
+  const rootStyle = `${styles.socials} ${styles[direction]} ${className}`;
   return (
     <ul className={rootStyle}>
       {SOCIALS.map(({ id, icon, link, name }) => (
