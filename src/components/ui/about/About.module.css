@@ -87,7 +87,7 @@
   /* text-shadow: 3px 3px 0 var(--color-text), -1px -1px 0 transparent,
     1px -1px 0 transparent, -1px 1px 0 transparent,
     1px 1px 0 transparent; */
-  text-shadow: 0.035em 0.035em 0 var(--color-text);
+  text-shadow: 2px 2px 0 var(--color-text);
 }
 
 .title {
@@ -101,8 +101,8 @@
 }
 
 .circle {
-  width: var(--size, 0.5rem);
-  height: var(--size, 0.5rem);
+  width: var(--size, 0.25rem);
+  height: var(--size, 0.25rem);
   border-radius: 50%;
   background: var(--color, var(--color-primary-light));
   margin-left: var(--marginLeft, 2vw);
@@ -124,7 +124,6 @@
   animation: scaleInOut 0.8s ease-out infinite;
 }
 .bottomCircle {
-  --size: 0.25rem;
   --color: rgb(238, 50, 50);
 }
 .top,
