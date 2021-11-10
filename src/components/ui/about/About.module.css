@@ -2,9 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(95vh - 6rem);
+  height: calc(95vh - var(--shared-value) - 2rem);
   width: 90vw;
-  background-color: orange;
   margin: 2rem 0;
   font-size: 1em;
   background: linear-gradient(
@@ -55,19 +54,6 @@
   letter-spacing: 1px;
 }
 
-/* .strong::before {
-  position: absolute;
-  content: '';
-  width: 115%;
-  height: 115%;
-  border: 2px solid;
-  left: -7.5%;
-  top: -7.5%;
-  border-radius: 1em;
-  background-color: transparent;
-  z-index: -1;
-} */
-
 .buttonContainer {
   margin-top: 2em;
 }
@@ -86,8 +72,8 @@
 }
 .absolute {
   position: absolute;
-  left: 2em;
-  top: 2em;
+  left: 2vw;
+  top: 2vh;
 }
 .info {
   font-size: 2em;
@@ -106,19 +92,14 @@
 
 .title {
   padding: 0.2em 1em;
-  width: 30ch;
+  width: 40ch;
   font-size: 1.1em;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--color-text);
 }
-.bottomTitle,
-.topTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .circle {
   width: var(--size, 0.5rem);
   height: var(--size, 0.5rem);
@@ -146,64 +127,45 @@
   --size: 0.25rem;
   --color: rgb(238, 50, 50);
 }
-
-.top {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-}
-
-.topTitle {
-  position: relative;
-  background: var(--color-background-main);
-  padding: 0.4em 1em;
-  width: 30vw;
-  text-align: center;
-}
-.topTitle::after {
-  content: '';
-  position: absolute;
-  width: 130%;
-  height: 2px;
-  top: 50%;
-  left: -15%;
-  background: currentColor;
-  z-index: -1;
-}
-
+.top,
 .bottom {
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
 
-.bottomTitle {
-  position: relative;
-  background: var(--color-background-main);
-  padding: 0.4em 1em;
-  width: 25vw;
-  text-align: center;
-  font-weight: bold;
-  letter-spacing: 1px;
+.top {
+  top: 0;
 }
+.bottom {
+  top: 100%;
+}
+
+.topTitle::before,
 .bottomTitle::before {
   content: '';
   position: absolute;
+  background: currentColor;
   width: 130%;
   height: 2px;
   top: 50%;
   left: -15%;
-  background: currentColor;
   z-index: -1;
-  /* transform: translate(-15%, -50%); */
+}
+
+.bottomTitle,
+.topTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  padding: 0.5em 2vw;
+  position: relative;
+  background: var(--color-background-main);
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 .rightTitle {
@@ -248,5 +210,9 @@
 @media (max-width: 468px) {
   .container {
     font-size: 0.65em;
+  }
+  .bottomTitle::before,
+  .topTitle::before {
+    display: none;
   }
 }
