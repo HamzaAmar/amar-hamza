@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Social } from '@components/ui';
+import Link from 'next/link';
 
 import { Button } from '../form';
 
@@ -22,7 +24,14 @@ const About = () => {
             </span>
           </p>
           <div className={styles.buttonContainer}>
-            <Button>Hire Me</Button>
+            <Link href="/contact" passHref>
+              <Button as="a">Hire Me</Button>
+            </Link>
+            <Link href="/resume" passHref>
+              <Button variant="text" as="a">
+                Resume
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

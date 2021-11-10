@@ -56,6 +56,8 @@
 
 .buttonContainer {
   margin-top: 2em;
+  display: flex;
+  gap: 1rem;
 }
 
 .myPictureContainer {
@@ -100,32 +102,6 @@
   color: var(--color-text);
 }
 
-.circle {
-  width: var(--size, 0.25rem);
-  height: var(--size, 0.25rem);
-  border-radius: 50%;
-  background: var(--color, var(--color-primary-light));
-  margin-left: var(--marginLeft, 2vw);
-  position: relative;
-  align-items: center;
-  flex-shrink: -1;
-}
-
-.circle::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background: var(--color, var(--color-primary-light));
-  width: 400%;
-  height: 400%;
-  border-radius: 50%;
-  z-index: 10;
-  animation: scaleInOut 0.8s ease-out infinite;
-}
-.bottomCircle {
-  --color: rgb(238, 50, 50);
-}
 .top,
 .bottom {
   position: absolute;
