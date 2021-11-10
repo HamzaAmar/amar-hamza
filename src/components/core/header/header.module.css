@@ -60,6 +60,10 @@
 .item:not(.mobile) {
   height: 100%;
 }
+.rightSide {
+  display: flex;
+  justify-content: space-between;
+}
 .mobile.item {
   font-size: 2rem;
   margin-bottom: 1.25em;

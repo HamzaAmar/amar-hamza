@@ -83,7 +83,6 @@ const Header = () => {
           <button
             type="button"
             className={`${styles.menuMobileIcon}`}
-            // className={`${styles.menuMobileIcon} ${styles.buttonReset}`}
             onClick={() => setVisible(true)}
             aria-label="Toggle Menu"
           >
@@ -107,17 +106,6 @@ const Header = () => {
         <ul className={styles.menuMobileList}>
           {MENU.map(({ id, name, path }) => {
             return (
-              // <li className={cn(styles.menuMobileItem)} key={id}>
-              //   <Link href={path}>
-              //     <a
-              //       className={cn(styles.itemLink, {
-              //         [styles.activeMobileLink]: pathname === path,
-              //       })}
-              //     >
-              //       {name}
-              //     </a>
-              //   </Link>
-              // </li>
               <Item
                 key={id}
                 name={name}
