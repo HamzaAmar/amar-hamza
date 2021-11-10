@@ -41,7 +41,7 @@ const Article = ({ excerpt, title, date, slug, tags }: PostType) => {
 
       <Link href={`/blogs/${slug}`} passHref>
         <Button variant="outline" as="a" className={styles.button}>
-          See More
+          Read More
         </Button>
       </Link>
     </article>
