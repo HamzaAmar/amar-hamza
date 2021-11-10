@@ -177,11 +177,11 @@
   text-transform: uppercase;
   font-variation-settings: 'wght' 700;
   letter-spacing: 2px;
-  animation: bouce 1s alternate infinite ease-in-out;
+  animation: bouncing 1s alternate infinite ease-in-out;
   transform: translate(-50%, -30%);
 }
 
-@keyframes bouce {
+@keyframes bouncing {
   to {
     transform: translate(-50%, -40%);
   }
