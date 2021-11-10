@@ -28,12 +28,18 @@ const About = () => {
       </div>
       <div className={`${styles.title} ${styles.top}`}>
         <p className={styles.topTitle}>
-          I am a freelance web developer
+          <div>I am a freelance web developer</div>
+          <div className={styles.circle} />
         </p>
       </div>
 
       <div className={`${styles.title} ${styles.bottom}`}>
-        <p className={styles.bottomTitle}>Am Available</p>
+        <p className={styles.bottomTitle}>
+          <div>Am Available</div>
+          <div
+            className={`${styles.circle} ${styles.bottomCircle}`}
+          />
+        </p>
       </div>
       <div className={styles.right}>
         <p className={styles.rightTitle}>scroll Down</p>
