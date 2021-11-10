@@ -24,16 +24,25 @@ const button = <C extends React.ElementType = 'button'>(
 
   const rootStyle = `${styles.root} ${styles[variant]} ${className}`;
 
+  const newChild =
+    Comp === 'button' ? (
+      <>
+        <span
+          className={cn(styles.iconContainer, {
+            [styles.existIconOrLoading]: icon || status === 'loading',
+          })}
+        >
+          {loading}
+        </span>
+        {children}
+      </>
+    ) : (
+      children
+    );
+
   return (
     <Comp className={rootStyle} {...rest}>
-      <span
-        className={cn(styles.iconContainer, {
-          [styles.existIconOrLoading]: icon || status === 'loading',
-        })}
-      >
-        {loading}
-      </span>
-      {children}
+      {newChild}
     </Comp>
   );
 };

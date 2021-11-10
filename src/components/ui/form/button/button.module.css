@@ -12,6 +12,9 @@
   letter-spacing: 1px;
   outline: none;
   user-select: none;
+  display: inline-block;
+  border: 3px solid transparent;
+  background: transparent;
 }
 
 .contained {
@@ -20,12 +23,13 @@
 }
 
 .outline {
-  background: transparent;
   color: var(--color-primary-light);
-  border: 1px solid var(--color-primary-light);
 }
-
-.outline:hover {
+.text {
+  color: var(--color-primary-light);
+}
+.outline:hover,
+.text:hover {
   color: white;
 }
 
@@ -39,7 +43,7 @@
 }
 
 .root:focus {
-  box-shadow: 0 0 0.125em 0.25rem;
+  border-color: var(--color-primary-light);
 }
 
 .root:disabled {

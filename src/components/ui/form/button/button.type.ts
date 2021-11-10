@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { ElementType } from 'react';
 
-type Variant = 'contained' | 'outline';
+type Variant = 'contained' | 'outline' | 'text';
 type IStatus = 'idle' | 'success' | 'error' | 'loading';
 
 export interface ButtonProps<C extends ElementType> {
