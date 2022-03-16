@@ -2,13 +2,7 @@ import React from 'react';
 
 const linkdin = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 256 256"
-      width={props.width}
-      height={props.height}
-      {...props}
-    >
+    <svg viewBox="0 0 256 256" {...props}>
       <g fill="none">
         <path
           d="M0 18.338C0 8.216 8.474 0 18.92 0h218.16C247.53 0 256 8.216 256 18.338v219.327C256 247.79 247.53 256 237.08 256H18.92C8.475 256 0 247.791 0 237.668V18.335z"

@@ -2,11 +2,7 @@ import * as React from 'react';
 
 function instagram(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg viewBox="0 0 24 24" {...props}>
       <path
         d="M1.5 1.63C-.39 3.6 0 5.67 0 12c0 5.25-.92 10.5 3.88 11.75 1.5.38 14.76.38 16.25 0 2-.52 3.62-2.14 3.85-4.96.03-.4.03-13.19 0-13.59-.24-3-2.1-4.74-4.53-5.09-.56-.08-.67-.1-3.54-.11C5.74 0 3.51-.45 1.5 1.63z"
         fill="currentColor"

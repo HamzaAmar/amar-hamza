@@ -4,7 +4,6 @@ const mongodb = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="8.738 -5.03622834 17.45992422 39.40619484"
-      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path

@@ -5,7 +5,6 @@ const gatsby = (props: React.SVGProps<SVGSVGElement>) => {
     <svg
       enableBackground="new 0 0 2500 2500"
       viewBox="0 0 2500 2500"
-      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path

@@ -2,13 +2,7 @@ import React, { CSSProperties, FC } from 'react';
 
 const facebook = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="126.445 2.281 589 589"
-      width={props.width}
-      height={props.height}
-      {...props}
-    >
+    <svg viewBox="126.445 2.281 589 589" {...props}>
       <circle
         cx="420.945"
         cy="296.781"
