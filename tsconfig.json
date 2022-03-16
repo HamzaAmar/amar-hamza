@@ -32,7 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     // "**/*.js",
-    "declarations.d.ts"
+    "declarations.d.ts",
+    "src/helpers/context.jsx"
   ],
   "exclude": ["node_modules", "scripts/*"]
 }

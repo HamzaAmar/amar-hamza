@@ -101,9 +101,7 @@ const Contact = () => {
           }
         },
       )
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   return (
@@ -163,7 +161,6 @@ const Contact = () => {
                 label="Email"
                 type="email"
                 onChange={onChange}
-                // leftIcon={}
                 placeholder="type your name"
                 required
                 icon={<Email />}

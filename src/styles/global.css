@@ -13,10 +13,6 @@
   --color-background-main: #e4e4e4;
   --color-background-light: #f1f1f1;
 
-  /* --color-primary-light: #b759ee;
-  --color-primary-main: #a734ea;
-  --color-primary-dark: #69109d; */
-
   --color-primary-light: #5973e7;
   --color-primary-main: #1a3199;
   --color-primary-dark: #051d85;
@@ -148,6 +144,14 @@ textarea,
 select,
 button {
   font: inherit;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: none;
+  appearance: none;
+  cursor: pointer;
 }
 
 code {
