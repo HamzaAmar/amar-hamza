@@ -7,7 +7,7 @@ import {
   Skill,
   Article,
 } from '@components/ui';
-import { Layout } from '@components/core';
+import { Layout } from '@components/common';
 import { getAllFilesFrontMatter } from '@lib/mdx';
 import { GetStaticProps } from 'next';
 import PostType from '@type/post';

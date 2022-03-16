@@ -1,4 +1,5 @@
-export { default as Footer } from './footer';
-export { default as Header } from './header';
-export { default as Layout } from './layout';
-export { default as ReadingLayout } from './readingLayout';
+export { default as Alert } from './alert';
+export { default as Button } from './button';
+export { default as Input } from './input';
+export { default as Loading } from './loading';
+export { default as Textarea } from './textarea';

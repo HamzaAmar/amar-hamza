@@ -1,4 +1,4 @@
-import React, { useState, InputHTMLAttributes } from 'react';
+import React, { useState } from 'react';
 
 import styles from './formContainer.module.css';
 

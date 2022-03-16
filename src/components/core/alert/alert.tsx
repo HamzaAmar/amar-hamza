@@ -1,5 +1,4 @@
 import React, { useState, ReactNode } from 'react';
-import cn from 'classnames';
 import {
   Success,
   Notification,
@@ -25,15 +24,11 @@ const Alert = ({ variant, message }: AlertProps) => {
   const Icon: ReactNode = variant[0].toUpperCase() + variant.slice(1);
   const [open, setOpen] = useState(true);
 
-  const rootClassName = cn(styles.root, {
-    [styles.success]: variant === 'success',
-    [styles.warning]: variant === 'warning',
-    [styles.danger]: variant === 'danger',
-    [styles.info]: variant === 'info',
-    [styles.close]: open === false,
-  });
   return (
-    <div className={rootClassName}>
+    <div
+      data-close={open === false}
+      className={`${styles.root} ${styles[variant]}`}
+    >
       {/* <div className={styles.rightIconContainer}>{Icon[variant]}</div> */}
       <div className={styles.textContainer}>
         <p className={styles.text}>

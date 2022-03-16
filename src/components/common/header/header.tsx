@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import Link from 'next/link';
-import cn from 'classnames';
 import { Menu, TypeScript } from '@components/icons';
 import MENU from '@constants/menu';
 import { Switcher } from '@components/ui';
@@ -20,13 +19,12 @@ const Item = ({ name, path, pathname, mobile }: ItemProps) => {
   const isCurrentLink = pathname === path;
   const currentLink = isCurrentLink ? 'page' : false;
 
-  const classNames = cn(styles.item, {
-    [styles.activeLink]: isCurrentLink,
-    [styles.mobile]: mobile,
-  });
-
   return (
-    <li className={classNames}>
+    <li
+      className={styles.item}
+      data-current={isCurrentLink}
+      data-mobile={mobile}
+    >
       <Link href={path}>
         <a aria-current={currentLink} className={styles.itemLink}>
           {name}
@@ -92,9 +90,8 @@ const Header = () => {
         </div>
       </header>
       <nav
-        className={cn(styles.menuMobile, {
-          [styles.visible]: visible === true,
-        })}
+        className={styles.menuMobile}
+        data-visible={visible === true}
       >
         <button
           type="button"

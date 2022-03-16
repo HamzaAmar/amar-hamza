@@ -160,7 +160,6 @@
 // export default CursorCore;
 
 import React, { useEffect, useState } from 'react';
-import cn from 'classnames';
 
 import styles from './cursor.module.css';
 
@@ -203,11 +202,13 @@ const Cursor = () => {
     setPosition({ x: clientX, y: clientY });
   }
 
-  const root = cn(styles.cursor, styles.outer, {
-    [styles.cursorClicked]: isClicked,
-  });
-
-  return <div className={root} style={{ left: x, top: y }} />;
+  return (
+    <div
+      data-isClicked={isClicked}
+      className={`${styles.cursor} ${styles.outer}`}
+      style={{ left: x, top: y }}
+    />
+  );
 };
 
 export default Cursor;

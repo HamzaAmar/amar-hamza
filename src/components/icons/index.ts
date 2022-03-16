@@ -31,6 +31,9 @@ export { default as Moon } from './moon';
 export { default as Email } from './email';
 export { default as Call } from './call';
 export { default as Map } from './map';
+export { default as User } from './user';
+export { default as Message } from './message';
+export { default as Pen } from './pen';
 
 // Other Icon
 

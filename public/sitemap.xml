@@ -10,10 +10,6 @@
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/curriculum_vitae</loc>
-                          </url>
-                      
-                          <url>
                               <loc>https://www.miloudamar.com/hireMe</loc>
                           </url>
                       
@@ -22,7 +18,7 @@
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/blogs/[slug]</loc>
+                              <loc>https://www.miloudamar.com/resume</loc>
                           </url>
                       
                           <url>
@@ -30,7 +26,7 @@
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/challenge/[slug]</loc>
+                              <loc>https://www.miloudamar.com/blogs/[slug]</loc>
                           </url>
                       
                           <url>
@@ -38,11 +34,15 @@
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/tutorial/[slug]</loc>
+                              <loc>https://www.miloudamar.com/challenge/[slug]</loc>
                           </url>
                       
                           <url>
                               <loc>https://www.miloudamar.com/tutorial/index</loc>
+                          </url>
+                      
+                          <url>
+                              <loc>https://www.miloudamar.com/tutorial/[slug]</loc>
                           </url>
                       
           </urlset>

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Layout } from '@components/core';
-import React, { ReactNode, useState } from 'react';
+import { Layout } from '@components/common';
+import type { ReactNode } from 'react';
+import React from 'react';
 import styles from '@styles/tutorial.module.css';
 import { Css, Node, ReactIcon, TypeScript } from '@components/icons';
 import {

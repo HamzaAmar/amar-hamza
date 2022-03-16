@@ -1,4 +1,4 @@
-import { Layout } from '@components/core';
+import { Layout } from '@components/common';
 import React from 'react';
 
 const curriculumVitae = () => {

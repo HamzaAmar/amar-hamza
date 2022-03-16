@@ -1,5 +1,4 @@
-import React, { CSSProperties, FC, ReactNode } from 'react';
-import cn from 'classnames';
+import React, { ReactNode } from 'react';
 
 import style from './circleProgress.module.css';
 
@@ -18,7 +17,7 @@ const circleProgress = ({
     <div className={style.chartSvg}>
       <svg
         viewBox="0 0 36 36"
-        className={cn(style.circularChart, style[color])}
+        className={`${style.circularChart} ${style[color]}`}
         {...rest}
       >
         <path

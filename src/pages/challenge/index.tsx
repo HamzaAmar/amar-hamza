@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAllFilesFrontMatter } from '@lib/mdx';
-import { Layout } from '@components/core';
+import { Layout } from '@components/common';
 import { GetStaticProps } from 'next';
 import { Article } from '@components/ui';
 import PostType from '@type/post';

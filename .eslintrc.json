@@ -13,6 +13,7 @@
   },
   "rules": {
     "no-console": 1,
+    "react/react-in-jsx-scope": "off",
     // Enforce that a control (an interactive element) has a text label.
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md
     "jsx-a11y/control-has-associated-label": [

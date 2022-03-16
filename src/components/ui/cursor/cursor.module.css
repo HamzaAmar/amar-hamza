@@ -24,7 +24,7 @@
 .cursorHidden {
   opacity: 0;
 }
-.cursorClicked {
+.cursor[data-isClicked='true'] {
   transform: translate(-50%, -50%) scale(2);
   background-color: #fefefe;
 }

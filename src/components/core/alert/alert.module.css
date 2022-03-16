@@ -9,7 +9,7 @@
   padding: var(--spacing-md);
 }
 
-.close {
+.root[data-close='true'] {
   display: none;
 }
 

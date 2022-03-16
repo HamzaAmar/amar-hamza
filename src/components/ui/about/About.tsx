@@ -1,8 +1,7 @@
 import React from 'react';
 import { Social } from '@components/ui';
 import Link from 'next/link';
-
-import { Button } from '../form';
+import { Button } from '@components/core';
 
 import styles from './About.module.css';
 

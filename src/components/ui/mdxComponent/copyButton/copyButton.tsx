@@ -1,5 +1,5 @@
 import { Clipboard, Check } from '@components/icons';
-import React, { ButtonHTMLAttributes, useState } from 'react';
+import React from 'react';
 import { useClipboard } from '@hooks/useClipboard';
 
 interface CopyButtonProps {

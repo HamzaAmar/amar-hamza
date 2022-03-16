@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { formatDate } from '@utils/formatDate';
 import Image from 'next/image';
 import PostType from '@type/post';
-
-import { Button } from '..';
+import { Button } from '@components/core';
 
 import styles from './Article.module.css';
 

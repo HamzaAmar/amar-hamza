@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import React, { ComponentPropsWithoutRef } from 'react';
-import cn from 'classnames';
-import { Loading } from '@components/ui';
+import { Loading } from '@components/core';
 
 import styles from './button.module.css';
 import { ButtonProps } from './button.type';
@@ -28,9 +27,8 @@ const button = <C extends React.ElementType = 'button'>(
     Comp === 'button' ? (
       <>
         <span
-          className={cn(styles.iconContainer, {
-            [styles.existIconOrLoading]: icon || status === 'loading',
-          })}
+          data-loading={icon || status === 'loading'}
+          className={styles.iconContainer}
         >
           {loading}
         </span>

@@ -19,7 +19,10 @@ const Footer = () => {
         <p>Please subscribe to our web site to see all new stuff</p>
       </div>
       <div className={style.copyRight}>
-        <p>© 2020 Hamza Miloud Amar. All Rights Reserved</p>
+        <p>
+          © {new Date().getFullYear()} Hamza Miloud Amar. All Rights
+          Reserved
+        </p>
       </div>
     </div>
   );

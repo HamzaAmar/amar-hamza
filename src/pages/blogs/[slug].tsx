@@ -5,7 +5,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { GetStaticProps } from 'next';
 import { getFiles, getFileBySlug } from '@lib/mdx';
 import { components } from '@components/ui';
-import { Layout, ReadingLayout } from '@components/core';
+import { Layout, ReadingLayout } from '@components/common';
 
 interface FrontMatter {
   author: {

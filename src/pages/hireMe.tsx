@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout } from '@components/core';
-import { Input, Textarea } from '@components/ui';
+import { Layout } from '@components/common';
+import { Input, Textarea } from '@components/core';
 
 import styles from '../styles/hireMe.module.css';
 

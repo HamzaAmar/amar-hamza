@@ -5,7 +5,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { getFiles, getFileBySlug } from '@lib/mdx';
 // import { getTweets } from '@lib/twitter';
 import Image from 'next/image';
-import { ReadingLayout, Layout } from '@components/core';
+import { ReadingLayout, Layout } from '@components/common';
 import { GetStaticProps } from 'next';
 
 interface FrontMatter {

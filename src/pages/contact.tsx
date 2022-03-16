@@ -1,9 +1,18 @@
-import { Layout } from '@components/core';
-import { Call, Email, Send } from '@components/icons';
-import { Button, Input, Social, Textarea } from '@components/ui';
+import { Layout } from '@components/common';
+import {
+  Call,
+  Email,
+  Message,
+  Send,
+  User,
+  Pen,
+} from '@components/icons';
+import { Button, Input, Textarea } from '@components/core';
 import React from 'react';
 import styles from '@styles/contact.module.css';
 import { useForm } from '@hooks/useForm';
+import { Social } from '@components/ui';
+import { Main } from 'next/document';
 
 interface Data {
   message: string;
@@ -112,31 +121,19 @@ const Contact = () => {
 
           <div className={styles.infoContainer}>
             <div className={styles.itemInfo}>
-              <Call
-                width={20}
-                height={20}
-                fill="var(--color-primary-light)"
-              />
+              <Call width={20} />
               <div className={styles.infoParagraph}>
                 +212 6 3037 1320
               </div>
             </div>
             <div className={styles.itemInfo}>
-              <Email
-                width={20}
-                height={20}
-                fill="var(--color-primary-light)"
-              />
+              <Email width={20} />
               <div className={styles.infoParagraph}>
                 hamzamiloudamar@gmail.com
               </div>
             </div>
             <div className={styles.itemInfo}>
-              <Call
-                width={20}
-                height={20}
-                fill="var(--color-primary-light)"
-              />
+              <Pen width={20} />
               <div className={styles.infoParagraph}>
                 Morocco Marrakesh
               </div>
@@ -156,6 +153,7 @@ const Contact = () => {
                 label="Name"
                 onChange={onChange}
                 placeholder="type your name"
+                icon={<User />}
                 required
               />
             </div>
@@ -168,6 +166,7 @@ const Contact = () => {
                 // leftIcon={}
                 placeholder="type your name"
                 required
+                icon={<Email />}
               />
             </div>
             <div className={styles.inputContainer}>
@@ -177,6 +176,7 @@ const Contact = () => {
                 onChange={onChange}
                 placeholder="type your name"
                 required
+                icon={<Message width={22} />}
               />
             </div>
             <div className={styles.inputContainer}>
@@ -186,6 +186,7 @@ const Contact = () => {
                 onChange={onChange}
                 placeholder="type your Message"
                 required
+                icon={<Message />}
               />
             </div>
             <div className={styles.inputContainer}>
