@@ -1,38 +1,36 @@
 .root {
-  font-size: 1.125rem;
-  border: none;
-  padding: 0.5em 1.5em;
-  font-family: inherit;
-  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.25em 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 6rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  outline: none;
   user-select: none;
-  display: inline-block;
-  border: 3px solid transparent;
-  background: transparent;
+  border: var(--border, 2px solid transparent);
   border-radius: 0.25rem;
+
+  background: var(--background);
+  color: var(--color);
 }
 
 .contained {
-  background: var(--color-primary-main);
-  color: white;
+  --background: var(--color-primary-main);
+  --color: white;
 }
 
 .outline {
-  color: var(--color-primary-light);
+  --color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
 }
 .text {
-  color: var(--color-primary-light);
+  --color: var(--color-primary-light);
 }
 .outline:hover,
 .text:hover {
-  color: white;
-  background: var(--color-primary-main);
+  --color: white;
+  --background: var(--color-primary-main);
 }
 
 .iconContainer[data-loading] {
@@ -46,6 +44,7 @@
 
 .root:focus {
   border-color: var(--color-primary-light);
+  box-shadow: 0 0 0.5rem var(--color-primary-light);
 }
 
 .root:disabled {
