@@ -26,7 +26,7 @@ const About = () => {
               <Button as="a">Hire Me</Button>
             </Link>
             <Link href="/resume" passHref>
-              <Button variant="text" as="a">
+              <Button variant="outline" as="a">
                 Resume
               </Button>
             </Link>
