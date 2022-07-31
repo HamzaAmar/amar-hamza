@@ -1,0 +1,23 @@
+.container,
+.avatar {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+}
+
+/* Avatar Size Section Style Start */
+
+.avatar--sm {
+  --size: 1.5rem;
+}
+.avatar--md {
+  --size: 2.5rem;
+}
+.avatar--lg {
+  --size: 3.5rem;
+}
+.avatar--fluid {
+  --size: 100%;
+}
+
+/* Avatar Size Section Style End */
