@@ -1,0 +1,58 @@
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  color: var(--color-grey-1000);
+  background-color: var(--color-grey-100);
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  outline: 1px solid slategrey;
+  border-radius: 2px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-danger);
+}
+
+ul {
+  list-style: none;
+}
