@@ -1,0 +1,13 @@
+/*
+  Circle Utility Class
+
+  --circle-size variable for width and height because to make a circle we need equal size and height
+  working with css variables is better than aspect ratio because is better in support
+*/
+
+.u_circle {
+  width: var(--circe-size, 3rem);
+  height: var(--circe-size, 3rem);
+  flex: auto;
+  border-radius: 50%;
+}
