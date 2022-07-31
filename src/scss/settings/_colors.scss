@@ -1,0 +1,96 @@
+//  Color  Variables
+:root {
+  --color-grey-100: hsl(0, 0%, 95%);
+  --color-grey-200: hsl(0, 0%, 85%);
+  --color-grey-300: hsl(0, 0%, 75%);
+  --color-grey-400: hsl(0, 0%, 65%);
+  --color-grey-500: hsl(0, 0%, 55%);
+  --color-grey-600: hsl(0, 0%, 45%);
+  --color-grey-700: hsl(0, 0%, 35%);
+  --color-grey-800: hsl(0, 0%, 25%);
+  --color-grey-900: hsl(0, 0%, 15%);
+  --color-grey-1000: hsl(0, 0%, 5%);
+
+  --color-primary-100: hsl(229, 75%, 85%);
+  --color-primary-200: hsl(229, 75%, 75%);
+  --color-primary-300: hsl(229, 75%, 65%);
+  --color-primary-400: hsl(229, 75%, 55%);
+  --color-primary-500: hsl(229, 75%, 45%);
+  --color-primary-600: hsl(229, 75%, 35%);
+  --color-primary-700: hsl(229, 75%, 25%);
+  --color-primary-800: hsl(229, 75%, 15%);
+  --color-primary-900: hsl(229, 75%, 5%);
+
+  --color-danger-100: hsl(0, 75%, 85%);
+  --color-danger-200: hsl(0, 75%, 75%);
+  --color-danger-300: hsl(0, 75%, 65%);
+  --color-danger-400: hsl(0, 75%, 55%);
+  --color-danger-500: hsl(0, 75%, 45%);
+  --color-danger-600: hsl(0, 75%, 35%);
+  --color-danger-700: hsl(0, 75%, 25%);
+  --color-danger-800: hsl(0, 75%, 15%);
+  --color-danger-900: hsl(0, 75%, 5%);
+
+  --color-warning-100: hsl(15, 75%, 85%);
+  --color-warning-200: hsl(15, 75%, 75%);
+  --color-warning-300: hsl(15, 75%, 65%);
+  --color-warning-400: hsl(15, 75%, 55%);
+  --color-warning-500: hsl(15, 75%, 45%);
+  --color-warning-600: hsl(15, 75%, 35%);
+  --color-warning-700: hsl(15, 75%, 25%);
+  --color-warning-800: hsl(15, 75%, 15%);
+  --color-warning-900: hsl(15, 75%, 5%);
+
+  --color-success-100: hsl(150, 75%, 85%);
+  --color-success-200: hsl(150, 75%, 75%);
+  --color-success-300: hsl(150, 75%, 65%);
+  --color-success-400: hsl(150, 75%, 55%);
+  --color-success-500: hsl(150, 75%, 45%);
+  --color-success-600: hsl(150, 75%, 35%);
+  --color-success-700: hsl(150, 75%, 25%);
+  --color-success-800: hsl(150, 75%, 15%);
+  --color-success-900: hsl(150, 75%, 5%);
+}
+
+[data-theme='dark'] {
+  --color-grey-100: hsl(0, 0%, 5%);
+  --color-grey-200: hsl(0, 0%, 15%);
+  --color-grey-300: hsl(0, 0%, 25%);
+  --color-grey-400: hsl(0, 0%, 35%);
+  --color-grey-500: hsl(0, 0%, 45%);
+  --color-grey-600: hsl(0, 0%, 55%);
+  --color-grey-700: hsl(0, 0%, 65%);
+  --color-grey-800: hsl(0, 0%, 75%);
+  --color-grey-900: hsl(0, 0%, 85%);
+  --color-grey-1000: hsl(0, 0%, 95%);
+
+  --color-primary-100: hsl(229, 55%, 85%);
+  --color-primary-200: hsl(229, 55%, 75%);
+  --color-primary-300: hsl(229, 55%, 65%);
+  --color-primary-400: hsl(229, 55%, 55%);
+  --color-primary-500: hsl(229, 55%, 45%);
+  --color-primary-600: hsl(229, 55%, 35%);
+  --color-primary-700: hsl(229, 55%, 25%);
+  --color-primary-800: hsl(229, 55%, 15%);
+  --color-primary-900: hsl(229, 55%, 5%);
+
+  --color-success-100: hsl(150, 55%, 85%);
+  --color-success-200: hsl(150, 55%, 75%);
+  --color-success-300: hsl(150, 55%, 65%);
+  --color-success-400: hsl(150, 55%, 55%);
+  --color-success-500: hsl(150, 55%, 45%);
+  --color-success-600: hsl(150, 55%, 35%);
+  --color-success-700: hsl(150, 55%, 25%);
+  --color-success-800: hsl(150, 55%, 15%);
+  --color-success-900: hsl(150, 55%, 5%);
+
+  --color-warning-100: hsl(15, 55%, 85%);
+  --color-warning-200: hsl(15, 55%, 75%);
+  --color-warning-300: hsl(15, 55%, 65%);
+  --color-warning-400: hsl(15, 55%, 55%);
+  --color-warning-500: hsl(15, 55%, 45%);
+  --color-warning-600: hsl(15, 55%, 35%);
+  --color-warning-700: hsl(15, 55%, 25%);
+  --color-warning-800: hsl(15, 55%, 15%);
+  --color-warning-900: hsl(15, 55%, 5%);
+}
