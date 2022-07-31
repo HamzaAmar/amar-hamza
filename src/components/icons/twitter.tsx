@@ -1,23 +1,19 @@
-import React from 'react';
+import type { SVGProps } from 'react';
 
-const twitter = (props: React.SVGProps<SVGSVGElement>) => {
-  return (
-    <svg
-      enableBackground="new 0 0 24 24"
-      viewBox="0 0 24 24"
-      width={props.width}
-      height={props.height}
-      fill="currentColor"
-      {...props}
-    >
-      <path d="m21.534 7.113c.976-.693 1.797-1.558 2.466-2.554v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724 0-4.917 2.211-4.917 4.921 0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487 0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403 0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683 0 14.342-7.244 13.986-14.637z" />
-    </svg>
-  );
-};
-
-twitter.defaultProps = {
-  width: 30,
-  height: 30,
-};
+const twitter = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      d="M22 4c-1 .5-2 .7-3 1-1.1-1.3-2.8-1.3-4.4-.7A4 4 0 0 0 12 8v1a9.4 9.4 0 0 1-8-4s-4.2 7.4 4 11a9.9 9.9 0 0 1-6 2c3.3 1.8 7 2.4 10 1.5a11 11 0 0 0 7.7-7.7c.3-1.2.5-2.5.5-3.8 0-.2 1.5-2.7 1.8-4v0Z"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export default twitter;

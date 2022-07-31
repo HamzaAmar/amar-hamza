@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-const fast = (props: SVGProps<SVGSVGElement>) => (
+const accessible = (props: SVGProps<SVGSVGElement>) => (
   <svg
     fill="none"
     stroke="currentColor"
@@ -10,9 +10,9 @@ const fast = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 24 24"
     {...props}
   >
-    <path d="M12 15a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm1.4-3.4 2.1-2.1" />
-    <path d="M6.4 20a9 9 0 1 1 11.2 0H6.4Z" />
+    <path d="M17 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm-8 3a5 5 0 1 0 4 8" />
+    <path d="m19 20-4-5h-4l3-5-4-3-4 1" />
   </svg>
 );
 
-export default fast;
+export default accessible;

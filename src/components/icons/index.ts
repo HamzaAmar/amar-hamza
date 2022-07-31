@@ -19,8 +19,14 @@ export { default as Graphql } from './graphql';
 export { default as Mongodb } from './mongodb';
 export { default as Express } from './express';
 export { default as Gatsby } from './gatsby';
-export { default as BackEnd } from './backend';
-export { default as FrontEnd } from './frontend';
+export { default as Accessible } from './accessible';
+export { default as Ui } from './ui';
+export { default as Remix } from './remix';
+
+// language Icons
+export { default as French } from './frensh';
+export { default as English } from './english';
+export { default as Arabic } from './arabic';
 
 // Dark Light Mode Icons
 export { default as Sun } from './sun';
@@ -34,6 +40,9 @@ export { default as Map } from './map';
 export { default as User } from './user';
 export { default as Message } from './message';
 export { default as Pen } from './pen';
+export { default as Globe } from './globe';
+export { default as List } from './list';
+export { default as Level } from './level';
 
 // Other Icon
 
@@ -47,3 +56,7 @@ export { default as Send } from './send';
 export { default as Menu } from './menu';
 export { default as Clipboard } from './clipboard';
 export { default as Check } from './check';
+export { default as File } from './file';
+export { default as Heart } from './heart';
+export { default as Layout } from './layout';
+export { default as Bookmark } from './bookmark';

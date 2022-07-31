@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-const facebook = (props: SVGProps<SVGSVGElement>) => (
+const bookmark = (props: SVGProps<SVGSVGElement>) => (
   <svg
     fill="none"
     stroke="currentColor"
@@ -8,7 +8,7 @@ const facebook = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2H7Z"
+      d="M9 4h6a2 2 0 0 1 2 2v14l-5-3-5 3V6a2 2 0 0 1 2-2Z"
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -16,4 +16,4 @@ const facebook = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export default facebook;
+export default bookmark;
