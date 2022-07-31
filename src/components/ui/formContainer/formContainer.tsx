@@ -1,12 +1,12 @@
+import { Text } from '@components/core';
 import React, { useState } from 'react';
-
-import styles from './formContainer.module.css';
 
 interface FormContainerProps {
   label: string;
   name?: string;
   children: React.ReactNode;
   required?: boolean;
+  error?: string;
 }
 
 const FormContainer = ({
@@ -14,30 +14,29 @@ const FormContainer = ({
   label,
   children,
   required,
+  error,
 }: FormContainerProps) => {
-  const [message, setMessage] = useState<string | null>(null);
-
   const requiredSign = required ? (
-    <abbr className={styles.abbr} title={`${name} field is required`}>
+    <abbr
+      className="form-container--abbr"
+      title={`${name} field is required`}
+    >
       *
     </abbr>
   ) : null;
 
-  const messageError = message ? (
-    <div className={styles.messageContainer}>
-      <small className={styles.message}>{message}</small>
+  const messageError = error ? (
+    <div className="form-container--message">
+      <Text variant="caption">{error}</Text>
     </div>
   ) : null;
 
   return (
-    <div className={styles.formElement}>
-      <div className={styles.formElementContainer}>
-        <label className={styles.label}>
-          {label} {requiredSign}
-        </label>
-        {children}
-      </div>
-
+    <div className="form-container">
+      <label className="form-container--label">
+        {label} {requiredSign}
+      </label>
+      {children}
       {messageError}
     </div>
   );

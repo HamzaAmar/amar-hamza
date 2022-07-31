@@ -1,0 +1,24 @@
+.form-container {
+  position: relative;
+  padding-bottom: 1rem;
+}
+.form-container--label {
+  font-weight: 500;
+  --flow-gap: 0.5rem;
+}
+
+.form-container--message {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  color: var(--color-danger-400);
+}
+.form-container--abbr {
+  color: var(--color-danger-400);
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  // text-decoration: none;
+}

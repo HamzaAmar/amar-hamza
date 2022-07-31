@@ -1,53 +1,35 @@
-.chartSvg {
+.svg-chart {
   position: relative;
   max-width: 90px;
   min-width: 40px;
 }
 
-.circleBg {
+.circle-chart--stroke {
   fill: none;
   stroke-width: 1.2;
-  stroke: var(--color-background-main);
+  stroke: var(--color-grey-500);
 }
 
-.circularChart {
+.circle-chart {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.pink .circle {
-  stroke: pink;
-}
-.orange .circle {
-  stroke: #daa45c;
-}
-.purple .circle {
-  stroke: purple;
-}
-.red .circle {
-  stroke: red;
-}
-.green .circle {
-  stroke: green;
-}
-.yellow .circle {
-  stroke: yellow;
-}
 
-.circle {
+.circle-chart--progress {
   fill: none;
   stroke-width: 1.6;
   stroke-linecap: round;
   animation: progress 1s ease-out forwards;
+  stroke: var(--shared-color-500);
 }
 
-.percentage {
-  fill: var(--color-text);
+.circle-chart--text {
+  fill: var(--color-grey-1000);
   font-size: 0.4rem;
   text-anchor: middle;
   font-weight: 400;
-  color: white;
 }
 @keyframes progress {
   0% {

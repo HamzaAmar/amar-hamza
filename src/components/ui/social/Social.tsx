@@ -1,7 +1,7 @@
 import React from 'react';
+import { IconButton } from '@components/core';
 import SOCIALS from '@constants/socialMenu';
 
-import styles from './social.module.css';
 import SocialProps from './social.type';
 
 const Social = ({
@@ -9,20 +9,18 @@ const Social = ({
   direction = 'horizontal',
 }: SocialProps) => {
   return (
-    <ul
-      className={`${styles.socials} ${styles[direction]} ${className}`}
-    >
+    <ul className={`socials socials__${direction} ${className}`}>
       {SOCIALS.map(({ id, icon, link, name }) => (
-        <li key={id} className={styles.socialItem}>
-          <a
+        <li key={id}>
+          <IconButton
+            as="a"
             href={link}
             target="_blank"
-            className={styles.socialItemLink}
             rel="noreferrer"
             aria-label={`${name} icon`}
           >
             {icon}
-          </a>
+          </IconButton>
         </li>
       ))}
     </ul>
