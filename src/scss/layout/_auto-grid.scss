@@ -1,0 +1,13 @@
+.l_grid {
+  display: grid;
+  gap: min(3vw, 2rem);
+  --minimum: 20ch;
+}
+@supports (width: min(var(--minimum), 100%)) {
+  .l_grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--minimum), 100%), 1fr)
+    );
+  }
+}
