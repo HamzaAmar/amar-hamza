@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import React, { ComponentPropsWithoutRef } from 'react';
 import { Loading } from '@components/core';
+import { classnames } from '@utils/classnames';
 
-import styles from './button.module.css';
 import { ButtonProps } from './button.type';
 
-const button = <C extends React.ElementType = 'button'>(
+export const Button = <C extends React.ElementType = 'button'>(
   props: ButtonProps<C> &
     Omit<ComponentPropsWithoutRef<C>, keyof ButtonProps<C>>,
 ) => {
@@ -15,20 +15,25 @@ const button = <C extends React.ElementType = 'button'>(
     variant = 'contained',
     className,
     as: Comp = 'button',
+    size = 'md',
     status = 'idle',
+    color = 'primary',
     ...rest
   } = props;
 
   const loading = status === 'loading' ? <Loading /> : icon;
 
-  const rootStyle = `${styles.root} ${styles[variant]} ${className}`;
+  const style = classnames(
+    `btn btn--${variant} btn--${size} u_${color}`,
+    { [className!]: Boolean(className) },
+  );
 
   const newChild =
     Comp === 'button' ? (
       <>
         <span
           data-loading={icon || status === 'loading'}
-          className={styles.iconContainer}
+          className="iconContainer"
         >
           {loading}
         </span>
@@ -39,10 +44,26 @@ const button = <C extends React.ElementType = 'button'>(
     );
 
   return (
-    <Comp className={rootStyle} {...rest}>
+    <Comp {...style} {...rest}>
       {newChild}
     </Comp>
   );
 };
 
-export default button;
+export const IconButton = <C extends React.ElementType = 'button'>(
+  props: ButtonProps<C> &
+    Omit<ComponentPropsWithoutRef<C>, keyof ButtonProps<C>>,
+) => {
+  const {
+    icon,
+    className,
+    size = 'md',
+    as: Comp = 'button',
+    color = 'primary',
+    ...rest
+  } = props;
+
+  const rootStyle = `btn btn--icon btn--outline btn--${size} u_${color}  ${className}`;
+
+  return <Comp className={rootStyle} icon={icon} {...rest} />;
+};

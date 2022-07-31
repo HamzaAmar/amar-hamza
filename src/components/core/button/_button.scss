@@ -1,0 +1,112 @@
+.btn {
+  // box Modal
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xs) var(--space-2xs);
+  min-width: 5rem;
+  border-radius: 0.25rem;
+  border: var(--border, 2px solid transparent);
+  outline: 2px solid transparent;
+  appearance: none;
+  cursor: pointer;
+
+  // Typography
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color, white);
+  white-space: nowrap;
+
+  background-color: var(--background);
+  transition: transform 0.3s;
+  user-select: none;
+}
+
+.btn:not([class='btn--icon']):hover {
+  background: var(--shared-color-400);
+  transform: translateY(-0.5px);
+  color: white;
+  border-color: var(--shared-color-400);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-grey-100),
+    0 0 0 5px var(--color-primary-500),
+    0 0 0.75em var(--color-primary-100);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.btn:disabled {
+  box-shadow: 0 1px 0 1px var(--color-primary-dark);
+  background: var(--color-grey-800);
+}
+
+.btn--contained {
+  --background: var(--shared-color-500);
+}
+
+.btn--outline {
+  --color: var(--shared-color-500);
+  border-color: currentColor;
+}
+.btn--text {
+  --color: var(--shared-color-500);
+}
+
+.iconContainer[data-loading] {
+  margin-right: 0.75rem;
+}
+
+/* ICON Button Section Start */
+
+/* Root Style Section Start */
+
+.btn--icon {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  border: 1px solid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  color: var(--background);
+  padding: 0;
+  min-width: auto;
+}
+
+.btn--icon svg {
+  width: calc(var(--size) * 0.5);
+}
+
+.btn--icon:hover {
+  background: var(--shared-color-100);
+}
+
+/* Root Style Section End */
+
+/* Root Style Size Start */
+
+.btn--sm {
+  --size: 2rem;
+}
+
+.btn--md {
+  --size: 2.5rem;
+}
+
+.btn--lg {
+  --size: 3rem;
+}
+
+/* Root Style Size End */
+
+.btn--fluid {
+  display: flex;
+  width: 100%;
+}
+
+/* ICON Button Section End */
