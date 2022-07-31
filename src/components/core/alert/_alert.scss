@@ -1,0 +1,19 @@
+.alert {
+  // Layout Style Start
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // Layout Style End
+
+  background-color: var(--shared-color-200);
+  color: var(--shared-color-800);
+
+  // Box Style Start
+  width: 90%;
+  padding: var(--spacing-md);
+  // Box Style End
+}
+
+.alert[data-close='true'] {
+  display: none;
+}

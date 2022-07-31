@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useState } from 'react';
 import {
   Success,
   Notification,
@@ -7,41 +7,32 @@ import {
   Close,
 } from '@components/icons';
 
-import styles from './alert.module.css';
+import { Button, Text } from '..';
 
-interface AlertProps {
-  variant: 'success' | 'warning' | 'danger' | 'info';
-  message: string;
-}
+import { AlertProps } from './alert.type';
 
-const Icon = {
-  success: <Success width="25" height="25" />,
-  notification: <Notification width="25" height="25" />,
-  warning: <Warning width="25" height="25" />,
-  danger: <Danger width="25" height="25" />,
-};
+// const Icon = {
+//   success: <Success width="25" height="25" />,
+//   notification: <Notification width="25" height="25" />,
+//   warning: <Warning width="25" height="25" />,
+//   danger: <Danger width="25" height="25" />,
+// };
+
 const Alert = ({ variant, message }: AlertProps) => {
-  const Icon: ReactNode = variant[0].toUpperCase() + variant.slice(1);
+  // const Icon: ReactNode = variant[0].toUpperCase() + variant.slice(1);
   const [open, setOpen] = useState(true);
 
   return (
     <div
       data-close={open === false}
-      className={`${styles.root} ${styles[variant]}`}
+      className={`alert alert__${variant}`}
     >
-      {/* <div className={styles.rightIconContainer}>{Icon[variant]}</div> */}
-      <div className={styles.textContainer}>
-        <p className={styles.text}>
-          <strong>{variant}</strong> {message}
-        </p>
-      </div>
-      <button
-        className={styles.closeIconContainer}
-        onClick={() => setOpen(false)}
-        type="button"
-      >
+      <Text>
+        <strong>{variant}</strong> {message}
+      </Text>
+      <Button onClick={() => setOpen(false)} type="button">
         <Close fill="white" width="10" height="10" />
-      </button>
+      </Button>
     </div>
   );
 };
