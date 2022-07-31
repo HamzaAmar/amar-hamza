@@ -1,5 +1,8 @@
 export { default as Alert } from './alert';
-export { default as Button } from './button';
-export { default as Input } from './input';
+export { Button, IconButton } from './button';
+export { Input, Textarea } from './input-field';
 export { default as Loading } from './loading';
-export { default as Textarea } from './textarea';
+export { default as Heading } from './heading';
+export { default as Text } from './text';
+export { default as Avatar } from './avatar';
+export { default as Tag } from './tag';
