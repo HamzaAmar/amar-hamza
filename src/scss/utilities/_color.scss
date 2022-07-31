@@ -1,0 +1,56 @@
+.u_primary {
+  --shared-color-100: var(--color-primary-100);
+  --shared-color-200: var(--color-primary-200);
+  --shared-color-300: var(--color-primary-300);
+  --shared-color-400: var(--color-primary-400);
+  --shared-color-500: var(--color-primary-500);
+  --shared-color-600: var(--color-primary-600);
+  --shared-color-700: var(--color-primary-700);
+  --shared-color-800: var(--color-primary-800);
+  --shared-color-900: var(--color-primary-900);
+}
+.u_secondary {
+  --shared-color-100: hsl(0, 0%, 5%);
+  --shared-color-200: hsl(0, 0%, 10%);
+  --shared-color-300: hsl(0, 0%, 15%);
+  --shared-color-400: hsl(0, 0%, 20%);
+  --shared-color-500: hsl(0, 0%, 25%);
+  --shared-color-600: hsl(0, 0%, 30%);
+  --shared-color-700: hsl(0, 0%, 35%);
+  --shared-color-800: hsl(0, 0%, 40%);
+  --shared-color-900: hsl(0, 0%, 45%);
+  --shared-color-1000: hsl(0, 0%, 50%);
+}
+.u_danger {
+  --shared-color-100: var(--color-danger-100);
+  --shared-color-200: var(--color-danger-200);
+  --shared-color-300: var(--color-danger-300);
+  --shared-color-400: var(--color-danger-400);
+  --shared-color-500: var(--color-danger-500);
+  --shared-color-600: var(--color-danger-600);
+  --shared-color-700: var(--color-danger-700);
+  --shared-color-800: var(--color-danger-800);
+  --shared-color-900: var(--color-danger-900);
+}
+.u_success {
+  --shared-color-100: var(--color-success-100);
+  --shared-color-200: var(--color-success-200);
+  --shared-color-300: var(--color-success-300);
+  --shared-color-400: var(--color-success-400);
+  --shared-color-500: var(--color-success-500);
+  --shared-color-600: var(--color-success-600);
+  --shared-color-700: var(--color-success-700);
+  --shared-color-800: var(--color-success-800);
+  --shared-color-900: var(--color-success-900);
+}
+.u_warning {
+  --shared-color-100: var(--color-warning-100);
+  --shared-color-200: var(--color-warning-200);
+  --shared-color-300: var(--color-warning-300);
+  --shared-color-400: var(--color-warning-400);
+  --shared-color-500: var(--color-warning-500);
+  --shared-color-600: var(--color-warning-600);
+  --shared-color-700: var(--color-warning-700);
+  --shared-color-800: var(--color-warning-800);
+  --shared-color-900: var(--color-warning-900);
+}
