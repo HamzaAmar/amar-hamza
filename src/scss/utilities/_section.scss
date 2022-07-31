@@ -1,0 +1,9 @@
+.section {
+  --flow-gap: 3rem;
+  padding: 5vmin 5vw;
+  background: var(--color-grey-100);
+}
+
+.section:nth-child(even) {
+  background-color: var(--color-grey-200);
+}

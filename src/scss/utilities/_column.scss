@@ -1,0 +1,5 @@
+.u_column {
+  display: flex;
+  gap: var(--column-gap, 1rem);
+  align-items: center;
+}
