@@ -1,11 +1,9 @@
 import React from 'react';
 
-import style from './footer.module.css';
-
 const Footer = () => {
   return (
-    <div className={style.container}>
-      <div className={style.contact}>
+    <div className="footer">
+      <div className="footer--contact">
         <h2>Thank you</h2>
         <p>
           Hello thank you for the visit if you like my website and you
@@ -14,11 +12,11 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className={style.subscription}>
+      <div className="footer--subscription">
         <h2>Join the Newsletter</h2>
         <p>Please subscribe to our web site to see all new stuff</p>
       </div>
-      <div className={style.copyRight}>
+      <div className="footer--copy-right">
         <p>
           © {new Date().getFullYear()} Hamza Miloud Amar. All Rights
           Reserved

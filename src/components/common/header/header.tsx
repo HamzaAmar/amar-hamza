@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { Menu, TypeScript } from '@components/icons';
 import MENU from '@constants/menu';
 import { Switcher } from '@components/ui';
+import { Button, Text } from '@components/core';
 import { useRouter } from 'next/router';
-
-import styles from './header.module.css';
 
 interface ItemProps {
   name: string;
@@ -20,13 +19,12 @@ const Item = ({ name, path, pathname, mobile }: ItemProps) => {
   const currentLink = isCurrentLink ? 'page' : false;
 
   return (
-    <li
-      className={styles.item}
-      data-current={isCurrentLink}
-      data-mobile={mobile}
-    >
+    <li className="header__item" data-mobile={mobile}>
       <Link href={path}>
-        <a aria-current={currentLink} className={styles.itemLink}>
+        <a
+          aria-current={currentLink}
+          className="header__itemLink u_bothCenter"
+        >
           {name}
         </a>
       </Link>
@@ -47,25 +45,22 @@ const Header = () => {
   const pathname = getFirstPathInTheUrl(router.pathname);
 
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <Link href="/">
-            <a className={styles.logoContent}>
-              <TypeScript
-                width={25}
-                height={25}
-                style={{
-                  marginRight: '0.7rem',
-                  borderRadius: '0.2rem',
-                }}
-              />
-              <div className={styles.name}>amar</div>
-              <div className={styles.extension}>.tsx</div>
-            </a>
-          </Link>
-        </div>
-        <ul className={styles.nav}>
+    <header className="header">
+      <Link href="/">
+        <a className="header__logo u_bothCenter">
+          <TypeScript
+            width={25}
+            height={25}
+            style={{
+              marginRight: '0.7rem',
+              borderRadius: '0.2rem',
+            }}
+          />
+          <Text variant="subheading1">Hamza Amar</Text>
+        </a>
+      </Link>
+      <nav className="header__nav">
+        <ul className="header__list">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -77,30 +72,27 @@ const Header = () => {
             );
           })}
         </ul>
-        <div className={styles.rightSide}>
-          <button
-            type="button"
-            className={`${styles.menuMobileIcon}`}
-            onClick={() => setVisible(true)}
-            aria-label="Toggle Menu"
-          >
-            <Menu width="30" focusable="false" aria-hidden="true" />
-          </button>
-          <Switcher />
-        </div>
-      </header>
-      <nav
-        className={styles.menuMobile}
-        data-visible={visible === true}
-      >
+      </nav>
+      <div className="header__actions">
         <button
           type="button"
-          className={styles.closeMenu}
+          // className={`${styles.menuMobileIcon}`}
+          onClick={() => setVisible(true)}
+          aria-label="Toggle Menu"
+        >
+          <Menu width="30" focusable="false" aria-hidden="true" />
+        </button>
+        <Switcher />
+      </div>
+      <nav className="header__mobile" data-visible={visible === true}>
+        <Button
+          type="button"
+          variant="outline"
           onClick={() => setVisible(false)}
         >
           Close
-        </button>
-        <ul className={styles.menuMobileList}>
+        </Button>
+        <ul className="header__mobileList u_bothCenter">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -114,7 +106,7 @@ const Header = () => {
           })}
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 

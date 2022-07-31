@@ -1,0 +1,133 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  padding: 0 3vw;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-grey-200);
+  box-shadow: var(--shadow-md);
+  grid-area: header;
+  font-weight: 500;
+}
+.header__nav,
+.header__list,
+.header__item:not([data-mobile='true']),
+.header__itemLink {
+  height: 100%;
+}
+
+.header__list {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  flex: 0 0 45%;
+  align-self: stretch;
+}
+
+.header__item {
+  padding: 0 0.25rem;
+}
+
+.header__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+
+.header__itemLink {
+  font-size: 1em;
+  padding: 0 1rem;
+  overflow: hidden;
+  position: relative;
+  min-width: 3rem;
+  cursor: pointer;
+}
+
+.header__itemLink:focus {
+  box-shadow: inset 0 0 1rem 1px var(--color-primary-300);
+}
+
+// .header__itemLink[data-mobile='true'] {
+//   font-size: 2rem;
+//   margin-bottom: 1.25em;
+//   font-weight: 600;
+// }
+// .header__itemLink[data-mobile='true']:hover {
+//   color: var(--color-primary-300);
+// }
+// header__itemLink:not([data-mobile='true'])::after
+.header__itemLink:not([data-mobile='true'])::after {
+  --height: 3px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--height);
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-300),
+    var(--color-primary-500)
+  );
+
+  transform: translateX(-105%);
+  transition: transform 0.4s ease-in-out;
+  border-radius: var(--height);
+}
+
+.header__itemLink:hover::after,
+.header__itemLink[aria-current='page']::after,
+.header__itemLink:focus::after {
+  transform: translateX(0);
+}
+
+.header__itemLink[aria-current='page'] > .itemLink {
+  color: var(--color-primary-300);
+}
+
+.header__mobile {
+  visibility: hidden;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: transform 0.25s, opacity 0.25s;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform-origin: left top;
+  background-color: var(--color-grey-100);
+  z-index: 4;
+}
+.header__mobile[data-visible='true'] {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.header__mobileList {
+  flex-direction: column;
+  height: 100%;
+}
+
+.menuMobileIcon {
+  padding: 0.5rem;
+  display: none;
+  color: currentColor;
+}
+
+@media (max-width: 600px) {
+  .header__nav {
+    display: none;
+  }
+  .menuMobileIcon {
+    display: inline-block;
+  }
+}
