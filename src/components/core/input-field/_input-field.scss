@@ -1,0 +1,51 @@
+.input-field--container {
+  position: relative;
+  overflow: hidden;
+  --width: 2rem;
+  border-radius: 0.25em;
+}
+
+.input-field--container input {
+  height: 2.75rem;
+}
+
+.input-field {
+  padding-left: calc(var(--width) + 1rem);
+  color: var(--color-text);
+  border: none;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: var(--color-grey-100);
+  border: 2px solid var(--color-grey-200);
+}
+
+.input-field:focus,
+.input-field:hover {
+  border-color: var(--color-primary-500);
+}
+//  only for high contrast mode
+.input-field:focus {
+  outline: 2px solid transparent;
+}
+
+.input-field[data-error='true'] {
+  color: var(--color-danger-500);
+  border-color: var(--color-danger-500);
+}
+
+.input-field--icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 2;
+  width: var(--width);
+  height: 100%;
+}
+
+.input-field + .input-field--icon {
+  color: grey;
+  width: 1.5rem;
+  height: 1.5rem;
+}
