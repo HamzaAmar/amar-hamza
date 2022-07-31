@@ -1,0 +1,12 @@
+.u_multiline {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--multi-line, 4);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.u_oneline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
