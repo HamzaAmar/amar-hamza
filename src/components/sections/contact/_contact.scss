@@ -1,0 +1,37 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact--info,
+.contact--form {
+  flex: 0 1 50%;
+  padding: var(--space-sm-md);
+  display: flex;
+  flex-direction: column;
+}
+.contact--info {
+  background-color: var(--color-grey-200);
+  top: 5rem;
+  display: flex;
+  justify-content: center;
+  --flow-gap: 2rem;
+}
+.contact--form {
+  --flow-gap: 1rem;
+}
+
+.contact--heading {
+  text-decoration: underline var(--color-primary-300);
+  text-transform: uppercase;
+  text-align: start;
+}
+.contact--description {
+  max-width: min(60ch, 100%);
+}
+
+@media (max-width: 700px) {
+  .contact {
+    flex-direction: column;
+  }
+}
