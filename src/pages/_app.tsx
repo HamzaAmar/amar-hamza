@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { AppProps } from 'next/app';
-import '@styles/global.css';
+import '@scss/main.scss';
 import { useRouter } from 'next/router';
 import { ThemeProvider } from 'next-themes';
 
