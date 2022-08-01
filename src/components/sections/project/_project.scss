@@ -9,6 +9,10 @@
 .project--image-container {
   grid-column: 1 / 2;
 }
+.project--image {
+  max-width: 300px;
+  object-fit: cover;
+}
 
 .project--header {
   --cluster-align: center;
@@ -17,7 +21,7 @@
 
 .project--info {
   --flow-gap: 1.5rem;
-  min-width: 300px;
+  min-width: 250px;
   max-width: 500px;
 }
 
