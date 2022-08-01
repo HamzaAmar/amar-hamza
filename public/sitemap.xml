@@ -10,10 +10,6 @@
                           </url>
                       
                           <url>
-                              <loc>https://www.miloudamar.com/hireMe</loc>
-                          </url>
-                      
-                          <url>
                               <loc>https://www.miloudamar.com/index</loc>
                           </url>
                       
@@ -35,14 +31,6 @@
                       
                           <url>
                               <loc>https://www.miloudamar.com/challenge/[slug]</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/tutorial/index</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/tutorial/[slug]</loc>
                           </url>
                       
           </urlset>

@@ -4,17 +4,17 @@
         <description><![CDATA[Hamza Miloud Amar]]></description>
         <link>https://www.miloudamar.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 16 Mar 2022 15:07:09 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Aug 2022 01:10:55 GMT</lastBuildDate>
         <atom:link href="https://www.miloudamar.com/feed.xml" rel="self" type="application/rss+xml"/>
-        <item>
-            <title><![CDATA[How to write dry css code]]></title>
-            <link>https://www.miloudamar.com/blog + dynamic-routing</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + dynamic-routing</guid>
-        </item>
         <item>
             <title><![CDATA[Accent Color]]></title>
             <link>https://www.miloudamar.com/blog + accent-color</link>
             <guid isPermaLink="true">https://www.miloudamar.com/blog + accent-color</guid>
+        </item>
+        <item>
+            <title><![CDATA[How to write dry css code]]></title>
+            <link>https://www.miloudamar.com/blog + dynamic-routing</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + dynamic-routing</guid>
         </item>
         <item>
             <title><![CDATA[How to make a border gradient]]></title>
@@ -22,24 +22,14 @@
             <guid isPermaLink="true">https://www.miloudamar.com/blog + gradientBorder</guid>
         </item>
         <item>
-            <title><![CDATA[Grid Part 3]]></title>
-            <link>https://www.miloudamar.com/blog + grid-3</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-3</guid>
-        </item>
-        <item>
-            <title><![CDATA[Grid Part 2]]></title>
-            <link>https://www.miloudamar.com/blog + grid-2</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-2</guid>
-        </item>
-        <item>
             <title><![CDATA[Grid Part 4]]></title>
             <link>https://www.miloudamar.com/blog + grid-4</link>
             <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-4</guid>
         </item>
         <item>
-            <title><![CDATA[Grid Part 1]]></title>
-            <link>https://www.miloudamar.com/blog + inhertence</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + inhertence</guid>
+            <title><![CDATA[Grid Part 2]]></title>
+            <link>https://www.miloudamar.com/blog + grid-2</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-2</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 5]]></title>
@@ -52,14 +42,24 @@
             <guid isPermaLink="true">https://www.miloudamar.com/blog + hello-world</guid>
         </item>
         <item>
-            <title><![CDATA[The ultimate guide to aspect ratio]]></title>
-            <link>https://www.miloudamar.com/blog + stack</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + stack</guid>
+            <title><![CDATA[Grid Part 3]]></title>
+            <link>https://www.miloudamar.com/blog + grid-3</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-3</guid>
+        </item>
+        <item>
+            <title><![CDATA[Grid Part 1]]></title>
+            <link>https://www.miloudamar.com/blog + inhertence</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + inhertence</guid>
         </item>
         <item>
             <title><![CDATA[Preview]]></title>
             <link>https://www.miloudamar.com/blog + preview</link>
             <guid isPermaLink="true">https://www.miloudamar.com/blog + preview</guid>
+        </item>
+        <item>
+            <title><![CDATA[The ultimate guide to aspect ratio]]></title>
+            <link>https://www.miloudamar.com/blog + stack</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + stack</guid>
         </item>
     </channel>
 </rss>
