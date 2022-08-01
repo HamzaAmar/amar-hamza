@@ -1,4 +1,6 @@
-function classnames(...args: any) {
+function classnames(
+  ...args: any
+): { className: string } | { [key: string]: never } {
   let newString = '';
 
   for (const arg of args) {
