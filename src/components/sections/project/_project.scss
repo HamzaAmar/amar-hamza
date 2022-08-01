@@ -1,0 +1,32 @@
+.project {
+  --cluster-justify: space-between;
+  --flow-gap: 2rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  border-radius: 0.5rem;
+}
+
+.project--image-container {
+  grid-column: 1 / 2;
+}
+
+.project--header {
+  --cluster-align: center;
+  --cluster-justify: space-between;
+}
+
+.project--info {
+  --flow-gap: 1.5rem;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.project--link {
+  --cluster-gap: 0.5rem;
+  color: var(--color-grey-900);
+  cursor: pointer;
+}
+
+.project--link:hover {
+  color: var(--color-primary-300);
+}
