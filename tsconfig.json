@@ -20,11 +20,11 @@
       // "@config/*": ["config/*"],
       "@components/*": ["./components/*"],
       "@constants/*": ["./constants/*"],
-      "@styles/*": ["./styles/*"],
       "@hooks/*": ["./hooks/*"],
       "@type/*": ["./type/*"],
       "@utils/*": ["./utils/*"],
-      "@helpers/*": ["./helpers/*"]
+      "@helpers/*": ["./helpers/*"],
+      "@scss/*": ["./scss/*"]
     }
   },
   "include": [
