@@ -4,7 +4,7 @@
         <description><![CDATA[Hamza Miloud Amar]]></description>
         <link>https://www.miloudamar.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 01 Aug 2022 11:27:58 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Aug 2022 20:26:31 GMT</lastBuildDate>
         <atom:link href="https://www.miloudamar.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Accent Color]]></title>
@@ -12,19 +12,19 @@
             <guid isPermaLink="true">https://www.miloudamar.com/blog + accent-color</guid>
         </item>
         <item>
+            <title><![CDATA[Grid Part 2]]></title>
+            <link>https://www.miloudamar.com/blog + grid-2</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-2</guid>
+        </item>
+        <item>
             <title><![CDATA[How to write dry css code]]></title>
             <link>https://www.miloudamar.com/blog + dynamic-routing</link>
             <guid isPermaLink="true">https://www.miloudamar.com/blog + dynamic-routing</guid>
         </item>
         <item>
-            <title><![CDATA[How to make a border gradient]]></title>
-            <link>https://www.miloudamar.com/blog + gradientBorder</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + gradientBorder</guid>
-        </item>
-        <item>
-            <title><![CDATA[Grid Part 2]]></title>
-            <link>https://www.miloudamar.com/blog + grid-2</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-2</guid>
+            <title><![CDATA[Grid Part 4]]></title>
+            <link>https://www.miloudamar.com/blog + grid-4</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-4</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 3]]></title>
@@ -32,9 +32,14 @@
             <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-3</guid>
         </item>
         <item>
-            <title><![CDATA[Grid Part 4]]></title>
-            <link>https://www.miloudamar.com/blog + grid-4</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + grid-4</guid>
+            <title><![CDATA[Grid Part 1]]></title>
+            <link>https://www.miloudamar.com/blog + inhertence</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + inhertence</guid>
+        </item>
+        <item>
+            <title><![CDATA[How to make a border gradient]]></title>
+            <link>https://www.miloudamar.com/blog + gradientBorder</link>
+            <guid isPermaLink="true">https://www.miloudamar.com/blog + gradientBorder</guid>
         </item>
         <item>
             <title><![CDATA[Grid Part 5]]></title>
@@ -45,11 +50,6 @@
             <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
             <link>https://www.miloudamar.com/blog + hello-world</link>
             <guid isPermaLink="true">https://www.miloudamar.com/blog + hello-world</guid>
-        </item>
-        <item>
-            <title><![CDATA[Grid Part 1]]></title>
-            <link>https://www.miloudamar.com/blog + inhertence</link>
-            <guid isPermaLink="true">https://www.miloudamar.com/blog + inhertence</guid>
         </item>
         <item>
             <title><![CDATA[Preview]]></title>
