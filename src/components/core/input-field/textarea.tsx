@@ -1,8 +1,7 @@
 import React from 'react';
 
 import type { TextAreaProps } from './input-field.type';
-
-import { InputField } from '.';
+import InputField from './field-input';
 
 const TextArea = (props: TextAreaProps) => {
   const {

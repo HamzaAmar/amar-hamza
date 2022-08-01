@@ -1,6 +1,5 @@
 import type { InputProps } from './input-field.type';
-
-import { InputField } from '.';
+import InputField from './field-input';
 
 const Input = (props: InputProps) => {
   const {
