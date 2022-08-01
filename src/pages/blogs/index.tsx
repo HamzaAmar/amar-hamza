@@ -4,6 +4,7 @@ import { Layout } from '@components/common';
 import { GetStaticProps } from 'next';
 import { Article } from '@components/ui';
 import PostType from '@type/post';
+import { Articles } from '@components/sections';
 
 export const getStaticProps: GetStaticProps = () => {
   const posts = getAllFilesFrontMatter('blog');
@@ -14,11 +15,7 @@ export const getStaticProps: GetStaticProps = () => {
 export default function Blog({ posts }: { posts: PostType[] }) {
   return (
     <Layout title="Blog Page">
-      <div className="articleContainer">
-        {posts.map((post) => (
-          <Article key={post.slug} {...post} />
-        ))}
-      </div>
+      <Articles posts={posts} />
     </Layout>
   );
 }
