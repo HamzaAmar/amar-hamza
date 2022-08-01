@@ -1,0 +1,15 @@
+.home {
+  display: grid;
+}
+
+.home--about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .section {
+    font-size: 0.7rem;
+  }
+}
