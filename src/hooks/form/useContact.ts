@@ -29,21 +29,14 @@ const handleSubmit =
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
       });
-      const { data, errors } = await response.json();
+      const { data } = await response.json();
       if (response.ok) {
         dispatch({ type: 'fetched', data });
       }
-      return;
-      // const error = new Error(
-      //   errors
-      //     ?.map((err: { message: string }) => err.message)
-      //     .join('\n') ?? 'unknown',
-      // );
-      // return Promise.reject(error);
     } catch (error) {
       dispatch({
         type: 'error',
-        error,
+        error: error as Error,
       });
     }
   };
