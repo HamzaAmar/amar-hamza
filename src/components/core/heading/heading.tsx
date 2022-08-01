@@ -1,5 +1,5 @@
 import { classnames } from '@utils/classnames';
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 import type { HeadingProps } from './heading.type';
 
@@ -24,7 +24,10 @@ const heading = (props: HeadingProps) => {
   );
 
   return (
-    <Comp {...classname} style={{ '--multi-line': multiline }}>
+    <Comp
+      {...classname}
+      style={{ '--multi-line': multiline } as CSSProperties}
+    >
       {children}
     </Comp>
   );
