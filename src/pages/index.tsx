@@ -5,15 +5,16 @@ import {
   Project,
   About,
   Skill,
-  Article,
-} from '@components/ui';
+  Articles,
+} from '@components/sections';
 import { Layout } from '@components/common';
 import { getAllFilesFrontMatter } from '@lib/mdx';
 import { GetStaticProps } from 'next';
 import PostType from '@type/post';
+import { Heading } from '@components/core';
 
 export const getStaticProps: GetStaticProps = () => {
-  const posts = getAllFilesFrontMatter('blog', 6);
+  const posts = getAllFilesFrontMatter('blog', 8);
 
   return { props: { posts } };
 };
@@ -22,28 +23,15 @@ const IndexPage = ({ posts }: { posts: PostType[] }) => {
   return (
     <>
       <Layout title="Home Page">
-        <div className={styles.container}>
-          <div className={styles.about}>
+        <div className="home">
+          <div className="home--about">
             <About />
           </div>
-          <section className={styles.section}>
-            <h1 className={styles.heading}>Services</h1>
-            <Service />
-          </section>
-          <section className={styles.section}>
-            <h1 className={styles.heading}>Skills</h1>
-            <Skill />
-          </section>
-          <section className={styles.section}>
-            <h1 className={styles.heading}>Articles</h1>
-            <div className="articleContainer">
-              {posts.map((props) => (
-                <Article key={props.slug} {...props} />
-              ))}
-            </div>
-          </section>
-          <section className={styles.section}>
-            <h1 className={styles.heading}>Projects</h1>
+          <Service />
+          <Skill />
+          <Articles posts={posts} />
+          <section className="section l_flow">
+            <Heading>Projects</Heading>
             <Project />
           </section>
         </div>
