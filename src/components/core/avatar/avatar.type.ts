@@ -1,4 +1,4 @@
-type Size = 'sm' | 'md' | 'lg' | 'fluid';
+type Size = 'sm' | 'md' | 'lg' | 'xl' | 'fluid';
 
 export interface AvatarProps {
   size?: Size;
