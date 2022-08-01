@@ -22,13 +22,6 @@ const globby = require('globby');
 
                   const route = path === '/index' ? '' : path;
 
-                  console.log(
-                    NEXT_PUBLIC_DOMAIN_NAME,
-                    'FULL LINK',
-                    `${NEXT_PUBLIC_DOMAIN_NAME}${route}`,
-                    page,
-                  );
-
                   return `
                           <url>
                               <loc>${`https://www.miloudamar.com/${route}`}</loc>

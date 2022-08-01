@@ -10,7 +10,6 @@ const pathFromRootToBlog = path.join(
   'blog',
 );
 const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
-console.log(NEXT_PUBLIC_DOMAIN_NAME);
 
 async function generate() {
   const feed = new RSS({

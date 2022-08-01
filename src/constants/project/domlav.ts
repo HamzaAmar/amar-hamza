@@ -1,11 +1,11 @@
 export const domlav = {
   id: 1,
   avatar: {
-    src: '/assets/project/domlav-avatar.jpg',
+    src: '/assets/project/domlav/domlav-avatar.jpg',
     alt: 'domlav a washing service',
   },
   img: {
-    src: '/assets/project/domlav.png',
+    src: '/assets/project/domlav/domlav.png',
     alt: 'domlav a washing service',
   },
   title: 'DOMLAV',

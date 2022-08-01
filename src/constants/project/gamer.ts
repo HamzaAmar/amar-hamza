@@ -1,17 +1,17 @@
 export const gamer = {
   id: 2,
   img: {
-    src: '/assets/project/gamers.jpg',
+    src: '/assets/project/gamers/gamers.jpg',
+    alt: 'Gamers Player Tournois Website',
+  },
+  avatar: {
+    src: '/assets/project/gamers/gamers-avatar.jpg',
     alt: 'Gamers Player Tournois Website',
   },
   title: 'Gamer Play',
   links: [
     {
-      site: 'https://www.gamer.com/',
-      title: 'Site',
-    },
-    {
-      site: 'https://www.gamer.com/',
+      site: 'https://github.com/HamzaAmar/gamers',
       title: 'Github',
     },
   ],
