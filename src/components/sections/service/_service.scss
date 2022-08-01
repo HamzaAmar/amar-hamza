@@ -1,0 +1,19 @@
+.services {
+  --minimum: 300px;
+}
+
+.service {
+  --flow-gap: 1rem;
+  background-color: var(--color-grey-100);
+  border-radius: 0.5em;
+  box-shadow: var(--shadow-md);
+  padding: 1rem;
+}
+
+.service__icon {
+  background-color: var(--color-grey-900);
+  color: var(--color-grey-100);
+  margin: 0 auto;
+  padding: 0.5rem;
+  --circe-size: 2.5rem;
+}
