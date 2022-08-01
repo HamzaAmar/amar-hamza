@@ -47,7 +47,7 @@ const Contact = () => {
           get in touch
         </Heading>
 
-        <Text variant="body2" classNames="contact--description">
+        <Text variant="body2" className="contact--description">
           Fill up this form if you wanna hire me or ask me some
           question and am gonna be happy to answer
         </Text>
