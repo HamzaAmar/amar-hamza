@@ -1,4 +1,4 @@
-import { Avatar, Heading, Tag, Text } from '@components/core';
+import { Avatar, Heading, Text } from '@components/core';
 import {
   Arabic,
   Call,
@@ -10,60 +10,19 @@ import {
   Globe,
   Html,
   Level,
+  Linkdin,
   NextIcon,
   Node,
   Pen,
   ReactIcon,
+  Twitter,
   TypeScript,
 } from '@components/icons';
 import { PROJECTS } from '@constants/project';
 
+import { Project } from '..';
+
 import type { AsideProps, AsideItemProps } from './resume.type';
-
-const MyWork = ({
-  img,
-  title,
-  description,
-  links,
-  technologies,
-}: AsideProps) => {
-  return (
-    <li className="resume--work">
-      <Avatar image={img.src} title={img.alt} />
-      <div className="resume--work-detail">
-        <Heading>{title}</Heading>
-        <div className="resume__projects">
-          {links.map((link) => {
-            const icon =
-              link.title.toLowerCase() === 'site' ? (
-                <Globe width="20" />
-              ) : (
-                <Github width="20" />
-              );
-            return (
-              <a key={link.site} className="" href={link.site}>
-                {icon}
-                <span>{link.title}</span>
-              </a>
-            );
-          })}
-        </div>
-        <p>{description}</p>
-
-        <ul className="resume--technologies">
-          {technologies.map((technology) => (
-            <Tag
-              key={technology}
-              color="primary"
-              title={technology}
-              size="sm"
-            />
-          ))}
-        </ul>
-      </div>
-    </li>
-  );
-};
 
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (
@@ -81,28 +40,33 @@ const resume = () => {
   return (
     <section className="resume">
       <header className="resume--header">
-        <Heading>
-          Hamza <span className="highlight"> Miloud Amar</span>
-        </Heading>
-        <Text> Front End Developer </Text>
-        <Text>
-          Hello my name is Hamza Miloud Amar I am a Front End Web
-          Developer I am Fall in love With React and Css and I am
-          happy and I am Passion to work with anything about Animation
-          (CSS , Gsap , Threejs) and Css
-        </Text>
+        <div className="resume--aside-header">
+          <Avatar
+            image="/me.jpg"
+            size="xl"
+            title="Hamza miloud amar"
+          />
+        </div>
+        <div className="resume--header-info l_flow">
+          <Heading align="start" size="lg">
+            Hamza <span className="highlight"> Miloud Amar</span>
+          </Heading>
+          <Heading align="start" size="md" as="h2">
+            Front End Developer
+          </Heading>
+          <Text>
+            Hello my name is Hamza Miloud Amar I am a Front End Web
+            Developer I am Fall in love With React and Css and I am
+            happy and I am Passion to work with anything about
+            Animation (CSS , Gsap , Threejs) and Css
+          </Text>
+        </div>
       </header>
       <aside className="resume--aside">
-        <div className="resume--info-aside">
-          <div className="resume--aside-header">
-            <Avatar
-              image='src="/myImage.jpg"'
-              title="Hamza miloud amar"
-            />
-          </div>
-          <div className="">
+        <div className="resume--info-aside l_flow">
+          <div className="resume-aside--item l_flow">
             <Heading>Contact</Heading>
-            <ul>
+            <ul className="resume--list l_flow">
               <AsideItem
                 icon={<Pen width={16} />}
                 title="Morocco Marrakech"
@@ -112,7 +76,7 @@ const resume = () => {
                 title="+212 6 3037 1320"
               />
               <AsideItem
-                icon={<Pen width={16} />}
+                icon={<Linkdin width={16} />}
                 title="hello wold"
               />
               <AsideItem
@@ -122,39 +86,55 @@ const resume = () => {
             </ul>
           </div>
 
-          <div className="">
+          <div className="resume-aside--item l_flow">
             <Heading>Skills</Heading>
-            <ul className="resume--list">
-              <AsideItem icon={<Css width={16} />} title="Css" />
+            <ul className="resume--list l_flow">
+              <AsideItem icon={<Css width={16} />} title="Css">
+                <Level level={4} width="36" />
+              </AsideItem>
               <AsideItem
                 icon={<ReactIcon width={16} />}
                 title="React js"
-              />
+              >
+                <Level level={4} width="36" />
+              </AsideItem>
               <AsideItem
                 icon={<NextIcon width={16} />}
                 title="Next js"
-              />
+              >
+                <Level level={4} width="36" />
+              </AsideItem>
 
-              <AsideItem icon={<Html width={16} />} title="HTML" />
+              <AsideItem icon={<Html width={16} />} title="HTML">
+                <Level level={4} width="36" />
+              </AsideItem>
               <AsideItem
                 icon={<TypeScript width={16} />}
                 title="TypeScript"
-              />
+              >
+                <Level level={4} width="36" />
+              </AsideItem>
               <AsideItem
                 icon={<Node width={16} />}
                 title="Javascript"
-              />
-              <AsideItem icon={<Html width={16} />} title="Remix" />
-              <AsideItem
-                icon={<Gatsby width={16} />}
-                title="Gatsby"
-              />
+              >
+                <Level level={4} width="36" />
+              </AsideItem>
+              <AsideItem icon={<Html width={16} />} title="Remix">
+                <Level level={4} width="36" />
+              </AsideItem>
+              <AsideItem icon={<Gatsby width={16} />} title="Gatsby">
+                <Level level={2} width="36" />
+              </AsideItem>
+              <AsideItem icon={<Node width={16} />} title="NodeJS">
+                <Level level={2} width="36" />
+              </AsideItem>
             </ul>
           </div>
 
-          <div className="">
+          <div className="resume-aside--item l_flow">
             <Heading>Language</Heading>
-            <ul>
+            <ul className="resume--list l_flow">
               <AsideItem icon={<Arabic width={16} />} title="Arabic">
                 <Level level={4} width="36" />
               </AsideItem>
@@ -172,12 +152,7 @@ const resume = () => {
         </div>
       </aside>
       <main className="resume--main">
-        <h2>My Work</h2>
-        <ul className="resume--works">
-          {PROJECTS.map(({ id, ...rest }) => {
-            return <MyWork key={id} {...rest} />;
-          })}
-        </ul>
+        <Project />;
       </main>
     </section>
   );

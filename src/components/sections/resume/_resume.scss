@@ -1,14 +1,31 @@
 .resume {
   display: grid;
   grid-template-columns: 1.5fr 5fr;
-  grid-template-rows: 200px 1fr;
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
 }
 
+.resume--item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume--item-info {
+  display: flex;
+  gap: 1rem;
+  --flow-gap: 0.25rem;
+}
+
 .resume--header {
-  grid-area: 1 / 2 / 2 / 3;
-  box-shadow: 0 4px 0 4px var(--color-text);
-  padding: 1rem 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 5vw;
+}
+
+.resume--header-info {
+  max-width: 75ch;
 }
 
 .resume--description {
@@ -24,17 +41,20 @@
   flex-direction: column;
   padding: 1rem 1vw;
   padding-right: 0;
+  position: sticky;
 }
 .resume--info-aside {
   width: 100%;
+  --flow-gap: 1.5rem;
 }
 
 .resume--aside-header {
-  height: 200px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
+}
+.resume--list {
+  --flow-gap: 0.5rem;
+}
+.resume-aside--item {
 }
 
 .asideItemContact {
