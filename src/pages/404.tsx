@@ -1,36 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
 import { Layout } from '@components/common';
-import style from '@styles/notFound.module.css';
+import { Heading, Text } from '@components/core';
 
 const NotFoundPage = () => {
   return (
     <Layout>
-      <div className={style.container}>
-        <div className={style.content}>
-          <h1>404</h1>
-          <h3>Page Not Found</h3>
-          <p>
+      <div className="not-found">
+        <div className="not-found--wrapper l_flow">
+          <Heading size="xxl">404 Page Not Found </Heading>
+          <Text variant="body2">
             We Think that You get Lost and we think that you need help
             please check our map to go fast for the page that you need
-          </p>
-          <ul className={style.mapContent}>
-            <li>
+          </Text>
+          <ul className="not-found--nav">
+            <li className="not-found--item">
               <Link href="/">
-                {/* <FaMapMarker color="red" /> */}
-                <span>Home </span>
+                <span className="not-found-text">Home </span>
               </Link>
             </li>
-            <li>
+            <li className="not-found--item">
               <Link href="blog">
-                {/* <FaMapMarker color="red" /> */}
-                <span>Blog </span>
+                <span className="not-found-text">Blog </span>
               </Link>
             </li>
-            <li>
+            <li className="not-found--item">
               <Link href="/contact">
-                {/* <FaMapMarker color="red" /> */}
-                <span>Contact </span>
+                <span className="not-found-text">Contact </span>
               </Link>
             </li>
           </ul>
