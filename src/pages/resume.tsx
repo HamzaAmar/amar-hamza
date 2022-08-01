@@ -1,10 +1,11 @@
 import { Layout } from '@components/common';
+import { Resume } from '@components/sections';
 import React from 'react';
 
 const curriculumVitae = () => {
   return (
     <Layout>
-      <h1>Resume</h1>
+      <Resume />
     </Layout>
   );
 };
