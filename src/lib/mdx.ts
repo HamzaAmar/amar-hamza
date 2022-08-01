@@ -43,8 +43,6 @@ export async function getFileBySlug(type: string, slug: string) {
     },
   });
 
-  console.log(mdxSource);
-
   return {
     mdxSource,
     frontMatter: {
