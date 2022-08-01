@@ -2,8 +2,8 @@ import { PrismTheme } from 'prism-react-renderer';
 
 const theme: PrismTheme = {
   plain: {
-    color: 'var(--warning-color)',
-    backgroundColor: 'var(--color-background-dark)',
+    color: 'var(--color-grey-900)',
+    backgroundColor: 'var(--color-grey-200)',
   },
   styles: [
     {
@@ -30,26 +30,26 @@ const theme: PrismTheme = {
     {
       types: ['comment'],
       style: {
-        color: '#8292a2',
+        color: 'var(--color-grey-600)',
         fontStyle: 'italic',
       },
     },
     {
       types: ['string', 'url'],
       style: {
-        color: 'var(--success-color)',
+        color: 'var(--color-grey-800)',
       },
     },
     {
       types: ['variable'],
       style: {
-        color: 'var(--purple-color)',
+        color: 'var(--color-primary-200)',
       },
     },
     {
       types: ['number'],
       style: {
-        color: 'var(--danger-color)',
+        color: 'var(--color-warning-300)',
       },
     },
     {
@@ -61,32 +61,32 @@ const theme: PrismTheme = {
         'class-name',
       ],
       style: {
-        color: 'var(--color-primary-dark)',
+        color: 'var(--color-primary-400)',
       },
     },
     {
       types: ['punctuation'],
       style: {
-        color: 'var(--purple-color)',
+        color: 'orange',
       },
     },
     {
       types: ['selector', 'doctype'],
       style: {
-        color: 'var(--success-color)',
+        color: 'var(--color-success-600)',
         fontStyle: 'italic',
       },
     },
     {
       types: ['tag', 'operator', 'keyword'],
       style: {
-        color: 'var(--blue-color)',
+        color: 'var(--color-success-800)',
       },
     },
     {
       types: ['boolean'],
       style: {
-        color: 'var(--danger-color)',
+        color: 'var(--color-danger)',
       },
     },
     {
@@ -99,13 +99,13 @@ const theme: PrismTheme = {
     {
       types: ['tag', 'property'],
       style: {
-        color: '#f92672',
+        color: 'var(--color-primary-300)',
       },
     },
     {
       types: ['attr-name'],
       style: {
-        color: 'var(--success-color) !important',
+        color: 'white',
       },
     },
     {
