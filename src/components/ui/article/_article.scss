@@ -43,6 +43,7 @@
 
 .article--content {
   --flow-gap: 0.5rem;
+  margin-bottom: var(--flow-gap);
 }
 .article--header {
   display: flex;
