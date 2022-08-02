@@ -62,6 +62,10 @@ const resume = () => {
           </Text>
         </div>
       </header>
+
+      <main className="resume--main">
+        <Project />;
+      </main>
       <aside className="resume--aside">
         <div className="resume--info-aside l_flow">
           <div className="resume-aside--item l_flow">
@@ -151,9 +155,6 @@ const resume = () => {
           </div>
         </div>
       </aside>
-      <main className="resume--main">
-        <Project />;
-      </main>
     </section>
   );
 };

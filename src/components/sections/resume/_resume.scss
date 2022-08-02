@@ -1,7 +1,6 @@
 .resume {
   display: grid;
-  grid-template-columns: 1.5fr 5fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 5fr 1.5fr;
   min-height: 100vh;
 }
 
@@ -21,11 +20,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 0 5vw;
+  padding: 5vw;
 }
 
 .resume--header-info {
   max-width: 75ch;
+  --flow-gap: 1rem;
 }
 
 .resume--description {
@@ -35,13 +35,13 @@
 .resume--aside {
   background: var(--color-grey-1000);
   color: var(--color-grey-100);
-  grid-area: 1 / 1 / 3 / 2;
+  grid-area: 1 / 2 / 3 / 3;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   padding: 1rem 1vw;
   padding-right: 0;
-  position: sticky;
+  // position: sticky;
 }
 .resume--info-aside {
   width: 100%;
@@ -50,6 +50,7 @@
 
 .resume--aside-header {
   align-self: center;
+  margin: auto;
 }
 .resume--list {
   --flow-gap: 0.5rem;
@@ -114,3 +115,9 @@
 }
 
 /* My work Section End */
+
+@media screen and (max-width: 768px) {
+  .resume {
+    display: block;
+  }
+}
