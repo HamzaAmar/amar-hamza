@@ -115,6 +115,13 @@
 .header__mobileList {
   flex-direction: column;
   height: 100%;
+  --flow-gap: 1.5rem;
+}
+
+.header--close-button {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
 }
 
 .menuMobileIcon {

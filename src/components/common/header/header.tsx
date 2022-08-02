@@ -89,10 +89,11 @@ const Header = () => {
           type="button"
           variant="outline"
           onClick={() => setVisible(false)}
+          className="header--close-button"
         >
           Close
         </Button>
-        <ul className="header__mobileList u_bothCenter">
+        <ul className="header__mobileList u_bothCenter l_flow">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
