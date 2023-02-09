@@ -1,32 +1,68 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+/* eslint-disable no-warning-comments */
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, TypeScript } from '@components/icons';
-import MENU from '@constants/menu';
-import { Switcher } from '@components/ui';
-import { Button, Text } from '@components/core';
+import { Menu, Moon, Sun, TypeScript } from '@components/icons';
+import { Button, Flex, IconButton, Text } from '@components/core';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
+import useBoolean from '@hooks/useBoolean';
 
-interface ItemProps {
-  name: string;
-  path: string;
-  pathname: string;
-  mobile?: boolean;
-}
+import type { ItemProps, MenuProps } from './header.type';
+
+const MENU: MenuProps[] = [
+  { id: 1, name: 'Home', path: '/' },
+  { id: 2, name: 'Blog', path: '/blogs' },
+  { id: 3, name: 'Contact', path: '/contact' },
+];
+
+const Switcher = () => {
+  const { state: mounted, handleTrue } = useBoolean(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    handleTrue();
+  }, [handleTrue]);
+
+  // TODO: Return Skeleton to avoid  Layout Shift
+  if (!mounted) {
+    return null;
+  }
+
+  const nextMode = resolvedTheme === 'dark' ? 'light' : 'dark';
+
+  const icon =
+    resolvedTheme === 'dark' ? (
+      <Sun width="30" aria-hidden="true" focusable="false" />
+    ) : (
+      <Moon width="30" aria-hidden="true" focusable="false" />
+    );
+
+  return (
+    <IconButton
+      onClick={() => setTheme(nextMode)}
+      icon={icon}
+      title={`Switch to ${nextMode} Mode`}
+    />
+  );
+};
 
 const Item = ({ name, path, pathname, mobile }: ItemProps) => {
   const isCurrentLink = pathname === path;
   const currentLink = isCurrentLink ? 'page' : false;
 
   return (
-    <li className="header__item" data-mobile={mobile}>
-      <Link href={path}>
-        <a
+    <li className="header--item">
+      <Link href={path} passHref>
+        <Flex
+          as="a"
+          items="center"
+          justify="center"
           aria-current={currentLink}
-          className="header__itemLink u_bothCenter"
+          className="header--item-link"
+          data-mobile={mobile}
         >
           {name}
-        </a>
+        </Flex>
       </Link>
     </li>
   );
@@ -39,28 +75,31 @@ const getFirstPathInTheUrl = (pathname: string) => {
 };
 
 const Header = () => {
-  const [visible, setVisible] = useState(false);
+  const { state: visible, handleFalse, handleTrue } = useBoolean();
   const router = useRouter();
 
   const pathname = getFirstPathInTheUrl(router.pathname);
 
   return (
-    <header className="header">
+    <Flex
+      justify="between"
+      items="center"
+      as="header"
+      className="header"
+    >
       <Link href="/">
-        <a className="header__logo u_bothCenter">
-          <TypeScript
-            width={25}
-            height={25}
-            style={{
-              marginRight: '0.7rem',
-              borderRadius: '0.2rem',
-            }}
-          />
-          <Text variant="subheading1">Hamza Amar</Text>
-        </a>
+        <Flex as="a" items="center" gap="sm">
+          <TypeScript width={24} />
+          <Text as="span">Hamza Amar</Text>
+        </Flex>
       </Link>
-      <nav className="header__nav">
-        <ul className="header__list">
+      <nav className="header--nav u_flex-1">
+        <Flex
+          as="ul"
+          justify="center"
+          items="center"
+          className="header--list"
+        >
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -71,29 +110,33 @@ const Header = () => {
               />
             );
           })}
-        </ul>
+        </Flex>
       </nav>
-      <div className="header__actions">
-        <button
-          type="button"
-          // className={`${styles.menuMobileIcon}`}
-          onClick={() => setVisible(true)}
-          aria-label="Toggle Menu"
-        >
-          <Menu width="30" focusable="false" aria-hidden="true" />
-        </button>
+      <Flex gap="xs" items="center">
+        <IconButton
+          icon={<Menu focusable="false" aria-hidden="true" />}
+          title="Toggle Menu"
+          onClick={handleTrue}
+        />
         <Switcher />
-      </div>
-      <nav className="header__mobile" data-visible={visible === true}>
+      </Flex>
+      <nav className="header--mobile" data-visible={visible === true}>
         <Button
           type="button"
           variant="outline"
-          onClick={() => setVisible(false)}
+          onClick={handleFalse}
           className="header--close-button"
         >
           Close
         </Button>
-        <ul className="header__mobileList u_bothCenter l_flow">
+        <Flex
+          as="ul"
+          gap="md"
+          direction="column"
+          items="center"
+          justify="center"
+          className="header--mobile-list l_flow u_flex-1"
+        >
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -105,9 +148,9 @@ const Header = () => {
               />
             );
           })}
-        </ul>
+        </Flex>
       </nav>
-    </header>
+    </Flex>
   );
 };
 
