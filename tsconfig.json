@@ -15,9 +15,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
+      "contentlayer/generated": ["../.contentlayer/generated"],
       "@lib/*": ["./lib/*"],
       "@assets/*": ["./assets/*"],
-      // "@config/*": ["config/*"],
       "@components/*": ["./components/*"],
       "@constants/*": ["./constants/*"],
       "@hooks/*": ["./hooks/*"],
@@ -25,15 +25,16 @@
       "@utils/*": ["./utils/*"],
       "@helpers/*": ["./helpers/*"],
       "@scss/*": ["./scss/*"]
-    }
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     // "**/*.js",
-    "declarations.d.ts",
-    "src/helpers/context.jsx"
+    "src/helpers/context.jsx",
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules", "scripts/*"]
 }

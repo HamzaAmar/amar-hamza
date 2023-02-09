@@ -1,50 +1,27 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { ParsedUrlQuery } from 'querystring';
 
+import { useMDXComponent } from 'next-contentlayer/hooks';
 import React from 'react';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { GetStaticProps } from 'next';
-import { getFiles, getFileBySlug } from '@lib/mdx';
-import { components } from '@components/ui';
 import { Layout, ReadingLayout } from '@components/common';
+import { allBlogs, type Blog } from 'contentlayer/generated';
+import { Heading } from '@components/core';
 
-interface FrontMatter {
-  author: {
-    name: string;
-    picture: string;
-  };
-  coverImage: string;
-  date: string;
-  excerpt: string;
-  image: string;
-  readingTime: {
-    text: string;
-    minutes: number;
-    time: number;
-    words: number;
-  };
-  slug: string;
-  tag: string;
-  title: string;
-  wordCount: number;
-}
-
-interface Props {
-  mdxSource: MDXRemoteSerializeResult;
-  frontMatter: FrontMatter;
-}
-
-export default function Blog({ mdxSource, frontMatter }: Props) {
-  const { title, excerpt, coverImage, date } = frontMatter;
+export default function Blog({ post }: { post: Blog }) {
+  const { body, ...rest } = post;
+  const Component = useMDXComponent(body.code);
   return (
     <Layout
-      title={title}
-      description={excerpt}
-      image={coverImage}
-      date={new Date(date).toISOString()}
+      title={rest.title}
+      description={rest.excerpt}
+      image={rest.image}
+      date={new Date(rest.date).toISOString()}
       type="article"
     >
-      <ReadingLayout {...frontMatter}>
-        <MDXRemote components={components} {...mdxSource} />
+      <ReadingLayout {...post}>
+        <Component />
+        <Heading>Hello</Heading>
       </ReadingLayout>
     </Layout>
   );
@@ -57,18 +34,16 @@ interface Params extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as Params;
 
-  const post = await getFileBySlug('blog', slug);
+  const post = allBlogs.find((blog) => slug === blog.slug);
 
-  return { props: { ...post } };
+  return { props: { post } };
 };
 
 export function getStaticPaths() {
-  const posts = getFiles('blog');
-
   return {
-    paths: posts.map((post) => ({
+    paths: allBlogs.map(({ slug }) => ({
       params: {
-        slug: post.replace(/\.mdx/, ''),
+        slug,
       },
     })),
 
