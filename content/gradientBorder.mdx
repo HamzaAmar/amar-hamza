@@ -1,12 +1,11 @@
 ---
 title: 'How to make a border gradient'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+image: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-03-11T05:35:07.322Z'
 author:
   name: Hamza Miloud amar
   picture: '/assets/blog/authors/jj.jpeg'
-image: '/assets/blog/dynamic-routing/cover.jpg'
 tags: ['CSS']
 ---
 
@@ -29,19 +28,19 @@ some limitation we can't add radius to the element this is a small difinition fr
 
 > Authors can specify an image to be used in place of the border styles. In this case, the border’s design is taken from the sides and corners of an image specified with border-image-source, whose pieces may be sliced, scaled and stretched in various ways to fit the size of the border image area. The border-image properties do not affect layout: layout of the box, its content, and surrounding content is based on the border-width and border-style properties only.
 
-```react
+```jsx showLineNumbers title="Button.js"
 import React from 'react';
 
-const Button = ({children , ...rest}) => {
-  return(
+const Button = ({ children, ...rest }) => {
+  return (
     <button className="btn--gradient-border" {...rest}>
       {children}
     </button>
-  )
-}
+  );
+};
 ```
 
-```css
+```css showLineNumbers {2}
 .btn--gradient-border {
   border-width: 0.5rem;
   border-image: linear-gradient(to right, pink, blue) 1;
@@ -58,16 +57,16 @@ const Button = ({children , ...rest}) => {
 
 We can make a border gradient color with only background property this kind of hack
 
-```react
+```jsx showLineNumbers
 import React from 'react';
 
-const Button = ({children , ...rest}) => {
-  return(
+const Button = ({ children, ...rest }) => {
+  return (
     <button className="btn--gradient-border" {...rest}>
       {children}
     </button>
-  )
-}
+  );
+};
 ```
 
 ```css
