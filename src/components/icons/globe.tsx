@@ -3,7 +3,7 @@ import type { SVGProps } from 'react';
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
     fill="none"
-    strokeWidth={2}
+    strokeWidth={1.5}
     stroke="currentColor"
     strokeLinecap="round"
     strokeLinejoin="round"

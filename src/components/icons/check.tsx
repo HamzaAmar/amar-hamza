@@ -1,11 +1,18 @@
 import * as React from 'react';
+import type { SVGProps } from 'react';
 
-function Check(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 100 100" {...props}>
-      <path d="M393 124L180 338a41 41 0 01-58 0L12 228a41 41 0 0157-58l82 82L336 67a41 41 0 0157 57z" />
-    </svg>
-  );
-}
+const Check = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="m5 12 5 5L20 7" />
+  </svg>
+);
 
 export default Check;

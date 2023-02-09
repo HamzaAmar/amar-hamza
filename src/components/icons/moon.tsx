@@ -1,19 +1,17 @@
 import * as React from 'react';
 
-function moon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 512 512" {...props}>
-      <circle cx={256} cy={256} r={256} fill="#27536b" />
-      <path
-        d="M391.4 292.8a123.8 123.8 0 11-141.5-199 161.2 161.2 0 10165.4 165.4 123.6 123.6 0 01-24 33.6z"
-        fill="#fcd57e"
-      />
-      <path
-        d="M355.8 153.6l5.7 51.6 5.7-51.6 51.7-5.7-51.7-5.8-5.7-51.6-5.7 51.6-51.6 5.8zm-243.4 257l4 37 4.1-37 37-4-37-4.2-4-37-4.1 37-37 4.1zM241 253.4l7.4-7.4 7.3 7.4-7.3 7.3zm175.8-54.8l7.3-7.4 7.4 7.4-7.4 7.4zm31 91l7.4-7.4 7.3 7.4-7.3 7.4zM74 129.7l7.3-7.4 7.3 7.4-7.3 7.3zm270.1 296.9l7.4-7.3 7.3 7.3-7.3 7.4zM115.5 103l7.3-7.3 7.4 7.4-7.4 7.3z"
-        fill="#fff"
-      />
-    </svg>
-  );
-}
+const moon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    fill="none"
+    {...props}
+  >
+    <path d="M12 3h.4a7.5 7.5 0 0 0 8 12.4A9 9 0 1 1 12 3v0Z" />
+  </svg>
+);
 
 export default moon;

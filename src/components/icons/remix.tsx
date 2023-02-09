@@ -9,7 +9,7 @@ const remix = (props: SVGProps<SVGSVGElement>) => (
   >
     <path
       d="M7 20V4h5.5a4.5 4.5 0 1 1 0 9H7m5 0 5 7"
-      strokeWidth={2}
+      strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
     />

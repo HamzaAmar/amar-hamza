@@ -4,7 +4,7 @@ const pin = (props: SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
-    strokeWidth={2}
+    strokeWidth={1.5}
     stroke="currentColor"
     strokeLinecap="round"
     strokeLinejoin="round"

@@ -60,3 +60,4 @@ export { default as File } from './file';
 export { default as Heart } from './heart';
 export { default as Layout } from './layout';
 export { default as Bookmark } from './bookmark';
+export { default as Arrow } from './arrow';
