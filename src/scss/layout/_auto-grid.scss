@@ -1,6 +1,7 @@
 .l_grid {
   display: grid;
   gap: min(3vw, 2rem);
+
   --minimum: 20ch;
 }
 @supports (width: min(var(--minimum), 100%)) {

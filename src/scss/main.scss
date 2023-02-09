@@ -5,3 +5,6 @@
 @import 'layout';
 @import 'components';
 @import 'utilities';
+
+// TODO: Make it conditional in document page Head for every device to reduce css
+@import 'media';

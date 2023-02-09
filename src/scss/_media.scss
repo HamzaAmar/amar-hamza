@@ -1,0 +1,21 @@
+@use '../scss/settings/media' as *;
+
+@media (max-width: $screen-tablet-small) {
+  .md_grid-one {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .md_grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: $screen-phone-large) {
+  .sm_grid-one {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .history-trading-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

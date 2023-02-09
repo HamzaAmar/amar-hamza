@@ -8,6 +8,7 @@
 
 .not-found--wrapper {
   --flow-gap: 2rem;
+
   max-width: 60ch;
 }
 
@@ -24,35 +25,37 @@
 .not-found--item:not(:last-child) {
   flex: 1 1;
 }
-.not-found--item:before {
+
+.not-found--item::before {
   content: '';
   position: absolute;
   width: 75%;
   height: 3px;
   right: 5px;
   top: 50%;
-  border: 2px dashed var(--color-primary-400);
+  border: 2px dashed var(--color-primary-4);
   transform: translateY(-50%);
 }
 
-.not-found--item:after {
+.not-found--item::after {
   content: '';
   position: absolute;
   width: 1rem;
   height: 1rem;
   right: 5px;
   top: 50%;
-  // background-color: var(--color-primary-400);
+
+  // background-color: var(--color-primary-4);
   transform: translateY(-50%) rotate(45deg);
   border: 0.5rem solid transparent;
-  border-right-color: var(--color-primary-400);
-  border-top-color: var(--color-primary-400);
+  border-right-color: var(--color-primary-4);
+  border-top-color: var(--color-primary-4);
 }
 
 .not-found-text {
   position: relative;
-  z-index: 10;
-  background-color: var(--color-grey-100);
+  z-index: 1;
+  background-color: var(--color-grey-1);
   padding: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;

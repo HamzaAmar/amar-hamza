@@ -1,0 +1,9 @@
+:is(.l_box, .l_box-article) {
+  padding: 1rem;
+  background-color: var(--slate-1);
+}
+
+.l_box-article {
+  border-radius: 16px;
+  border: 1px solid var(--slate-6);
+}
