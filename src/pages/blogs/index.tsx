@@ -3,7 +3,6 @@
 import React from 'react';
 import { Layout } from '@components/common';
 import { GetStaticProps } from 'next';
-// import { Article } from '@components/ui';
 import { compareDesc } from 'date-fns';
 import { Articles } from '@components/sections';
 import { allBlogs, type Blog } from 'contentlayer/generated';
