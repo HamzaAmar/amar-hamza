@@ -1,2 +1,4 @@
-node_modules
-.next
+coverage
+yarn.lock
+node_modules/
+.git/

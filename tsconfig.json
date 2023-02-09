@@ -30,9 +30,9 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    // "**/*.js",
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.tsx",
     "src/helpers/context.jsx",
     ".contentlayer/generated"
   ],

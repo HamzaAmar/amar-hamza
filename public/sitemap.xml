@@ -25,12 +25,4 @@
                               <loc>https://www.miloudamar.com/blogs/[slug]</loc>
                           </url>
                       
-                          <url>
-                              <loc>https://www.miloudamar.com/challenge/index</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/challenge/[slug]</loc>
-                          </url>
-                      
           </urlset>
