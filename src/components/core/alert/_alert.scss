@@ -1,17 +1,15 @@
 .alert {
-  // Layout Style Start
+  background-color: var(--color-shared-4);
+  color: var(--color-shared-12);
+  padding: var(--space-xs);
+  border-inline-start: 0.25em solid var(--color-shared-11);
+  margin-inline: auto;
+}
+
+.alert--header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // Layout Style End
-
-  background-color: var(--shared-color-200);
-  color: var(--shared-color-800);
-
-  // Box Style Start
-  width: 90%;
-  padding: var(--spacing-md);
-  // Box Style End
 }
 
 .alert[data-close='true'] {

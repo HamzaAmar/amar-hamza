@@ -37,16 +37,19 @@
   height: 100%;
   object-fit: cover;
 }
+
 .infoAndDateContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .infoAndDate {
   display: flex;
   align-items: center;
 }
+
 .authorInfo {
   display: flex;
   flex-direction: column;
@@ -57,6 +60,7 @@
 .mediaList {
   display: flex;
 }
+
 .mediaItem {
   width: 1.75rem;
   height: 1.75rem;
@@ -65,11 +69,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(196, 27, 27, 0.2);
+  background-color: rgb(196 27 27 / 20%);
 }
+
 .mediaItem:not(:last-child) {
   margin-right: 0.5rem;
 }
+
 .authorName {
   font-size: 0.8rem;
   word-spacing: 2px;
@@ -77,6 +83,7 @@
   font-variation-settings: 'wght' 400;
   text-transform: uppercase;
 }
+
 .titleContainer {
   margin: 2rem auto;
   width: 100%;
@@ -84,6 +91,7 @@
   letter-spacing: 2px;
   text-transform: capitalize;
 }
+
 .title {
   text-align: center;
 }

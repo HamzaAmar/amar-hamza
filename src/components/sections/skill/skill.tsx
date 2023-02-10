@@ -1,35 +1,61 @@
 import React from 'react';
-import { CircleProgress } from '@components/ui';
-import SKILLS from '@constants/skills';
-import { Heading } from '@components/core';
+import {
+  Flex,
+  Heading,
+  Text,
+  CircleProgress,
+  Button,
+} from '@components/core';
 
-import { ItemSkillProps } from './skills.type';
+import SKILLS from './skills.data';
+import type { ItemSkillProps } from './skills.type';
 
-const Item = ({ title, icon, level }: ItemSkillProps) => {
+const Item = ({
+  title,
+  icon,
+  level,
+  description,
+}: ItemSkillProps) => {
   const iconUI = icon ? (
     <div className="skill--icon-wrap">
       <div className="skill--icon">{icon}</div>
     </div>
   ) : null;
   return (
-    <li className="skill" key={title}>
-      <div className="skill--info">
-        {iconUI}
-        <Heading as="h3" size="xxs">
-          {title}
-        </Heading>
-      </div>
+    <Flex
+      as="li"
+      gap="md"
+      className="skill l_box-article"
+      key={title}
+    >
       <div className="skill--progress">
-        <CircleProgress
-          width="100%"
-          height="100%"
-          color="primary"
-          lvl={level}
-        >
+        <CircleProgress width="50%" color="primary" lvl={level}>
           <tspan>{level}%</tspan>
         </CircleProgress>
       </div>
-    </li>
+      <div className="skill--content l_flow u_flex-1">
+        <Flex justify="between" items="center">
+          <Flex gap="sm" items="center">
+            {iconUI}
+            <Heading as="h3" size="sm">
+              {title}
+            </Heading>
+          </Flex>
+          <Button variant="outline" as="p" size="xs" color="primary">
+            Projects
+          </Button>
+        </Flex>
+        <Text
+          truncate="multiline"
+          numberLine={4}
+          color="slate"
+          size="sm"
+          contrast="low"
+        >
+          {description}
+        </Text>
+      </div>
+    </Flex>
   );
 };
 

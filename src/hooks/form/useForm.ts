@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import React, { FormEvent, useState } from 'react';
 
 type ObjectValueToBoolean<T> = {
   [K in keyof T]: boolean;
 };
 
-function initialValuesToBooleanObj<T>(values: T) {
+interface ObjectType {
+  [key: string]: unknown;
+}
+
+function initialValuesToBooleanObj<T extends {}>(values: T) {
   const obj = {} as ObjectValueToBoolean<T>;
   for (const key of Object.keys(values)) {
     obj[key as keyof T] = false;
@@ -12,7 +17,11 @@ function initialValuesToBooleanObj<T>(values: T) {
   return obj;
 }
 
-function useForm<T>({ initialValues }: { initialValues: T }) {
+function useForm<T extends {}>({
+  initialValues,
+}: {
+  initialValues: T;
+}) {
   const [values, setValues] = useState<T>(initialValues);
   const [errors, setErrors] = useState<T>(initialValues);
   const [touched, setTouched] = useState<ObjectValueToBoolean<T>>(

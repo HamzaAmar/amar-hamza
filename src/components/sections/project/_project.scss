@@ -1,36 +1,31 @@
 .project {
-  --cluster-justify: space-between;
-  --flow-gap: 2rem;
-  padding: 1rem;
-  box-shadow: var(--shadow-sm);
-  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
-.project--image-container {
-  grid-column: 1 / 2;
-}
 .project--image {
-  max-width: 300px;
+  width: 100%;
   object-fit: cover;
 }
 
-.project--header {
-  --cluster-align: center;
-  --cluster-justify: space-between;
+.project--image-container {
+  margin: -1rem;
+  margin-bottom: 0;
 }
 
 .project--info {
-  --flow-gap: 1.5rem;
-  min-width: 250px;
-  max-width: 500px;
+  background-color: red;
+  flex: 1;
 }
 
 .project--link {
-  --cluster-gap: 0.5rem;
-  color: var(--color-grey-900);
+  color: var(--color-grey-9);
   cursor: pointer;
 }
 
 .project--link:hover {
-  color: var(--color-primary-300);
+  color: var(--color-primary-3);
+}
+
+.project--technologies {
+  margin-top: auto;
 }

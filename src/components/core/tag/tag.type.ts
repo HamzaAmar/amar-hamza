@@ -1,5 +1,10 @@
 type Size = 'sm' | 'md' | 'lg';
-type Color = 'primary' | 'secondary' | 'danger';
+type Color =
+  | 'primary'
+  | 'secondary'
+  | 'danger'
+  | 'success'
+  | 'warning';
 
 export interface TagProps {
   title: string;

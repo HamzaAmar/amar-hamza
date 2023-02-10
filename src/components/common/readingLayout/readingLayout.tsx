@@ -6,31 +6,22 @@ import {
 } from '@components/icons';
 import React, { ReactNode } from 'react';
 import { formatDate } from '@utils/formatDate';
+import type { Blog } from 'contentlayer/generated';
 
 import styles from './readingLayout.module.css';
 
-interface Author {
-  name: string;
-  picture: string;
-}
-
-interface Props {
+interface ReadingProps extends Blog {
   children: ReactNode;
-  title: string;
-  coverImage: string;
-  date: string;
-  readingTime: any;
-  author: Author;
 }
 
 const readingLayout = ({
   children,
   title,
-  coverImage,
+  image,
   date,
   author,
   readingTime,
-}: Props) => {
+}: ReadingProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.readingContent}>
@@ -70,10 +61,10 @@ const readingLayout = ({
           </>
         </div>
         <div className={styles.blogImageContainer}>
-          <img className={styles.blogImage} src={coverImage} alt="" />
+          <img className={styles.blogImage} src={image} alt="" />
         </div>
 
-        <div>{children}</div>
+        <div className="l_flow">{children}</div>
       </div>
     </div>
   );

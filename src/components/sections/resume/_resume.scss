@@ -13,6 +13,7 @@
 .resume--item-info {
   display: flex;
   gap: 1rem;
+
   --flow-gap: 0.25rem;
 }
 
@@ -25,6 +26,7 @@
 
 .resume--header-info {
   max-width: 75ch;
+
   --flow-gap: 1rem;
 }
 
@@ -32,19 +34,23 @@
   width: 90%;
   min-width: 360px;
 }
+
 .resume--aside {
-  background: var(--color-grey-1000);
-  color: var(--color-grey-100);
+  background: var(--color-grey-9);
+  color: var(--color-grey-1);
   grid-area: 1 / 2 / 3 / 3;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   padding: 1rem 1vw;
   padding-right: 0;
+
   // position: sticky;
 }
+
 .resume--info-aside {
   width: 100%;
+
   --flow-gap: 1.5rem;
 }
 
@@ -52,10 +58,9 @@
   align-self: center;
   margin: auto;
 }
+
 .resume--list {
   --flow-gap: 0.5rem;
-}
-.resume-aside--item {
 }
 
 .asideItemContact {
@@ -101,6 +106,7 @@
   align-items: center;
   gap: 1rem;
 }
+
 .link {
   color: var(--color-primary-main);
   text-decoration: dashed 1px;

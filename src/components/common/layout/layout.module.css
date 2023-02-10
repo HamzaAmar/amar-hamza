@@ -1,6 +1,7 @@
 .container {
   height: 100%;
 }
+
 .main {
   margin-top: var(--shared-value);
   display: flow-root;

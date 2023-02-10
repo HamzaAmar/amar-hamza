@@ -8,8 +8,8 @@ const NotFoundPage = () => {
     <Layout>
       <div className="not-found">
         <div className="not-found--wrapper l_flow">
-          <Heading size="xxl">404 Page Not Found </Heading>
-          <Text variant="body2">
+          <Heading size="2xl">404 Page Not Found </Heading>
+          <Text size="lg">
             We Think that You get Lost and we think that you need help
             please check our map to go fast for the page that you need
           </Text>

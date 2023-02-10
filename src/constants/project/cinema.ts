@@ -1,5 +1,5 @@
 export const cinema = {
-  id: 3,
+  id: 'cinema',
   title: 'Cinema',
   img: {
     src: '/assets/project/cinema/cinema.png',

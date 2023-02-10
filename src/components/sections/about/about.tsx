@@ -1,47 +1,51 @@
 import React from 'react';
 import { Social } from '@components/ui';
 import Link from 'next/link';
-import { File } from '@components/icons';
-import { Button, Text } from '@components/core';
+import { Arrow, File } from '@components/icons';
+import { Button, Flex, Heading, Text } from '@components/core';
 
 const About = () => {
   return (
-    <div className="about u_bothCenter">
-      <Social className="about__socialMedia" direction="vertical" />
-      <div className="about__info  center l_flow">
-        <h1 className="about__name">Hamza Amar</h1>
-        <Text variant="body2">
-          Senior Front End Developer I Like to write
-          <span className="about__highlight"> CSS</span>,
-          <span className="about__highlight"> Typescript</span> and
-          <span className="about__highlight"> React</span> I
-        </Text>
+    <Flex items="center" justify="center" className="about">
+      <Social className="about__social-media" direction="vertical" />
+      <div className="about--info  center l_flow">
+        <Heading weight="medium" className="about--name">
+          Hamza Amar
+        </Heading>
+        <p className="about--description">
+          Senior Front End Web Developer am interest In building
+          Design System with React that is UX friendly and Accessible
+          , I also like to work with{' '}
+          <span className="about__highlight">React</span>{' '}
+          <span className="about__highlight">Next </span>
+          <span className="about__highlight">Remix</span>
+          and I love Write{' '}
+          <span className="about__highlight">CSS </span>,
+        </p>
         <div className="l_cluster">
           <Link href="/contact" passHref>
             <Button as="a">Hire Me</Button>
           </Link>
           <Link href="/resume" passHref>
-            <Button
-              variant="outline"
-              as="a"
-              icon={<File width={40} stroke="white" />}
-            >
+            <Button variant="outline" as="a" icon={<File />}>
               Resume
             </Button>
           </Link>
         </div>
       </div>
       <div className="about-title about-title__top">
-        <Text variant="caption">I am a freelance web developer</Text>
+        <p>I am a freelance web developer</p>
       </div>
 
       <div className="about-title__bottom about-title">
-        <Text variant="caption">Am Available</Text>
+        <p>Am Available</p>
       </div>
       <div className="about-title__right">
-        <p>scroll Down</p>
+        <p>
+          scroll Down <Arrow width="1em" strokeWidth={3} />
+        </p>
       </div>
-    </div>
+    </Flex>
   );
 };
 

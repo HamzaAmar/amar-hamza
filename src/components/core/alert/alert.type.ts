@@ -1,4 +1,6 @@
+import type { Color } from '@type/utils';
+
 export interface AlertProps {
-  variant: 'success' | 'warning' | 'danger' | 'info';
+  color?: Color;
   message: string;
 }

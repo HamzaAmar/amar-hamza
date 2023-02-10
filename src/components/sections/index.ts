@@ -1,4 +1,4 @@
-export { default as Resume } from './resume';
+export { Resume } from './resume';
 export { default as Service } from './service';
 export { default as About } from './about';
 export { default as Skill } from './skill';

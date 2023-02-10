@@ -1,5 +1,7 @@
-/* eslint-disable global-require */
-module.exports = {
+const { withContentlayer } = require('next-contentlayer');
+
+const nextConfig = {
+  swcMinify: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
       require('./scripts/generate_sitemap');
@@ -8,3 +10,5 @@ module.exports = {
     return config;
   },
 };
+
+module.exports = withContentlayer(nextConfig);

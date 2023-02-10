@@ -22,4 +22,6 @@ export interface TextAreaProps
 export interface InputFieldProps {
   children: ReactNode;
   icon: ReactElement;
+  error: string;
+  touched: boolean;
 }

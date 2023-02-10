@@ -1,5 +1,5 @@
 export const gamer = {
-  id: 2,
+  id: 'gamer',
   img: {
     src: '/assets/project/gamers/gamers.jpg',
     alt: 'Gamers Player Tournois Website',

@@ -1,4 +1,5 @@
-import { Text } from '@components/core';
+import { Flex, Text } from '@components/core';
+import { Danger } from '@components/icons';
 import React, { useState } from 'react';
 
 interface FormContainerProps {
@@ -26,17 +27,20 @@ const FormContainer = ({
   ) : null;
 
   const messageError = error ? (
-    <div className="form-container--message">
-      <Text variant="caption">{error}</Text>
-    </div>
+    <Flex items="center" className="form-container--message">
+      <Danger width="20" aria-hidden="true" />
+      <Text size="sm">{error}</Text>
+    </Flex>
   ) : null;
 
   return (
     <div className="form-container">
       <label className="form-container--label">
-        {label} {requiredSign}
+        <Flex items="center" gap="2xs">
+          {label} {requiredSign}
+        </Flex>
+        {children}
       </label>
-      {children}
       {messageError}
     </div>
   );

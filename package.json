@@ -14,7 +14,7 @@
     "lint:fix": "yarn lint --fix",
     "lint:check": "yarn lint --quiet",
     "prettier:base": "prettier --parser typescript --single-quote",
-    "prettier:check": "yarn prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
+    "prettier:check": "yarn prettier:base \"src/**/*.{ts,tsx}\"",
     "prettier:write": "yarn prettier:base -- --write \"src/**/*.{ts,tsx}\"",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
@@ -49,7 +49,6 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
-    "@shopify/eslint-plugin": "^42.0.3",
     "@storybook/addon-a11y": "^6.5.10",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",

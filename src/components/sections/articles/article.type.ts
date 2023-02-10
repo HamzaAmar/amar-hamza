@@ -1,7 +1,11 @@
-import PostType from '@type/post';
+import { type Blog } from 'contentlayer/generated';
 
-export interface ArticleProps {
-  posts: PostType[];
+export interface ArticlesProps {
+  posts: Blog[];
   title?: string;
   description?: string;
+}
+
+export interface ArticleProps extends Blog {
+  isBookmarked?: boolean;
 }

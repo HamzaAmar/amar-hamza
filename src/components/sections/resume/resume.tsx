@@ -6,7 +6,6 @@ import {
   English,
   French,
   Gatsby,
-  Github,
   Globe,
   Html,
   Level,
@@ -15,12 +14,10 @@ import {
   Node,
   Pen,
   ReactIcon,
-  Twitter,
   TypeScript,
 } from '@components/icons';
-import { PROJECTS } from '@constants/project';
 
-import { Project } from '..';
+import Project from '../project';
 
 import type { AsideProps, AsideItemProps } from './resume.type';
 

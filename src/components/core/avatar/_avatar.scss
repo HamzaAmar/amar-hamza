@@ -1,27 +1,45 @@
-.container,
-.avatar {
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
+.avatar-wrapper {
+  color: white;
+  overflow: hidden;
+}
+
+.avatar,
+.avatar__fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar__fallback {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-shared-7),
+    var(--color-shared-9)
+  );
+  border: 1px solid transparent;
+  font-weight: bold;
 }
 
 /* Avatar Size Section Style Start */
 
+.avatar--xs {
+  --avatar-size: 0.75rem;
+}
+
 .avatar--sm {
-  --size: 1.5rem;
+  --avatar-size: 1em;
 }
+
 .avatar--md {
-  --size: 2.5rem;
+  --avatar-size: 1.5em;
 }
+
 .avatar--lg {
-  --size: 3.5rem;
+  --avatar-size: 2.5em;
 }
 
 .avatar--xl {
-  --size: 5.5rem;
-}
-.avatar--fluid {
-  --size: 100%;
+  --avatar-size: 4em;
 }
 
 /* Avatar Size Section Style End */

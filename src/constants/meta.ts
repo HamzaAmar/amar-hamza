@@ -31,7 +31,7 @@ const meta = {
   twitterHandle: '@kentcdodds',
   github: 'https://github.com/kentcdodds/',
   linkedin: 'https://www.linkedin.com/in/kentcdodds/',
-  rss: 'https://kentcdodds.com/blog/rss.xml',
+  rss: 'https://miloudamar.com/blog/rss.xml',
   tags: [
     'React',
     'Next',

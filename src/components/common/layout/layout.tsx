@@ -4,8 +4,6 @@ import { useRouter } from 'next/router';
 
 import { Footer, Header } from '..';
 
-import style from './layout.module.css';
-
 // import { Cursor } from '@components/ui';
 
 interface Meta {
@@ -33,7 +31,7 @@ const Layout = (props: LayoutProps) => {
   };
 
   return (
-    <div className={style.container}>
+    <>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -67,9 +65,9 @@ const Layout = (props: LayoutProps) => {
       </Head>
       {/* <Cursor /> */}
       <Header />
-      <main className={style.main}>{children}</main>
+      <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
 Layout.defaultProps = {

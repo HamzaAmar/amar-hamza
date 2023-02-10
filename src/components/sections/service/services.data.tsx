@@ -9,7 +9,7 @@ export const SERVICES = [
       ' create High perforament website and improve performance to website nice score and work with the latest technology',
   },
   {
-    id: 3,
+    id: 2,
     icon: <Accessible width={32} />,
     title: 'Accessible',
     description:

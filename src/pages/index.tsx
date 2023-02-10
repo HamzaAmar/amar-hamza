@@ -1,4 +1,3 @@
-import styles from '@styles/home.module.css';
 import React from 'react';
 import {
   Service,
@@ -8,18 +7,24 @@ import {
   Articles,
 } from '@components/sections';
 import { Layout } from '@components/common';
-import { getAllFilesFrontMatter } from '@lib/mdx';
+// import { getAllFilesFrontMatter } from '@lib/mdx';
 import { GetStaticProps } from 'next';
-import PostType from '@type/post';
-import { Heading } from '@components/core';
+import { allBlogs } from 'contentlayer/generated';
+
+function getBlogPosts(max: number) {
+  const postLength = allBlogs.length > max ? max : allBlogs.length;
+  const posts = Array.from({ length: postLength }).map(
+    (_, index) => allBlogs[index],
+  );
+  return posts;
+}
 
 export const getStaticProps: GetStaticProps = () => {
-  const posts = getAllFilesFrontMatter('blog', 8);
-
+  const posts = getBlogPosts(8);
   return { props: { posts } };
 };
 
-const IndexPage = ({ posts }: { posts: PostType[] }) => {
+const IndexPage = ({ posts }: any) => {
   return (
     <>
       <Layout title="Home Page">
@@ -30,10 +35,7 @@ const IndexPage = ({ posts }: { posts: PostType[] }) => {
           <Service />
           <Skill />
           <Articles posts={posts} />
-          <section className="section l_flow">
-            <Heading>Projects</Heading>
-            <Project />
-          </section>
+          <Project />
         </div>
       </Layout>
     </>

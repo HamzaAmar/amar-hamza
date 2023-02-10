@@ -1,15 +1,7 @@
-.socials {
-  color: var(--color-text);
-  display: flex;
-  flex-direction: var(--direction, row);
-  gap: var(--gutter-md, 2vh);
-}
-
 .socials__horizontal {
   margin-left: 0.5rem;
 }
 
 .socials__vertical {
-  --direction: column;
   margin-top: 0.5rem;
 }

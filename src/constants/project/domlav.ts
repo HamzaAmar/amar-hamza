@@ -1,5 +1,5 @@
 export const domlav = {
-  id: 1,
+  id: 'domlav',
   avatar: {
     src: '/assets/project/domlav/domlav-avatar.jpg',
     alt: 'domlav a washing service',

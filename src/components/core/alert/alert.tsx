@@ -6,33 +6,44 @@ import {
   Danger,
   Close,
 } from '@components/icons';
-
-import { Button, Text } from '..';
+import { Text, IconButton } from '@components/core';
+import useBoolean from '@hooks/useBoolean';
 
 import { AlertProps } from './alert.type';
 
-// const Icon = {
-//   success: <Success width="25" height="25" />,
-//   notification: <Notification width="25" height="25" />,
-//   warning: <Warning width="25" height="25" />,
-//   danger: <Danger width="25" height="25" />,
-// };
+const icon = {
+  success: <Success width="24" height="24" />,
+  primary: <Notification width="24" height="24" />,
+  warning: <Warning width="24" height="24" />,
+  danger: <Danger width="24" height="24" />,
+};
 
-const Alert = ({ variant, message }: AlertProps) => {
-  // const Icon: ReactNode = variant[0].toUpperCase() + variant.slice(1);
-  const [open, setOpen] = useState(true);
+const Alert = ({ color = 'danger', message }: AlertProps) => {
+  const Status = color[0].toUpperCase() + color.slice(1);
+  const { state: open, handleFalse } = useBoolean(true);
 
   return (
     <div
       data-close={open === false}
-      className={`alert alert__${variant}`}
+      className={`alert alert__${color} u_${color}`}
+      role="alert"
     >
-      <Text>
-        <strong>{variant}</strong> {message}
+      <div className="alert--header">
+        <Text size="md" color={color} contrast="low" weight="bold">
+          {Status}
+        </Text>
+        <IconButton
+          color={color!}
+          onClick={handleFalse}
+          title="close Alert"
+          type="button"
+          icon={<Close width="16" />}
+        />
+      </div>
+      <hr />
+      <Text size="sm" color={color} contrast="low">
+        {message}
       </Text>
-      <Button onClick={() => setOpen(false)} type="button">
-        <Close fill="white" width="10" height="10" />
-      </Button>
     </div>
   );
 };

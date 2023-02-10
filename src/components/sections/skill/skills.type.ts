@@ -5,6 +5,7 @@ export interface SkillsProps {
   title: string;
   level: number;
   icon: ReactNode;
+  description: string;
 }
 
 export type ItemSkillProps = Omit<SkillsProps, 'slug'>;

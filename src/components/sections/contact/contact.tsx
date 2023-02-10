@@ -2,6 +2,8 @@ import { Layout } from '@components/common';
 import { Email, Message, Send, User } from '@components/icons';
 import {
   Button,
+  Flex,
+  Grid,
   Heading,
   Input,
   Text,
@@ -41,13 +43,13 @@ const Contact = () => {
   // ) : null;
   const message = null;
   return (
-    <div className="contact">
+    <Grid columns="1fr 1fr" className="sm_grid-one contact">
       <div className="contact--info  l_flow">
-        <Heading size="xxl" className="contact--heading">
+        <Heading size="2xl" className="contact--heading">
           get in touch
         </Heading>
 
-        <Text variant="body2" className="contact--description">
+        <Text className="contact--description">
           Fill up this form if you wanna hire me or ask me some
           question and am gonna be happy to answer
         </Text>
@@ -81,7 +83,7 @@ const Contact = () => {
               touched={touched.name}
               error={errors.name}
               placeholder="type your name"
-              icon={<User />}
+              icon={<User width="24" />}
               required
               autoComplete="name"
             />
@@ -102,7 +104,7 @@ const Contact = () => {
               placeholder="type your email"
               required
               value={values.email}
-              icon={<Email />}
+              icon={<Email width="24" />}
               autoComplete="email"
             />
           </FormContainer>
@@ -121,7 +123,7 @@ const Contact = () => {
               error={errors.subject}
               placeholder="type your name"
               required
-              icon={<Message width={22} />}
+              icon={<Message width="24" />}
             />
           </FormContainer>
           <FormContainer
@@ -139,7 +141,7 @@ const Contact = () => {
               value={values.message}
               placeholder="type your Message"
               required
-              icon={<Message />}
+              icon={<Message width="24" />}
             />
           </FormContainer>
           <Button
@@ -150,7 +152,7 @@ const Contact = () => {
           </Button>
         </form>
       </div>
-    </div>
+    </Grid>
   );
 };
 

@@ -1,8 +1,10 @@
-export { default as Alert } from './alert';
+export { Alert } from './alert';
 export { Button, IconButton } from './button';
 export { Input, Textarea } from './input-field';
-export { default as Loading } from './loading';
-export { default as Heading } from './heading';
-export { default as Text } from './text';
-export { default as Avatar } from './avatar';
-export { default as Tag } from './tag';
+export { Spinner } from './spinner';
+export { Text, Heading } from './typography';
+export { Avatar } from './avatar';
+export { Tag } from './tag';
+export { Flex } from './flex';
+export { Grid } from './grid';
+export { CircleProgress } from './progress';

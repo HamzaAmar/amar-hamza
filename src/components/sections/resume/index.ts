@@ -1,1 +1,1 @@
-export { default } from './resume';
+export { default as Resume } from './resume';

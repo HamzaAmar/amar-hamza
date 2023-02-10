@@ -9,7 +9,7 @@ interface Image {
 }
 
 export interface ProjectType {
-  id: number;
+  id: string;
   img: Image;
   avatar: Image;
   title: string;

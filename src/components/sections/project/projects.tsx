@@ -1,66 +1,98 @@
-import { Heading, Tag, Text } from '@components/core';
-import { Github, Globe } from '@components/icons';
-import { PROJECTS } from '@constants/project';
+/* eslint-disable import/extensions */
 import React from 'react';
+import { Flex, Grid, Heading, Tag, Text } from '@components/core';
+import { PROJECTS } from '@constants/project';
+import { Github, Globe } from '@components/icons';
+import type { ProjectType } from '@constants/project/project.type';
 
-const Projects = () => {
+/*
+====================================================================================================
+  Project Item Component Section
+====================================================================================================
+*/
+
+const Project = ({
+  img,
+  title,
+  links,
+  description,
+  technologies,
+}: Omit<ProjectType, 'id'>) => {
   const imageRef = React.useRef(null);
 
   return (
+    <Flex
+      direction="column"
+      gap="sm"
+      className="project l_box-article"
+    >
+      <div className="project--image-container">
+        <img
+          className="project--image"
+          src={img.src}
+          alt={img.alt}
+          ref={imageRef}
+        />
+      </div>
+      <Flex items="center" justify="between" gap="xs">
+        <Heading>{title}</Heading>
+        <div className="resume__projects l_cluster">
+          {links.map((link) => {
+            const icon =
+              link.title.toLowerCase() === 'site' ? (
+                <Globe width="20" />
+              ) : (
+                <Github width="20" />
+              );
+            return (
+              <a
+                key={link.site}
+                className="project--link l_cluster"
+                href={link.site}
+              >
+                {icon}
+                <span>{link.title}</span>
+              </a>
+            );
+          })}
+        </div>
+      </Flex>
+      <Text color="slate" contrast="low" size="sm">
+        {description}
+      </Text>
+      <Flex className="project--technologies" gap="xs" wrap>
+        {technologies.map((technology) => (
+          <Tag
+            key={technology}
+            color="primary"
+            title={technology}
+            size="sm"
+          />
+        ))}
+      </Flex>
+    </Flex>
+  );
+};
+
+/*
+====================================================================================================
+  Project List Component Section
+====================================================================================================
+*/
+
+const Projects = () => {
+  return (
     <section className="section l_flow">
       <Heading>Projects</Heading>
-      <div className="projects l_flow">
-        {PROJECTS.map(
-          ({ id, img, title, description, technologies, links }) => (
-            <div className="project l_cluster" key={id}>
-              <div className="project--image-container">
-                <img
-                  className="project--image"
-                  src={img.src}
-                  alt={img.alt}
-                  ref={imageRef}
-                />
-              </div>
-              <div className="project--info l_flow">
-                <div className="project--header l_cluster">
-                  <Heading>{title}</Heading>
-                  <div className="resume__projects l_cluster">
-                    {links.map((link) => {
-                      const icon =
-                        link.title.toLowerCase() === 'site' ? (
-                          <Globe width="20" />
-                        ) : (
-                          <Github width="20" />
-                        );
-                      return (
-                        <a
-                          key={link.site}
-                          className="project--link l_cluster"
-                          href={link.site}
-                        >
-                          {icon}
-                          <span>{link.title}</span>
-                        </a>
-                      );
-                    })}
-                  </div>
-                </div>
-                <Text>{description}</Text>
-                <ul className="l_cluster">
-                  {technologies.map((technology) => (
-                    <Tag
-                      key={technology}
-                      color="primary"
-                      title={technology}
-                      size="sm"
-                    />
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ),
-        )}
-      </div>
+      <Grid
+        gap="lg"
+        columns="1fr 1fr 1fr"
+        className="md_grid-two sm_grid-one"
+      >
+        {PROJECTS.map(({ id, ...rest }) => (
+          <Project key={id} {...rest} />
+        ))}
+      </Grid>
     </section>
   );
 };

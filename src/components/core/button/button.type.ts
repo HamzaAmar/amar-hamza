@@ -1,23 +1,23 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import type { ElementType, ReactNode } from 'react';
+import type { Color, Corner, Size } from '@type/utils';
+import type { ReactNode } from 'react';
 
-type Variant = 'contained' | 'outline' | 'text' | 'icon';
-type Color =
-  | 'primary'
-  | 'secondary'
-  | 'danger'
-  | 'success'
-  | 'warning';
+type Variant = 'solid' | 'outline' | 'text' | 'soft';
 type Status = 'idle' | 'success' | 'error' | 'loading';
-type Size = 'sm' | 'md' | 'lg' | 'fluid';
 
-export interface ButtonProps<C extends ElementType> {
-  as?: C;
-  children: ReactNode;
+interface ButtonCoreProps {
   icon?: ReactNode;
-  status?: Status;
-  className?: string;
   variant?: Variant;
   size?: Size;
   color?: Color;
+  corner?: Corner;
+}
+
+export interface ButtonProps extends ButtonCoreProps {
+  status?: Status;
+  fluid?: boolean;
+  iconPosition?: 'start' | 'end';
+}
+
+export interface IconButtonProps extends ButtonCoreProps {
+  title: string;
 }

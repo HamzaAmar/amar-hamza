@@ -1,51 +1,59 @@
 .input-field--container {
+  --icon-container-size: 2.5rem;
+
   position: relative;
   overflow: hidden;
-  --width: 2rem;
+  border: 2px solid var(--slate-6);
   border-radius: 0.25em;
 }
 
-.input-field--container input {
-  height: 2.75rem;
+.input-field--container:hover {
+  border-color: var(--primary-8);
+}
+
+.input-field--container:focus-within {
+  outline: 2px solid transparent;
+  border-color: var(--slate-8);
+}
+
+.input-field--container[data-error='true'] {
+  color: var(--red-8);
+  border-color: var(--red-8);
+}
+
+.input-field--container[data-error='true']
+  > .input-field::placeholder {
+  color: var(--red-7);
+  font-weight: 300;
 }
 
 .input-field {
-  padding-left: calc(var(--width) + 1rem);
-  color: var(--color-text);
-  border: none;
-  height: 100%;
+  color: var(--slate-8);
+  background: var(--slate-3);
+  padding: 0.5em;
   width: 100%;
-  z-index: 1;
-  position: relative;
-  background: var(--color-grey-100);
-  border: 2px solid var(--color-grey-200);
 }
 
-.input-field:focus,
-.input-field:hover {
-  border-color: var(--color-primary-500);
-}
-//  only for high contrast mode
-.input-field:focus {
-  outline: 2px solid transparent;
+.input-field:not(.input__icon-exist) {
+  padding: 0.5em 1rem;
 }
 
-.input-field[data-error='true'] {
-  color: var(--color-danger-500);
-  border-color: var(--color-danger-500);
+.input__icon-exist {
+  padding-inline-start: var(--icon-container-size);
 }
 
 .input-field--icon {
   position: absolute;
-  left: 0.5rem;
-  top: 0.5rem;
-  z-index: 2;
-  width: var(--width);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  left: 0;
+  top: 0;
+  width: var(--icon-container-size);
   height: 100%;
+  padding: 0.5rem 0;
 }
 
-.input-field + .input-field--icon {
-  color: grey;
-  width: 1.5rem;
-  height: 1.5rem;
+.input-field[type] + .input-field--icon {
+  align-items: center;
 }

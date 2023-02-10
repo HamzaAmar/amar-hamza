@@ -1,6 +1,5 @@
 .contact {
-  display: flex;
-  justify-content: space-between;
+  min-height: 75vh;
 }
 
 .contact--info,
@@ -10,22 +9,26 @@
   display: flex;
   flex-direction: column;
 }
+
 .contact--info {
-  background-color: var(--color-grey-200);
+  background-color: var(--slate-4);
   top: 5rem;
   display: flex;
   justify-content: center;
+
   --flow-gap: 2rem;
 }
+
 .contact--form {
   --flow-gap: 1rem;
 }
 
 .contact--heading {
-  text-decoration: underline var(--color-primary-300);
+  text-decoration: underline var(--color-primary-3);
   text-transform: uppercase;
   text-align: start;
 }
+
 .contact--description {
   max-width: min(60ch, 100%);
 }
