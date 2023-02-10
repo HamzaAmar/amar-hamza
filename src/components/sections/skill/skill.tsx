@@ -29,9 +29,7 @@ const Item = ({
       key={title}
     >
       <div className="skill--progress">
-        <CircleProgress width="50%" color="primary" lvl={level}>
-          <tspan>{level}%</tspan>
-        </CircleProgress>
+        <CircleProgress color="primary" value={level} />
       </div>
       <div className="skill--content l_flow u_flex-1">
         <Flex justify="between" items="center">

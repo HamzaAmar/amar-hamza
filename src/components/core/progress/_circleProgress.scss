@@ -1,3 +1,26 @@
-.hello {
-  background-color: red;
+.progress-circle {
+  width: 100px;
+  height: 100px;
+}
+
+.progress-circle__background {
+  fill: none;
+  stroke: var(--slate-6);
+  stroke-width: 8;
+}
+
+.progress-circle__progress {
+  fill: none;
+  stroke: hsl(204deg 70% 53%);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-circle__text {
+  font-size: 1.25rem;
+  fill: var(--slate-12);
+  font-weight: 400;
 }
