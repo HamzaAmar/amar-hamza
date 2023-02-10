@@ -1,0 +1,37 @@
+@use '../../../scss/settings/media' as *;
+
+.grid {
+  --columns: var(--regular-columns);
+  --rows: var(--regular-rows);
+  --areas: var(--regular-areas);
+
+  display: grid;
+  grid-template-columns: var(--columns);
+  grid-template-rows: var(--rows);
+  grid-template-areas: var(--areas);
+}
+
+.grid--item {
+  grid-column: var(--column);
+  grid-row: var(--row);
+}
+
+.grid__xs {
+  gap: 0.25rem;
+}
+
+.grid__sm {
+  gap: 0.5rem;
+}
+
+.grid__md {
+  gap: 0.75rem;
+}
+
+.grid__lg {
+  gap: 1rem;
+}
+
+.grid__xl {
+  gap: 1.5rem;
+}

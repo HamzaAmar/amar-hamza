@@ -1,0 +1,50 @@
+.text {
+  color: var(--color-text, currentColor);
+  max-width: 100%;
+}
+
+.heading {
+  max-width: var(--t-width, 100%);
+  color: var(--color-heading);
+}
+
+/* Heading Size Section Style Start */
+.heading__2xs {
+  font-size: 0.875rem;
+}
+
+.heading__xs {
+  font-size: 1rem;
+}
+
+.heading__sm {
+  font-size: 1.325rem;
+}
+
+.heading__md {
+  font-size: 1.75rem;
+}
+
+.heading__lg {
+  font-size: 2rem;
+}
+
+.heading__xl {
+  font-size: 2.5rem;
+}
+
+.heading__2xl {
+  font-size: 3.5rem;
+}
+
+.heading__3xl {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.heading__4xl {
+  font-size: 7rem;
+  line-height: 1;
+}
+
+/* Heading Size Section Style End */
