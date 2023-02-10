@@ -7,6 +7,7 @@ import { GetStaticProps } from 'next';
 import { Layout, ReadingLayout } from '@components/common';
 import { allBlogs, type Blog } from 'contentlayer/generated';
 import { Heading } from '@components/core';
+import { components } from '@components/ui';
 
 export default function Blog({ post }: { post: Blog }) {
   const { body, ...rest } = post;
@@ -20,7 +21,7 @@ export default function Blog({ post }: { post: Blog }) {
       type="article"
     >
       <ReadingLayout {...post}>
-        <Component />
+        <Component components={components} />
         <Heading>Hello</Heading>
       </ReadingLayout>
     </Layout>
