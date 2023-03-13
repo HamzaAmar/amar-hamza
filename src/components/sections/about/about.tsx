@@ -9,7 +9,7 @@ const About = () => {
     <Flex items="center" justify="center" className="about">
       <Social className="about__social-media" direction="vertical" />
       <div className="about--info  center l_flow">
-        <Heading weight="medium" className="about--name">
+        <Heading as="h1" weight="medium" className="about--name">
           Hamza Amar
         </Heading>
         <p className="about--description">

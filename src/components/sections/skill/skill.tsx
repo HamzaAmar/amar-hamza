@@ -59,8 +59,11 @@ const Item = ({
 
 const SkillsContainer = () => {
   return (
-    <section className="section l_flow">
-      <Heading>Skills</Heading>
+    <section
+      aria-labelledby="skills-id-section"
+      className="section l_flow"
+    >
+      <Heading id="skills-id-section">Skills</Heading>
       <ul className="skills l_grid">
         {SKILLS.map(({ slug, ...rest }) => {
           return <Item key={slug} {...rest} />;

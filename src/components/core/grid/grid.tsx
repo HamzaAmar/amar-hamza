@@ -49,17 +49,19 @@ const Item = forwardRef((props, ref) => {
 
 Item.displayName = 'GridItem';
 
-const grid = ({
-  gap,
-  columns,
-  rows,
-  items,
-  justify,
-  areas,
-  children,
-  style,
-  className,
-}: GridProps) => {
+const grid = forwardRef((props, forwardedRef) => {
+  const {
+    gap,
+    columns,
+    rows,
+    items,
+    justify,
+    areas,
+    children,
+    style,
+    className,
+    as: Tag = 'div',
+  } = props;
   const gridClassName = classnames('grid', {
     [`u_justify-${justify}`]: Boolean(justify),
     [`u_items-${items}`]: Boolean(items),
@@ -70,17 +72,18 @@ const grid = ({
   const regularStyle = getStyles({ columns, rows, areas });
 
   return (
-    <div
+    <Tag
       style={{
         ...regularStyle,
         ...style,
       }}
       {...gridClassName}
+      ref={forwardedRef}
     >
       {children}
-    </div>
+    </Tag>
   );
-};
+}) as ForwardRefComponent<'div', GridProps> & { Item: typeof Item };
 grid.Item = Item;
 
 export default grid;

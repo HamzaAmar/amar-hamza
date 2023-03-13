@@ -2,10 +2,13 @@ import { CSSProperties, forwardRef } from 'react';
 import { classnames } from '@utils/classnames';
 import type { ForwardRefComponent } from '@type/polymorphic.type';
 
-import type { TypographyProps } from './typography.type';
+import type {
+  TypographyProps,
+  MultiLineTypographyTruncate,
+} from './typography.type';
 
 export const Text = forwardRef((props, forwardedRef) => {
-  const {
+  let {
     as: Comp = 'p',
     size = 'md',
     truncate,
@@ -20,13 +23,14 @@ export const Text = forwardRef((props, forwardedRef) => {
     contrast = 'high',
     ...rest
   } = props;
-
   const contrastLvl = contrast === 'high' ? 12 : 11;
 
   /* 
       Every className that is Prefixed with u_ is a utility class and you can find it in 
       /src/scss/utilities folder
   */
+
+  let styleOnlyExistOnTruncateMultiLine;
 
   const classNameStyle = classnames(`text u_size-${size}`, {
     [`u_${truncate}`]: Boolean(truncate),
@@ -38,10 +42,14 @@ export const Text = forwardRef((props, forwardedRef) => {
     [`u_leading__${leading}`]: Boolean(leading),
   });
 
-  const styleOnlyExistOnTruncateMultiLine =
-    truncate === 'multiline'
-      ? { '--line-numbers': props.numberLine }
-      : {};
+  if (truncate === 'multiline') {
+    const { numberLine, ...restProps } =
+      rest as MultiLineTypographyTruncate;
+    styleOnlyExistOnTruncateMultiLine = {
+      '--line-numbers': numberLine,
+    };
+    rest = restProps;
+  }
   const colorStyle = color
     ? { '--color-text': `var(--${color}-${contrastLvl})` }
     : {};

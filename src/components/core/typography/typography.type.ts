@@ -32,7 +32,8 @@ export interface TypographyBaseProps {
   leading?: Leading;
 }
 
-interface MultiLineTypographyTruncate extends TypographyBaseProps {
+export interface MultiLineTypographyTruncate
+  extends TypographyBaseProps {
   truncate?: 'multiline';
   numberLine: number;
 }

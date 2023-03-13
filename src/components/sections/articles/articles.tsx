@@ -11,6 +11,7 @@ import { Arrow, Bookmark } from '@components/icons';
 import { formatDate } from '@utils/formatDate';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useId } from 'react';
 
 import type { ArticlesProps, ArticleProps } from './article.type';
 
@@ -28,11 +29,16 @@ const Article = ({
   tags,
   isBookmarked = false,
 }: ArticleProps) => {
+  const id = useId();
+  const buttonId = `${id}-button`;
+  const headingId = `${id}-heading`;
+
   return (
     <Flex
       as="article"
       direction="column"
       className="article l_box-article l_flow"
+      aria-labelledby={headingId}
     >
       <div className="article--image-wrapper">
         <div className="article--image-container">
@@ -48,7 +54,7 @@ const Article = ({
 
         <div className="article--tags l_cluster">
           {tags.map((tag) => (
-            <Tag key={tag} color="success" title={tag} size="sm" />
+            <Tag key={tag} color="primary" title={tag} size="sm" />
           ))}
         </div>
       </div>
@@ -82,7 +88,7 @@ const Article = ({
             className="article--favorite"
           />
         </Flex>
-        <Heading align="start" size="sm">
+        <Heading id={headingId} as="h3" align="start" size="sm">
           {title}
         </Heading>
         <Text
@@ -104,7 +110,11 @@ const Article = ({
           as="a"
           icon={<Arrow direction="right" strokeWidth={2.5} />}
           iconPosition="end"
+          aria-labelledby={buttonId}
         >
+          <span id={buttonId} className="u_sr-only">
+            Go to {title}
+          </span>
           Read More
         </Button>
       </Link>
@@ -124,12 +134,20 @@ const articles = ({
   description,
 }: ArticlesProps) => {
   const descriptionText = description ? (
-    <Text>{description}</Text>
+    <Text color="slate" contrast="low">
+      {description}
+    </Text>
   ) : null;
+
   return (
-    <section className="section l_flow">
-      <Heading>{title}</Heading>
-      {descriptionText}
+    <section
+      aria-labelledby="articles-id-section"
+      className="section l_flow"
+    >
+      <div>
+        <Heading id="articles-id-section">{title}</Heading>
+        {descriptionText}
+      </div>
       <div className="l_grid articles">
         {posts.map((post) => (
           <Article key={post.slug} {...post} />

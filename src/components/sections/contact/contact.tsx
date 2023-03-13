@@ -8,10 +8,11 @@ import {
   Input,
   Text,
   Textarea,
+  FormContainer,
 } from '@components/core';
 import React, { FormEvent } from 'react';
 import { useForm, useContact, InitialValue } from '@hooks/form';
-import { FormContainer, Social } from '@components/ui';
+import { Social } from '@components/ui';
 
 import type { ContactItemProps } from './contact.type';
 import { CONTACT_INFO } from './contact.data';
@@ -67,8 +68,19 @@ const Contact = () => {
           onSubmit={(event: FormEvent) =>
             handleContact(values, event)
           }
+          aria-labelledby="contact-me"
           className="contact--form l_flow"
         >
+          <div>
+            <Heading id="contact-me" as="h2">
+              Contact Me
+            </Heading>
+            <Text size="sm" color="slate" contrast="low">
+              If you have any questions or if you're interested in
+              hiring me, I'm happy to respond as quickly as possible.
+              Please feel free to contact me at any time.
+            </Text>
+          </div>
           <FormContainer
             error={errors.name}
             name="name"

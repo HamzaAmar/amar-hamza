@@ -1,6 +1,6 @@
 import { Flex, Text } from '@components/core';
 import { Danger } from '@components/icons';
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 
 interface FormContainerProps {
   label: string;
@@ -17,6 +17,8 @@ const FormContainer = ({
   required,
   error,
 }: FormContainerProps) => {
+  const messageID = `${useId()}-description`;
+
   const requiredSign = required ? (
     <abbr
       className="form-container--abbr"
@@ -27,7 +29,12 @@ const FormContainer = ({
   ) : null;
 
   const messageError = error ? (
-    <Flex items="center" className="form-container--message">
+    <Flex
+      role="alert"
+      items="center"
+      className="form-container--message"
+      id={messageID}
+    >
       <Danger width="20" aria-hidden="true" />
       <Text size="sm">{error}</Text>
     </Flex>

@@ -8,7 +8,7 @@
 
 import type * as React from 'react';
 
-type Merge<P1 = {}, P2 = {}> = Omit<P1, keyof P2> & P2;
+export type Merge<P1 = {}, P2 = {}> = Omit<P1, keyof P2> & P2;
 
 type Polymorphic<E, OwnProps> = Merge<
   E extends React.ElementType

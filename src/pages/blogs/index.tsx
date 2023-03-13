@@ -17,7 +17,12 @@ export async function getStaticProps() {
 export default function Blog({ posts }: { posts: Blog[] }) {
   return (
     <Layout title="Blog Page">
-      <Articles posts={posts} />
+      <Articles
+        description="in this section we cover React, CSS, accessibility, and
+          design systems to help you strengthen your knowledge and
+          build beautiful, user-friendly web interfaces."
+        posts={posts}
+      />
     </Layout>
   );
 }

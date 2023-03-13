@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import React from 'react';
+import React, { useId } from 'react';
 import { Flex, Grid, Heading, Tag, Text } from '@components/core';
 import { PROJECTS } from '@constants/project';
 import { Github, Globe } from '@components/icons';
@@ -19,12 +19,15 @@ const Project = ({
   technologies,
 }: Omit<ProjectType, 'id'>) => {
   const imageRef = React.useRef(null);
+  const id = `project-${useId()}-id`;
 
   return (
     <Flex
       direction="column"
       gap="sm"
       className="project l_box-article"
+      as="article"
+      aria-labelledby={id}
     >
       <div className="project--image-container">
         <img
@@ -35,7 +38,9 @@ const Project = ({
         />
       </div>
       <Flex items="center" justify="between" gap="xs">
-        <Heading>{title}</Heading>
+        <Heading id={id} as="h3">
+          {title}
+        </Heading>
         <div className="resume__projects l_cluster">
           {links.map((link) => {
             const icon =
@@ -82,8 +87,11 @@ const Project = ({
 
 const Projects = () => {
   return (
-    <section className="section l_flow">
-      <Heading>Projects</Heading>
+    <section
+      aria-labelledby="projects-id-section"
+      className="section l_flow"
+    >
+      <Heading id="projects-id-section">Projects</Heading>
       <Grid
         gap="lg"
         columns="1fr 1fr 1fr"

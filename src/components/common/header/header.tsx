@@ -87,11 +87,13 @@ const Header = () => {
       as="header"
       className="header"
     >
-      <Link href="/">
-        <Flex as="a" items="center" gap="sm">
-          <TypeScript width={24} />
-          <Text as="span">Hamza Amar</Text>
-        </Flex>
+      <Link href="/" passHref>
+        <a className="header--logo-link">
+          <Flex as="span" items="center" gap="sm">
+            <TypeScript width={24} />
+            <Text as="span">Hamza Amar </Text>
+          </Flex>
+        </a>
       </Link>
       <nav className="header--nav u_flex-1">
         <Flex
