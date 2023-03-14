@@ -4,6 +4,7 @@ import { Flex, Grid, Heading, Tag, Text } from '@components/core';
 import { PROJECTS } from '@constants/project';
 import { Github, Globe } from '@components/icons';
 import type { ProjectType } from '@constants/project/project.type';
+import { classnames } from '@utils/classnames';
 
 /*
 ====================================================================================================
@@ -85,7 +86,7 @@ const Project = ({
 ====================================================================================================
 */
 
-const Projects = () => {
+const Projects = ({ className }: { className?: string }) => {
   return (
     <section
       aria-labelledby="projects-id-section"
@@ -95,7 +96,9 @@ const Projects = () => {
       <Grid
         gap="lg"
         columns="1fr 1fr 1fr"
-        className="md_grid-two sm_grid-one"
+        {...classnames(`md_grid-two sm_grid-one`, {
+          [className!]: className,
+        })}
       >
         {PROJECTS.map(({ id, ...rest }) => (
           <Project key={id} {...rest} />

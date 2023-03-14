@@ -19,14 +19,11 @@ const About = () => {
             Hamza Amar
           </Heading>
           <p className="about--description">
-            Senior Front End Web Developer am interest In building
-            Design System with React that is UX friendly and
-            Accessible , I also like to work with{' '}
-            <span className="about__highlight">React</span>{' '}
-            <span className="about__highlight">Next </span>
-            <span className="about__highlight">Remix</span>
-            and I love Write{' '}
-            <span className="about__highlight">CSS </span>,
+            Experienced Frontend Developer | Passionate about building
+            elegant, accessible, and UX-friendly Design Systems with
+            React | Skilled in React Next Remix | CSS enthusiast |
+            Lover of Clean & Maintainable CSS | Always learning and
+            growing.
           </p>
           <Flex items="center" justify="center" className="l_cluster">
             <Link href="/contact" passHref>

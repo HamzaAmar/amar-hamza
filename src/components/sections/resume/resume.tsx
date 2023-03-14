@@ -1,4 +1,4 @@
-import { Avatar, Heading, Text } from '@components/core';
+import { Avatar, Flex, Grid, Heading, Text } from '@components/core';
 import {
   Arabic,
   Call,
@@ -18,51 +18,54 @@ import {
 } from '@components/icons';
 
 import Project from '../project';
+import { EDUCATION_DATA } from './resume.data';
 
 import type { AsideProps, AsideItemProps } from './resume.type';
 
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (
-    <li className="resume--item">
-      <div className="resume--item-info">
+    <Flex as="li" justify="between" className="resume--item">
+      <Flex gap="xs" className="resume--item-info">
         <div className="u_bothCenter u_center">{icon}</div>
         <div>{title}</div>
-      </div>
+      </Flex>
       {children && <div>{children}</div>}
-    </li>
+    </Flex>
+  );
+};
+
+const Education = () => {
+  return (
+    <section className="section">
+      <Heading as="h2">Experience</Heading>
+
+      {EDUCATION_DATA.map(({ id, date, title, description }) => (
+        <Flex key={id} gap="md" className="education--article">
+          <Text
+            size="xs"
+            className="education--date u_flex-none"
+            color="slate"
+            contrast="low"
+          >
+            {date}
+          </Text>
+
+          <div>
+            <Heading as="h3" size="sm">
+              {title}
+            </Heading>
+
+            <Text>{description}</Text>
+          </div>
+        </Flex>
+      ))}
+    </section>
   );
 };
 
 const resume = () => {
   return (
-    <section className="resume">
-      <header className="resume--header">
-        <div className="resume--aside-header">
-          <Avatar
-            image="/me.jpg"
-            size="xl"
-            title="Hamza miloud amar"
-          />
-        </div>
-        <div className="resume--header-info l_flow">
-          <Heading align="start" size="lg">
-            Hamza <span className="highlight"> Miloud Amar</span>
-          </Heading>
-          <Heading align="start" size="md" as="h2">
-            Front End Developer
-          </Heading>
-          <Text>
-            Hello my name is Hamza Miloud Amar I am a Front End Web
-            Developer I am Fall in love With React and Css and I am
-            happy and I am Passion to work with anything about
-            Animation (CSS , Gsap , Threejs) and Css
-          </Text>
-        </div>
-      </header>
-
-      <main className="resume--main">
-        <Project />;
-      </main>
+    <Grid columns="260px 1fr" className="resume sm_grid-one">
       <aside className="resume--aside">
         <div className="resume--info-aside l_flow">
           <div className="resume-aside--item l_flow">
@@ -150,9 +153,63 @@ const resume = () => {
               </AsideItem>
             </ul>
           </div>
+          <div className="l_flow">
+            <Heading>Books I love</Heading>
+            <ul className="l_flow">
+              <Flex as="li">
+                <span>CSS Secrets (By Lea Varou)</span>
+              </Flex>
+              <Flex as="li">Form Design Pattern</Flex>
+              <Flex as="li">Every Layout</Flex>
+              <Flex as="li">Inclusive Components</Flex>
+              <Flex as="li">Inclusive Design Pattern</Flex>
+              <Flex as="li">
+                Designing with Progressive Enhancement
+              </Flex>
+              <Flex as="li">
+                J. David Eisenberg, Amelia Bellamy-Royds - SVG
+                Essentials
+              </Flex>
+              <Flex as="li">Debugging css By Ahmad Shadeed</Flex>
+              <Flex as="li">
+                Estelle Weyl - Transitions and Animations in CSS
+              </Flex>
+            </ul>
+          </div>
         </div>
       </aside>
-    </section>
+      <div>
+        <Flex gap="md" items="center" className="resume--header">
+          <div className="resume--aside-header">
+            <Avatar
+              image="/me.jpg"
+              size="xl"
+              title="Hamza miloud amar"
+            />
+          </div>
+          <div className="resume--header-info">
+            <Heading align="start" size="sm">
+              Hamza <span className="highlight"> Miloud Amar</span>
+            </Heading>
+            <Text align="start" size="sm" as="h2">
+              Front End Developer
+            </Text>
+            <Text color="slate" contrast="low">
+              Experienced Frontend Developer | Passionate about
+              building elegant, accessible, and UX-friendly Design
+              Systems with React | Skilled in React Next Remix | CSS
+              enthusiast | Lover of Clean & Maintainable CSS | Always
+              learning and growing.
+            </Text>
+          </div>
+        </Flex>
+
+        <div className="resume--main">
+          <Education />
+          <Project className="md_grid-one" />
+        </div>
+      </div>
+    </Grid>
   );
 };
 

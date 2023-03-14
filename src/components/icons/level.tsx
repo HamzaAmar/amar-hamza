@@ -19,8 +19,8 @@ const LevelComp = (props: LevelProps) => (
     {PATH_LIST.map((path, index) => {
       const strokeColor =
         index + 1 <= props.level
-          ? 'var(--color-primary-4)'
-          : 'var(--color-grey-1)';
+          ? 'var(--primary-9)'
+          : 'var(--slate-10)';
       return <path key={path} d={path} stroke={strokeColor} />;
     })}
   </svg>

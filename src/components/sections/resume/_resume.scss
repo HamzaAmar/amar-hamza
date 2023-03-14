@@ -1,129 +1,21 @@
-.resume {
-  display: grid;
-  grid-template-columns: 5fr 1.5fr;
-  min-height: 100vh;
-}
-
-.resume--item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.resume--item-info {
-  display: flex;
-  gap: 1rem;
-
-  --flow-gap: 0.25rem;
+.resume--aside {
+  padding: 1rem;
+  border-inline-end: 1px solid var(--opacity-6);
 }
 
 .resume--header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 5vw;
+  border-block-end: 1px solid var(--opacity-6);
+  padding: 2rem;
 }
 
-.resume--header-info {
-  max-width: 75ch;
+.education--article {
+  padding: 1rem 0;
 
-  --flow-gap: 1rem;
-}
-
-.resume--description {
-  width: 90%;
-  min-width: 360px;
-}
-
-.resume--aside {
-  background: var(--color-grey-9);
-  color: var(--color-grey-1);
-  grid-area: 1 / 2 / 3 / 3;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  padding: 1rem 1vw;
-  padding-right: 0;
-
-  // position: sticky;
-}
-
-.resume--info-aside {
-  width: 100%;
-
-  --flow-gap: 1.5rem;
-}
-
-.resume--aside-header {
-  align-self: center;
-  margin: auto;
-}
-
-.resume--list {
-  --flow-gap: 0.5rem;
-}
-
-.asideItemContact {
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.25rem;
-}
-
-.itemInfo {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 0.5rem;
-  padding-right: 1vw;
-}
-
-.main {
-  grid-area: 2 / 2 / 3 / 3;
-  border-radius: 0.25rem;
-  padding: 1rem 5vw;
-}
-
-/* My work Section Start */
-.resume--work {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 10vh;
-}
-
-.resume--work:not(:last-child) {
-  border-left: var(--color-text) 1px solid;
-}
-
-.linkContainer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.link {
-  color: var(--color-primary-main);
-  text-decoration: dashed 1px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.resume--technologies {
-  display: flex;
-  gap: 1rem;
-}
-
-/* My work Section End */
-
-@media screen and (max-width: 768px) {
-  .resume {
-    display: block;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--opacity-6);
   }
+}
+
+.education--date {
+  line-height: 2.5;
 }
