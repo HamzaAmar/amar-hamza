@@ -65,7 +65,7 @@ const Layout = (props: LayoutProps) => {
       </Head>
       {/* <Cursor /> */}
       <Header />
-      <main>{children}</main>
+      <main className="blog--container">{children}</main>
       <Footer />
     </>
   );
