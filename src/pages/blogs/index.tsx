@@ -15,6 +15,7 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ posts }: { posts: Blog[] }) {
+  console.log(posts);
   return (
     <Layout title="Blog Page">
       <Articles

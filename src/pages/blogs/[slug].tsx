@@ -22,7 +22,6 @@ export default function Blog({ post }: { post: Blog }) {
     >
       <ReadingLayout {...post}>
         <Component components={components} />
-        <Heading>Hello</Heading>
       </ReadingLayout>
     </Layout>
   );

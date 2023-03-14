@@ -28,7 +28,7 @@ const About = () => {
             and I love Write{' '}
             <span className="about__highlight">CSS </span>,
           </p>
-          <div className="l_cluster">
+          <Flex items="center" justify="center" className="l_cluster">
             <Link href="/contact" passHref>
               <Button as="a">Hire Me</Button>
             </Link>
@@ -37,7 +37,7 @@ const About = () => {
                 Resume
               </Button>
             </Link>
-          </div>
+          </Flex>
         </div>
         <div className="about-title about-title__top">
           <p>I am a freelance web developer</p>

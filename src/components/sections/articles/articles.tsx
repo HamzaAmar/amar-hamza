@@ -63,7 +63,7 @@ const Article = ({
           <Flex gap="xs" items="center">
             <Avatar size="lg" image="/me.jpg" title="my Avatar" />
             <div className="article--header-content">
-              <Text size="md" weight="normal">
+              <Text size="xs" weight="normal">
                 Hamza Miloud Amar
               </Text>
               <Text
@@ -88,7 +88,13 @@ const Article = ({
             className="article--favorite"
           />
         </Flex>
-        <Heading id={headingId} as="h3" align="start" size="sm">
+        <Heading
+          id={headingId}
+          as="h3"
+          align="start"
+          weight="normal"
+          size="xs"
+        >
           {title}
         </Heading>
         <Text

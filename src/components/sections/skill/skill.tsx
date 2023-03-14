@@ -35,7 +35,7 @@ const Item = ({
         <Flex justify="between" items="center">
           <Flex gap="sm" items="center">
             {iconUI}
-            <Heading as="h3" size="sm">
+            <Heading as="h3" weight="normal" size="xs">
               {title}
             </Heading>
           </Flex>

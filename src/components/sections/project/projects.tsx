@@ -38,7 +38,7 @@ const Project = ({
         />
       </div>
       <Flex items="center" justify="between" gap="xs">
-        <Heading id={id} as="h3">
+        <Heading id={id} as="h3" weight="normal" size="sm">
           {title}
         </Heading>
         <div className="resume__projects l_cluster">

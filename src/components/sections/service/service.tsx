@@ -30,7 +30,7 @@ const services = () => {
               {icon}
             </Flex>
             <div>
-              <Heading as="h3" size="sm">
+              <Heading as="h3" weight="normal" size="xs">
                 {title}
               </Heading>
               <Text size="sm" color="slate" contrast="low">
