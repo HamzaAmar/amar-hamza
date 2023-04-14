@@ -1,15 +1,8 @@
-import type { SVGProps } from 'react';
+import { svgProps } from './utils/config';
+import type { SvgType } from './utils/types';
 
-const pin = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    strokeWidth={1.5}
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
+const pin = (props: SvgType) => (
+  <svg {...svgProps} {...props}>
     <path d="m17.7 16.7-4.3 4.2a2 2 0 0 1-2.8 0l-4.3-4.2a8 8 0 1 1 11.4 0v0Z" />
     <path
       fill="currentColor"

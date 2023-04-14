@@ -1,16 +1,10 @@
 import * as React from 'react';
+import type { SvgType } from './utils/types';
+import { svgProps } from './utils/config';
 
-function menu(props: React.SVGProps<SVGSVGElement>) {
+function menu(props: SvgType) {
   return (
-    <svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={1.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
+    <svg {...svgProps} {...props}>
       <path d="M4 18h16M4 6h16H4zm0 6h16H4z" />
     </svg>
   );

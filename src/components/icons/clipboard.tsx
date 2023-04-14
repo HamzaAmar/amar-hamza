@@ -1,6 +1,6 @@
-import * as React from 'react';
+import type { SvgType } from './utils/types';
 
-function SvgComponent(props: React.SVGProps<SVGSVGElement>) {
+function SvgComponent(props: SvgType) {
   return (
     <svg viewBox="0 0 416 416" {...props}>
       <path d="M112 176h192v16H112zm0 48h192v16H112zm0 48h192v16H112zm0 48h96v16h-96z" />

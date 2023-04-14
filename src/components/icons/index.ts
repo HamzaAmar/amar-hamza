@@ -15,8 +15,6 @@ export { default as Html } from './html';
 export { default as Node } from './node';
 export { default as NextIcon } from './next';
 export { default as ReactIcon } from './react';
-export { default as Graphql } from './graphql';
-export { default as Mongodb } from './mongodb';
 export { default as Express } from './express';
 export { default as Gatsby } from './gatsby';
 export { default as Accessible } from './accessible';

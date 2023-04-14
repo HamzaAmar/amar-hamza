@@ -1,6 +1,7 @@
 import React from 'react';
+import type { SvgType } from './utils/types';
 
-const tailwind = (props: React.SVGProps<SVGSVGElement>) => {
+const tailwind = (props: SvgType) => {
   return (
     <svg viewBox="0 0 155.139 155.139" {...props}>
       <path d="m23.994 24v-.001h.006v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07v-2.185h-4.773v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243v7.801z" />

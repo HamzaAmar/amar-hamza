@@ -1,15 +1,9 @@
 import { SVGProps } from 'react';
+import type { SvgType } from './utils/types';
+import { svgProps } from './utils/config';
 
-const typescript = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={1.5}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-    fill="none"
-  >
+const typescript = (props: SvgType) => (
+  <svg {...svgProps} {...props}>
     <path d="m20 4-2 14.5-6 2-6-2L4 4h16Z" fill="none" />
     <path
       fill="none"

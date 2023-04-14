@@ -1,7 +1,6 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import type { SvgType } from './utils/types';
 
-interface LevelProps extends SVGProps<SVGSVGElement> {
+interface LevelProps extends SvgType {
   level: number;
 }
 

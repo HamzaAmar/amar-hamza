@@ -1,32 +1,15 @@
-import * as React from 'react';
-import type { SVGProps } from 'react';
+import { ROTATION, svgProps } from './utils/config';
+import type { SvgWithDirection } from './utils/types';
 
-interface ArrowProps extends SVGProps<SVGSVGElement> {
-  direction?: keyof typeof rotation;
-}
-
-const rotation = {
-  left: '90',
-  right: '-90',
-  top: '180',
-  bottom: '0',
-  'left-top': '135',
-  'left-bottom': '45',
-  'right-top': '-135',
-  'right-bottom': '-45',
-} as const;
-
-const arrow = ({ direction = 'bottom', ...rest }: ArrowProps) => (
+const arrow = ({
+  direction = 'bottom',
+  ...rest
+}: SvgWithDirection) => (
   <svg
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    transform={`rotate(${rotation[direction]})`}
-    style={{ transform: `rotate(${rotation[direction]}deg)` }}
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    {...svgProps}
+    transform={`rotate(${ROTATION[direction]})`}
+    style={{ transform: `rotate(${ROTATION[direction]}deg)` }}
     {...rest}
-    viewBox="0 0 24 24"
   >
     <path d="M12 5v14m0 0 4-4m-4 4-4-4" />
   </svg>
