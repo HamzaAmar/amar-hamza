@@ -26,19 +26,17 @@ export const getStaticProps: GetStaticProps = () => {
 
 const IndexPage = ({ posts }: any) => {
   return (
-    <>
-      <Layout title="Home Page">
-        <div className="home">
-          <div className="home--about">
-            <About />
-          </div>
-          <Service />
-          <Skill />
-          <Articles posts={posts} />
-          <Project />
+    <Layout title="Home Page">
+      <div className="home">
+        <div className="home--about">
+          <About />
         </div>
-      </Layout>
-    </>
+        <Service />
+        <Skill />
+        <Articles posts={posts} />
+        <Project />
+      </div>
+    </Layout>
   );
 };
 

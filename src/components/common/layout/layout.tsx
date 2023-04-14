@@ -72,7 +72,7 @@ const Layout = (props: LayoutProps) => {
 };
 Layout.defaultProps = {
   title: 'JavaScript Developer',
-  description: `Senior Front End Developer I like every think about it but I am in love with React HTML CSS`,
+  description: `Experienced Frontend Developer skilled in React and CSS. Passionate about building elegant, accessible, and UX-friendly Design Systems. Always learning and growing`,
   image: 'myImage.jpg',
   type: 'website',
 };
