@@ -5,6 +5,7 @@ import {
   Text,
   CircleProgress,
   Button,
+  Grid,
 } from '@components/core';
 
 import SKILLS from './skills.data';
@@ -45,7 +46,7 @@ const Item = ({
         </Flex>
         <Text
           truncate="multiline"
-          numberLine={4}
+          numberLine={5}
           color="slate"
           size="sm"
           contrast="low"
@@ -64,11 +65,16 @@ const SkillsContainer = () => {
       className="section l_flow"
     >
       <Heading id="skills-id-section">Skills</Heading>
-      <ul className="skills l_grid">
+      <Grid
+        gap="sm"
+        as="ul"
+        columns="1fr 1fr"
+        className="md_grid-one"
+      >
         {SKILLS.map(({ slug, ...rest }) => {
           return <Item key={slug} {...rest} />;
         })}
-      </ul>
+      </Grid>
     </section>
   );
 };

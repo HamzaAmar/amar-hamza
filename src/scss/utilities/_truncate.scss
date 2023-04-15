@@ -1,6 +1,6 @@
 .u_multiline {
   display: -webkit-box;
-  -webkit-line-clamp: var(--multi-line, 4);
+  -webkit-line-clamp: var(--line-numbers, 4);
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
