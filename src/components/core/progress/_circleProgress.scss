@@ -11,7 +11,7 @@
 
 .progress-circle__progress {
   fill: none;
-  stroke: hsl(204deg 70% 53%);
+  stroke: var(--color-shared-9);
   stroke-width: 4;
   stroke-linecap: round;
   transform: rotate(-90deg);

@@ -2,7 +2,7 @@ export const linkdin = {
   id: 'linkdin-clone',
   title: 'Linkdin_Clone',
   img: {
-    src: '/assets/project/cinema/cinema.png',
+    src: '/assets/project/linkdin/linkdin.png',
     alt: 'cinema project',
   },
   avatar: {
@@ -11,12 +11,12 @@ export const linkdin = {
   },
   links: [
     {
-      site: 'https://cinema-788cu73ca-hamzaamar.vercel.app/',
+      site: 'https://linkdin-clone-one.vercel.app/',
       title: 'Site',
     },
   ],
   description:
-    "CRA worked with React Router dom 16.4 and it's fully accessible",
+    'I recently created a LinkedIn clone using Create React App, React Router DOM 16.4, Storybook, and TypeScript. This project showcases my skills in building a professional social networking platform with modern web development tool',
   technologies: [
     'React',
     'ReactRouterDom:16.4',
