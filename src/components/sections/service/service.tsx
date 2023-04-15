@@ -1,9 +1,6 @@
 /* eslint-disable @shopify/jsx-prefer-fragment-wrappers */
-import { Flex, Heading, Text } from '@components/core';
+import { Flex, Grid, Heading, Text } from '@components/core';
 import React from 'react';
-// import { FiTrendingUp, FiZap, FiDatabase, FiAirplay } from 'react-icons/fi'
-
-import styles from './Service.module.css';
 import { SERVICES } from './services.data';
 
 const services = () => {
@@ -13,7 +10,7 @@ const services = () => {
       className="section l_flow"
     >
       <Heading id="services-id-section">Services</Heading>
-      <div className="services l_grid">
+      <Grid gap="sm" columns="1fr 1fr" className="sm_grid-one">
         {SERVICES.map(({ id, title, icon, description }) => (
           <Flex
             gap="sm"
@@ -39,7 +36,7 @@ const services = () => {
             </div>
           </Flex>
         ))}
-      </div>
+      </Grid>
     </section>
   );
 };
