@@ -8,11 +8,13 @@ import { useTheme } from 'next-themes';
 import useBoolean from '@hooks/useBoolean';
 
 import type { ItemProps, MenuProps } from './header.type';
+import { Social } from '@components/ui';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
   { id: 2, name: 'Blog', path: '/blogs' },
   { id: 3, name: 'Contact', path: '/contact' },
+  { id: 4, name: 'Resume', path: '/resume' },
 ];
 
 const Switcher = () => {
@@ -46,20 +48,29 @@ const Switcher = () => {
   );
 };
 
-const Item = ({ name, path, pathname, mobile }: ItemProps) => {
+const Item = ({
+  name,
+  path,
+  pathname,
+  mobile,
+  handleClose,
+}: ItemProps) => {
   const isCurrentLink = pathname === path;
   const currentLink = isCurrentLink ? 'page' : false;
+  const close = handleClose ? { onClick: handleClose } : {};
+  const onlyDesktop = mobile ? {} : ({ justify: 'center' } as const);
 
   return (
-    <li className="header--item">
+    <li className="header--item" data-mobile={mobile}>
       <Link href={path} passHref>
         <Flex
           as="a"
           items="center"
-          justify="center"
           aria-current={currentLink}
           className="header--item-link"
           data-mobile={mobile}
+          {...close}
+          {...onlyDesktop}
         >
           {name}
         </Flex>
@@ -95,7 +106,7 @@ const Header = () => {
           </Flex>
         </a>
       </Link>
-      <nav className="header--nav u_flex-1">
+      <nav className="header--nav sm_hide u_flex-1">
         <Flex
           as="ul"
           justify="center"
@@ -117,28 +128,20 @@ const Header = () => {
       <Flex gap="xs" items="center">
         <IconButton
           icon={<Menu focusable="false" aria-hidden="true" />}
-          title="Toggle Menu"
+          title="Toggle Menu mobile-only"
           onClick={handleTrue}
+          className="toggle__menu hello"
         />
         <Switcher />
       </Flex>
-      <nav className="header--mobile" data-visible={visible === true}>
-        <Button
-          type="button"
-          variant="outline"
-          onClick={handleFalse}
-          className="header--close-button"
-        >
+      <nav
+        className="header--mobile l_flow__2xl"
+        data-visible={visible === true}
+      >
+        <Button type="button" variant="outline" onClick={handleFalse}>
           Close
         </Button>
-        <Flex
-          as="ul"
-          gap="md"
-          direction="column"
-          items="center"
-          justify="center"
-          className="header--mobile-list l_flow u_flex-1"
-        >
+        <ul className="header--mobile-list u_flex-1">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -147,10 +150,25 @@ const Header = () => {
                 path={path}
                 pathname={pathname}
                 mobile
+                handleClose={handleFalse}
               />
             );
           })}
-        </Flex>
+        </ul>
+
+        <div className="l_flow__lg">
+          <Social />
+          <Text
+            align="center"
+            weight="thin"
+            size="2xs"
+            color="slate"
+            contrast="low"
+          >
+            I'm glad you're here! Explore my work and get to know me
+            better.
+          </Text>
+        </div>
       </nav>
     </Flex>
   );

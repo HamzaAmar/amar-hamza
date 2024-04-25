@@ -1,3 +1,5 @@
+@use '../../../scss/settings/media' as *;
+
 .header {
   position: sticky;
   top: 0;
@@ -25,6 +27,7 @@
 .header--item:not([data-mobile='true']),
 .header--item-link {
   height: 100%;
+  min-width: 4rem;
 }
 
 .header--item {
@@ -40,6 +43,11 @@
 
   &:focus {
     box-shadow: inset 0 0 1rem -2px var(--primary-7);
+  }
+
+  &[data-mobile='true'] {
+    padding: 1.5rem;
+    width: fit-content;
   }
 
   &:not([data-mobile='true'])::after {
@@ -83,25 +91,17 @@
   left: 0;
   top: 0;
   transform-origin: left top;
-  background-color: var(--slate-2);
   z-index: 1;
+  padding: 1.5rem;
+  background-color: var(--slate-1);
 }
 
 .header--mobile[data-visible='true'] {
   display: flex;
+  flex-direction: column;
   opacity: 1;
   transform: translateX(0);
   transition: transform 0.3s, opacity 0.2s;
-}
-
-.header--mobile-list {
-  height: 100%;
-}
-
-.header--close-button {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
 }
 
 .menuMobileIcon {
@@ -109,12 +109,18 @@
   color: currentcolor;
 }
 
-@media (max-width: 600px) {
-  .header--nav {
-    display: none;
+[data-mobile='true'] {
+  .header--item-link {
+    justify-content: flex-start !important;
   }
+}
 
-  .menuMobileIcon {
-    display: inline-block;
+.toggle__menu {
+  display: none !important;
+}
+
+@media (max-width: $screen-phone-large) {
+  .toggle__menu {
+    display: flex !important;
   }
 }

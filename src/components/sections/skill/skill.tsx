@@ -40,9 +40,6 @@ const Item = ({
               {title}
             </Heading>
           </Flex>
-          <Button variant="outline" as="p" size="xs" color="primary">
-            Projects
-          </Button>
         </Flex>
         <Text
           truncate="multiline"

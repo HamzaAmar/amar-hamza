@@ -1,4 +1,5 @@
 import { Flex, Grid, Heading, Text } from '@components/core';
+import { Social } from '@components/ui';
 import React from 'react';
 
 const Footer = () => {
@@ -8,15 +9,21 @@ const Footer = () => {
         columns="1fr 1fr"
         className="footer--hero-content md_grid-one"
       >
-        <div className="footer--contact l_flow__2xs l_box">
-          <Heading weight="medium">
-            Connect With Me On Social Media
-          </Heading>
-          <Text color="slate" contrast="low">
-            I appreciate your visit to my website. If you find my work
-            interesting and would like to know more about me, please
-            consider following me on social media. Thank you!
-          </Text>
+        <div className="footer--contact l_flow__md l_box">
+          <div className="l_flow__xs">
+            <Heading weight="medium">
+              Connect With Me On Social Media
+            </Heading>
+            <Text color="slate" contrast="low">
+              I appreciate your visit to my website. If you find my
+              work interesting and would like to know more about me,
+              please consider following me on social media. Thank you!
+            </Text>
+          </div>
+          <Social
+            className="about__social-media"
+            // direction="vertical"
+          />
         </div>
 
         <Flex

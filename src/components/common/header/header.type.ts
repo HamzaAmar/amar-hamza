@@ -3,6 +3,7 @@ export interface ItemProps {
   path: string;
   pathname: string;
   mobile?: boolean;
+  handleClose?: () => void;
 }
 export interface MenuProps {
   id: number;

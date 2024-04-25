@@ -8,6 +8,10 @@
   .md_grid-one {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .md_hide {
+    display: none;
+  }
 }
 
 @media (max-width: $screen-phone-large) {
@@ -17,5 +21,9 @@
 
   .sm_grid-one {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sm_hide {
+    display: none;
   }
 }

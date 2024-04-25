@@ -50,9 +50,14 @@ const Contact = () => {
           get in touch
         </Heading>
 
-        <Text className="contact--description">
-          Fill up this form if you wanna hire me or ask me some
-          question and am gonna be happy to answer
+        <Text
+          color="slate"
+          contrast="low"
+          className="contact--description"
+        >
+          Please complete this form if you’re interested in hiring me
+          or have any questions. I’m always delighted to respond and
+          assist you
         </Text>
 
         <div className="contact--info-list l_flow">

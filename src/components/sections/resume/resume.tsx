@@ -41,7 +41,7 @@ const Education = () => {
 
       {EDUCATION_DATA.map(({ id, date, title, description }) => (
         <Flex key={id} gap="md" className="education--article">
-          <div className="l_flow__2xs">
+          <div className="l_flow__xs">
             <div>
               <Heading
                 color="primary"
@@ -193,13 +193,15 @@ const resume = () => {
               title="Hamza miloud amar"
             />
           </div>
-          <div className="resume--header-info l_flow__3xs">
-            <Heading align="start" size="sm">
-              Hamza <span className="highlight"> Miloud Amar</span>
-            </Heading>
-            <Text align="start" size="sm" as="h2">
-              Front End Developer
-            </Text>
+          <div className="resume--header-info l_flow__2xs">
+            <div>
+              <Heading weight="medium" align="start" size="sm">
+                Hamza Miloud Amar
+              </Heading>
+              <Text weight="thin" align="start" size="sm" as="h2">
+                Front End Developer
+              </Text>
+            </div>
             <Text color="slate" contrast="low">
               Experienced Frontend Developer | Passionate about
               building elegant, accessible, and UX-friendly Design
