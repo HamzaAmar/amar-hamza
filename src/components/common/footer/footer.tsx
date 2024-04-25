@@ -8,19 +8,16 @@ const Footer = () => {
         columns="1fr 1fr"
         className="footer--hero-content md_grid-one"
       >
-        <Flex
-          items="center"
-          justify="center"
-          direction="column"
-          className="footer--contact l_box"
-        >
-          <Heading>Thank you</Heading>
-          <Text color="slate" contrast="low" align="center">
-            Hello thank you for the visit if you like my website and
-            you want to see more staff about me please follow me in
-            social media
+        <div className="footer--contact l_flow__2xs l_box">
+          <Heading weight="medium">
+            Connect With Me On Social Media
+          </Heading>
+          <Text color="slate" contrast="low">
+            I appreciate your visit to my website. If you find my work
+            interesting and would like to know more about me, please
+            consider following me on social media. Thank you!
           </Text>
-        </Flex>
+        </div>
 
         <Flex
           items="center"

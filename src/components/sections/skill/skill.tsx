@@ -32,7 +32,7 @@ const Item = ({
       <div className="skill--progress">
         <CircleProgress color="primary" value={level} />
       </div>
-      <div className="skill--content l_flow u_flex-1">
+      <div className="skill--content l_flow__2xs u_flex-1">
         <Flex justify="between" items="center">
           <Flex gap="sm" items="center">
             {iconUI}
@@ -62,11 +62,16 @@ const SkillsContainer = () => {
   return (
     <section
       aria-labelledby="skills-id-section"
-      className="section l_flow"
+      className="section l_flow__lg"
     >
-      <Heading id="skills-id-section">Skills</Heading>
+      <Heading id="skills-id-section" weight="medium">
+        <Text contrast="low" transform="uppercase" color="primary">
+          Proficient Web Skills
+        </Text>
+        Unveil my extensive skill set in web development and design.
+      </Heading>
       <Grid
-        gap="sm"
+        gap="lg"
         as="ul"
         columns="1fr 1fr"
         className="md_grid-one"

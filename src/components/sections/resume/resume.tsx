@@ -36,26 +36,32 @@ const AsideItem = ({ icon, title, children }: AsideItemProps) => {
 
 const Education = () => {
   return (
-    <section className="section">
+    <section className="section l_flow__md">
       <Heading as="h2">Experience</Heading>
 
       {EDUCATION_DATA.map(({ id, date, title, description }) => (
         <Flex key={id} gap="md" className="education--article">
-          <Text
-            size="xs"
-            className="education--date u_flex-none"
-            color="slate"
-            contrast="low"
-          >
-            {date}
-          </Text>
-
-          <div>
-            <Heading as="h3" size="sm">
-              {title}
-            </Heading>
-
-            <Text>{description}</Text>
+          <div className="l_flow__2xs">
+            <div>
+              <Heading
+                color="primary"
+                contrast="low"
+                weight="medium"
+                as="h3"
+                size="sm"
+              >
+                {title}
+              </Heading>
+              <Text
+                size="xs"
+                className="education--date u_flex-none"
+                color="slate"
+                contrast="low"
+              >
+                {date}
+              </Text>
+            </div>
+            <Text size="sm">{description}</Text>
           </div>
         </Flex>
       ))}
@@ -81,7 +87,7 @@ const resume = () => {
               />
               <AsideItem
                 icon={<Linkdin width={16} />}
-                title="hello wold"
+                title="hamza-miloud-amar-463b24167"
               />
               <AsideItem
                 icon={<Globe width={16} />}
@@ -179,15 +185,15 @@ const resume = () => {
         </div>
       </aside>
       <div>
-        <Flex gap="md" items="center" className="resume--header">
+        <Flex gap="lg" className="resume--header">
           <div className="resume--aside-header">
             <Avatar
               image="/me.jpg"
-              size="xl"
+              size="3xl"
               title="Hamza miloud amar"
             />
           </div>
-          <div className="resume--header-info">
+          <div className="resume--header-info l_flow__3xs">
             <Heading align="start" size="sm">
               Hamza <span className="highlight"> Miloud Amar</span>
             </Heading>

@@ -15,7 +15,7 @@ const About = () => {
           direction="vertical"
         />
         <div className="about--info  center l_flow">
-          <Heading as="h1" weight="medium" className="about--name">
+          <Heading as="h1" className="about--name">
             Hamza Amar
           </Heading>
           <p className="about--description">
@@ -27,10 +27,17 @@ const About = () => {
           </p>
           <Flex items="center" justify="center" className="l_cluster">
             <Link href="/contact" passHref>
-              <Button as="a">Hire Me</Button>
+              <Button size="lg" as="a">
+                Hire Me
+              </Button>
             </Link>
             <Link href="/resume" passHref>
-              <Button variant="outline" as="a" icon={<File />}>
+              <Button
+                size="lg"
+                variant="outline"
+                as="a"
+                icon={<File />}
+              >
                 Resume
               </Button>
             </Link>

@@ -1,11 +1,11 @@
 export const pillar = {
   id: 'pillar-ui',
   img: {
-    src: '/assets/project/ui_lego/ui_lego.png',
+    src: '/assets/project/pillar/pillar.png',
     alt: 'UI Lego Design System Starter',
   },
   avatar: {
-    src: '/assets/project/ui_lego/ui_lego_avatar.jpg',
+    src: '/assets/project/pillar/pillar.jpg',
     alt: 'UI Lego Design System Starter',
   },
   title: 'Pillar UI',
@@ -13,6 +13,10 @@ export const pillar = {
     {
       site: 'https://github.com/HamzaAmar/pillar-ui/tree/develop',
       title: 'Github',
+    },
+    {
+      site: 'https://www.pillar-ui.com/',
+      title: 'Site',
     },
   ],
   description:

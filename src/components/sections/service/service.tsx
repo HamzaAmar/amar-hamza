@@ -7,10 +7,18 @@ const services = () => {
   return (
     <section
       aria-labelledby="services-id-section"
-      className="section l_flow"
+      className="section l_flow__lg"
     >
-      <Heading id="services-id-section">Services</Heading>
-      <Grid gap="sm" columns="1fr 1fr" className="sm_grid-one">
+      {/* <Heading id="services-id-section">Services</Heading> */}
+
+      <Heading weight="medium">
+        <Text contrast="low" transform="uppercase" color="primary">
+          Insightful Service Overview
+        </Text>
+        Explore the diverse range of web services that I offer.
+      </Heading>
+
+      <Grid gap="lg" columns="1fr 1fr" className="sm_grid-one">
         {SERVICES.map(({ id, title, icon, description }) => (
           <Flex
             gap="sm"
@@ -26,7 +34,7 @@ const services = () => {
             >
               {icon}
             </Flex>
-            <div>
+            <div className="l_flow__2xs">
               <Heading as="h3" weight="normal" size="xs">
                 {title}
               </Heading>

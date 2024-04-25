@@ -14,16 +14,20 @@
 /* Text Alignment Section Style End */
 
 /* Text Transform Section Style Start */
-.u_uppercase {
+.u_transform__uppercase {
   text-transform: uppercase;
 }
 
-.u_lowercase {
+.u_transform__lowercase {
   text-transform: lowercase;
 }
 
-.u_capitalize {
+.u_transform__capitalize {
   text-transform: capitalize;
+}
+
+.u_transform__first-letter-only::first-letter {
+  text-transform: uppercase;
 }
 
 /* Text Transform Section Style End */

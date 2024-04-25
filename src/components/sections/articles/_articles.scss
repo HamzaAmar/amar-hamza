@@ -1,5 +1,5 @@
 .articles {
-  --minimum: 300px;
+  // --minimum: 300px;
 }
 
 /*
@@ -10,6 +10,7 @@
 
 .article {
   overflow: hidden;
+  max-width: 420px;
 }
 
 .article--button {

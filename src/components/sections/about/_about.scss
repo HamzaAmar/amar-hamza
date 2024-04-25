@@ -76,7 +76,7 @@
 
 .about--info {
   font-size: inherit;
-  max-width: 660px;
+  max-width: 650px;
   padding: 0 1rem;
 }
 
@@ -97,13 +97,15 @@
 
 .about--name {
   text-transform: uppercase;
-  font-size: 1.675em;
-  letter-spacing: 1px;
+  font-size: 1.85em;
+  letter-spacing: 4px;
   text-align: center;
 }
 
 .about--description {
   font-size: 0.75em;
+  line-height: 1.75;
+  color: var(--slate-11);
 }
 
 .about-title {

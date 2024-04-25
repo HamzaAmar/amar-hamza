@@ -1,5 +1,10 @@
 .project {
   overflow: hidden;
+
+  &:hover .project--link {
+    text-decoration: underline;
+    color: var(--primary-11);
+  }
 }
 
 .project--image {
@@ -13,13 +18,14 @@
 }
 
 .project--info {
-  background-color: red;
   flex: 1;
 }
 
 .project--link {
   color: var(--color-grey-9);
   cursor: pointer;
+  gap: 0.25rem;
+  align-items: center;
 }
 
 .project--link:hover {

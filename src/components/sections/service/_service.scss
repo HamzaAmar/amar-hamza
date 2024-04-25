@@ -1,11 +1,10 @@
 .service {
-  background-color: var(--slate-4);
+  background-color: var(--slate-3);
   box-shadow: var(--shadow-md);
 }
 
 .service__icon {
-  background-color: var(--slate-12);
-  color: var(--slate-1);
+  background-color: var(--opacity-4);
   padding: 0.5rem;
   border-radius: 50%;
 }

@@ -1,4 +1,4 @@
-type Size = 'sm' | 'md' | 'lg' | 'xl' | 'fluid';
+type Size = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'fluid';
 type Color =
   | 'primary'
   | 'secondary'

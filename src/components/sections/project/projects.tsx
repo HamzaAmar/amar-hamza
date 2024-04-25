@@ -90,9 +90,14 @@ const Projects = ({ className }: { className?: string }) => {
   return (
     <section
       aria-labelledby="projects-id-section"
-      className="section l_flow"
+      className="section l_flow__lg"
     >
-      <Heading id="projects-id-section">Projects</Heading>
+      <Heading weight="medium" id="projects-id-section">
+        <Text contrast="low" transform="uppercase" color="primary">
+          Innovative Web Projects
+        </Text>
+        Explore my portfolio of diverse and impactful web projects.
+      </Heading>
       <Grid
         gap="lg"
         columns="1fr 1fr 1fr"
