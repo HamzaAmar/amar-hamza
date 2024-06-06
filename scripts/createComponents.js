@@ -5,8 +5,6 @@ import path from 'path';
 function debug(message, variant) {
   const color = variant === 'success' ? '\x1b[32m' : '\x1b[31m';
   const symbol = variant === 'success' ? '✓' : '✖';
-
-  console.log(`\n${color} ${symbol} ${message}`);
 }
 
 function getFiles(component) {
