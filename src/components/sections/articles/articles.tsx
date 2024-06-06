@@ -28,6 +28,7 @@ const Article = ({
   date,
   slug,
   tags,
+  image,
   isBookmarked = false,
 }: ArticleProps) => {
   const id = useId();
@@ -42,16 +43,18 @@ const Article = ({
       aria-labelledby={headingId}
     >
       <div className="article--image-wrapper">
-        <div className="article--image-container">
-          <Image
-            src="/assets/blog/hello-world/cover.jpg"
-            alt="Hello world"
-            objectFit="cover"
-            layout="fill"
-            className="article--image"
-            objectPosition="center top"
-          />
-        </div>
+        {image ? (
+          <div className="article--image-container">
+            <Image
+              src={image}
+              alt="Hello world"
+              objectFit="cover"
+              layout="fill"
+              className="article--image"
+              objectPosition="center top"
+            />
+          </div>
+        ) : null}
 
         <div className="article--tags l_cluster">
           {tags.map((tag) => (

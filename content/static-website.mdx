@@ -1,0 +1,83 @@
+---
+title: 'Introduction to Rendering Patterns in Modern Web Development'
+excerpt: 'Unlock Fast & Secure Websites!  Learn how Static Websites excel for blogs, portfolios & more. Stay tuned for Rendering Patterns!.'
+image: '/assets/blog/rendering/static-website.webp'
+date: '2024-06-02T05:35:07.322Z'
+author:
+  name: Hamza Miloud amar
+  picture: '/me.jpg'
+tags: ['Rendering Pattern', 'SEO', 'Web Performance']
+---
+
+Rendering patterns is one of the crucial concepts for a frontend web developer as it helps in creating fast, responsive, and effective web applications. In the same way that there are various styles of baking a cake, there are also different types of rendering patterns that can affect the usability, speed, and SEO of a website.
+
+Each of the rendering patterns has certain features, strengths and weaknesses, and therefore, you should select the proper pattern regarding the requirements of your project. When it comes to rendering patterns, you should think of them as different strategies by which your web browser understands the code that underlies your website and how users will interact with it.
+
+This is the first in a series of blogs where I will be discussing different rendering patterns, why they are required, when one should be used over the other and the advantages and disadvantages of each pattern. We will first discuss the basics of web rendering, like static web samples and then move to complex ones like SSR, CSR, hydration, progressive hydration, partial hydration, server components, etc.
+
+Thus, by knowing each of the rendering patterns, you will be in a position to decide on the right technique to apply in a certain project. Regardless of whether concerns include speed, UX, or SEO, this series will give you a clear understanding of rendering patterns so that you can ensure your users get the best experience possible on the web.
+
+Let's dive in with the first pattern: Static Website.
+
+## Static Website: The Foundation of the Web
+
+### What is a Static Website?
+
+A static site means a collection of HTML documents which are stored on the server and simply delivered to the client. This means that these files contain the same content for all the user implies that those that are based on the user are ? or other dynamic factors. If a static site is accessed for a particular page, the server provides the user with the HTML file associated with that page for the browser to display to the user.
+
+
+<div>
+<Image src='/assets/blog/rendering/static-site-communication.png' width='1400' height='1138' />
+</div>
+
+
+### Why Do We Need Static Websites?
+
+Static sites are the simplest form of web pages and have been around since the early days of the internet. They are straightforward to create and serve, making them an excellent choice for many use cases, including:
+
+- **Personal blogs**
+- **Landing pages**
+- **Documentation sites**
+- **Portfolios**
+
+### When to Use a Static Website
+
+Consider using a static site when:
+
+1. **Content is relatively unchanging**: If, for some reason, your site’s content is not very dynamic and does not have to be personalized for each user, then the static site is the optimal option for you.
+2. **Performance is a priority**: Static sites will open faster because there is no server-side processing that takes place to dynamically generate the content when a page is requested.
+3. **Cost is a concern**: It is cheaper to host a static site since it tends to draw less server resources than dynamics ones.
+4. **Simplicity is key**: They are simple to create and require little in the way of customization so if you are looking for a simple structure, they are for you.
+
+### Pros and Cons of Static Websites
+
+**Pros:**
+
+1. **Speed**: Static sites are more lighter in terms of loading compared to dynamic sites because the later involves server side scripting. The only work of the server…is to deliver the static files which will be appreciated by the user.
+2. **Security**: One of the biggest benefits of static sites is the lack of server-side code execution vents, therefore making static sites a more secure choice.
+3. **Cost-Effective**: Static sites are affordable to host; this can be explained by the fact that they do not require constant updates or frequent traffic to refresh content. Free and paid static hosting services are available in the market, but mostly you get free static site hosting.
+4. **Seo Friendly**: more easily crawl-able by search engine crawlers and faster loading again equals more better ranking.
+
+**Cons:**
+
+1. Replacing from page to another needs complete page reload, which in turn may be more sluggish as explored in dynamic sites.
+2. Static sites aren’t suitable for the dynamic content display. If there is a need to get an interaction with the user, for example, forms, or some content – you might require further client-side coding or back-end integration.
+3. The job of managing a large static site can become rather tiring and unenjoyable. Maintaining the bulk content on many pages every day is a very cumbersome and tiring job and is very prone to errors.
+4. Static sites are much more simpler to work with and contain limited options for the functional aspect. While it suits well for small sites, it is not good for complicated applications where data needs to be processed dynamically.
+5. In the static website the content layout and design of the website is unchangeable and requires programming intervention in the form of modifying the HTML, CSS, and JavaScript files.
+
+### Building a Static Website
+
+1. **Writing HTML**: Organizing your Web sites’ content with HTML.
+2. **Styling with CSS**: We add styling to create an aesthetically rich website.
+3. **Enhancing with JavaScript**: Bringing the sites to life with JavaScript.
+
+Rather than writing every of these files by hand and having to deal with all the resulting files, many developers opt to use static site generators (SSGs) such as **11ty** , **Hugo** , **Jekyll** etc
+
+These Static Website Generator offers a more fácil build process, where the developer can write the content in different formats including, Markdown, YAML, JSON, using templating engines and more. Some of them also have default familiarities such as code division, asset management, and deployment.
+Moreover, the recent front-end frameworks such as Next. js , Remix, Astro, Gatsby n, etc, include SSG functionality with Hydration (We Going to Speak about it in the Future Posts) so that their users can explore static site generation with the tools from the Javacript world.
+However, it is entirely feasible to maintain a static website by hand; utilizing an SSG or a current front-end framework allows for enhanced collaboration with different projects, enhanced performance, and faster development cycles for your static site projects.
+
+## Conclusion
+
+Static sites form the backbone of the web, offering simplicity, speed, and security. Even so, they are still useful for many applications, and can be very effective depending on the circumstances. However, the first thing that one needs to learn before dealing with web rendering patterns is understanding when one should use a static site. In the next post, we will discuss about Server-side Rendering (SSR) and how it also stands out from statically generated sites, with insights of when it could be more appropriate to use it. Stay tuned!
