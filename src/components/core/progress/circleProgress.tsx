@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import type { ProgressCircleProps } from './progress.type';
 import { Flex } from '..';
 

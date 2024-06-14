@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable import/extensions */
 import React, { useId } from 'react';
 import { Flex, Grid, Heading, Tag, Text } from '@components/core';

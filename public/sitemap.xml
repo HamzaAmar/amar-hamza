@@ -1,28 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
           <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
               
-                          <url>
-                              <loc>https://www.miloudamar.com/404</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/contact</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/index</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/resume</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/blogs/index</loc>
-                          </url>
-                      
-                          <url>
-                              <loc>https://www.miloudamar.com/blogs/[slug]</loc>
-                          </url>
-                      
           </urlset>

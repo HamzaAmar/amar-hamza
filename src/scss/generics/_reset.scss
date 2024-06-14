@@ -150,3 +150,12 @@ html.dark [data-rehype-pretty-code-fragment] [data-theme='light'] {
 html.light [data-rehype-pretty-code-fragment] [data-theme='dark'] {
   display: none;
 }
+
+.container {
+  height: 100%;
+}
+
+.main {
+  margin-top: var(--shared-value);
+  display: flow-root;
+}

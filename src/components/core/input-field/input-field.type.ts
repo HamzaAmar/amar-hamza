@@ -7,8 +7,8 @@ import type {
 
 interface BaseProps {
   icon: ReactElement;
-  error: string;
-  touched: boolean;
+  error?: string;
+  touched?: boolean;
 }
 
 export interface InputProps

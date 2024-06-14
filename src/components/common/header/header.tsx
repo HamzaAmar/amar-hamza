@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable no-warning-comments */
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -9,6 +11,7 @@ import useBoolean from '@hooks/useBoolean';
 
 import type { ItemProps, MenuProps } from './header.type';
 import { Social } from '@components/ui';
+import { usePathname } from 'next/navigation';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
@@ -62,34 +65,32 @@ const Item = ({
 
   return (
     <li className="header--item" data-mobile={mobile}>
-      <Link href={path} passHref>
-        <Flex
-          as="a"
-          items="center"
-          aria-current={currentLink}
-          className="header--item-link"
-          data-mobile={mobile}
-          {...close}
-          {...onlyDesktop}
-        >
-          {name}
-        </Flex>
-      </Link>
+      <Flex
+        as={Link}
+        items="center"
+        aria-current={currentLink}
+        className="header--item-link"
+        data-mobile={mobile}
+        {...close}
+        {...onlyDesktop}
+        href={path}
+      >
+        {name}
+      </Flex>
     </li>
   );
 };
 
 const getFirstPathInTheUrl = (pathname: string) => {
   const pathNames = pathname.slice(1);
-  const firstPathWithSlash = `/${pathNames.split('/')[0]}`;
-  return firstPathWithSlash;
+  return `/${pathNames.split('/')[0]}`;
 };
 
 const Header = () => {
   const { state: visible, handleFalse, handleTrue } = useBoolean();
-  const router = useRouter();
+  const pathname = usePathname();
 
-  const pathname = getFirstPathInTheUrl(router.pathname);
+  const path = getFirstPathInTheUrl(pathname);
 
   return (
     <Flex
@@ -98,14 +99,16 @@ const Header = () => {
       as="header"
       className="header"
     >
-      <Link href="/" passHref>
-        <a className="header--logo-link">
-          <Flex as="span" items="center" gap="sm">
-            <TypeScript width={24} />
-            <Text as="span">Hamza Amar </Text>
-          </Flex>
-        </a>
-      </Link>
+      <Flex
+        as={Link}
+        items="center"
+        gap="sm"
+        href="/"
+        className="header--logo-link"
+      >
+        <TypeScript width={24} />
+        <Text as="span">Hamza Amar </Text>
+      </Flex>
       <nav className="header--nav sm_hide u_flex-1">
         <Flex
           as="ul"
@@ -119,7 +122,7 @@ const Header = () => {
                 key={id}
                 name={name}
                 path={path}
-                pathname={pathname}
+                pathname={path}
               />
             );
           })}

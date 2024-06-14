@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Avatar,
   Button,
@@ -112,22 +114,21 @@ const Article = ({
         </Text>
       </div>
 
-      <Link href={`/blogs/${slug}`} passHref>
-        <Button
-          variant="outline"
-          fluid
-          className="article--button"
-          as="a"
-          icon={<Arrow direction="right" strokeWidth={2.5} />}
-          iconPosition="end"
-          aria-labelledby={buttonId}
-        >
-          <span id={buttonId} className="u_sr-only">
-            Go to {title}
-          </span>
-          Read More
-        </Button>
-      </Link>
+      <Button
+        as={Link}
+        variant="outline"
+        fluid
+        className="article--button"
+        icon={<Arrow direction="right" strokeWidth={2.5} />}
+        iconPosition="end"
+        aria-labelledby={buttonId}
+        href={`/blogs/${slug}`}
+      >
+        <span id={buttonId} className="u_sr-only">
+          Go to {title}
+        </span>
+        Read More
+      </Button>
     </Flex>
   );
 };
@@ -138,11 +139,7 @@ const Article = ({
 ====================================================================================================
 */
 
-const articles = ({
-  posts,
-  title = 'Articles',
-  description,
-}: ArticlesProps) => {
+const articles = ({ posts, description }: ArticlesProps) => {
   const descriptionText = description ? (
     <Text color="slate" contrast="low">
       {description}

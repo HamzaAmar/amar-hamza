@@ -26,21 +26,18 @@ const About = () => {
             growing.
           </p>
           <Flex items="center" justify="center" className="l_cluster">
-            <Link href="/contact" passHref>
-              <Button size="lg" as="a">
-                Hire Me
-              </Button>
-            </Link>
-            <Link href="/resume" passHref>
-              <Button
-                size="lg"
-                variant="outline"
-                as="a"
-                icon={<File />}
-              >
-                Resume
-              </Button>
-            </Link>
+            <Button size="lg" as={Link} href="/contact">
+              Hire Me
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              icon={<File />}
+              as={Link}
+              href="/resume"
+            >
+              Resume
+            </Button>
           </Flex>
         </div>
         <div className="about-title about-title__top">

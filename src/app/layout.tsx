@@ -1,10 +1,7 @@
-import Head from 'next/head';
 import React from 'react';
-import { useRouter } from 'next/router';
-
-import { Footer, Header } from '..';
-
-// import { Cursor } from '@components/ui';
+import { GoogleTagManager } from '@next/third-parties/google';
+import { Footer, Header } from '@components/common';
+import '../scss/main.scss';
 
 interface Meta {
   title?: string;
@@ -18,24 +15,19 @@ interface LayoutProps extends Meta {
 }
 
 const Layout = (props: LayoutProps) => {
-  const { children, title, description, image, ...customMeta } =
-    props;
-  const router = useRouter();
-  const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
+  const { children } = props;
+  const { NEXT_PUBLIC_DOMAIN_NAME, GA_TRACKING_ID } = process.env;
 
-  const meta: Meta = {
-    title: `${title} – Hamza Miloud Amar`,
-    description,
-    image: `https://miloudamar.com/${image}`,
-    ...customMeta,
-  };
+  // const meta: Meta = {
+  //   title: `${title} – Hamza Miloud Amar`,
+  //   description,
+  //   image: `https://miloudamar.com/${image}`,
+  //   ...customMeta,
+  // };
 
-  return (
-    <>
-      <Head>
-        <title>{meta.title}</title>
+  {
+    /* <Head>
         <meta name="robots" content="follow, index" />
-        <meta content={meta.description} name="description" />
         <meta
           property="og:url"
           content={`${NEXT_PUBLIC_DOMAIN_NAME}${router.asPath}`}
@@ -62,12 +54,18 @@ const Layout = (props: LayoutProps) => {
             content={meta.date}
           />
         )}
-      </Head>
-      {/* <Cursor /> */}
-      <Header />
-      <main className="blog--container">{children}</main>
-      <Footer />
-    </>
+      </Head> */
+  }
+
+  return (
+    <html lang="en">
+      <GoogleTagManager gtmId={GA_TRACKING_ID!} />
+      <body>
+        <Header />
+        <main className="blog--container">{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 };
 Layout.defaultProps = {

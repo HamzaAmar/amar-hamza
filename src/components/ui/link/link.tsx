@@ -1,19 +1,20 @@
+'use client';
+
 import React, { ReactElement, ReactNode } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-import styles from './link.module.css';
-
+import { usePathname } from 'next/navigation';
 interface LinkProps {
   href: string;
   children: ReactElement;
 }
 
 const LinkComp = ({ href, children }: LinkProps) => {
-  const router = useRouter();
+  const pathname = usePathname();
+
+  console.log(pathname);
 
   let className = children.props.className || '';
-  if (router.pathname === href) {
+  if (pathname === href) {
     className = `${className} active`;
   }
 

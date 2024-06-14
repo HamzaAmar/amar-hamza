@@ -1,6 +1,8 @@
+'use client';
+
 import { Flex, Text } from '@components/core';
 import { Danger } from '@components/icons';
-import React, { useId, useState } from 'react';
+import React, { useId } from 'react';
 
 interface FormContainerProps {
   label: string;
