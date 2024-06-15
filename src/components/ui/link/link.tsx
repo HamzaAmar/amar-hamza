@@ -11,8 +11,6 @@ interface LinkProps {
 const LinkComp = ({ href, children }: LinkProps) => {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   let className = children.props.className || '';
   if (pathname === href) {
     className = `${className} active`;

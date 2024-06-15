@@ -27,11 +27,11 @@ import type { ArticlesProps, ArticleProps } from './article.type';
 const Article = ({
   excerpt,
   title,
-  date,
   slug,
   tags,
   image,
   isBookmarked = false,
+  publishedAt,
 }: ArticleProps) => {
   const id = useId();
   const buttonId = `${id}-button`;
@@ -77,9 +77,9 @@ const Article = ({
                 color="slate"
                 as="time"
                 size="sm"
-                dateTime={date}
+                dateTime={publishedAt}
               >
-                {formatDate(date)}
+                {formatDate(publishedAt)}
               </Text>
             </div>
           </Flex>
@@ -167,7 +167,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
         className="sm_grid-one md_grid-two articles"
       >
         {posts.map((post) => (
-          <Article key={post.slug} {...post} />
+          <Article key={post.metadata.slug} {...post.metadata} />
         ))}
       </Grid>
     </section>

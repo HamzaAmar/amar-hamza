@@ -1,17 +1,18 @@
+import type { ReadTimeResults } from 'reading-time';
+
 interface Author {
   name: string;
   picture: string;
 }
 
-interface PostType {
-  slug: string;
+export interface Post {
   title: string;
-  date: string;
+  publishedAt: string;
   author: Author;
   excerpt: string;
   image: string;
   content: string;
-  tags?: string[];
+  tags: string[];
+  slug: string;
+  readingTime: ReadTimeResults;
 }
-
-export default PostType;

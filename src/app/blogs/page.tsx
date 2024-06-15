@@ -3,11 +3,14 @@
 import React from 'react';
 import { compareDesc } from 'date-fns';
 import { Articles } from '@components/sections';
-import { allBlogs, type Blog } from 'contentlayer/generated';
+import { getBlogPosts } from 'api/blog';
 
 export default async function Blog() {
-  const posts = allBlogs.sort((first, second) => {
-    return compareDesc(new Date(first.date), new Date(second.date));
+  const posts = getBlogPosts().sort((first, second) => {
+    return compareDesc(
+      new Date(first.metadata.publishedAt),
+      new Date(second.metadata.publishedAt),
+    );
   });
 
   return (
