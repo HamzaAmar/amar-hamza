@@ -1,30 +1,29 @@
 import React from 'react';
-import {
-  Service,
-  Project,
-  About,
-  Skill,
-  Articles,
-} from '@components/sections';
 import { getBlogPostsWithLimit } from 'api/blog';
+import {
+  About,
+  Articles,
+  Project,
+  Service,
+  Skill,
+} from './_components';
 
-// function getBlogPosts(max: number) {
-//   const postLength = allBlogs.length > max ? max : allBlogs.length;
-//   const posts = Array.from({ length: postLength }).map(
-//     (_, index) => allBlogs[index],
-//   );
-//   return posts;
+// .home {
+//   display: grid;
+// }
+
+// @media (max-width: 800px) {
+//   .section {
+//     font-size: 0.7rem;
+//   }
 // }
 
 const IndexPage = async () => {
   const posts = getBlogPostsWithLimit(8);
-  // const posts = getBlogPosts(8);
 
   return (
     <div className="home">
-      <div className="home--about">
-        <About />
-      </div>
+      <About />
       <Service />
       <Skill />
       <Articles posts={posts} />

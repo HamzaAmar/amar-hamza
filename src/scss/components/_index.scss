@@ -1,5 +1,2 @@
-@forward 'common';
-@forward 'core';
-@forward 'sections';
-@forward 'ui';
-@forward 'pages/';
+@forward '../../app/_components/index';
+@forward '../../components/core/index';

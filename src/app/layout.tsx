@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleTagManager } from '@next/third-parties/google';
-import { Footer, Header } from '@components/common';
+import { Footer, Header } from './_components';
 import '../scss/main.scss';
 
 interface Meta {

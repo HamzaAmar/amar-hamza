@@ -8,3 +8,5 @@ export { Tag } from './tag';
 export { Flex } from './flex';
 export { Grid } from './grid';
 export { CircleProgress } from './progress';
+export { CustomMDX } from './mdx';
+export { default as Social } from './social';

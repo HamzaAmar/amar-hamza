@@ -17,7 +17,7 @@ import {
   TypeScript,
 } from '@components/icons';
 
-import Project from '../project';
+import Project from '../../../app/_components/project';
 import { EDUCATION_DATA } from './resume.data';
 
 import type { AsideProps, AsideItemProps } from './resume.type';
