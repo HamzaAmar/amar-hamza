@@ -1,22 +1,30 @@
 'use client';
 
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 interface LinkProps {
   href: string;
-  children: ReactElement;
+  children: ReactNode;
+  className?: string;
 }
 
-const LinkComp = ({ href, children }: LinkProps) => {
+const NavLink = ({ children, href, ...rest }: LinkProps) => {
   const pathname = usePathname();
 
-  let className = children.props.className || '';
-  if (pathname === href) {
-    className = `${className} active`;
-  }
+  let path = pathname.split('/')[1] ?? '';
+  path = `/${path}`;
+  const isActive = path === href;
 
-  return <Link href={href}>{children}</Link>;
+  const current = isActive
+    ? ({ 'aria-current': 'page' } as { 'aria-current': 'page' })
+    : {};
+
+  return (
+    <Link href={href} {...rest} {...current}>
+      {children}
+    </Link>
+  );
 };
 
-export default LinkComp;
+export default NavLink;

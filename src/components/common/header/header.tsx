@@ -11,6 +11,7 @@ import useBoolean from '@hooks/useBoolean';
 import type { ItemProps, MenuProps } from './header.type';
 import { Social } from '@components/ui';
 import { usePathname } from 'next/navigation';
+import { NavLink } from '@components/ui/link';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
@@ -58,14 +59,12 @@ const Item = ({
   handleClose,
 }: ItemProps) => {
   const isCurrentLink = pathname === path;
-  const currentLink = isCurrentLink ? 'page' : false;
   const close = handleClose ? { onClick: handleClose } : {};
   const onlyDesktop = mobile ? {} : ({ justify: 'center' } as const);
 
   return (
     <li className="header--item" data-mobile={mobile}>
-      <Link
-        aria-current={currentLink}
+      <NavLink
         className="u_center header--item-link"
         data-mobile={mobile}
         {...close}
@@ -73,7 +72,7 @@ const Item = ({
         href={path}
       >
         {name}
-      </Link>
+      </NavLink>
     </li>
   );
 };
