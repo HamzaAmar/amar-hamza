@@ -27,13 +27,7 @@ const services = () => {
             key={id}
             as="article"
           >
-            <Flex
-              justify="center"
-              items="center"
-              className="service__icon"
-            >
-              {icon}
-            </Flex>
+            <div className="service__icon u_center">{icon}</div>
             <div className="l_flow__2xs">
               <Heading as="h3" weight="normal" size="xs">
                 {title}

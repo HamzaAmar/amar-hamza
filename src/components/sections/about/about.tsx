@@ -9,7 +9,7 @@ const About = () => {
     <div className="about--container">
       <div className="about--circles" />
       <div className="about--circles about--circles__revert" />
-      <Flex items="center" justify="center" className="about">
+      <div className="about u_center">
         <Social
           className="about__social-media"
           direction="vertical"
@@ -25,7 +25,7 @@ const About = () => {
             Lover of Clean & Maintainable CSS | Always learning and
             growing.
           </p>
-          <Flex items="center" justify="center" className="l_cluster">
+          <div className="l_cluster u_center">
             <Button size="lg" as={Link} href="/contact">
               Hire Me
             </Button>
@@ -38,7 +38,7 @@ const About = () => {
             >
               Resume
             </Button>
-          </Flex>
+          </div>
         </div>
         <div className="about-title about-title__top">
           <p>I am a freelance web developer</p>
@@ -52,7 +52,7 @@ const About = () => {
             scroll Down <Arrow width="1em" strokeWidth={3} />
           </p>
         </div>
-      </Flex>
+      </div>
     </div>
   );
 };

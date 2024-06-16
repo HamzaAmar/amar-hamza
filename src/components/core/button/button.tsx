@@ -97,24 +97,15 @@ export const IconButton = forwardRef(
     forwardedRef,
   ) => {
     const iconButtonClassname = classnames(
-      `btn--icon btn__${size} btn__${corner} u_${color}`,
+      `btn--icon btn__${size} btn__${corner} u_${color} u_center`,
       className,
     );
 
     return (
-      <Flex
-        items="center"
-        justify="center"
-        as={Tag}
-        {...iconButtonClassname}
-        ref={forwardedRef}
-        {...rest}
-      >
+      <Tag {...iconButtonClassname} ref={forwardedRef} {...rest}>
         <span className="u_sr-only">{title}</span>
-        <Flex as="span" items="center" justify="center">
-          {icon}
-        </Flex>
-      </Flex>
+        <span className="u_center">{icon}</span>
+      </Tag>
     );
   },
 ) as ForwardRefComponent<'button', IconButtonProps>;

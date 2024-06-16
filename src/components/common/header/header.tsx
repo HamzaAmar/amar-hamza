@@ -64,18 +64,16 @@ const Item = ({
 
   return (
     <li className="header--item" data-mobile={mobile}>
-      <Flex
-        as={Link}
-        items="center"
+      <Link
         aria-current={currentLink}
-        className="header--item-link"
+        className="u_center header--item-link"
         data-mobile={mobile}
         {...close}
         {...onlyDesktop}
         href={path}
       >
         {name}
-      </Flex>
+      </Link>
     </li>
   );
 };
@@ -109,12 +107,7 @@ const Header = () => {
         <Text as="span">Hamza Amar </Text>
       </Flex>
       <nav className="header--nav sm_hide u_flex-1">
-        <Flex
-          as="ul"
-          justify="center"
-          items="center"
-          className="header--list"
-        >
+        <ul className="u_center header--list">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -125,7 +118,7 @@ const Header = () => {
               />
             );
           })}
-        </Flex>
+        </ul>
       </nav>
       <Flex gap="xs" items="center">
         <IconButton

@@ -10,10 +10,14 @@ html {
 }
 
 body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen,
+    'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica,
+    Arial, sans-serif;
   color: var(--slate-12);
   background-color: var(--slate-1);
   -webkit-font-smoothing: antialiased;
-  font-family: Oswald, sans-serif;
   font-weight: 300;
   height: 100%;
 }
@@ -160,6 +164,17 @@ nav :not(ul) {
   display: flow-root;
 }
 
+.prose {
+  & :is(ul, ol) > * + * {
+    margin-top: var(--space-2xs);
+  }
+
+  ul,
+  ol {
+    margin-left: 0.5rem;
+  }
+}
+
 pre:has(.code--section) {
   background-color: var(--slate-3);
   padding: 1rem;
@@ -171,6 +186,9 @@ pre:has(.code--section) {
 .code--section {
   max-width: 100%;
   counter-reset: sh-line-number;
+  font-family: 'dank mono', 'operator mono', inconsolata, 'fira mono',
+    ui-monospace, 'sf mono', monaco, 'droid sans mono',
+    'source code pro', monospace;
 }
 
 .sh__line::before {

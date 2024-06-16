@@ -11,11 +11,7 @@ const ProgressCircle = ({
   const progress = (value / 100) * circumference;
 
   return (
-    <Flex
-      justify="center"
-      items="center"
-      className={`progress-circle u_${color}`}
-    >
+    <div className={`progress-circle u_${color} u_center`}>
       <svg
         role="progressbar"
         aria-valuenow={value}
@@ -48,7 +44,7 @@ const ProgressCircle = ({
           {value}%
         </text>
       </svg>
-    </Flex>
+    </div>
   );
 };
 

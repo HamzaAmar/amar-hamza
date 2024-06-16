@@ -1,7 +1,6 @@
 import { Email, Message, Send, User } from '@components/icons';
 import {
   Button,
-  Flex,
   Grid,
   Heading,
   Input,

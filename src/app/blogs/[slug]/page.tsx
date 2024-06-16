@@ -1,6 +1,5 @@
 import { getBlogPostBySlug, getBlogPosts } from 'api/blog';
 import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import {
   Avatar,
   Flex,
@@ -93,7 +92,7 @@ export default async function Blog({ params }: { params: Params }) {
         <img src={image} alt="" />
       </div>
 
-      <div className="l_flow">
+      <div className="prose l_flow">
         <CustomMDX source={content} />
       </div>
     </div>
