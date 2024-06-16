@@ -1,0 +1,136 @@
+@use '../../../scss/settings/media' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  padding: 0 3.5vw;
+  z-index: 2;
+  background-color: var(--slate-1);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.6px;
+  box-shadow: 0 8px 64px -8px var(--slate-8);
+  text-transform: uppercase;
+}
+
+.header--nav {
+  align-self: stretch;
+}
+
+.header--list,
+.header--item:not([data-mobile='true']),
+.header--item-link {
+  height: 100%;
+  min-width: 4rem;
+}
+
+.header--item {
+  padding: 0 0.25rem;
+}
+
+.header--item-link {
+  padding: 0 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+  transition: transform 100ms;
+
+  &:focus {
+    box-shadow: inset 0 0 1rem -2px var(--primary-7);
+  }
+
+  &[data-mobile='true'] {
+    padding: 1.5rem;
+    width: fit-content;
+  }
+
+  &:not([data-mobile='true'])::after {
+    --height: 3px;
+
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--height);
+    background-image: linear-gradient(
+      to right,
+      var(--primary-8),
+      var(--primary-10)
+    );
+    transform: translateX(-105%);
+    transition: transform 0.4s ease-in-out;
+    border-radius: var(--height);
+  }
+
+  // &:hover {
+  //   transform: scale(0.9) translateY(0.2rem);
+  // }
+
+  &:hover::after,
+  &[aria-current='page']::after,
+  &:focus::after {
+    transform: translateX(0);
+  }
+
+  &[aria-current='page'] {
+    color: var(--primary-11);
+  }
+}
+
+:is(.header--list, .header--mobile-list):has(:hover)
+  .header--item-link:not(:hover) {
+  transform: scale(0.9) translateY(0.2rem);
+}
+
+.header--mobile {
+  display: none;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: transform 0.25s, opacity 0.25s;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform-origin: left top;
+  z-index: 1;
+  padding: 1.5rem;
+  background-color: var(--slate-1);
+}
+
+.header--mobile[data-visible='true'] {
+  flex-direction: column;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.3s, opacity 0.2s;
+  display: none;
+}
+
+.menuMobileIcon {
+  display: none;
+  color: currentcolor;
+}
+
+[data-mobile='true'] {
+  .header--item-link {
+    justify-content: flex-start !important;
+  }
+}
+
+.toggle__menu {
+  display: none !important;
+}
+
+@media (max-width: $screen-phone-large) {
+  .toggle__menu {
+    display: flex !important;
+  }
+
+  .header--mobile[data-visible='true'] {
+    display: flex;
+  }
+}

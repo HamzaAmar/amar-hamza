@@ -1,0 +1,35 @@
+.skill {
+  background-color: var(--slate-3);
+}
+
+.skill--icon-wrap::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border: 2px solid var(--color-primary-light);
+  border-radius: 0.5em;
+  opacity: 0;
+  transform: scale(0);
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.skill--content {
+  --flow-gap: 0.5rem;
+}
+
+.skill--icon {
+  line-height: 0;
+}
+
+.skill--icon > svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.skill--progress svg {
+  width: 4em;
+}

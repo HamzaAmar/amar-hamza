@@ -1,0 +1,10 @@
+.service {
+  background-color: var(--slate-3);
+  box-shadow: var(--shadow-md);
+}
+
+.service__icon {
+  background-color: var(--opacity-4);
+  padding: 0.5rem;
+  border-radius: 50%;
+}

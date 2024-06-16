@@ -1,0 +1,13 @@
+@forward './not-found';
+
+@forward './about/about';
+@forward './articles/articles';
+@forward './project/project';
+@forward './service/service';
+@forward './skill/skill';
+@forward './footer/footer';
+@forward './skill/skill';
+@forward './header/header';
+
+// Nested
+@forward '../blogs/[slug]/reading-layout';

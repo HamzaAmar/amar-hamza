@@ -7,8 +7,8 @@ import {
   Text,
   Textarea,
   FormContainer,
+  Social,
 } from '@components/core';
-import { Social } from '@components/ui';
 
 import type { ContactItemProps } from './utils/contact.type';
 import { CONTACT_INFO } from './utils/contact.data';
