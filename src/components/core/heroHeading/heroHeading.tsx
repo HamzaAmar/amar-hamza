@@ -9,7 +9,7 @@ const heroHeading = ({
   section,
 }: HeroHeadingProps) => {
   return (
-    <div className="l_flow__sm">
+    <div className="l_flow__3xs">
       <Heading
         className="l_flow__3xs"
         size="sm"
@@ -28,7 +28,7 @@ const heroHeading = ({
       </Heading>
 
       {description && (
-        <Text color="slate" contrast="low">
+        <Text color="slate" size="sm" contrast="low">
           {description}
         </Text>
       )}

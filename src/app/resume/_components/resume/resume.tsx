@@ -25,9 +25,11 @@ import type { AsideProps, AsideItemProps } from './resume.type';
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (
     <Flex as="li" justify="between" className="resume--item">
-      <Flex gap="xs" className="resume--item-info">
-        <div className="u_bothCenter u_center">{icon}</div>
-        <div>{title}</div>
+      <Flex gap="xs" items="center" className="resume--item-info">
+        <div className="u_center">{icon}</div>
+        <Text size="sm" weight="medium">
+          {title}
+        </Text>
       </Flex>
       {children && <div>{children}</div>}
     </Flex>
@@ -162,24 +164,43 @@ const resume = () => {
           <div className="l_flow">
             <Heading>Books I love</Heading>
             <ul className="l_flow">
-              <Flex as="li">
+              <Text size="sm" as="li">
                 <span>CSS Secrets (By Lea Varou)</span>
-              </Flex>
-              <Flex as="li">Form Design Pattern</Flex>
-              <Flex as="li">Every Layout</Flex>
-              <Flex as="li">Inclusive Components</Flex>
-              <Flex as="li">Inclusive Design Pattern</Flex>
-              <Flex as="li">
+              </Text>
+              <Text size="sm" as="li">
+                Form Design Pattern
+              </Text>
+              <Text size="sm" as="li">
+                Every Layout
+              </Text>
+              <Text size="sm" as="li">
+                Inclusive Components
+              </Text>
+              <Text size="sm" as="li">
+                Inclusive Design Pattern
+              </Text>
+              <Text size="sm" as="li">
                 Designing with Progressive Enhancement
-              </Flex>
-              <Flex as="li">
+              </Text>
+              <Text size="sm" as="li">
                 J. David Eisenberg, Amelia Bellamy-Royds - SVG
                 Essentials
-              </Flex>
-              <Flex as="li">Debugging css By Ahmad Shadeed</Flex>
-              <Flex as="li">
+              </Text>
+              <Text size="sm" as="li">
+                Debugging css By Ahmad Shadeed
+              </Text>
+              <Text size="sm" as="li">
                 Estelle Weyl - Transitions and Animations in CSS
-              </Flex>
+              </Text>
+              <Text size="sm" as="li">
+                <span>Software Engineering at Google </span>
+                <span>
+                  Lessons Learned from Programming Over Time
+                </span>
+              </Text>
+              <Text size="sm" as="li">
+                Building large scale web apps
+              </Text>
             </ul>
           </div>
         </div>

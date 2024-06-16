@@ -1,14 +1,15 @@
 'use client';
 
 /* eslint-disable no-warning-comments */
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, TypeScript } from '@components/icons';
+import { Menu, Moon, Sun, TypeScript } from '@components/icons';
 import {
   Button,
   Flex,
   IconButton,
   Social,
+  Spinner,
   Text,
 } from '@components/core';
 // import { useTheme } from 'next-themes';
@@ -17,6 +18,7 @@ import useBoolean from '@hooks/useBoolean';
 import type { ItemProps, MenuProps } from './header.type';
 import { usePathname } from 'next/navigation';
 import { NavLink } from './navLink';
+import { useTheme } from 'next-themes';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
@@ -25,36 +27,36 @@ const MENU: MenuProps[] = [
   { id: 4, name: 'Resume', path: '/resume' },
 ];
 
-// const Switcher = () => {
-//   const { state: mounted, handleTrue } = useBoolean(false);
-//   // const { resolvedTheme, setTheme } = useTheme();
+const Switcher = () => {
+  const { state: mounted, handleTrue } = useBoolean(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
-//   useEffect(() => {
-//     handleTrue();
-//   }, [handleTrue]);
+  useEffect(() => {
+    handleTrue();
+  }, [handleTrue]);
 
-//   // TODO: Return Skeleton to avoid  Layout Shift
-//   if (!mounted) {
-//     return null;
-//   }
+  // TODO: Return Skeleton to avoid  Layout Shift
+  if (!mounted) {
+    return <Spinner size="lg" />;
+  }
 
-//   const nextMode = resolvedTheme === 'dark' ? 'light' : 'dark';
+  const nextMode = resolvedTheme === 'dark' ? 'light' : 'dark';
 
-//   const icon =
-//     resolvedTheme === 'dark' ? (
-//       <Sun width="30" aria-hidden="true" focusable="false" />
-//     ) : (
-//       <Moon width="30" aria-hidden="true" focusable="false" />
-//     );
+  const icon =
+    resolvedTheme === 'dark' ? (
+      <Sun width="30" aria-hidden="true" focusable="false" />
+    ) : (
+      <Moon width="30" aria-hidden="true" focusable="false" />
+    );
 
-//   return (
-//     <IconButton
-//       onClick={() => setTheme(nextMode)}
-//       icon={icon}
-//       title={`Switch to ${nextMode} Mode`}
-//     />
-//   );
-// };
+  return (
+    <IconButton
+      onClick={() => setTheme(nextMode)}
+      icon={!mounted ? <Spinner /> : icon}
+      title={`Switch to ${nextMode} Mode`}
+    />
+  );
+};
 
 const Item = ({
   name,
@@ -63,7 +65,6 @@ const Item = ({
   mobile,
   handleClose,
 }: ItemProps) => {
-  const isCurrentLink = pathname === path;
   const close = handleClose ? { onClick: handleClose } : {};
   const onlyDesktop = mobile ? {} : ({ justify: 'center' } as const);
 
@@ -120,7 +121,7 @@ const Header = () => {
           onClick={handleTrue}
           className="toggle__menu hello"
         />
-        {/* <Switcher /> */}
+        <Switcher />
       </Flex>
       <nav
         className="header--mobile l_flow__2xl"

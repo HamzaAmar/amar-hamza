@@ -2,6 +2,7 @@ import React from 'react';
 import { GoogleTagManager } from '@next/third-parties/google';
 import { Footer, Header } from './_components';
 import '../scss/main.scss';
+import { NextThemeProvider } from './_components/themeProvider';
 
 interface Meta {
   title?: string;
@@ -58,12 +59,14 @@ const Layout = (props: LayoutProps) => {
   }
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <GoogleTagManager gtmId={GA_TRACKING_ID!} />
       <body>
-        <Header />
-        <main className="blog--container">{children}</main>
-        <Footer />
+        <NextThemeProvider>
+          <Header />
+          <main className="blog--container">{children}</main>
+          <Footer />
+        </NextThemeProvider>
       </body>
     </html>
   );
