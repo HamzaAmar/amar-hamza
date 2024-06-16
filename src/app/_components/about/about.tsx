@@ -14,8 +14,13 @@ const About = () => {
             className="about__social-media"
             direction="vertical"
           />
-          <div className="about--info  center l_flow">
-            <Heading as="h1" weight="black" className="about--name">
+          <div className="about--info  center l_flow__2xs">
+            <Heading
+              as="h1"
+              weight="black"
+              size="2xl"
+              className="about--name"
+            >
               Hamza Amar
             </Heading>
             <Text size="lg" leading="lg">

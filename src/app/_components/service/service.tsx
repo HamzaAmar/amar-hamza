@@ -32,7 +32,7 @@ const services = () => {
           >
             <div className="service__icon u_center">{icon}</div>
             <div className="l_flow__3xs">
-              <Heading as="h3" weight="medium" size="xs">
+              <Heading as="h3" weight="black" size="xs">
                 {title}
               </Heading>
               <Text size="sm" color="slate" contrast="low">
