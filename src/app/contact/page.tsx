@@ -74,12 +74,17 @@ export async function sendMail(formData: FormData) {
   }
 }
 
-const InfoItem = ({ icon, info }: ContactItemProps) => {
+const InfoItem = ({ icon, info, ...rest }: ContactItemProps) => {
+  const Tag = rest.href ? 'a' : 'div';
   return (
-    <div className="contact--info-item u_column">
+    <Tag
+      {...rest}
+      data-link={!!rest.href}
+      className="contact--info-item u_column"
+    >
       {icon}
       <Text>{info}</Text>
-    </div>
+    </Tag>
   );
 };
 

@@ -45,7 +45,7 @@ const FormContainer = ({
   return (
     <div className="form-container l_flow__xs">
       <label className="form-container--label l_flow__2xs">
-        <Flex items="center" gap="2xs">
+        <Flex items="center" gap="xs">
           {label} {requiredSign}
         </Flex>
         {children}

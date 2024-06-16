@@ -33,6 +33,17 @@
   max-width: min(60ch, 100%);
 }
 
+.contact--info-item[data-link='true'] {
+  color: var(--primary-11);
+  text-decoration: underline 2px solid;
+  text-underline-offset: 3px;
+  transition: transform 150ms;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
 @media (max-width: 700px) {
   .contact {
     flex-direction: column;

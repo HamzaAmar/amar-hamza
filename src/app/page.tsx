@@ -8,16 +8,6 @@ import {
   Skill,
 } from './_components';
 
-// .home {
-//   display: grid;
-// }
-
-// @media (max-width: 800px) {
-//   .section {
-//     font-size: 0.7rem;
-//   }
-// }
-
 const IndexPage = async () => {
   const posts = getBlogPostsWithLimit(8);
 

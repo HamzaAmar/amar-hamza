@@ -4,6 +4,7 @@ export interface ContactInfoProps {
   id: string;
   icon: ReactElement;
   info: string;
+  href?: string;
 }
 
 export interface ContactItemProps
