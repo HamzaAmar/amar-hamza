@@ -1,7 +1,7 @@
 import React from 'react';
 import { compareDesc } from 'date-fns';
-import { Articles } from '@components/sections';
 import { getBlogPosts } from 'api/blog';
+import { Articles } from 'app/_components';
 
 export default async function Blog() {
   const posts = getBlogPosts().sort((first, second) => {

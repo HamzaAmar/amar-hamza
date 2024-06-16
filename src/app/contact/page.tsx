@@ -13,7 +13,6 @@ import {
 import type { ContactItemProps } from './utils/contact.type';
 import { CONTACT_INFO } from './utils/contact.data';
 
-import { NextApiRequest, NextApiResponse } from 'next';
 import sgMail, { ResponseError } from '@sendgrid/mail';
 
 interface Body {

@@ -14,7 +14,7 @@ import {
   Twitter,
 } from '@components/icons';
 import { formatDate } from '@utils/formatDate';
-import { CustomMDX } from '@components/ui/mdxComponents';
+import { CustomMDX } from '@components/core/mdx';
 
 interface Params {
   slug: string;
@@ -40,7 +40,7 @@ export default async function Blog({ params }: { params: Params }) {
           <Flex items="center" gap="sm">
             <Avatar image={author.picture} title="hello" />
             <Flex gap="xs" direction="column" className="u_flex-1">
-              <Text size="sm" weight="normal">
+              <Text size="sm" weight="medium">
                 {author.name}
               </Text>
               <Flex as="ul" gap="xs" className="reading-layout--list">
