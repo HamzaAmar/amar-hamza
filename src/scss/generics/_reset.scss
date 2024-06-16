@@ -5,8 +5,9 @@
 }
 
 body,
-html {
-  height: 100%;
+html,
+.container {
+  min-height: 100%;
 }
 
 body {
@@ -19,26 +20,6 @@ body {
   background-color: var(--slate-1);
   -webkit-font-smoothing: antialiased;
   font-weight: 300;
-  height: 100%;
-}
-
-body::-webkit-scrollbar {
-  width: 0.5rem;
-  border-radius: 3px;
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--slate-1);
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--primary-7);
-  outline: 1px solid slategrey;
-  border-radius: 2px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-9);
 }
 
 input,
@@ -154,10 +135,6 @@ nav :not(ul) {
 // html.light [data-rehype-pretty-code-fragment] [data-theme='dark'] {
 //   display: none;
 // }
-
-.container {
-  height: 100%;
-}
 
 .main {
   margin-top: var(--shared-value);

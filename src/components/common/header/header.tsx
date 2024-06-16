@@ -11,7 +11,7 @@ import useBoolean from '@hooks/useBoolean';
 import type { ItemProps, MenuProps } from './header.type';
 import { Social } from '@components/ui';
 import { usePathname } from 'next/navigation';
-import { NavLink } from '@components/ui/link';
+import { NavLink } from '@components/common/header/navLink';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
@@ -77,16 +77,9 @@ const Item = ({
   );
 };
 
-const getFirstPathInTheUrl = (pathname: string) => {
-  const pathNames = pathname.slice(1);
-  return `/${pathNames.split('/')[0]}`;
-};
-
 const Header = () => {
   const { state: visible, handleFalse, handleTrue } = useBoolean();
   const pathname = usePathname();
-
-  const path = getFirstPathInTheUrl(pathname);
 
   return (
     <Flex
@@ -95,15 +88,11 @@ const Header = () => {
       as="header"
       className="header"
     >
-      <Flex
-        as={Link}
-        items="center"
-        gap="sm"
-        href="/"
-        className="header--logo-link"
-      >
+      <Flex as={Link} items="center" gap="sm" href="/">
         <TypeScript width={24} />
-        <Text as="span">Hamza Amar </Text>
+        <Text as="span" weight="bold">
+          Hamza Amar
+        </Text>
       </Flex>
       <nav className="header--nav sm_hide u_flex-1">
         <ul className="u_center header--list">
