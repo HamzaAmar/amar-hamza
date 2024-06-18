@@ -69,7 +69,12 @@
   margin-left: auto;
 }
 
-.article--favorite[data-bookmark='true'] svg {
-  fill: var(--color-danger-light);
-  stroke: none;
+.article--favorite[data-bookmark='true'] {
+  border-color: var(--orange-9);
+  background-color: var(--orange-4);
+
+  & svg {
+    fill: var(--orange-9);
+    stroke: var(--orange-9);
+  }
 }

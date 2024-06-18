@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^14.2.3",
+    "@pillar-ui/hooks": "^0.5.1",
     "@sendgrid/mail": "^7.4.5",
     "copy-to-clipboard": "^3.3.1",
     "date-fns": "2.16.1",
