@@ -1,0 +1,118 @@
+---
+title: 'Multi-Page Applications (MPAs) Rendering Pattern'
+excerpt: 'Unlock the benefits of MPAs! Improve SEO, initial load times, and more.'
+image: '/assets/blog/rendering/mpa.webp'
+publishedAt: '2024-06-08T05:35:07.322Z'
+author:
+  name: Hamza Miloud amar
+  picture: '/me.jpg'
+tags: ['Rendering Pattern', 'SEO', 'Web Performance', 'MPA']
+---
+
+Rendering patterns is one of the crucial concepts for a frontend web developer as it helps in creating fast, responsive, and effective web applications. In the same way that there are various styles of baking a cake, there are also different types of rendering patterns that can affect the usability, speed, and SEO of a website.
+
+Each of the rendering patterns has certain features, strengths and weaknesses, and therefore, you should select the proper pattern regarding the requirements of your project. When it comes to rendering patterns, you should think of them as different strategies by which your web browser understands the code that underlies your website and how users will interact with it.
+
+This is the first in a series of blogs where I will be discussing different rendering patterns, why they are required, when one should be used over the other and the advantages and disadvantages of each pattern. We will first discuss the basics of web rendering, like static web samples and then move to complex ones like SSR, CSR, hydration, progressive hydration, partial hydration, server components, etc.
+
+Thus, by knowing each of the rendering patterns, you will be in a position to decide on the right technique to apply in a certain project. Regardless of whether concerns include speed, UX, or SEO, this series will give you a clear understanding of rendering patterns so that you can ensure your users get the best experience possible on the web.
+
+Let's dive in with the first pattern: Multi-Page Applications (MPAs).
+
+Absolutely! Here's the revised content for the MPA section using the specified syntax:
+
+## What is a Multi-Page Application (MPA)?
+
+<Conversation>
+  <Conversation.Thread
+    message="Hey Browser and Server, can you tell me about Multi-Page Applications (MPAs)?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="Sure! An MPA is a traditional approach where each page of the application is a separate document. When you click on a link or navigate to a different section, the entire page reloads from me where I pre-generate the HTML content for each page before sending it to Browser. This makes MPAs load faster initially and can be beneficial for SEO."
+    from="server"
+  />
+  <Conversation.Thread
+    message="However, navigating between pages can feel like visiting entirely new websites because of the full page reload."
+    from="browser"
+  />
+  <Conversation.Thread message="Why do we need MPAs" from="user" />
+  <Conversation.Thread
+    message={[
+      'MPAs are essential for several reasons:',
+      'SEO-Friendly: Since the content is rendered on the server, search engines can easily crawl and index the pages.',
+      'Initial Load Time: The initial page load is faster because I send a fully-rendered HTML document to Browser.',
+      'Complex Applications: MPAs are well-suited for complex applications that require robust routing and state management on the server side.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="When should I use an MPA?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      'Consider using an MPA when:',
+      'SEO is Important: If your site needs to be easily discoverable by search engines.',
+      'Fast Initial Load: For applications where the speed of the first load is critical to user experience.',
+      'Dynamic Content: When you need to serve dynamic content that changes based on user interactions.',
+      'Complex Routing: For applications requiring complex routing and state management that can be more easily handled on the server side.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="What are the pros of MPAs?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      'Here are the pros:',
+      'SEO Benefits: SSR ensures that search engines can index your content effectively.',
+      'Improved Performance: Initial load times are generally faster as I send a fully rendered HTML document, but not as fast as static sites because I need to generate the HTML on the fly.',
+      'Security: Sensitive data handling and validation can be managed more securely on my end.',
+      'Better User Experience: Users get a fully-loaded page quickly, improving the overall user experience.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread message="And the cons?" from="user" />
+  <Conversation.Thread
+    message={[
+      'Here are the cons:',
+      'Server Load: SSR can put a significant load on the server, especially for high-traffic sites.',
+      'Complexity: Developing and maintaining MPAs can be more complex compared to static sites or SPAs.',
+      'Scalability: Scaling an SSR-based application can be challenging and might require more server resources and optimization.',
+    ]}
+    from="browser"
+  />
+  <Conversation.Thread
+    message="What frameworks can I use to build an MPA?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      'Here are some popular frameworks and CMS options:',
+      'Ruby on Rails: A powerful web application framework written in Ruby.',
+      'Django: A high-level Python web framework.',
+      'Laravel: A PHP framework with elegant syntax.',
+      'ASP.NET Core: A framework for building web applications with .NET and C#.',
+      'Content Management Systems (CMS):',
+      'WordPress: The most popular CMS, known for its ease of use and extensive plugin ecosystem.',
+      'Joomla!: A flexible CMS used for various web projects.',
+      'Drupal: A CMS known for its flexibility and powerful content management capabilities.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="Thanks, Server and Browser! This was really insightful. Any final thoughts?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="Multi-Page Applications offer a powerful way to build dynamic, SEO-friendly web applications with fast initial load times and secure data handling. While they come with their own set of challenges, the benefits often outweigh the complexities for many use cases."
+    from="server"
+  />
+  <Conversation.Thread
+    message="Stay tuned for our next conversation where we’ll explore Client-Side Rendering (CSR) and understand how it differs from SSR, along with its advantages and disadvantages!"
+    from="browser"
+  />
+  <Conversation.Thread message="Looking forward to it!" from="user" />
+</Conversation>

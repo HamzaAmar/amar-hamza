@@ -18,7 +18,6 @@ import Link from 'next/link';
 import { useId } from 'react';
 
 import type { ArticlesProps, ArticleProps } from './article.type';
-import FavoriteButton from './FavoriteButton';
 import { useFavorite } from '@hooks/useFavorite';
 
 /*
@@ -87,16 +86,6 @@ const Article = ({
               </Text>
             </div>
           </Flex>
-
-          {/* <IconButton
-            type="button"
-            icon={<Bookmark width={20} />}
-            title={`${
-              isBookmarked ? 'Remove' : 'Add'
-            } Article to Favorite`}
-            data-bookmark={isBookmarked}
-            className="article--favorite"
-          /> */}
 
           <IconButton
             type="button"

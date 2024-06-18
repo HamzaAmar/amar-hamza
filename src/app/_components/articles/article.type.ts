@@ -14,4 +14,5 @@ export interface ArticlesProps {
 
 export interface ArticleProps extends Post {
   isBookmarked?: boolean;
+  handleToggle: (postId: string) => void;
 }

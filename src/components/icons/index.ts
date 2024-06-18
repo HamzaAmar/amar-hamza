@@ -59,3 +59,5 @@ export { default as Heart } from './heart';
 export { default as Layout } from './layout';
 export { default as Bookmark } from './bookmark';
 export { default as Arrow } from './arrow';
+export { default as Server } from './server';
+export { default as Browser } from './browser';

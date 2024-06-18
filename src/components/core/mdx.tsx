@@ -6,6 +6,7 @@ import Link, { LinkProps } from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { highlight } from 'sugar-high';
 import { slugify } from '@utils/slugify';
+import { Conversation } from './conversation';
 
 type CustomLinkProps = {} & Omit<LinkProps, 'href'> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -114,6 +115,7 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  Conversation,
 };
 
 export function CustomMDX(props: any) {

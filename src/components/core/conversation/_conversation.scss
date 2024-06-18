@@ -1,0 +1,60 @@
+.thread {
+  display: flex;
+  gap: 1rem;
+
+  &[data-from='server'],
+  &[data-from='browser'] {
+    justify-content: end;
+
+    & .thread--header {
+      order: 2;
+    }
+
+    & .thread--message {
+      order: 1;
+    }
+  }
+}
+
+.thread-message--container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+// .conversation {
+//   background-color: var(--slate-3);
+//   border-radius: 1rem;
+//   padding: 1rem;
+// }
+
+.thread--header {
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.thread--avatar {
+  border: 3px dashed var(--orange-9);
+  background: var(--slate-4);
+}
+
+.thread--user {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--orange-11);
+}
+
+.thread--message {
+  background: var(--slate-4);
+  border-radius: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  max-width: 660px;
+  text-align: start;
+  font-size: 1.175rem;
+}
