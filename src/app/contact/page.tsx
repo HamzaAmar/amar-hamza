@@ -13,7 +13,7 @@ import {
 import type { ContactItemProps } from './utils/contact.type';
 import { CONTACT_INFO } from './utils/contact.data';
 
-import sgMail, { ResponseError } from '@sendgrid/mail';
+import sgMail from '@sendgrid/mail';
 
 interface Body {
   name: string;
@@ -22,10 +22,6 @@ interface Body {
   message: string;
 }
 
-interface Response {
-  error: unknown | null;
-  message: string | null;
-}
 export interface SendEmailProps {
   name: string;
   from: string;

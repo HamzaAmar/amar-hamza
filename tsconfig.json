@@ -24,7 +24,7 @@
       "@type/*": ["./type/*"],
       "@utils/*": ["./utils/*"],
       "@helpers/*": ["./helpers/*"],
-      "@scss/*": ["./scss/*"]
+      "@scss/*": ["./scss/*"],
     },
     "incremental": true,
     "plugins": [
