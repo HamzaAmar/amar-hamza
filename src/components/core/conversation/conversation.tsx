@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Browser, Server, User } from '@components/icons';
+import { Browser, Server, User, Users } from '@components/icons';
+import { Text } from '../typography';
 
 interface ThreadProps {
   from: 'browser' | 'server' | 'user';
@@ -49,7 +50,22 @@ const Thread = ({ from, message }: ThreadProps) => {
 };
 
 export const Conversation = ({ children }: ConversationProps) => {
-  return <div className="conversation l_flow__sm">{children}</div>;
+  return (
+    <section className="conversation">
+      <header className="conversation--header">
+        <div className="thread--avatar u_circle u_center">
+          <Users width="32" />
+        </div>
+        <div>
+          <Text weight="medium">Web Development Group</Text>
+          <Text size="sm" color="slate" contrast="low">
+            Me , Server , Browser
+          </Text>
+        </div>
+      </header>
+      <div className="conversation--body l_flow__sm">{children}</div>
+    </section>
+  );
 };
 
 Conversation.Thread = Thread;

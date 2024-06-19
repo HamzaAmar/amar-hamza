@@ -27,7 +27,11 @@ Let's dive in with the first pattern: Client-Side Rendering (CSR).
     from="user"
   />
   <Conversation.Thread
-    message="Sure! CSR is a web development technique where I, the browser, handle the rendering of the webpage. Unlike server-side rendering, where Server prepares the HTML, CSS, and JavaScript, CSR delivers a minimal HTML file with links to JavaScript files that manage the rendering and updating of content."
+    message="Of course! In CSR, As a server I deliver a minimal HTML file Inside it I add the necessary JavaScript files. I don't generate the content; instead, I provide the resources needed for the browser to do the rendering."
+    from="server"
+  />
+  <Conversation.Thread
+    message="And once I receive these files, I take over by executing the JavaScript to render the webpage. This means the content is dynamically generated and updated on the client side, offering a more interactive experience."
     from="browser"
   />
   <Conversation.Thread message="Why do we need CSR?" from="user" />
@@ -80,12 +84,11 @@ Let's dive in with the first pattern: Client-Side Rendering (CSR).
     from="browser"
   />
   <Conversation.Thread
-    message="What frameworks can I use for CSR?"
+    message="What frameworks or Libraries can I use for CSR?"
     from="user"
   />
   <Conversation.Thread
     message={[
-      'Here are some popular frameworks for CSR:',
       'React: A JavaScript library for building user interfaces, focusing on component-based architecture.',
       'Vue.js: A progressive framework for building UIs, known for its simplicity and flexibility.',
       'Angular: A comprehensive framework by Google for building dynamic web applications.',

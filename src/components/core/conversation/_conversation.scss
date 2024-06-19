@@ -1,3 +1,24 @@
+.conversation {
+  background-color: var(--slate-2);
+  border-radius: 1rem;
+  position: relative;
+}
+
+.conversation--header,
+.conversation--body {
+  padding: 1rem;
+}
+
+.conversation--header {
+  background-color: inherit;
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  border-bottom: 1px solid var(--slate-5);
+  position: sticky;
+  top: 4rem;
+}
+
 .thread {
   display: flex;
   gap: 1rem;
