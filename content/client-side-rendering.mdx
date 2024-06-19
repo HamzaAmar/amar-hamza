@@ -23,7 +23,7 @@ Let's dive in with the first pattern: Client-Side Rendering (CSR).
 
 <Conversation>
   <Conversation.Thread
-    message="Hey Browser and Server, I've heard about Client-Side Rendering (CSR). Can you explain what it is?"
+    message="Hey Chat, I've heard about Client-Side Rendering (CSR). Can you explain what it is?"
     from="user"
   />
   <Conversation.Thread
@@ -42,7 +42,6 @@ Let's dive in with the first pattern: Client-Side Rendering (CSR).
   <Conversation.Thread message="When should I use CSR?" from="user" />
   <Conversation.Thread
     message={[
-      'Consider using CSR when:',
       'Interactivity is crucial: For applications requiring rich user interactions and dynamic content updates without full page reloads.',
       'Speed in navigation: When fast client-side routing and smooth transitions between pages are needed.',
       'Separation of client and server logic: When you want a clear separation of concerns, with the client handling the UI and the server handling data operations.',
@@ -76,7 +75,6 @@ Let's dive in with the first pattern: Client-Side Rendering (CSR).
   />
   <Conversation.Thread
     message={[
-      'Here are some ways to improve CSR performance:',
       'JavaScript Bundling: Use code splitting and lazy loading to reduce the size of initial JavaScript bundles.',
       'Preloading Resources: Preload critical resources to improve loading times.',
       'Service Workers: Implement service workers to cache application shell and other resources for offline use and faster load times.',

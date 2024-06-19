@@ -20,7 +20,7 @@ const LOGO = {
 const Message = ({ message, from }: ThreadProps) => {
   return (
     <div
-      className={`thread--message thread--message__${from} l_flow__2xs`}
+      className={`thread--message thread--message__${from} l_flow__3xs`}
     >
       <p className="thread--user">{from}</p>
       <p>{message}</p>
@@ -53,8 +53,8 @@ export const Conversation = ({ children }: ConversationProps) => {
   return (
     <section className="conversation">
       <header className="conversation--header">
-        <div className="thread--avatar u_circle u_center">
-          <Users width="32" />
+        <div className="header--avatar u_circle u_center">
+          <Users width="32" strokeWidth={1.5} />
         </div>
         <div>
           <Text weight="medium">Web Development Group</Text>

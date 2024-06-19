@@ -57,7 +57,11 @@
 }
 
 .thread--avatar {
-  border: 3px dashed var(--orange-9);
+  border: 2px dashed var(--orange-9);
+  background: var(--slate-4);
+}
+
+.header--avatar {
   background: var(--slate-4);
 }
 

@@ -1,0 +1,98 @@
+---
+title: 'SSG with Hydration: Performance, SEO & Interactivity'
+excerpt: 'SSG & Hydration explained!  Enjoy fast load times, SEO benefits & interactivity. Example with Next.js. Stay tuned for Progressive Hydration! '
+image: '/assets/blog/rendering/ssg.webp'
+publishedAt: '2024-06-19T05:35:07.322Z'
+author:
+  name: Hamza Miloud amar
+  picture: '/me.jpg'
+tags: ['Rendering Pattern', 'SEO', 'Web Performance', 'MPA']
+---
+
+Rendering patterns is one of the crucial concepts for a frontend web developer as it helps in creating fast, responsive, and effective web applications. In the same way that there are various styles of baking a cake, there are also different types of rendering patterns that can affect the usability, speed, and SEO of a website.
+
+Each of the rendering patterns has certain features, strengths, and weaknesses, and therefore, you should select the proper pattern regarding the requirements of your project. When it comes to rendering patterns, you should think of them as different strategies by which your web browser understands the code that underlies your website and how users will interact with it.
+
+This is the first in a series of blogs where I will be discussing different rendering patterns, why they are required, when one should be used over the other, and the advantages and disadvantages of each pattern. We will first discuss the basics of web rendering, like static web samples, and then move to complex ones like SSR, CSR, hydration, progressive hydration, partial hydration, server components, etc.
+
+Thus, by knowing each of the rendering patterns, you will be in a position to decide on the right technique to apply in a certain project. Regardless of whether concerns include speed, UX, or SEO, this series will give you a clear understanding of rendering patterns so that you can ensure your users get the best experience possible on the web.
+
+Let's dive in with the first pattern: Client-Side Rendering (CSR).
+
+<Conversation>
+  <Conversation.Thread
+    message="Hey Browser and Server, I've been hearing about SSG with Hydration. Can you explain what it is?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="Sure! SSG with Hydration is a technique that combines Static Site Generation (SSG) with client-side interactivity."
+    from="server"
+  />
+  <Conversation.Thread
+    message="To start, I, the server, pre-render web pages into static HTML files during the build process. These static files are then served to users when they request a page."
+    from="server"
+  />
+  <Conversation.Thread
+    message="When the static HTML is received, I, the browser, run JavaScript on the client side to hydrate the page. This means attaching event listeners and enabling interactivity, so the static HTML becomes dynamic."
+    from="browser"
+  />
+  <Conversation.Thread
+    message="Why would someone choose SSG with Hydration?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      "Performance: Pre-rendered static HTML ensures fast load times.",
+      "SEO: Static content is easily crawlable and indexable by search engines.",
+      "Scalability: Static files can be served by a CDN, reducing server load.",
+      "Interactivity: Hydration allows for dynamic interactions post-load."
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="How exactly does SSG with Hydration work?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      "Static Generation: I pre-render pages into static HTML during the build process.",
+      "Serving Static HTML: When a user requests a page, I serve the static HTML file.",
+      "Client-Side Hydration: I run JavaScript on the client side to make the static HTML interactive.",
+    ]}
+    from="server"
+  />
+
+  <Conversation.Thread
+    message="What are the benefits of SSG with Hydration?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      "Fast Load Times: Static HTML ensures quick initial load.",
+      "SEO-Friendly: Pre-rendered content is easily indexed by search engines.",
+      "Scalability: Serving static files from a CDN reduces server load and improves scalability.",
+      "Dynamic Interactivity: Hydration enables client-side interactions without a full page reload.",
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="What challenges might we face with SSG with Hydration?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      "Build Time: For large sites, the build process can be time-consuming.",
+      "Client-Side JavaScript: Ensure JavaScript is optimized to avoid performance bottlenecks.",
+      "Hydration Mismatches: Avoid discrepancies between pre-rendered HTML and client-side rendering to prevent errors.",
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="Thanks, Server and Browser! This was really helpful. Any final thoughts?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="SSG with Hydration offers the best of both worlds: the performance and SEO benefits of static sites and the interactivity of client-side rendering. In the next post, we will explore Progressive Hydration, a technique that enhances performance and user experience by hydrating parts of the page progressively. Stay tuned!"
+    from="server"
+  />
+</Conversation>
