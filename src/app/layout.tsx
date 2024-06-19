@@ -3,6 +3,8 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import { Footer, Header } from './_components';
 import '../scss/main.scss';
 import { NextThemeProvider } from './_components/themeProvider';
+import { Metadata } from 'next';
+import { DOMAIN } from '@constants/domain';
 
 interface Meta {
   title?: string;
@@ -17,7 +19,7 @@ interface LayoutProps extends Meta {
 
 const Layout = (props: LayoutProps) => {
   const { children } = props;
-  const { NEXT_PUBLIC_DOMAIN_NAME, GA_TRACKING_ID } = process.env;
+  const { GA_TRACKING_ID } = process.env;
 
   // const meta: Meta = {
   //   title: `${title} – Hamza Miloud Amar`,
@@ -71,11 +73,32 @@ const Layout = (props: LayoutProps) => {
     </html>
   );
 };
-Layout.defaultProps = {
-  title: 'JavaScript Developer',
-  description: `Experienced Frontend Developer skilled in React and CSS. Passionate about building elegant, accessible, and UX-friendly Design Systems. Always learning and growing`,
-  image: 'myImage.jpg',
-  type: 'website',
-};
 
 export default Layout;
+
+export const metadata: Metadata = {
+  metadataBase: new URL(DOMAIN),
+  title: {
+    default: 'Hamza Miloud Amar',
+    template: '%s | Hamza Miloud Amar',
+  },
+  description:
+    'Frontend Developer & Creator of Pillar UI | Passionate about building elegant, accessible, and UX-friendly Design Systems with React | React, Next,CSS,Remix',
+  openGraph: {
+    title: 'Hamza Miloud Amar',
+    description:
+      'Frontend Developer & Creator of Pillar UI | Passionate about building elegant, accessible, and UX-friendly Design Systems with React | React, Next,CSS,Remix',
+    url: DOMAIN,
+    siteName: 'Hamza Miloud Amar',
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  twitter: {
+    title: 'Hamza Miloud Amar',
+    card: 'summary_large_image',
+  },
+};

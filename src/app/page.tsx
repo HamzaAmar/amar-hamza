@@ -7,6 +7,7 @@ import {
   Service,
   Skill,
 } from './_components';
+import { Metadata } from 'next';
 
 const IndexPage = async () => {
   const posts = getBlogPostsWithLimit(8);
@@ -23,3 +24,7 @@ const IndexPage = async () => {
 };
 
 export default IndexPage;
+
+export const metadata: Metadata = {
+  title: 'Home Page',
+};

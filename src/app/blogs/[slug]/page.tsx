@@ -1,4 +1,4 @@
-import { getBlogPostBySlug, getBlogPosts } from 'api/blog';
+import { getBlogPostBySlug } from 'api/blog';
 import { notFound } from 'next/navigation';
 import {
   Avatar,
@@ -15,12 +15,18 @@ import {
 } from '@components/icons';
 import { formatDate } from '@utils/formatDate';
 import { CustomMDX } from '@components/core/mdx';
+import { Metadata } from 'next';
+import { DOMAIN } from '@constants/domain';
 
 interface Params {
   slug: string;
 }
 
-export default async function Blog({ params }: { params: Params }) {
+interface ParamsReq {
+  params: Params;
+}
+
+export default async function Blog({ params }: ParamsReq) {
   const post = getBlogPostBySlug(params.slug);
 
   if (!post) {
@@ -110,3 +116,46 @@ export default async function Blog({ params }: { params: Params }) {
 //     fallback: false,
 //   };
 // }
+
+export async function generateMetadata({
+  params,
+}: ParamsReq): Promise<Metadata | undefined> {
+  const post = getBlogPostBySlug(params.slug);
+  if (!post) {
+    return;
+  }
+
+  let {
+    title,
+    publishedAt: publishedTime,
+    excerpt: description,
+    image,
+    slug,
+  } = post.metadata;
+  let ogImage = image
+    ? `${DOMAIN}${image}`
+    : `${DOMAIN}/og?title=${title}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime,
+      url: `${DOMAIN}/blogs/${slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
+}

@@ -14,6 +14,7 @@ import type { ContactItemProps } from './utils/contact.type';
 import { CONTACT_INFO } from './utils/contact.data';
 
 import sgMail from '@sendgrid/mail';
+import { Metadata } from 'next';
 
 interface Body {
   name: string;
@@ -169,3 +170,9 @@ const contact = () => {
 };
 
 export default contact;
+
+export const metadata: Metadata = {
+  title: 'Contact Us', // Replace with your company name
+  description:
+    'Get in touch with us! We are happy to answer your questions and discuss your needs.',
+};
