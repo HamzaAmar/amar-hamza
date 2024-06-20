@@ -69,72 +69,6 @@ nav :not(ul) {
   list-style: none;
 }
 
-// div[data-rehype-pretty-code-fragment] {
-//   overflow: hidden;
-//   border-radius: 0.5rem;
-//   border: 1px solid var(--opacity-6);
-//   background-color: var(--slate-3);
-// }
-
-// div[data-rehype-pretty-code-fragment] pre {
-//   overflow-x: auto;
-
-//   /* stylist preferences */
-//   padding: 0.5rem 0;
-//   font-size: 0.925rem;
-// }
-
-// div[data-rehype-pretty-code-title] {
-//   padding: 0.25rem 0.75rem;
-//   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-//     'Liberation Mono', 'Courier New', monospace;
-//   font-size: 0.75rem;
-//   line-height: 1.75;
-//   color: var(--slate-11);
-//   background-color: var(--opacity-6);
-// }
-
-// div[data-rehype-pretty-code-fragment] .line {
-//   /* stylistic preferences */
-//   border-inline-start: 4px solid transparent;
-//   padding-inline-start: 1rem;
-//   line-height: 1.75;
-// }
-
-// div[data-rehype-pretty-code-fragment] code {
-//   display: grid;
-// }
-
-// div[data-rehype-pretty-code-fragment] .line--highlighted {
-//   // border-color: var(--primary-9);
-//   border-color: var(--primary-9);
-//   background-color: var(--opacity-5);
-// }
-
-// code[data-line-numbers] {
-//   counter-reset: lineNumber;
-// }
-
-// code[data-line-numbers] .line::before {
-//   counter-increment: lineNumber;
-//   content: counter(lineNumber);
-//   display: inline-block;
-//   color: var(--slate-10);
-//   font-size: 0.875rem;
-//   margin-inline-end: 1rem;
-// }
-
-// // pre[data-theme='dark'] {
-// //   color-scheme: dark;
-// // }
-
-// html.dark [data-rehype-pretty-code-fragment] [data-theme='light'] {
-//   display: none;
-// }
-
-// html.light [data-rehype-pretty-code-fragment] [data-theme='dark'] {
-//   display: none;
-// }
 
 .main {
   margin-top: var(--shared-value);
@@ -142,19 +76,6 @@ nav :not(ul) {
 }
 
 .prose {
-  // hello
-//   --sh-class: hsl(214deg 55% 40%);
-// --sh-identifier: hsl(213deg 20% 26%);
-// --sh-sign: hsl(210deg 12% 59%);
-// --sh-property: hsl(213deg 94% 35%);
-// --sh-entity: hsl(178deg 62% 37%);
-// --sh-jsxliterals: hsl(238deg 55% 60%);
-// --sh-string: hsl(175deg 100% 33%);
-// --sh-keyword: hsl(4deg 87% 68%);
-// --sh-comment: hsl(0deg 6% 61%);
-
-
-  // hello
   --sh-class: var(--primary-11);
 --sh-identifier: var(--green-11);
 --sh-sign: var(--slate-11);

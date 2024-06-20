@@ -1,6 +1,6 @@
 import { Flex } from '@components/core/flex';
 import { Facebook, Message } from '@components/icons';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import { IconButton } from '..';
 
@@ -23,11 +23,7 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof IconButton>;
-
-const Template: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton {...args} />
-);
+} as Meta<typeof IconButton>;
 
 export const IconButtonsSize = () => (
   <Flex items="center" gap="sm">
@@ -39,4 +35,4 @@ export const IconButtonsSize = () => (
   </Flex>
 );
 
-export const Playground = Template.bind({});
+export const Playground = {};

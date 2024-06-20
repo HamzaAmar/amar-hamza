@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {  Meta } from '@storybook/react';
 
 import { Flex } from '.';
 
@@ -9,10 +9,6 @@ export default {
   args: {
     children: 'Hello world',
   },
-} as ComponentMeta<typeof Flex>;
+} as Meta<typeof Flex>;
 
-const Template: ComponentStory<typeof Flex> = (args) => (
-  <Flex {...args} />
-);
-
-export const RegularFlex = Template.bind({});
+export const RegularFlex = {};

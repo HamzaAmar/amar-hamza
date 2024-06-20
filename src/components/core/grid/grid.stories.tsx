@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {  Meta } from '@storybook/react';
 
 import { Grid } from '.';
 
@@ -8,7 +8,7 @@ export default {
   args: {
     children: 'Hello world',
   },
-} as ComponentMeta<typeof Grid>;
+} as Meta<typeof Grid>;
 
 export const EqualColumns = () => {
   return (
@@ -71,8 +71,4 @@ export const SpanningColumns = () => {
   );
 };
 
-const Template: ComponentStory<typeof Grid> = (args) => (
-  <Grid {...args} />
-);
-
-export const PlayGround = Template.bind({});
+export const PlayGround = {};

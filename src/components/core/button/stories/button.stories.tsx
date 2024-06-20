@@ -1,9 +1,9 @@
 import { Facebook, Github, Message } from '@components/icons';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import { Button, Flex } from '../..';
 
-export default {
+const meta:Meta<typeof Button> ={
   title: 'Components/Core/Button',
   component: Button,
   args: {
@@ -21,11 +21,9 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Button>;
+} ;
 
-const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} />
-);
+export default meta
 
 export const ButtonsColor = () => (
   <Flex gap="sm">
@@ -35,6 +33,7 @@ export const ButtonsColor = () => (
     <Button color="warning">Connect</Button>
   </Flex>
 );
+
 export const ButtonsVariant = () => (
   <Flex items="center" gap="sm">
     <Button variant="solid">Connect</Button>
@@ -43,6 +42,7 @@ export const ButtonsVariant = () => (
     <Button variant="text">Connect</Button>
   </Flex>
 );
+
 export const ButtonsSize = () => (
   <Flex items="center" gap="sm">
     <Button size="xs">Connect</Button>
@@ -73,4 +73,4 @@ export const ButtonsIcons = () => (
   </Flex>
 );
 
-export const Playground = Template.bind({});
+export const Playground = {};
