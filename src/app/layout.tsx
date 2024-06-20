@@ -21,45 +21,6 @@ const Layout = (props: LayoutProps) => {
   const { children } = props;
   const { GA_TRACKING_ID } = process.env;
 
-  // const meta: Meta = {
-  //   title: `${title} – Hamza Miloud Amar`,
-  //   description,
-  //   image: `https://miloudamar.com/${image}`,
-  //   ...customMeta,
-  // };
-
-  {
-    /* <Head>
-        <meta name="robots" content="follow, index" />
-        <meta
-          property="og:url"
-          content={`${NEXT_PUBLIC_DOMAIN_NAME}${router.asPath}`}
-        />
-        <link
-          rel="canonical"
-          href={`${NEXT_PUBLIC_DOMAIN_NAME}${router.asPath}`}
-        />
-
-        <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Hamza Miloud Amar" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@HamzaMiloudAma1" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-
-        {meta.date && (
-          <meta
-            property="article:published_time"
-            content={meta.date}
-          />
-        )}
-      </Head> */
-  }
-
   return (
     <html lang="en" suppressHydrationWarning>
       <GoogleTagManager gtmId={GA_TRACKING_ID!} />

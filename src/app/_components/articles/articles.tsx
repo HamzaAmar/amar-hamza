@@ -7,18 +7,16 @@ import {
   Grid,
   Heading,
   HeroHeading,
-  IconButton,
   Tag,
   Text,
 } from '@components/core';
-import { Arrow, Bookmark } from '@components/icons';
+import { Arrow } from '@components/icons';
 import { formatDate } from '@utils/formatDate';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useId } from 'react';
 
 import type { ArticlesProps, ArticleProps } from './article.type';
-import { useFavorite } from '@hooks/useFavorite';
 
 /*
 ====================================================================================================
@@ -32,8 +30,6 @@ const Article = ({
   slug,
   tags,
   image,
-  isBookmarked = false,
-  handleToggle,
   publishedAt,
 }: ArticleProps) => {
   const id = useId();
@@ -86,19 +82,6 @@ const Article = ({
               </Text>
             </div>
           </Flex>
-
-          <IconButton
-            type="button"
-            icon={<Bookmark width={20} />}
-            title={`${
-              isBookmarked ? 'Remove' : 'Add'
-            } Article to Favorite`}
-            data-bookmark={isBookmarked}
-            className="article--favorite"
-            onClick={() => handleToggle(slug)}
-          />
-
-          {/* <FavoriteButton slug={slug} /> */}
         </Flex>
         <Heading
           id={headingId}
@@ -148,8 +131,6 @@ const Article = ({
 */
 
 const articles = ({ posts, description }: ArticlesProps) => {
-  const { isFavorite, toggleFavorite } = useFavorite();
-
   return (
     <section
       aria-labelledby="articles-id-section"
@@ -168,12 +149,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
         className="sm_grid-one md_grid-two articles"
       >
         {posts.map((post) => (
-          <Article
-            isBookmarked={isFavorite(post.metadata.slug)}
-            key={post.metadata.slug}
-            handleToggle={toggleFavorite}
-            {...post.metadata}
-          />
+          <Article key={post.metadata.slug} {...post.metadata} />
         ))}
       </Grid>
     </section>

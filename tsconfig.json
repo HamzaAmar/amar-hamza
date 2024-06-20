@@ -15,7 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "contentlayer/generated": ["../.contentlayer/generated"],
       "@lib/*": ["./lib/*"],
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
@@ -25,6 +24,7 @@
       "@utils/*": ["./utils/*"],
       "@helpers/*": ["./helpers/*"],
       "@scss/*": ["./scss/*"],
+      "react": ["./node_modules/@types/react"]
     },
     "incremental": true,
     "plugins": [
@@ -39,7 +39,6 @@
     "src/**/*.js",
     "src/**/*.tsx",
     "src/helpers/context.jsx",
-    ".contentlayer/generated",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules", "scripts/*"]
