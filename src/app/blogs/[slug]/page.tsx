@@ -1,4 +1,4 @@
-import { getBlogPostBySlug } from 'api/blog';
+import { getBlogPostBySlug, getBlogPosts } from 'api/blog';
 import { notFound } from 'next/navigation';
 import {
   Avatar,
@@ -116,6 +116,14 @@ export default async function Blog({ params }: ParamsReq) {
 //     fallback: false,
 //   };
 // }
+
+export async function generateStaticParams() {
+  const posts = getBlogPosts().map(({ metadata }) => ({
+    slug: metadata.slug,
+  }));
+
+  return posts;
+}
 
 export async function generateMetadata({
   params,
