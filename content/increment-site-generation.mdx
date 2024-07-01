@@ -1,0 +1,84 @@
+---
+title: 'Incremental Site Generation: Combining Static and Dynamic'
+excerpt: 'Learn about Incremental Site Generation, which updates or generates pages incrementally after the initial build.'
+image: '/assets/blog/rendering/isg.webp'
+publishedAt: '2024-06-24T05:35:07.322Z'
+author:
+  name: Hamza Miloud amar
+  picture: '/me.jpg'
+tags: ['Rendering Pattern', 'ISG', 'Web Performance', 'Scalability']
+---
+
+In our last post, we covered Server-Side Rendering. Today, we'll delve into Incremental Site Generation (ISG), a technique that builds upon Static Site Generation by allowing pages to be generated or updated incrementally after the initial build. ISG ensures that your site remains fast and up-to-date without needing a full rebuild for every change.
+
+<Conversation>
+  <Conversation.Thread
+    message="Hey Chat, I've been hearing about Incremental Static Generation (ISG). Can you explain what it is?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="Sure! Let's build on what you learned about Static Site Generation (SSG) from our previous discussion."
+    from="server"
+  />
+  <Conversation.Thread
+    message="Incremental Static Generation (ISG) is a rendering pattern that combines the benefits of SSG with the ability to update static content at runtime. It allows web pages to be statically generated at build time and then re-generated on-demand or at specified intervals."
+    from="server"
+  />
+  <Conversation.Thread
+    message="So, how exactly does ISG work?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      'Initial Static Generation: During the build process, static HTML pages are generated for specific routes.',
+      'On-Demand Re-generation: When a request is made to a page that needs updating, the server generates a new version of the page, caches it, and serves the updated version.',
+      'Periodic Re-generation: Pages can be configured to re-generate at specific intervals, ensuring that the content remains up-to-date.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="What are the benefits of using ISG?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      'Performance: Combines the fast initial load of static pages with the ability to update content dynamically.',
+      'Scalability: Static pages can be served from a CDN, reducing server load.',
+      'Content Freshness: Pages can be updated incrementally without a complete rebuild, ensuring up-to-date content.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="Are there any challenges with using ISG?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      'Complexity: Managing re-generation logic and ensuring content consistency can be complex.',
+      'Caching: Proper caching strategies are essential to avoid stale content.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="What are some common use cases for ISG?"
+    from="user"
+  />
+  <Conversation.Thread
+    message={[
+      'News Websites: Articles can be statically generated and updated periodically to reflect the latest information.',
+      'E-commerce: Product pages can be updated with inventory status or pricing changes without rebuilding the entire site.',
+      'Blogs: Blog posts can be statically generated and re-generated when there are updates or new comments.',
+    ]}
+    from="server"
+  />
+  <Conversation.Thread
+    message="Thanks, Server and Browser! This was really helpful. Any final thoughts?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="Incremental Static Generation provides a powerful way to maintain the performance and scalability benefits of static sites while allowing for dynamic content updates. In the next post, we will explore the concept of Resumability, focusing on techniques to improve application performance and user experience by resuming operations from where they left off. Stay tuned!"
+    from="server"
+  />
+</Conversation>
+
+Thank you for joining us in exploring Incremental Site Generation. In our next post, we'll discuss Progressive Hydration, a technique that optimizes the hydration process for improved performance and user experience. Goodbye for now, and see you in our next discussion on Progressive Hydration!

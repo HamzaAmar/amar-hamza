@@ -9,38 +9,26 @@ author:
 tags: ['CSS']
 ---
 
-To make gradient in css we add [linear](<https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient()> 'Linear Gradient MDN')
-[radial](<https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient()> 'Radial Gradient MDN')
-[conic](<https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient()> 'Conic Gradient MDN')
-gradient to the element depend on your situation you have for move info about gradient this is a small definition from the spec
+## How to Create Border Gradients in CSS
 
-> A gradient is an image that smoothly fades from one color to another. These are commonly used for subtle shading in background images, buttons, and many other things. The gradient functions described in this section allow an author to specify such an image in a terse syntax, so that the UA can generate the image automatically when rendering the page.
+**Introduction:**
+Border gradients can add depth and visual appeal to elements on your webpage. In this guide, we'll explore different methods to achieve border gradients using CSS.
 
-we understand that gradient is for image that means we can't apply gradient to
-border because border is shorthand for `border-width` , `border-style` and **`border-color`**
-this where border image came in handy but also have same limitation this what we gonna discover
-from this blog post
+### Understanding Gradients in CSS
 
-## Border image
+Gradients in CSS allow for smooth transitions between two or more colors. There are three main types of gradients:
 
-the simplest way to add gradient border in css is to use border-image property but it has
-some limitation we can't add radius to the element this is a small difinition from the spec
+- **Linear Gradient**: Fades from one color to another along a straight line.
+- **Radial Gradient**: Fades from one color to another in a circular pattern.
+- **Conic Gradient**: Fades from one color to another in a conical pattern.
 
-> Authors can specify an image to be used in place of the border styles. In this case, the border’s design is taken from the sides and corners of an image specified with border-image-source, whose pieces may be sliced, scaled and stretched in various ways to fit the size of the border image area. The border-image properties do not affect layout: layout of the box, its content, and surrounding content is based on the border-width and border-style properties only.
+You can learn more about gradients in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient).
 
-```jsx showLineNumbers title="Button.js"
-import React from 'react';
+### Using `border-image` Property
 
-const Button = ({ children, ...rest }) => {
-  return (
-    <button className="btn--gradient-border" {...rest}>
-      {children}
-    </button>
-  );
-};
-```
+The `border-image` property in CSS enables us to replace the border styles with an image, allowing for more flexibility in border design. However, it comes with certain limitations, such as the inability to add rounded corners to the element.
 
-```css showLineNumbers {2}
+```css
 .btn--gradient-border {
   border-width: 0.5rem;
   border-image: linear-gradient(to right, pink, blue) 1;
@@ -48,41 +36,20 @@ const Button = ({ children, ...rest }) => {
 }
 ```
 
-### When to use Border Image
+This snippet demonstrates how to apply a gradient border using the `border-image` property. However, keep in mind the mentioned limitations when using this approach.
 
-1. When You want the background color of the element (in our example the button) to be transparent;
-1. when you don't want to work with radius property
+#### Additional Resources:
 
-## border image With background
+- [CSS Tricks - Understanding border-image](https://css-tricks.com/almanac/properties/b/border-image/)
+- [MDN Web Docs - border-image](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image)
 
-We can make a border gradient color with only background property this kind of hack
+### Creating Border Gradients with Background Property
 
-```jsx showLineNumbers
-import React from 'react';
-
-const Button = ({ children, ...rest }) => {
-  return (
-    <button className="btn--gradient-border" {...rest}>
-      {children}
-    </button>
-  );
-};
-```
+An alternative method involves using the `background` property to create border gradients. This approach allows for more flexibility and customization.
 
 ```css
-:root {
-  --primary-color: #eee;
-}
-
-body {
-  background: var(--primary-color);
-}
-
 .btn--gradient-border {
   border: 0.5rem solid transparent;
-
-  // this background property is shorthand for background-image and background-clip
-
   background: linear-gradient(
         var(--primary-color),
         var(--primary-color)
@@ -95,4 +62,15 @@ body {
 }
 ```
 
-to explain the code above first we add
+By leveraging the `background` property, we can achieve gradient borders without the limitations of the `border-image` property.
+
+#### Additional Resources:
+
+- [CSS Tricks - CSS Gradients](https://css-tricks.com/css-gradients/)
+- [MDN Web Docs - background](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+
+### Conclusion
+
+Border gradients offer a creative way to enhance the visual appeal of elements on your webpage. By leveraging CSS properties like `border-image` and `background`, you can achieve stunning effects and elevate your design.
+
+Experiment with different color combinations and gradient types to find the perfect border gradient for your project!

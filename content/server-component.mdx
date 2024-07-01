@@ -1,0 +1,87 @@
+---
+title: 'React Server Components: Server-Side React for Better Performance'
+excerpt: 'Discover React Server Components, an upcoming feature in React that enables server-side rendering of components.'
+publishedAt: '2024-07-02T10:00:00.000Z'
+image: '/assets/blog/rendering/rsc.webp'
+author:
+  name: Hamza Miloud amar
+  picture: '/me.jpg'
+tags: ['Rendering Pattern', 'React', 'Server Components']
+---
+
+<Conversation>
+  <Conversation.Thread
+    message="Hey Chat, I've been hearing a lot about Server Components lately. Can you explain what they are and how they differ from regular components?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="Absolutely! Server Components are a way to offload rendering and some logic to the server, rather than having everything run on the client side. This approach can greatly enhance performance and efficiency."
+    from="server"
+  />
+  <Conversation.Thread
+    message=" Interesting. So how exactly do Server Components work?"
+    from="user"
+  />
+  <Conversation.Thread
+    message="Server Components work by allowing the server to render components and send HTML to the client. This means the client doesn't need to process as much JavaScript, leading to faster initial load times and reduced CPU usage on the client side. They also allow you to keep sensitive logic and data on the server, which can enhance security."
+    from="browser"
+  />  <Conversation.Thread
+    message="That sounds promising. What are some specific benefits of using Server Components?"
+    from="user"
+  />
+
+{' '}
+
+<Conversation.Thread
+  message={[
+    'Performance: By reducing the amount of JavaScript that needs to be run on the client, Server Components can lead to faster page loads and better performance, especially on slower devices.',
+    '**Security**: Sensitive data and logic can stay on the server, reducing the risk of exposure to potential attacks.',
+    '**Efficiency**: Server Components can help reduce the amount of JavaScript that needs to be shipped to the client, which can be particularly beneficial for complex applications with heavy logic.',
+  ]}
+  from="server"
+/>
+<Conversation.Thread
+  message="Are there any downsides to using Server Components?"
+  from="user"
+/>
+<Conversation.Thread
+  message="While Server Components offer many advantages, they also come with some challenges. For instance, they require a server to render the components, which can add complexity to your deployment and development process. Additionally, since the server does more of the work, it might introduce server-side performance bottlenecks if not managed properly."
+  from="server"
+/>
+
+<Conversation.Thread
+  message="I see. How do Server Components fit into frameworks like React and Next.js?"
+  from="user"
+/>
+<Conversation.Thread
+  message="In the React ecosystem, Server Components were introduced to enable developers to build more efficient applications by leveraging server-side rendering (SSR). Next.js has adopted Server Components as a default approach, which allows for a mix of SSR and client-side rendering to optimize both performance and interactivity"
+  from="server"
+/>
+<Conversation.Thread
+  message="Can you give an example of when to use Server Components?"
+  from="client"
+/>
+<Conversation.Thread
+  message="Sure! Server Components are particularly useful for parts of your application that involve complex or heavy computations that don't need to run on the client side. For example, rendering a large data set from a database, processing markdown into HTML, or applying syntax highlighting are all tasks that can benefit from being handled on the server."
+  from="server"
+/>
+<Conversation.Thread
+  message="That makes sense. Is there anything else I should know before diving into using Server Components?"
+  from="client"
+/>
+<Conversation.Thread
+  message="One important consideration is that adopting Server Components might require changes to your existing workflow and infrastructure. It’s also worth noting that while frameworks like Next.js have robust support for Server Components, the technology is still evolving, and you might need to keep an eye on updates and best practices as they develop."
+  from="server"
+/>
+
+<Conversation.Thread
+  message="Thanks for the detailed explanation! This helps a lot in understanding how and when to use Server Components."
+  from="client"
+/>
+<Conversation.Thread
+  message="You're welcome!"
+  from="server"
+/>
+</Conversation>
+
+Thank you for joining us in exploring React Server Components. In our next post, we'll discuss Resumability, a concept that ensures applications can resume their state seamlessly across server and client interactions. Goodbye for now, and see you in our final discussion on Resumability!
