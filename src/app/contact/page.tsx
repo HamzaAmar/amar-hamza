@@ -97,7 +97,7 @@ const contact = () => {
           <FormContainer name="subject" label="Subject" required>
             <Input
               name="subject"
-              placeholder="type your name"
+              placeholder="type your subject"
               required
               icon={<Message width="24" />}
             />

@@ -49,13 +49,13 @@ body {
 }
 
 a:not([class]) {
-  color: var(--primary-9);
+  color: var(--primary-11);
   text-decoration: 2px solid underline transparent;
   cursor: pointer;
-}
 
-a:not([class]):hover {
-  text-decoration-color: currentcolor;
+  &:hover {
+    text-decoration-color: currentcolor;
+  }
 }
 
 button:focus-visible,
@@ -69,7 +69,6 @@ nav :not(ul) {
   list-style: none;
 }
 
-
 .main {
   margin-top: var(--shared-value);
   display: flow-root;
@@ -77,17 +76,14 @@ nav :not(ul) {
 
 .prose {
   --sh-class: var(--primary-11);
---sh-identifier: var(--green-11);
---sh-sign: var(--slate-11);
---sh-property: var(--primary-10);
---sh-entity: var(--orange-11);
---sh-jsxliterals: var(--orange-11);
---sh-string: var(--green-10);
---sh-keyword: var(--red-11);
---sh-comment: var(--slate-9);
-
-
-
+  --sh-identifier: var(--green-11);
+  --sh-sign: var(--slate-11);
+  --sh-property: var(--primary-10);
+  --sh-entity: var(--orange-11);
+  --sh-jsxliterals: var(--orange-11);
+  --sh-string: var(--green-10);
+  --sh-keyword: var(--red-11);
+  --sh-comment: var(--slate-9);
 
   & :is(ul, ol) > * + * {
     margin-top: var(--space-2xs);

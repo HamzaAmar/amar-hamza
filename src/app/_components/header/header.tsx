@@ -12,7 +12,6 @@ import {
   Spinner,
   Text,
 } from '@components/core';
-// import { useTheme } from 'next-themes';
 import useBoolean from '@hooks/useBoolean';
 
 import type { ItemProps, MenuProps } from './header.type';
