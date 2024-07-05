@@ -12,73 +12,157 @@ tags: ['Rendering Pattern', 'ISG', 'Web Performance', 'Scalability']
 In our last post, we covered Server-Side Rendering. Today, we'll delve into Incremental Site Generation (ISG), a technique that builds upon Static Site Generation by allowing pages to be generated or updated incrementally after the initial build. ISG ensures that your site remains fast and up-to-date without needing a full rebuild for every change.
 
 <Conversation>
-  <Conversation.Thread
-    message="Hey Chat, I've been hearing about Incremental Static Generation (ISG). Can you explain what it is?"
-    from="user"
-  />
-  <Conversation.Thread
-    message="Sure! Let's build on what you learned about Static Site Generation (SSG) from our previous discussion."
-    from="server"
-  />
-  <Conversation.Thread
-    message="Incremental Static Generation (ISG) is a rendering pattern that combines the benefits of SSG with the ability to update static content at runtime. It allows web pages to be statically generated at build time and then re-generated on-demand or at specified intervals."
-    from="server"
-  />
-  <Conversation.Thread
-    message="So, how exactly does ISG work?"
-    from="user"
-  />
-  <Conversation.Thread
-    message={[
-      'Initial Static Generation: During the build process, static HTML pages are generated for specific routes.',
-      'On-Demand Re-generation: When a request is made to a page that needs updating, the server generates a new version of the page, caches it, and serves the updated version.',
-      'Periodic Re-generation: Pages can be configured to re-generate at specific intervals, ensuring that the content remains up-to-date.',
-    ]}
-    from="server"
-  />
-  <Conversation.Thread
-    message="What are the benefits of using ISG?"
-    from="user"
-  />
-  <Conversation.Thread
-    message={[
-      'Performance: Combines the fast initial load of static pages with the ability to update content dynamically.',
-      'Scalability: Static pages can be served from a CDN, reducing server load.',
-      'Content Freshness: Pages can be updated incrementally without a complete rebuild, ensuring up-to-date content.',
-    ]}
-    from="server"
-  />
-  <Conversation.Thread
-    message="Are there any challenges with using ISG?"
-    from="user"
-  />
-  <Conversation.Thread
-    message={[
-      'Complexity: Managing re-generation logic and ensuring content consistency can be complex.',
-      'Caching: Proper caching strategies are essential to avoid stale content.',
-    ]}
-    from="server"
-  />
-  <Conversation.Thread
-    message="What are some common use cases for ISG?"
-    from="user"
-  />
-  <Conversation.Thread
-    message={[
-      'News Websites: Articles can be statically generated and updated periodically to reflect the latest information.',
-      'E-commerce: Product pages can be updated with inventory status or pricing changes without rebuilding the entire site.',
-      'Blogs: Blog posts can be statically generated and re-generated when there are updates or new comments.',
-    ]}
-    from="server"
-  />
-  <Conversation.Thread
-    message="Thanks, Server and Browser! This was really helpful. Any final thoughts?"
-    from="user"
-  />
-  <Conversation.Thread
-    message="Incremental Static Generation provides a powerful way to maintain the performance and scalability benefits of static sites while allowing for dynamic content updates. In the next post, we will explore the concept of Resumability, focusing on techniques to improve application performance and user experience by resuming operations from where they left off. Stay tuned!"
-    from="server"
-  />
+
+<Conversation.Thread from="user">
+  <div>
+    Hello chat, can you please explain what ISR is and how it differs
+    from SSG? I'm having trouble understanding it.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    Sure! Incremental Static Regeneration (ISR) combines the speed of
+    Static Site Generation (SSG) with the ability to update content
+    dynamically.
+  </div>
+  <div>
+    ISR uses two techniques that differ from SSG: the fallback
+    technique and interval caching.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  <div>
+    Can you please explain the fallback technique and its use?
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    Of course! The fallback technique is used to generate pages on
+    demand that don't already exist.
+  </div>
+  <div>
+    Imagine a large UI library documentation site with thousands of
+    pages stored in a database or CMS. Instead of pre-rendering all
+    the pages at once, which can take a long time, we pre-render only
+    the most visited pages.
+  </div>
+  <div>
+    For less visited pages, we generate them when they are first
+    requested, similar to Server-Side Rendering (SSR). But unlike SSR,
+    once a page is generated, it is saved as static HTML. So the next
+    time someone visits, the server can quickly serve the pre-rendered
+    static page.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  <div>
+    That's helpful, but what about the interval caching technique and
+    when do we use it?
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    The interval caching technique is used to keep page content
+    updated.
+  </div>
+  <div>
+    ISR offers a smart way to keep your site's content up-to-date. We
+    use a mechanism called "stale-while-revalidate," which balances
+    speed and freshness. Each page has a set cache lifespan. When a
+    user requests a page, we first check if the cached version is
+    still valid. If it is, it's immediately served for optimal speed.
+  </div>
+  <div>
+    When the cache lifespan expires, even while serving the cached
+    version, ISR works behind the scenes to regenerate the page with
+    the latest content. This means that the next time the page is
+    requested, the user receives the updated version seamlessly. This
+    strategy ensures a fast user experience and that the displayed
+    information is always current.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  <div>
+    Are there any technical considerations or potential challenges
+    associated with implementing ISR?
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    Yes, there are some challenges. Implementing robust cache
+    invalidation strategies and ensuring data consistency across
+    static and dynamic content can be tricky. Additionally, you need
+    to carefully decide when to trigger the regeneration of pages and
+    how often to do it, depending on your specific needs.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  <div>What are the pros of using ISR?</div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    Performance: Pre-rendered pages load very quickly, providing a
+    better user experience.
+  </div>
+  <div>
+    SEO: Static pages are easily indexed by search engines, improving
+    SEO.
+  </div>
+  <div>
+    Scalability: Only the most visited pages are pre-rendered,
+    reducing the build time and server load.
+  </div>
+  <div>
+    Content Freshness: Pages can be updated without a full site
+    rebuild, ensuring content is always up-to-date.
+  </div>
+  <div>
+    Flexibility: Combines the best aspects of static and dynamic
+    rendering, allowing for on-demand generation and updates.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  <div>And what are the cons of using ISR?</div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    Complexity: Implementing ISR requires careful planning for cache
+    invalidation and content updates.
+  </div>
+  <div>
+    Consistency: Ensuring data consistency across static and dynamic
+    content can be challenging.
+  </div>
+  <div>
+    Build Process: Determining the optimal re-generation triggers and
+    intervals can be tricky and might need adjustments over time.
+  </div>
+  <div>
+    Resource Management: Properly managing server resources to handle
+    both static and dynamic content generation is crucial.
+  </div>
+</Conversation.Thread>
+<Conversation.Thread from="user">
+  <div>
+    Thanks, Server and Browser! This was really helpful. Any final
+    thoughts?
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>Incremental Static Generation provides a powerful way to maintain the performance and scalability benefits of static sites while allowing for dynamic content updates. In the next post, we will explore the concept of Resumability, focusing on techniques to improve application performance and user experience by resuming operations from where they left off. Stay tuned!</div>
+</Conversation.Thread>
 </Conversation>
 
 Thank you for joining us in exploring Incremental Site Generation. In our next post, we'll discuss Progressive Hydration, a technique that optimizes the hydration process for improved performance and user experience. Goodbye for now, and see you in our next discussion on Progressive Hydration!

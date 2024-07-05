@@ -12,65 +12,64 @@ tags: ['Rendering Pattern', 'Streaming SSR', 'Web Performance']
 In our last post, we covered Progressive Hydration. Today, we'll focus on Streaming Server-Side Rendering, an innovative approach that streams HTML content from the server to the client as it is being rendered. This technique reduces time-to-first-byte and improves perceived performance by allowing users to see content faster.
 
 <Conversation>
-  <Conversation.Thread
-    message="Hey Chat, I've heard about Streaming Server-Side Rendering (SSR) but I'm not entirely sure how it works. Can you explain it to me?"
-    from="user"
-  />
-  <Conversation.Thread
-    message="Of course! Streaming Server-Side Rendering (SSR) is a technique where the server starts sending HTML content to the client as soon as it's available, instead of waiting for the entire page to be rendered before sending anything. This can significantly improve the time to first byte (TTFB) and the overall perceived performance of the page."
-    from="server"
-  />
-  <Conversation.Thread
-    message="How does Streaming SSR differ from traditional SSR?"
-    from="user"
-  />
-  <Conversation.Thread
-    message="In traditional SSR, the server waits until the entire HTML is generated before sending it to the client. This can cause delays, especially for complex pages with a lot of data fetching and processing. Streaming SSR, on the other hand, allows the server to send chunks of HTML to the client as soon as they are ready. This means the browser can start rendering parts of the page while the server is still working on the rest."
-    from="browser"
-  />
-  <Conversation.Thread
-    message="What are the benefits of using Streaming SSR?"
-    from="user"
-  />
-  <Conversation.Thread
-    message={[
- "1. Faster Time to First Byte (TTFB): Since the server sends HTML chunks as they are ready, the client receives content sooner, improving perceived performance.",
- "2. Improved User Experience: Users see content loading progressively, which can make the application feel faster and more responsive.",
- "3. Better Resource Utilization: The server can handle more requests efficiently by streaming content instead of waiting for full page rendering.",
-    ]}
-    from="server"
-  />
+  <Conversation.Thread from="user">Hey Chat, I've heard about Streaming Server-Side Rendering (SSR) but I'm not entirely sure how it works. Can you explain it to me?</Conversation.Thread>
+  <Conversation.Thread from="server">Of course! Streaming Server-Side Rendering (SSR) is a technique where the server starts sending HTML content to the client as soon as it's available, instead of waiting for the entire page to be rendered before sending anything. This can significantly improve the time to first byte (TTFB) and the overall perceived performance of the page.</Conversation.Thread>
+  <Conversation.Thread from="user">How does Streaming SSR differ from traditional SSR?</Conversation.Thread>
+  <Conversation.Thread from="browser">In traditional SSR, the server waits until the entire HTML is generated before sending it to the client. This can cause delays, especially for complex pages with a lot of data fetching and processing. Streaming SSR, on the other hand, allows the server to send chunks of HTML to the client as soon as they are ready. This means the browser can start rendering parts of the page while the server is still working on the rest.</Conversation.Thread>
+  <Conversation.Thread from="user">What are the benefits of using Streaming SSR?</Conversation.Thread>
+  <Conversation.Thread from="server">
+      <div>Faster Time to First Byte (TTFB): Since the server sends HTML chunks as they are ready, the client receives content sooner, improving perceived performance.</div>
+      <div>Improved User Experience: Users see content loading progressively, which can make the application feel faster and more responsive.</div>
+      <div>Better Resource Utilization: The server can handle more requests efficiently by streaming content instead of waiting for full page rendering.</div>
+  </Conversation.Thread>
 
-<Conversation.Thread
-  message="What are some best practices for using Streaming SSR in a real-world application?"
-  from="user"
-/>
-<Conversation.Thread
-  message={[
-    'Prioritize Critical Content: Ensure that important content is rendered and streamed first, so users can start interacting with the page quickly.',
-    'Handle Errors Gracefully: Implement proper error handling to ensure that if something goes wrong during the rendering process, the user receives a meaningful error message.',
-    'Optimize Data Fetching: Use techniques like data pre-fetching and caching to minimize delays in rendering and improve overall performance.',
-    'Monitor Performance: Continuously monitor and analyze the performance of your streaming SSR implementation to identify and address any bottlenecks.',
-  ]}
-  from="server"
-/>
+<Conversation.Thread from="user">
+  What are some best practices for using Streaming SSR in a real-world
+  application?
+</Conversation.Thread>
 
-<Conversation.Thread
-message="Thanks, Server and Browser! This helps a lot. Any final tips?"
-from="user"
-/>
-<Conversation.Thread
-message="Streaming SSR is a powerful technique for improving the performance and user experience of your web applications. By sending content to the client as soon as it's available, you can reduce the time to first byte and make your pages feel faster and more responsive. Remember to prioritize critical content and handle errors gracefully to ensure a smooth user experience."
-from="server"
-/>
-<Conversation.Thread
-message="Stay tuned for our next conversation where we’ll dive into more advanced optimization techniques for web performance. See you next time!"
-from="browser"
-/>
-<Conversation.Thread
-message="Looking forward to it!"
-from="user"
-/>
+<Conversation.Thread from="server">
+  <div>
+    Prioritize Critical Content: Ensure that important content is
+    rendered and streamed first, so users can start interacting with
+    the page quickly.
+  </div>
+  <div>
+    Handle Errors Gracefully: Implement proper error handling to
+    ensure that if something goes wrong during the rendering process,
+    the user receives a meaningful error message.
+  </div>
+  <div>
+    Optimize Data Fetching: Use techniques like data pre-fetching and
+    caching to minimize delays in rendering and improve overall
+    performance.
+  </div>
+  <div>
+    Monitor Performance: Continuously monitor and analyze the
+    performance of your streaming SSR implementation to identify and
+    address any bottlenecks.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  Thanks, Server and Browser! This helps a lot. Any final tips?
+</Conversation.Thread>
+<Conversation.Thread from="server">
+  Streaming SSR is a powerful technique for improving the performance
+  and user experience of your web applications. By sending content to
+  the client as soon as it's available, you can reduce the time to
+  first byte and make your pages feel faster and more responsive.
+  Remember to prioritize critical content and handle errors gracefully
+  to ensure a smooth user experience.
+</Conversation.Thread>
+
+<Conversation.Thread from="browser">
+  Stay tuned for our next conversation where we’ll dive into more
+  advanced optimization techniques for web performance. See you next
+  time!
+</Conversation.Thread>
+
+  <Conversation.Thread from="user">Looking forward to it!</Conversation.Thread>
 </Conversation>
 
 Thank you for exploring Streaming Server-Side Rendering with us. In our next post, we'll discuss Island Architecture, a unique rendering pattern that enhances the performance of interactive applications by isolating dynamic components. Goodbye for now, and see you in our next discussion on Island Architecture!

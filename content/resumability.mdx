@@ -11,4 +11,92 @@ tags: ['Rendering Pattern', 'Resumability', 'Web Performance']
 
 Welcome back! In our previous post, we explored React Server Components. Today, we'll conclude our series with a discussion on Resumability, a concept that focuses on preserving the application state across different rendering environments. Resumability ensures that applications can seamlessly continue from where they left off, whether on the server or client, enhancing user experience and performance.
 
+<Conversation>
+  <Conversation.Thread from="user">
+    Hey chat, I've been hearing a lot about this concept called 'Resumability' in web development lately. What is it exactly?
+  </Conversation.Thread>
+  <Conversation.Thread from="server">
+    Resumability is a modern approach in web development that focuses on optimizing how web applications load and become interactive. It aims to improve performance by allowing a web application to 'resume' its state rather than starting from scratch each time the user interacts with it.
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    That sounds interesting. How does it work?
+  </Conversation.Thread>
+  <Conversation.Thread from="server">
+    Resumability works by minimizing the amount of JavaScript that needs to be initially loaded and executed. Instead of sending a large bundle of JavaScript upfront, only the necessary parts for initial interactivity are sent. Then, as the user interacts with the application, additional JavaScript is loaded and executed on-demand. This method ensures that the app is quickly interactive and only loads what is needed when it is needed.
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    So, it's about reducing the initial load time by deferring some of the work until it's actually needed?
+  </Conversation.Thread>
+  <Conversation.Thread from="server">
+    Exactly. The main idea is to improve the initial load time and interactivity of the web application. By breaking down the application into smaller pieces that can be loaded and executed as needed, Resumability helps in reducing the performance overhead typically associated with large single-page applications (SPAs).
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    What are the benefits of using Resumability?
+  </Conversation.Thread>
+  <Conversation.Thread from="server">
+      <div>Faster initial load times: Since only minimal JavaScript is loaded initially, the page becomes interactive much quicker.</div>
+      <div>Improved user experience: Users can start interacting with the application immediately, without waiting for all the JavaScript to load.</div>
+      <div>Better performance on slow networks: By deferring non-essential JavaScript, the application performs better on slower connections.</div>
+      <div>Reduced memory usage: Loading JavaScript on demand helps in keeping the memory footprint low.</div>
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    Are there any challenges or drawbacks to this approach?
+  </Conversation.Thread>
+  <Conversation.Thread from="server">
+    <div>While Resumability offers significant performance benefits, it also comes with challenges:</div>
+      <div>Complexity in implementation: Breaking down an application into resumable parts requires careful planning and architecture.</div>
+      <div>Managing state: Ensuring that the state is correctly maintained and resumed across different parts of the application can be tricky.</div>
+      <div>Compatibility: Not all libraries and frameworks fully support resumability yet, so developers might need to find or create compatible solutions.</div>
+  </Conversation.Thread>
+
+<Conversation.Thread from="user">
+  Got it. So, is this concept being adopted widely in the industry?
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  Yes, Resumability is gaining traction, especially with the rise of
+  frameworks like Qwik which are designed with this concept in mind.
+  As the need for highly performant web applications grows, more
+  developers and companies are exploring and adopting resumability to
+  enhance their user experiences.
+</Conversation.Thread>
+<Conversation.Thread from="user">
+  I've also heard about Server Components. How do they differ from
+  Resumability?
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    Server Components and Resumability both aim to improve web
+    application performance, but they approach it differently.
+  </div>
+  <div>
+    Server Components allow components to be rendered on the server,
+    which reduces the amount of JavaScript sent to the client and
+    improves initial load times. These components handle data fetching
+    and heavy computations server-side, allowing the client to receive
+    pre-rendered HTML.
+  </div>
+  <div>
+    In contrast, Resumability focuses on breaking down JavaScript and
+    loading it as needed, resuming the application state without
+    reloading all the JavaScript. This approach minimizes the initial
+    payload and defers JavaScript execution to when it's necessary,
+    enhancing performance by reducing memory usage and improving load
+    times.
+  </div>
+  <div>
+    Both techniques can be complementary, with Server Components
+    handling server-side rendering and initial content delivery, while
+    Resumability optimizes client-side interactivity and performance.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  Thanks for the detailed explanation! This sounds like a promising
+  approach to modern web development.
+</Conversation.Thread>
+
+</Conversation>
+
 We hope you enjoyed our exploration of Resumability and found value in this entire series on rendering patterns. Thank you for following along with us through each technique. We hope this series has provided you with a deeper understanding of the various rendering strategies available and their respective benefits. Goodbye for now, and we look forward to seeing you in future discussions on web development!
