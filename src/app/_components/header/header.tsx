@@ -18,6 +18,7 @@ import type { ItemProps, MenuProps } from './header.type';
 import { usePathname } from 'next/navigation';
 import { NavLink } from './navLink';
 import { useTheme } from 'next-themes';
+import { Logo } from '../logo';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
@@ -94,10 +95,7 @@ const Header = () => {
       className="header"
     >
       <Flex as={Link} items="center" gap="sm" href="/">
-        <TypeScript width={24} />
-        <Text as="span" weight="bold">
-          Hamza Amar
-        </Text>
+        <Logo />
       </Flex>
       <nav className="header--nav sm_hide u_flex-1">
         <ul className="u_center header--list">

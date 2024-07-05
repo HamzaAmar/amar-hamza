@@ -24,7 +24,8 @@
   gap: 1rem;
 
   &[data-from='server'],
-  &[data-from='browser'] {
+  &[data-from='browser'],
+  &[data-from='cdn'] {
     justify-content: end;
 
     & .thread--header {

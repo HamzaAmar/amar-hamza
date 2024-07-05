@@ -1,10 +1,16 @@
-import React, { ReactNode } from 'react';
-import { Browser, Server, User, Users } from '@components/icons';
+import React, { Children, ReactNode } from 'react';
+import {
+  Browser,
+  Server,
+  User,
+  Users,
+  World,
+} from '@components/icons';
 import { Text } from '../typography';
 
 interface ThreadProps {
   from: 'browser' | 'server' | 'user';
-  message: string | string[];
+  children: ReactNode;
 }
 
 interface ConversationProps {
@@ -15,20 +21,21 @@ const LOGO = {
   user: <User width="24" />,
   server: <Server width="24" />,
   browser: <Browser width="24" />,
+  cdn: <World width="24" />,
 };
 
-const Message = ({ message, from }: ThreadProps) => {
+const Message = ({ children, from }: ThreadProps) => {
   return (
     <div
       className={`thread--message thread--message__${from} l_flow__3xs`}
     >
       <p className="thread--user">{from}</p>
-      <p>{message}</p>
+      <div>{children}</div>
     </div>
   );
 };
 
-const Thread = ({ from, message }: ThreadProps) => {
+const Thread = ({ from, children }: ThreadProps) => {
   return (
     <article data-from={from} className="thread">
       <div className="thread--header l_flow__3xs">
@@ -37,12 +44,12 @@ const Thread = ({ from, message }: ThreadProps) => {
         </div>
       </div>
       <div className="thread-message--container">
-        {Array.isArray(message) ? (
-          message.map((msg) => (
-            <Message key={msg} message={msg} from={from} />
+        {Children.count(children) > 1 ? (
+          Children.map(children, (child, index) => (
+            <Message key={index} children={child} from={from} />
           ))
         ) : (
-          <Message message={message} from={from} />
+          <Message children={children} from={from} />
         )}
       </div>
     </article>
@@ -59,7 +66,7 @@ export const Conversation = ({ children }: ConversationProps) => {
         <div>
           <Text weight="medium">Web Development Group</Text>
           <Text size="sm" color="slate" contrast="low">
-            Me , Server , Browser
+            Me , Server , Browser, CDN
           </Text>
         </div>
       </header>
