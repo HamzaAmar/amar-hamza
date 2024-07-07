@@ -78,7 +78,6 @@ const contact = () => {
           <FormContainer name="name" label="Name" required>
             <Input
               name="name"
-              placeholder="type your name"
               icon={<User width="24" />}
               required
               autoComplete="name"
@@ -88,7 +87,6 @@ const contact = () => {
             <Input
               name="email"
               type="email"
-              placeholder="type your email"
               required
               icon={<Email width="24" />}
               autoComplete="email"
@@ -97,7 +95,6 @@ const contact = () => {
           <FormContainer name="subject" label="Subject" required>
             <Input
               name="subject"
-              placeholder="type your subject"
               required
               icon={<Message width="24" />}
             />
@@ -105,7 +102,6 @@ const contact = () => {
           <FormContainer name="message" label="Message" required>
             <Textarea
               name="message"
-              placeholder="type your Message"
               required
               icon={<Message width="24" />}
             />

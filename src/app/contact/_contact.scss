@@ -44,7 +44,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
   .contact {
     flex-direction: column;
   }

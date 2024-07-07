@@ -94,7 +94,13 @@ const Header = () => {
       as="header"
       className="header"
     >
-      <Flex as={Link} items="center" gap="sm" href="/">
+      <Flex
+        as={Link}
+        aria-label="Hamza Miloud Amar's Portfolio Logo"
+        items="center"
+        gap="sm"
+        href="/"
+      >
         <Logo />
       </Flex>
       <nav className="header--nav sm_hide u_flex-1">

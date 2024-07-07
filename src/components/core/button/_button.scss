@@ -37,10 +37,10 @@
 }
 
 .btn:disabled {
-  background: var(--color-grey-6);
+  background: var(--slate-6);
   pointer-events: none;
-  color: var(--color-grey-3);
-  border-color: var(--color-grey-6);
+  color: var(--slate-11);
+  border-color: var(--slate-6);
 }
 
 .btn__solid {
