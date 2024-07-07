@@ -11,6 +11,8 @@ tags: ['Rendering Pattern', 'MPA', 'Web Performance', 'MPA']
 
 Welcome back! Last time, we discussed Static Sites. Today, we'll look into Multi-Page Applications (MPAs), which involve multiple web pages, each reloading entirely when navigated. MPAs are traditional but still widely used in many web applications for their simplicity and straightforward navigation.
 
+We think this conversational style might be a bit more fun and easier to follow than a regular article. Hopefully, it makes learning about these rendering patterns less boring and more hands-on!
+
 <Conversation>
   <Conversation.Thread from="user">Hey Chat, can you tell me about Multi-Page Applications (MPAs)?</Conversation.Thread>
   <Conversation.Thread from="server">Sure! An MPA is a traditional approach where each page of the application is a separate document. When you ask for a page, I generate it in the background before sending it to Browser. This generation process can take some time, which makes MPAs slower than the static sites we discussed earlier.</Conversation.Thread>
@@ -63,14 +65,17 @@ Welcome back! Last time, we discussed Static Sites. Today, we'll look into Multi
 
 <Conversation.Thread from="browser">
   <div>
+    Full Page Reloads: Navigating from one page to another requires
+    reloading the entire page.
+  </div>
+  <div>
     Server Load: SSR can put a significant load on the server,
     especially for high-traffic sites.
   </div>
   <div>
     Complexity: Developing and maintaining MPAs can be more complex
-    compared to static sites or SPAs [(a topic we'll delve into
-    further in our next
-    article.)](https://www.miloudamar.com/blogs/client-side-rendering-dynamic-user-experiences)
+    compared to static sites or
+    [SPAs](/client-side-rendering-dynamic-user-experiences)
   </div>
   <div>
     Scalability: Scaling an SSR-based application can be challenging
@@ -80,22 +85,22 @@ Welcome back! Last time, we discussed Static Sites. Today, we'll look into Multi
 
   <Conversation.Thread from="user">What frameworks can I use to build an MPA?</Conversation.Thread>
   <Conversation.Thread from="server">
-    <div>Ruby on Rails: A powerful web application framework written in Ruby.</div>
-    <div>Django: A high-level Python web framework.</div>
-    <div>Laravel: A PHP framework with elegant syntax.</div>
-    <div>ASP.NET Core: A framework for building web applications with .NET and C#.</div>
-    <div>WordPress: The most popular CMS, known for its ease of use and extensive plugin ecosystem.</div>
-    <div>Joomla!: A flexible CMS used for various web projects.</div>
-    <div>Drupal: A CMS known for its flexibility and powerful content management capabilities.</div>
+    <div>Ruby on Rails</div>
+    <div>Django</div>
+    <div>Laravel</div>
+    <div>ASP.NET Core</div>
+    <div>WordPress</div>
+    <div>Joomla!</div>
+    <div>Drupal</div>
   </Conversation.Thread>
   <Conversation.Thread from="user">
-    Thanks, Server and Browser! This was really insightful. Any final thoughts?
+    Thanks, Chat! This was really insightful. Any final thoughts?
   </Conversation.Thread>
   <Conversation.Thread from="server">
     Multi-Page Applications offer a powerful way to build dynamic, SEO-friendly web applications with fast initial load times and secure data handling. While they come with their own set of challenges, the benefits often outweigh the complexities for many use cases.
   </Conversation.Thread>
   <Conversation.Thread from="browser">
-    Stay tuned for our next conversation where we’ll explore [Client-Side Rendering (CSR)](https://www.miloudamar.com/blogs/client-side-rendering-dynamic-user-experiences) and understand how it differs from SSR, along with its advantages and disadvantages!
+    Stay tuned for our next conversation where we’ll explore [Client-Side Rendering (CSR)](/client-side-rendering-dynamic-user-experiences) and understand how it differs from SSR, along with its advantages and disadvantages!
   </Conversation.Thread>
   <Conversation.Thread from="user">
     Looking forward to it!
@@ -103,6 +108,6 @@ Welcome back! Last time, we discussed Static Sites. Today, we'll look into Multi
 </Conversation>
 
 Thanks for exploring Multi-Page Applications with us. In our next post,
-we'll discuss [Client-Side Rendering](https://www.miloudamar.com/blogs/client-side-rendering-dynamic-user-experiences), a technique that offers a more interactive
+we'll discuss [Client-Side Rendering](/client-side-rendering-dynamic-user-experiences), a technique that offers a more interactive
 user experience. Goodbye, and see you next time as we dive into Client-Side
 Rendering!
