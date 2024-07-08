@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'yaml';
+import { compareDesc } from 'date-fns';
 
 import type { Post } from '@type/post';
 import readingTime from 'reading-time';
@@ -52,11 +53,18 @@ function getMDXData(dir: string) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'content'));
+  return getMDXData(path.join(process.cwd(), 'content')).sort(
+    (first, second) => {
+      return compareDesc(
+        new Date(first.metadata.publishedAt),
+        new Date(second.metadata.publishedAt),
+      );
+    },
+  );
 }
 
 export function getBlogPostsWithLimit(max: number) {
-  const blogs = getMDXData(path.join(process.cwd(), 'content'));
+  const blogs = getBlogPosts();
   const length = Math.min(max, blogs.length);
   const posts = Array.from({ length }).map(
     (_, index) => blogs[index],
