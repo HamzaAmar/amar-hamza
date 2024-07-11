@@ -63,3 +63,4 @@ export { default as Server } from './server';
 export { default as Browser } from './browser';
 export { default as Users } from './users';
 export { default as World } from './world';
+export { default as Speaker } from './speaker';

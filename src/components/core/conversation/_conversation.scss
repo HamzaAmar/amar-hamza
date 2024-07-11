@@ -23,9 +23,7 @@
   display: flex;
   gap: 1rem;
 
-  &[data-from='server'],
-  &[data-from='browser'],
-  &[data-from='cdn'] {
+  &:not([data-from='user']) {
     justify-content: end;
 
     & .thread--header {

@@ -2,6 +2,7 @@ import React, { Children, ReactNode } from 'react';
 import {
   Browser,
   Server,
+  Speaker,
   User,
   Users,
   World,
@@ -22,6 +23,7 @@ const LOGO = {
   server: <Server width="24" />,
   browser: <Browser width="24" />,
   cdn: <World width="24" />,
+  narrator: <Speaker width="24" />,
 };
 
 const Message = ({ children, from }: ThreadProps) => {
@@ -65,8 +67,14 @@ export const Conversation = ({ children }: ConversationProps) => {
         </div>
         <div>
           <Text weight="medium">Web Development Group</Text>
-          <Text size="sm" color="slate" contrast="low">
-            Me , Server , Browser, CDN
+          <Text
+            size="sm"
+            color="slate"
+            contrast="low"
+            truncate="multiline"
+            numberLine={1}
+          >
+            Me , Server , Browser, CDN, Narrator
           </Text>
         </div>
       </header>
