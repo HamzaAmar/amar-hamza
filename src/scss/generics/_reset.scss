@@ -93,6 +93,10 @@ nav :not(ul) {
   ol {
     margin-left: 0.5rem;
   }
+
+  strong {
+    font-weight: 600;
+  }
 }
 
 pre:has(.code--section) {

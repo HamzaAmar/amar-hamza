@@ -14,6 +14,132 @@ Welcome back! Last time, we discussed Static Sites. Today, we'll look into Multi
 We think this conversational style might be a bit more fun and easier to follow than a regular article. Hopefully, it makes learning about these rendering patterns less boring and more hands-on!
 
 <Conversation>
+<Conversation.Thread from="user">Hey Chat, can you tell me about Multi-Page Applications (MPAs)?</Conversation.Thread>
+<Conversation.Thread from="narrator">
+<div>
+  Think of an MPA website like a build-your-own sandwich a food truck. 🥪
+  You've got all sorts of options – different breads, meats, cheeses,
+  veggies, and sauces. You pick what you want, and the sandwich artist
+  puts it together for you right there.{' '}
+</div>
+<div>
+  An MPA website works the same way. Each page is like a unique
+  sandwich, made with different ingredients stored on the website's
+  "shelves." When you click a link, it's like placing your order, and
+  the website whips up the page you requested, grabbing the right
+  "ingredients" and putting them together in a snap.{' '}
+</div>
+ <div>
+ Think of a static website like a pre-made sandwich. It's convenient and quick, but you get what you get. An MPA website, however, is like a build-your-own sandwich. 🥪 You have all sorts of options – different breads, meats, cheeses, veggies, and sauces. You pick exactly what you want, and the website (like the sandwich artist) puts it together for you, customized to your taste.
+</div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  Upon receiving a request for a specific page, I initiated the
+  necessary server-side processing, which may include database queries
+  or other relevant tasks. Upon completion, I dynamically generated
+  the corresponding HTML content and delivered it to the client for
+  rendering.
+</Conversation.Thread>
+<Conversation.Thread from="browser">
+  When the server sends me the HTML for a new page, I process it and
+  create a visual representation on your screen based on the
+  instructions in the code.
+</Conversation.Thread>
+<Conversation.Thread from="server">
+  In response to the client's navigation request, I, as the server,
+  assumed responsibility for routing. This involved identifying the
+  appropriate page and executing any necessary server-side logic. Upon
+  completion of these tasks, the corresponding HTML document was
+  generated and subsequently transmitted to the client again.
+</Conversation.Thread>
+<Conversation.Thread from="user">
+  When should I use an MPA?
+</Conversation.Thread>
+<Conversation.Thread from="server">
+  <div>When SEO is a priority.</div>
+  <div>When you need a fast initial page load.</div>
+  <div>When you have dynamic content that changes frequently.</div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  What are the pros of MPAs?
+</Conversation.Thread>
+<Conversation.Thread from="server">
+  <div>
+    SEO Benefits: Server-Side Rendering (SSR) ensures that search
+    engines can easily index your content.
+  </div>
+  <div>
+    Improved Performance: Initial load times are generally faster as I
+    send a fully rendered HTML document, though not as fast as static
+    sites since I need to generate the HTML on the fly.
+  </div>
+  <div>
+    Enhanced Security: Sensitive data handling and validation can be
+    managed more securely on my end.
+  </div>
+  <div>
+    Better User Experience: Users receive a fully-loaded page quickly,
+    contributing to a positive user experience.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  And what about the cons?
+</Conversation.Thread>
+
+<Conversation.Thread from="browser">
+  <div>
+    Full Page Reloads: Navigating between pages requires reloading the
+    entire page, which can disrupt the user experience.
+  </div>
+  <div>
+    Increased Server Load: SSR can place a significant load on the
+    server, particularly for high-traffic websites.
+  </div>
+  <div>
+    Development Complexity: Developing and maintaining MPAs can be
+    more complex compared to static sites or Single-Page Applications
+    (SPAs).
+  </div>
+  <div>
+    Scalability Challenges: Scaling an SSR-based application can be
+    more demanding and might necessitate additional server resources
+    and optimization.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  What frameworks can I use to build an MPA?
+</Conversation.Thread>
+<Conversation.Thread from="server">
+  **Express.js** | **Ruby on Rails** | **Django** | **Laravel** |
+  **ASP.NET Core** | **WordPress** | **Joomla!** | **Drupal**
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  Thanks, Chat! This was really insightful. Any final thoughts?
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  Multi-Page Applications offer a robust way to build dynamic,
+  SEO-friendly web applications with fast initial load times and
+  secure data handling. While they present their own set of
+  challenges, the advantages often outweigh the complexities for many
+  use cases.
+</Conversation.Thread>
+
+<Conversation.Thread from="browser">
+  Stay tuned for our next conversation where we’ll explore Client-Side
+  Rendering (CSR) and understand how it differs from SSR, along with
+  its advantages and disadvantages.
+</Conversation.Thread>
+
+<Conversation.Thread from="user">Looking forward to it!</Conversation.Thread>
+</Conversation>
+
+<Conversation>
   <Conversation.Thread from="user">
    Hey Chat, can you tell me about Multi-Page Applications (MPAs)?
   </Conversation.Thread>

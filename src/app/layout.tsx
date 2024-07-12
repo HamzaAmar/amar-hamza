@@ -19,11 +19,22 @@ interface LayoutProps extends Meta {
 
 const Layout = (props: LayoutProps) => {
   const { children } = props;
-  const { GA_TRACKING_ID } = process.env;
+  const { NEXT_PUBLIC_GA_ID } = process.env;
+
+  console.log(
+    '////////////////////////////////////////////////////////////////////////////////////////////////////////',
+    '////////////////////////////////////////////////////////////////////////////////////////////////////////',
+    'Nice to meet you ',
+    NEXT_PUBLIC_GA_ID,
+    'Nice to meet you ',
+    process.env.NEXT_PUBLIC_GA_ID,
+    '////////////////////////////////////////////////////////////////////////////////////////////////////////',
+    '////////////////////////////////////////////////////////////////////////////////////////////////////////',
+  );
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <GoogleTagManager gtmId={GA_TRACKING_ID!} />
+      <GoogleTagManager gtmId={NEXT_PUBLIC_GA_ID!} />
       <body>
         <NextThemeProvider>
           <Header />
@@ -61,5 +72,8 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Hamza Miloud Amar',
     card: 'summary_large_image',
+  },
+  verification: {
+    google: 't24Qqb8rPTZw8ne0jClmRF1gv0ma1TGuzkvRwE2EoBU',
   },
 };
