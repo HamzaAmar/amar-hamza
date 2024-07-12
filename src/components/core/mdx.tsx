@@ -72,8 +72,6 @@ async function Code({
 }) {
   let codeHTML = highlight(children);
 
-  console.log('Hello', props);
-
   return (
     <code
       className={`${className} code--section`}

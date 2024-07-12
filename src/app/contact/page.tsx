@@ -14,6 +14,8 @@ import type { ContactItemProps } from './utils/contact.type';
 import { CONTACT_INFO } from './utils/contact.data';
 
 import { Metadata } from 'next';
+import { sendMail } from 'app/actions/contact';
+import Form from './form';
 
 export const metadata: Metadata = {
   title: 'Contact Us', // Replace with your company name
@@ -61,55 +63,7 @@ const contact = () => {
         <Social />
       </div>
       <div className="contact--form">
-        <form
-          aria-labelledby="contact-me"
-          className="contact--form l_flow"
-        >
-          <div>
-            <Heading id="contact-me" as="h2">
-              Contact Me
-            </Heading>
-            <Text size="sm" color="slate" contrast="low">
-              If you have any questions or if you're interested in
-              hiring me, I'm happy to respond as quickly as possible.
-              Please feel free to contact me at any time.
-            </Text>
-          </div>
-          <FormContainer name="name" label="Name" required>
-            <Input
-              name="name"
-              icon={<User width="24" />}
-              required
-              autoComplete="name"
-            />
-          </FormContainer>
-          <FormContainer name="email" label="Email" required>
-            <Input
-              name="email"
-              type="email"
-              required
-              icon={<Email width="24" />}
-              autoComplete="email"
-            />
-          </FormContainer>
-          <FormContainer name="subject" label="Subject" required>
-            <Input
-              name="subject"
-              required
-              icon={<Message width="24" />}
-            />
-          </FormContainer>
-          <FormContainer name="message" label="Message" required>
-            <Textarea
-              name="message"
-              required
-              icon={<Message width="24" />}
-            />
-          </FormContainer>
-          <Button icon={<Send width="15" fill="currentColor" />}>
-            Contact
-          </Button>
-        </form>
+        <Form />
       </div>
     </Grid>
   );

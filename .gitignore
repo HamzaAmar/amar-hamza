@@ -12,6 +12,8 @@
 /.next/
 /out/
 
+
+doctor-storybook.log
 # production
 /build
 

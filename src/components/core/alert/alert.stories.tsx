@@ -41,6 +41,4 @@ export const AlertColor: Story = {
   },
 };
 
-export const Playground: Story = {
-  render: (args) => <Alert {...args} />,
-};
+export const Playground: Story = {};
