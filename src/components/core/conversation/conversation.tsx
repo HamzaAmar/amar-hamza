@@ -8,6 +8,7 @@ import {
   World,
 } from '@components/icons';
 import { Text } from '../typography';
+import { Avatar } from '../avatar';
 
 interface ThreadProps {
   from: 'browser' | 'server' | 'user';
@@ -24,6 +25,7 @@ const LOGO = {
   browser: <Browser width="24" />,
   cdn: <World width="24" />,
   narrator: <Speaker width="24" />,
+  me: <User width="24" />,
 };
 
 const Message = ({ children, from }: ThreadProps) => {

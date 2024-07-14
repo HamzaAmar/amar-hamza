@@ -23,7 +23,7 @@
   display: flex;
   gap: 1rem;
 
-  &:not([data-from='user']) {
+  &:not([data-from='user'], [data-from='me']) {
     justify-content: end;
 
     & .thread--header {
