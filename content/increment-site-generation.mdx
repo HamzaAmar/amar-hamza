@@ -28,9 +28,9 @@ We think this conversational style might be a bit more fun and easier to follow 
 <div>
   Instead, the chefs prepare the first course in advance so it's ready
   to serve as soon as the guests arrive. While the guests enjoy the
-  first course, the chefs start preparing the next course. This way,
-  each dish is ready just in time, keeping the process smooth and
-  efficient.
+  first course, the chefs start preparing the next course and so on.
+  This way, each dish is ready just in time, keeping the process
+  smooth and efficient.
 </div>
 
 <div>
@@ -52,7 +52,7 @@ We think this conversational style might be a bit more fun and easier to follow 
   </div>
 </Conversation.Thread>
 
-<Conversation.Thread from="server">
+<Conversation.Thread from="narrator">
   <div>
     Of course! The fallback technique is used to generate pages on
     demand that don't already exist.
@@ -79,7 +79,7 @@ We think this conversational style might be a bit more fun and easier to follow 
   </div>
 </Conversation.Thread>
 
-<Conversation.Thread from="server">
+<Conversation.Thread from="narrator">
   <div>
     The interval caching technique is used to keep page content
     updated.
@@ -99,6 +99,44 @@ We think this conversational style might be a bit more fun and easier to follow 
     strategy ensures a fast user experience and that the displayed
     information is always current.
   </div>
+</Conversation.Thread>
+<Conversation.Thread from="user">
+  Mmm, that sounds good! But how does that relate to websites?
+</Conversation.Thread>
+<Conversation.Thread from="browser">
+  Hello Server , The user ask me about the page XYZ.com can you please
+  send it to me
+</Conversation.Thread>
+<Conversation.Thread from="server">
+  <div>
+    Ok let me check, Because we are in ISR we have Two option either
+    we return cached version or regenerate new page
+  </div>
+  <div>
+    **Check if the page is pre-rendered:** If the page is pre-rendered
+    and has a cache timer and it hasn't expired, I send you the cached
+    version right away for speed.
+  </div>
+  <div>
+    **Cache timer expired:** If the cache timer has expired, I'll
+    still send you the old cached version, but I'll start generating a
+    fresh version of the page in the background. The next time someone
+    visits the page, they'll get the updated content.
+  </div>
+  <div>
+    **Page doesn't exist**: If the page doesn't exist, I'll generate
+    it on demand, transform it into HTML, and send it to you.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="browser">
+  Once I receive the generated HTML, I display it to the user. For
+  subsequent requests, I can serve the cached version until the
+  interval cache expires.
+</Conversation.Thread>
+
+<Conversation.Thread from="browser">
+  when the user visit a page I ask the browser to send me this page.
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
@@ -177,5 +215,14 @@ We think this conversational style might be a bit more fun and easier to follow 
 <Conversation.Thread from="server">
   <div>Incremental Static Generation provides a powerful way to maintain the performance and scalability benefits of static sites while allowing for dynamic content updates. In the next post, we will explore the concept of Resumability, focusing on techniques to improve application performance and user experience by resuming operations from where they left off. Stay tuned!</div>
 </Conversation.Thread>
+<Conversation.Thread from="me">
+  Thank you for reading! I welcome your feedback on this article. Do
+  you have any questions, suggestions, have you noticed any errors,
+  or do you have a different perspective?? Your input helps me refine
+  my writing and create even better content. Feel free to connect with
+  me on X [@HamzaMiloudAma1](https://x.com/HamzaMiloudAma1) to
+  continue the discussion.
+</Conversation.Thread>
 </Conversation>
+
 Thank you for joining us in exploring Incremental Site Generation. In our next post, we'll discuss [Progressive Hydration](/blogs/progressive-hydration-optimized-interactivity), a technique that optimizes the hydration process for improved performance and user experience. Goodbye for now, and see you in our next discussion on [Progressive Hydration](/blogs/progressive-hydration-optimized-interactivity)!
