@@ -52,36 +52,32 @@ What are the main benefits of using Server Components?
    </Conversation.Thread>
 
 <Conversation.Thread from="user">
-
-Can you give an example of how Server Components are used in a real application?
-
+  Can you give an example of how Server Components are used in a real application?
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
+  Sure! Let's say you have a blog application. You can use Server Components to render the list of blog posts. When a user visits the page, the server fetches the blog posts, renders them into HTML, and sends this HTML to the client. The client then displays the blog posts without needing to fetch the data again or render the components.
 
-Sure! Let's say you have a blog application. You can use Server Components to render the list of blog posts. When a user visits the page, the server fetches the blog posts, renders them into HTML, and sends this HTML to the client. The client then displays the blog posts without needing to fetch the data again or render the components.
+  ```javascript
+  // Server Component
+  export default async function BlogList() {
+    const posts = await fetch('https://api.example.com/posts').then(
+      (res) => res.json(),
+    );
+    return (
+      <div>
+        {posts.map((post) => (
+          <div key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.content}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  ```
 
-```javascript
-// Server Component
-export default async function BlogList() {
-  const posts = await fetch('https://api.example.com/posts').then(
-    (res) => res.json(),
-  );
-  return (
-    <div>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
-```
-
-This component fetches the posts on the server, generates the HTML, and sends it to the client for display.
-
+  This component fetches the posts on the server, generates the HTML, and sends it to the client for display.
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
