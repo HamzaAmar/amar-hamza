@@ -13,141 +13,111 @@ Welcome back! In our previous post, we discussed Client-Side Rendering. Today, w
 
 <Conversation>
   <Conversation.Thread from="user">
-      Hello, I'm interested in learning about Server-Side Rendering
-    (SSR). I've come across the term hydration in this context, but
-    I'm not quite sure what it means. Could you explain it to me
+    Hello, I'm interested in learning about Server-Side Rendering
+    (SSR). I've come across the term hydration, but I'm not quite sure
+    what it means. Could you explain it to me ?
   </Conversation.Thread>
-
-<Conversation.Thread from="server">
-  Certainly! In SSR, my role as the server is to pre-render your
-  application's components into a fully formed HTML document. This is
-  then transmitted to the client's browser, ensuring a faster initial
-  page load.
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  Exactly! Once I receive that HTML, I show it to the user right away.
-  But, this initial version is static, kind of like a picture.
-  Hydration is where I come in to make it interactive.
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  So, hydration is what makes the page interactive?
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  You got it! Hydration is a process that happens on the client-side
-  (that's me, the browser!). I run the JavaScript code that came along
-  with the HTML. This code does things like attach event listeners so
-  you can click on buttons, make dynamic updates, and all that good
-  stuff. Basically, it turns a static page into a fully interactive
-  web app.
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  I see. It sounds like a crucial step in the SSR process.
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  It absolutely is! Think of it as the bridge between the initial
-  server-rendered content and the dynamic, user-driven experience you
-  get with a web app. Does that make sense?
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  Yes, that's much clearer. Are there any potential issues that can
-  arise during hydration?
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  Good question! Hydration relies on the server and client being on
-  the same page, so to speak. If there are any inconsistencies between
-  the server-rendered HTML and what the client-side JavaScript
-  expects, it can cause errors. That's why libraries like React DOM
-  are so useful – they can help smooth things over and keep things
-  running smoothly. But it's still important for developers to make
-  sure everything is in sync.
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  Thank you for the detailed explanation. I have a much better
-  understanding of hydration and its importance in SSR now.
-</Conversation.Thread>
-
+  <Conversation.Thread from="narrator">
+    Imagine an artist who creates a black and white sketch. This
+    sketch is like the server-rendered HTML sent to the browser.
+    Hydration is when the artist starts to paint over the sketch,
+    adding colors and details to make the drawing vibrant and
+    interactive. This process attaches the necessary JavaScript to the
+    static HTML, enabling interactions and dynamic behavior just like
+    adding colors brings the sketch to life.
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    Mmm, that sounds good! But how does that relate to websites? 🤔
+  </Conversation.Thread>
   <Conversation.Thread from="server">
-    You're welcome! Feel free to ask if you have any more questions. I'm always here to help!
+    OK let me explain! my role as the server is to render your
+    application's components into a fully formed HTML document. This
+    is then transmitted to the browser, ensuring a faster initial page
+    load (Note that hydration, the process of making the page
+    interactive, is handled by the browser, not the server).
+  </Conversation.Thread>
+  <Conversation.Thread from="browser">
+    Exactly! Once I receive that HTML, I show it to the user right
+    away. But, this initial version is static, kind of like a picture.
+    Hydration is where I come in to make it interactive.
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    So, hydration is what makes the page interactive?
+  </Conversation.Thread>
+  <Conversation.Thread from="browser">
+    You got it! Hydration is a process that happens on the client-side
+    (that's me, the browser!). I run the JavaScript code that came
+    along with the HTML. This code does things like attach event
+    listeners so you can click on buttons, make dynamic updates, and
+    add application state. Basically, it turns a static page into a
+    fully interactive web app.
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    Hmm. How is hydration different from isomorphic rendering?
+  </Conversation.Thread>
+  <Conversation.Thread from="server">
+    Isomorphic rendering (also called universal rendering) consists of
+    two phases: server-side rendering, which delivers initial content
+    quickly, and client-side hydration, which makes the rendered
+    content interactive. this means that hydration is part of the
+    isomorphic rendering.
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    That's much clearer now. Are there any potential issues that can
+    arise during hydration?
+  </Conversation.Thread>
+  <Conversation.Thread from="browser">
+    Good question! Hydration relies on the server and client being the
+    same. If there are any inconsistencies between the server-rendered
+    HTML and what the client-side JavaScript expects, it can cause
+    errors.
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    That makes sense. But what's the drawback of hydration?
+  </Conversation.Thread>
+  <Conversation.Thread from="browser">
+    <div>
+      **Slow Time to Interactive**: Hydration can slow down how
+      quickly a page becomes interactive (TTI) because the browser
+      needs to download and run all the JavaScript code that makes the
+      page interactive.{' '}
+    </div>
+    <div>
+      **Duplicate Execution**: The same app logic might need to run
+      twice – first on the server to generate the initial HTML, and
+      then again in the browser during hydration to add interactivity.
+    </div>
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    Ah, I see. Is there a way to solve this problem?
+  </Conversation.Thread>
+  <Conversation.Thread from="browser">
+    We'll dive deeper into these performance-enhancing techniques in
+    our upcoming articles on [Progressive
+    Hydration](/blogs/progressive-hydration-optimized-interactivity) |
+    [Island
+    architecture](/blogs/http://localhost:3000/blogs/island-architecture-enhancing-performance-and-interactivity)
+    | [Server
+    Components](/blogs/react-server-components-server-side-react-for-better-performance)
+    , and more. Stay tuned!
+  </Conversation.Thread>
+  <Conversation.Thread from="user">
+    Thank you for the detailed explanation. I have a much better
+    understanding of hydration and its importance in Isomorphic
+    rendering now.
+  </Conversation.Thread>
+  <Conversation.Thread from="browser">
+    You're welcome! Feel free to ask if you have any more questions.
+    I'm always here to help!
   </Conversation.Thread>
   <Conversation.Thread from="me">
-  Thank you for reading! I welcome your feedback on this article. Do
-  you have any questions, suggestions, have you noticed any errors,
-  or do you have a different perspective?? Your input helps me refine
-  my writing and create even better content. Feel free to connect with
-  me on X [@HamzaMiloudAma1](https://x.com/HamzaMiloudAma1) to
-  continue the discussion.
-</Conversation.Thread>
-</Conversation>
-
-<Conversation>
-  <Conversation.Thread from="user">
-    Hey there! I'm curious about Server-Side Rendering (SSR). I've heard about this thing called hydration, but I'm not quite sure what it means. Can you explain it to me? 😊
-  </Conversation.Thread>
-
-<Conversation.Thread from="server">
-  Of course! So, in SSR, I'm like a chef in a kitchen. I whip up your
-  app's components and serve them as a complete HTML dish. This yummy
-  HTML is sent straight to the client's browser, making the page load
-  faster. 🍲✨
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  Exactly! When I, the browser, get this HTML, I show it to the user
-  immediately. But at first, it's like a beautiful picture – nice to
-  look at, but you can't interact with it. Hydration is like adding
-  magic sprinkles to make it come alive! 🌟✨
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  So, hydration is what makes the page interactive? 🤔
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  You got it! Hydration happens on the client-side (that's me, the
-  browser!). I run the JavaScript that came with the HTML, attaching
-  event listeners so you can click buttons, make updates, and all that
-  fun stuff. It turns a static picture into a fully interactive app.
-  🖱️💡
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  Ah, I get it now. It sounds like a crucial step in the SSR process.
-  🧠
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  It sure is! Think of it as the bridge between the pre-rendered
-  content from the server and the dynamic experience you get with a
-  web app. Makes sense, right? 🌉😊
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  Yes, that's much clearer. Are there any potential issues that can
-  pop up during hydration? 🤨
-</Conversation.Thread>
-
-<Conversation.Thread from="browser">
-  Great question! Hydration needs the server and client to be in sync,
-  like dance partners. If they get out of step, it can cause errors.
-  Libraries like React DOM help keep everything in harmony, but
-  developers still need to ensure everything is in sync. 💃🕺💻
-</Conversation.Thread>
-
-<Conversation.Thread from="user">
-  Thanks for the detailed explanation. I have a much better
-  understanding of hydration and its role in SSR now. 🙌
-</Conversation.Thread>
-
-  <Conversation.Thread from="server">
-    You're welcome! Feel free to ask if you have more questions. I'm always here to help! 😊👍
+    Thank you for reading! I welcome your feedback on this article. Do
+    you have any questions, suggestions, have you noticed any errors,
+    or do you have a different perspective?? Your input helps me
+    refine my writing and create even better content. Feel free to
+    connect with me on X
+    [@HamzaMiloudAma1](https://x.com/HamzaMiloudAma1) to continue the
+    discussion.
   </Conversation.Thread>
 </Conversation>
 

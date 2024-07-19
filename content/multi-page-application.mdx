@@ -22,12 +22,11 @@ Welcome back! Last time, we discussed Static Sites. Today, we'll look into Multi
     the sandwich artist puts it together for you right there.
   </Conversation.Thread>
   <Conversation.Thread from="user">
-    That sounds fun! How does that compare to websites? 🍞
+    That sounds fun! How does that compare to others rendering patterns? 🍞
   </Conversation.Thread>
   <Conversation.Thread from="server">
     Great question! In an MPA, I'm the server. Each page request
-    triggers a sequence of actions: I first retrieve the core building
-    blocks of the page, then execute any necessary server-side tasks,
+    triggers a sequence of actions: I first get the page requested, then execute any necessary server-side tasks,
     such as fetching data, processing images, or executing other
     logic. Once these tasks are complete (or if none are required), I
     dynamically generate the HTML and deliver it to your browser for
