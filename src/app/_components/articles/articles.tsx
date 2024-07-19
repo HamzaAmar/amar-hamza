@@ -50,9 +50,11 @@ const Article = ({
               src={image}
               alt="Hello world"
               objectFit="cover"
-              layout="fill"
               className="article--image"
               objectPosition="center top"
+              loading="lazy"
+              placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
+              fill
             />
           </div>
         ) : null}

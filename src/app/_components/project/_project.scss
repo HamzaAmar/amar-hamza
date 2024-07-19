@@ -8,13 +8,14 @@
 }
 
 .project--image {
-  width: 100%;
   object-fit: cover;
 }
 
 .project--image-container {
   margin: -1rem;
   margin-bottom: 0;
+  position: relative;
+  aspect-ratio: 2 / 1;
 }
 
 .project--info {

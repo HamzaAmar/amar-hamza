@@ -44,7 +44,10 @@ export default async function Blog({ params }: ParamsReq) {
       {author && (
         <div>
           <Flex items="center" gap="sm">
-            <Avatar image={author.picture} title="hello" />
+            <Avatar
+              image={author.picture}
+              title="Hamza Miloud Amar Avatar"
+            />
             <Flex gap="xs" direction="column" className="u_flex-1">
               <Text size="sm" weight="medium">
                 {author.name}

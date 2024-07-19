@@ -14,6 +14,7 @@ import { PROJECTS } from '@constants/project';
 import { Github, Globe } from '@components/icons';
 import type { ProjectType } from '@constants/project/project.type';
 import { classnames } from '@utils/classnames';
+import Image from 'next/image';
 
 /*
 ====================================================================================================
@@ -40,11 +41,14 @@ const Project = ({
       aria-labelledby={id}
     >
       <div className="project--image-container">
-        <img
+        <Image
           className="project--image"
           src={img.src}
           alt={img.alt}
           ref={imageRef}
+          loading="lazy"
+          placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
+          fill
         />
       </div>
       <Flex items="center" justify="between" gap="xs">
