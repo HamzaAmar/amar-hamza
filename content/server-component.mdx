@@ -102,8 +102,7 @@ We think this conversational style might be a bit more fun and easier to follow 
   </div>
   <div>
     **Improved User experience:** Since server components don’t
-    re-render on the client, the client's processing load is reduced,
-    making the application more responsive.
+    re-render on the client, the client's processing load is reduced, improving the application Time To Interact(TTI).
   </div>
   <div>
     **Simplified Codebase:** Server Components can handle data
@@ -163,6 +162,38 @@ We think this conversational style might be a bit more fun and easier to follow 
     dimensions, applying animations, or handling click events), you'll
     need to use a Client Component. Server Components don't have
     access to the browser's DOM.
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  I'm really liking this Server Component Pattern! I'm curious,
+  though, are there any potential performance issues I should be aware
+  of?
+</Conversation.Thread>
+
+<Conversation.Thread from="user">
+  <div>
+    That makes sense. So, what can I do to prevent this performance
+    issues?
+  </div>
+</Conversation.Thread>
+
+<Conversation.Thread from="server">
+  <div>
+    Certainly! There are several effective strategies for optimizing
+    the performance of Server Components.
+  </div>
+  <div>
+    To enhance site size performance, we can implement techniques
+    outlined in this guide: [Static Site
+    Enhancement.](/blogs/static-site-speed-and-security-unleashed#static-site-enhancement)
+  </div>
+  <div>
+    For the issue of slow loading page sections due to database calls
+    or other processes, we can leverage
+    [Streaming](/blogs/streaming-server-side-rendering-efficient-content-delivery)
+    to ensure that the rest of your page content is displayed promptly
+    without being held back by slower components.
   </div>
 </Conversation.Thread>
 
