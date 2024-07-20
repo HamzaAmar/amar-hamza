@@ -10,3 +10,27 @@
 .reading-layout--list {
   list-style: none;
 }
+
+.reading-layout--link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--slate-3);
+  text-decoration: none;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: var(--slate-5);
+  }
+
+  &.reading-layout--link__primary {
+    background-color: red;
+  }
+}
+
+.reading-layout--footer {
+  border-top: 1px solid var(--slate-6);
+  padding: 2rem 0;
+}
