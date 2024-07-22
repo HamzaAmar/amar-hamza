@@ -18,6 +18,7 @@ import { CustomMDX } from '@components/core/mdx';
 import { Metadata } from 'next';
 import { DOMAIN } from '@constants/domain';
 import { CSSProperties } from 'react';
+import Image from 'next/image';
 
 interface Params {
   slug: string;
@@ -50,10 +51,12 @@ export default async function Blog({ params }: ParamsReq) {
       {author && (
         <div>
           <Flex items="center" gap="sm">
-            <Avatar
-              image={author.picture}
-              title="Hamza Miloud Amar Avatar"
-            />
+            <div>
+              <Avatar
+                image={author.picture}
+                title="Hamza Miloud Amar Avatar"
+              />
+            </div>
             <Flex gap="xs" direction="column" className="u_flex-1">
               <Text size="sm" weight="medium">
                 {author.name}
@@ -61,6 +64,10 @@ export default async function Blog({ params }: ParamsReq) {
               <Flex as="ul" gap="xs" className="reading-layout--list">
                 <li>
                   <IconButton
+                    as="a"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href="https://www.facebook.com/hamza.amar.351/"
                     size="xs"
                     icon={<Facebook />}
                     title={`GO TO ${author.name} Facebook`}
@@ -68,6 +75,10 @@ export default async function Blog({ params }: ParamsReq) {
                 </li>
                 <li>
                   <IconButton
+                    as="a"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href="https://x.com/HamzaMiloudAma1"
                     size="xs"
                     icon={<Twitter />}
                     title={`GO TO ${author.name} Facebook`}
@@ -75,13 +86,21 @@ export default async function Blog({ params }: ParamsReq) {
                 </li>
                 <li>
                   <IconButton
+                    as="a"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href="https://github.com/HamzaAmar"
                     size="xs"
                     icon={<Github />}
-                    title={`GO TO ${author.name} Facebook`}
+                    title={`GO TO ${author.name} github`}
                   />
                 </li>
                 <li>
                   <IconButton
+                    as="a"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href="https://www.linkedin.com/in/hamza-miloud-amar-463b24167/"
                     size="xs"
                     icon={<Linkdin />}
                     title={`GO TO ${author.name} Facebook`}
@@ -103,8 +122,15 @@ export default async function Blog({ params }: ParamsReq) {
           </Flex>
         </div>
       )}
-      <div>
-        <img src={image} alt="" />
+      <div className="reading-layout--avatar-container">
+        <Image
+          fill
+          placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
+          className="reading-layout--avatar"
+          src={image}
+          alt={title}
+          priority
+        />
       </div>
 
       <div className="prose l_flow">
@@ -196,6 +222,7 @@ export async function generateMetadata({
     excerpt: description,
     image,
     slug,
+    tags,
   } = post.metadata;
   const img = `${DOMAIN}/assets/favicon/logo-512X512.png`;
   let ogImage = image ? `${DOMAIN}${image}` : img;
@@ -203,12 +230,14 @@ export async function generateMetadata({
   return {
     title,
     description,
+    keywords: tags,
     openGraph: {
       title,
       description,
       type: 'article',
       publishedTime,
       url: `${DOMAIN}/blogs/${slug}`,
+
       images: [
         {
           url: ogImage,
