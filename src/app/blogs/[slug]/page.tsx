@@ -122,26 +122,22 @@ export default async function Blog({ params }: ParamsReq) {
             className="reading-layout--link"
             target="_blank"
             rel="noreferrer noopener"
-            href={`https://twitter.com/intent/tweet?${new URLSearchParams(
-              {
-                url: permalink,
-                text: `I just read helel "${title}" by @HamzaMiloudAma1\n\n`,
-              },
-            )}`}
+            href={`https://x.com/intent/tweet?${new URLSearchParams({
+              url: permalink,
+              text: `I just read helel "${title}" by @HamzaMiloudAma1\n\n`,
+            })}`}
           >
             <Twitter width="20" strokeWidth="1.5" />
-            Share on Twitter
+            Share on 𝕏
           </a>
           <div className="l_cluster">
             <a
               className="reading-layout--link"
               target="_blank"
               rel="noreferrer noopener"
-              href={`https://twitter.com/search?${new URLSearchParams(
-                {
-                  q: permalink,
-                },
-              )}`}
+              href={`https://x.com/search?${new URLSearchParams({
+                q: permalink,
+              })}`}
             >
               Discuss on 𝕏
             </a>
