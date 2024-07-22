@@ -11,6 +11,7 @@ export function SubmitButton() {
     <Button
       disabled={pending}
       icon={<Send width="15" fill="currentColor" />}
+      status={pending ? 'loading' : 'idle'}
     >
       Contact
     </Button>
