@@ -14,7 +14,11 @@
   box-shadow: 0 8px 64px -8px var(--slate-8);
   text-transform: uppercase;
 }
-
+.header--logo {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--primary-12);
+}
 .header--nav {
   align-self: stretch;
 }

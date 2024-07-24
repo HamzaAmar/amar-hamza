@@ -100,8 +100,9 @@ const Header = () => {
         items="center"
         gap="sm"
         href="/"
+        className="header--logo"
       >
-        <Logo />
+        Miloud Amar
       </Flex>
       <nav className="header--nav sm_hide u_flex-1">
         <ul className="u_center header--list">
