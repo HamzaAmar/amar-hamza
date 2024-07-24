@@ -17,8 +17,10 @@ import { formatDate } from '@utils/formatDate';
 import { CustomMDX } from '@components/core/mdx';
 import { Metadata } from 'next';
 import { DOMAIN } from '@constants/domain';
-import { CSSProperties } from 'react';
+import { CSSProperties, Suspense } from 'react';
 import Image from 'next/image';
+import { incrementViews } from 'app/actions/views';
+import { PageViews } from './pageViews';
 
 interface Params {
   slug: string;
@@ -27,6 +29,8 @@ interface Params {
 interface ParamsReq {
   params: Params;
 }
+
+// let increment = cache(incrementViews);
 
 export default async function Blog({ params }: ParamsReq) {
   const post = getBlogPostBySlug(params.slug);
@@ -41,7 +45,7 @@ export default async function Blog({ params }: ParamsReq) {
   const { author, title, publishedAt, image, readingTime, slug } =
     metadata;
 
-  console.log('this is the value of the post', title);
+  await incrementViews(slug);
 
   return (
     <div className="reading-layout center l_flow">
@@ -61,6 +65,13 @@ export default async function Blog({ params }: ParamsReq) {
               <Text size="sm" weight="medium">
                 {author.name}
               </Text>
+              <Suspense
+                fallback={
+                  <div className="reading-layout--fallback" />
+                }
+              >
+                <PageViews slug={slug} />
+              </Suspense>
               <Flex as="ul" gap="xs" className="reading-layout--list">
                 <li>
                   <IconButton

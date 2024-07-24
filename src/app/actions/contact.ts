@@ -24,7 +24,6 @@ const sendEmail = async ({
   text,
 }: SendEmailProps) => {
   sgMail.setApiKey(process.env.SENDGRID_KEY!);
-  console.log('from', from, 'EMAIL', process.env.EMAIL);
   const msg = {
     to: process.env.EMAIL!,
     from: process.env.EMAIL!,
@@ -73,11 +72,6 @@ export async function sendMail(
   ) as any as SendEmailProps;
   try {
     await sendEmail(entries);
-    console.log(
-      'Hello world my name is hamza miloud amar',
-      'this is the value of the entries',
-      entries,
-    );
 
     return { message: 'Email Send With Success' };
   } catch (err: any) {

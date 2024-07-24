@@ -12,7 +12,11 @@ tags: ['Rendering Pattern', 'SSG', 'Web Performance', 'MPA']
 In our last post, we covered Hydration. Today, we'll focus on Static Site Generation (SSG), a technique that pre-renders web pages at build time, resulting in fast and secure static files. SSG combines the best of both worlds by offering the performance of static sites with the ability to fetch dynamic content at build time.
 
 <Conversation>
-  <Conversation.Thread from="user">Hey Chat, could you explain SSG with Hydration in simple terms, assuming I have no idea about **rendering patterns**? 🤔</Conversation.Thread>
+  <Conversation.Thread from="user">
+  <div>
+  Hey Chat, could you explain SSG with Hydration in simple terms, assuming I have no idea about **rendering patterns**? 🤔
+  </div>
+  </Conversation.Thread>
 <Conversation.Thread from="narrator">
   <div>
 Imagine you're hosting a big dinner party. You prepare all the dishes in advance and wait for the guests to arrive. Once they are seated, you quickly set the table and make everything look perfect so they can start enjoying the meal right away. 🍽️ This is like Static Site Generation (SSG) – the website content is pre-built and ready to go when users visit.
@@ -25,7 +29,7 @@ Imagine you're hosting a big dinner party. You prepare all the dishes in advance
   </div>
 </Conversation.Thread>
 <Conversation.Thread from="user">
-  Mmm, that sounds good! But how does that relate to rendering patterns? 🤔
+  Mmm, that sounds good! But how does that compared to other rendering patterns? 🤔
 </Conversation.Thread>
 <Conversation.Thread from="server">
   My primary responsibility is to pre-render web pages as static HTML
@@ -52,8 +56,8 @@ Imagine you're hosting a big dinner party. You prepare all the dishes in advance
     ⚡
   </div>
   <div>
-    **Interactive:** The "hydration" process adds JavaScript, making
-    the site feel like an app with interactive features. ✨
+    **Interactive:** The hydration process adds JavaScript, making the
+    site feel like an app with interactive features. ✨
   </div>
   <div>
     **Better Security:** Less server-side code means fewer
@@ -78,12 +82,14 @@ Imagine you're hosting a big dinner party. You prepare all the dishes in advance
 <Conversation.Thread from="server">
   <div>Here are a few things to keep in mind: </div>
   <div>
-    **Not as Dynamic:** While interactive, it's not as dynamic as a
-    full-blown web application.
+    **Limited Real-Time Features**: SSG sites can handle simple
+    interactions, but they may not be the best choice if you need
+    features like live chats or real-time updates.
   </div>
   <div>
-    **Build Time:** Generating all those pages upfront can take some
-    time, especially for very large sites.
+    **Build Time:** Generating all those pages upfrontcan
+    significantly slow down the build process, especially for very
+    large sites.
   </div>
   <div>
     **Content Deployment:** Updating content requires a new deployment
@@ -117,8 +123,8 @@ Imagine you're hosting a big dinner party. You prepare all the dishes in advance
 
 <Conversation.Thread from="browser">
   <div>
-    Absolutely! There are several ways to optimize those files. We've
-    already covered some of them
+    There are several ways to optimize those files. We've already
+    covered some of them
     [here](/blogs/static-website#static-site-enhancement), and we'll
     delve into even more modern JavaScript optimization techniques,
     such as [Progressive Hydration](/blogs/progressive-hydration) and

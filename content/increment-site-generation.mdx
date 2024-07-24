@@ -22,24 +22,26 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
 </Conversation.Thread>
 
 <Conversation.Thread from="narrator">
-<div>Imagine a traditional Moroccan wedding feast where up to four different courses are served. If all the courses were prepared at once, it would create a lot of stress for the chefs and could delay the feast.</div>
-
-<div>
-  Instead, the chefs prepare the first course in advance so it's ready
-  to serve as soon as the guests arrive. While the guests enjoy the
-  first course, the chefs start preparing the next course and so on.
-  This way, each dish is ready just in time, keeping the process
-  smooth and efficient.
-</div>
-
-<div>
-  This is like Incremental Static Regeneration (ISR) – the initial
-  content is pre-built and served immediately. As users continue to
-  interact with the site, new content is generated and updated as
-  needed, keeping the experience fresh without overwhelming the
-  system.
-</div>
- <div>
+  <div>
+    Imagine a traditional Moroccan wedding feast where up to four
+    different courses are served. If all the courses were prepared at
+    once, it would create a lot of stress for the chefs and could
+    delay the feast.
+  </div>
+  <div>
+    Instead, the chefs prepare the first course in advance so it's
+    ready to serve as soon as the guests arrive. While the guests
+    enjoy the first course, the chefs start preparing the next course
+    and so on. This way, each dish is ready just in time, keeping the
+    process smooth and efficient.
+  </div>
+  <div>
+    Incremental Static Regeneration (ISR) – is where some content is
+    pre-rendered. As users interact with the site, new or updated
+    content is generated on demand, keeping the experience fresh and
+    current without overloading the system.
+  </div>
+  <div>
     ISR uses two techniques that differ from SSG: the fallback
     technique and interval caching.
   </div>
@@ -84,23 +86,22 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
     updated.
   </div>
   <div>
-    ISR offers a smart way to keep your site's content up-to-date. We
-    use a mechanism called "stale-while-revalidate," which balances
+    ISR offers a smart way to keep your site's content up to date. We
+    use a mechanism called stale-while-revalidate, which balances
     speed and freshness. Each page has a set cache lifespan. When a
     user requests a page, we first check if the cached version is
     still valid. If it is, it's immediately served for optimal speed.
   </div>
   <div>
-    When the cache lifespan expires, even while serving the cached
-    version, ISR works behind the scenes to regenerate the page with
-    the latest content. This means that the next time the page is
-    requested, the user receives the updated version seamlessly. This
-    strategy ensures a fast user experience and that the displayed
-    information is always current.
+    When the cache lifespan expires, the cached version is still
+    served, but a background process begins to regenerate the page.
+    The next time a user requests the page, they seamlessly receive
+    the updated version. This strategy ensures a fast user experience
+    while keeping the displayed information fresh .
   </div>
 </Conversation.Thread>
 <Conversation.Thread from="user">
-  Mmm, that sounds good! But how does that relate to rendering
+  Mmm, that sounds good! But How does that compare to other rendering
   patterns?
 </Conversation.Thread>
 <Conversation.Thread from="browser">
@@ -109,9 +110,10 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
 </Conversation.Thread>
 <Conversation.Thread from="server">
   <div>
-    Ok let me check, Because we are in ISR we have Two option either
-    we return cached version or regenerate new page
+    when the user ask for a page,  Because we are in ISR we have Two option either
+    we return cached version or generate new page
   </div>
+
   <div>
     **Check if the page is pre-rendered:** If the page is pre-rendered
     and has a cache timer and it hasn't expired, I send you the cached

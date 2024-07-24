@@ -9,7 +9,7 @@ author:
 tags: ['Rendering Pattern', 'React', 'Server Components']
 ---
 
-We think this conversational style might be a bit more fun and easier to follow than a regular article. Hopefully, it makes learning about these rendering patterns less boring and more hands-on!
+In our previous article, we discussed Island Architecture. Today, we shift our focus to React Server Components. This paradigm allows developers to render specific components exclusively on the server side, optimizing overall application performance and simplifying data fetching.
 
 <Conversation>
 
@@ -20,18 +20,19 @@ We think this conversational style might be a bit more fun and easier to follow 
 
 <Conversation.Thread from="narrator">
   <div>
-    Think of a web app like a restaurant. The server, like the chef,
-    cooks up all the website's parts in the kitchen. Some components
-    are like a burger – ready to eat right away (server component).
-    Others are like a steak – they need a little extra something, like
-    a sprinkle of salt or a drizzle of sauce, added by the waiter
-    (client component) at the table for a better experience.
+    Imagine your web app as a restaurant experience. The server, like
+    the head chef, prepares all the dishes in the kitchen. Some
+    dishes, like a salad, are fully prepared in the kitchen and ready
+    to be enjoyed as is (server components). Others, like a burger,
+    are mostly prepared in the kitchen but require a final touch at
+    the your table perhaps a melted cheese added by the waiter to
+    complete the perfect meal (client component).
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
   Hmm, I think I get the general idea, but could you explain how this
-  relates to rendering patterns?
+  compared to other rendering patterns?
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
@@ -49,7 +50,7 @@ We think this conversational style might be a bit more fun and easier to follow 
     **Client components:** on the other hand, are rendered by me but
     also include JavaScript code that is sent to the browser (for
     application state, event handlers, and access to DOM nodes). This
-    allows the browser to "hydrate" these components, enabling
+    allows the browser to hydrate these components, enabling
     interactive features and dynamic updates within the web page.
   </div>
 </Conversation.Thread>
@@ -63,10 +64,11 @@ We think this conversational style might be a bit more fun and easier to follow 
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Thanks. Client components make sense now as they're what we use in
-  SSR, a component that render on the server and hydrate on the
-  client. Could you give me some examples of server components to help
-  clarify things?
+  Thanks for the explanation. I understand that client components are
+  the traditional components we use, which render on the server and
+  hydrate on the client. However, I'm still a bit confused about
+  server components. Could you provide some examples to help me
+  understand them better?
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
@@ -77,7 +79,7 @@ We think this conversational style might be a bit more fun and easier to follow 
   <div>
     Let's take a component that displays the date in the format
     (YYYY.MM.DD). With traditional client components, we'd send the
-    raw date and JavaScript code to the browser for formatting. Server
+    raw date and JavaScript code to the browser to hydrate it. Server
     components, however, allow us to format the date directly on the
     server and send only the formatted result in HTML, simplifying the
     process and reducing client-side load.
@@ -100,8 +102,7 @@ We think this conversational style might be a bit more fun and easier to follow 
     search engines, improving SEO.
   </div>
   <div>
-    **Improved User experience:** Since server components don’t
-    re-render on the client, the client's processing load is reduced, improving the application Time To Interact(TTI).
+   Improved User Experience: Since server components do not hydrate on the client, the client's bundle size is reduced, improving the application's Time To Interact (TTI).
   </div>
   <div>
     **Simplified Codebase:** Server Components can handle data
@@ -144,16 +145,16 @@ We think this conversational style might be a bit more fun and easier to follow 
     its own internal state, a Client Component is required.
   </div>
   <div>
-    **Leveraging Effects**: To perform side effects like fetching data
-    after a component has mounted, or subscribing to external events,
-    you'll need a Client Component. Server Components don't have a
-    lifecycle for these operations.
+    **Leveraging Effects**: To perform side effects like subscribing
+    to external events or running code when a component mounts or
+    unmounts, you'll need a Client Component. Server Components do not
+    have a lifecycle for managing these types of operations.
   </div>
   <div>
     **Interacting with Browser APIs**: When your component needs to
     interact directly with browser APIs (e.g., accessing geolocation,
-    or working with local storage), a Client Component is . These APIs
-    aren't available on the server.
+    or working with local storage), a Client Component is necessary.
+    These APIs aren't available on the server.
   </div>
   <div>
     **manipulating the DOM**: If your component needs to directly
@@ -170,6 +171,22 @@ We think this conversational style might be a bit more fun and easier to follow 
   of?
 </Conversation.Thread>
 
+<Conversation.Thread from="server">
+  <div>
+    Absolutely! While server components offer many benefits, there are
+    some potential performance considerations to keep in mind.
+  </div>
+  <div>One such consideration is larger file sizes.</div>
+  <div>
+    Additionally, time-consuming data fetching can slow down the
+    page's First Contentful Paint (FCP).
+  </div>
+  <div>
+    Furthermore, increased server load due to rendering components can
+    also impact performance, especially under heavy traffic.
+  </div>
+</Conversation.Thread>
+
 <Conversation.Thread from="user">
   <div>
     That makes sense. So, what can I do to prevent this performance
@@ -183,7 +200,7 @@ We think this conversational style might be a bit more fun and easier to follow 
     the performance of Server Components.
   </div>
   <div>
-    To enhance site size performance, we can implement techniques
+    To enhance site size performance, you can implement techniques
     outlined in this guide: [Static Site
     Enhancement.](/blogs/static-website#static-site-enhancement)
   </div>
@@ -193,6 +210,12 @@ We think this conversational style might be a bit more fun and easier to follow 
     [Streaming](/blogs/streaming-server-side-rendering) to ensure that
     the rest of your page content is displayed promptly without being
     held back by slower components.
+  </div>
+  <div>
+    [Leveraging caching mechanisms on both the server and
+    client-side](https://nextjs.org/docs/app/building-your-application/caching)
+    can significantly reduce server load and improve overall
+    performance.
   </div>
 </Conversation.Thread>
 

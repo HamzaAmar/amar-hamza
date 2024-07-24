@@ -32,6 +32,8 @@
     "@pillar-ui/hooks": "^0.5.1",
     "@sendgrid/mail": "^7.4.5",
     "@storybook/addon-themes": "^8.2.2",
+    "@supabase/ssr": "0.4.0",
+    "@supabase/supabase-js": "^2.44.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "copy-to-clipboard": "^3.3.3",

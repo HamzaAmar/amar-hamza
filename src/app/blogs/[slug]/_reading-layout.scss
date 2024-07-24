@@ -48,3 +48,22 @@
   height: 100%;
   object-fit: cover;
 }
+
+.reading-layout--fallback {
+  width: 10ch;
+  height: 1rem;
+  background-color: var(--slate-10);
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+  animation: loading 0.5s infinite;
+}
+
+@keyframes loading {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: 1;
+  }
+}

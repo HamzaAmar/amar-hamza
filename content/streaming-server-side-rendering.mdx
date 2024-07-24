@@ -25,36 +25,36 @@ In our last post, we covered Progressive Hydration. Today, we'll focus on Stream
     meal. Instead of waiting for the entire meal to be prepared, the
     chef sends out each dish as soon as it's ready, starting with the
     quickest to prepare and ending with the dish that takes the
-    longest. This way, you start enjoying your meal right away without
+    longest. This way, you start enjoying your meal faster without
     waiting for everything to be finished.
   </div>
   <div>
-    **Streaming Server-Side Rendering** is a game changer. Instead of
-    waiting for the entire web page to be fully generated before
-    sending it to your browser, the server sends parts of the page as
-    soon as they're ready. This allows you to start viewing and
-    interacting with the initial content of the page while the rest is
-    still being processed and sent. It's like enjoying the appetizer
-    while the chef is still cooking the main course.
+    With streaming server-side rendering, you don't have to wait for
+    an entire webpage to load before seeing it. Instead, the server
+    sends parts of the page as soon as they are ready. This allows you
+    to start viewing and interacting with the initial content while
+    the rest is still being processed and delivered. Think of it like
+    enjoying an appetizer while the chef prepares the main course.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Mmm, that sounds interesting! But how would that work for websites?
-  🤔
+  Mmm, that sounds interesting! Could you explain a real world
+  example, showing the step by step process of how the server and
+  browser work together to make this happen? 🤔
 </Conversation.Thread>
 <Conversation.Thread from="server">
-  When you request a webpage, I start generating it immediately.
-  However, rather than making you wait for the entire page to load, I
-  send you sections of the page as they're ready, prioritizing the
-  quickest elements first. This allows you to start viewing content on
-  your screen sooner than if you had to wait for the entire page to be
+  When you request a webpage, my job is to render it as HTML. However,
+  instead of making you wait for the entire page to load, I send you
+  sections of the page as they are ready, prioritizing the fastest
+  elements first. This allows you to start viewing content on your
+  screen sooner than if you had to wait for the entire page to be
   fully generated.
 </Conversation.Thread>
 <Conversation.Thread from="browser">
   <div>
     As I receive each chunk, I add it to the page and immediately
-    hydrate it to make it interactive.So You can start exploring the
+    hydrate it to make it interactive. So You can start exploring the
     content before the entire page has finished loading, resulting in
     a much smoother and faster browsing experience!
   </div>
