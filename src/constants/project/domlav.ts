@@ -16,7 +16,7 @@ export const domlav = {
     },
   ],
   description:
-    'Service App For Washing Every Thing you want based at morocco its a full stack javascript project maked with React and next js for server side rendering and powered by storybook and styled with scss',
+    'A Laundry Service App for Everything You Need, Based in Morocco. This full-stack JavaScript project is built with React and Next.js for server-side rendering, powered by Storybook, and styled with SCSS.',
   technologies: [
     'React',
     'Next',

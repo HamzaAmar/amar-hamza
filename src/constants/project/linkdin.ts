@@ -24,7 +24,7 @@ export const linkdin = {
     'HTML',
     'Storybook',
     'MSW',
-    'Playwrite',
+    'Playwright',
     'Jest',
     'Radix',
   ],

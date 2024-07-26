@@ -16,7 +16,7 @@ export const gamer = {
     },
   ],
   description:
-    'Service App For Washing Every Thing you want based at morocco its a full stack javascript project maked with React and next js for server side rendering and powered by storybook and styled with native css and css modules',
+    'Your Portal to Infinite Gaming Adventures: A Full-Stack JavaScript Gaming Platform. Built with React and Next.js for lightning-fast server-side rendering, this platform is powered by Storybook for seamless development and styled with SCSS for an immersive visual experience.',
   technologies: [
     'React',
     'Next',

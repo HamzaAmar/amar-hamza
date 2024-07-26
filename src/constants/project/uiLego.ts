@@ -16,15 +16,6 @@ export const uiLego = {
     },
   ],
   description:
-    'Service App For Washing Every Thing you want based at morocco its a full stack javascript project maked with React and next js for server side rendering and powered by storybook and styled with native css and css modules',
-  technologies: [
-    'React',
-    'Next',
-    'CSS',
-    'HTML',
-    'Firebase',
-    'mongoDB',
-    'Node',
-    'Express',
-  ],
+    "UI Lego is a free, open-source UI starter kit built with React, SCSS, and Storybook. It's designed to streamline your development workflow with a collection of pre-built, customizable components that empower you to assemble user interfaces quickly and easily, much like building with Lego blocks.",
+  technologies: ['SCSS', 'HTML', 'React', 'Storybook', 'Typescript'],
 };

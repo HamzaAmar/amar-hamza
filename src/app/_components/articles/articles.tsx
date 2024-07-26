@@ -139,9 +139,8 @@ const articles = ({ posts, description }: ArticlesProps) => {
       className="section l_flow__lg"
     >
       <HeroHeading
-        heading="Engaging Web Articles"
-        subHeading="Dive into my insightful articles on web development and
-          design."
+        heading="Join Me on My Web Development Journey"
+        subHeading="Sharing insights and knowledge gained from my experiences on web development."
         section="articles"
         description={description}
       />

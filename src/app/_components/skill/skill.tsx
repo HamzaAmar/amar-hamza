@@ -37,9 +37,9 @@ const Item = ({
         <Flex justify="between" items="center">
           <Flex gap="xs" items="center">
             {iconUI}
-            <Heading as="h3" weight="medium" size="xs">
+            <Text weight="medium" size="md">
               {title}
-            </Heading>
+            </Text>
           </Flex>
         </Flex>
         <Text
@@ -63,8 +63,8 @@ const SkillsContainer = () => {
       className="section l_flow__lg"
     >
       <HeroHeading
-        heading="Proficient Web Skills"
-        subHeading="Unveil my extensive skill set in web development and design."
+        heading="My Web Development Expertise"
+        subHeading="The Tools and Technologies I Use to Build Your Web Presence"
         section="skills"
       />
       <Grid

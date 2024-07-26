@@ -16,8 +16,8 @@ const services = () => {
       className="section l_flow__lg"
     >
       <HeroHeading
-        heading="Insightful Service Overview"
-        subHeading="Explore the diverse range of web services that I offer."
+        heading="Building and improving websites"
+        subHeading="Freelance Web Developer Specializing in UX, Performance, and Design Systems"
         section="services"
       />
 
@@ -31,10 +31,10 @@ const services = () => {
             as="article"
           >
             <div className="service__icon u_center">{icon}</div>
-            <div className="l_flow__3xs">
-              <Heading as="h3" weight="black" size="xs">
+            <div className="l_flow__2xs">
+              <Text weight="medium" size="md">
                 {title}
-              </Heading>
+              </Text>
               <Text size="sm" color="slate" contrast="low">
                 {description}
               </Text>

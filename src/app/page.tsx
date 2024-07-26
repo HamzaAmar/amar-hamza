@@ -26,5 +26,5 @@ const IndexPage = async () => {
 export default IndexPage;
 
 export const metadata: Metadata = {
-  title: 'Home Page',
+  title: 'Home Page Freelancer Web Developer | Hamza Miloud Amar',
 };

@@ -21,7 +21,10 @@ const About = () => {
               size="2xl"
               className="about--name"
             >
-              Hamza Amar
+              Miloud Amar{' '}
+              <span className="u_sr-only">
+                A freelancer web developer
+              </span>
             </Heading>
             <Text size="lg" leading="lg">
               Experienced Frontend Developer | Passionate about

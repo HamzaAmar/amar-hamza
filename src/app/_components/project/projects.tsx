@@ -52,9 +52,9 @@ const Project = ({
         />
       </div>
       <Flex items="center" justify="between" gap="xs">
-        <Heading id={id} as="h3" weight="medium" size="sm">
+        <Text id={id} weight="medium" size="md">
           {title}
-        </Heading>
+        </Text>
         <div className="resume__projects l_cluster">
           {links.map((link) => {
             const icon =

@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     template: '%s | Hamza Miloud Amar',
   },
   description:
-    'Frontend Developer & Creator of Pillar UI | Passionate about building elegant, accessible, and UX-friendly Design Systems with React | React, Next,CSS,Remix',
+    'Freelancer Frontend Developer & Creator of Pillar UI | Passionate about building accessible, and UX-friendly Design Systems | React, Next,CSS,Remix',
   openGraph: {
     title: 'Hamza Miloud Amar',
     description:
-      'Frontend Developer & Creator of Pillar UI | Passionate about building elegant, accessible, and UX-friendly Design Systems with React | React, Next,CSS,Remix',
+      'Freelancer Frontend Developer & Creator of Pillar UI | Passionate about building accessible, and UX-friendly Design Systems | React, Next,CSS,Remix',
     url: DOMAIN,
     siteName: 'Hamza Miloud Amar',
     locale: 'en_US',

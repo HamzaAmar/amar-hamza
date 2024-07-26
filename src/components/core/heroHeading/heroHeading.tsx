@@ -24,7 +24,7 @@ const heroHeading = ({
         >
           {heading}
         </Text>
-        <p>{subHeading}</p>
+        {subHeading}
       </Heading>
 
       {description && (
