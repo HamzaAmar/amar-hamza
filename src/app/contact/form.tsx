@@ -30,14 +30,14 @@ const Form = () => {
       className="contact--form l_flow"
       action={formAction}
     >
-      <div>
+      <div className="l_flow__xs">
         <Heading id="contact-me" as="h2">
           Contact Me
         </Heading>
         <Text size="sm" color="slate" contrast="low">
-          If you have any questions or if you're interested in hiring
-          me, I'm happy to respond as quickly as possible. Please feel
-          free to contact me at any time.
+          Curious about my services or have a specific question? I'm
+          here to help! Don't hesitate to contact me, and let's
+          explore how we can work together.
         </Text>
       </div>
       <FormContainer name="name" label="Name" required>

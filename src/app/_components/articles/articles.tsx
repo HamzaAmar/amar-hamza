@@ -136,7 +136,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
   return (
     <section
       aria-labelledby="articles-id-section"
-      className="section l_flow__lg"
+      className="sct l_flow__lg"
     >
       <HeroHeading
         heading="Join Me on My Web Development Journey"

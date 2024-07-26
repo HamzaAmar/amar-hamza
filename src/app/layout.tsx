@@ -43,6 +43,15 @@ export const metadata: Metadata = {
     default: 'Hamza Miloud Amar',
     template: '%s | Hamza Miloud Amar',
   },
+  keywords: [
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'Performance',
+    'Career',
+    'Software Development',
+    'Hamza Miloud Amar blog',
+  ],
   description:
     'Freelancer Frontend Developer & Creator of Pillar UI | Passionate about building accessible, and UX-friendly Design Systems | React, Next,CSS,Remix',
   openGraph: {

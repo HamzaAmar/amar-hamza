@@ -41,8 +41,13 @@ const contact = () => {
   return (
     <Grid columns="1fr 1fr" className="sm_grid-one contact">
       <div className="contact--info  l_flow">
-        <Heading size="2xl" className="contact--heading">
-          get in touch
+        <Heading
+          as="h1"
+          weight="normal"
+          size="xl"
+          className="contact--heading"
+        >
+          Let's Collaborate on Your Next Web Project
         </Heading>
 
         <Text
@@ -50,9 +55,12 @@ const contact = () => {
           contrast="low"
           className="contact--description"
         >
-          Please complete this form if you’re interested in hiring me
-          or have any questions. I’m always delighted to respond and
-          assist you
+          I'm a<strong> freelance web developer</strong> passionate
+          about crafting exceptional digital experiences. If you're
+          looking for a <strong>skilled developer</strong> to bring
+          your website or application to life, please complete the
+          form below. I'd love to discuss your project and how I can
+          help you achieve your goals.
         </Text>
 
         <div className="contact--info-list l_flow">

@@ -10,6 +10,7 @@
 @forward './header/header';
 
 // Nested
+@forward '../blogs/blogs';
 @forward '../blogs/[slug]/reading-layout';
 @forward '../contact/contact';
 @forward '../resume/_components/resume/resume';
