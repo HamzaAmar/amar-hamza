@@ -5,7 +5,6 @@ import { compareDesc } from 'date-fns';
 
 import type { Post } from '@type/post';
 import readingTime from 'reading-time';
-import { slugify } from '@utils/slugify';
 
 function parseFrontmatter(fileContent: string, filename: string) {
   // Split the file content into frontmatter and content
@@ -45,7 +44,6 @@ function getMDXData(dir: string) {
   let mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     const [filename] = file.split('.');
-    console.log('this is the file ', filename);
 
     let { metadata, content } = readMDXFile(
       path.join(dir, file),

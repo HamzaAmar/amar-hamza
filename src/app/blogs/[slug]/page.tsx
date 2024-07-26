@@ -161,7 +161,7 @@ export default async function Blog({ params }: ParamsReq) {
             rel="noreferrer noopener"
             href={`https://x.com/intent/tweet?${new URLSearchParams({
               url: permalink,
-              text: `I just read helel "${title}" by @HamzaMiloudAma1\n\n`,
+              text: `Just finished reading this article |${title}| by Hamza Miloud Amar. Highly recommend it to anyone interested in #webdev. Give it a read and share your thoughts!\n\n #frontend #nextjs #remix \n\n`,
             })}`}
           >
             <Twitter width="20" strokeWidth="1.5" />

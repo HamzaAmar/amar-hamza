@@ -8,6 +8,7 @@ interface Author {
 export interface Post {
   title: string;
   publishedAt: string;
+  lastModified: string;
   author: Author;
   excerpt: string;
   image: string;

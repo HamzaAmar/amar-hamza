@@ -8,9 +8,9 @@ const NOW = new Date().toISOString().split('T')[0];
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let blogs = getBlogPosts().map((post) => ({
     url: `${DOMAIN}/blogs/${post.metadata.slug}`,
-    lastModified: post.metadata.publishedAt,
-    priority: 0.6,
-    changefreq: 'weekly',
+    lastModified: post.metadata.lastModified,
+    priority: 0.9,
+    changefreq: 'daily',
   }));
 
   let routes = PAGES.map((page) => ({
