@@ -33,7 +33,7 @@ export default async function Blog() {
           </Text>
         </div>
         <Image
-          src="/assets/keyboard.png"
+          src="/assets/keyboards.png"
           alt=""
           width={300}
           height={300}
