@@ -48,8 +48,8 @@ export default async function Blog({ params }: ParamsReq) {
   await incrementViews(slug);
 
   return (
-    <div className="reading-layout center l_flow">
-      <Heading as="h1" align="center">
+    <div className="reading-layout center l_flow__lg">
+      <Heading as="h1" size="xl" weight="normal">
         {title}
       </Heading>
       {author && (
