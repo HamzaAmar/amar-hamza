@@ -62,6 +62,7 @@ export const metadata: Metadata = {
     siteName: 'Hamza Miloud Amar',
     locale: 'en_US',
     type: 'website',
+    images: [`${DOMAIN}/favicon/logo-512X512.png`],
   },
   robots: {
     index: true,
@@ -70,6 +71,9 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Hamza Miloud Amar',
     card: 'summary_large_image',
+    description:
+      'Freelancer Frontend Developer & Creator of Pillar UI | Passionate about building accessible, and UX-friendly Design Systems | React, Next,CSS,Remix',
+    images: [`${DOMAIN}/favicon/logo-512X512.png`],
   },
   verification: {
     google: 't24Qqb8rPTZw8ne0jClmRF1gv0ma1TGuzkvRwE2EoBU',

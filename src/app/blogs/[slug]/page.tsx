@@ -21,6 +21,7 @@ import { CSSProperties, Suspense } from 'react';
 import Image from 'next/image';
 import { incrementViews } from 'app/actions/views';
 import { PageViews } from './pageViews';
+import { Article } from 'schema-dts';
 
 interface Params {
   slug: string;
@@ -55,6 +56,26 @@ export default async function Blog({ params }: ParamsReq) {
   const img = `${DOMAIN}/favicon/logo-512X512.png`;
   let ogImage = image ? `${DOMAIN}/${image}` : img;
 
+  const JSON_LD: Article = {
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: publishedAt,
+    dateModified: lastModified,
+    description: excerpt,
+    image: ogImage,
+    url: `${DOMAIN}/blogs/${slug}`,
+    author: {
+      '@type': 'Person',
+      name: 'Hamza Miloud Amar',
+      url: 'https://www.miloudamar.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Hamza Miloud Amar',
+    },
+    keywords: tags,
+  };
+
   await incrementViews(slug);
 
   return (
@@ -65,23 +86,7 @@ export default async function Blog({ params }: ParamsReq) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: title,
-            datePublished: publishedAt,
-            dateModified: lastModified,
-            description: excerpt,
-            image: ogImage,
-            url: `${DOMAIN}/blogs/${slug}`,
-            author: {
-              '@type': 'Person',
-              name: 'Hamza Miloud Amar',
-              url: 'https://www.miloudamar.com',
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'Hamza Miloud Amar',
-            },
-            keywords: tags,
+            ...JSON_LD,
           }),
         }}
       />
