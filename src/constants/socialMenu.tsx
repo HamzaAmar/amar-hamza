@@ -19,7 +19,7 @@ const SOCIALS: Socials[] = [
     id: 1,
     icon: <Facebook />,
     name: 'Facebook',
-    link: 'https://www.facebook.com',
+    link: 'https://www.facebook.com/hamza.amar.351',
   },
 
   {
@@ -32,7 +32,7 @@ const SOCIALS: Socials[] = [
     id: 3,
     icon: <Instagram />,
     name: 'Instagram',
-    link: 'https://twitter.com/HamzaMiloudAma1',
+    link: 'https://www.instagram.com/amar_dev_js',
   },
   {
     id: 4,

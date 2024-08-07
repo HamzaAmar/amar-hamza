@@ -30,8 +30,6 @@ interface ParamsReq {
   params: Params;
 }
 
-// let increment = cache(incrementViews);
-
 export default async function Blog({ params }: ParamsReq) {
   const post = getBlogPostBySlug(params.slug);
 
@@ -42,13 +40,51 @@ export default async function Blog({ params }: ParamsReq) {
   const permalink = `${DOMAIN}/blogs/${params.slug}`;
 
   const { content, metadata } = post;
-  const { author, title, publishedAt, image, readingTime, slug } =
-    metadata;
+  const {
+    author,
+    title,
+    publishedAt,
+    image,
+    readingTime,
+    slug,
+    excerpt,
+    lastModified,
+    tags,
+  } = metadata;
+
+  const img = `${DOMAIN}/favicon/logo-512X512.png`;
+  let ogImage = image ? `${DOMAIN}/${image}` : img;
 
   await incrementViews(slug);
 
   return (
     <div className="reading-layout center l_flow__lg">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: title,
+            datePublished: publishedAt,
+            dateModified: lastModified,
+            description: excerpt,
+            image: ogImage,
+            url: `${DOMAIN}/blogs/${slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'Hamza Miloud Amar',
+              url: 'https://www.miloudamar.com',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Hamza Miloud Amar',
+            },
+            keywords: tags,
+          }),
+        }}
+      />
       <Heading as="h1" size="xl" weight="normal">
         {title}
       </Heading>
@@ -235,8 +271,8 @@ export async function generateMetadata({
     slug,
     tags,
   } = post.metadata;
-  const img = `${DOMAIN}/assets/favicon/logo-512X512.png`;
-  let ogImage = image ? `${DOMAIN}${image}` : img;
+  const img = `${DOMAIN}/favicon/logo-512X512.png`;
+  let ogImage = image ? `${DOMAIN}/${image}` : img;
 
   return {
     title,
