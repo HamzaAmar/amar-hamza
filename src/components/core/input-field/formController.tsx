@@ -22,10 +22,7 @@ const FormContainer = ({
   const messageID = `${useId()}-description`;
 
   const requiredSign = required ? (
-    <abbr
-      className="form-container--abbr"
-      title={`${name} field is required`}
-    >
+    <abbr className="f-c-abbr" title={`${name} field is required`}>
       *
     </abbr>
   ) : null;
@@ -34,7 +31,7 @@ const FormContainer = ({
     <Flex
       role="alert"
       items="center"
-      className="form-container--message"
+      className="f-c-msg"
       id={messageID}
     >
       <Danger width="20" aria-hidden="true" />
@@ -43,8 +40,8 @@ const FormContainer = ({
   ) : null;
 
   return (
-    <div className="form-container l_flow__xs">
-      <label className="form-container--label l_flow__2xs">
+    <div className="f-c l_f_xs">
+      <label className="f-c-lbl l_f_2xs">
         <Flex items="center" gap="xs">
           {label} {requiredSign}
         </Flex>

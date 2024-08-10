@@ -1,79 +1,79 @@
-.conversation {
-  background-color: var(--slate-2);
+.c-o {
+  background-color: var(--b-2);
   border-radius: 1rem;
   position: relative;
 }
 
-.conversation--header,
-.conversation--body {
+.c-o-hdr,
+.c-o-body {
   padding: 1rem;
 }
 
-.conversation--header {
+.c-o-hdr {
   background-color: inherit;
   display: flex;
-  gap: var(--space-sm);
+  gap: var(--sp-sm);
   align-items: center;
-  border-bottom: 1px solid var(--slate-5);
+  border-bottom: 1px solid var(--b-5);
   position: sticky;
   top: 4rem;
 }
 
-.thread {
+.t-h {
   display: flex;
   gap: 1rem;
 
   &:not([data-from='user'], [data-from='me']) {
     justify-content: end;
 
-    & .thread--header {
+    & .t-h--hdr {
       order: 2;
     }
 
-    & .thread--message {
+    & .t-h--msg {
       order: 1;
     }
   }
 }
 
-.thread-message--container {
+.t-h-msg--container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: end;
 }
 
-// .conversation {
-//   background-color: var(--slate-3);
+// .c-o {
+//   background-color: var(--b-3);
 //   border-radius: 1rem;
 //   padding: 1rem;
 // }
 
-.thread--header {
+.t-h--hdr {
   flex-direction: column;
   text-transform: uppercase;
   font-size: 0.85rem;
 }
 
-.thread--avatar {
-  border: 2px dashed var(--orange-9);
-  background: var(--slate-4);
+.t-h--avt {
+  border: 2px dashed var(--w-9);
+  background: var(--b-4);
 }
 
-.header--avatar {
-  background: var(--slate-4);
+.c-o--avt {
+  background: var(--b-4);
 }
 
-.thread--user {
+.t-h--user {
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--orange-11);
+  color: var(--w-11);
 }
 
-.thread--message {
-  background: var(--slate-4);
+.t-h--msg {
+  background: var(--b-4);
   border-radius: 0.5rem;
   width: fit-content;
   height: fit-content;

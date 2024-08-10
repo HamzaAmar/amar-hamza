@@ -1,32 +1,26 @@
-.project {
+.h-pr {
   overflow: hidden;
 
-  &:hover .project--link {
+  &:hover .h-pr-lnk {
     text-decoration: underline;
-    color: var(--primary-11);
+    color: var(--p-11);
   }
 }
 
-.project--image {
+.h-pr-img {
   object-fit: cover;
 }
 
-.project--image-container {
+.h-pr-imgC {
   margin: -1rem;
   margin-bottom: 0;
   position: relative;
   aspect-ratio: 2 / 1;
 }
 
-.project--info {
-  flex: 1;
-}
-
-.project--link {
-  color: var(--color-grey-9);
-  cursor: pointer;
+.h-pr-lnk {
+  color: var(--p-11);
   gap: 0.25rem;
-  align-items: center;
   transition: transform 150ms;
 
   &:hover {
@@ -35,6 +29,6 @@
   }
 }
 
-.project--technologies {
+.h-pr-tags {
   margin-top: auto;
 }

@@ -1,16 +1,15 @@
-import { Meta , StoryObj} from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Flex, Spinner } from '..';
 
-const meta:Meta<typeof Spinner> = {
+const meta: Meta<typeof Spinner> = {
   title: 'Components/Core/Spinner',
   component: Spinner,
-} 
+};
 
 export default meta;
 
-
-type Story = StoryObj<typeof Spinner>
+type Story = StoryObj<typeof Spinner>;
 
 export const SpinnerSize = () => {
   return (
@@ -26,14 +25,14 @@ export const SpinnerSize = () => {
 export const SpinnerColor = () => {
   return (
     <Flex gap="sm">
-      <Spinner color="danger" />
-      <Spinner color="warning" />
-      <Spinner color="success" />
+      <Spinner color="d" />
+      <Spinner color="w" />
+      <Spinner color="s" />
       <Spinner />
     </Flex>
   );
 };
 
-export const playground:Story = {
+export const playground: Story = {
   args: {},
 };

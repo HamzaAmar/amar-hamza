@@ -1,50 +1,21 @@
-.text {
-  color: var(--color-text, currentColor);
-  max-width: 100%;
+.t-y {
+  color: var(--color-text);
+  font-size: var(--typography-size, inherit);
+  text-transform: var(--typography-transform, inherit);
 }
 
-.heading {
-  max-width: var(--t-width, 100%);
-  color: var(--color-heading);
+.t-y_hdg {
+  font-size: calc(var(--typography-size, 1rem) * 1.25);
 }
 
-/* Heading Size Section Style Start */
-.heading__2xs {
-  font-size: 0.875rem;
+.t-y_lnk {
+  padding: 2px;
+  text-decoration: none;
+  color: var(--p-11);
+  &:hover {
+    text-decoration: underline var(--p-9) clamp(1px, 0.1em, 2px);
+  }
+  &:focus-visible {
+    outline: 2px dashed var(--c-9);
+  }
 }
-
-.heading__xs {
-  font-size: 1rem;
-}
-
-.heading__sm {
-  font-size: 1.325rem;
-}
-
-.heading__md {
-  font-size: 1.75rem;
-}
-
-.heading__lg {
-  font-size: 2rem;
-}
-
-.heading__xl {
-  font-size: 2.5rem;
-}
-
-.heading__2xl {
-  font-size: 3.5rem;
-}
-
-.heading__3xl {
-  font-size: 5rem;
-  line-height: 1;
-}
-
-.heading__4xl {
-  font-size: 7rem;
-  line-height: 1;
-}
-
-/* Heading Size Section Style End */

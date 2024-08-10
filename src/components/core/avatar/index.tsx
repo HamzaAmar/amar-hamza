@@ -2,28 +2,24 @@ import { classnames } from '@utils/classnames';
 
 import { AvatarProps } from './avatar.type';
 
-const avatar = ({
+export const Avatar = ({
   image,
   title,
   size = 'md',
-  color = 'primary',
+  color = 'p',
   className,
 }: AvatarProps) => {
   const avatarContent = image ? (
-    <img className="avatar" src={image} alt={title} />
+    <img className="a-v u_circle" src={image} alt={title} />
   ) : (
-    <span className="avatar__fallback u_center">
-      {title[0].toUpperCase()}
-    </span>
+    <span className="a-v-flb u_center">{title[0].toUpperCase()}</span>
   );
 
   const AvatarClassName = classnames(
-    `avatar-wrapper avatar--${size} u_circle u_${color}`,
+    `a-v-cnt a-v_${size} u_circle u_center u_${color}`,
     {
       [className!]: Boolean(className),
     },
   );
   return <div {...AvatarClassName}>{avatarContent}</div>;
 };
-
-export default avatar;

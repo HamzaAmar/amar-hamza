@@ -7,8 +7,8 @@ import InputField from './field-input';
 const TextArea = (props: TextAreaProps) => {
   const { error, touched, icon, value, ...rest } = props;
 
-  const iconClassName = classnames('input-field', {
-    ['input__icon-exist'!]: Boolean(icon),
+  const iconClassName = classnames('f-i', {
+    ['f-i-icn'!]: Boolean(icon),
   });
 
   return (

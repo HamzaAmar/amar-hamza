@@ -1,55 +1,53 @@
-.input-field--container {
-  --icon-container-size: 2.5rem;
+.i-f-cnt {
+  --i-s: 2.5rem;
 
   position: relative;
   overflow: hidden;
-  border: 2px solid var(--slate-6);
+  border: 2px solid var(--b-6);
   border-radius: 0.25em;
+
+  &:hover {
+    border-color: var(--p-8);
+  }
+  &:focus-within {
+    outline: 2px solid transparent;
+    border-color: var(--p-8);
+  }
+  &[data-error='true'] {
+    color: var(--r-8);
+    border-color: var(--r-8);
+  }
 }
 
-.input-field--container:hover {
-  border-color: var(--primary-8);
-}
-
-.input-field--container:focus-within {
-  outline: 2px solid transparent;
-  border-color: var(--slate-8);
-}
-
-.input-field--container[data-error='true'] {
-  color: var(--red-8);
-  border-color: var(--red-8);
-}
-
-.input-field {
-  color: var(--slate-12);
-  background: var(--slate-3);
+.f-i {
+  color: var(--b-12);
+  background: var(--b-3);
   padding: 0.5em;
   width: 100%;
+
+  &:not(.f-i-icn) {
+    padding: 0.5em 1rem;
+  }
+
+  &[type] + .i-f-icn {
+    align-items: center;
+  }
 }
 
-.input-field:not(.input__icon-exist) {
-  padding: 0.5em 1rem;
+.f-i-icn {
+  padding-inline-start: var(--i-s);
 }
 
-.input__icon-exist {
-  padding-inline-start: var(--icon-container-size);
-}
-
-.input-field--icon {
+.i-f-icn {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   left: 0;
   top: 0;
-  width: var(--icon-container-size);
+  width: var(--i-s);
   height: 100%;
   padding: 0.5rem 0;
-}
-
-.input-field[type] + .input-field--icon {
-  align-items: center;
 }
 
 /*
@@ -57,28 +55,26 @@
   Form Container Style Section 
 ==============================================================================================
 */
-.form-container {
+.f-c {
   position: relative;
   padding-bottom: 1rem;
 }
 
-.form-container--label {
+.f-c-lbl {
   font-weight: 500;
-
-  --flow-gap: 0.5rem;
 }
 
-.form-container--message {
+.f-c-msg {
   position: absolute;
   left: 0;
   bottom: -0.625rem;
   width: 100%;
   z-index: 1;
-  color: var(--red-9);
+  color: var(--r-9);
 }
 
-.form-container--abbr {
-  color: var(--red-9);
+.f-c-abbr {
+  color: var(--r-9);
   font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;

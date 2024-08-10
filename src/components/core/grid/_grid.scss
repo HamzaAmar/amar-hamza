@@ -1,7 +1,7 @@
 /* stylelint-disable declaration-block-no-redundant-longhand-properties */
 @use '../../../scss/settings/media' as *;
 
-.grid {
+.g-r {
   --columns: var(--regular-columns);
   --rows: var(--regular-rows);
   --areas: var(--regular-areas);
@@ -12,27 +12,27 @@
   grid-template-areas: var(--areas);
 }
 
-.grid--item {
+.g-r-itm {
   grid-column: var(--column);
   grid-row: var(--row);
 }
 
-.grid__xs {
+.g-r_xs {
   gap: 0.25rem;
 }
 
-.grid__sm {
+.g-r_sm {
   gap: 0.5rem;
 }
 
-.grid__md {
+.g-r_md {
   gap: 0.75rem;
 }
 
-.grid__lg {
+.g-r_lg {
   gap: 1rem;
 }
 
-.grid__xl {
+.g-r_xl {
   gap: 1.5rem;
 }

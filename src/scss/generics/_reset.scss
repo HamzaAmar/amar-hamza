@@ -16,8 +16,8 @@ body {
     'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica,
     Arial, sans-serif;
-  color: var(--slate-12);
-  background-color: var(--slate-1);
+  color: var(--b-12);
+  background-color: var(--b-1);
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -29,6 +29,7 @@ button {
   font: inherit;
   border: none;
   outline: none;
+  appearance: none;
 }
 
 img {
@@ -39,6 +40,11 @@ img {
 a {
   text-decoration: none;
   color: currentcolor;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
 
 ul,
@@ -49,7 +55,7 @@ body {
 }
 
 a:not([class]) {
-  color: var(--primary-11);
+  color: var(--p-11);
   text-decoration: 2px solid underline transparent;
   cursor: pointer;
 
@@ -61,8 +67,8 @@ a:not([class]) {
 button:focus-visible,
 a:focus-visible {
   outline: 1px solid transparent;
-  box-shadow: 0 0 0 1px var(--primary-8);
-  border-color: var(--primary-8);
+  box-shadow: 0 0 0 1px var(--p-8);
+  border-color: var(--p-8);
 }
 
 nav :not(ul) {
@@ -75,18 +81,18 @@ nav :not(ul) {
 }
 
 .prose {
-  --sh-class: var(--primary-11);
-  --sh-identifier: var(--green-11);
-  --sh-sign: var(--slate-11);
-  --sh-property: var(--primary-10);
-  --sh-entity: var(--orange-11);
-  --sh-jsxliterals: var(--orange-11);
-  --sh-string: var(--green-10);
-  --sh-keyword: var(--red-11);
-  --sh-comment: var(--slate-9);
+  --sh-class: var(--p-11);
+  --sh-identifier: var(--g-11);
+  --sh-sign: var(--b-11);
+  --sh-property: var(--p-10);
+  --sh-entity: var(--w-11);
+  --sh-jsxliterals: var(--w-11);
+  --sh-string: var(--g-10);
+  --sh-keyword: var(--r-11);
+  --sh-comment: var(--b-9);
 
   & :is(ul, ol) > * + * {
-    margin-top: var(--space-2xs);
+    margin-top: var(--sp-2xs);
   }
 
   ul,
@@ -100,7 +106,7 @@ nav :not(ul) {
 }
 
 pre:has(.code--section) {
-  background-color: var(--slate-3);
+  background-color: var(--b-3);
   padding: 1rem;
   font-size: 0.925rem;
   overflow: auto;

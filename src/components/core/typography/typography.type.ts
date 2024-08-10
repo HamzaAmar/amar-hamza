@@ -19,7 +19,7 @@ export type Leading = 'none' | 'sm' | 'md' | 'lg';
 type FontStyle = 'italic' | 'oblique';
 type Decoration = 'line-through' | 'underline' | 'overline';
 
-export interface TypographyBaseProps {
+export interface TypographyProps {
   size?: TypographySize;
   className?: string;
   align?: Align;
@@ -30,18 +30,5 @@ export interface TypographyBaseProps {
   fontStyle?: FontStyle;
   decoration?: Decoration;
   leading?: Leading;
+  truncate?: number;
 }
-
-export interface MultiLineTypographyTruncate
-  extends TypographyBaseProps {
-  truncate?: 'multiline';
-  numberLine: number;
-}
-
-interface SingleLineTypographyTruncate extends TypographyBaseProps {
-  truncate?: 'singleline';
-}
-
-export type TypographyProps =
-  | MultiLineTypographyTruncate
-  | SingleLineTypographyTruncate;

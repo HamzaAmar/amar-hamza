@@ -5,28 +5,26 @@ import { Button, Heading, Social, Text } from '@components/core';
 
 const About = () => {
   return (
-    <div className="home--about">
-      <div className="about--container">
-        <div className="about--circles" />
-        <div className="about--circles about--circles__revert" />
-        <div className="about u_center">
-          <Social
-            className="about__social-media"
-            direction="vertical"
-          />
-          <div className="about--info  center l_flow__2xs">
-            <Heading
-              as="h1"
-              weight="black"
-              size="2xl"
-              className="about--name"
-            >
-              Miloud Amar{' '}
+    <div className="u_center">
+      <div className="h-ab-cnt">
+        <div className="h-ab-crl" />
+        <div className="h-ab-crl h-ab-crl_revert" />
+        <div className="h-ab u_center">
+          <Social className="h-ab-media" direction="vertical" />
+          <div className="h-ab--info  center l_f_2xs">
+            <h1 className="h-ab-name">
+              Miloud Amar
               <span className="u_sr-only">
                 A freelancer web developer
               </span>
-            </Heading>
-            <Text size="lg" leading="lg">
+            </h1>
+            <Text
+              size="lg"
+              color="b"
+              contrast="low"
+              leading="lg"
+              transform="capitalize"
+            >
               Experienced Frontend Developer | Passionate about
               building elegant, accessible, and UX-friendly Design
               Systems with React | Skilled in React Next Remix | CSS
@@ -34,11 +32,10 @@ const About = () => {
               learning and growing.
             </Text>
             <div className="l_cluster u_center">
-              <Button size="lg" as={Link} href="/contact">
+              <Button as={Link} href="/contact">
                 Hire Me
               </Button>
               <Button
-                size="lg"
                 variant="outline"
                 icon={<File />}
                 as={Link}
@@ -48,14 +45,14 @@ const About = () => {
               </Button>
             </div>
           </div>
-          <div className="about-title about-title__top">
+          <div className="h-ab-ttl h-ab-ttlT">
             <Text size="sm">I am a freelance web developer</Text>
           </div>
 
-          <div className="about-title__bottom about-title">
+          <div className="h-ab-ttlB h-ab-ttl">
             <p>Am Available</p>
           </div>
-          <div className="about-title__right">
+          <div className="h-ab-ttlR">
             <p>
               scroll Down <Arrow width="1em" strokeWidth={3} />
             </p>

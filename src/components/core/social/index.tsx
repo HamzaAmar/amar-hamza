@@ -4,7 +4,7 @@ import SOCIALS from '@constants/socialMenu';
 
 import SocialProps from './social.type';
 
-const Social = ({
+export const Social = ({
   className,
   direction = 'horizontal',
 }: SocialProps) => {
@@ -15,7 +15,7 @@ const Social = ({
       as="ul"
       gap="xs"
       direction={socialDirection}
-      className={`socials socials__${direction} ${className}`}
+      className={`s-o s-o_${direction} ${className}`}
     >
       {SOCIALS.map(({ id, icon, link, name }) => (
         <li key={id}>
@@ -25,7 +25,7 @@ const Social = ({
             icon={icon}
             size="md"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             title={`Visit My ${name} account`}
           />
         </li>
@@ -33,5 +33,3 @@ const Social = ({
     </Flex>
   );
 };
-
-export default Social;

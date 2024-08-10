@@ -1,15 +1,15 @@
-.skill {
-  background-color: var(--slate-3);
+.h-sk {
+  background-color: var(--b-3);
 }
 
-.skill--icon-wrap::before {
+.h-sk-icnC::before {
   content: '';
   position: absolute;
   top: -4px;
   left: -4px;
   width: calc(100% + 8px);
-  height: calc(100% + 8px);
-  border: 2px solid var(--color-primary-light);
+  aspect-ratio: 1;
+  border: 2px solid var(--p-5);
   border-radius: 0.5em;
   opacity: 0;
   transform: scale(0);
@@ -17,19 +17,15 @@
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.skill--content {
-  --flow-gap: 0.5rem;
-}
-
-.skill--icon {
+.h-sk-icn {
   line-height: 0;
+
+  & > svg {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
-.skill--icon > svg {
-  width: 2rem;
-  height: 2rem;
-}
-
-.skill--progress svg {
+.h-sk-amt svg {
   width: 4em;
 }

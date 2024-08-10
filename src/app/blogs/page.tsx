@@ -16,7 +16,7 @@ export default async function Blog() {
         className="blogs--hero sct"
         wrap
       >
-        <div className=" l_flow__lg" style={{ maxWidth: '80ch' }}>
+        <div className=" l_f_lg" style={{ maxWidth: '80ch' }}>
           <Heading as="h1" size="xl" weight="normal">
             Frontend Fundamentals & Beyond: Explore In-Depth Articles,
             Step-by-Step Series & Web Development Tips

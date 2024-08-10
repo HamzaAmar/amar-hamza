@@ -18,7 +18,6 @@ import type { ItemProps, MenuProps } from './header.type';
 import { usePathname } from 'next/navigation';
 import { NavLink } from './navLink';
 import { useTheme } from 'next-themes';
-import { Logo } from '../logo';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
@@ -69,9 +68,9 @@ const Item = ({
   const onlyDesktop = mobile ? {} : ({ justify: 'center' } as const);
 
   return (
-    <li className="header--item" data-mobile={mobile}>
+    <li className="h-e-itm" data-mobile={mobile}>
       <NavLink
-        className="u_center header--item-link"
+        className="u_center h-e-lnk"
         data-mobile={mobile}
         {...close}
         {...onlyDesktop}
@@ -92,20 +91,20 @@ const Header = () => {
       justify="between"
       items="center"
       as="header"
-      className="header"
+      className="h-e"
     >
       <Flex
         as={Link}
-        aria-label="Hamza Miloud Amar's Portfolio Logo"
+        aria-label="Home Page"
         items="center"
         gap="sm"
         href="/"
-        className="header--logo"
+        className="h-e-logo"
       >
         Miloud Amar
       </Flex>
-      <nav className="header--nav sm_hide u_flex-1">
-        <ul className="u_center header--list">
+      <nav className="h-e-nav sm_hide u_flex-1">
+        <ul className="u_center h-e-lst">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -123,18 +122,18 @@ const Header = () => {
           icon={<Menu focusable="false" aria-hidden="true" />}
           title="Toggle Menu mobile-only"
           onClick={handleTrue}
-          className="toggle__menu hello"
+          className="h-e-tog"
         />
         <Switcher />
       </Flex>
       <nav
-        className="header--mobile l_flow__2xl"
+        className="h-e-mob l_f_2xl"
         data-visible={visible === true}
       >
         <Button type="button" variant="outline" onClick={handleFalse}>
           Close
         </Button>
-        <ul className="header--mobile-list u_flex-1">
+        <ul className="h-e-lstM u_flex-1">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -149,13 +148,13 @@ const Header = () => {
           })}
         </ul>
 
-        <div className="l_flow__lg">
+        <div className="l_f_lg">
           <Social />
           <Text
             align="center"
             weight="thin"
             size="2xs"
-            color="slate"
+            color="b"
             contrast="low"
           >
             I'm glad you're here! Explore my work and get to know me

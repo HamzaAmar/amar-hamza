@@ -1,7 +1,6 @@
 import type { ProgressCircleProps } from './progress.type';
-import { Flex } from '..';
 
-const ProgressCircle = ({
+export const CircleProgress = ({
   value = 50,
   color,
 }: ProgressCircleProps) => {
@@ -11,7 +10,7 @@ const ProgressCircle = ({
   const progress = (value / 100) * circumference;
 
   return (
-    <div className={`progress-circle u_${color} u_center`}>
+    <div className={`pr-c u_${color} u_center`}>
       <svg
         role="progressbar"
         aria-valuenow={value}
@@ -20,14 +19,9 @@ const ProgressCircle = ({
         aria-label={`Progress : ${value}%`}
         viewBox="0 0 100 100"
       >
+        <circle className="pr-c-bg" r={radius} cx="50" cy="50" />
         <circle
-          className="progress-circle__background"
-          r={radius}
-          cx="50"
-          cy="50"
-        />
-        <circle
-          className="progress-circle__progress"
+          className="pr-c-amt"
           r={radius}
           cx="50"
           cy="50"
@@ -37,7 +31,7 @@ const ProgressCircle = ({
         <text
           x="50"
           y="50"
-          className="progress-circle__text"
+          className="pr-c-txt"
           textAnchor="middle"
           dominantBaseline="central"
         >
@@ -47,5 +41,3 @@ const ProgressCircle = ({
     </div>
   );
 };
-
-export default ProgressCircle;

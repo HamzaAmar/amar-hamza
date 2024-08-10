@@ -1,26 +1,26 @@
-.progress-circle {
+.pr-c {
   width: 100px;
   height: 100px;
 }
 
-.progress-circle__background {
+.pr-c-bg {
   fill: none;
-  stroke: var(--slate-6);
-  stroke-width: 8;
+  stroke: var(--b-6);
+  stroke-width: 8px;
 }
 
-.progress-circle__progress {
+.pr-c-amt {
   fill: none;
-  stroke: var(--color-shared-9);
-  stroke-width: 4;
+  stroke: var(--c-9);
+  stroke-width: 4px;
   stroke-linecap: round;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   transition: stroke-dashoffset 0.3s ease;
 }
 
-.progress-circle__text {
+.pr-c-txt {
   font-size: 1.25rem;
-  fill: var(--slate-12);
+  fill: var(--b-12);
   font-weight: 600;
 }

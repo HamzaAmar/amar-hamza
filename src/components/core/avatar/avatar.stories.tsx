@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import Avatar from './avatar';
+import { Avatar } from '.';
 
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Core/Avatar',
@@ -14,28 +14,23 @@ export default meta;
 
 type Story = StoryObj<typeof Avatar>;
 
-export const AvatarWithoutImagePrimary: Story = {};
-export const AvatarWithoutImageSecondary: Story = {
-  args: {
-    color: 'secondary',
-  },
-};
+export const AvatarWithoutImagepri: Story = {};
 
 export const AvatarWithoutImageDanger: Story = {
   args: {
-    color: 'danger',
+    color: 'd',
   },
 };
 
 export const AvatarWithoutImageSuccess: Story = {
   args: {
-    color: 'success',
+    color: 's',
   },
 };
 
 export const AvatarWithoutImageWarning: Story = {
   args: {
-    color: 'warning',
+    color: 'w',
   },
 };
 

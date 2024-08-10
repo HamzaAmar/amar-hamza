@@ -1,10 +1,6 @@
-type Size = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'fluid';
-type Color =
-  | 'primary'
-  | 'secondary'
-  | 'danger'
-  | 'success'
-  | 'warning';
+import { Color, Size } from '@type/utils';
+
+// type Size = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'fluid';
 
 export interface AvatarProps {
   size?: Size;

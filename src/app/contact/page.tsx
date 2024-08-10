@@ -29,7 +29,7 @@ const InfoItem = ({ icon, info, ...rest }: ContactItemProps) => {
     <Tag
       {...rest}
       data-link={!!rest.href}
-      className="contact--info-item u_column"
+      className="p-co-info-item u_column"
     >
       {icon}
       <Text>{info}</Text>
@@ -39,22 +39,13 @@ const InfoItem = ({ icon, info, ...rest }: ContactItemProps) => {
 
 const contact = () => {
   return (
-    <Grid columns="1fr 1fr" className="sm_grid-one contact">
-      <div className="contact--info  l_flow">
-        <Heading
-          as="h1"
-          weight="normal"
-          size="xl"
-          className="contact--heading"
-        >
+    <Grid columns="1fr 1fr" className="sm_grid-one p-co">
+      <div className="p-co-info  l_f_md">
+        <Heading as="h1" weight="normal" size="3xl">
           Let's Collaborate on Your Next Web Project
         </Heading>
 
-        <Text
-          color="slate"
-          contrast="low"
-          className="contact--description"
-        >
+        <Text color="b" size="lg" contrast="low">
           I'm a<strong> freelance web developer</strong> passionate
           about crafting exceptional digital experiences. If you're
           looking for a <strong>skilled developer</strong> to bring
@@ -63,14 +54,14 @@ const contact = () => {
           help you achieve your goals.
         </Text>
 
-        <div className="contact--info-list l_flow">
+        <div className="p-co-info-list l_f_md">
           {CONTACT_INFO.map(({ id, ...rest }) => (
             <InfoItem key={id} {...rest} />
           ))}
         </div>
         <Social />
       </div>
-      <div className="contact--form">
+      <div className="p-co-form">
         <Form />
       </div>
     </Grid>

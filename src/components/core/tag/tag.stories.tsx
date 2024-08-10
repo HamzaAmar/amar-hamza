@@ -14,29 +14,23 @@ export default meta;
 
 type Story = StoryObj<typeof Tag>;
 
-export const TagPrimary: Story = {};
-
-export const TagSecondary: Story = {
-  args: {
-    color: 'secondary',
-  },
-};
+export const Tagpri: Story = {};
 
 export const TagDanger: Story = {
   args: {
-    color: 'danger',
+    color: 'd',
   },
 };
 
 export const TagSuccess: Story = {
   args: {
-    color: 'success',
+    color: 's',
   },
 };
 
 export const TagWarning: Story = {
   args: {
-    color: 'warning',
+    color: 'w',
   },
 };
 

@@ -17,12 +17,12 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  background-color: var(--slate-3);
+  background-color: var(--b-3);
   text-decoration: none;
   font-size: 1rem;
 
   &:hover {
-    background-color: var(--slate-5);
+    background-color: var(--b-5);
   }
 
   &.reading-layout--link__primary {
@@ -31,7 +31,7 @@
 }
 
 .reading-layout--footer {
-  border-top: 1px solid var(--slate-6);
+  border-top: 1px solid var(--b-6);
   padding: 2rem 0;
 }
 
@@ -52,7 +52,7 @@
 .reading-layout--fallback {
   width: 10ch;
   height: 1rem;
-  background-color: var(--slate-10);
+  background-color: var(--b-10);
   border-radius: 0.25rem;
   position: relative;
   overflow: hidden;

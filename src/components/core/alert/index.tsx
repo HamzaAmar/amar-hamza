@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Success,
   Notification,
@@ -15,22 +15,22 @@ import { AlertProps } from './alert.type';
 
 const icon = {
   success: <Success width="24" height="24" />,
-  primary: <Notification width="24" height="24" />,
+  pri: <Notification width="24" height="24" />,
   warning: <Warning width="24" height="24" />,
   danger: <Danger width="24" height="24" />,
 };
 
-const Alert = ({ color = 'danger', message }: AlertProps) => {
+export const Alert = ({ color = 'd', message }: AlertProps) => {
   const Status = color[0].toUpperCase() + color.slice(1);
   const { state: open, handleFalse } = useBoolean(true);
 
   return (
     <div
       data-close={open === false}
-      className={`alert alert__${color} u_${color}`}
+      className={`a-l u_${color}`}
       role="alert"
     >
-      <div className="alert--header">
+      <div className="a-l-hdr">
         <Text size="md" color={color} contrast="low" weight="bold">
           {Status}
         </Text>
@@ -49,5 +49,3 @@ const Alert = ({ color = 'danger', message }: AlertProps) => {
     </div>
   );
 };
-
-export default Alert;

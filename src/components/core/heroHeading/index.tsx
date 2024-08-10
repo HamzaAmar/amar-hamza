@@ -2,38 +2,31 @@ import React from 'react';
 import { Heading, Text } from '../typography';
 import { HeroHeadingProps } from './heroHeading.type';
 
-const heroHeading = ({
+export const HeroHeading = ({
   description,
   heading,
   subHeading,
   section,
 }: HeroHeadingProps) => {
   return (
-    <div className="l_flow__3xs">
+    <div className="l_f_3xs">
       <Heading
-        className="l_flow__3xs"
-        size="sm"
+        className="l_f_2xs"
+        size="md"
         weight="medium"
         id={`${section}-id-section`}
       >
-        <Text
-          size="sm"
-          transform="uppercase"
-          color="primary"
-          contrast="low"
-        >
+        <Text transform="uppercase" color="p" contrast="low">
           {heading}
         </Text>
         {subHeading}
       </Heading>
 
       {description && (
-        <Text color="slate" size="sm" contrast="low">
+        <Text color="b" size="sm" contrast="low">
           {description}
         </Text>
       )}
     </div>
   );
 };
-
-export default heroHeading;

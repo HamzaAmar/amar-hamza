@@ -4,12 +4,12 @@ const InputField = (props: InputFieldProps) => {
   const { icon, children, touched, error } = props;
 
   const iconIfExist = Boolean(icon) && (
-    <div className="input-field--icon">{icon}</div>
+    <div className="i-f-icn">{icon}</div>
   );
   const isError = touched && Boolean(error);
 
   return (
-    <div data-error={isError} className="input-field--container ">
+    <div data-error={isError} className="i-f-cnt">
       {children}
       {iconIfExist}
     </div>

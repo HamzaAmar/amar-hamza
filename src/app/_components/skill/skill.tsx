@@ -19,21 +19,16 @@ const Item = ({
   description,
 }: ItemSkillProps) => {
   const iconUI = icon ? (
-    <div className="skill--icon-wrap">
-      <div className="skill--icon">{icon}</div>
+    <div className="h-sk-icnC">
+      <div className="h-sk-icn">{icon}</div>
     </div>
   ) : null;
   return (
-    <Flex
-      as="li"
-      gap="md"
-      className="skill l_box-article"
-      key={title}
-    >
-      <div className="skill--progress">
-        <CircleProgress color="primary" value={level} />
+    <Flex as="li" gap="md" className="h-sk l_box-article" key={title}>
+      <div className="h-sk-amt">
+        <CircleProgress color="p" value={level} />
       </div>
-      <div className="skill--content l_flow__2xs u_flex-1">
+      <div className="l_f_2xs u_flex-1">
         <Flex justify="between" items="center">
           <Flex gap="xs" items="center">
             {iconUI}
@@ -42,13 +37,7 @@ const Item = ({
             </Text>
           </Flex>
         </Flex>
-        <Text
-          truncate="multiline"
-          numberLine={5}
-          color="slate"
-          size="sm"
-          contrast="low"
-        >
+        <Text truncate={5} color="b" size="sm" contrast="low">
           {description}
         </Text>
       </div>
@@ -60,7 +49,7 @@ const SkillsContainer = () => {
   return (
     <section
       aria-labelledby="skills-id-section"
-      className="section l_flow__lg"
+      className="section l_f_lg"
     >
       <HeroHeading
         heading="My Web Development Expertise"

@@ -1,17 +1,17 @@
-.alert {
-  background-color: var(--color-shared-4);
-  color: var(--color-shared-12);
-  padding: var(--space-xs);
-  border-inline-start: 0.25em solid var(--color-shared-11);
+.a-l {
+  background-color: var(--c-4);
+  color: var(--c-12);
+  padding: var(--sp-xs);
+  border-inline-start: 0.25em solid var(--c-11);
   margin-inline: auto;
+
+  &[data-close='true'] {
+    display: none;
+  }
 }
 
-.alert--header {
+.a-l-hdr {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.alert[data-close='true'] {
-  display: none;
 }

@@ -20,19 +20,19 @@ export const AlertColor: Story = {
     return (
       <Flex gap="sm" direction="column">
         <Alert
-          color="danger"
+          color="d"
           message="Hello word from here i like to see it every thing is correct"
         />
         <Alert
-          color="success"
+          color="s"
           message="Hello word from here i like to see it every thing is correct"
         />
         <Alert
-          color="warning"
+          color="w"
           message="Hello word from here i like to see it every thing is correct"
         />
         <Alert
-          color="slate"
+          color="b"
           message="Hello word from here i like to see it every thing is correct"
         />
         <Alert message="Hello word from here i like to see it every thing is correct" />

@@ -1,4 +1,7 @@
 .tag {
+  --t-s: 0.375em;
+  --t-p: 0.125rem;
+
   color: white;
   width: fit-content;
   padding: 0.5em 1em;
@@ -8,39 +11,24 @@
   letter-spacing: 0.75px;
   position: relative;
   line-height: 1;
-  background-color: var(--color-shared-9);
-}
-
-.tag::before,
-.tag::after {
-  content: '';
-  position: absolute;
-  top: 0.125rem;
-  background-color: var(--slate-1);
-  width: 0.375em;
-  height: 0.375em;
-  border-radius: 50%;
-}
-
-.tag::after {
-  right: 0.125em;
-}
-
-.tag::before {
-  left: 0.125em;
-}
-
-/* Tag Color Section Style Start  */
-.tag--sm {
-  font-size: 0.625rem;
-}
-
-.tag--md {
+  background: var(--c-9);
   font-size: 0.75rem;
-}
 
-.tag--lg {
-  font-size: 0.875rem;
-}
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: var(--t-p);
+    background: white;
+    width: var(--t-s);
+    height: var(--t-s);
+    border-radius: 50%;
+  }
 
-/* Tag Color Section Style End  */
+  &::after {
+    right: var(--t-p);
+  }
+  &::before {
+    left: var(--t-p);
+  }
+}

@@ -1,21 +1,25 @@
-.resume--aside {
-  padding: 1rem;
-  border-inline-end: 1px solid var(--opacity-6);
+.r-e {
+  --r-b: 1px solid var(--o-6);
 }
 
-.resume--header {
-  border-block-end: 1px solid var(--opacity-6);
+.r-e-asd {
+  padding: 1rem;
+  border-right: var(--r-b);
+}
+
+.r-e-hdr {
+  border-bottom: var(--r-b);
   padding: 2rem;
 }
 
-.education--article {
+.re-e {
   padding: 1rem 0;
 
   &:not(:last-child) {
-    border-bottom: 1px solid var(--opacity-6);
+    border-bottom: var(--r-b);
   }
 }
 
-.education--date {
+.r-e-d {
   line-height: 2.5;
 }

@@ -2,9 +2,9 @@
 .sct {
   --flow-gap: 3rem;
   padding: 5vmin 5vw;
-  background: var(--slate-1);
+  background: var(--b-1);
 }
 
 .section:not(:first-child) {
-  border-top: 1px solid var(--opacity-5);
+  border-top: 1px solid var(--o-5);
 }

@@ -40,18 +40,16 @@ const Article = ({
     <Flex
       as="article"
       direction="column"
-      className="article l_box-article l_flow__2xs"
+      className="h-ar l_box-article l_f_2xs"
       aria-labelledby={headingId}
     >
-      <div className="article--image-wrapper">
+      <div className="h-ar-imgW">
         {image ? (
-          <div className="article--image-container">
+          <div className="h-ar-imgC">
             <Image
               src={image}
               alt="Hello world"
-              objectFit="cover"
-              className="article--image"
-              objectPosition="center top"
+              className="h-ar-img"
               loading="lazy"
               placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
               fill
@@ -59,23 +57,23 @@ const Article = ({
           </div>
         ) : null}
 
-        <div className="article--tags l_cluster">
+        <div className="h-ar-tags l_cluster">
           {tags.map((tag) => (
-            <Tag key={tag} color="primary" title={tag} size="sm" />
+            <Tag key={tag} color="p" title={tag} size="sm" />
           ))}
         </div>
       </div>
-      <div className="article--content l_flow__2xs">
+      <div className="h-ar-cnt l_f_2xs">
         <Flex items="center">
-          <Flex gap="xs" items="center">
+          <Flex gap="sm" items="center">
             <Avatar size="lg" image="/me.jpg" title="my Avatar" />
-            <div className="article--header-content">
+            <div>
               <Text size="xs" weight="medium">
                 Hamza Miloud Amar
               </Text>
               <Text
                 contrast="low"
-                color="slate"
+                color="b"
                 as="time"
                 size="sm"
                 dateTime={publishedAt}
@@ -90,19 +88,11 @@ const Article = ({
           as="h3"
           align="start"
           weight="medium"
-          size="sm"
-          truncate="multiline"
-          numberLine={2}
+          truncate={2}
         >
           {title}
         </Heading>
-        <Text
-          contrast="low"
-          color="slate"
-          size="md"
-          truncate="multiline"
-          numberLine={4}
-        >
+        <Text contrast="low" color="b" size="md" truncate={4}>
           {excerpt}
         </Text>
       </div>
@@ -111,7 +101,7 @@ const Article = ({
         as={Link}
         variant="outline"
         fluid
-        className="article--button"
+        className="h-ar-btn"
         icon={<Arrow direction="right" strokeWidth={2.5} />}
         iconPosition="end"
         aria-labelledby={buttonId}
@@ -136,7 +126,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
   return (
     <section
       aria-labelledby="articles-id-section"
-      className="sct l_flow__lg"
+      className="sct l_f_lg"
     >
       <HeroHeading
         heading="Join Me on My Web Development Journey"
@@ -147,7 +137,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
       <Grid
         columns="1fr 1fr 1fr"
         gap="md"
-        className="sm_grid-one md_grid-two articles"
+        className="sm_grid-one md_grid-two"
       >
         {posts.map((post) => (
           <Article key={post.metadata.slug} {...post.metadata} />

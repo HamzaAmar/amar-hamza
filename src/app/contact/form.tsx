@@ -27,51 +27,53 @@ const Form = () => {
   return (
     <form
       aria-labelledby="contact-me"
-      className="contact--form l_flow"
+      className="l_f_md"
       action={formAction}
     >
-      <div className="l_flow__xs">
+      <div className="l_f_xs">
         <Heading id="contact-me" as="h2">
           Contact Me
         </Heading>
-        <Text size="sm" color="slate" contrast="low">
+        <Text size="sm" color="b" contrast="low">
           Curious about my services or have a specific question? I'm
           here to help! Don't hesitate to contact me, and let's
           explore how we can work together.
         </Text>
       </div>
-      <FormContainer name="name" label="Name" required>
-        <Input
-          name="name"
-          icon={<User width="24" />}
-          required
-          autoComplete="name"
-        />
-      </FormContainer>
-      <FormContainer name="email" label="Email" required>
-        <Input
-          name="email"
-          type="email"
-          required
-          icon={<Email width="24" />}
-          autoComplete="email"
-        />
-      </FormContainer>
-      <FormContainer name="subject" label="Subject" required>
-        <Input
-          name="subject"
-          required
-          icon={<Message width="24" />}
-        />
-      </FormContainer>
-      <FormContainer name="message" label="Message" required>
-        <Textarea
-          name="message"
-          required
-          icon={<Message width="24" />}
-        />
-      </FormContainer>
-      <SubmitButton />
+      <div className="l_f_3xs">
+        <FormContainer name="name" label="Name" required>
+          <Input
+            name="name"
+            icon={<User width="24" />}
+            required
+            autoComplete="name"
+          />
+        </FormContainer>
+        <FormContainer name="email" label="Email" required>
+          <Input
+            name="email"
+            type="email"
+            required
+            icon={<Email width="24" />}
+            autoComplete="email"
+          />
+        </FormContainer>
+        <FormContainer name="subject" label="Subject" required>
+          <Input
+            name="subject"
+            required
+            icon={<Message width="24" />}
+          />
+        </FormContainer>
+        <FormContainer name="message" label="Message" required>
+          <Textarea
+            name="message"
+            required
+            icon={<Message width="24" />}
+          />
+        </FormContainer>
+        <SubmitButton />
+      </div>
       {state?.message ?? (
         <p
           aria-live="polite"

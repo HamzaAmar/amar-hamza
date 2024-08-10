@@ -1,53 +1,34 @@
-.avatar-wrapper {
+.a-v-cnt {
   color: white;
   overflow: hidden;
+  border: var(--p-9) 3px solid;
 }
 
-.avatar,
-.avatar__fallback {
-  width: 100%;
-  height: 100%;
+.a-v,
+.a-v__flb {
+  width: 95%;
+  height: 95%;
   object-fit: cover;
 }
 
-.avatar__fallback {
-  background-image: linear-gradient(
-    to bottom right,
-    var(--color-shared-7),
-    var(--color-shared-9)
-  );
+.a-v__flb {
+  background: var(--c-9);
   border: 1px solid transparent;
   font-weight: bold;
 }
 
 /* Avatar Size Section Style Start */
 
-.avatar--xs {
-  --avatar-size: 0.75rem;
+.a-v_sm {
+  --av-s: 0.75em;
 }
 
-.avatar--sm {
-  --avatar-size: 1em;
+.a-v_md {
+  --av-s: 1.5em;
 }
 
-.avatar--md {
-  --avatar-size: 1.5em;
-}
-
-.avatar--lg {
-  --avatar-size: 2.5em;
-}
-
-.avatar--xl {
-  --avatar-size: 4em;
-}
-
-.avatar--2xl {
-  --avatar-size: 5em;
-}
-
-.avatar--3xl {
-  --avatar-size: 7em;
+.a-v_lg {
+  --av-s: 4em;
 }
 
 /* Avatar Size Section Style End */

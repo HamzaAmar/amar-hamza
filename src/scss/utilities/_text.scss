@@ -1,32 +1,32 @@
 /* Text Alignment Section Style Start */
-.u_align-center {
+.u_t_center {
   text-align: center;
 }
 
-.u_align-start {
+.u_t_start {
   text-align: start;
 }
 
-.u_align-end {
+.u_t_end {
   text-align: end;
 }
 
 /* Text Alignment Section Style End */
 
 /* Text Transform Section Style Start */
-.u_transform__uppercase {
+.u_t_uppercase {
   text-transform: uppercase;
 }
 
-.u_transform__lowercase {
+.u_t_lowercase {
   text-transform: lowercase;
 }
 
-.u_transform__capitalize {
+.u_t_capitalize {
   text-transform: capitalize;
 }
 
-.u_transform__first-letter-only::first-letter {
+.u_t_first-letter-only::first-letter {
   text-transform: uppercase;
 }
 

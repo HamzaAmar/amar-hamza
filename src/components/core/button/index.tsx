@@ -15,7 +15,7 @@ import { ButtonProps, IconButtonProps } from './button.type';
 
 export const Button = forwardRef((props, forwardedRef) => {
   const {
-    color = 'primary',
+    color = 'p',
     size = 'md',
     variant = 'solid',
     corner = 'circle',
@@ -39,13 +39,12 @@ export const Button = forwardRef((props, forwardedRef) => {
     ) : null;
 
   const buttonClassNames = classnames(
-    `btn btn__${size} btn__${variant} btn__${corner}`,
-    { fluid__button: fluid },
-    `u_${color}`,
+    `btn btn_${size} btn_${variant} u_center btn_${corner} u_${color}`,
+    { 'btn-fluid': fluid },
   );
 
-  const buttonFluidClassName = classnames('btn--wrapper', {
-    'btn--wrapper__fluid': fluid,
+  const buttonFluidClassName = classnames('btn-wrapper', {
+    'btn-fluid': fluid,
     [className!]: Boolean(className),
   });
 
@@ -55,10 +54,7 @@ export const Button = forwardRef((props, forwardedRef) => {
   return (
     // I add Button Wrapper For to add Cursor disabled when the button is pointer event none
     <div {...buttonFluidClassName} data-state={buttonState}>
-      <Flex
-        as={Comp}
-        items="center"
-        inline
+      <Comp
         {...buttonClassNames}
         {...loading}
         {...rest}
@@ -68,7 +64,7 @@ export const Button = forwardRef((props, forwardedRef) => {
         {children}
         {rightIcon}
         {loadingUI}
-      </Flex>
+      </Comp>
     </div>
   );
 }) as ForwardRefComponent<'button', ButtonProps>;
@@ -87,7 +83,7 @@ export const IconButton = forwardRef(
       icon,
       title,
       corner = 'circle',
-      color = 'slate',
+      color = 'b',
       size = 'md',
       variant = 'transparent',
       className,
@@ -97,7 +93,7 @@ export const IconButton = forwardRef(
     forwardedRef,
   ) => {
     const iconButtonClassname = classnames(
-      `btn--icon btn__${size} btn__${corner} u_${color} u_center`,
+      `btn-icon btn_${size} btn_${corner} u_${color} u_center`,
       className,
     );
 

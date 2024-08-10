@@ -38,15 +38,15 @@ const AsideItem = ({ icon, title, children }: AsideItemProps) => {
 
 const Education = () => {
   return (
-    <section className="section l_flow__md">
+    <section className="r-e section l_f_md">
       <Heading as="h2">Experience</Heading>
 
       {EDUCATION_DATA.map(({ id, date, title, description }) => (
-        <Flex key={id} gap="md" className="education--article">
-          <div className="l_flow__xs">
+        <Flex key={id} gap="md" className="re-e">
+          <div className="l_f_xs">
             <div>
               <Heading
-                color="primary"
+                color="p"
                 contrast="low"
                 weight="medium"
                 as="h3"
@@ -56,8 +56,8 @@ const Education = () => {
               </Heading>
               <Text
                 size="xs"
-                className="education--date u_flex-none"
-                color="slate"
+                className="r-e-d u_flex-none"
+                color="b"
                 contrast="low"
               >
                 {date}
@@ -75,10 +75,10 @@ const resume = () => {
   return (
     <Grid columns="260px 1fr" className="resume sm_grid-one">
       <aside className="resume--aside">
-        <div className="resume--info-aside l_flow">
-          <div className="resume-aside--item l_flow">
+        <div className="resume--info-aside l_f_md">
+          <div className="resume-aside--item l_f_md">
             <Heading>Contact</Heading>
-            <ul className="resume--list l_flow">
+            <ul className="resume--list l_f_md">
               <AsideItem
                 icon={<Pen width={16} />}
                 title="Morocco Marrakech"
@@ -98,9 +98,9 @@ const resume = () => {
             </ul>
           </div>
 
-          <div className="resume-aside--item l_flow">
+          <div className="resume-aside--item l_f_md">
             <Heading>Skills</Heading>
-            <ul className="resume--list l_flow">
+            <ul className="resume--list l_f_md">
               <AsideItem icon={<Css width={16} />} title="Css">
                 <Level level={4} width="36" />
               </AsideItem>
@@ -144,9 +144,9 @@ const resume = () => {
             </ul>
           </div>
 
-          <div className="resume-aside--item l_flow">
+          <div className="resume-aside--item l_f_md">
             <Heading>Language</Heading>
-            <ul className="resume--list l_flow">
+            <ul className="resume--list l_f_md">
               <AsideItem icon={<Arabic width={16} />} title="Arabic">
                 <Level level={4} width="36" />
               </AsideItem>
@@ -161,9 +161,9 @@ const resume = () => {
               </AsideItem>
             </ul>
           </div>
-          <div className="l_flow">
+          <div className="l_f_md">
             <Heading>Books I love</Heading>
-            <ul className="l_flow">
+            <ul className="l_f_md">
               <Text size="sm" as="li">
                 <span>CSS Secrets (By Lea Varou)</span>
               </Text>
@@ -206,15 +206,15 @@ const resume = () => {
         </div>
       </aside>
       <div>
-        <Flex gap="lg" className="resume--header">
+        <Flex gap="lg" className="r-e-hdr">
           <div className="resume--aside-header">
             <Avatar
               image="/me.jpg"
-              size="3xl"
+              size="lg"
               title="Hamza miloud amar"
             />
           </div>
-          <div className="resume--header-info l_flow__2xs">
+          <div className="l_f_2xs">
             <div>
               <Heading weight="medium" align="start" size="sm">
                 Hamza Miloud Amar
@@ -223,7 +223,7 @@ const resume = () => {
                 Front End Developer
               </Text>
             </div>
-            <Text color="slate" contrast="low">
+            <Text color="b" contrast="low">
               Experienced Frontend Developer | Passionate about
               building elegant, accessible, and UX-friendly Design
               Systems with React | Skilled in React Next Remix | CSS

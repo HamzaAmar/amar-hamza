@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/react';
 
 import { Button, Flex } from '../..';
 
-const meta:Meta<typeof Button> ={
+const meta: Meta<typeof Button> = {
   title: 'Components/Core/Button',
   component: Button,
   args: {
@@ -21,16 +21,16 @@ const meta:Meta<typeof Button> ={
       },
     },
   },
-} ;
+};
 
-export default meta
+export default meta;
 
 export const ButtonsColor = () => (
   <Flex gap="sm">
-    <Button color="danger">Connect</Button>
-    <Button color="slate">Connect</Button>
-    <Button color="success">Connect</Button>
-    <Button color="warning">Connect</Button>
+    <Button color="d">Connect</Button>
+    <Button color="b">Connect</Button>
+    <Button color="s">Connect</Button>
+    <Button color="w">Connect</Button>
   </Flex>
 );
 

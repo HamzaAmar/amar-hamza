@@ -36,13 +36,13 @@ const Project = ({
     <Flex
       direction="column"
       gap="sm"
-      className="project l_box-article"
+      className="h-pr l_box-article"
       as="article"
       aria-labelledby={id}
     >
-      <div className="project--image-container">
+      <div className="h-pr-imgC">
         <Image
-          className="project--image"
+          className="h-pr-img"
           src={img.src}
           alt={img.alt}
           ref={imageRef}
@@ -66,7 +66,7 @@ const Project = ({
             return (
               <a
                 key={link.site}
-                className="project--link l_cluster"
+                className="h-pr-lnk u_center"
                 href={link.site}
               >
                 {icon}
@@ -76,14 +76,14 @@ const Project = ({
           })}
         </div>
       </Flex>
-      <Text color="slate" contrast="low" size="sm">
+      <Text color="b" contrast="low" size="sm">
         {description}
       </Text>
-      <Flex className="project--technologies" gap="xs" wrap>
+      <Flex className="h-pr-tags" gap="xs" wrap>
         {technologies.map((technology) => (
           <Tag
             key={technology}
-            color="primary"
+            color="p"
             title={technology}
             size="sm"
           />
@@ -103,7 +103,7 @@ const Projects = ({ className }: { className?: string }) => {
   return (
     <section
       aria-labelledby="projects-id-section"
-      className="section l_flow__lg"
+      className="section l_f_lg"
     >
       <HeroHeading
         heading="Innovative Web Projects"

@@ -79,7 +79,7 @@ export default async function Blog({ params }: ParamsReq) {
   await incrementViews(slug);
 
   return (
-    <div className="reading-layout center l_flow__lg">
+    <div className="reading-layout u_center l_f_lg">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -162,12 +162,7 @@ export default async function Blog({ params }: ParamsReq) {
             </Flex>
             <div>
               <Text size="sm">{formatDate(publishedAt)}</Text>
-              <Text
-                align="center"
-                size="sm"
-                color="slate"
-                contrast="low"
-              >
+              <Text align="center" size="sm" color="b" contrast="low">
                 {readingTime.text}
               </Text>
             </div>
@@ -185,11 +180,11 @@ export default async function Blog({ params }: ParamsReq) {
         />
       </div>
 
-      <div className="prose l_flow">
+      <div className="prose l_f_md">
         <CustomMDX source={content} />
       </div>
 
-      <div className="reading-layout--footer l_flow__md">
+      <div className="reading-layout--footer l_f_md">
         <div
           className="l_cluster"
           style={
@@ -231,7 +226,7 @@ export default async function Blog({ params }: ParamsReq) {
           </div>
         </div>
 
-        <div className="l_flow__xs">
+        <div className="l_f_xs">
           <Text>
             Your support helps me create more helpful content. If you
             enjoyed this, please consider buying me a coffee.

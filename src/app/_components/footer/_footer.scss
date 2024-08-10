@@ -1,19 +1,19 @@
-.footer {
-  background-color: var(--slate-1);
+.f-o {
+  background-color: var(--b-1);
 }
 
-.footer--contact {
-  background-color: var(--slate-2);
+.f-o-cnt {
+  background-color: var(--b-2);
+
+  & > p {
+    width: min(50ch, 90%);
+  }
 }
 
-.footer--contact > p {
-  width: min(50ch, 90%);
-}
-
-.footer--copy-right {
+.f-o-cpR {
   padding: 1rem;
 }
 
-.footer--hero-content {
-  border-block: 1px solid var(--slate-6);
+.f-o-hero {
+  border-block: 1px solid var(--b-6);
 }
