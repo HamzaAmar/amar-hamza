@@ -6,20 +6,12 @@
   max-width: 60ch;
 }
 
-.n-f-nav {
-  align-items: center;
-  display: flex;
+.n-f-lst {
   justify-content: space-between;
-}
-
-.n-f-itm {
-  position: relative;
   list-style: none;
-  color: var(--p-11);
 }
 
 .n-f-txt {
-  position: relative;
-  letter-spacing: 0.8px;
   text-decoration: underline;
+  color: var(--p-11);
 }

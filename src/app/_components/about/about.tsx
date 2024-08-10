@@ -11,7 +11,7 @@ const About = () => {
         <div className="h-ab-crl h-ab-crl_revert" />
         <div className="h-ab u_center">
           <Social className="h-ab-media" direction="vertical" />
-          <div className="h-ab--info  center l_f_2xs">
+          <div className="h-ab--info  center l_f_sm">
             <h1 className="h-ab-name">
               Miloud Amar
               <span className="u_sr-only">

@@ -5,16 +5,11 @@
   font-weight: 200;
   padding: 1rem;
   padding-block-start: 3rem;
-}
-
-.reading-layout--list {
-  list-style: none;
+  max-width: 968px;
+  margin: auto;
 }
 
 .reading-layout--link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background-color: var(--b-3);

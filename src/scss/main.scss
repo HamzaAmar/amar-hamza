@@ -1,10 +1,10 @@
 // Inside Setting Wee have every thing about css Variable and Font
-@import 'settings';
-@import 'generics';
+@import 'theme';
 @import 'base';
 @import 'layout';
 @import 'components';
 @import 'utilities';
+@import 'generics';
 
 // TODO: Make it conditional in document page Head for every device to reduce css
 @import 'media';

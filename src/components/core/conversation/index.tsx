@@ -38,11 +38,11 @@ const Message = ({ children, from }: ThreadProps) => {
 
 const Thread = ({ from, children }: ThreadProps) => {
   return (
-    <article data-from={from} className="thread">
+    <article data-from={from} className="t-h">
       <div className="t-h-hdr l_f_3xs">
         <div className="t-h-avt u_circle u_center">{LOGO[from]}</div>
       </div>
-      <div className="t-h-msg--container">
+      <div className="t-h-msgC">
         {Children.count(children) > 1 ? (
           Children.map(children, (child, index) => (
             <Message key={index} children={child} from={from} />
@@ -59,11 +59,13 @@ export const Conversation = ({ children }: ConversationProps) => {
   return (
     <section className="c-o">
       <header className="c-o-hdr">
-        <div className="c-o-avt u_circle u_center">
+        <div className="t-h-avt u_circle u_center">
           <Users width="32" strokeWidth={1.5} />
         </div>
         <div>
-          <Text weight="medium">Web Development Group</Text>
+          <Text size="sm" weight="medium">
+            Web Development Group
+          </Text>
           <Text size="sm" color="b" contrast="low">
             Me , Server , Browser, CDN, Narrator
           </Text>

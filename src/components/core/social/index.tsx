@@ -3,6 +3,7 @@ import { Flex, IconButton } from '@components/core';
 import SOCIALS from '@constants/socialMenu';
 
 import SocialProps from './social.type';
+import { classnames } from '@utils/classnames';
 
 export const Social = ({
   className,
@@ -11,11 +12,12 @@ export const Social = ({
   const socialDirection =
     direction === 'horizontal' ? 'row' : 'column';
   return (
-    <Flex
-      as="ul"
-      gap="xs"
-      direction={socialDirection}
-      className={`s-o s-o_${direction} ${className}`}
+    <ul
+      style={{ flexDirection: socialDirection }}
+      {...classnames(`s-o u_column`, {
+        [`s-o_${direction}`]: direction === 'vertical',
+        className: className,
+      })}
     >
       {SOCIALS.map(({ id, icon, link, name }) => (
         <li key={id}>
@@ -30,6 +32,6 @@ export const Social = ({
           />
         </li>
       ))}
-    </Flex>
+    </ul>
   );
 };

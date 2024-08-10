@@ -2,6 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { Heading, Text } from '@components/core';
 
+const NAV_ITEMS = [
+  { path: '/', title: 'Home' },
+  { path: '/blogs', title: 'Blogs' },
+  { path: '/contact', title: 'Contact' },
+  { path: '/resume', title: 'Resume' },
+];
+
 const NotFoundPage = () => {
   return (
     <div className="n-f u_center">
@@ -11,28 +18,14 @@ const NotFoundPage = () => {
           We Think that You get Lost and we think that you need help
           please check our map to go fast for the page that you need
         </Text>
-        <ul className="n-f-nav">
-          <li className="n-f-itm">
-            <Link className="n-f-txt" href="/">
-              Home
-            </Link>
-          </li>
-          <li className="n-f-itm">
-            <Link className="n-f-txt" href="/blogs">
-              Blogs
-            </Link>
-          </li>
-          <li className="n-f-itm">
-            <Link className="n-f-txt" href="/contact">
-              Contact
-            </Link>
-          </li>
-
-          <li className="n-f-itm">
-            <Link className="n-f-txt" href="/resume">
-              Resume
-            </Link>
-          </li>
+        <ul className="n-f-lst u_column">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.path}>
+              <Link className="n-f-txt" href={item.path}>
+                {item.title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

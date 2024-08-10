@@ -20,7 +20,7 @@ import {
 import Project from '../../../_components/project';
 import { BOOKS, EDUCATION_DATA } from './resume.data';
 
-import type { AsideProps, AsideItemProps } from './resume.type';
+import type { AsideItemProps } from './resume.type';
 
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (

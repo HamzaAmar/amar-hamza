@@ -16,10 +16,7 @@ const Footer = () => {
               please consider following me on social media. Thank you!
             </Text>
           </div>
-          <Social
-            className="about__social-media"
-            // direction="vertical"
-          />
+          <Social />
         </div>
 
         <Flex items="center" justify="center" direction="column">

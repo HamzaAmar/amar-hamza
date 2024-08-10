@@ -26,53 +26,43 @@
   &:not([data-from='user'], [data-from='me']) {
     justify-content: end;
 
-    & .t-h--hdr {
+    & .t-h-hdr {
       order: 2;
     }
 
-    & .t-h--msg {
+    & .t-h-msg {
       order: 1;
     }
   }
 }
 
-.t-h-msg--container {
+.t-h-msgC {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: end;
 }
 
-// .c-o {
-//   background-color: var(--b-3);
-//   border-radius: 1rem;
-//   padding: 1rem;
-// }
-
-.t-h--hdr {
+.t-h-hdr {
   flex-direction: column;
   text-transform: uppercase;
   font-size: 0.85rem;
 }
 
-.t-h--avt {
-  border: 2px dashed var(--w-9);
+.t-h-avt {
+  border: 2px dashed var(--g-10);
   background: var(--b-4);
 }
 
-.c-o--avt {
-  background: var(--b-4);
-}
-
-.t-h--user {
+.t-h-user {
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--w-11);
+  color: var(--g-11);
 }
 
-.t-h--msg {
+.t-h-msg {
   background: var(--b-4);
   border-radius: 0.5rem;
   width: fit-content;
