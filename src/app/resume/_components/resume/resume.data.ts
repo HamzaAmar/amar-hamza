@@ -24,3 +24,28 @@ export const EDUCATION_DATA = [
     description: `After working as a full-stack JavaScript developer, I realized that my CSS skills were not up to par and decided to focus all my time on improving them. I temporarily stopped freelancing to solidify my knowledge of CSS, Git, and accessibility. To my surprise, I found that I was enjoying this process immensely and fell in love with this stack. I discovered that I was happiest when discovering new things and improving my skills in these areas. Since then, I have continued working in the same field, and have continued to find joy in exploring new ways to improve my CSS skills and create beautiful and accessible user interfaces.`,
   },
 ];
+
+export const BOOKS = [
+  { key: '1', title: 'CSS Secrets (By Lea Varou)' },
+  { key: '2', title: 'Form Design Pattern' },
+  { key: '3', title: 'Every Layout' },
+  { key: '4', title: 'Inclusive Components' },
+  { key: '5', title: 'Inclusive Design Pattern' },
+  { key: '6', title: 'Designing with Progressive Enhancement' },
+  {
+    key: '7',
+    title:
+      'J. David Eisenberg, Amelia Bellamy-Royds - SVG Essentials',
+  },
+  { key: '8', title: 'Debugging css By Ahmad Shadeed' },
+  {
+    key: '9',
+    title: 'Estelle Weyl - Transitions and Animations in CSS',
+  },
+  {
+    key: '10',
+    title:
+      'Software Engineering at Google Lessons Learned from Programming Over Time',
+  },
+  { key: '11', title: 'Building large scale web apps' },
+];

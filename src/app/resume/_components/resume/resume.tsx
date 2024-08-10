@@ -18,16 +18,16 @@ import {
 } from '@components/icons';
 
 import Project from '../../../_components/project';
-import { EDUCATION_DATA } from './resume.data';
+import { BOOKS, EDUCATION_DATA } from './resume.data';
 
 import type { AsideProps, AsideItemProps } from './resume.type';
 
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (
-    <Flex as="li" justify="between" className="resume--item">
-      <Flex gap="xs" items="center" className="resume--item-info">
+    <Flex as="li" justify="between">
+      <Flex gap="xs" items="center">
         <div className="u_center">{icon}</div>
-        <Text size="sm" weight="medium">
+        <Text size="sm" contrast="low" color="b">
           {title}
         </Text>
       </Flex>
@@ -73,12 +73,12 @@ const Education = () => {
 
 const resume = () => {
   return (
-    <Grid columns="260px 1fr" className="resume sm_grid-one">
-      <aside className="resume--aside">
-        <div className="resume--info-aside l_f_md">
-          <div className="resume-aside--item l_f_md">
+    <Grid columns="260px 1fr" className="r-e sm_grid-one">
+      <aside className="r-e-asd">
+        <div className="l_f_md">
+          <div className="l_f_md">
             <Heading>Contact</Heading>
-            <ul className="resume--list l_f_md">
+            <ul className="r-e-lst l_f_sm">
               <AsideItem
                 icon={<Pen width={16} />}
                 title="Morocco Marrakech"
@@ -98,9 +98,9 @@ const resume = () => {
             </ul>
           </div>
 
-          <div className="resume-aside--item l_f_md">
+          <div className="r-e-lst l_f_sm">
             <Heading>Skills</Heading>
-            <ul className="resume--list l_f_md">
+            <ul className="l_f_md">
               <AsideItem icon={<Css width={16} />} title="Css">
                 <Level level={4} width="36" />
               </AsideItem>
@@ -144,9 +144,9 @@ const resume = () => {
             </ul>
           </div>
 
-          <div className="resume-aside--item l_f_md">
+          <div className="l_f_md">
             <Heading>Language</Heading>
-            <ul className="resume--list l_f_md">
+            <ul className="r-e-lst l_f_sm">
               <AsideItem icon={<Arabic width={16} />} title="Arabic">
                 <Level level={4} width="36" />
               </AsideItem>
@@ -163,51 +163,25 @@ const resume = () => {
           </div>
           <div className="l_f_md">
             <Heading>Books I love</Heading>
-            <ul className="l_f_md">
-              <Text size="sm" as="li">
-                <span>CSS Secrets (By Lea Varou)</span>
-              </Text>
-              <Text size="sm" as="li">
-                Form Design Pattern
-              </Text>
-              <Text size="sm" as="li">
-                Every Layout
-              </Text>
-              <Text size="sm" as="li">
-                Inclusive Components
-              </Text>
-              <Text size="sm" as="li">
-                Inclusive Design Pattern
-              </Text>
-              <Text size="sm" as="li">
-                Designing with Progressive Enhancement
-              </Text>
-              <Text size="sm" as="li">
-                J. David Eisenberg, Amelia Bellamy-Royds - SVG
-                Essentials
-              </Text>
-              <Text size="sm" as="li">
-                Debugging css By Ahmad Shadeed
-              </Text>
-              <Text size="sm" as="li">
-                Estelle Weyl - Transitions and Animations in CSS
-              </Text>
-              <Text size="sm" as="li">
-                <span>Software Engineering at Google </span>
-                <span>
-                  Lessons Learned from Programming Over Time
-                </span>
-              </Text>
-              <Text size="sm" as="li">
-                Building large scale web apps
-              </Text>
+            <ul className="r-e-lst l_f_sm">
+              {BOOKS.map(({ key, title }) => (
+                <Text
+                  size="xs"
+                  contrast="low"
+                  color="b"
+                  as="li"
+                  key={key}
+                >
+                  {title}
+                </Text>
+              ))}
             </ul>
           </div>
         </div>
       </aside>
       <div>
         <Flex gap="lg" className="r-e-hdr">
-          <div className="resume--aside-header">
+          <div>
             <Avatar
               image="/me.jpg"
               size="lg"
@@ -233,7 +207,7 @@ const resume = () => {
           </div>
         </Flex>
 
-        <div className="resume--main">
+        <div>
           <Education />
           <Project className="md_grid-one" />
         </div>
