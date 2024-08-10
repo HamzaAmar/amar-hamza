@@ -1,9 +1,15 @@
 .t-y {
-  color: var(--color-text);
+  color: var(--clr-txt);
   font-size: var(--typography-size, inherit);
   text-transform: var(--typography-transform, inherit);
 }
+.t-y_high {
+  color: var(--c-12);
+}
 
+.t-y_low {
+  color: var(--c-11);
+}
 .t-y_hdg {
   font-size: calc(var(--typography-size, 1rem) * 1.25);
 }

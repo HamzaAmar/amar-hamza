@@ -30,7 +30,15 @@ const LOGO = {
 const Message = ({ children, from }: ThreadProps) => {
   return (
     <div className={`t-h-msg t-h-msg__${from} l_f_3xs`}>
-      <p className="t-h-user">{from}</p>
+      <Text
+        size="sm"
+        weight="bold"
+        transform="uppercase"
+        color="w"
+        contrast="low"
+      >
+        {from}
+      </Text>
       <div>{children}</div>
     </div>
   );

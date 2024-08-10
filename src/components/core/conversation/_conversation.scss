@@ -1,7 +1,9 @@
 .c-o {
-  background-color: var(--b-2);
+  background-color: var(--b-3);
   border-radius: 1rem;
   position: relative;
+  font-weight: 300;
+  border: 1px solid var(--b-5);
 }
 
 .c-o-hdr,
@@ -17,6 +19,8 @@
   border-bottom: 1px solid var(--b-5);
   position: sticky;
   top: 4rem;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .t-h {
@@ -50,25 +54,18 @@
 }
 
 .t-h-avt {
-  border: 2px dashed var(--g-10);
+  border: 2px dashed var(--w-10);
   background: var(--b-4);
-}
-
-.t-h-user {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--g-11);
 }
 
 .t-h-msg {
   background: var(--b-4);
   border-radius: 0.5rem;
   width: fit-content;
-  height: fit-content;
+  // height: fit-content;
   padding: 0.5rem 1rem;
   max-width: 660px;
-  text-align: start;
-  font-size: 1.175rem;
+  // text-align: start;
+  font-size: 1.25rem;
+  line-height: 1.35;
 }

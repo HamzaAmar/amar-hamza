@@ -57,9 +57,9 @@
   --r-7: #f4a9aa;
   --r-8: #eb8e90;
   --r-9: #e5484d;
-  --r-0: #dc3e42;
-  --r-1: #ce2c31;
-  --r-2: #641723;
+  --r-10: #dc3e42;
+  --r-11: #ce2c31;
+  --r-12: #641723;
 
   // Warning Color
 
@@ -72,9 +72,9 @@
   --w-7: #f5ae73;
   --w-8: #ec9455;
   --w-9: #f76b15;
-  --w-0: #ef5f00;
-  --w-1: #cc4e00;
-  --w-2: #582d1d;
+  --w-10: #ef5f00;
+  --w-11: #cc4e00;
+  --w-12: #582d1d;
 
   --g-1: #fbfefd;
   --g-2: #f4fbf7;
@@ -91,7 +91,7 @@
 
   //   FONT THEME SECTION
 
-  --fo-3xs: clamp(0.54rem, calc(0.66rem + -0.16vw), 0.62rem);
+  --fo-3xs: clamp(0.54rem, calc(0.66rem + 1.16vw), 0.62rem);
   --fo-2xs: clamp(0.65rem, calc(0.72rem + -0.1vw), 0.7rem);
   --fo-xs: clamp(0.78rem, calc(0.79rem + -0.02vw), 0.79rem);
   --fo-sm: clamp(0.89rem, calc(0.87rem + 0.1vw), 0.94rem);
@@ -186,9 +186,9 @@ html.dark {
   --g-7: #246854;
   --g-8: #2a7e68;
   --g-9: #29a383;
-  --g-0: #27b08b;
-  --g-1: #1fd8a4;
-  --g-2: #adf0d4;
+  --g-10: #27b08b;
+  --g-11: #1fd8a4;
+  --g-12: #adf0d4;
 
   // Warning Color
   --w-1: #17120e;

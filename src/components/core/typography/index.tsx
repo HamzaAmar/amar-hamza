@@ -32,14 +32,15 @@ export const Text = forwardRef((props, forwardedRef) => {
     [`u_leading__${leading}`]: !!leading,
     [`u_style__${fontStyle}`]: !!fontStyle,
     [`u_${color}`]: !!color,
+    [`t-y_${contrast}`]: !!contrast,
     [`${className}`]: !!className,
   });
-  const contrastLvl = contrast === 'high' ? 12 : 11;
+
   const _style = {
     ...(truncate && { '--line-numbers': props.truncate }),
-    ...(color && {
-      '--color-text': `var(--${color}-${contrastLvl})`,
-    }),
+    // ...(color && {
+    //   '--clr-txt': `var(--${color}-${contrastLvl})`,
+    // }),
   } as CSSProperties;
 
   return (
