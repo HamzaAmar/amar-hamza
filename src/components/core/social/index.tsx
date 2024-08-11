@@ -16,7 +16,7 @@ export const Social = ({
       style={{ flexDirection: socialDirection }}
       {...classnames(`s-o u_column`, {
         [`s-o_${direction}`]: direction === 'vertical',
-        className: className,
+        [className!]: className,
       })}
     >
       {SOCIALS.map(({ id, icon, link, name }) => (
