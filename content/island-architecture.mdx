@@ -13,10 +13,9 @@ tags: ['Rendering Pattern', 'Island Architecture', 'Web Development']
 Welcome back! Previously, we discussed Streaming Server-Side Rendering. Today, we'll delve into Island Architecture, a rendering pattern that breaks down a web page into "islands" of interactivity. Each island can be rendered and hydrated independently, improving performance and maintainability by reducing the complexity of the overall page.
 
 <Conversation>
-<Conversation.Thread from="user">
-Hey Chat, could you explain Island Architecture in simple terms, assuming I have no idea about **rendering patterns**
-</Conversation.Thread>
-
+  <Conversation.Thread from="user">
+  Hey Chat, could you explain Island Architecture in simple terms, assuming I have no idea about **rendering patterns**
+  </Conversation.Thread>
 <Conversation.Thread from="narrator">
   <div>
     Imagine a detailed illustration where certain key elements are
@@ -46,11 +45,15 @@ Hey Chat, could you explain Island Architecture in simple terms, assuming I have
   browser work together to make this happen? 🤔
 </Conversation.Thread>
 
+{' '}
+
 <Conversation.Thread from="server">
   Certainly. my primary responsibility is rendering the initial HTML
   page. This includes fetching necessary data, executing application
   logic, and generating the complete HTML structure.
 </Conversation.Thread>
+
+{' '}
 
 <Conversation.Thread from="browser">
   Thank you, Server. My role is to receive this server-rendered HTML,
@@ -61,9 +64,13 @@ Hey Chat, could you explain Island Architecture in simple terms, assuming I have
   component or when it comes into view on the screen.
 </Conversation.Thread>
 
+{' '}
+
 <Conversation.Thread from="user">
   What are the benefits of using Island Architecture?
 </Conversation.Thread>
+
+{' '}
 
 <Conversation.Thread from="server">
   <div>
@@ -107,12 +114,16 @@ Hey Chat, could you explain Island Architecture in simple terms, assuming I have
   practice?
 </Conversation.Thread>
 
+{' '}
+
 <Conversation.Thread from="server">
   Sure! Let's say you have a news website. The homepage can be split
   into several islands, like the header, the main news feed, a sidebar
   with trending topics, and a footer. Each island loads its content
   and JavaScript separately.
 </Conversation.Thread>
+
+{' '}
 
 <Conversation.Thread from="browser">
   For example, when a user first visits the page, only the essential
@@ -123,9 +134,13 @@ Hey Chat, could you explain Island Architecture in simple terms, assuming I have
   start reading the news right away.
 </Conversation.Thread>
 
+{' '}
+
 <Conversation.Thread from="user">
   What are some best practices for using Island Architecture?
 </Conversation.Thread>
+
+{' '}
 
 <Conversation.Thread from="server">
   <div>
@@ -151,6 +166,8 @@ Hey Chat, could you explain Island Architecture in simple terms, assuming I have
   Thanks Chat, This helps a lot. Any final tips?
 </Conversation.Thread>
 
+{' '}
+
 <Conversation.Thread from="server">
   Island Architecture is a powerful technique for building modern web
   applications with better performance and user experience. By
@@ -161,15 +178,21 @@ Hey Chat, could you explain Island Architecture in simple terms, assuming I have
   get the most out of this approach.
 </Conversation.Thread>
 
+{' '}
+
 <Conversation.Thread from="browser">
   Stay tuned for our next conversation where we’ll dive into more
   advanced optimization techniques for web performance. See you next
   time!
 </Conversation.Thread>
 
+{' '}
+
 <Conversation.Thread from="user">
   Looking forward to it!
 </Conversation.Thread>
+
+{' '}
 
 <Conversation.Thread from="me">
   Thanks for taking the time to read my article! I'd love to hear your
@@ -181,4 +204,4 @@ Hey Chat, could you explain Island Architecture in simple terms, assuming I have
 
 </Conversation>
 
-We hope you enjoyed learning about Island Architecture. Next time, we'll explore [React Server Components](/blogs/server-component), a cutting-edge feature of React that enables server-side rendering of components for improved performance and developer experience. Goodbye for now, and see you in our next post on [React Server Components](/blogs/server-component)!
+We hope you enjoyed learning about Island Architecture. Next time, we'll explore [React Server Components](/blogs/react-server-components), a cutting-edge feature of React that enables server-side rendering of components for improved performance and developer experience. Goodbye for now, and see you in our next post on [React Server Components](/blogs/react-server-components)!
