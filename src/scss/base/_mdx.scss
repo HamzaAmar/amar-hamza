@@ -1,0 +1,77 @@
+.docs--content > * {
+  padding: var(--s-lg) 2vw !important;
+}
+
+.docs--header {
+  border-bottom: 1px solid var(--b-6);
+}
+
+.prose {
+  --sh-class: var(--p-11);
+  --sh-identifier: var(--g-11);
+  --sh-sign: var(--b-11);
+  --sh-property: var(--r-10);
+  --sh-entity: var(--w-11);
+  --sh-jsxliterals: var(--b-12);
+  --sh-string: var(--g-10);
+  --sh-keyword: var(--r-11);
+  --sh-comment: var(--b-9);
+
+  & strong {
+    font-weight: 600;
+  }
+
+  & img {
+    margin-inline: auto;
+    display: block;
+  }
+
+  & :is(ul, ol) > * + * {
+    margin-top: var(--sp-2xs);
+  }
+
+  ul,
+  ol {
+    margin-left: 0.5rem;
+  }
+}
+
+pre {
+  overflow-x: auto;
+  &:has(.code--section) {
+    background-color: var(--b-3);
+    border-radius: 0.75rem;
+    border: 1px solid var(--b-6);
+    padding: 0.375rem 1rem;
+    font-size: 0.925rem;
+    max-height: 80vh;
+    max-width: 100%;
+  }
+
+  .code--section {
+    counter-reset: sh-line-number;
+    font-family: 'dank mono', 'operator mono', inconsolata,
+      'fira mono', ui-monospace, 'sf mono', monaco, 'droid sans mono',
+      'source code pro', monospace;
+  }
+
+  .sh__line::before {
+    counter-increment: sh-line-number 1;
+    content: counter(sh-line-number);
+    margin-inline-end: 1.25rem;
+    color: hsl(0deg 0% 64%);
+    font-size: 0.85rem;
+    vertical-align: middle;
+  }
+
+  .sh__line {
+    border-inline-start: 4px solid transparent;
+    font-size: 0;
+    font-size: 0.85rem;
+    line-height: 2;
+
+    & > * {
+      display: inline-block;
+    }
+  }
+}
