@@ -14,7 +14,7 @@ export const PROJECTS: ProjectType[] = [
   uiLego,
   linkdin,
   carRental,
-  gamer,
   cinema,
+  gamer,
   domlav,
 ];

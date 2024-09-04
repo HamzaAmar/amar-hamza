@@ -11,7 +11,7 @@ export const carRental = {
   },
   links: [
     {
-      site: 'https://car-rental-qvddunwdf-hamzaamars-projects.vercel.app',
+      site: 'https://car-rental-tau-steel.vercel.app/en',
       title: 'Site',
     },
   ],
