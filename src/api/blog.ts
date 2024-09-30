@@ -1,5 +1,6 @@
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+import path from 'node:path';
+import fs from 'node:fs';
 import { parse } from 'yaml';
 import { compareDesc } from 'date-fns';
 
@@ -11,7 +12,7 @@ function parseFrontmatter(fileContent: string, filename: string) {
 
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
-  const frontMatterBlock = match![1];
+  const frontMatterBlock = match?.[1] ?? '';
   const content = fileContent.replace(frontmatterRegex, '').trim();
   // Parse the frontmatter as YAML
   const frontmatter = parse(frontMatterBlock);
@@ -36,16 +37,16 @@ function getMDXFiles(dir: string) {
 }
 
 function readMDXFile(filePath: string, filename: string) {
-  let fileContent = fs.readFileSync(filePath, 'utf-8');
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
   return parseFrontmatter(fileContent, filename);
 }
 
 function getMDXData(dir: string) {
-  let mdxFiles = getMDXFiles(dir);
+  const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     const [filename] = file.split('.');
 
-    let { metadata, content } = readMDXFile(
+    const { metadata, content } = readMDXFile(
       path.join(dir, file),
       filename,
     );

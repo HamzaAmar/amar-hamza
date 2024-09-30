@@ -1,9 +1,9 @@
 .f-o {
-  background-color: var(--b-1);
+  background-color: var(--B1);
 }
 
 .f-o-cnt {
-  background-color: var(--b-2);
+  background-color: var(--B2);
 
   & > p {
     width: min(50ch, 90%);
@@ -15,5 +15,5 @@
 }
 
 .f-o-hero {
-  border-block: 1px solid var(--b-6);
+  border-block: 1px solid var(--B6);
 }

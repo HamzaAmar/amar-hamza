@@ -14,7 +14,7 @@
     border-radius: 50%;
     animation: spinner-move 1s infinite linear;
     transform: rotate(-45deg);
-    color: var(--b-7);
+    color: var(--B7);
   }
   &::after {
     border-left-color: var(--c-9);
@@ -23,7 +23,7 @@
   &[data-invert='true'] {
     &::before,
     &::after {
-      color: var(--b-12);
+      color: var(--B12);
     }
 
     &::after {

@@ -7,8 +7,8 @@ import {
   Service,
   Skill,
 } from './_components';
-import { Metadata } from 'next';
-import { Person } from 'schema-dts';
+import type { Metadata } from 'next';
+import type { Person } from 'schema-dts';
 
 const IndexPage = async () => {
   const posts = getBlogPostsWithLimit(8);

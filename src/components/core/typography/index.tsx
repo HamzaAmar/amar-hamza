@@ -1,8 +1,8 @@
 // this classnames is a little bit different than the the classic one it return obj not a string
-import { CSSProperties, forwardRef } from 'react';
+import { type CSSProperties, forwardRef } from 'react';
 import type { TypographyProps } from './typography.type';
 import { classnames } from '@utils/classnames';
-import { ForwardRefComponent } from '@type/polymorphic.type';
+import type { ForwardRefComponent } from '@type/polymorphic.type';
 
 export const Text = forwardRef((props, forwardedRef) => {
   const {

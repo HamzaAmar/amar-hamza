@@ -11,14 +11,14 @@
 }
 
 .p-co-info {
-  background-color: var(--b-4);
+  background-color: var(--B4);
   top: 5rem;
   display: flex;
   justify-content: center;
 }
 
 .p-co-info-item[data-link='true'] {
-  color: var(--p-11);
+  color: var(--P11);
   text-decoration: underline 2px solid;
   text-underline-offset: 3px;
   transition: transform 150ms;

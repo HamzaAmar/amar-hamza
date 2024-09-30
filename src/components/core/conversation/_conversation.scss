@@ -1,9 +1,9 @@
 .c-o {
-  background-color: var(--b-3);
+  background-color: var(--B3);
   border-radius: 1rem;
   position: relative;
   font-weight: 300;
-  border: 1px solid var(--b-5);
+  border: 1px solid var(--B5);
 }
 
 .c-o-hdr,
@@ -16,7 +16,7 @@
   display: flex;
   gap: var(--sp-sm);
   align-items: center;
-  border-bottom: 1px solid var(--b-5);
+  border-bottom: 1px solid var(--B5);
   position: sticky;
   top: 4rem;
   border-top-left-radius: inherit;
@@ -54,12 +54,12 @@
 }
 
 .t-h-avt {
-  border: 2px dashed var(--w-10);
-  background: var(--b-4);
+  border: 2px dashed var(--W10);
+  background: var(--B4);
 }
 
 .t-h-msg {
-  background: var(--b-4);
+  background: var(--B4);
   border-radius: 0.5rem;
   width: fit-content;
   // height: fit-content;

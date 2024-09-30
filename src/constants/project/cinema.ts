@@ -11,7 +11,7 @@ export const cinema = {
   },
   links: [
     {
-      site: 'https://cinema-788cu73ca-hamzaamar.vercel.app/',
+      site: 'https://cinema-nine.vercel.app/en',
       title: 'Site',
     },
   ],

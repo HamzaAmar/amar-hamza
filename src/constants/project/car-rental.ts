@@ -11,7 +11,7 @@ export const carRental = {
   },
   links: [
     {
-      site: 'https://car-rental-tau-steel.vercel.app/en',
+      site: 'https://rental-car-two.vercel.app/',
       title: 'Site',
     },
   ],

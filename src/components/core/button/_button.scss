@@ -36,10 +36,10 @@
   }
 
   &:disabled {
-    background: var(--b-6);
+    background: var(--B6);
     pointer-events: none;
-    color: var(--b-11);
-    border-color: var(--b-6);
+    color: var(--B11);
+    border-color: var(--B6);
   }
 }
 
@@ -87,12 +87,12 @@
   width: 2.75em;
   height: 2.75em;
   padding: 0.25rem;
-  background-color: var(--b-4);
-  border: 1px solid var(--b-7);
+  background-color: var(--B4);
+  border: 1px solid var(--B7);
   border-radius: 50%;
 
   &:hover {
-    background-color: var(--b-7);
+    background-color: var(--B7);
   }
   & svg {
     width: 1.5em;

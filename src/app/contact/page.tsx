@@ -9,12 +9,12 @@ import {
   FormContainer,
   Social,
 } from '@components/core';
+import type { Metadata } from 'next';
+import { sendMail } from 'app/actions/contact';
 
 import type { ContactItemProps } from './utils/contact.type';
 import { CONTACT_INFO } from './utils/contact.data';
 
-import { Metadata } from 'next';
-import { sendMail } from 'app/actions/contact';
 import Form from './form';
 
 export const metadata: Metadata = {

@@ -1,14 +1,14 @@
 .r-e {
-  --r-b: 1px solid var(--o-6);
+  --Rb: 1px solid var(--O6);
 }
 
 .r-e-asd {
   padding: 1rem;
-  border-right: var(--r-b);
+  border-right: var(--Rb);
 }
 
 .r-e-hdr {
-  border-bottom: var(--r-b);
+  border-bottom: var(--Rb);
   padding: 2rem;
 }
 
@@ -21,7 +21,7 @@
   padding: 1rem 0;
 
   &:not(:last-child) {
-    border-bottom: var(--r-b);
+    border-bottom: var(--Rb);
   }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Image, { ImageProps } from 'next/image';
-import Link, { LinkProps } from 'next/link';
+import Image, { type ImageProps } from 'next/image';
+import Link, { type LinkProps } from 'next/link';
 
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { highlight } from 'sugar-high';
@@ -13,7 +13,7 @@ type CustomLinkProps = {} & Omit<LinkProps, 'href'> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 function CustomLink(props: CustomLinkProps) {
-  let href = props.href!;
+  const href = props.href ?? '';
 
   if (href.startsWith('/')) {
     return (
@@ -34,12 +34,15 @@ function Table({
 }: {
   data: { headers: string[]; rows: string[][] };
 }) {
-  let headers = data.headers.map((header, index) => (
+  const headers = data.headers.map((header, index) => (
+    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
     <th key={index}>{header}</th>
   ));
-  let rows = data.rows.map((row, index) => (
+  const rows = data.rows.map((row, index) => (
+    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
     <tr key={index}>
       {row.map((cell, cellIndex) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <td key={cellIndex}>{cell}</td>
       ))}
     </tr>
@@ -70,11 +73,12 @@ async function Code({
   children: string;
   className: string;
 }) {
-  let codeHTML = highlight(children);
+  const codeHTML = highlight(children);
 
   return (
     <code
       className={`${className} code--section`}
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
       dangerouslySetInnerHTML={{ __html: codeHTML }}
       {...props}
     />
@@ -83,7 +87,7 @@ async function Code({
 
 function createHeading(level: number) {
   const Heading = ({ children }: { children: string }) => {
-    let slug = slugify(children);
+    const slug = slugify(children);
     return React.createElement(
       `h${level}`,
       { id: slug },
@@ -103,7 +107,7 @@ function createHeading(level: number) {
   return Heading;
 }
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -119,6 +123,7 @@ let components = {
   Link,
 };
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export function CustomMDX(props: any) {
   return (
     <MDXRemote

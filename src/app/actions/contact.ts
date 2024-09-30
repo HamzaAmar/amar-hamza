@@ -1,7 +1,7 @@
 'use server';
 
 import sgMail from '@sendgrid/mail';
-import { FormState } from 'app/contact/form';
+import type { FormState } from 'app/contact/form';
 
 interface Body {
   name: string;
@@ -74,9 +74,11 @@ export async function sendMail(
     await sendEmail(entries);
 
     return { message: 'Email Send With Success' };
-  } catch (err: any) {
-    return {
-      message: `error.message nice to me you from the catch statement error , ${err.message}`,
-    };
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return {
+        message: `error.message nice to me you from the catch statement error , ${err.message}`,
+      };
+    }
   }
 }

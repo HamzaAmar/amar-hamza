@@ -3,25 +3,25 @@
 
   position: relative;
   overflow: hidden;
-  border: 2px solid var(--b-6);
+  border: 2px solid var(--B6);
   border-radius: 0.25em;
 
   &:hover {
-    border-color: var(--p-8);
+    border-color: var(--P8);
   }
   &:focus-within {
     outline: 2px solid transparent;
-    border-color: var(--p-8);
+    border-color: var(--P8);
   }
   &[data-error='true'] {
-    color: var(--r-8);
-    border-color: var(--r-8);
+    color: var(--R8);
+    border-color: var(--R8);
   }
 }
 
 .f-i {
-  color: var(--b-12);
-  background: var(--b-3);
+  color: var(--B12);
+  background: var(--B3);
   padding: 0.5em;
   width: 100%;
 
@@ -70,11 +70,11 @@
   bottom: -0.625rem;
   width: 100%;
   z-index: 1;
-  color: var(--r-9);
+  color: var(--R9);
 }
 
 .f-c-abbr {
-  color: var(--r-9);
+  color: var(--R9);
   font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;

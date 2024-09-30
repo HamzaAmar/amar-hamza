@@ -7,7 +7,7 @@
   height: 4rem;
   padding: 0 3.5vw;
   z-index: 2;
-  background: var(--b-1);
+  background: var(--B1);
   font-weight: 500;
   font-size: 0.75rem;
   letter-spacing: 0.6px;
@@ -17,7 +17,7 @@
 .h-e-logo {
   font-size: 1.25rem;
   font-weight: 300;
-  color: var(--p-12);
+  color: var(--P12);
 }
 .h-e-nav {
   align-self: stretch;
@@ -42,7 +42,7 @@
   transition: transform 100ms;
 
   &:focus {
-    box-shadow: inset 0 0 1rem -2px var(--p-7);
+    box-shadow: inset 0 0 1rem -2px var(--P7);
   }
 
   &[data-mobile='true'] {
@@ -61,8 +61,8 @@
     height: var(--sz);
     background-image: linear-gradient(
       to right,
-      var(--p-8),
-      var(--p-10)
+      var(--P8),
+      var(--P10)
     );
     transform: translateX(-105%);
     transition: transform 0.4s ease-in-out;
@@ -80,7 +80,7 @@
   }
 
   &[aria-current='page'] {
-    color: var(--p-11);
+    color: var(--P11);
   }
 }
 
@@ -101,7 +101,7 @@
   transform-origin: left top;
   z-index: 1;
   padding: 1.5rem;
-  background: var(--b-1);
+  background: var(--B1);
 
   &[data-visible='true'] {
     flex-direction: column;

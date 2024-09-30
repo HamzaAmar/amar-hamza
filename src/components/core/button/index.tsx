@@ -3,9 +3,9 @@ import { forwardRef } from 'react';
 import type { ForwardRefComponent } from '@type/polymorphic.type';
 import { classnames } from '@utils/classnames';
 
-import { Spinner, Flex } from '..';
+import { Spinner } from '..';
 
-import { ButtonProps, IconButtonProps } from './button.type';
+import type { ButtonProps, IconButtonProps } from './button.type';
 
 /*
 =====================================================================================

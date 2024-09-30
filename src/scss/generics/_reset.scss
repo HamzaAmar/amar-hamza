@@ -16,8 +16,8 @@ body {
     'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica,
     Arial, sans-serif;
-  color: var(--b-12);
-  background-color: var(--b-1);
+  color: var(--B12);
+  background-color: var(--B1);
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 a:not([class]) {
-  color: var(--p-11);
+  color: var(--P11);
   text-decoration: 2px solid underline transparent;
   cursor: pointer;
 
@@ -67,8 +67,8 @@ a:not([class]) {
 button:focus-visible,
 a:focus-visible {
   outline: 1px solid transparent;
-  box-shadow: 0 0 0 1px var(--p-8);
-  border-color: var(--p-8);
+  box-shadow: 0 0 0 1px var(--P8);
+  border-color: var(--P8);
 }
 
 nav :not(ul) {
