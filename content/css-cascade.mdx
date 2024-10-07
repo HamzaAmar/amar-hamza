@@ -1,6 +1,6 @@
 ---
-title: 'CSS Cascade and Inheritance: How the Browser Determines the Final styles'
-excerpt: 'Learn Hydration: an intelligent blend to make your web app faster & smoother for users via the way we stack up how pages are loaded.'
+title: 'CSS Cascade: How the Browser Determines the Final styles'
+excerpt: 'Css cascade deep dive article that explain in detail'
 image: '/assets/blog/rendering/hydration.webp'
 publishedAt: '2024-09-02T05:35:07.322Z'
 lastModified: '2024-09-02T05:35:07.322Z'
@@ -10,23 +10,19 @@ author:
 tags: ['Rendering Pattern', 'Hydration', 'Web Performance', 'React']
 ---
 
-In this post, we're going to dive deeper into cascade and inheritance, two of the core CSS
-concepts that I believe everyone should understand. These concepts can be tricky, even for
-experienced developers. We'll help you understand why your styles sometimes don't work as
-expected or why certain styles appear even though you didn't add them.
+In this post we’ll go deeper into cascade, one of the core CSS concepts that I believe everyone should understand. this concept can be tricky even for experienced developers. We’ll help you understand why your styles don’t work as expected or why certain styles are applied even though you didn’t add them.
 
-I believe that the best way to achieve this understanding, in my opinion, is by combining theory
-and practice, and that's what we're going to do in this article.
+I believe the best way to achieve this understanding is by combining theory and practice and that’s what we’ll do in this article.
 
 By the end of this article, you'll have the knowledge and the confidence to resolve CSS conflicts,
 ensuring your styles always behave as expected.
 
 ## What is cascade?
 
-The cascade is an algorithm used by the User Agent (browser) to resolve conflicts when the same declaration is added multiple times to the selected element(s). The browser attempts to select the correct declaration to apply. The cascade uses several stages or layers to filter and determine which property will be applied. Sometimes the browser goes through all of these layers to fix the issue, but other times it can be resolved in the first layer(s). These stages are:
-[Importance and origin](#css-cascade-importance-and-origin), `context`, [inline style](#css-cascade-inline-style), [cascade layer](#css-cascade-cascade-layer), [specificity](#css-cascade-specificity), [scope proximity](#css-cascade-scope-proximity), and [order of appearance](#css-cascade-order-of-appearance).
+The cascade is an algorithm used by the User Agent (browser) to resolve conflicts when the same declaration is added multiple times to the selected element(s). The browser attempts to select the correct declaration to apply. The cascade uses several layers to filter and determine which property will be applied. Sometimes the browser goes through all of these layers to resolve the conflict, but other times it can be resolved in the first layer(s). These layers are:
+`Importance and origin`, `context`, `inline style`, `cascade layer` , `specificity`, `scope proximity` , and `order of appearance`.
 
-Let's dive into each of these stages and do some practice to understand how the browser uses the cascade to determine which properties win.
+Let's dive into each of these layers and do some practice to understand how the browser uses the cascade to determine which properties win.
 
 ## CSS cascade: Importance and origin
 
@@ -34,23 +30,23 @@ The origin of a declaration is based on where it comes from. In CSS, there are t
 
 **Author stylesheets**: styles that we add as developers.
 
-**User stylesheets**: styles set by the operating system or browser extensions for user preferences. These allow users to customize their web experience, such as increasing font size for readability or using a dark mode extension.
+**User stylesheets**: styles set by the operating system or browser extensions for user preferences. These allow users to customize their web experience, such as increasing font size for readability or using a dark mode extension ...etc.
 
 **User Agent stylesheets**: Default styles provided by the User Agent (browser). These are the styles that browsers apply to HTML elements. For example, the default margin around paragraphs or the styling of form elements.
 
-As we've seen before, styles come from different origins, not just us authors (developers). This layer is responsible for resolving conflicts between origins, To accomplish that, it has a set of rules that simplify this process. you can see this illustrated in the image below, where the order is from top (high priority) to bottom (low priority).
+As we've seen before, styles come from different origins, not only from authors (developers). This layer is responsible for resolving conflicts between origins, To accomplish that, it has a set of rules that simplify this process. you can see this illustrated in the image below, where the order is from top (high priority) to bottom (low priority).
 
 ![CSS cascade origin and importance hierarchy diagram. From highest to lowest priority: Transition declarations, Important User Agent, Important user, Important author, Animation, Normal author, Normal user, Normal User Agent. The diagram uses color-coded bars to represent each level, with an arrow indicating the order from top (highest priority) to bottom (lowest priority).](/assets/blog/cascade/origin.png)
 
-Now we're going to use an example of HTML and CSS that demonstrates a set of conflicts and how cascade origin and importance layer are going to resolve them.
+Let's make our hand dirty by doing an example that demonstrates a set of conflicts and how cascade origin and importance layer are going to resolve them.
 
 ```html
 <div
   style="background: white;background:pink !important"
-  class="hero"
+  id="hero"
   data-type="full"
 >
-  Helo
+  Hello world
 </div>
 ```
 
@@ -75,7 +71,7 @@ div {
 }
 
 /* 🚨 AUTHOR STYLE START 🚨 */
-.hero {
+#hero {
   height: 500px;
   text-align: start;
   color: #efe !important;
@@ -84,11 +80,17 @@ div {
 }
 ```
 
-I'd like to highlight a common mistake some people make by considering specificity at this stage, thinking they need to increase it to override User Agent styles. Remember, specificity is the fifth layer in the cascade, and we don't think about specificity until we reach that specific layer.
-
-Okay, let's streamline the process and get a clearer understanding of the problem by sorting the declarations based on their origin and importance. Refer to the image above for details.
-
-Let's begin by identifying styles that don't have any conflicts because they will apply directly to the selected elements without the need for cascade resolution.
+<Alert
+  color="p"
+  message="I'd like to highlight a common mistake some people make by considering specificity at this stage, thinking they need to increase it to override (User, User Agent) styles. Specificity is the fifth layer in the cascade, and we don't think about it until we reach that specific layer."
+  title="Don't Overthink Specificity"
+/>
+In this example, we aim to highlight all potential scenarios of a conflict,
+including those with only normal declarations, those with only important
+declarations, and those with both. But before going through the conflict,
+let's begin by identifying styles that don't have any conflicts; they will
+apply directly to the selected element(s) without the need for cascade
+resolution.
 
 ```css
 display: block; // USER AGENT (No conflict) ✅
@@ -97,7 +99,7 @@ font-size: 2rem; // USER (No conflict) ✅
 height: 500px; // AUTHOR (No conflict) ✅
 ```
 
-Let's visualize this with a regular declaration where no !important rule is applied. This means the order of precedence is as follows: author styles have priority, followed by user styles, and finally, User Agent styles. Therefore, the declaration from the author will win.
+Let's begin by normal declaration conflicts where no `!important` rule is applied. The order of precedence from highest to lowest: author, user, and user agent styles. Therefore, the declaration from the author will be applied.
 
 ```css
 text-align: start; // AUTHOR (Wins) ✅
@@ -105,7 +107,7 @@ text-align: center; // USER (Overridden) ❌
 text-align: end; // USER AGENT (Overridden) ❌
 ```
 
-Here we see that we have !important flag in all declarations, the usual cascade priority is flipped. In this case, User Agent stylesheets become higher than the user and author
+After we went through `!important` flag in all declarations, the usual cascade priority is flipped. In this case, User Agent stylesheets become higher than the user and author
 
 ```css
 color: #eee !important; // USER AGENT important (Wins) ✅
@@ -113,28 +115,83 @@ color: white !important; // USER important (Overridden) ❌
 color: #efe !important; // AUTHOR important (Overridden) ❌
 ```
 
-Normal and important declarations are treated separately, even if they come from the same source (like the author). In our example, author styles with !important are in a different layer than regular author styles.
+Normal and important declarations are treated separately, even if they come from the same source (like the author). In our example, author styles with `!important` are in a different stage than normal author styles.
 
-While we have two potential winners in this layer, only one can ultimately prevail. The decision is passed to the next layer of the cascade. Remember, the cascade involves multiple layers, and this layer only considers origin and importance.
+<Alert
+  color="p"
+  message="Pay attention to the comments in the code below. Each comment highlights a layer in the important and origin layer."
+  title="Read Comments"
+/>
 
 ```css
-/* Layer for AUTHOR Importance */
-background-color: brown !important; // 🚨 AUTHOR important (In Progress) 🚧
-background-color: pink !important; // 🚨 AUTHOR  important inline=true  (In Progress) 🚧
-/* Layer for AUTHOR Normal */
+/* Layer for User Agent Importance (No declaration) */
+/* Layer for User Importance (No declaration) */
+/* Layer for AUTHOR Importance (Two Decalrations) */
+background-color: brown !important; // 🚨 AUTHOR important (In Progress) ✅🚧
+background-color: pink !important; // 🚨 AUTHOR  important inlineStyle=true  (In Progress) ✅🚧
+/* Layer for AUTHOR Normal (Two Decalrations)*/
 background-color: white; // AUTHOR inline (Overridden) ❌
 background-color: green; // AUTHOR (Overridden) ❌
-/* Layer for User Normal */
+/* Layer for User Normal (One Decalration)*/
 background-color: black; (Overridden) ❌
+```
+
+While we have two potential winners, only one of them will apply. The decision is passed to the next layer(s) of the css cascade. Remember, the cascade involves multiple layers, this one only resolves conflicts based on origin and importance.
+
+## CSS cascade: Context
+
+The author (Developer) stylesheet have Two types of contexts based on where the declaration come from either `shadow DOM context` or `light DOM context`. let's try to understand each one of them and how it works with the css cascade.
+
+**light DOM context**: styles that we add as developers.
+
+**shadow DOM context**: styles set by the operating system or browser extensions for user preferences. These allow users to customize their web experience, such as increasing font size for readability or using a dark mode extension ...etc.
+
+```html
+<template id="button">
+  <style>
+    :host {
+      background: red;
+      color: black !important;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid transparent;
+      font-weight: 700;
+    }
+  </style>
+  <button><slot></slot></button>
+</template>
+
+<c-button> Hello! </c-button>
+```
+
+```css
+c-button {
+  background: orange;
+  color: white !important;
+  padding: 1rem 3rem !important;
+  text-transform: uppercase;
+}
+```
+
+```js
+customElements.define(
+  'c-button',
+  class extends HTMLElement {
+    connectedCallback() {
+      this.attachShadow({ mode: 'open' }).append(
+        button.content.cloneNode(true),
+      );
+    }
+  },
+);
 ```
 
 ## CSS cascade: inline style
 
-Inline styles are styles applied to specific HTML elements. They're the third layer in the cascade, and they're not part of the cascade specificity layer as some people suggest; they have their own layer. Let's do some examples to understand how it works.
+Inline styles are styles that apply directly to HTML element. They're the third layer of the cascade, and they're not part of the cascade specificity layer as some people suggest; they have their own layer. Let's do some examples to understand how it works.
 
-Let's get back to the last examples from last time about the background color. Remember, after resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or send it to the next one.
+Let's get back to the last examples from last time about the `background-color`.After resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or pass it to the next one.
 
-After visualizing the conflict, I find that we have two declarations, both with !important, and one comes from an inline style. That means the inline style wins.
+After visualizing the conflict, I see that we have two declarations, both with !important, and one comes from an inline style. That means the inline style wins.
 
 ```css
 background-color: pink !important; // AUTHOR  important inline=true (Wins)✅
@@ -143,9 +200,110 @@ background-color: brown !important; // AUTHOR important (Overridden)❌
 
 ## CSS Cascade: Cascade Layer
 
-Think of CSS Cascade Layers as a new layer that you add to your code to give some parts priority over others. Think of it like the first layer origin and important, but for your own code (AUTHOR). It was added to solve tricky problems in CSS. Let's take a look at some problems and how cascade layers solve them.
+CSS Cascade Layers is the fourth layer in cascade, allowing you (developer) to take control in your code by making some of your stylesheets have higher priority than others by putting them within a layer. The first declared layer has less priority than the last ones, and the styles without a layer have the most priority, when important is added, the order of the layers is flipped. If you look carefully you find this layer similar to the origin and importance layer but for your own styles.
 
-When we work on large-scale projects, the first thing we do is create a structure for our CSS code to prevent conflicts. One of the best solutions that I use is to put the low-priority parts at the top of the file and the high-priority parts at the bottom, and use classes for all elements. We increase specificity only for state changes like focus and others like that. We can be a little bit confident in our code, but sometimes we get some exceptions. For example, I use reset styles at the top of the file, but sometimes we need to select more than a class if we want all inputs with type "file" to have a reset. Because of that, specificity gets higher than what we want and destroys our entire structure. This is where cascade layers come to the rescue. We put all the resets in a "reset" layer at the beginning and the others at the end. Like that, we don't care about specificity or order of appearance because this layer comes before them. Let's do some examples to make this clearer.
+```css
+@layer reset components utils;
+
+@layer utils {
+  button: {
+    color: orange;
+    border-bottom: 2px solid var(--red-8);
+  }
+}
+
+@layer components {
+  button: {
+    color: red;
+    border-bottom: 2px solid var(--red-8) !important;
+  }
+}
+@layer reset {
+  button {
+    color: white;
+    padding: 1rem !important;
+    appearance: none;
+  }
+
+
+button {
+  color: green;
+  padding: 0;
+  border-bottom: 2px dashed var(--red-8) !important;
+}
+```
+
+In this example, I add four at-rule layers; the first layer is responsible for reordering the layers, the cascade layer has a feature that merges the layers with the same name in the first declared one, I usually use this feature even when the order is correct to give me a hint for which layer has the most priority without looking at the entire stylesheet.
+
+Now that we have a basic understanding of how the cascade layer works, it's simple to resolve these conflicts by following these steps.
+
+1. Put each declaration in its own layer.
+2. Add this emoji ⚔️ next to declarations that have conflict and 🕊️ to declarations that don't.
+3. Visualize from top to bottom and look for the first declaration that has conflict and add ✅ to highlight it as the applied (winner) declaration and ❌ to other declaration(s).
+
+<Alert
+  color="p"
+  message="Pay attention to the comments in the code below. Each comment highlights a layer in this cascade layer example below."
+  title="Read Comments"
+/>
+
+```css
+/* Layer for reset Importance  */
+padding: 1rem !important; //  ✅ ⚔️
+
+/* Layer for components Importance  */
+border-bottom: 2px solid var(--red-8) !important; // ✅ ⚔️
+
+/* Layer for utils Importance */
+
+/* No Layer Style  Important */
+border-bottom: 2px dashed var(--red-8) !important; // ❌  ⚔️
+
+/* No Layer Style  Normal */
+color: green; // ✅ ⚔️
+padding: 0; // ❌ ⚔️
+
+/* Layer for utils Normal */
+color: orange; // ✅ ⚔️
+border-bottom: 2px solid var(--red-8); // ❌ ⚔️
+
+/* Layer for components Normal  */
+color: red; // ❌ ⚔️
+
+/* Layer for reset Normal  */
+appearance: none; // ✅ 🕊️
+color: white; // ❌ ⚔️
+```
+
+<Alert
+  color="p"
+  message="I'd like to highlight a common mistake some people make by considering specificity at this stage, specificity is the fifth layer in the cascade"
+  title="Don't Overthink Specificity"
+/>
+
+In the example below, the button type selector is applied even when the ID and class have higher specificity. This is because cascade layers are evaluated before specificity in the cascade algorithm, and unlayered styles have the highest priority, followed by the utils layer, then the component layer in normal declarations.
+
+```html
+<button id="btn" class="u_btn-orange">hello</button>
+```
+
+```css
+button {
+  background: green; // ✅ ⚔️
+}
+
+@layer components {
+  #btn {
+    background: red; // ❌  ⚔️
+  }
+}
+
+@layer utils {
+  .u_btn-orange {
+    background: orange; // ❌ ⚔️
+  }
+}
+```
 
 ## CSS Cascade: Specificity
 
@@ -153,12 +311,19 @@ Specificity is a an algorithm that calculate the weight of a css selector use by
 
 Every CSS selector has a score and the specificity use this score to resolve conflict but before begin speaking about the specificity let's talk first about css selector and the score of each one of them
 
-Lets talk about selector but only that has the score if you want a deep dive in css selector check this article
-
-**Universal Selector (\*)**: Has a specificity score of **0.0.0**.
+**Universal Selector (\*), :is(), :where() , :not(), :has()**: Has a no specificity.
 
 ```css
 * {
+}
+
+section:has(img) {
+}
+
+:where(.btn) {
+}
+
+:is(button, a, .btn):hover {
 }
 ```
 
@@ -185,7 +350,10 @@ ul {
 .btn {
 }
 /* Pseaudo-Class Selector */
-.btn:focus {
+:focus {
+}
+
+:disabled {
 }
 /* Attribute Selector */
 [aria-current='page'] {
@@ -202,16 +370,31 @@ ul {
 }
 ```
 
-Let's make a note before diving into the examples. Our scoring system consists of three independent numbers that adhere to a strict rule: each number has a unique CSS selector that increases its value. Don't confuse this with math each number can be anything, even a billion, and increasing one doesn't affect the others.
+<Alert
+  color="p"
+  message="Comma Separator Doesn't combine weight of all selectors but each selector(s) between comma has it own weight"
+  title="Comma Separator"
+/>
 
-As we see above the the #id is the winner because when check the
+```css
+/* ID Selector */
+/* 0.1.0 */
+.btn,
+/* 0.0.1 */
+button,
+/* 0.1.1 */
+input[type='button'] {
+}
+```
+
+Let's make a note before diving into the examples. Our scoring system consists of three independent numbers that adhere to a strict rule: each number has some selector(s) that increases its value. Don't confuse this with math, which means even when we have a score of `0.36.0`, it will never be `3.6.0`. Each number has only one way to increase it, and that is the selector, and also `1.0.0` is greater than `0.1000000000.0`
 
 ```css
 /* Score 0.1.0 */
 .btn {
   background: red; //  (Overridden) ❌
 }
-/* 
+/*
 🚨 let's pretend that we add class .btn 12 times 🚨
  The Score in here IS 0.12.1
  🚨
@@ -227,13 +410,10 @@ button.btn.btn.btn.btn.btn.btn.btn.btn.btn {
 
 Okay, now that we have an idea of how specificity scoring systems work and how we choose the winner, let's create a real-world example to solidify our understanding and explore how we can tackle some common issues we encounter when working with specificity.
 
-```html
-<input type="submit" class="btn" id="gmail" disabled value="Gmail" />
-```
-
 ```css
+/* ---- Reset Style Start ---- */
+
 /* Score is 0.0.0 */
-/* Reset Styles */
 * {
   background: white;
 }
@@ -245,6 +425,9 @@ input[type='submit'] {
   appearance: none;
   border: none;
 }
+
+/* ---- Reset Style End ---- */
+
 /* Score is 1.0.0 */
 #gmail {
   background: red;
@@ -275,66 +458,143 @@ input[type='submit'] {
 /* Score is 0.1.0 */
 ```
 
-we find that we have conflicts in the background, and cursor declarations lets try to solve them
+If you look at this example carefully, you will see that we have two conflicts: the background and the cursor. If we take a closer look at the background declarations, you see an ID as a selector, which means you can’t override it no matter how many classes or other selectors you add. That means the focus and disabled background never applied. You can override the ID selector only by either ID or `!important`. This is why people suggest that using ID as a selector is a bad habit to fix this issue. Let’s replace ID with `btn-gmail` class selector.
+
+For the cursor, we try to add a reset, but the specificity of the reset is over the class because it combines selector type and an attribute selector. To fix this, we need to remove one of the selectors, but sometimes we can't like in this example. What we need to do in this scenario is either wrap the whole reset styles in an @layer at-role we spoke about in the last section, or wrap the selector `input[type='submit']` either with `:is` or `:where` selectors.
+
+Let's explain what `:where` and `:is` doing but only the related part of the cascade. [for more information check this article]('https://web.dev/articles/css-is-and-where') . Sometimes we need to combine selectors like what we do in the reset. When we do that, the specificity of the selectors combined gets higher. This is where `:is` and `:where` come to the rescue; both of them reduce the specificity of the selectors within them, but with only one small difference `:is` get the score of the higher selector within them, and `:where` remove the specificity. To make this clear, let's do some examples.
 
 ```css
-/* Background Conflict */
-background: red; // #gmail 1.0.0 //  (Wins) ✅
-background: var(--primary-8); // 0.1.0 (Overridden) ❌
-background: var(--primary-9); // 0.2.0 only on hover (Overridden) ❌
-background: var(--success-8); // 0.2.0 (Overridden) ❌
-background: grey; // 0.1.0; (Overridden) ❌
-
-/* Cursor Conflict */
-
-.btn {
-  cursor: inherit; // 0.1.1 (Overridden) ✅
-  cursor: pointer; // 0.1.0 (Overridden) ❌
+/* 0.2.3 */
+label input[type='button']:focus::before {
+  outline: 2px solid red;
 }
-```
-
-For the background the declaration with id win, even in hover, focus, and disabled state because specificity of id is higher, this way people suggest to don't use id for css if you want to be higher than the id you need to use important,
-
-For the Cursor we add some style as a reset but suddenly the reset style has high priority than the .btn class and this is not what we want. we want the cursor to pointer we have two options to fix this problems either use the use Cascade layer we discuss before or we wrap the selctor that we want to be
-
-A rule of thumb is steak with classes and go above 0.1.0 except for excpetion or state changes :focus ...etc.
-
-Know that we have every thing
-
-```css
-* {
-  background: white;
+/* 0.0.0 */
+:where(label input[type='button']:focus::before) {
+  outline: 2px solid red;
+}
+/* 0.1.0 */
+:is(label input[type='button']:focus::before) {
+  outline: 2px solid red;
+}
+/* 1.1.1 */
+/* Because the :focus and ::before outside the is */
+:is(#pillar-ui #new #react #design #system):focus::before {
+  outline: 2px solid red;
 }
 
-button,
-:where(input[type='submit']) {
-  cursor: inherit;
-  appearance: none;
-  border: none;
-}
-
-.btn {
-  cursor: pointer;
-  background: blue;
-}
-
-.btn-gmail {
-  background: red;
-}
-.btn:focus {
-  background: brown;
-}
-.btn:hover {
-  background: var(--primary-9);
-}
-.btn:disabled {
-  background: var(--primary-9);
-}
-.btn.btn-success {
-  background: var(--success-8);
+/* 0.1.1 */
+/* Because the :focus and ::before outside the :where */
+:where(#pillar-ui #new #react #design #system):focus::before {
+  outline: 2px solid red;
 }
 ```
 
 ## CSS Cascade: Scope Proximity
 
+Before Scope Proximity was introduced, the css cascade resolve conflict that still persist after specificity by order of appearce layer. but this not the cases for all situation sometimes we want the element to be styled depend on the near ancestor. scope proximity is a new layer added before order of appearance that try to resolve conflicts by considering how close an element is to its scope root (ancestor). The closer it is, the higher its priority, let's try to add an example to show you the issue and how we can solve it.
+
+```html
+<section lang="en">
+  <button>hello</button>
+  <section lang="ar">
+    <button>استطلاع</button>
+  </section>
+</section>
+```
+
+```css
+button {
+  background: var(--p);
+}
+
+[lang='ar'] * {
+  --p: brown;
+}
+
+[lang='en'] * {
+  --p: orange;
+}
+```
+
+In the example above, all elements descendant of the `lang="ar"` are also descendant of `lang="en"`, css not designed for scope by default, means if the conflict still persist at this stages of cascade, CSS relies on order of appearace to resolve it, because of that the last declared rule takes precedence and all the elements will be orange. Well, that's not what we did intentionally; we want all elements inside the `[lang='ar']` to be brown because this is the closest ancestor. To achieve this, we have two options in CSS:
+
+**Add a Class**: We could add a CSS class `theme-ar` to manually set the background color. However, this is not an optimal solution because we need to add the class to every element inside the Arabic language three, which increases maintenance, and if we add other languages, it gets worse.
+
+**`@scope` at-Rule**: The second solution and the recommended one is by adding the at-rule `@scope` to add the cascade proximity layer. In this way we could solve the conflict we wanted. Let's do that on the example below.
+
+```css
+button {
+  background: var(--p);
+}
+
+@scope ([lang='ar']) {
+  button {
+    --p: brown;
+  }
+}
+
+@scope ([lang='en']) {
+  button {
+    --p: orange;
+  }
+}
+```
+
 ## CSS Cascade: Order Of Appearance
+
+Order of appearance is the last layer of the cascade, and if the conflicts still persist, the last declaration takes precedence. This example seem simple depend of the size of the stylesheet, but believe me, it's not. I think this is the most difficult layer in the cascade. You need to structure your stylesheet in certain ways and follow some naming conventions to make it simpler to know which declarations are going to override which only by looking at the name of the class without looking at the entire stylesheet. But dont worry, I want to write a deep dive on how we can write a scalable CSS code with modern CSS features in the future. Stay tuned. Let's explore some examples and address common issues.
+
+```html
+<button class="btn btn_facebook">hello</button>
+```
+
+```css
+.btn {
+  padding: 1rem; //  (Overridden) ❌
+}
+
+.btn_facebook {
+  padding: 1.5rem; //  (Overridden) ❌
+  padding: 2rem; //  (Win) ✅
+}
+```
+
+The key point here is when a conflict exist the rule that appears last takes precedence. This is why the last `padding: 2rem;` is applied.
+
+Another thing to pay attention to is that declaring shorthand versions of CSS properties will often clear or reset previously set values. like with background property as we seen in the example below.
+
+```css
+.btn {
+  background-image: url('/button.png');
+  background: orange;
+}
+```
+
+This behavior is not peculiar to the background property: other shorthand properties act similarly. Once used, they reset all their sub-properties to their default values, except if explicitly set in the shorthand declaration and this is an example of what means when we write `background:orange`.
+
+```css
+background-image: none;
+background-position: 0% 0%;
+background-size: auto auto;
+background-repeat: repeat;
+background-origin: padding-box;
+background-clip: border-box;
+background-attachment: scroll;
+background-color: orange;
+```
+
+When using shorthand properties remember what other styles you may be overriding or you can write longhand after shorthand like in this example below.
+
+```css
+.btn {
+  background: orange;
+  background-image: url('/button.png');
+}
+```
+
+I hope you enjoyed this deep dive article about css cascade and helped you improve your knowledge and skills to tackle css cascade conflict effectively. to get the best out of this article I already provide a set of challenges to practice and solidify you understanding please try to solve them [this is the Github css Cascade challenges Repo](https://github.com/HamzaMiloud/cascade-challenges).
+
+## Let's Connect
+
+Your comments and opinions are most welcome! Feel free to let me know whether you have any views on this article, find an inaccuracy, or a better way of doing something- let me know! You can reach me on Twitter [@HamzaMiloudAma1](https://x.com/HamzaMiloudAma1), and let's continue from there!.
