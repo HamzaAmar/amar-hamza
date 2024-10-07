@@ -1,6 +1,6 @@
 import React from 'react';
 import { svgProps } from './utils/config';
-import { SvgType } from './utils/types';
+import type { SvgType } from './utils/types';
 
 const server = (props: SvgType) => {
   return (

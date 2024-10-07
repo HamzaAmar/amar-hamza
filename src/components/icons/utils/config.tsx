@@ -1,4 +1,4 @@
-import { SvgType, Rotation } from './types';
+import type { SvgType, Rotation } from './types';
 
 export const svgProps = {
   viewBox: '0 0 24 24',

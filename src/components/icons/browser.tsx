@@ -1,5 +1,5 @@
 import React from 'react';
-import { SvgType } from './utils/types';
+import type { SvgType } from './utils/types';
 import { svgProps } from './utils/config';
 
 const browser = (props: SvgType) => {
