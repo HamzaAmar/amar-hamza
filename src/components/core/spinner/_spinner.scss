@@ -17,8 +17,8 @@
     color: var(--B7);
   }
   &::after {
-    border-left-color: var(--c-9);
-    border-top-color: var(--c-9);
+    border-left-color: var(--C9);
+    border-top-color: var(--C9);
   }
   &[data-invert='true'] {
     &::before,
@@ -27,8 +27,8 @@
     }
 
     &::after {
-      border-left-color: var(--c-8);
-      border-top-color: var(--c-8);
+      border-left-color: var(--C8);
+      border-top-color: var(--C8);
     }
   }
 }

@@ -4,11 +4,11 @@
   text-transform: var(--typography-transform, inherit);
 }
 .t-y_high {
-  color: var(--c-12);
+  color: var(--C12);
 }
 
 .t-y_low {
-  color: var(--c-11);
+  color: var(--C11);
 }
 .t-y_hdg {
   font-size: calc(var(--typography-size, 1rem) * 1.25);
@@ -22,6 +22,6 @@
     text-decoration: underline var(--P9) clamp(1px, 0.1em, 2px);
   }
   &:focus-visible {
-    outline: 2px dashed var(--c-9);
+    outline: 2px dashed var(--C9);
   }
 }

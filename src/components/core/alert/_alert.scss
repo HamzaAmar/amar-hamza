@@ -1,17 +1,30 @@
 .a-l {
-  background-color: var(--c-4);
-  color: var(--c-12);
-  padding: var(--sp-xs);
-  border-inline-start: 0.25em solid var(--c-11);
+  background-color: var(--C4);
+  color: var(--C12);
+  padding: var(--sp-2xs) var(--sp-md);
+  border-inline-start: 0.125em solid var(--C11);
   margin-inline: auto;
-
-  &[data-close='true'] {
-    display: none;
-  }
+  position: relative;
+  border-radius: 0.5rem;
+  size: 1rem;
 }
 
 .a-l-hdr {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.a-l-icn {
+  padding: 0.5rem;
+  display: inline-block;
+  position: absolute;
+  left: -1.1rem;
+  top: -0.75rem;
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--B1);
 }

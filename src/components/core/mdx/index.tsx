@@ -108,6 +108,7 @@ import { slugify } from '@utils/slugify';
 import { Conversation } from '../conversation';
 import { Button } from '../button';
 import { DocsCode } from '../code';
+import { Alert } from '../alert';
 
 type CustomLinkProps = {} & Omit<LinkProps, 'href'> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -244,6 +245,7 @@ const components = {
   Conversation,
   Button,
   Link,
+  Alert,
 };
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>

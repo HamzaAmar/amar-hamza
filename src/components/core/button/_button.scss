@@ -20,13 +20,13 @@
     width: 1em;
   }
   &:not([class~='btn-icon']):hover {
-    background: var(--c-10);
+    background: var(--C10);
     transform: translateY(-0.5px);
-    border-color: var(--c-11);
+    border-color: var(--C11);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--c-7);
+    outline: 2px solid var(--C7);
     outline-offset: 3px;
   }
 
@@ -44,27 +44,27 @@
 }
 
 .btn_solid {
-  background-color: var(--c-9);
+  background-color: var(--C9);
   color: white;
 }
 
 .btn_soft {
-  background-color: var(--c-5);
-  color: var(--c-12);
+  background-color: var(--C5);
+  color: var(--C12);
 }
 
 .btn_soft:hover,
 .btn_outline:hover {
-  background-color: var(--c-4) !important;
+  background-color: var(--C4) !important;
 }
 
 .btn_outline {
-  color: var(--c-11);
+  color: var(--C11);
   border-color: currentcolor;
 }
 
 .btn_text {
-  color: var(--c-8);
+  color: var(--C8);
 }
 
 /* Root Style Section Start */

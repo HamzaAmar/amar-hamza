@@ -7,43 +7,42 @@ import {
   Warning,
   Danger,
   Close,
+  Info,
+  Check,
 } from '@components/icons';
-import { Text, IconButton } from '@components/core';
-import useBoolean from '@hooks/useBoolean';
+import { Text } from '@components/core';
 
-import { AlertProps } from './alert.type';
+import type { AlertProps } from './alert.type';
 
 const icon = {
-  success: <Success width="24" height="24" />,
-  pri: <Notification width="24" height="24" />,
-  warning: <Warning width="24" height="24" />,
-  danger: <Danger width="24" height="24" />,
-};
+  s: <Check width="16" />,
+  p: <Info width="16" />,
+  w: <Warning width="16" />,
+  d: <Danger width="16" />,
+  b: <Danger width="16" />,
+} as const;
 
-export const Alert = ({ color = 'd', message }: AlertProps) => {
-  const Status = color[0].toUpperCase() + color.slice(1);
-  const { state: open, handleFalse } = useBoolean(true);
-
+export const Alert = ({
+  color = 'd',
+  message,
+  title,
+}: AlertProps) => {
   return (
-    <div
-      data-close={open === false}
-      className={`a-l u_${color}`}
-      role="alert"
-    >
-      <div className="a-l-hdr">
-        <Text size="md" color={color} contrast="low" weight="bold">
-          {Status}
+    <div className={`a-l l_f_2xs u_${color}`} role="alert">
+      <div>
+        <span className="a-l-icn">{icon[color]}</span>
+        <Text
+          transform="capitalize"
+          className="a-l-tl"
+          size="md"
+          color={color}
+          contrast="low"
+          weight="medium"
+        >
+          {title}
         </Text>
-        <IconButton
-          color={color!}
-          onClick={handleFalse}
-          title="close Alert"
-          type="button"
-          icon={<Close width="16" />}
-        />
       </div>
-      <hr />
-      <Text size="sm" color={color} contrast="low">
+      <Text size="sm" weight="normal" color={color} contrast="low">
         {message}
       </Text>
     </div>
