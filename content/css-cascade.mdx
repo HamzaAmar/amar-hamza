@@ -224,7 +224,7 @@ text-transform: uppercase; //  ✅ 🕊️
 
 Inline styles are styles that apply directly to HTML element. They're the third layer of the cascade, and they're not part of the css cascade specificity layer as some people suggest; they have their own layer. Let's do some examples to understand how it works.
 
-Let's get back to the last examples from last time about the `background-color`.After resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or pass it to the next one.
+Let's get back to the example from last time about the `background-color`.After resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or pass it to the next one.
 
 After visualizing the conflict, I see that we have two declarations, both with !important, and one comes from an inline style. That means the inline style wins.
 
@@ -316,7 +316,7 @@ color: white; // ❌ ⚔️
   title="Don't Overthink Specificity"
 />
 
-In the example below, the button type selector is applied even when the ID and class have higher specificity. This is because cascade layers are evaluated before specificity in the cascade algorithm, and unlayered styles have the highest priority, followed by the utils layer, then the component layer in normal declarations.
+In the example below, the button type selector is applied even when the ID and class have higher specificity. This is because cascade layers are evaluated before specificity in the cascade algorithm, and the button type selector isn't in any layer remember that unlayered styles has the highest priority, followed by the utils , then component layer in normal declarations in the example below.
 
 ```html
 <button id="btn" class="u_btn-orange">hello</button>
@@ -324,20 +324,37 @@ In the example below, the button type selector is applied even when the ID and c
 
 ```css
 button {
-  background: green; // ✅ ⚔️
+  background: green;
 }
 
 @layer components {
   #btn {
-    background: red; // ❌  ⚔️
+    background: red;
   }
 }
 
 @layer utils {
   .u_btn-orange {
-    background: orange; // ❌ ⚔️
+    background: orange;
   }
 }
+```
+
+```css
+/* Important components Layer */
+
+/* Important utils Layer */
+
+/* Important Unlayered Layer */
+
+/* Normal Unlayered Layer */
+
+background: green; // ✅ ⚔️
+/* Normal utils Layer */
+background: orange; // ❌  ⚔️
+
+/* Normal components Layer */
+background: red; // ❌  ⚔️
 ```
 
 ## CSS Cascade: Specificity
