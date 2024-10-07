@@ -64,7 +64,7 @@ const sendEmail = async ({
 };
 
 export async function sendMail(
-  prevState: FormState,
+  prevState: FormState | undefined,
   formData: FormData,
 ) {
   const entries = Object.fromEntries(

@@ -74,7 +74,7 @@ const Form = () => {
         </FormContainer>
         <SubmitButton />
       </div>
-      {state?.message ?? (
+      {state?.message && (
         <p
           aria-live="polite"
           style={{ color: 'red', fontSize: '3rem' }}
