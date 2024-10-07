@@ -10,21 +10,21 @@ author:
 tags: ['Rendering Pattern', 'Hydration', 'Web Performance', 'React']
 ---
 
-In this post we’ll go deeper into cascade, one of the core CSS concepts that I believe everyone should understand. this concept can be tricky even for experienced developers. We’ll help you understand why your styles don’t work as expected or why certain styles are applied even though you didn’t add them.
+In this post we’ll go deeper into css cascade, one of the core CSS concepts that I believe everyone should understand. this concept can be tricky even for experienced developers. We’ll help you understand why your styles don’t work as expected or why certain styles are applied even though you didn’t add them.
 
 I believe the best way to achieve this understanding is by combining theory and practice and that’s what we’ll do in this article.
 
 By the end of this article, you'll have the knowledge and the confidence to resolve CSS conflicts,
 ensuring your styles always behave as expected.
 
-## What is cascade?
+## What is css cascade?
 
-The cascade is an algorithm used by the User Agent (browser) to resolve conflicts when the same declaration is added multiple times to the selected element(s). The browser attempts to select the correct declaration to apply. The cascade uses several layers to filter and determine which property will be applied. Sometimes the browser goes through all of these layers to resolve the conflict, but other times it can be resolved in the first layer(s). These layers are:
+The css cascade is an algorithm used by the User Agent (browser) to resolve conflicts when the same declaration is added multiple times to the selected element(s). The browser attempts to select the correct declaration to apply. The css cascade uses several layers to filter and determine which property will be applied. Sometimes the browser goes through all of these layers to resolve the conflict, but other times it can be resolved in the first layer(s). These layers are:
 `Importance and origin`, `context`, `inline style`, `cascade layer` , `specificity`, `scope proximity` , and `order of appearance`.
 
-Let's dive into each of these layers and do some practice to understand how the browser uses the cascade to determine which properties win.
+Let's dive into each of these layers and do some practice to understand how the browser uses the css cascade to determine which properties win.
 
-## CSS cascade: Importance and origin
+## CSS cascade: Origin and Importance
 
 The origin of a declaration is based on where it comes from. In CSS, there are three main origins:
 
@@ -37,6 +37,14 @@ The origin of a declaration is based on where it comes from. In CSS, there are t
 As we've seen before, styles come from different origins, not only from authors (developers). This layer is responsible for resolving conflicts between origins, To accomplish that, it has a set of rules that simplify this process. you can see this illustrated in the image below, where the order is from top (high priority) to bottom (low priority).
 
 ![CSS cascade origin and importance hierarchy diagram. From highest to lowest priority: Transition declarations, Important User Agent, Important user, Important author, Animation, Normal author, Normal user, Normal User Agent. The diagram uses color-coded bars to represent each level, with an arrow indicating the order from top (highest priority) to bottom (lowest priority).](/assets/blog/cascade/origin.png)
+
+Look at the blue bars in the illustration above; its describe the priority of each origin and show that the author has the highest priority. The CSS Group wants your style to be applied. but not in all cases we want some sort of balance. This is where Important came in handy. When `!important` adds to a declaration, it creates another stages Look at the purple bars in the illustration above, where the author has the lowest priority; this creates the balance that we talk about, and this is the main reason why `!important` exists not to be added as a hack to force some declaration to be applied.
+
+<Alert
+  color="p"
+  message="This important behavior is not exclusive to the Origins layer but also applies to other layers such as Context and Cascade Layer, which we will discuss in the next css cascade sections."
+  title="Not About Important Declarations"
+/>
 
 Let's make our hand dirty by doing an example that demonstrates a set of conflicts and how cascade origin and importance layer are going to resolve them.
 
@@ -136,22 +144,24 @@ background-color: green; // AUTHOR (Overridden) ❌
 background-color: black; (Overridden) ❌
 ```
 
-While we have two potential winners, only one of them will apply. The decision is passed to the next layer(s) of the css cascade. Remember, the cascade involves multiple layers, this one only resolves conflicts based on origin and importance.
+While we have two potential winners, only one of them will apply. The decision is passed to the next layer(s) of the css cascade. Remember, the css cascade involves multiple layers, this one only resolves conflicts based on origin and importance.
 
 ## CSS cascade: Context
 
 The author (Developer) stylesheet have Two types of contexts based on where the declaration come from either `shadow DOM context` or `light DOM context`. let's try to understand each one of them and how it works with the css cascade.
 
-**light DOM context**: styles that we add as developers.
+**host document (light DOM) context**: styles that we add as developers.
 
-**shadow DOM context**: styles set by the operating system or browser extensions for user preferences. These allow users to customize their web experience, such as increasing font size for readability or using a dark mode extension ...etc.
+**shadow DOM context**: it’s a powerful scoping feature, that prevent styles from leaking out or in the componet, That means any styles that we add inside a shadow dom never affect any element outside even if they have the same selector means no naming conflict.
+
+In css cascade Context layer we have two type of styles the inner (Shadow Dom) and the outer (host document or Light Dom) styles, the Outer styles has more priority than the inner styles and remember the rule we say before that `!important` add new stages above the normal declaration and flip the order means inner has high priority. Let's see an example to understand how it works.
 
 ```html
 <template id="button">
   <style>
     :host {
-      background: red;
       color: black !important;
+      background: red;
       padding: 0.5rem 1.5rem;
       border: 1px solid transparent;
       font-weight: 700;
@@ -185,9 +195,34 @@ customElements.define(
 );
 ```
 
+Now that we have a basic understanding of how the Context layer works, lets create a code that resolve this issues then follow this steps below:
+
+1. Put each declaration in its own layer.
+2. Add this emoji ⚔️ next to declarations that have conflict and 🕊️ to declarations that don't.
+3. Visualize from top to bottom and look for the first declaration that has conflict and add ✅ to highlight it as the applied (winner) declaration and ❌ to other declaration(s).
+
+```css
+/* Important Inner Style  */
+color: white !important; //  ✅ ⚔️
+padding: 1rem 3rem !important; //  ✅ ⚔️
+
+/* Important Outer Style Layer Context */
+color: black !important; //  ❌ ⚔️
+
+/* Normal Outer Style Layer Context */
+background: red; //  ✅ ⚔️
+padding: 0.5rem 1.5rem; //  ❌ ⚔️
+border: 1px solid transparent; //  ✅ 🕊️
+font-weight: 700; //  ✅  🕊️
+
+/* Normal Inner Style Layer Context */
+background: orange; //  ❌ ⚔️
+text-transform: uppercase; //  ✅ 🕊️
+```
+
 ## CSS cascade: inline style
 
-Inline styles are styles that apply directly to HTML element. They're the third layer of the cascade, and they're not part of the cascade specificity layer as some people suggest; they have their own layer. Let's do some examples to understand how it works.
+Inline styles are styles that apply directly to HTML element. They're the third layer of the cascade, and they're not part of the css cascade specificity layer as some people suggest; they have their own layer. Let's do some examples to understand how it works.
 
 Let's get back to the last examples from last time about the `background-color`.After resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or pass it to the next one.
 
