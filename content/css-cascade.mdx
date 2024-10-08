@@ -1,7 +1,7 @@
 ---
 title: 'CSS Cascade: How the Browser Determines the Final styles'
-excerpt: 'Css cascade deep dive article that explain in detail'
-image: '/assets/blog/rendering/hydration.webp'
+excerpt: 'master the css cascade: Learn about origin, context, inline styles, cascade layers, specificity, scope, proximity, and order of appearance.'
+image: '/assets/blog/cascade/cascade.webp'
 publishedAt: '2024-09-02T05:35:07.322Z'
 lastModified: '2024-09-02T05:35:07.322Z'
 author:
@@ -152,7 +152,7 @@ The author (Developer) stylesheet have Two types of contexts based on where the 
 
 **host document (light DOM) context**: styles that we add as developers.
 
-**shadow DOM context**: it’s a powerful scoping feature, that prevent styles from leaking out or in the componet, That means any styles that we add inside a shadow dom never affect any element outside even if they have the same selector means no naming conflict.
+**shadow DOM context**: it’s a powerful scoping feature, that prevent styles from leaking out or in the component, That means any styles that we add inside a shadow dom never affect any element outside even if they have the same selector means no naming conflict.
 
 In css cascade Context layer we have two type of styles the inner (Shadow Dom) and the outer (host document or Light Dom) styles, the Outer styles has more priority than the inner styles and remember the rule we say before that `!important` add new stages above the normal declaration and flip the order means inner has high priority. Let's see an example to understand how it works.
 
@@ -226,7 +226,7 @@ Inline styles are styles that apply directly to HTML element. They're the third 
 
 Let's get back to the example from last time about the `background-color`.After resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or pass it to the next one.
 
-After visualizing the conflict, I see that we have two declarations, both with !important, and one comes from an inline style. That means the inline style wins.
+After visualizing the conflict, I see that we have two declarations, both with `!important`, and one comes from an inline style. That means the inline style wins.
 
 ```css
 background-color: pink !important; // AUTHOR  important inline=true (Wins)✅
