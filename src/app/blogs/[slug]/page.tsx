@@ -115,7 +115,7 @@ export default async function Blog({ params }: ParamsReq) {
                 >
                   <PageViews slug={slug} />
                 </Suspense>
-                <Social />
+                <Social size="sm" />
               </Flex>
               <div>
                 <Text size="sm">{formatDate(publishedAt)}</Text>
