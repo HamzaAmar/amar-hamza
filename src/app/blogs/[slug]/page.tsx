@@ -16,13 +16,13 @@ import {
 } from '@components/icons';
 import { formatDate } from '@utils/formatDate';
 import { CustomMDX } from '@components/core/mdx';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { DOMAIN } from '@constants/domain';
-import { CSSProperties, Suspense } from 'react';
+import { type CSSProperties, Suspense } from 'react';
 import Image from 'next/image';
 import { incrementViews } from 'app/actions/views';
 import { PageViews } from './pageViews';
-import { Article } from 'schema-dts';
+import type { Article } from 'schema-dts';
 
 interface Params {
   slug: string;
@@ -55,7 +55,7 @@ export default async function Blog({ params }: ParamsReq) {
   } = metadata;
 
   const img = `${DOMAIN}/favicon/logo-512X512.png`;
-  let ogImage = image ? `${DOMAIN}/${image}` : img;
+  const ogImage = image ? `${DOMAIN}/${image}` : img;
 
   const JSON_LD: Article = {
     '@type': 'BlogPosting',
@@ -104,7 +104,7 @@ export default async function Blog({ params }: ParamsReq) {
                   title="Hamza Miloud Amar Avatar"
                 />
               </div>
-              <Flex gap="xs" direction="column" className="u_flex-1">
+              <Flex gap="2xs" direction="column" className="u_flex-1">
                 <Text size="sm" weight="medium">
                   {author.name}
                 </Text>
@@ -198,7 +198,11 @@ export default async function Blog({ params }: ParamsReq) {
               you enjoyed this, please consider buying me a coffee.
             </Text>
             <div>
-              <a href="https://ko-fi.com/Y8Y210RGNC" target="_blank">
+              <a
+                href="https://ko-fi.com/Y8Y210RGNC"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   height="36"
                   style={{ border: 0, height: '36px' }}
@@ -230,7 +234,7 @@ export async function generateMetadata({
     return;
   }
 
-  let {
+  const {
     title,
     publishedAt: publishedTime,
     excerpt: description,
@@ -239,7 +243,7 @@ export async function generateMetadata({
     tags,
   } = post.metadata;
   const img = `${DOMAIN}/favicon/logo-512X512.png`;
-  let ogImage = image ? `${DOMAIN}/${image}` : img;
+  const ogImage = image ? `${DOMAIN}/${image}` : img;
 
   return {
     title,
