@@ -1,9 +1,10 @@
-import React from 'react';
+import type React from 'react';
+import type { Metadata } from 'next';
 import { GoogleAnalytics } from '@next/third-parties/google';
+
 import { Footer, Header } from './_components';
 import '../scss/main.scss';
 import { NextThemeProvider } from './_components/themeProvider';
-import { Metadata } from 'next';
 import { DOMAIN } from '@constants/domain';
 
 interface Meta {

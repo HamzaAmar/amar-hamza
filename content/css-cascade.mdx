@@ -34,16 +34,16 @@ The origin of a declaration is based on where it comes from. In CSS, there are t
 
 **User Agent stylesheets**: Default styles provided by the User Agent (browser). These are the styles that browsers apply to HTML elements. For example, the default margin around paragraphs or the styling of form elements.
 
-As we've seen before, styles come from different origins, not only from authors (developers). This layer is responsible for resolving conflicts between origins, To accomplish that, it has a set of rules that simplify this process. you can see this illustrated in the image below, where the order is from top (high priority) to bottom (low priority).
+This layer is responsible for resolving conflicts between origins, To accomplish that, it has a set of rules that simplify this process. you can see this illustrated in the image below, where the order is from top (high priority) to bottom (low priority).
 
 ![CSS cascade origin and importance hierarchy diagram. From highest to lowest priority: Transition declarations, Important User Agent, Important user, Important author, Animation, Normal author, Normal user, Normal User Agent. The diagram uses color-coded bars to represent each level, with an arrow indicating the order from top (highest priority) to bottom (lowest priority).](/assets/blog/cascade/origin.png)
 
-Look at the blue bars in the illustration above; its describe the priority of each origin and show that the author has the highest priority. The CSS Group wants your style to be applied. but not in all cases we want some sort of balance to prioritize other origins in certain situations. This is where Important came in handy. When `!important` adds to a declaration, it creates another stages Look at the purple bars in the illustration above, where the author has the lowest priority; this creates the balance that we talk about, and this is the main reason why `!important` exists not to be added as a hack to force some declaration to be applied in our code.
+The skyblue bars in the illustration above; describe the priority of each origin in normal declaration, and show that the author has the highest priority. The css Group doesn't want our styles(Author) to be prioritize in all cases, we need some sort of balance. This is where Important came in handy. When we add `!important` to a declaration, it creates another layer of priority with flipped order, Look at the purple bars above, where the author has the lowest priority; this creates the balance that we talk about, and this is the main reason why `!important` exists not to be used as a hack to force some declaration to be applied in our code.
 
 <Alert
   color="p"
-  message="This important behavior is not exclusive to the Origins layer but also applies to other layers such as Context and Cascade Layer, which we will discuss in the next CSS cascade sections."
-  title="Not About Important Declarations"
+  message="The !important behavior is not exclusive to the Origins layer but also applies to other layers such as Context and Cascade Layer, which we will discuss in the next CSS cascade sections."
+  title="Note About Important Declarations"
 />
 
 Let's make our hand dirty by doing an example that demonstrates a set of conflicts and how cascade origin and importance layer are going to resolve them.
@@ -123,7 +123,7 @@ color: white !important; // USER important (Overridden) ❌
 color: #efe !important; // AUTHOR important (Overridden) ❌
 ```
 
-Normal and important declarations are treated separately, even if they come from the same source (like the author). In our example, author styles with `!important` are in a different stage than normal author styles.
+Normal and important declarations are treated separately, even if they come from the same origin. In our example, author styles with `!important` are in a different stage than normal author styles.
 
 <Alert
   color="p"
@@ -142,6 +142,7 @@ background-color: white; // AUTHOR inline (Overridden) ❌
 background-color: green; // AUTHOR (Overridden) ❌
 /* Layer for User Normal (One Decalration)*/
 background-color: black; (Overridden) ❌
+/* Layer for User Agent Normal (One Decalration)*/
 ```
 
 While we have two potential winners, only one of them will apply. The decision is passed to the next layer(s) of the CSS cascade. Remember, the CSS cascade involves multiple layers, this one only resolves conflicts based on origin and importance.
@@ -150,11 +151,11 @@ While we have two potential winners, only one of them will apply. The decision i
 
 The author's (developer) stylesheet has two types of contexts based on where the declaration comes from, either a shadow DOM context or a light DOM context. Let's try to understand each one of them and how it works with the CSS cascade.
 
-**host document (light DOM) context**: is the main DOM tree of a web page; it can host regular or custom html elements.
+**host document (light DOM) context**: is the main DOM tree of a web page; it can host regular or custom html elements, The styles applied in this context affect any element live whithin them;
 
-**shadow DOM context**: it’s a powerful scoping feature that prevents styles from leaking out or in the component, that means any styles that we add inside a shadow DOM never affect any element outside, even if they have the same selector, meaning no naming conflict.
+**shadow DOM context**: it’s a powerful scoping feature that prevents styles from leaking out or in the component, that means any styles that we add inside a shadow DOM can't affect any element outside, even if they have the same selector, meaning no naming conflict.
 
-In the CSS cascade context layer, we have two types of styles the inner (Shadow Dom) and the outer (host document or Light Dom) styles. The outer styles have more priority than the inner styles, and remember the rule we said before that `!important` add new stages above the normal declaration and flip the order, which means inner has high priority. Let's see an example to understand how it works.
+In the CSS cascade context layer, we have two types of styles the inner styles (from the Shadow Dom) and the outer styles (from the Light Dom). The outer styles have more priority than the inner styles, and remember the rule we said before that `!important` add new stages above the normal declaration and flip the order, which means inner has high priority. Let's see an example to understand how it works.
 
 <Alert
   color="p"
@@ -246,8 +247,9 @@ CSS Cascade Layers is the fourth layer in CSS Cascade, allowing you (developer) 
 - The order of the layers is from top (less priority) to bottom (high priority).
 - Styles without a layer have the most priority.
 - Cascade layer has a feature that merges the layers with the same name in the first declared one.
-- We can use a layer at the top that is responsible for reordering the under layers; the left layer has less priority than the right ones.
-- Adding `!important` to a declaration introduces new layers above the normal ones in a reversed order.
+
+- We can use a layer at the top that is responsible for reordering the under layers; the left layer has less priority than the right ones Example: `@layer reset components utils;`.
+- Remember the rule we said before about `!important`, when it is added to a declaration it's introduces new stages above the normal ones in a reversed order.
 
 ```css
 @layer reset components utils;
@@ -445,7 +447,7 @@ input[type='button'] {
 
 Let's make a note before diving into the examples. Our scoring system consists of three independent numbers that adhere to a strict rule:
 
-- each number has some selector(s) that increases its value.
+- each number has a selector(s) that increases its value.
 - `1.0.0` is not equal to `100` and `0.1.5` isn't `15`
 - `0.36.0` will never be `3.6.0` not like math.
 - `1.0.0` is greater than `0.36.0`
@@ -522,9 +524,9 @@ input[type='submit'] {
 
 If you look at this example carefully, you will see that we have two conflicts: the background and the cursor. If we take a closer look at the background declarations, you see an ID as a selector, which means you can’t override it no matter how many classes or other selectors you add. That means the focus and disabled background never applied. You can override the ID selector only by either ID or `!important`. This is why people suggest that using ID as a selector is a bad habit to fix this issue. Let’s replace ID with `btn-gmail` class selector.
 
-For the cursor, we try to add a reset, but the specificity of the reset is over the class because it combines selector type and an attribute selector. To fix this, we need to remove one of the selectors, but sometimes we can't like in this example. What we need to do in this scenario is either wrap the whole reset styles in an @layer at-role we spoke about in the last section, or wrap the selector `input[type='submit']` either with `:is` or `:where` selectors.
+For the cursor, we try to add a reset, but the specificity of the reset `input[type='submit']` is over the class `.btn` because it combines selector type and an attribute selector. To fix this, we need to remove one of the selectors, but sometimes we can't, like in this example. What we need to do in this scenario is either wrap the whole reset styles in an @layer at-role we spoke about in the last section, or wrap the selector `input[type='submit']` either with `:is` or `:where` selectors.
 
-Let's explain what `:where` and `:is` doing but only the related part of the cascade. [For more information, check this article.] ('https://web.dev/articles/css-is-and-where') . Sometimes we need to combine selectors like what we do in the reset. When we do that, the specificity of the selectors combined gets higher. This is where `:is` and `:where` come to the rescue; both of them reduce the specificity of the selectors within them, but with only one small difference `:is` get the score of the higher selector within them, and `:where` removes the specificity. To make this clear, let's do some examples.
+Let's explain what `:where` and `:is` doing but only the related part of the cascade. [For more information, check this article.]('https://web.dev/articles/css-is-and-where') . Sometimes we need to combine selectors like what we do in the reset. When we do that, the specificity of the selectors combined gets higher. This is where `:is` and `:where` come to the rescue; both of them reduce the specificity of the selectors within them, but with only one small difference `:is` get the score of the higher selector within them, and `:where` removes the specificity. To make this clear, let's do some examples.
 
 ```css
 /* 0.2.3 */
@@ -583,7 +585,7 @@ In the example above, all elements descendant of the `lang="ar"` are also descen
 
 **Add a Class**: We could add a CSS class `theme-ar` to manually set the background color. However, this is not an optimal solution; we need to add the class to every element inside the Arabic language three, which increases maintenance, and if we add other languages, it gets worse.
 
-**`@scope` at-Rule**: The second solution is to add the at-rule `@scope` to add the cascade proximity layer. In this way we could solve the conflict we wanted but [still not availabile across major browsers](https://caniuse.com/css-cascade-scope). Let's do that on the example below.
+**`@scope` at-Rule**: The second solution is the at-rule `@scope` that adds scope proximity layer to the css cascade. In this way we could solve the conflict we wanted, Let's do that on the example below. [This feature isstill not availabile across all major browsers](https://caniuse.com/css-cascade-scope).
 
 ```css
 button {
@@ -605,7 +607,7 @@ button {
 
 ## CSS Cascade: Order Of Appearance
 
-Order of appearance is the last layer of the cascade, and if the conflicts still persist, the last declaration takes precedence. This example seems simple depending on the size of the stylesheet, but believe me, it's not. I think this is the most difficult layer in the cascade. You need to structure your stylesheet in certain ways and follow some naming conventions to make it simpler to know which declarations are going to override which only by looking at the name of the class without looking at the entire stylesheet. But dont worry, I want to write a deep dive on how we can write a scalable CSS code with modern CSS features in the future. Stay tuned. Let's explore some examples and address common issues.
+Order of appearance is the last layer of the cascade, and if the conflicts still persist, the last declaration takes precedence. This layer seems simple, depending on the size of the stylesheet, but believe me, it's not. I think this is the most difficult layer in the cascade all others layers follow some a simpler rule to identify the conflict. You need to structure your stylesheet in certain ways and follow some naming conventions to make it simpler to know which declarations are going to override which only by looking at the name of the class without looking at the entire stylesheet. But dont worry, I want to write a deep dive on how we can write a scalable CSS code with modern CSS features in the future. Stay tuned. Let's explore some examples and address common issues.
 
 ```html
 <button class="btn btn_facebook">hello</button>
