@@ -22,7 +22,7 @@ ensuring your styles always behave as expected.
 The CSS cascade is an algorithm used by the User Agent (browser) to resolve conflicts when the same declaration is added multiple times to the selected element(s). The browser attempts to select the correct declaration to apply. The CSS cascade uses several layers to filter and determine which property will be applied. Sometimes the browser goes through all of these layers to resolve the conflict, but other times it can be resolved in the first layer(s). These layers are:
 `Importance and origin`, `context`, `inline style`, `cascade layer` , `specificity`, `scope proximity` , and `order of appearance`.
 
-Let's dive into each of these layers and do some practice to understand how the browser uses the CSS cascade to determine which properties win.
+Let's dive into each one of these layers and do some practice to understand how the browser uses the CSS cascade to determine which properties win.
 
 ## CSS cascade: Origin and Importance
 
@@ -30,9 +30,9 @@ The origin of a declaration is based on where it comes from. In CSS, there are t
 
 **Author stylesheets**: styles that we add as developers.
 
-**User stylesheets**: styles set by the operating system or browser extensions for user preferences. These allow users to customize their web experience, such as increasing font size for readability or using a dark mode extension ...etc.
+**User stylesheets**: styles set by the operating system or browser extensions. These allow users to customize their web experience, such as increasing font size or using a dark mode extension ...etc.
 
-**User Agent stylesheets**: Default styles provided by the User Agent (browser). These are the styles that browsers apply to HTML elements. For example, the default margin around paragraphs or the styling of form elements.
+**User Agent stylesheets**: Default styles provided by the browser. These are the styles that browsers apply to HTML elements. For example, the default margin around paragraphs or the styling of form elements.
 
 This layer is responsible for resolving conflicts between origins, To accomplish that, it has a set of rules that simplify this process. you can see this illustrated in the image below, where the order is from top (high priority) to bottom (low priority).
 
@@ -42,7 +42,7 @@ The skyblue bars in the illustration above; describe the priority of each origin
 
 <Alert
   color="p"
-  message="The !important behavior is not exclusive to the Origins layer but also applies to other layers such as Context and Cascade Layer, which we will discuss in the next CSS cascade sections."
+  message="This behavior of !important is not exclusive to the Origins layer but also applies to other layers such as Context and Cascade Layer, which we will discuss in the next CSS cascade sections."
   title="Note About Important Declarations"
 />
 
@@ -231,7 +231,7 @@ text-transform: uppercase; //  ✅ 🕊️
 
 Inline styles are styles that apply directly to HTML elements. They're the third layer of the cascade, and they're not part of the CSS cascade specificity layer as some people suggest; they have their own layer. Let's do some examples to understand how it works.
 
-Let's get back to the example from last time about the `background-color`.After resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or pass it to the next one.
+Let's get back to the example from last time about the `background-color`. After resolving the conflict in origin and importance, we got two winners. Let's check if we can resolve this conflict in this layer or pass it to the next one.
 
 After visualizing the conflict, I see that we have two declarations, both with `!important`, and one comes from an inline style. That means the inline style wins.
 
@@ -242,14 +242,20 @@ background-color: brown !important; // AUTHOR important (Overridden)❌
 
 ## CSS Cascade: Cascade Layer
 
-CSS Cascade Layers is the fourth layer in CSS Cascade, allowing you (developer) to take control of your code by making some of your stylesheets have higher priority than others by putting them within a layer.
+CSS Cascade Layers is the fourth layer in CSS Cascade, allowing you to take control of your code by making some of your stylesheets have higher priority than others by putting them within a layer. This is a list that show the basic features of the cascade layers.
 
 - The order of the layers is from top (less priority) to bottom (high priority).
-- Styles without a layer have the most priority.
+- Styles without a layer have the most priority, but in the future we can explicitly control the order of unlayered styles. [There's a proposal open by mirisuzanne for more detail](https://github.com/w3c/csswg-drafts/issues/6323)
 - Cascade layer has a feature that merges the layers with the same name in the first declared one.
 
 - We can use a layer at the top that is responsible for reordering the under layers; the left layer has less priority than the right ones Example: `@layer reset components utils;`.
-- Remember the rule we said before about `!important`, when it is added to a declaration it's introduces new stages above the normal ones in a reversed order.
+- Remember the rule we said before about `!important`, when it is added to a declaration it's introduces new stages above the normal ones in a reversed order let's let's an example for this layer `@layer reset utils;`.
+  - Important reset;
+  - Important utils;
+  - Important Unlayered Style;
+  - Normal Unlayered Style;
+  - Normal utils;
+  - Normal reset;
 
 ```css
 @layer reset components utils;
@@ -365,11 +371,15 @@ background: red; // ❌  ⚔️
 
 ## CSS Cascade: Specificity
 
-Specificity is an algorithm that calculates the weight of a CSS selector used by the user agent (browser) to determine the winner when conflict exists and isn't solved by the previous layers. As we saw before, CSS cascade have multiple layers; specificity is the fifth layer.
+Specificity is an algorithm that calculates the weight of a CSS selector used by the user agent (browser) to determine the winner when conflict exists and isn't solved by the previous layers.
 
 Every CSS selector has a score, and the specificity uses this score to resolve conflict, but before begin speaking about the specificity, let's talk first about the CSS selector and the score of each one of them.
 
-**Universal Selector (\*),:is(),:where(),:not(),:has()**: Has no specificity.
+### No specificity selector
+
+- **Universal Selector (\*)**: This selector select all elements.
+- **:is(), :not(), and :has()**: This pseudo class selectors has no specificity, but the selector whitin them has specificity.
+- **:where()**: This pseudo class selector and the selector whitin it has no specificity.
 
 ```css
 * {
@@ -385,7 +395,10 @@ section:has(img) {
 }
 ```
 
-**Type Selector or pseudo-element**: Has a specificity score of **0.0.1**.
+### 0.0.1 specificity score
+
+- **Type Selector**: Selects all elements that match a specific tag name. For example `p` to select all `<p>` elements.
+- **pseudo-element**: Used to style a specific part of an element or insert content that doesn't exist, prefixed with `::` for example `::before` to insert element as the first child of the selected element.
 
 ```css
 /* Type Selector */
@@ -401,7 +414,11 @@ ul {
 }
 ```
 
-**Class, pseudo-class,and Attribute Selector**: Has a specificity score of **0.1.0**.
+### 0.1.0 specificity score
+
+- **Class**: matches all element that has a class attribute with same value as the selector prefixed with `.`.
+- **Pseudo-class**: A keyword added to the selected element for a specific state, prefixed with a colon `:` like `:hover` , `:focus` and `:disabled`.
+- **Attribute Selector**: select all element that has an attribute with same value as the selector within a `[Attribute Here]` for example `[disabled]` or `[type="button"]`.
 
 ```css
 /* Class Selector */
@@ -420,7 +437,9 @@ ul {
 }
 ```
 
-**ID Selector**: Has a specificity score of **1.0.0**.
+### 1.0.0 specificity score
+
+- **ID Selector:** Select the element that has id attribute same to the selector prefixed with #.
 
 ```css
 /* ID Selector */
@@ -428,70 +447,33 @@ ul {
 }
 ```
 
-<Alert
-  color="p"
-  message="Comma Separator Doesn't combine weight of all selectors but each selector(s) between comma has it own weight"
-  title="Comma Separator"
-/>
+**Comma Separator**: Doesn't combine weight of all selectors but each selector(s) between comma has it own weight.
 
 ```css
-/* ID Selector */
-/* 0.1.0 */
-.btn,
-/* 0.0.1 */
-button,
+/* 0.2.0 */
+.btn:hover,
 /* 0.1.1 */
-input[type='button'] {
+button:hover,
+/* 0.2.1 */
+input[type='button']:hover {
 }
 ```
 
 Let's make a note before diving into the examples. Our scoring system consists of three independent numbers that adhere to a strict rule:
 
-- each number has a selector(s) that increases its value.
+- each number has a selector(s) that increases its value, (take a look at the section above about scoring of each selector).
 - `1.0.0` is not equal to `100` and `0.1.5` isn't `15`
-- `0.36.0` will never be `3.6.0` not like math.
+- `0.36.0` will never be `3.6.0`.
 - `1.0.0` is greater than `0.36.0`
 - To compare two scores, we start by the leftmost number, the score with the higher leftmost win. If the leftmost numbers are equal, we compare the middle, and so on.
 
-```css
-/* Score 0.1.0 */
-.btn {
-  background: red; //  (Overridden) ❌
-}
-/*
-🚨 let's pretend that we add class .btn 12 times 🚨
- The Score in here IS 0.12.1
- 🚨
- */
-button.btn.btn.btn.btn.btn.btn.btn.btn.btn {
-  background: red; //  (Overridden) ❌
-}
-/* Score 1.0.0 */
-#id {
-  background: brown; //  (Wins) ✅
-}
+Okay, now that we have an idea of how specificity scoring systems work and how we choose the winner, let's create some examples to solidify our understanding and explore how we can tackle some common issues we encounter when working with specificity.
+
+```html
+<button class="btn" id="gmail">Hello world</button>
 ```
 
-Okay, now that we have an idea of how specificity scoring systems work and how we choose the winner, let's create a real-world example to solidify our understanding and explore how we can tackle some common issues we encounter when working with specificity.
-
 ```css
-/* ---- Reset Style Start ---- */
-
-/* Score is 0.0.0 */
-* {
-  background: white;
-}
-/* Score is 0.0.1 */
-button,
-/* Score is 0.1.1 */
-input[type='submit'] {
-  cursor: inherit;
-  appearance: none;
-  border: none;
-}
-
-/* ---- Reset Style End ---- */
-
 /* Score is 1.0.0 */
 #gmail {
   background: red;
@@ -499,7 +481,6 @@ input[type='submit'] {
 /* Score is 0.1.0 */
 
 .btn {
-  cursor: pointer;
   background: blue;
 }
 /* Score is 0.2.0 */
@@ -509,22 +490,34 @@ input[type='submit'] {
 }
 /* Score is 0.2.0 */
 .btn:hover {
-  background: var(--primary-9);
+  background: orange;
 }
-.btn:disabled {
-  background: var(--primary-9);
-}
-/* Score is 0.2.0 */
-
-.btn.btn-success {
-  background: var(--success-8);
-}
-/* Score is 0.1.0 */
 ```
 
-If you look at this example carefully, you will see that we have two conflicts: the background and the cursor. If we take a closer look at the background declarations, you see an ID as a selector, which means you can’t override it no matter how many classes or other selectors you add. That means the focus and disabled background never applied. You can override the ID selector only by either ID or `!important`. This is why people suggest that using ID as a selector is a bad habit to fix this issue. Let’s replace ID with `btn-gmail` class selector.
+If you look at this example carefully, you will see that we have conflict in the background declarations,and one of the declaration within an ID selector, which means you can’t override it no matter how many classes or other selectors you add. That means the focus and disabled background never applied. You can override the ID selector only by either ID or `!important`. This is why people suggest that using ID as a selector is a bad habit to fix this issue. Let’s replace ID with `btn-gmail` class selector.
 
-For the cursor, we try to add a reset, but the specificity of the reset `input[type='submit']` is over the class `.btn` because it combines selector type and an attribute selector. To fix this, we need to remove one of the selectors, but sometimes we can't, like in this example. What we need to do in this scenario is either wrap the whole reset styles in an @layer at-role we spoke about in the last section, or wrap the selector `input[type='submit']` either with `:is` or `:where` selectors.
+```html
+<input type="submit" class="btn" />
+```
+
+```css
+/* 
+  Reset Style Section
+  Score is 0.1.1
+*/
+input[type='submit'] {
+  background: none;
+}
+/* 
+  Component Style Section
+  Score is 0.1.0
+*/
+.btn {
+  background: blue;
+}
+```
+
+In this example, we try to add a reset, but the specificity of the selector `input[type='submit']` in the reset section is over the class `.btn`. To fix this, we need to remove one of the selectors, but sometimes we can't, like in this example. What we need to do in this scenario is either wrap the whole reset styles in an @layer at-role we spoke about in the previous section, or wrap the selector `input[type='submit']` either with `:is` or `:where` selectors.
 
 Let's explain what `:where` and `:is` doing but only the related part of the cascade. [For more information, check this article.]('https://web.dev/articles/css-is-and-where') . Sometimes we need to combine selectors like what we do in the reset. When we do that, the specificity of the selectors combined gets higher. This is where `:is` and `:where` come to the rescue; both of them reduce the specificity of the selectors within them, but with only one small difference `:is` get the score of the higher selector within them, and `:where` removes the specificity. To make this clear, let's do some examples.
 

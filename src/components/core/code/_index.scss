@@ -32,12 +32,13 @@
   }
 
   & :is(ul, ol) > * + * {
-    margin-top: var(--sp-2xs);
+    margin-top: var(--sp-sm);
   }
 
   ul,
   ol {
-    margin-left: 0.5rem;
+    margin-left: 2rem;
+    margin-top: 0.75rem;
   }
 }
 
