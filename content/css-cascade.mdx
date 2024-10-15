@@ -467,7 +467,7 @@ Let's make a note before diving into the examples. Our scoring system consists o
 - `1.0.0` is greater than `0.36.0`
 - To compare two scores, we start by the leftmost number, the score with the higher leftmost win. If the leftmost numbers are equal, we compare the middle, and so on.
 
-Okay, now that we have an idea of how specificity scoring systems work and how we choose the winner, let's create some examples to solidify our understanding and explore how we can tackle some common issues we encounter when working with specificity.
+Okay, now that we have an idea of how specificity scoring systems work and how we choose the winner, let's create some examples to solidify our understanding and explore how we can tackle some common issues we encounter when dealing with specificity.
 
 ```html
 <button class="btn" id="gmail">Hello world</button>
@@ -478,10 +478,13 @@ Okay, now that we have an idea of how specificity scoring systems work and how w
 #gmail {
   background: red;
 }
+#facebook {
+  background: blue;
+}
 /* Score is 0.1.0 */
 
 .btn {
-  background: blue;
+  background: skyblue;
 }
 /* Score is 0.2.0 */
 
@@ -494,7 +497,16 @@ Okay, now that we have an idea of how specificity scoring systems work and how w
 }
 ```
 
-If you look at this example carefully, you will see that we have conflict in the background declarations,and one of the declaration within an ID selector, which means you can’t override it no matter how many classes or other selectors you add. That means the focus and disabled background never applied. You can override the ID selector only by either ID or `!important`. This is why people suggest that using ID as a selector is a bad habit to fix this issue. Let’s replace ID with `btn-gmail` class selector.
+Our Intent in this example is to create a button component that has this features:
+
+- the button will be red if it has an ID selector `gmail`.
+- brown when get focused.
+- orange when hovered.
+
+However, the button remain `red` in all situations. this is not what we want. Let's try to fix this issue step by step.
+
+1. the problem is the ID selector `#gmail` has higher specificity `1.0.0` which means we can’t override it no matter how many classes or other selectors we add. This is why people suggest that using ID as a selector is a bad habit to fix this issue. Let’s replace ID with `.btn-gmail` class selector.
+1. Now we have another issue, the button unexpectedly becomes blue, because both classes have the same specificity score, means last declaration take precedence remember that cascade contain multiple layers and if the conflict not resolved by this layer we send it to the next one. to fix the issue let add `.btn-gmail` under the `.btn` class
 
 ```html
 <input type="submit" class="btn" />
@@ -503,47 +515,49 @@ If you look at this example carefully, you will see that we have conflict in the
 ```css
 /* 
   Reset Style Section
-  Score is 0.1.1
+  Specificity score: 0.1.1
 */
 input[type='submit'] {
   background: none;
 }
+
 /* 
   Component Style Section
-  Score is 0.1.0
+  Specificity score: 0.1.0
 */
 .btn {
   background: blue;
 }
 ```
 
-In this example, we try to add a reset, but the specificity of the selector `input[type='submit']` in the reset section is over the class `.btn`. To fix this, we need to remove one of the selectors, but sometimes we can't, like in this example. What we need to do in this scenario is either wrap the whole reset styles in an @layer at-role we spoke about in the previous section, or wrap the selector `input[type='submit']` either with `:is` or `:where` selectors.
+The problem with the example above is that the specificity of the `input[type='submit']` selector in the reset is higher than the class selector `.btn` that make the background of the reset apply. To resolve this conflict, we have three possible solutions:
 
-Let's explain what `:where` and `:is` doing but only the related part of the cascade. [For more information, check this article.]('https://web.dev/articles/css-is-and-where') . Sometimes we need to combine selectors like what we do in the reset. When we do that, the specificity of the selectors combined gets higher. This is where `:is` and `:where` come to the rescue; both of them reduce the specificity of the selectors within them, but with only one small difference `:is` get the score of the higher selector within them, and `:where` removes the specificity. To make this clear, let's do some examples.
+1. **Use cascade layers (`@layer`)**: wrap the reset styles in a reset layer we already speak about this solution before since cascade layers are designed for this purpose. In this section, we want to focus on other solution not cascade because we already spoke about it in the last section.
+
+2. **Increase the specificity of other selectors**: it is not recommended solution to increasing the specificity of other selectors just to beat the reset selector. This leads to unscalable, messy, and spaghetti code. Every time you want to add a new class, you need to increase its specificity, which is not maintainable. To keep your CSS clean, you need to aim for a specificity of `0.1.0` for most selectors and only increase it for states like `:hover` or similar.
+
+3. **Decrease the specificity of the `input[type='submit']` selector**: This is the elegant and scalable solution. By reducing the specificity of the higher scoring selector, there are two main approaches.
+
+You could reduce the specificity by removing one of the selector in the reset But this is not ideal for all usecases
 
 ```css
-/* 0.2.3 */
-label input[type='button']:focus::before {
-  outline: 2px solid red;
+/* Reset Style Section with reduced specificity */
+input {
+  background: none;
 }
-/* 0.0.0 */
-:where(label input[type='button']:focus::before) {
-  outline: 2px solid red;
-}
-/* 0.1.0 */
-:is(label input[type='button']:focus::before) {
-  outline: 2px solid red;
-}
-/* 1.1.1 */
-/* Because the :focus and ::before outside the is */
-:is(#pillar-ui #new #react #design #system):focus::before {
-  outline: 2px solid red;
+```
+
+Let's explain what `:where` and `:is` doing but only the related part of the cascade. [For more information, check this article](#hello). When we combine selector, the specificity combined gets higher. This is where `:is` and `:where` come to the rescue; both of them reduce the specificity of the selectors within them, but with only one small difference `:is` get the score of the higher selector within them, and `:where` removes the specificity. To make this clear, let's do some examples.
+
+```css
+/* Know the reset Selector has No specificity */
+:where(input[type='submit']) {
+  background: none;
 }
 
-/* 0.1.1 */
-/* Because the :focus and ::before outside the :where */
-:where(#pillar-ui #new #react #design #system):focus::before {
-  outline: 2px solid red;
+/* The specificity Become 0.1.1 */
+:is(input[type='submit']) {
+  background: none;
 }
 ```
 
@@ -576,7 +590,7 @@ button {
 
 In the example above, all elements descendant of the `lang="ar"` are also descendant of `lang="en"`. CSS is not designed for scope by default, which means to resolve this conflict, CSS relies on order of appearance; because of that, the last declared rule takes precedence and all the elements will be orange. Well, that's not what we did intentionally; we want all elements inside the `[lang='ar']` to be brown because this is the closest ancestor. To achieve this, we have two options in CSS:
 
-**Add a Class**: We could add a CSS class `theme-ar` to manually set the background color. However, this is not an optimal solution; we need to add the class to every element inside the Arabic language three, which increases maintenance, and if we add other languages, it gets worse.
+**Add a Class**: We could add a CSS class `theme-ar` to manually set the background color. However, this is not an optimal solution; we need to add the class to every element inside the Arabic language tree, which increases maintenance, and if we add other languages, it gets worse.
 
 **`@scope` at-Rule**: The second solution is the at-rule `@scope` that adds scope proximity layer to the css cascade. In this way we could solve the conflict we wanted, Let's do that on the example below. [This feature is still not availabile across all major browsers](https://caniuse.com/css-cascade-scope).
 
