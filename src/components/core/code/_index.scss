@@ -1,4 +1,5 @@
 .prose {
+  line-height: 1.5;
   --sha-rad: 0.5rem;
 
   --sh-class: var(--P11);
@@ -27,7 +28,8 @@
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  strong {
     font-weight: 500;
   }
 
@@ -39,6 +41,7 @@
   ol {
     margin-left: 2rem;
     margin-top: 0.75rem;
+    padding: 0;
   }
 }
 
