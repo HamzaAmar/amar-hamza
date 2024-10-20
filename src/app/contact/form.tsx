@@ -40,7 +40,7 @@ const Form = () => {
           explore how we can work together.
         </Text>
       </div>
-      <div className="Sf-1">
+      <div className="Sf-4">
         <FormContainer name="name" label="Name" required>
           <Input
             name="name"
