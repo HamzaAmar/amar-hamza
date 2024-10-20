@@ -40,12 +40,12 @@ const InfoItem = ({ icon, info, ...rest }: ContactItemProps) => {
 const contact = () => {
   return (
     <Grid columns="1fr 1fr" className="sm_grid-one p-co">
-      <div className="p-co-info  l_f_md">
-        <Heading as="h1" weight="normal" size="3xl">
+      <div className="p-co-info  Sf-5">
+        <Heading as="h1" weight="4" size="3xl">
           Let's Collaborate on Your Next Web Project
         </Heading>
 
-        <Text color="b" size="lg" contrast="low">
+        <Text color="b" size="6" low>
           I'm a<strong> freelance web developer</strong> passionate
           about crafting exceptional digital experiences. If you're
           looking for a <strong>skilled developer</strong> to bring
@@ -54,7 +54,7 @@ const contact = () => {
           help you achieve your goals.
         </Text>
 
-        <div className="p-co-info-list l_f_md">
+        <div className="p-co-info-list Sf-5">
           {CONTACT_INFO.map(({ id, ...rest }) => (
             <InfoItem key={id} {...rest} />
           ))}

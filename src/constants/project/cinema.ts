@@ -6,16 +6,17 @@ export const cinema = {
     alt: 'cinema project',
   },
   avatar: {
-    src: '/assets/project/domlav/domlav.png',
+    src: '/assets/project/cinema/avatar.png',
     alt: 'cinema project',
   },
   links: [
     {
-      site: 'https://cinema-nine.vercel.app/en',
+      site: 'https://www.morocco-film-fixer.com/en',
       title: 'Site',
     },
   ],
-  description: 'Location Fixer is a service for ',
+  description:
+    'a site for a production & general manager in Morocco, specializing in TV & film. 20+ years of experience, working across Morocco. Deep knowledge of local cultures, languages, & traditions. Collaborated with national & international productions. Built with Next.js 14, SCSS, & Pillar UI.',
   technologies: [
     'React',
     'Next',

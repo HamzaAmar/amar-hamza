@@ -13,7 +13,7 @@ import {
 import { PROJECTS } from '@constants/project';
 import { Github, Globe } from '@components/icons';
 import type { ProjectType } from '@constants/project/project.type';
-import { classnames } from '@utils/classnames';
+import { c } from '@utils/classnames';
 import Image from 'next/image';
 
 /*
@@ -35,7 +35,7 @@ const Project = ({
   return (
     <Flex
       direction="column"
-      gap="sm"
+      gap="4"
       className="h-pr l_box-article"
       as="article"
       aria-labelledby={id}
@@ -51,8 +51,8 @@ const Project = ({
           fill
         />
       </div>
-      <Flex items="center" justify="between" gap="xs">
-        <Text id={id} weight="medium" size="md">
+      <Flex items="center" justify="between" gap="3">
+        <Text id={id} weight="5" size="5">
           {title}
         </Text>
         <div className="resume__projects l_cluster">
@@ -66,7 +66,7 @@ const Project = ({
             return (
               <a
                 key={link.site}
-                className="h-pr-lnk u_center"
+                className="h-pr-lnk Fc"
                 href={link.site}
               >
                 {icon}
@@ -76,16 +76,16 @@ const Project = ({
           })}
         </div>
       </Flex>
-      <Text color="b" contrast="low" size="sm">
+      <Text color="b" low size="4">
         {description}
       </Text>
-      <Flex className="h-pr-tags" gap="xs" wrap>
+      <Flex className="h-pr-tags" gap="3" wrap>
         {technologies.map((technology) => (
           <Tag
             key={technology}
             color="p"
             title={technology}
-            size="sm"
+            size="4"
           />
         ))}
       </Flex>
@@ -103,7 +103,7 @@ const Projects = ({ className }: { className?: string }) => {
   return (
     <section
       aria-labelledby="projects-id-section"
-      className="section l_f_lg"
+      className="section Sf-6"
     >
       <HeroHeading
         heading="Innovative Web Projects"
@@ -111,9 +111,9 @@ const Projects = ({ className }: { className?: string }) => {
         section="projects"
       />
       <Grid
-        gap="lg"
+        gap="6"
         columns="1fr 1fr 1fr"
-        {...classnames(`md_grid-two sm_grid-one`, {
+        {...c('md_grid-two sm_grid-one', {
           [className!]: className,
         })}
       >

@@ -1,34 +1,29 @@
-.a-v-cnt {
+.av-C {
   color: white;
   overflow: hidden;
-  border: var(--P9) 3px solid;
-}
-
-.a-v,
-.a-v__flb {
-  width: 95%;
-  height: 95%;
-  object-fit: cover;
-}
-
-.a-v__flb {
-  background: var(--C9);
-  border: 1px solid transparent;
+  border: var(--C9) 3px solid;
   font-weight: bold;
+
+  & > * {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--C9);
+  }
 }
 
 /* Avatar Size Section Style Start */
 
-.a-v_sm {
-  --av-s: 0.75em;
+.av-4 {
+  --Cs: 48px;
 }
 
-.a-v_md {
-  --av-s: 1.5em;
+.av-5 {
+  --Cs: 64px;
 }
 
-.a-v_lg {
-  --av-s: 4em;
+.av-6 {
+  --Cs: 80px;
 }
 
 /* Avatar Size Section Style End */

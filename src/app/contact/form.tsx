@@ -27,20 +27,20 @@ const Form = () => {
   return (
     <form
       aria-labelledby="contact-me"
-      className="l_f_md"
+      className="Sf-5"
       action={formAction}
     >
-      <div className="l_f_xs">
+      <div className="Sf-3">
         <Heading id="contact-me" as="h2">
           Contact Me
         </Heading>
-        <Text size="sm" color="b" contrast="low">
+        <Text size="4" color="b" low>
           Curious about my services or have a specific question? I'm
           here to help! Don't hesitate to contact me, and let's
           explore how we can work together.
         </Text>
       </div>
-      <div className="l_f_3xs">
+      <div className="Sf-1">
         <FormContainer name="name" label="Name" required>
           <Input
             name="name"

@@ -1,4 +1,4 @@
-import { classnames } from '@utils/classnames';
+import { c } from '@utils/classnames';
 
 import type { InputProps } from './input-field.type';
 import InputField from './field-input';
@@ -6,8 +6,8 @@ import InputField from './field-input';
 const Input = (props: InputProps) => {
   const { type = 'text', icon, touched, error, ...rest } = props;
 
-  const iconClassName = classnames('f-i', {
-    ['f-i-icn'!]: Boolean(icon),
+  const iconClassName = c('fi-', {
+    ['fi-I']: !!icon,
   });
 
   return (

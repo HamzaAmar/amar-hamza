@@ -1,6 +1,6 @@
-.btn {
+.ba- {
   gap: 0.25em;
-  font-weight: 400;
+  font-weight: 500;
   padding: 0.675em 1.25em;
   border: var(--border, 1px solid transparent);
   outline: 2px solid transparent;
@@ -43,46 +43,46 @@
   }
 }
 
-.btn_solid {
+.ba-solid {
   background-color: var(--C9);
   color: white;
 }
 
-.btn_soft {
+.ba-soft {
   background-color: var(--C5);
   color: var(--C12);
 }
 
-.btn_soft:hover,
-.btn_outline:hover {
+.ba-soft:hover,
+.ba-outline:hover {
   background-color: var(--C4) !important;
 }
 
-.btn_outline {
+.ba-outline {
   color: var(--C11);
   border-color: currentcolor;
 }
 
-.btn_text {
+.ba-text {
   color: var(--C8);
 }
 
 /* Root Style Section Start */
 
-.btn_sm {
+.ba-4 {
   font-size: 0.75rem;
 }
 
-.btn_md {
+.ba-5 {
   font-size: 0.875rem;
 }
 
-.btn_lg {
+.ba-6 {
   font-size: 1.125rem;
 }
 
-.btn-icon {
-  display: inline-block;
+.ba-I {
+  display: inline-flex;
   line-height: 0;
   width: 2.75em;
   height: 2.75em;
@@ -103,16 +103,3 @@
   display: flex;
   width: 100%;
 }
-
-// Loading content
-
-// .btn_loading-container {
-//   position: absolute;
-//   inset: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background: inherit;
-//   border-radius: inherit;
-//   color: white;
-// }

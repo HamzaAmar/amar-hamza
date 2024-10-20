@@ -4,19 +4,19 @@
 ====================================================================================================
 */
 
-.h-ar {
+.ar- {
   overflow: hidden;
   max-width: 480px;
 }
 
-.h-ar-btn {
+.ar-B {
   margin-top: auto;
 }
-.h-ar-img {
+.ar-I {
   object-fit: cover;
   object-position: 0 0;
 }
-.h-ar-imgW {
+.ar-H {
   height: 15rem;
   overflow: hidden;
   position: relative;
@@ -32,12 +32,12 @@
     transform: scale(1.15);
   }
 
-  &:hover .h-ar-tags {
+  &:hover .ar-T {
     transform: translateY(0);
   }
 }
 
-.h-ar-tags {
+.ar-T {
   --cluster-gap: 0.5rem;
 
   position: absolute;
@@ -47,6 +47,10 @@
   transition: transform 1s;
 }
 
-.h-ar-cnt {
+.ar-C {
   margin-bottom: var(--flow-gap);
+}
+
+.ard- {
+  margin-bottom: 1rem;
 }

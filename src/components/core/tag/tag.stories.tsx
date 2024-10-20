@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tag } from '..';
 
@@ -36,18 +36,18 @@ export const TagWarning: Story = {
 
 export const TagSmall: Story = {
   args: {
-    size: 'sm',
+    size: '4',
   },
 };
 
 export const TagMedium: Story = {
   args: {
-    size: 'md',
+    size: '5',
   },
 };
 
 export const TagLarge: Story = {
   args: {
-    size: 'lg',
+    size: '6',
   },
 };

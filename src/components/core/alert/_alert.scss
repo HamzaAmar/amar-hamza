@@ -1,21 +1,13 @@
-.a-l {
+.al- {
   background-color: var(--C4);
   color: var(--C12);
-  padding: var(--sp-2xs) var(--sp-md);
+  padding: var(--S2) var(--S5);
   border-inline-start: 0.125em solid var(--C11);
-  margin-inline: auto;
   position: relative;
   border-radius: 0.5rem;
-  size: 1rem;
 }
 
-.a-l-hdr {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.a-l-icn {
+.al-I {
   padding: 0.5rem;
   display: inline-block;
   position: absolute;

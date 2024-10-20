@@ -4,7 +4,7 @@ type Items = 'center' | 'end' | 'start';
 type Justify = 'around' | 'between' | 'evenly' | 'end' | 'center';
 type Flex = '1' | 'none' | 'auto';
 type Direction = 'column' | 'row';
-type Gap = '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+type Gap = '2' | '3' | '4' | '5' | '6' | '7' | '8';
 
 export interface FlexProps {
   items?: Items;

@@ -1,10 +1,11 @@
-.i-f-cnt {
+.fi-C {
   --i-s: 2.5rem;
 
   position: relative;
   overflow: hidden;
   border: 2px solid var(--B6);
   border-radius: 0.25em;
+  font-size: 0;
 
   &:hover {
     border-color: var(--P8);
@@ -19,26 +20,27 @@
   }
 }
 
-.f-i {
+.fi- {
   color: var(--B12);
   background: var(--B3);
   padding: 0.5em;
   width: 100%;
+  font-size: 1rem;
 
-  &:not(.f-i-icn) {
+  &:not(.fi-I) {
     padding: 0.5em 1rem;
   }
 
-  &[type] + .i-f-icn {
+  &[type] + .fic-I {
     align-items: center;
   }
 }
 
-.f-i-icn {
+.fi-I {
   padding-inline-start: var(--i-s);
 }
 
-.i-f-icn {
+.fic-I {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -55,16 +57,16 @@
   Form Container Style Section 
 ==============================================================================================
 */
-.f-c {
+.fc- {
   position: relative;
   padding-bottom: 1rem;
 }
 
-.f-c-lbl {
+.fc-L {
   font-weight: 500;
 }
 
-.f-c-msg {
+.fc-M {
   position: absolute;
   left: 0;
   bottom: -0.625rem;
@@ -73,7 +75,7 @@
   color: var(--R9);
 }
 
-.f-c-abbr {
+.fc-A {
   color: var(--R9);
   font-size: 1.1em;
   font-weight: bold;

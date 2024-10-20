@@ -1,4 +1,4 @@
-import {  Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 
 import { Grid } from '.';
 
@@ -12,7 +12,7 @@ export default {
 
 export const EqualColumns = () => {
   return (
-    <Grid gap="xs" columns="repeat(12, 1fr)">
+    <Grid gap="3" columns="repeat(12, 1fr)">
       {Array.from({ length: 144 }, (_, index) => (
         <div
           key={index}
@@ -30,7 +30,7 @@ export const EqualColumns = () => {
 
 export const ResponsiveColumns = () => {
   return (
-    <Grid gap="xs" columns="repeat(4, 1fr)">
+    <Grid gap="3" columns="repeat(4, 1fr)">
       {Array.from({ length: 24 }, (_, index) => (
         <div
           key={index}
@@ -43,7 +43,7 @@ export const ResponsiveColumns = () => {
 
 export const SpanningColumns = () => {
   return (
-    <Grid gap="sm" columns="200px 1fr 1fr" rows="1fr 1fr">
+    <Grid gap="4" columns="200px 1fr 1fr" rows="1fr 1fr">
       <Grid.Item
         style={{ minHeight: '10rem', background: 'var(--indigo-8)' }}
         row="span 2"

@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Alert>;
 export const AlertColor: Story = {
   render: () => {
     return (
-      <Flex gap="2xl" direction="column">
+      <Flex gap="8" direction="column">
         <Alert
           color="d"
           message="Hello word from here i like to see it every thing is correct"

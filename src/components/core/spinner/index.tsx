@@ -2,9 +2,9 @@ import type { SpinnerProps } from './spinner.type';
 
 export const Spinner = ({
   color = 'p',
-  size = 'sm',
+  size = '4',
   invert,
 }: SpinnerProps) => {
-  const root = `s-p s-p_${size} u_${color}`;
+  const root = `sp- sp-${size} C${color}`;
   return <div data-invert={invert} className={root} />;
 };

@@ -1,5 +1,5 @@
 import { Send } from '@components/icons';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta } from '@storybook/react';
 
 import { Input } from '..';
 

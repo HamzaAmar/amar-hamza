@@ -1,6 +1,6 @@
 import { Flex } from '@components/core/flex';
 import { Facebook, Message } from '@components/icons';
-import { Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 
 import { IconButton } from '..';
 
@@ -26,12 +26,10 @@ export default {
 } as Meta<typeof IconButton>;
 
 export const IconButtonsSize = () => (
-  <Flex items="center" gap="sm">
-    <IconButton icon={<Message />} size="xs" title="Connect" />
-    <IconButton icon={<Message />} size="sm" title="Connect" />
-    <IconButton icon={<Message />} size="md" title="Connect" />
-    <IconButton icon={<Message />} size="lg" title="Connect" />
-    <IconButton icon={<Message />} size="xl" title="Connect" />
+  <Flex items="center" gap="4">
+    <IconButton icon={<Message />} size="4" title="Connect" />
+    <IconButton icon={<Message />} size="5" title="Connect" />
+    <IconButton icon={<Message />} size="6" title="Connect" />
   </Flex>
 );
 

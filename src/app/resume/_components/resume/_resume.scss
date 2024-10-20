@@ -1,23 +1,23 @@
-.r-e {
+.re- {
   --Rb: 1px solid var(--O6);
 }
 
-.r-e-asd {
+.re-A {
   padding: 1rem;
   border-right: var(--Rb);
 }
 
-.r-e-hdr {
+.re-H {
   border-bottom: var(--Rb);
   padding: 2rem;
 }
 
-.r-e-lst {
+.re-L {
   list-style: none;
   padding-left: 0.5rem;
 }
 
-.re-e {
+.re-E {
   padding: 1rem 0;
 
   &:not(:last-child) {
@@ -25,6 +25,6 @@
   }
 }
 
-.r-e-d {
+.re-D {
   line-height: 2.5;
 }

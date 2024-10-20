@@ -10,7 +10,7 @@ export const CircleProgress = ({
   const progress = (value / 100) * circumference;
 
   return (
-    <div className={`pr-c u_${color} u_center`}>
+    <div className={`pr-c C${color} Fc`}>
       <svg
         role="progressbar"
         aria-valuenow={value}

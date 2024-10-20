@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { classnames } from '@utils/classnames';
+import { c } from '@utils/classnames';
 import React, { forwardRef } from 'react';
 import type { ForwardRefComponent } from '@type/polymorphic.type';
 
@@ -19,7 +19,7 @@ export const Flex = forwardRef((props, forwardedRef) => {
     className,
     ...rest
   } = props;
-  const flexClassName = classnames('flex', {
+  const flexClassName = c('flex', {
     [`u_justify-${justify}`]: Boolean(justify),
     [`u_items-${items}`]: Boolean(items),
     // [`u_flex-${flex}`]: Boolean(items),
@@ -27,8 +27,8 @@ export const Flex = forwardRef((props, forwardedRef) => {
       Boolean(direction) && direction === 'column',
     'u_wrap-wrap': Boolean(wrap),
     'u_flex-inline': Boolean(inline),
-    [`u_sp-${gap}`]: Boolean(gap),
-    [`${className}`!]: Boolean(className),
+    [`S-${gap}`]: Boolean(gap),
+    [className!]: Boolean(className),
   });
 
   return (

@@ -36,7 +36,7 @@ const Switcher = () => {
 
   // TODO: Return Skeleton to avoid  Layout Shift
   if (!mounted) {
-    return <Spinner size="lg" />;
+    return <Spinner size="6" />;
   }
 
   const nextMode = resolvedTheme === 'dark' ? 'light' : 'dark';
@@ -70,7 +70,7 @@ const Item = ({
   return (
     <li className="h-e-itm" data-mobile={mobile}>
       <NavLink
-        className="u_center h-e-lnk"
+        className="Fc h-e-lnk"
         data-mobile={mobile}
         {...close}
         {...onlyDesktop}
@@ -97,14 +97,14 @@ const Header = () => {
         as={Link}
         aria-label="Home Page"
         items="center"
-        gap="sm"
+        gap="4"
         href="/"
         className="h-e-logo"
       >
         Miloud Amar
       </Flex>
       <nav className="h-e-nav sm_hide u_flex-1">
-        <ul className="u_center h-e-lst">
+        <ul className="Fc h-e-lst">
           {MENU.map(({ id, name, path }) => {
             return (
               <Item
@@ -117,7 +117,7 @@ const Header = () => {
           })}
         </ul>
       </nav>
-      <Flex gap="xs" items="center">
+      <Flex gap="3" items="center">
         <IconButton
           icon={<Menu focusable="false" aria-hidden="true" />}
           title="Toggle Menu mobile-only"
@@ -126,10 +126,7 @@ const Header = () => {
         />
         <Switcher />
       </Flex>
-      <nav
-        className="h-e-mob l_f_2xl"
-        data-visible={visible === true}
-      >
+      <nav className="h-e-mob Sf-8" data-visible={visible === true}>
         <Button type="button" variant="outline" onClick={handleFalse}>
           Close
         </Button>
@@ -148,15 +145,9 @@ const Header = () => {
           })}
         </ul>
 
-        <div className="l_f_lg">
+        <div className="Sf-6">
           <Social />
-          <Text
-            align="center"
-            weight="thin"
-            size="2xs"
-            color="b"
-            contrast="low"
-          >
+          <Text align="center" weight="1" size="2" color="b" low>
             I'm glad you're here! Explore my work and get to know me
             better.
           </Text>

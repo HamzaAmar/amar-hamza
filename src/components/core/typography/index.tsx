@@ -1,7 +1,7 @@
-// this classnames is a little bit different than the the classic one it return obj not a string
-import { type CSSProperties, forwardRef } from 'react';
+// this c is a little bit different than the the classic one it return obj not a string
+import { forwardRef } from 'react';
 import type { TypographyProps } from './typography.type';
-import { classnames } from '@utils/classnames';
+import { c } from '@utils/classnames';
 import type { ForwardRefComponent } from '@type/polymorphic.type';
 
 export const Text = forwardRef((props, forwardedRef) => {
@@ -17,34 +17,27 @@ export const Text = forwardRef((props, forwardedRef) => {
     decoration,
     color,
     fontStyle,
-    contrast = 'high',
+    low = 'false',
     children,
     ...rest
   } = props;
 
-  const classNames = classnames(`t-y`, {
-    [`u_f_${size}`]: !!size,
-    [`u_truncate`]: !!truncate,
-    [`u_t_${transform}`]: !!transform,
-    [`u_t_${align}`]: !!align,
-    [`u_f_${weight}`]: !!weight,
+  const classNames = c('ty-', {
+    [`Fs-${size}`]: !!size,
+    [`T${truncate}`]: !!truncate,
+    [`Tt-${transform}`]: !!transform,
+    [`Ta-${align}`]: !!align,
+    [`Fw-${weight}`]: !!weight,
     [`u_t_${decoration}`]: !!decoration,
-    [`u_leading__${leading}`]: !!leading,
-    [`u_style__${fontStyle}`]: !!fontStyle,
-    [`u_${color}`]: !!color,
-    [`t-y_${contrast}`]: !!contrast,
-    [`${className}`]: !!className,
+    [`u_leading_${leading}`]: !!leading,
+    [`Fsy-${fontStyle}`]: !!fontStyle,
+    [`C${color}`]: !!color,
+    'ty-low': !!low,
+    [className!]: !!className,
   });
 
-  const _style = {
-    ...(truncate && { '--line-numbers': props.truncate }),
-    // ...(color && {
-    //   '--clr-txt': `var(--${color}-${contrastLvl})`,
-    // }),
-  } as CSSProperties;
-
   return (
-    <Tag style={_style} {...classNames} ref={forwardedRef} {...rest}>
+    <Tag {...classNames} ref={forwardedRef} {...rest}>
       {children}
     </Tag>
   );
@@ -54,7 +47,7 @@ Text.displayName = 'Text';
 export const Heading = forwardRef(
   ({ as: Tag = 'h1', children, ...rest }, forwardedRef) => {
     return (
-      <Text as={Tag} className="t-y_hdg" ref={forwardedRef} {...rest}>
+      <Text as={Tag} className="ty-_hdg" ref={forwardedRef} {...rest}>
         {children}
       </Text>
     );
@@ -69,8 +62,8 @@ export const Link = forwardRef(
       <Text
         ref={forwardedRef}
         color="p"
-        contrast="low"
-        className="t-y_lnk"
+        low
+        className="ty-_lnk"
         as="a"
         {...rest}
       >

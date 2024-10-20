@@ -13,7 +13,7 @@ const services = () => {
   return (
     <section
       aria-labelledby="services-id-section"
-      className="section l_f_lg"
+      className="section Sf-6"
     >
       <HeroHeading
         heading="Building and improving websites"
@@ -21,21 +21,21 @@ const services = () => {
         section="services"
       />
 
-      <Grid gap="lg" columns="1fr 1fr" className="sm_grid-one">
+      <Grid gap="4" columns="1fr 1fr" className="sm_grid-one">
         {SERVICES.map(({ id, title, icon, description }) => (
           <Flex
-            gap="sm"
+            gap="4"
             items="start"
-            className="h-sr l_box-article"
+            className="sv- l_box-article"
             key={id}
             as="article"
           >
-            <div className="h-sr-icn u_center">{icon}</div>
-            <div className="l_f_2xs">
-              <Text weight="medium" size="md">
+            <div className="sv-I Fc">{icon}</div>
+            <div className="Sf-2">
+              <Text weight="5" size="5">
                 {title}
               </Text>
-              <Text size="sm" color="b" contrast="low">
+              <Text size="4" color="b" low>
                 {description}
               </Text>
             </div>

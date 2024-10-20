@@ -33,23 +33,23 @@ const Article = ({
   publishedAt,
 }: ArticleProps) => {
   const id = useId();
-  const buttonId = `${id}-button`;
-  const headingId = `${id}-heading`;
+  const buttonId = `${id}-b`;
+  const headingId = `${id}-h`;
 
   return (
     <Flex
       as="article"
       direction="column"
-      className="h-ar l_box-article l_f_2xs"
+      className="ar- l_box-article Sf-2"
       aria-labelledby={headingId}
     >
-      <div className="h-ar-imgW">
+      <div className="ar-H">
         {image ? (
-          <div className="h-ar-imgC">
+          <div className="ar--imgC">
             <Image
               src={image}
               alt="Hello world"
-              className="h-ar-img"
+              className="ar-I"
               loading="lazy"
               placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
               fill
@@ -57,25 +57,25 @@ const Article = ({
           </div>
         ) : null}
 
-        <div className="h-ar-tags l_cluster">
+        <div className="ar-T l_cluster">
           {tags.map((tag) => (
-            <Tag key={tag} color="p" title={tag} size="sm" />
+            <Tag key={tag} color="p" title={tag} size="4" />
           ))}
         </div>
       </div>
-      <div className="h-ar-cnt l_f_2xs">
+      <div className="ar-C Sf-2">
         <Flex items="center">
-          <Flex gap="sm" items="center">
-            <Avatar size="lg" image="/me.jpg" title="my Avatar" />
+          <Flex gap="4" items="center">
+            <Avatar image="/me.jpg" title="my Avatar" />
             <div>
-              <Text size="xs" weight="medium">
+              <Text size="3" weight="5">
                 Hamza Miloud Amar
               </Text>
               <Text
-                contrast="low"
+                low
                 color="b"
                 as="time"
-                size="sm"
+                size="3"
                 dateTime={publishedAt}
               >
                 {formatDate(publishedAt)}
@@ -87,12 +87,12 @@ const Article = ({
           id={headingId}
           as="h3"
           align="start"
-          weight="medium"
-          truncate={2}
+          weight="5"
+          truncate="2"
         >
           {title}
         </Heading>
-        <Text contrast="low" color="b" size="md" truncate={4}>
+        <Text className="ard-" low color="b" size="4" truncate="4">
           {excerpt}
         </Text>
       </div>
@@ -101,13 +101,13 @@ const Article = ({
         as={Link}
         variant="outline"
         fluid
-        className="h-ar-btn"
+        className="ar-B"
         icon={<Arrow direction="right" strokeWidth={2.5} />}
         iconPosition="end"
         aria-labelledby={buttonId}
         href={`/blogs/${slug}`}
       >
-        <span id={buttonId} className="u_sr-only">
+        <span id={buttonId} className="Sr">
           Go to {title}
         </span>
         Read More
@@ -126,7 +126,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
   return (
     <section
       aria-labelledby="articles-id-section"
-      className="sct l_f_lg"
+      className="sct Sf-6"
     >
       <HeroHeading
         heading="Join Me on My Web Development Journey"
@@ -136,7 +136,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
       />
       <Grid
         columns="1fr 1fr 1fr"
-        gap="md"
+        gap="5"
         className="sm_grid-one md_grid-two"
       >
         {posts.map((post) => (

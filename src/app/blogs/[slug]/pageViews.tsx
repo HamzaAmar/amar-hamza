@@ -14,7 +14,7 @@ export async function PageViews({ slug }: PageViewsProps) {
   const views = data?.views ?? 1;
 
   return (
-    <Text size="sm">
+    <Text size="4">
       {views} View{views > 1 ? 's' : ''}
     </Text>
   );

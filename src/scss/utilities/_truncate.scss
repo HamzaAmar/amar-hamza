@@ -1,6 +1,27 @@
-.u_truncate {
+.T1,
+.T2,
+.T3,
+.T4,
+.T5,
+.T6 {
   display: -webkit-box;
-  -webkit-line-clamp: var(--line-numbers, 1);
+  -webkit-line-clamp: var(--Tl, 1);
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.T2 {
+  --Tl: 2;
+}
+.T3 {
+  --Tl: 3;
+}
+.T4 {
+  --Tl: 4;
+}
+.T5 {
+  --Tl: 5;
+}
+.T6 {
+  --Tl: 6;
 }

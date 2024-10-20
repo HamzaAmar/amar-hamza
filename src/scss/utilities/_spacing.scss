@@ -1,34 +1,70 @@
 // Spacing Style Section Start
-.u_sp-2xs {
+.S-1 {
   gap: clamp(2px, calc(1.2px + 0.27vw), 4px);
 }
 
-.u_sp-xs {
+.S-2 {
   gap: clamp(4px, calc(2.4px + 0.49vw), 8px);
 }
 
-.u_sp-sm {
+.S-3 {
   gap: clamp(6px, calc(3.68px + 0.73vw), 12px);
 }
 
-.u_sp-md {
+.S-4 {
   gap: clamp(8px, calc(4.8px + 0.98vw), 16px);
 }
 
-.u_sp-lg {
+.S-5 {
   gap: clamp(12px, calc(7.3px + 1.46vw), 24px);
 }
 
-.u_sp-xl {
+.S-6 {
   gap: clamp(16px, calc(9.76px + 1.95vw), 32px);
 }
 
-.u_sp-2xl {
+.S-7 {
   gap: clamp(24px, calc(14.5px + 2.93vw), 48px);
 }
 
-.u_sp-3xl {
+.S-8 {
   gap: clamp(32px, calc(19.52px + 3.9vw), 64px);
+}
+
+.Sf-1 > * + * {
+  margin-top: var(--S1);
+}
+
+.Sf-2 > * + * {
+  margin-top: var(--S2);
+}
+
+.Sf-3 > * + * {
+  margin-top: var(--S3);
+}
+
+.Sf-4 > * + * {
+  margin-top: var(--S4);
+}
+
+.Sf-5 > * + * {
+  margin-top: var(--S5);
+}
+
+.Sf-6 > * + * {
+  margin-top: var(--S6);
+}
+
+.Sf-7 > * + * {
+  margin-top: var(--S7);
+}
+
+.Sf-8 > * + * {
+  margin-top: var(--S8);
+}
+
+.Sf-9 > * + * {
+  margin-top: var(--S9);
 }
 
 // Spacing Style Section End

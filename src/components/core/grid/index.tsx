@@ -1,4 +1,4 @@
-import { classnames } from '@utils/classnames';
+import { c } from '@utils/classnames';
 import { forwardRef } from 'react';
 import type { CSSProperties } from 'react';
 import type { ForwardRefComponent } from '@type/polymorphic.type';
@@ -27,7 +27,7 @@ const Item = forwardRef((props, ref) => {
     as: Tag = 'div',
   } = props;
 
-  const gridClassName = classnames('g-r-itm', {
+  const gridClassName = c('g-r-itm', {
     className: Boolean(className),
     style: Boolean(style),
   });
@@ -62,10 +62,10 @@ export const Grid = forwardRef((props, forwardedRef) => {
     className,
     as: Tag = 'div',
   } = props;
-  const gridClassName = classnames('g-r', {
+  const gridClassName = c('g-r', {
     [`u_justify-${justify}`]: Boolean(justify),
     [`u_items-${items}`]: Boolean(items),
-    [`g-r_${gap}`]: Boolean(gap),
+    [`S-${gap}`]: Boolean(gap),
     [className!]: Boolean(className),
   });
 

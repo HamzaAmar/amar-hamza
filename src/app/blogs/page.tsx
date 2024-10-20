@@ -1,9 +1,10 @@
 import React from 'react';
 import { getBlogPosts } from 'api/blog';
 import { Articles } from 'app/_components';
-import { Metadata } from 'next';
 import { Flex, Heading, Text } from '@components/core';
 import Image from 'next/image';
+
+import type { Metadata } from 'next';
 
 export default async function Blog() {
   const posts = getBlogPosts();
@@ -16,8 +17,8 @@ export default async function Blog() {
         className="blogs--hero sct"
         wrap
       >
-        <div className=" l_f_lg" style={{ maxWidth: '80ch' }}>
-          <Heading as="h1" size="xl" weight="normal">
+        <div className=" Sf-6" style={{ maxWidth: '80ch' }}>
+          <Heading as="h1" size="7" weight="4">
             Frontend Fundamentals & Beyond: Explore In-Depth Articles,
             Step-by-Step Series & Web Development Tips
           </Heading>

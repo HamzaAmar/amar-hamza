@@ -1,4 +1,4 @@
-import React, { Children, ReactNode } from 'react';
+import React, { Children, type ReactNode } from 'react';
 import {
   Browser,
   Server,
@@ -29,14 +29,8 @@ const LOGO = {
 
 const Message = ({ children, from }: ThreadProps) => {
   return (
-    <div className={`t-h-msg t-h-msg__${from} l_f_3xs`}>
-      <Text
-        size="sm"
-        weight="bold"
-        transform="uppercase"
-        color="w"
-        contrast="low"
-      >
+    <div className={`th-M th-M__${from} Sf-1`}>
+      <Text size="4" weight="7" transform="uppercase" color="w" low>
         {from}
       </Text>
       <div>{children}</div>
@@ -46,11 +40,11 @@ const Message = ({ children, from }: ThreadProps) => {
 
 const Thread = ({ from, children }: ThreadProps) => {
   return (
-    <article data-from={from} className="t-h">
-      <div className="t-h-hdr l_f_3xs">
-        <div className="t-h-avt u_circle u_center">{LOGO[from]}</div>
+    <article data-from={from} className="th-">
+      <div className="th-H Sf-1">
+        <div className="th-A C Fc">{LOGO[from]}</div>
       </div>
-      <div className="t-h-msgC">
+      <div className="th-C">
         {Children.count(children) > 1 ? (
           Children.map(children, (child, index) => (
             <Message key={index} children={child} from={from} />
@@ -65,21 +59,21 @@ const Thread = ({ from, children }: ThreadProps) => {
 
 export const Conversation = ({ children }: ConversationProps) => {
   return (
-    <section className="c-o">
-      <header className="c-o-hdr">
-        <div className="t-h-avt u_circle u_center">
+    <section className="co-">
+      <header className="co-H">
+        <div className="th-A C Fc">
           <Users width="32" strokeWidth={1.5} />
         </div>
         <div>
-          <Text size="sm" weight="medium">
+          <Text size="4" weight="5">
             Web Development Group
           </Text>
-          <Text size="sm" color="b" contrast="low">
+          <Text size="4" color="b" low>
             Me , Server , Browser, CDN, Narrator
           </Text>
         </div>
       </header>
-      <div className="c-o-body l_f_sm">{children}</div>
+      <div className="co-B Sf-4">{children}</div>
     </section>
   );
 };

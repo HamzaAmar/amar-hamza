@@ -5,22 +5,20 @@ import { Button, Heading, Social, Text } from '@components/core';
 
 const About = () => {
   return (
-    <div className="h-ab-cnt u_center">
-      <div className="h-ab-crl" />
-      <div className="h-ab-crl h-ab-crl_revert" />
-      <div className="h-ab u_center">
-        <Social className="h-ab-media" direction="vertical" />
-        <div className="h-ab--info  center l_f_sm">
-          <h2 className="h-ab-name">
+    <div className="ab-C Fc">
+      <div className="ab-B" />
+      <div className="ab-B ab-B-revert" />
+      <div className="ab- Fc">
+        <Social className="ab-M" direction="vertical" />
+        <div className="ab-I  center Sf-4">
+          <h2 className="ab-N">
             Miloud Amar
-            <span className="u_sr-only">
-              A freelancer web developer
-            </span>
+            <span className="Sr">A freelancer web developer</span>
           </h2>
           <Text
-            size="lg"
+            size="6"
             color="b"
-            contrast="low"
+            low
             leading="lg"
             transform="capitalize"
           >
@@ -30,7 +28,7 @@ const About = () => {
             Lover of Clean & Maintainable CSS | Always learning and
             growing.
           </Text>
-          <div className="l_cluster u_center">
+          <div className="l_cluster Fc">
             <Button as={Link} href="/contact">
               Hire Me
             </Button>
@@ -44,14 +42,14 @@ const About = () => {
             </Button>
           </div>
         </div>
-        <div className="h-ab-ttl h-ab-ttlT">
-          <Text size="sm">I am a freelance web developer</Text>
+        <div className="ab-T ab-TT">
+          <Text size="4">I am a freelance web developer</Text>
         </div>
 
-        <div className="h-ab-ttlB h-ab-ttl">
+        <div className="ab-TB ab-T">
           <p>Am Available</p>
         </div>
-        <div className="h-ab-ttlR">
+        <div className="ab-TR">
           <p>
             scroll Down <Arrow width="1em" strokeWidth={3} />
           </p>

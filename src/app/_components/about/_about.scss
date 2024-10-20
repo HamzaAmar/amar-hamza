@@ -1,11 +1,11 @@
-.h-ab-cnt {
+.ab-C {
   margin: 1rem;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
 }
 
-.h-ab {
+.ab- {
   padding: 0.5rem;
   height: calc(100vh - 6rem);
   width: 95vw;
@@ -31,7 +31,7 @@
   position: relative;
 }
 
-.h-ab-crl {
+.ab-B {
   --clr: var(--P9);
   --sz: 20vw;
 
@@ -63,32 +63,32 @@
   }
 }
 
-.h-ab-crl_revert {
+.ab-B-revert {
   --clr: var(--R9);
 
   transform: scaleY(-1) scale(0.6) rotate(360deg);
 }
 
-.h-ab--info {
+.ab-I {
   font-size: inherit;
   max-width: 650px;
   padding: 0 1rem;
 }
 
-.h-ab-media {
+.ab-M {
   position: absolute;
   left: 2vw;
   top: 2vh;
 }
 
-.h-ab-name {
+.ab-N {
   font-size: 1.75em;
   letter-spacing: 4px;
   text-align: center;
   font-weight: 900;
 }
 
-.h-ab-ttl {
+.ab-T {
   max-width: 40ch;
   position: relative;
   background-image: linear-gradient(
@@ -115,26 +115,26 @@
   }
 }
 
-.h-ab-ttlT,
-.h-ab-ttlB {
+.ab-TT,
+.ab-TB {
   position: absolute;
   display: flex;
   justify-content: center;
 }
 
-.h-ab-ttl-text {
+.ab-T-text {
   font-size: 0.25em;
 }
 
-.h-ab-ttlT {
+.ab-TT {
   top: 0;
 }
 
-.h-ab-ttlB {
+.ab-TB {
   bottom: 0;
 }
 
-.h-ab-ttlR {
+.ab-TR {
   position: absolute;
   right: -1rem;
   top: 50%;

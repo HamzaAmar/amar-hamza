@@ -1,7 +1,7 @@
 import type { ReactNode, CSSProperties } from 'react';
 
 export interface GridBaseProps {
-  gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  gap?: '3' | '4' | '5' | '6' | '7';
   columns?: string;
   rows?: string;
   areas?: string;

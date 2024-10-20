@@ -5,9 +5,9 @@
   working with css variables is better than aspect ratio because is better in support
 */
 
-.u_circle {
-  width: var(--ci-s, 3rem);
-  height: var(--ci-s, 3rem);
+.C {
+  width: var(--Cs, 3rem);
+  height: var(--Cs, 3rem);
   flex: none;
   border-radius: 50%;
 }

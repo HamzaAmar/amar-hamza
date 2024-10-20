@@ -1,5 +1,5 @@
 import { Facebook, Github, Message } from '@components/icons';
-import { Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 
 import { Button, Flex } from '../..';
 
@@ -26,7 +26,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 export const ButtonsColor = () => (
-  <Flex gap="sm">
+  <Flex gap="4">
     <Button color="d">Connect</Button>
     <Button color="b">Connect</Button>
     <Button color="s">Connect</Button>
@@ -35,7 +35,7 @@ export const ButtonsColor = () => (
 );
 
 export const ButtonsVariant = () => (
-  <Flex items="center" gap="sm">
+  <Flex items="center" gap="4">
     <Button variant="solid">Connect</Button>
     <Button variant="soft">Connect</Button>
     <Button variant="outline">Connect</Button>
@@ -44,30 +44,22 @@ export const ButtonsVariant = () => (
 );
 
 export const ButtonsSize = () => (
-  <Flex items="center" gap="sm">
-    <Button size="xs">Connect</Button>
-    <Button size="sm">Connect</Button>
-    <Button size="md">Connect</Button>
-    <Button size="lg">Connect</Button>
-    <Button size="xl">Connect</Button>
+  <Flex items="center" gap="4">
+    <Button size="4">Connect</Button>
+    <Button size="5">Connect</Button>
+    <Button size="6">Connect</Button>
   </Flex>
 );
 
 export const ButtonsIcons = () => (
-  <Flex items="center" gap="sm">
-    <Button icon={<Message />} size="xs">
+  <Flex items="center" gap="4">
+    <Button icon={<Message />} size="4">
       Connect
     </Button>
-    <Button icon={<Message />} size="sm">
+    <Button icon={<Message />} size="5">
       Connect
     </Button>
-    <Button icon={<Message />} size="md">
-      Connect
-    </Button>
-    <Button icon={<Message />} size="lg">
-      Connect
-    </Button>
-    <Button icon={<Message />} size="xl">
+    <Button icon={<Message />} size="6">
       Connect
     </Button>
   </Flex>

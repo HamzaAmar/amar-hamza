@@ -1,8 +1,8 @@
-.h-sk {
+.sk- {
   background-color: var(--B3);
 }
 
-.h-sk-icnC::before {
+.sk-C::before {
   content: '';
   position: absolute;
   top: -4px;
@@ -17,7 +17,7 @@
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.h-sk-icn {
+.sk-I {
   line-height: 0;
 
   & > svg {
@@ -26,6 +26,6 @@
   }
 }
 
-.h-sk-amt svg {
+.sk-A svg {
   width: 4em;
 }

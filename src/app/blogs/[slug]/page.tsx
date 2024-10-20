@@ -91,21 +91,21 @@ export default async function Blog({ params }: ParamsReq) {
           }),
         }}
       />
-      <div className="reading-layout l_f_lg">
-        <Heading as="h1" size="xl" weight="normal">
+      <div className="reading-layout Sf-6">
+        <Heading as="h1" size="7" weight="4">
           {title}
         </Heading>
         {author && (
           <div>
-            <Flex items="center" gap="sm">
+            <Flex items="center" gap="4">
               <div>
                 <Avatar
                   image={author.picture}
                   title="Hamza Miloud Amar Avatar"
                 />
               </div>
-              <Flex gap="2xs" direction="column" className="u_flex-1">
-                <Text size="sm" weight="medium">
+              <Flex gap="2" direction="column" className="u_flex-1">
+                <Text size="4" weight="5">
                   {author.name}
                 </Text>
                 <Suspense
@@ -115,16 +115,11 @@ export default async function Blog({ params }: ParamsReq) {
                 >
                   <PageViews slug={slug} />
                 </Suspense>
-                <Social size="sm" />
+                <Social size="4" />
               </Flex>
               <div>
-                <Text size="sm">{formatDate(publishedAt)}</Text>
-                <Text
-                  align="center"
-                  size="sm"
-                  color="b"
-                  contrast="low"
-                >
+                <Text size="4">{formatDate(publishedAt)}</Text>
+                <Text align="center" size="4" color="b" low>
                   {readingTime.text}
                 </Text>
               </div>
@@ -142,11 +137,11 @@ export default async function Blog({ params }: ParamsReq) {
           />
         </div>
 
-        <div className="prose l_f_md">
+        <div className="prose Sf-5">
           <CustomMDX source={content} />
         </div>
 
-        <div className="reading-layout--footer l_f_md">
+        <div className="reading-layout--footer Sf-5">
           <div
             className="l_cluster"
             style={
@@ -192,7 +187,7 @@ export default async function Blog({ params }: ParamsReq) {
             </div>
           </div>
 
-          <div className="l_f_xs">
+          <div className="Sf-3">
             <Text>
               Your support helps me create more helpful content. If
               you enjoyed this, please consider buying me a coffee.

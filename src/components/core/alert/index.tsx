@@ -28,21 +28,19 @@ export const Alert = ({
   title,
 }: AlertProps) => {
   return (
-    <div className={`a-l l_f_2xs u_${color}`} role="alert">
-      <div>
-        <span className="a-l-icn">{icon[color]}</span>
-        <Text
-          transform="capitalize"
-          className="a-l-tl"
-          size="md"
-          color={color}
-          contrast="low"
-          weight="medium"
-        >
-          {title}
-        </Text>
-      </div>
-      <Text size="sm" weight="normal" color={color} contrast="low">
+    <div className={`al- Sf-2 C${color}`} role="alert">
+      <span className="al-I">{icon[color]}</span>
+      <Text
+        transform="capitalize"
+        className="al-H"
+        size="5"
+        color={color}
+        low
+        weight="5"
+      >
+        {title}
+      </Text>
+      <Text size="4" weight="4" color={color} low>
         {message}
       </Text>
     </div>

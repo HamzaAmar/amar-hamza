@@ -1,22 +1,19 @@
 import React from 'react';
-import { Flex, IconButton } from '@components/core';
+import { IconButton } from '@components/core';
 import SOCIALS from '@constants/socialMenu';
-import { classnames } from '@utils/classnames';
+import { c } from '@utils/classnames';
 
 import type SocialProps from './social.type';
 
 export const Social = ({
   className,
   direction = 'horizontal',
-  size = 'md',
+  size = '5',
 }: SocialProps) => {
-  const socialDirection =
-    direction === 'horizontal' ? 'row' : 'column';
   return (
     <ul
-      style={{ flexDirection: socialDirection }}
-      {...classnames('s-o u_column', {
-        [`s-o_${direction}`]: direction === 'vertical',
+      {...c('so- u_column', {
+        'so-vertical': direction === 'vertical',
         [className!]: className,
       })}
     >

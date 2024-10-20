@@ -25,9 +25,9 @@ import type { AsideItemProps } from './resume.type';
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (
     <Flex as="li" justify="between">
-      <Flex gap="xs" items="center">
-        <div className="u_center">{icon}</div>
-        <Text size="sm" contrast="low" color="b">
+      <Flex gap="3" items="center">
+        <div className="Fc">{icon}</div>
+        <Text size="4" low color="b">
           {title}
         </Text>
       </Flex>
@@ -38,32 +38,26 @@ const AsideItem = ({ icon, title, children }: AsideItemProps) => {
 
 const Education = () => {
   return (
-    <section className="r-e section l_f_md">
+    <section className="re- section Sf-5">
       <Heading as="h2">Experience</Heading>
 
       {EDUCATION_DATA.map(({ id, date, title, description }) => (
-        <Flex key={id} gap="md" className="re-e">
-          <div className="l_f_xs">
+        <Flex key={id} gap="5" className="re-E">
+          <div className="Sf-3">
             <div>
-              <Heading
-                color="p"
-                contrast="low"
-                weight="medium"
-                as="h3"
-                size="sm"
-              >
+              <Heading color="p" low weight="5" as="h3" size="4">
                 {title}
               </Heading>
               <Text
-                size="xs"
-                className="r-e-d u_flex-none"
+                size="3"
+                className="re-D u_flex-none"
                 color="b"
-                contrast="low"
+                low
               >
                 {date}
               </Text>
             </div>
-            <Text size="sm">{description}</Text>
+            <Text size="4">{description}</Text>
           </div>
         </Flex>
       ))}
@@ -73,12 +67,12 @@ const Education = () => {
 
 const resume = () => {
   return (
-    <Grid columns="260px 1fr" className="r-e sm_grid-one">
-      <aside className="r-e-asd">
-        <div className="l_f_md">
-          <div className="l_f_md">
+    <Grid columns="260px 1fr" className="re- sm_grid-one">
+      <aside className="re-A">
+        <div className="Sf-5">
+          <div className="Sf-5">
             <Heading>Contact</Heading>
-            <ul className="r-e-lst l_f_sm">
+            <ul className="re-L Sf-4">
               <AsideItem
                 icon={<Pen width={16} />}
                 title="Morocco Marrakech"
@@ -98,9 +92,9 @@ const resume = () => {
             </ul>
           </div>
 
-          <div className="r-e-lst l_f_sm">
+          <div className="re-L Sf-4">
             <Heading>Skills</Heading>
-            <ul className="l_f_md">
+            <ul className="Sf-5">
               <AsideItem icon={<Css width={16} />} title="Css">
                 <Level level={4} width="36" />
               </AsideItem>
@@ -144,9 +138,9 @@ const resume = () => {
             </ul>
           </div>
 
-          <div className="l_f_md">
+          <div className="Sf-5">
             <Heading>Language</Heading>
-            <ul className="r-e-lst l_f_sm">
+            <ul className="re-L Sf-4">
               <AsideItem icon={<Arabic width={16} />} title="Arabic">
                 <Level level={4} width="36" />
               </AsideItem>
@@ -161,17 +155,11 @@ const resume = () => {
               </AsideItem>
             </ul>
           </div>
-          <div className="l_f_md">
+          <div className="Sf-5">
             <Heading>Books I love</Heading>
-            <ul className="r-e-lst l_f_sm">
+            <ul className="re-L Sf-4">
               {BOOKS.map(({ key, title }) => (
-                <Text
-                  size="xs"
-                  contrast="low"
-                  color="b"
-                  as="li"
-                  key={key}
-                >
+                <Text size="3" low color="b" as="li" key={key}>
                   {title}
                 </Text>
               ))}
@@ -180,24 +168,24 @@ const resume = () => {
         </div>
       </aside>
       <div>
-        <Flex gap="lg" className="r-e-hdr">
+        <Flex gap="6" className="re-H">
           <div>
             <Avatar
               image="/me.jpg"
-              size="lg"
+              size="6"
               title="Hamza miloud amar"
             />
           </div>
-          <div className="l_f_2xs">
+          <div className="Sf-2">
             <div>
-              <Heading weight="medium" align="start" size="sm">
+              <Heading weight="5" align="start" size="4">
                 Hamza Miloud Amar
               </Heading>
-              <Text weight="thin" align="start" size="sm" as="h2">
+              <Text weight="1" align="start" size="4" as="h2">
                 Front End Developer
               </Text>
             </div>
-            <Text color="b" contrast="low">
+            <Text color="b" low>
               Experienced Frontend Developer | Passionate about
               building elegant, accessible, and UX-friendly Design
               Systems with React | Skilled in React Next Remix | CSS

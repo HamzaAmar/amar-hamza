@@ -1,8 +1,10 @@
-.s-o {
-  --column-gap: 0.5rem;
+.so- {
+  --CG: 0.5rem;
   list-style: none;
+  & li {
+    font-size: 0;
+  }
 }
-
-.s-o_vertical {
-  margin-top: 0.5rem;
+.so-vertical {
+  flex-direction: column;
 }

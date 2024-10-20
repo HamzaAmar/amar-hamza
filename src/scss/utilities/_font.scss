@@ -1,82 +1,82 @@
 // FONT SIZE STYLE SECTION START
-.u_f_3xs {
+.Fs-1 {
   font-size: clamp(0.51rem, calc(0.49rem + 0.08vw), 0.58rem);
 }
 
-.u_f_2xs {
+.Fs-2 {
   font-size: clamp(0.61rem, calc(0.59rem + 0.09vw), 0.69rem);
 }
 
-.u_f_xs {
+.Fs-3 {
   font-size: clamp(0.73rem, calc(0.71rem + 0.11vw), 0.83rem);
 }
 
-.u_f_sm {
+.Fs-4 {
   font-size: clamp(0.88rem, calc(0.85rem + 0.14vw), 1rem);
 }
 
-.u_f_md {
+.Fs-5 {
   font-size: clamp(1.05rem, calc(1.02rem + 0.16vw), 1.2rem);
 }
 
-.u_f_lg {
+.Fs-6 {
   font-size: clamp(1.26rem, calc(1.22rem + 0.19vw), 1.44rem);
 }
 
-.u_f_xl {
+.Fs-7 {
   font-size: clamp(1.51rem, calc(1.47rem + 0.23vw), 1.73rem);
 }
 
-.u_f_2xl {
+.Fs-8 {
   font-size: clamp(1.81rem, calc(1.76rem + 0.28vw), 2.07rem);
 }
 
-.u_f_3xl {
+.Fs-9 {
   font-size: clamp(2.18rem, calc(2.11rem + 0.34vw), 2.49rem);
 }
 
 // FONT SIZE STYLE SECTION END
 
-.u_f_thin {
+.Fw-1 {
   font-weight: 100;
 }
 
-.u_f_extra-light {
+.Fw-2 {
   font-weight: 200;
 }
 
-.u_f_light {
+.Fw-3 {
   font-weight: 300;
 }
 
-.u_f_normal {
+.Fw-4 {
   font-weight: 400;
 }
 
-.u_f_medium {
+.Fw-5 {
   font-weight: 500;
 }
 
-.u_f_semi-bold {
+.Fw-6 {
   font-weight: 600;
 }
 
-.u_f_bold {
+.Fw-7 {
   font-weight: 700;
 }
 
-.u_f_extra-bold {
+.Fw-8 {
   font-weight: 800;
 }
 
-.u_f_black {
+.Fw-9 {
   font-weight: 900;
 }
 
-.u_style__italic {
+.Fsy-italic {
   font-style: italic;
 }
 
-.u_style__oblique {
+.Fsy-oblique {
   font-style: oblique;
 }

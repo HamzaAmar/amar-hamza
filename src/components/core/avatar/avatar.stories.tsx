@@ -1,6 +1,7 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from '.';
+import { Flex } from '../flex';
 
 const meta: Meta<typeof Avatar> = {
   title: 'Components/Core/Avatar',
@@ -14,52 +15,21 @@ export default meta;
 
 type Story = StoryObj<typeof Avatar>;
 
-export const AvatarWithoutImagepri: Story = {};
+export const ButtonsSize = () => (
+  <Flex items="center" gap="4">
+    <Avatar image="" title="Hello" size="4" />
+    <Avatar image="" title="Hello" size="5" />
+    <Avatar image="" title="Hello" size="6" />
+  </Flex>
+);
 
-export const AvatarWithoutImageDanger: Story = {
-  args: {
-    color: 'd',
-  },
-};
+export const AvatarImage = () => (
+  <Flex items="center" gap="4">
+    <Avatar
+      image="https://picsum.photos/id/25/100/100"
+      title="Hello"
+    />
 
-export const AvatarWithoutImageSuccess: Story = {
-  args: {
-    color: 's',
-  },
-};
-
-export const AvatarWithoutImageWarning: Story = {
-  args: {
-    color: 'w',
-  },
-};
-
-export const AvatarWithImage: Story = {
-  args: {
-    image: 'https://picsum.photos/id/54/120/120',
-  },
-};
-
-export const AvatarWithoutImageSmall: Story = {
-  args: {
-    size: 'sm',
-  },
-};
-
-export const AvatarWithoutImageMedium: Story = {
-  args: {
-    size: 'md',
-  },
-};
-
-export const AvatarWithoutImageLarge: Story = {
-  args: {
-    size: 'lg',
-  },
-};
-
-export const AvatarWithoutImageExtraLarge: Story = {
-  args: {
-    size: 'xl',
-  },
-};
+    <Avatar title="Hello" />
+  </Flex>
+);

@@ -1,20 +1,18 @@
-.t-y {
+.ty- {
   color: var(--clr-txt);
-  font-size: var(--typography-size, inherit);
-  text-transform: var(--typography-transform, inherit);
 }
-.t-y_high {
+.ty-high {
   color: var(--C12);
 }
 
-.t-y_low {
+.ty-low {
   color: var(--C11);
 }
-.t-y_hdg {
+.ty-hdg {
   font-size: calc(var(--typography-size, 1rem) * 1.25);
 }
 
-.t-y_lnk {
+.ty-lnk {
   padding: 2px;
   text-decoration: none;
   color: var(--P11);
