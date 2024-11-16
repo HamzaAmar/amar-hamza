@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  Alert,
   FormContainer,
   Heading,
   Input,
@@ -15,6 +16,7 @@ import { SubmitButton } from './submit';
 
 export interface FormState {
   message?: string;
+  status?: 'idle' | 'success' | 'error';
 }
 
 const initialState: FormState = {
@@ -30,6 +32,14 @@ const Form = () => {
       className="Sf-5"
       action={formAction}
     >
+      {state?.message && (
+        <Alert
+          color={state.status === 'error' ? 'd' : 's'}
+          title={state.status ?? ''}
+          message={state.message}
+          aria-live="polite"
+        />
+      )}
       <div className="Sf-3">
         <Heading id="contact-me" as="h2">
           Contact Me
@@ -74,14 +84,6 @@ const Form = () => {
         </FormContainer>
         <SubmitButton />
       </div>
-      {state?.message && (
-        <p
-          aria-live="polite"
-          style={{ color: 'red', fontSize: '3rem' }}
-        >
-          {state.message}
-        </p>
-      )}
     </form>
   );
 };

@@ -1,16 +1,5 @@
-import { Email, Message, Send, User } from '@components/icons';
-import {
-  Button,
-  Grid,
-  Heading,
-  Input,
-  Text,
-  Textarea,
-  FormContainer,
-  Social,
-} from '@components/core';
+import { Grid, Heading, Text, Social } from '@components/core';
 import type { Metadata } from 'next';
-import { sendMail } from 'app/actions/contact';
 
 import type { ContactItemProps } from './utils/contact.type';
 import { CONTACT_INFO } from './utils/contact.data';

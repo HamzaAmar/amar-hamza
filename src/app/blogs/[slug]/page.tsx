@@ -4,16 +4,10 @@ import {
   Avatar,
   Flex,
   Heading,
-  IconButton,
   Social,
   Text,
 } from '@components/core';
-import {
-  Facebook,
-  Github,
-  Linkdin,
-  Twitter,
-} from '@components/icons';
+import { Github, Twitter } from '@components/icons';
 import { formatDate } from '@utils/formatDate';
 import { CustomMDX } from '@components/core/mdx';
 import type { Metadata } from 'next';

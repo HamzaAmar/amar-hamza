@@ -1,15 +1,7 @@
 'use client';
 
 import React from 'react';
-import {
-  Success,
-  Notification,
-  Warning,
-  Danger,
-  Close,
-  Info,
-  Check,
-} from '@components/icons';
+import { Warning, Danger, Info, Check } from '@components/icons';
 import { Text } from '@components/core';
 
 import type { AlertProps } from './alert.type';
