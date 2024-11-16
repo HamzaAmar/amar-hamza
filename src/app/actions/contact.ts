@@ -1,11 +1,6 @@
 'use server';
-
 import nodemailer from 'nodemailer';
-
-// import { ContactProps } from '../_components/contact/contact.type';
-
 import type { FormState } from 'app/contact/form';
-
 export interface ContactProps {
   message: string;
   email: string;
@@ -24,12 +19,12 @@ const mailContent = (
   <title>Email from ${name}</title>
   <style>
     body {
-      font-family: sans-serif; /* Choose a clear, web-safe font */
-      line-height: 1.5; /* Improve readability with better spacing */
+      font-family: sans-serif;
+      line-height: 1.5;
     }
     .signature {
-      margin-top: 20px; /* Add space before the signature */
-      border-top: 1px solid #ccc; /* Add a subtle divider */
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
       padding-top: 10px; 
     }
   </style>
