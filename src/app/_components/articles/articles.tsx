@@ -40,7 +40,7 @@ const Article = ({
     <Flex
       as="article"
       direction="column"
-      className="ar- l_box-article Sf-2"
+      className="ar- l_box-article Sf-2 projects-scroll"
       aria-labelledby={headingId}
     >
       <div className="ar-H">

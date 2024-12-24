@@ -18,6 +18,7 @@ import type { ItemProps, MenuProps } from './header.type';
 import { usePathname } from 'next/navigation';
 import { NavLink } from './navLink';
 import { useTheme } from 'next-themes';
+import { Logo } from '../logo';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },
@@ -101,12 +102,7 @@ const Header = () => {
         href="/"
         className="h-e-logo"
       >
-        <svg viewBox="0 0 243 254" width="36" fill="var(--P10)">
-          <path d="M177.3 10a10 10 0 0 1 13.6-3.7l8.7 5a10 10 0 0 1 3.7 13.7L86.2 227.5c-1.7 3-6.3 3.4-10.2 1.2l-11.8-6.8c-3.9-2.3-5.7-6.5-4-9.4L177.2 10Z" />
-          <path d="m242.3 249.5-29.6 4.4-35.5-241.4c-.4-3.3 2.8-6.5 7.3-7.2l13.5-2c4.4-.6 8.4 1.6 9 4.9l35.3 241.3ZM23.8 7c.3-3.3 4.2-5.7 8.7-5.2L46.1 3c4.5.4 7.9 3.5 7.6 6.8L30.6 252.7.7 250 23.8 7Z" />
-          <path d="M177.8 208c1.8 3 .1 7.2-3.7 9.5l-11.6 7.2c-3.9 2.4-8.4 2-10.2-.9l-123-199a10 10 0 0 1 3.2-13.7L41 6A10 10 0 0 1 54.8 9l123 199Z" />
-          <path d="m149.8 186 .5 10-67.7 4-.6-10 67.8-4Z" />
-        </svg>
+        <Logo width="140" />
       </Flex>
       <nav className="h-e-nav sm_hide u_flex-1">
         <ul className="Fc h-e-lst">

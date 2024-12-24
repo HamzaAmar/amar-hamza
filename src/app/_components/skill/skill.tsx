@@ -22,7 +22,12 @@ const Item = ({
     </div>
   ) : null;
   return (
-    <Flex as="li" gap="4" className="sk- l_box-article" key={title}>
+    <Flex
+      as="li"
+      gap="4"
+      className="sk- l_box-article shows-scroll"
+      key={title}
+    >
       <div className="sk-A">
         <CircleProgress color="p" value={level} />
       </div>

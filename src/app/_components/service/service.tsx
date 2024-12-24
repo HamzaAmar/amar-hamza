@@ -26,7 +26,7 @@ const services = () => {
           <Flex
             gap="4"
             items="start"
-            className="sv- l_box-article"
+            className="sv- l_box-article shows-scroll"
             key={id}
             as="article"
           >

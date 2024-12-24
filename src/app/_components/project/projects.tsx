@@ -36,7 +36,7 @@ const Project = ({
     <Flex
       direction="column"
       gap="4"
-      className="h-pr l_box-article"
+      className="h-pr l_box-article projects-scroll"
       as="article"
       aria-labelledby={id}
     >
