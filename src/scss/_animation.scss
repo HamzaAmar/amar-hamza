@@ -1,0 +1,37 @@
+.shows-scroll {
+  transform-origin: bottom right;
+  transform: perspective(800px) translateX(-100%) rotate(25deg)
+    scale(2);
+  opacity: 0;
+  view-timeline-name: --grow-image;
+  view-timeline-axis: block;
+  animation: ease-in-out shows forwards;
+  animation-timeline: --grow-image;
+  animation-range: entry 20% cover 20%;
+}
+
+.projects-scroll {
+  transform: translateY(6rem);
+  opacity: 0.5;
+  view-timeline-name: --move-project;
+  view-timeline-axis: block;
+  animation: ease-in-out shows forwards;
+  animation-timeline: --move-project;
+  animation-range: entry 20% cover 40%;
+}
+
+.text-scroll {
+  transform: translateX(-100%) scale(0) rotate(25deg);
+  view-timeline-name: --move-project;
+  view-timeline-axis: block;
+  animation: ease-in-out shows forwards;
+  animation-timeline: --move-project;
+  animation-range: entry 20% cover 40%;
+}
+
+@keyframes shows {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
