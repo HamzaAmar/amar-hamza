@@ -11,19 +11,24 @@ export const HeroHeading = ({
   return (
     <div className="Sf-1">
       <Heading
-        className="Sf-2"
+        className="Sf-2 text-scroll"
         size="5"
         weight="5"
         id={`${section}-id-section`}
       >
-        <Text transform="uppercase" color="p" low>
+        <Text
+          className="text-scroll"
+          transform="uppercase"
+          color="p"
+          low
+        >
           {heading}
         </Text>
-        {subHeading}
+        <span className="text-scroll">{subHeading}</span>
       </Heading>
 
       {description && (
-        <Text color="b" size="4" low>
+        <Text className="text-scroll" color="b" size="4" low>
           {description}
         </Text>
       )}
