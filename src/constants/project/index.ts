@@ -9,16 +9,18 @@ import { pillar } from './pillar';
 import { carRental } from './car-rental';
 import { huna } from './huna-book';
 import { openHand } from './open-hand';
+import { food } from './food';
 
 export const PROJECTS: ProjectType[] = [
   pillar,
   huna,
   openHand,
   dashboard,
-  uiLego,
+  cinema,
   linkdin,
   carRental,
-  cinema,
+  uiLego,
   gamer,
+  food,
   domlav,
 ];

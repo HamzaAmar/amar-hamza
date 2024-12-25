@@ -30,6 +30,7 @@
     "ci": "yarn validation && yarn build"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.1.0",
     "@next/third-parties": "^14.2.5",
     "@pillar-ui/hooks": "^0.6.3",
     "@sendgrid/mail": "^7.7.0",
