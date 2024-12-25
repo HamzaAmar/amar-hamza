@@ -1,4 +1,6 @@
-export const domlav = {
+import { ProjectType } from './project.type';
+
+export const domlav: ProjectType = {
   id: 'domlav',
   avatar: {
     src: '/assets/project/domlav/domlav-avatar.jpg',

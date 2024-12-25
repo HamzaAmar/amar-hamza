@@ -1,4 +1,6 @@
-export const carRental = {
+import { ProjectType } from './project.type';
+
+export const carRental: ProjectType = {
   id: 'car-rental',
   title: 'Car Rental',
   img: {

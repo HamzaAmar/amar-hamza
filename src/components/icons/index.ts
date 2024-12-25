@@ -6,6 +6,7 @@ export { default as Twitter } from './twitter';
 export { default as Linkdin } from './linkdin';
 export { default as Github } from './github';
 export { default as Instagram } from './instagram';
+export { default as Figma } from './figma';
 
 // Programming Language Icon
 

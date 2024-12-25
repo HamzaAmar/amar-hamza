@@ -1,4 +1,6 @@
-export const linkdin = {
+import { ProjectType } from "./project.type";
+
+export const linkdin: ProjectType = {
   id: 'linkdin-clone',
   title: 'Linkdin_Clone',
   img: {

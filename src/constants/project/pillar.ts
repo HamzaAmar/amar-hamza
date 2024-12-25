@@ -1,4 +1,6 @@
-export const pillar = {
+import { ProjectType } from './project.type';
+
+export const pillar: ProjectType = {
   id: 'pillar-ui',
   img: {
     src: '/assets/project/pillar/pillar.png',

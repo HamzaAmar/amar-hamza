@@ -1,4 +1,6 @@
-export const uiLego = {
+import { ProjectType } from './project.type';
+
+export const uiLego: ProjectType = {
   id: 'ui_lego',
   img: {
     src: '/assets/project/ui_lego/ui_lego.png',

@@ -1,4 +1,6 @@
-export const gamer = {
+import { ProjectType } from './project.type';
+
+export const gamer: ProjectType = {
   id: 'gamer',
   img: {
     src: '/assets/project/gamers/gamers.jpg',

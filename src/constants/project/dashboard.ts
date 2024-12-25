@@ -1,4 +1,6 @@
-export const dashboard = {
+import { ProjectType } from './project.type';
+
+export const dashboard: ProjectType = {
   id: 'dashboard',
   title: 'Dashboard',
   img: {

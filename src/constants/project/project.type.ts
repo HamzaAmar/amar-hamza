@@ -1,6 +1,6 @@
 interface Link {
   site: string;
-  title: string;
+  title: 'Figma' | 'Github' | 'Site';
 }
 
 interface Image {

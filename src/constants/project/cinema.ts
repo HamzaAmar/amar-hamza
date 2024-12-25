@@ -1,4 +1,6 @@
-export const cinema = {
+import { ProjectType } from './project.type';
+
+export const cinema: ProjectType = {
   id: 'cinema',
   title: 'Cinema',
   img: {
