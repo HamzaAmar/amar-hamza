@@ -3,14 +3,14 @@ export const SERVICES = [
   {
     id: 1,
     icon: <Fast width={32} />,
-    title: 'High Performance',
+    title: 'Website Performance Optimization',
     description:
       'Optimize web applications for peak performance using React, Next.js, Remix, and CSS. Deliverables include audits, code optimization, and rendering enhancements.',
   },
   {
     id: 2,
     icon: <Accessible width={32} />,
-    title: 'Accessible',
+    title: 'Accessibility Improvements',
     description:
       'Craft inclusive digital experiences through expert audits and remediation, ensuring compliance with WCAG standards and compatibility with assistive technology.',
   },
@@ -24,7 +24,7 @@ export const SERVICES = [
   {
     id: 4,
     icon: <Layout width={32} />,
-    title: 'Design System',
+    title: 'Design System Implementation',
     description:
       'Empower your team with a scalable design system including a unified design language, component libraries, and comprehensive documentation.',
   },
@@ -35,4 +35,33 @@ export const SERVICES = [
     description:
       'Refactor and optimize your CSS for maintainability, scalability, and performance using industry best practices and methodologies.',
   },
+  {
+    id: 6,
+    icon: <Ui width={32} />, // Replace with an appropriate icon for refactoring if available
+    title: 'Refactoring Legacy Code',
+    description:
+      'Modernize and optimize your legacy codebase with tailored strategies like the Strangler Fig, incremental refactoring, and big bang refactoring. I ensure the process aligns with your needs and timeline, prioritizing maintainability, performance, and scalability.',
+  },
+  {
+    id: 7,
+    icon: <Ui width={32} />, // Replace with an appropriate icon for refactoring if available
+    title: 'User Experience (UX) Enhancements',
+    description:
+      ' I bring a strong focus on user experience to every project. Whether collaborating with designers or applying my own UX knowledge, I ensure your website is intuitive, engaging, and a pleasure to use.',
+  },
+  {
+    id: 8,
+    icon: <Ui width={32} />, // Replace with an appropriate icon for refactoring if available
+    title: 'Code Reviews and Mentorship',
+    description:
+      'Provide expert guidance to your team through comprehensive code reviews and mentorship, fostering better coding practices and team growth.',
+  },
 ];
+
+// {
+//   id: 6,
+//   icon: <Accessible width={32} />,
+//   title: 'refactoring legacy code',
+//   description:
+//     'Upgrade your website to leverage the latest features in the React ecosystem, including frameworks like Next.js 15, Remix, and Tanstack router.',
+// },

@@ -11,10 +11,16 @@ import {
   Text,
 } from '@components/core';
 import { PROJECTS } from '@constants/project';
-import { Github, Globe } from '@components/icons';
+import { Figma, Github, Globe } from '@components/icons';
 import type { ProjectType } from '@constants/project/project.type';
 import { c } from '@utils/classnames';
 import Image from 'next/image';
+
+const ICONS = {
+  site: <Globe width="20" />,
+  figma: <Figma width="20" />,
+  github: <Github width="20" />,
+} as const;
 
 /*
 ====================================================================================================
@@ -57,19 +63,17 @@ const Project = ({
         </Text>
         <div className="resume__projects l_cluster">
           {links.map((link) => {
-            const icon =
-              link.title.toLowerCase() === 'site' ? (
-                <Globe width="20" />
-              ) : (
-                <Github width="20" />
-              );
+            const type = link.title.toLowerCase() as
+              | 'figma'
+              | 'github'
+              | 'site';
             return (
               <a
                 key={link.site}
                 className="h-pr-lnk Fc"
                 href={link.site}
               >
-                {icon}
+                {ICONS[type]}
                 <span>{link.title}</span>
               </a>
             );
