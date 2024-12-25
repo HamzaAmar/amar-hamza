@@ -3,13 +3,14 @@
 import { Button } from '@components/core';
 import { Send } from '@components/icons';
 import { useFormStatus } from 'react-dom';
+import { StatusProps } from './contact.type';
 
-export function SubmitButton() {
+export function SubmitButton({ status }: { status: StatusProps }) {
   const { pending } = useFormStatus();
 
   return (
     <Button
-      disabled={pending}
+      disabled={status !== 'solved'}
       icon={<Send width="15" fill="currentColor" />}
       status={pending ? 'loading' : 'idle'}
     >

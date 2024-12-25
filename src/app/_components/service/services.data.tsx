@@ -5,7 +5,7 @@ export const SERVICES = [
     icon: <Fast width={32} />,
     title: 'Website Performance Optimization',
     description:
-      'Optimize web applications for peak performance using React, Next.js, Remix, and CSS. Deliverables include audits, code optimization, and rendering enhancements.',
+      'Enhance web application performance using tools like Lighthouse,WebPageTest, React Profiler, and Webpack Bundle Analyzer. Services include detailed audits, Core Web Vitals improvements, code optimization, and rendering strategy enhancements.',
   },
   {
     id: 2,
@@ -19,14 +19,14 @@ export const SERVICES = [
     icon: <Ui width={32} />,
     title: 'Rendering Optimization',
     description:
-      'Assess and implement the best rendering strategy (SSR, SSG, CSR, etc.) for your web application to maximize performance, SEO, and user experience.',
+      'Assess and implement the best rendering strategy (Server Component, SSR, SSG, CSR, etc.) for your web application to maximize performance, SEO, and user experience.',
   },
   {
     id: 4,
     icon: <Layout width={32} />,
     title: 'Design System Implementation',
     description:
-      'Empower your team with a scalable design system including a unified design language, component libraries, and comprehensive documentation.',
+      'Collaborate with your team to create or refine a scalable design system that aligns with your brand and streamlines your development workflow.',
   },
   {
     id: 5,

@@ -4,30 +4,38 @@ import {
   Alert,
   FormContainer,
   Heading,
+  IconButton,
   Input,
   Text,
   Textarea,
 } from '@components/core';
 import { Email, Message, User } from '@components/icons';
 import { sendMail } from 'app/actions/contact';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormState } from 'react-dom';
 import { SubmitButton } from './submit';
+import { Turnstile } from '@marsidev/react-turnstile';
+import { FormState, StatusProps } from './contact.type';
 
-export interface FormState {
-  message?: string;
-  status?: 'idle' | 'success' | 'error';
-}
-
-const initialState: FormState = {
+export const initialState: FormState = {
   message: '',
+  status: 'idle',
 };
 
 const Form = () => {
   const [state, formAction] = useFormState(sendMail, initialState);
+  const [status, setStatus] = React.useState<StatusProps>('idle');
+  const formRef = React.useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.status === 'success') {
+      formRef.current?.reset();
+    }
+  }, [state.status]);
 
   return (
     <form
+      ref={formRef}
       aria-labelledby="contact-me"
       className="Sf-5"
       action={formAction}
@@ -40,16 +48,6 @@ const Form = () => {
           aria-live="polite"
         />
       )}
-      <div className="Sf-3">
-        <Heading id="contact-me" as="h2">
-          Contact Me
-        </Heading>
-        <Text size="4" color="b" low>
-          Curious about my services or have a specific question? I'm
-          here to help! Don't hesitate to contact me, and let's
-          explore how we can work together.
-        </Text>
-      </div>
       <div className="Sf-4">
         <FormContainer name="name" label="Name" required>
           <Input
@@ -82,7 +80,13 @@ const Form = () => {
             icon={<Message width="24" />}
           />
         </FormContainer>
-        <SubmitButton />
+        <Turnstile
+          siteKey={process.env.NEXT_PUBLIC_SITE_KEY as string}
+          onError={() => setStatus('error')}
+          onExpire={() => setStatus('expired')}
+          onSuccess={() => setStatus('solved')}
+        />
+        <SubmitButton status={status} />
       </div>
     </form>
   );

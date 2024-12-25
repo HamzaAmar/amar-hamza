@@ -1,11 +1,13 @@
 'use server';
+import { verifyToken } from 'api/verifyToken';
+import { FormState } from 'app/contact/contact.type';
 import nodemailer from 'nodemailer';
-import type { FormState } from 'app/contact/form';
 export interface ContactProps {
   message: string;
   email: string;
   name: string;
   subject: string;
+  token: string;
 }
 
 const mailContent = (
@@ -43,8 +45,10 @@ export async function sendMail(
   state: FormState,
   formData: FormData,
 ): Promise<Required<FormState>> {
-  const { email, message, name, subject } =
+  const token = formData.get('cf-turnstile-response') as string;
+  const data =
     (Object.fromEntries(formData) as any as ContactProps) ?? {};
+  const { email, message, name, subject } = data;
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -65,6 +69,10 @@ export async function sendMail(
   };
 
   try {
+    console.log('this is the value of the token', token);
+    if (!token)
+      throw new Error('Captcha verification token is required');
+    await verifyToken(token);
     await transporter.sendMail(content);
     return { message: 'Email Send With Success', status: 'success' };
   } catch (err: unknown) {
