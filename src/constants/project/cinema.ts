@@ -25,8 +25,6 @@ export const cinema: ProjectType = {
     'CSS',
     'HTML',
     'Firebase',
-    'mongoDB',
-    'Node',
-    'Express',
+    'Pillar-ui',
   ],
 };

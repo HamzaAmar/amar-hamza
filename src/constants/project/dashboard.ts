@@ -19,5 +19,11 @@ export const dashboard: ProjectType = {
   ],
   description:
     'Fully Accessible Admin Dashboard Site Powered by (React, React-Router-Dom V16.4, SCSS That helps (Web developers, and companies) to make their UI sites up and running fast, you can find all the components you need From) Base UI, Composite UI Pages, Dashboard Pages, Icons, Charts, and Forms) and so, once you try it, I think you are going to like it.',
-  technologies: ['React', 'React-router-dom-16.4', 'CSS', 'HTML'],
+  technologies: [
+    'React',
+    'React-router-dom-16.4',
+    'CSS',
+    'HTML',
+    'Pillar-ui',
+  ],
 };

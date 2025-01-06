@@ -13,8 +13,8 @@ export const gamer: ProjectType = {
   title: 'Gamer Play',
   links: [
     {
-      site: 'https://github.com/HamzaAmar/gamers',
-      title: 'Github',
+      site: 'https://www.figma.com/design/6InQFuZkOrb66Caq3Wfzck/Gamer?node-id=0-1&p=f&t=QfJp7jqMAILMmRPK-0',
+      title: 'Figma',
     },
   ],
   description:

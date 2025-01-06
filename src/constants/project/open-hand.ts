@@ -13,7 +13,7 @@ export const openHand: ProjectType = {
   title: 'Open Hand Morocco',
   links: [
     {
-      site: 'https://ohm-client.vercel.app/',
+      site: 'https://openhandsmorocco.com/',
       title: 'Site',
     },
   ],
@@ -21,10 +21,9 @@ export const openHand: ProjectType = {
     'Open Hand is a volunteering site that connects people with volunteer opportunities in the Morocco. We are a volunteer-led project that aims to connect people with volunteer opportunities in Morocco.',
   technologies: [
     'Nextjs',
-    '@Pillar-ui',
+    'Pillar-ui',
     'Express',
     'MongoDB',
     'Node.js',
-    'Leaflet',
   ],
 };
