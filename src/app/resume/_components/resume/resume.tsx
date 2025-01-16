@@ -67,7 +67,47 @@ const Education = () => {
 
 const resume = () => {
   return (
-    <Grid columns="260px 1fr" className="re- sm_grid-one">
+    <Grid columns="1fr 260px" className="re- sm_grid-one">
+      <div>
+        <div className="re-H Sf-4">
+          <Flex gap="4" items="center">
+            <div>
+              <Avatar
+                image="/me.jpg"
+                size="5"
+                title="Hamza miloud amar"
+              />
+            </div>
+            <div>
+              <Heading weight="5" align="start" size="6">
+                Hamza Miloud Amar
+              </Heading>
+              <Text
+                color="b"
+                low
+                weight="1"
+                align="start"
+                size="4"
+                as="h2"
+              >
+                Front End Developer
+              </Text>
+            </div>
+          </Flex>
+          <Text color="b" low>
+            Experienced Frontend Developer | Passionate about building
+            elegant, accessible, and UX-friendly Design Systems with
+            React | Skilled in React Next Remix | CSS enthusiast |
+            Lover of Clean & Maintainable CSS | Always learning and
+            growing.
+          </Text>
+        </div>
+
+        <div>
+          <Education />
+          <Project className="md_grid-one" />
+        </div>
+      </div>
       <aside className="re-A">
         <div className="Sf-5">
           <div className="Sf-5">
@@ -167,39 +207,6 @@ const resume = () => {
           </div>
         </div>
       </aside>
-      <div>
-        <Flex gap="6" className="re-H">
-          <div>
-            <Avatar
-              image="/me.jpg"
-              size="6"
-              title="Hamza miloud amar"
-            />
-          </div>
-          <div className="Sf-2">
-            <div>
-              <Heading weight="5" align="start" size="4">
-                Hamza Miloud Amar
-              </Heading>
-              <Text weight="1" align="start" size="4" as="h2">
-                Front End Developer
-              </Text>
-            </div>
-            <Text color="b" low>
-              Experienced Frontend Developer | Passionate about
-              building elegant, accessible, and UX-friendly Design
-              Systems with React | Skilled in React Next Remix | CSS
-              enthusiast | Lover of Clean & Maintainable CSS | Always
-              learning and growing.
-            </Text>
-          </div>
-        </Flex>
-
-        <div>
-          <Education />
-          <Project className="md_grid-one" />
-        </div>
-      </div>
     </Grid>
   );
 };
