@@ -1,6 +1,11 @@
-import { parseISO, format } from 'date-fns';
-
 export const formatDate = (date: string) => {
-  return format(parseISO(date), 'MMMM dd, yyyy');
-  //   const newDate = Date.parse(date);
+  const dateObj = new Date(date);
+
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
+  return formatter.format(dateObj);
 };

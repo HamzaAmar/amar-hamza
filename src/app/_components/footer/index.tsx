@@ -1,14 +1,7 @@
-import {
-  Button,
-  Flex,
-  Grid,
-  Heading,
-  Social,
-  Text,
-} from '@components/core';
+import { Button, Flex, Grid, Social, Text } from '@components/core';
 import React from 'react';
-import { Logo } from '../logo';
 import Link from 'next/link';
+import { Logo } from '../logo';
 
 const Footer = () => {
   return (

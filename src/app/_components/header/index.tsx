@@ -1,9 +1,8 @@
 'use client';
 
-/* eslint-disable no-warning-comments */
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Moon, Sun, TypeScript } from '@components/icons';
+import { Menu, Moon, Sun } from '@components/icons';
 import {
   Button,
   Flex,
@@ -16,8 +15,8 @@ import useBoolean from '@hooks/useBoolean';
 
 import type { ItemProps, MenuProps } from './header.type';
 import { usePathname } from 'next/navigation';
-import { NavLink } from './navLink';
 import { useTheme } from 'next-themes';
+import NavLink from './navLink';
 import { Logo } from '../logo';
 
 const MENU: MenuProps[] = [
@@ -58,13 +57,7 @@ const Switcher = () => {
   );
 };
 
-const Item = ({
-  name,
-  path,
-  pathname,
-  mobile,
-  handleClose,
-}: ItemProps) => {
+const Item = ({ name, path, mobile, handleClose }: ItemProps) => {
   const close = handleClose ? { onClick: handleClose } : {};
   const onlyDesktop = mobile ? {} : ({ justify: 'center' } as const);
 

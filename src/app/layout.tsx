@@ -4,8 +4,8 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Footer, Header } from './_components';
 import '../scss/main.scss';
-import { NextThemeProvider } from './_components/themeProvider';
 import { DOMAIN } from '@constants/domain';
+import NextThemeProvider from './_components/themeProvider';
 
 interface Meta {
   title?: string;

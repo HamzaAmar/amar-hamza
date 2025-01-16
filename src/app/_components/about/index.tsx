@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Arrow, File } from '@components/icons';
-import { Button, Heading, Social, Text } from '@components/core';
+import { Button, Social, Text } from '@components/core';
 
 const About = () => {
   return (
