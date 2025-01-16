@@ -2,14 +2,7 @@
 
 /* eslint-disable import/extensions */
 import React, { useId } from 'react';
-import {
-  Flex,
-  Grid,
-  Heading,
-  HeroHeading,
-  Tag,
-  Text,
-} from '@components/core';
+import { Flex, Grid, HeroHeading, Tag, Text } from '@components/core';
 import { PROJECTS } from '@constants/project';
 import { Figma, Github, Globe } from '@components/icons';
 import type { ProjectType } from '@constants/project/project.type';
@@ -20,7 +13,7 @@ const ICONS = {
   site: <Globe width="20" />,
   figma: <Figma width="20" />,
   github: <Github width="20" />,
-} as const;
+} satisfies Record<string, React.ReactNode>;
 
 /*
 ====================================================================================================
@@ -63,10 +56,8 @@ const Project = ({
         </Text>
         <div className="resume__projects l_cluster">
           {links.map((link) => {
-            const type = link.title.toLowerCase() as
-              | 'figma'
-              | 'github'
-              | 'site';
+            const type =
+              link.title.toLowerCase() as keyof typeof ICONS;
             return (
               <a
                 key={link.site}

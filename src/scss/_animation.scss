@@ -1,7 +1,6 @@
 .shows-scroll {
   transform-origin: bottom right;
-  transform: perspective(800px) translateX(-100%) rotate(25deg)
-    scale(2);
+  transform: translateY(var(--scroll-Y, -4rem));
   opacity: 0;
   view-timeline-name: --grow-image;
   view-timeline-axis: block;

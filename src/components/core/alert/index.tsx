@@ -12,7 +12,7 @@ const icon = {
   w: <Warning width="16" />,
   d: <Danger width="16" />,
   b: <Danger width="16" />,
-} as const;
+} satisfies Record<string, React.ReactNode>;
 
 export const Alert = ({
   color = 'd',

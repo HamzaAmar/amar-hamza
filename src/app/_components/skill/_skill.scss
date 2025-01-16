@@ -1,5 +1,11 @@
 .sk- {
   background-color: var(--B3);
+  &:nth-child(even) {
+    --scroll-Y: 5rem;
+  }
+  &:nth-child(odd) {
+    --scroll-Y: -5rem;
+  }
 }
 
 .sk-C::before {

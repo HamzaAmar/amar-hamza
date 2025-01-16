@@ -10,7 +10,7 @@ const About = () => {
       <div className="ab-B ab-B-revert" />
       <div className="ab- Fc">
         <Social className="ab-M" direction="vertical" />
-        <div className="ab-I  center Sf-4">
+        <div className="ab-I  center Sf-6">
           <h2 className="ab-N">
             Miloud Amar
             <span className="Sr">A freelancer web developer</span>
@@ -43,16 +43,14 @@ const About = () => {
           </div>
         </div>
         <div className="ab-T ab-TT">
-          <Text size="4">I am a freelance web developer</Text>
+          <Text size="3">freelance web developer</Text>
         </div>
 
         <div className="ab-TB ab-T">
-          <p>Am Available</p>
+          <Text size="3">Am Available</Text>
         </div>
         <div className="ab-TR">
-          <p>
-            scroll Down <Arrow width="1em" strokeWidth={3} />
-          </p>
+          <Arrow width="32" strokeWidth={3} />
         </div>
       </div>
     </div>

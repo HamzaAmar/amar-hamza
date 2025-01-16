@@ -1,5 +1,11 @@
 .sv- {
   background: var(--B3);
+  &:nth-child(even) {
+    --scroll-Y: 5rem;
+  }
+  &:nth-child(odd) {
+    --scroll-Y: -5rem;
+  }
 }
 
 .sv-I {
