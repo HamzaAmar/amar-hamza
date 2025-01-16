@@ -8,9 +8,10 @@ export const Avatar = ({
   size = '4',
   color = 'p',
   className,
+  ...rest
 }: AvatarProps) => {
   const avatarContent = image ? (
-    <img src={image} alt={title} />
+    <img src={image} alt={title} {...rest} />
   ) : (
     <span className="Fc">{title[0].toUpperCase()}</span>
   );

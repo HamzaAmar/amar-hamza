@@ -20,11 +20,10 @@ interface LayoutProps extends Meta {
 
 const Layout = (props: LayoutProps) => {
   const { children } = props;
-  const { NEXT_PUBLIC_GA_ID } = process.env;
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <GoogleAnalytics gaId={NEXT_PUBLIC_GA_ID!} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       <body>
         <NextThemeProvider>
           <Header />

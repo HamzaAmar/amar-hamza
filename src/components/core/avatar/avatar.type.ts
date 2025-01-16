@@ -8,4 +8,5 @@ export interface AvatarProps {
   title: string;
   className?: string;
   color?: Color;
+  loading?: 'eager' | 'lazy';
 }

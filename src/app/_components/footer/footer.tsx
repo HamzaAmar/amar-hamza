@@ -15,7 +15,7 @@ const Footer = () => {
     <div className="fo-">
       <Grid columns="1fr 1fr" className="fo-H md_grid-one">
         <div className="l_box Sf-4">
-          <Link href="/">
+          <Link aria-label="Go to Home page" href="/">
             <Logo width="120" />
           </Link>
 

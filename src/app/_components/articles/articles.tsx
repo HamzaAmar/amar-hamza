@@ -66,7 +66,11 @@ const Article = ({
       <div className="ar-C Sf-2">
         <Flex items="center">
           <Flex gap="4" items="center">
-            <Avatar image="/me.jpg" title="my Avatar" />
+            <Avatar
+              image="/me.jpg"
+              title="my Avatar"
+              loading="lazy"
+            />
             <div>
               <Text size="3" weight="5">
                 Hamza Miloud Amar
