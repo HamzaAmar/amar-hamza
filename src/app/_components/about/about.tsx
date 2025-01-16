@@ -11,10 +11,10 @@ const About = () => {
       <div className="ab- Fc">
         <Social className="ab-M" direction="vertical" />
         <div className="ab-I  center Sf-6">
-          <h2 className="ab-N">
+          <h1 className="ab-N">
             Miloud Amar
             <span className="Sr">A freelancer web developer</span>
-          </h2>
+          </h1>
           <Text
             size="6"
             color="b"

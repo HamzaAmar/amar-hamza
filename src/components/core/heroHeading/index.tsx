@@ -15,6 +15,7 @@ export const HeroHeading = ({
         size="5"
         weight="5"
         id={`${section}-id-section`}
+        as="h2"
       >
         <Text
           className="text-scroll"
