@@ -15,7 +15,7 @@ export const SERVICES = [
       'Craft inclusive digital experiences through expert audits and remediation, ensuring compliance with WCAG standards and compatibility with assistive technology.',
   },
   {
-    id: 5,
+    id: 3,
     icon: <Ui width={32} />,
     title: 'Rendering Optimization',
     description:
@@ -57,11 +57,3 @@ export const SERVICES = [
       'Provide expert guidance to your team through comprehensive code reviews and mentorship, fostering better coding practices and team growth.',
   },
 ];
-
-// {
-//   id: 6,
-//   icon: <Accessible width={32} />,
-//   title: 'refactoring legacy code',
-//   description:
-//     'Upgrade your website to leverage the latest features in the React ecosystem, including frameworks like Next.js 15, Remix, and Tanstack router.',
-// },

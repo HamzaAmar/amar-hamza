@@ -22,7 +22,6 @@ export const Flex = forwardRef((props, forwardedRef) => {
   const flexClassName = c('flex', {
     [`u_justify-${justify}`]: Boolean(justify),
     [`u_items-${items}`]: Boolean(items),
-    // [`u_flex-${flex}`]: Boolean(items),
     [`u_direction-${direction}`]:
       Boolean(direction) && direction === 'column',
     'u_wrap-wrap': Boolean(wrap),

@@ -2,18 +2,14 @@
 
 import {
   Alert,
+  Button,
   FormContainer,
-  Heading,
-  IconButton,
   Input,
-  Text,
   Textarea,
 } from '@components/core';
-import { Email, Message, User } from '@components/icons';
+import { Email, Message, Send, User } from '@components/icons';
 import { sendMail } from 'app/actions/contact';
-import React, { useEffect } from 'react';
-import { useFormState } from 'react-dom';
-import { SubmitButton } from './submit';
+import React, { useActionState, useEffect } from 'react';
 import { Turnstile } from '@marsidev/react-turnstile';
 import { FormState, StatusProps } from './contact.type';
 
@@ -23,7 +19,10 @@ export const initialState: FormState = {
 };
 
 const Form = () => {
-  const [state, formAction] = useFormState(sendMail, initialState);
+  const [state, formAction, pending] = useActionState(
+    sendMail,
+    initialState,
+  );
   const [status, setStatus] = React.useState<StatusProps>('idle');
   const formRef = React.useRef<HTMLFormElement>(null);
 
@@ -86,7 +85,14 @@ const Form = () => {
           onExpire={() => setStatus('expired')}
           onSuccess={() => setStatus('solved')}
         />
-        <SubmitButton status={status} />
+
+        <Button
+          disabled={status !== 'solved'}
+          icon={<Send width="15" fill="currentColor" />}
+          status={pending ? 'loading' : 'idle'}
+        >
+          Contact
+        </Button>
       </div>
     </form>
   );
