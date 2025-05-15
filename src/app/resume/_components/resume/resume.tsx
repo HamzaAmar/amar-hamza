@@ -41,7 +41,7 @@ const Education = () => {
     <section className="re- section Sf-5">
       <Heading as="h2">Experience</Heading>
 
-      {EDUCATION_DATA.map(({ id, date, title, description }) => (
+      {EDUCATION_DATA.map(({ id, date, title, lists }) => (
         <Flex key={id} gap="5" className="re-E">
           <div className="Sf-3">
             <div>
@@ -56,8 +56,14 @@ const Education = () => {
               >
                 {date}
               </Text>
+              <ul className="Sf-3">
+                {lists.map((item, index) => (
+                  <Text as="li" size="4" key={index}>
+                    {item}
+                  </Text>
+                ))}
+              </ul>
             </div>
-            <Text size="4">{description}</Text>
           </div>
         </Flex>
       ))}
@@ -95,11 +101,12 @@ const resume = () => {
             </div>
           </Flex>
           <Text color="b" low>
-            Experienced Frontend Developer | Passionate about building
-            elegant, accessible, and UX-friendly Design Systems with
-            React | Skilled in React Next Remix | CSS enthusiast |
-            Lover of Clean & Maintainable CSS | Always learning and
-            growing.
+            Senior frontend developer with nearly a decade of
+            experience using React, TypeScript, Next.js, and Remix to
+            build complex, scalable user interfaces. Combines
+            expert-level CSS skills and a strong focus on web
+            performance and accessibility. Excels at architecting
+            robust design systems and transforming technical
           </Text>
         </div>
 
