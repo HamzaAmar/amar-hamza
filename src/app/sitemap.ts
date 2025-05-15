@@ -6,25 +6,28 @@ const PAGES = ['/blogs', '/contact', '/resume'];
 const NOW = new Date().toISOString().split('T')[0];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const blogs = getBlogPosts().map((post) => ({
+  const blogs: MetadataRoute.Sitemap = getBlogPosts().map((post) => ({
     url: `${DOMAIN}/blogs/${post.metadata.slug}`,
     lastModified: post.metadata.lastModified,
     priority: 0.9,
-    changefreq: 'daily',
+    changeFrequency: 'daily',
   }));
 
-  const routes = PAGES.map((page) => ({
-    url: `${DOMAIN}${page}`,
-    lastModified: NOW,
-    priority: 0.8,
-    changefreq: 'monthly',
-  }));
+  const routes: MetadataRoute.Sitemap = PAGES.map(
+    (page) =>
+      ({
+        url: `${DOMAIN}${page}`,
+        lastModified: NOW,
+        priority: 0.8,
+        changeFrequency: 'daily',
+      } satisfies MetadataRoute.Sitemap[0]),
+  );
 
-  const home = {
+  const home: MetadataRoute.Sitemap[0] = {
     url: `${DOMAIN}`,
     lastModified: NOW,
     priority: 1,
-    changefreq: 'monthly',
+    changeFrequency: 'daily',
   };
 
   return [home, ...routes, ...(blogs || [])];
