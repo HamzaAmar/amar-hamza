@@ -10,11 +10,13 @@ import { carRental } from './car-rental';
 import { huna } from './huna-book';
 import { openHand } from './open-hand';
 import { food } from './food';
+import { pillarDashboard } from './pillar-dashaboard';
 
 export const PROJECTS: ProjectType[] = [
   pillar,
-  huna,
   openHand,
+  pillarDashboard,
+  huna,
   dashboard,
   cinema,
   linkdin,
