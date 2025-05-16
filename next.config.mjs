@@ -14,3 +14,19 @@ const nextConfig = {
 };
 
 export default withBundleAnalyzerInstance(nextConfig);
+//  async redirects() {
+//     return [
+//       {
+//         source:
+//           '/blogs/client-side-rendering-dynamic-user-experiences',
+//         destination: '/blogs/client-side-rendering',
+//         permanent: true,
+//       },
+//       {
+//         source:
+//           '/blogs/multi-page-application-traditional-yet-powerful',
+//         destination: '/blogs/multi-page-application',
+//         permanent: true,
+//       },
+//     ];
+//   },

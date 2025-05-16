@@ -12,12 +12,11 @@ import {
   Text,
 } from '@components/core';
 import useBoolean from '@hooks/useBoolean';
-
-import type { ItemProps, MenuProps } from './header.type';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import NavLink from './navLink';
 import { Logo } from '../logo';
+import type { ItemProps, MenuProps } from './header.type';
 
 const MENU: MenuProps[] = [
   { id: 1, name: 'Home', path: '/' },

@@ -11,3 +11,5 @@ export { CircleProgress } from './progress';
 export { CustomMDX } from './mdx';
 export { Social } from './social';
 export { HeroHeading } from './heroHeading';
+export { Conversation } from './conversation';
+export { DocsCode } from './code';

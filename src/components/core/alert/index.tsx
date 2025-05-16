@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Warning, Danger, Info, Check } from '@components/icons';
-import { Text } from '@components/core';
+import { Text } from '../typography';
 
 import type { AlertProps } from './alert.type';
 
