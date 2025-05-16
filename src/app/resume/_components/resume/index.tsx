@@ -71,7 +71,7 @@ const Education = () => {
   );
 };
 
-const resume = () => {
+const Resume = () => {
   return (
     <Grid columns="1fr 260px" className="re- sm_grid-one">
       <div>
@@ -218,4 +218,4 @@ const resume = () => {
   );
 };
 
-export default resume;
+export default Resume;

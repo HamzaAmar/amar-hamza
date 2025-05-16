@@ -1,5 +1,5 @@
 import React from 'react';
-import { Resume } from './_components/resume';
+import Resume from './_components/resume';
 import { Metadata } from 'next';
 
 const curriculumVitae = () => {
