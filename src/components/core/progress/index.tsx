@@ -1,4 +1,4 @@
-import type { ProgressCircleProps } from './progress.type';
+import type { ProgressCircleProps } from "./progress.type";
 
 export const CircleProgress = ({
   value = 50,
@@ -35,7 +35,8 @@ export const CircleProgress = ({
           textAnchor="middle"
           dominantBaseline="central"
         >
-          {value}%
+          {value}
+          %
         </text>
       </svg>
     </div>

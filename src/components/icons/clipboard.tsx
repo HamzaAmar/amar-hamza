@@ -1,4 +1,4 @@
-import type { SvgType } from './utils/types';
+import type { SvgType } from "./utils/types";
 
 function SvgComponent(props: SvgType) {
   return (

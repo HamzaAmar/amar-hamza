@@ -1,4 +1,8 @@
-'use client';
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useId } from "react";
 
 import {
   Avatar,
@@ -9,14 +13,11 @@ import {
   HeroHeading,
   Tag,
   Text,
-} from '@components/core';
-import { Arrow } from '@components/icons';
-import { formatDate } from '@utils/formatDate';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useId } from 'react';
+} from "@components/core";
+import { Arrow } from "@components/icons";
+import { formatDate } from "@utils/formatDate";
 
-import type { ArticlesProps, ArticleProps } from './article.type';
+import type { ArticleProps, ArticlesProps } from "./article.type";
 
 /*
 ====================================================================================================
@@ -44,21 +45,23 @@ const Article = ({
       aria-labelledby={headingId}
     >
       <div className="ar-H">
-        {image ? (
-          <div className="ar--imgC">
-            <Image
-              src={image}
-              alt="Hello world"
-              className="ar-I"
-              loading="lazy"
-              placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
-              fill
-            />
-          </div>
-        ) : null}
+        {image
+          ? (
+              <div className="ar--imgC">
+                <Image
+                  src={image}
+                  alt="Hello world"
+                  className="ar-I"
+                  loading="lazy"
+                  placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
+                  fill
+                />
+              </div>
+            )
+          : null}
 
         <div className="ar-T l_cluster">
-          {tags.map((tag) => (
+          {tags.map(tag => (
             <Tag key={tag} color="p" title={tag} size="4" />
           ))}
         </div>
@@ -112,7 +115,9 @@ const Article = ({
         href={`/blogs/${slug}`}
       >
         <span id={buttonId} className="Sr">
-          Go to {title}
+          Go to
+          {" "}
+          {title}
         </span>
         Read More
       </Button>
@@ -143,7 +148,7 @@ const articles = ({ posts, description }: ArticlesProps) => {
         gap="5"
         className="sm_grid-one md_grid-two"
       >
-        {posts.map((post) => (
+        {posts.map(post => (
           <Article key={post.metadata.slug} {...post.metadata} />
         ))}
       </Grid>

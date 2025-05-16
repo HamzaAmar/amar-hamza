@@ -1,23 +1,23 @@
 module.exports = {
-  extends: ['stylelint-config-standard-scss', 'stylelint-config-prettier-scss'],
-  plugins: ['stylelint-color-format'],
-  customSyntax: 'postcss-scss',
+  extends: ["stylelint-config-standard-scss", "stylelint-config-prettier-scss"],
+  plugins: ["stylelint-color-format"],
+  customSyntax: "postcss-scss",
   rules: {
-    'selector-class-pattern': null,
-    'no-descending-specificity': null,
-    'value-no-vendor-prefix': [
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "value-no-vendor-prefix": [
       true,
       {
-        ignoreValues: ['box'],
+        ignoreValues: ["box"],
       },
     ],
-    'color-format/format': {
-      format: 'hsl',
+    "color-format/format": {
+      format: "hsl",
     },
-    'declaration-block-no-duplicate-properties': [
+    "declaration-block-no-duplicate-properties": [
       true,
       {
-        ignore: ['consecutive-duplicates'],
+        ignore: ["consecutive-duplicates"],
       },
     ],
   },

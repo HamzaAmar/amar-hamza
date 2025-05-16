@@ -14,7 +14,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: var(--t-p);
     background: white;

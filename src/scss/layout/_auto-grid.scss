@@ -3,8 +3,5 @@
 
   display: grid;
   gap: min(3vw, 2rem);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(var(--minimum), 100%), 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr));
 }

@@ -1,7 +1,7 @@
-import type { Color } from '@type/utils';
+import type { Color } from "@type/utils";
 
-export interface AlertProps {
+export type AlertProps = {
   color?: Color;
   message: string;
   title: string;
-}
+};

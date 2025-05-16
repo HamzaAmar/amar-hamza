@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Alert, Flex } from '..';
+import { Alert, Flex } from "..";
 
 const meta: Meta<typeof Alert> = {
-  title: 'Components/Core/Alert',
+  title: "Components/Core/Alert",
   component: Alert,
   args: {
     message:
-      'Hello word from here i like to see it every thing is correct',
+      "Hello word from here i like to see it every thing is correct",
   },
 };
 

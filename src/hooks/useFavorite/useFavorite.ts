@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from "react";
 
-const KEY = 'favorites';
+const KEY = "favorites";
 
 function useFavorites() {
   const [favorites, setFavorites] = useState<string[]>(() => {
@@ -17,7 +17,7 @@ function useFavorites() {
   const toggleFavorite = (postId: string) => {
     setFavorites((prevFav) => {
       const favorites = isFavorite(postId)
-        ? prevFav.filter((id) => id !== postId)
+        ? prevFav.filter(id => id !== postId)
         : [...prevFav, postId];
 
       localStorage.setItem(KEY, JSON.stringify(favorites));

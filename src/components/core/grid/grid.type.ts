@@ -1,27 +1,27 @@
-import type { ReactNode, CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from "react";
 
-export interface GridBaseProps {
-  gap?: '3' | '4' | '5' | '6' | '7';
+export type GridBaseProps = {
+  gap?: "3" | "4" | "5" | "6" | "7";
   columns?: string;
   rows?: string;
   areas?: string;
-}
-type Items = 'center' | 'end' | 'start';
-type Justify = 'around' | 'between' | 'evenly' | 'end' | 'center';
+};
+type Items = "center" | "end" | "start";
+type Justify = "around" | "between" | "evenly" | "end" | "center";
 
-export interface GridProps extends GridBaseProps {
+export type GridProps = {
   children: ReactNode;
   style?: CSSProperties;
   className?: string;
   items?: Items;
   justify?: Justify;
-}
+} & GridBaseProps;
 
-export interface GridItemProps {
+export type GridItemProps = {
   children: ReactNode;
   area?: string;
   column?: string;
   row?: string;
   style?: CSSProperties;
   className?: string;
-}
+};

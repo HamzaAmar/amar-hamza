@@ -1,5 +1,6 @@
-import React from 'react';
-import type { SvgType } from './utils/types';
+import React from "react";
+
+import type { SvgType } from "./utils/types";
 
 const tailwind = (props: SvgType) => {
   return (

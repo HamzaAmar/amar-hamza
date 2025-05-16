@@ -1,15 +1,16 @@
-import { Flex } from '@components/core/flex';
-import { Facebook, Message } from '@components/icons';
-import { type Meta, StoryFn } from '@storybook/react';
+import type { Meta } from "@storybook/react";
 
-import { IconButton } from '..';
+import { Flex } from "@components/core/flex";
+import { Facebook, Message } from "@components/icons";
+
+import { IconButton } from "..";
 
 export default {
-  title: 'Components/Core/IconButton',
+  title: "Components/Core/IconButton",
   component: IconButton,
   args: {
     icon: <Facebook width="20" />,
-    title: 'facebook',
+    title: "facebook",
   },
   argTypes: {
     className: {

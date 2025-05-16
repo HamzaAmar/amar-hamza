@@ -1,16 +1,17 @@
-import { domlav } from './domlav';
-import { dashboard } from './dashboard';
-import { gamer } from './gamer';
-import { cinema } from './cinema';
-import type { ProjectType } from './project.type';
-import { linkdin } from './linkdin';
-import { uiLego } from './uiLego';
-import { pillar } from './pillar';
-import { carRental } from './car-rental';
-import { huna } from './huna-book';
-import { openHand } from './open-hand';
-import { food } from './food';
-import { pillarDashboard } from './pillar-dashaboard';
+import type { ProjectType } from "./project.type";
+
+import { carRental } from "./car-rental";
+import { cinema } from "./cinema";
+import { dashboard } from "./dashboard";
+import { domlav } from "./domlav";
+import { food } from "./food";
+import { gamer } from "./gamer";
+import { huna } from "./huna-book";
+import { linkdin } from "./linkdin";
+import { openHand } from "./open-hand";
+import { pillar } from "./pillar";
+import { pillarDashboard } from "./pillar-dashaboard";
+import { uiLego } from "./uiLego";
 
 export const PROJECTS: ProjectType[] = [
   pillar,

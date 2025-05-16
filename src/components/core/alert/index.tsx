@@ -1,10 +1,12 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Warning, Danger, Info, Check } from '@components/icons';
-import { Text } from '../typography';
+import React from "react";
 
-import type { AlertProps } from './alert.type';
+import { Check, Danger, Info, Warning } from "@components/icons";
+
+import type { AlertProps } from "./alert.type";
+
+import { Text } from "../typography";
 
 const icon = {
   s: <Check width="16" />,
@@ -15,7 +17,7 @@ const icon = {
 } satisfies Record<string, React.ReactNode>;
 
 export const Alert = ({
-  color = 'd',
+  color = "d",
   message,
   title,
 }: AlertProps) => {

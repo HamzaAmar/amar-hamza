@@ -1,11 +1,11 @@
-import type { ReadTimeResults } from 'reading-time';
+import type { ReadTimeResults } from "reading-time";
 
-interface Author {
+type Author = {
   name: string;
   picture: string;
-}
+};
 
-export interface Post {
+export type Post = {
   title: string;
   publishedAt: string;
   lastModified: string;
@@ -16,4 +16,4 @@ export interface Post {
   tags: string[];
   slug: string;
   readingTime: ReadTimeResults;
-}
+};

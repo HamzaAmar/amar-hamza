@@ -1,37 +1,39 @@
-import type { ImageProps } from 'next/image';
-import type { LinkProps } from 'next/link';
+import type { ImageProps } from "next/image";
+import type { LinkProps } from "next/link";
 
-import Image from 'next/image';
-import React from 'react';
-import Link from 'next/link';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { highlight } from 'sugar-high';
-import { slugify } from '@utils/slugify';
-import { Alert, Button, Conversation, DocsCode } from '..';
+import { MDXRemote } from "next-mdx-remote/rsc";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { highlight } from "sugar-high";
 
-type CustomLinkProps = {} & Omit<LinkProps, 'href'> &
+import { slugify } from "@utils/slugify";
+
+import { Alert, Button, Conversation, DocsCode } from "..";
+
+type CustomLinkProps = {} & Omit<LinkProps, "href"> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-interface CodeProps {
+type CodeProps = {
   children: string;
   className: string;
-}
+};
 
 function getStringFromChildren(children: React.ReactNode) {
-  if (React.isValidElement(children) && children.type === 'code') {
+  if (React.isValidElement(children) && children.type === "code") {
     const prop = children.props as CodeProps;
     return {
       code: prop.children,
-      language: prop.className.split('-')[1],
+      language: prop.className.split("-")[1],
     };
   }
   return null;
 }
 
 function CustomLink(props: CustomLinkProps) {
-  const href = props.href ?? '';
+  const href = props.href ?? "";
 
-  if (href.startsWith('/')) {
+  if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
         {props.children}
@@ -39,7 +41,7 @@ function CustomLink(props: CustomLinkProps) {
     );
   }
 
-  if (href.startsWith('#')) {
+  if (href.startsWith("#")) {
     return <a {...props} />;
   }
 
@@ -74,9 +76,9 @@ function Table({
   );
 }
 
-interface RoundedImageProps extends Omit<ImageProps, 'alt'> {
+type RoundedImageProps = {
   altText: string;
-}
+} & Omit<ImageProps, "alt">;
 function RoundedImage(props: RoundedImageProps) {
   return <Image alt={props.altText} {...props} />;
 }
@@ -88,9 +90,11 @@ async function Code({
   children: string;
   className: string;
 }) {
-  const { code = '', language = '' } =
-    getStringFromChildren(children) ?? {};
-  if (code === null) return <pre {...props}>{children}</pre>;
+  const { code = "", language = "" }
+    = getStringFromChildren(children) ?? {};
+  if (code === null) {
+    return <pre {...props}>{children}</pre>;
+  }
   const html = highlight(code);
 
   return <DocsCode html={html} language={language} />;
@@ -103,10 +107,10 @@ function createHeading(level: number) {
       `h${level}`,
       { id: slug },
       [
-        React.createElement('a', {
+        React.createElement("a", {
           href: `#${slug}`,
           key: `link-${slug}`,
-          className: 'anchor scroll-pt-36',
+          className: "anchor scroll-pt-36",
         }),
       ],
       children,

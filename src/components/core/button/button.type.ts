@@ -1,23 +1,24 @@
-import type { Color, Corner } from '@type/utils';
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
-type Variant = 'solid' | 'outline' | 'text' | 'soft';
-type Status = 'idle' | 'success' | 'error' | 'loading';
-type Size = '4' | '5' | '6';
-interface ButtonCoreProps {
+import type { Color, Corner } from "@type/utils";
+
+type Variant = "solid" | "outline" | "text" | "soft";
+type Status = "idle" | "success" | "error" | "loading";
+type Size = "4" | "5" | "6";
+type ButtonCoreProps = {
   icon?: ReactNode;
   variant?: Variant;
   size?: Size;
   color?: Color;
   corner?: Corner;
-}
+};
 
-export interface ButtonProps extends ButtonCoreProps {
+export type ButtonProps = {
   status?: Status;
   fluid?: boolean;
-  iconPosition?: 'start' | 'end';
-}
+  iconPosition?: "start" | "end";
+} & ButtonCoreProps;
 
-export interface IconButtonProps extends ButtonCoreProps {
+export type IconButtonProps = {
   title: string;
-}
+} & ButtonCoreProps;

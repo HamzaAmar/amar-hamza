@@ -1,8 +1,9 @@
-import { ROTATION, svgProps } from './utils/config';
-import type { SvgWithDirection } from './utils/types';
+import type { SvgWithDirection } from "./utils/types";
+
+import { ROTATION, svgProps } from "./utils/config";
 
 const arrow = ({
-  direction = 'bottom',
+  direction = "bottom",
   ...rest
 }: SvgWithDirection) => (
   <svg

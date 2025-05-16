@@ -1,6 +1,8 @@
-import * as React from 'react';
-import type { SvgType } from './utils/types';
-import { svgProps } from './utils/config';
+import * as React from "react";
+
+import type { SvgType } from "./utils/types";
+
+import { svgProps } from "./utils/config";
 
 function menu(props: SvgType) {
   return (

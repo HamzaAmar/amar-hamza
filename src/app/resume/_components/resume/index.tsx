@@ -1,4 +1,4 @@
-import { Avatar, Flex, Grid, Heading, Text } from '@components/core';
+import { Avatar, Flex, Grid, Heading, Text } from "@components/core";
 import {
   Arabic,
   Call,
@@ -15,12 +15,12 @@ import {
   Pen,
   ReactIcon,
   TypeScript,
-} from '@components/icons';
+} from "@components/icons";
 
-import Project from '../../../_components/project';
-import { BOOKS, EDUCATION_DATA } from './resume.data';
+import type { AsideItemProps } from "./resume.type";
 
-import type { AsideItemProps } from './resume.type';
+import Project from "../../../_components/project";
+import { BOOKS, EDUCATION_DATA } from "./resume.data";
 
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (

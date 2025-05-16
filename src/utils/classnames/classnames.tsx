@@ -12,12 +12,14 @@ export function c(...args: CxArgs[]): { className: string } {
   const classNames: string[] = [];
 
   for (const arg of args) {
-    if (arg == null || !arg) continue;
-    if (typeof arg === 'string' || typeof arg === 'number') {
+    if (arg == null || !arg) {
+      continue;
+    }
+    if (typeof arg === "string" || typeof arg === "number") {
       classNames.push(arg.toString().trim());
     } else if (Array.isArray(arg)) {
       arg.forEach(
-        (value) => value && classNames.push(value.toString()),
+        value => value && classNames.push(value.toString()),
       );
     } else {
       Object.entries(arg).forEach(
@@ -25,5 +27,5 @@ export function c(...args: CxArgs[]): { className: string } {
       );
     }
   }
-  return { className: classNames.join(' ').trim() };
+  return { className: classNames.join(" ").trim() };
 }

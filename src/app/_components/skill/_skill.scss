@@ -9,7 +9,7 @@
 }
 
 .sk-C::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -4px;
   left: -4px;
@@ -20,7 +20,9 @@
   opacity: 0;
   transform: scale(0);
   z-index: -1;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
 }
 
 .sk-I {

@@ -1,13 +1,14 @@
-'use client';
+"use client";
 
-/* eslint-disable import/extensions */
-import React, { useId } from 'react';
-import { Flex, Grid, HeroHeading, Tag, Text } from '@components/core';
-import { PROJECTS } from '@constants/project';
-import { Figma, Github, Globe } from '@components/icons';
-import type { ProjectType } from '@constants/project/project.type';
-import { c } from '@utils/classnames';
-import Image from 'next/image';
+import Image from "next/image";
+import React, { useId } from "react";
+
+import type { ProjectType } from "@constants/project/project.type";
+
+import { Flex, Grid, HeroHeading, Tag, Text } from "@components/core";
+import { Figma, Github, Globe } from "@components/icons";
+import { PROJECTS } from "@constants/project";
+import { c } from "@utils/classnames";
 
 const ICONS = {
   site: <Globe width="20" />,
@@ -27,7 +28,7 @@ const Project = ({
   links,
   description,
   technologies,
-}: Omit<ProjectType, 'id'>) => {
+}: Omit<ProjectType, "id">) => {
   const imageRef = React.useRef(null);
   const id = `project-${useId()}-id`;
 
@@ -56,8 +57,8 @@ const Project = ({
         </Text>
         <div className="resume__projects l_cluster">
           {links.map((link) => {
-            const type =
-              link.title.toLowerCase() as keyof typeof ICONS;
+            const type
+              = link.title.toLowerCase() as keyof typeof ICONS;
             return (
               <a
                 key={link.site}
@@ -75,7 +76,7 @@ const Project = ({
         {description}
       </Text>
       <Flex className="h-pr-tags" gap="3" wrap>
-        {technologies.map((technology) => (
+        {technologies.map(technology => (
           <Tag
             key={technology}
             color="p"
@@ -108,7 +109,7 @@ const Projects = ({ className }: { className?: string }) => {
       <Grid
         gap="6"
         columns="1fr 1fr 1fr"
-        {...c('md_grid-two sm_grid-one', {
+        {...c("md_grid-two sm_grid-one", {
           [className!]: className,
         })}
       >

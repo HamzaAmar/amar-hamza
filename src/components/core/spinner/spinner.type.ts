@@ -1,7 +1,7 @@
-import type { Color, Size } from '@type/utils';
+import type { Color, Size } from "@type/utils";
 
-export interface SpinnerProps {
+export type SpinnerProps = {
   color?: Color;
   size?: Size;
   invert?: boolean;
-}
+};

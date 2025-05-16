@@ -1,29 +1,29 @@
-import { ProjectType } from './project.type';
+import type { ProjectType } from "./project.type";
 
 export const openHand: ProjectType = {
-  id: 'open-hand',
+  id: "open-hand",
   avatar: {
-    src: '/assets/project/huna/huna-avatar.png',
-    alt: 'open-hand a washing service',
+    src: "/assets/project/huna/huna-avatar.png",
+    alt: "open-hand a washing service",
   },
   img: {
-    src: '/assets/project/open-hand/ohm.png',
-    alt: 'open-hand a volunteering site',
+    src: "/assets/project/open-hand/ohm.png",
+    alt: "open-hand a volunteering site",
   },
-  title: 'Open Hand Morocco',
+  title: "Open Hand Morocco",
   links: [
     {
-      site: 'https://openhandsmorocco.com/',
-      title: 'Site',
+      site: "https://openhandsmorocco.com/",
+      title: "Site",
     },
   ],
   description:
-    'Open Hand is a volunteering site that connects people with volunteer opportunities in the Morocco. We are a volunteer-led project that aims to connect people with volunteer opportunities in Morocco.',
+    "Open Hand is a volunteering site that connects people with volunteer opportunities in the Morocco. We are a volunteer-led project that aims to connect people with volunteer opportunities in Morocco.",
   technologies: [
-    'Nextjs',
-    'Pillar-ui',
-    'Express',
-    'MongoDB',
-    'Node.js',
+    "Nextjs",
+    "Pillar-ui",
+    "Express",
+    "MongoDB",
+    "Node.js",
   ],
 };

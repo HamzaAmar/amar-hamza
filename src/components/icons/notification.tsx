@@ -1,5 +1,6 @@
-import * as React from 'react';
-import type { SvgType } from './utils/types';
+import * as React from "react";
+
+import type { SvgType } from "./utils/types";
 
 function SvgComponent(props: SvgType) {
   return (

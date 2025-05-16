@@ -1,6 +1,6 @@
-import { SVGProps } from 'react';
-import type { SvgType } from './utils/types';
-import { svgProps } from './utils/config';
+import type { SvgType } from "./utils/types";
+
+import { svgProps } from "./utils/config";
 
 const typescript = (props: SvgType) => (
   <svg {...svgProps} {...props}>

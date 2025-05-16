@@ -1,11 +1,11 @@
-export interface FormState {
+export type FormState = {
   message?: string;
-  status?: 'idle' | 'success' | 'error';
-}
+  status?: "idle" | "success" | "error";
+};
 
 export type StatusProps =
-  | 'idle'
-  | 'success'
-  | 'error'
-  | 'expired'
-  | 'solved';
+  | "idle"
+  | "success"
+  | "error"
+  | "expired"
+  | "solved";

@@ -1,5 +1,6 @@
-import { svgProps } from './utils/config';
-import type { SvgType } from './utils/types';
+import type { SvgType } from "./utils/types";
+
+import { svgProps } from "./utils/config";
 
 const call = (props: SvgType) => (
   <svg {...svgProps} {...props}>

@@ -4,7 +4,7 @@
   position: relative;
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -20,7 +20,7 @@
     border-left-color: var(--C9);
     border-top-color: var(--C9);
   }
-  &[data-invert='true'] {
+  &[data-invert="true"] {
     &::before,
     &::after {
       color: var(--B12);

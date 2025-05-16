@@ -1,19 +1,20 @@
-import { Grid, Heading, Text, Social } from '@components/core';
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import type { ContactItemProps } from './utils/contact.type';
-import { CONTACT_INFO } from './utils/contact.data';
+import { Grid, Heading, Social, Text } from "@components/core";
 
-import Form from './form';
+import type { ContactItemProps } from "./utils/contact.type";
+
+import Form from "./form";
+import { CONTACT_INFO } from "./utils/contact.data";
 
 export const metadata: Metadata = {
-  title: 'Contact Us', // Replace with your company name
+  title: "Contact Us", // Replace with your company name
   description:
-    'Get in touch with us! We are happy to answer your questions and discuss your needs.',
+    "Get in touch with us! We are happy to answer your questions and discuss your needs.",
 };
 
 const InfoItem = ({ icon, info, ...rest }: ContactItemProps) => {
-  const Tag = rest.href ? 'a' : 'div';
+  const Tag = rest.href ? "a" : "div";
   return (
     <Tag
       {...rest}
@@ -35,9 +36,16 @@ const contact = () => {
         </Heading>
 
         <Text color="b" size="6" low>
-          I'm a<strong> freelance web developer</strong> passionate
+          I'm a
+          <strong> freelance web developer</strong>
+          {" "}
+          passionate
           about crafting exceptional digital experiences. If you're
-          looking for a <strong>skilled developer</strong> to bring
+          looking for a
+          {" "}
+          <strong>skilled developer</strong>
+          {" "}
+          to bring
           your website or application to life, please complete the
           form below. I'd love to discuss your project and how I can
           help you achieve your goals.

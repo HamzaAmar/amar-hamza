@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { c } from '@utils/classnames';
 import React, { forwardRef } from 'react';
+
 import type { ForwardRefComponent } from '@type/polymorphic.type';
 
-import type { FlexProps } from './flex.type';
+import { c } from '@utils/classnames';
 
-export const Flex = forwardRef((props, forwardedRef) => {
+import type { FlexProps } from "./flex.type";
+
+export const Flex = ({ ref: forwardedRef, ...props }) => {
   const {
     children,
     justify,
@@ -35,6 +37,6 @@ export const Flex = forwardRef((props, forwardedRef) => {
       {children}
     </Tag>
   );
-}) as ForwardRefComponent<'div', FlexProps>;
+} as ForwardRefComponent<"div", FlexProps>;
 
-Flex.displayName = 'Flex';
+Flex.displayName = "Flex";

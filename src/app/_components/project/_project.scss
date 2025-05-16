@@ -24,8 +24,7 @@
   transition: transform 150ms;
 
   &:hover {
-    transform: scale(1.2) translateY(-2px) translateX(2px)
-      rotate(3deg);
+    transform: scale(1.2) translateY(-2px) translateX(2px) rotate(3deg);
   }
 }
 

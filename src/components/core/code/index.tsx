@@ -1,4 +1,4 @@
-import type { DocsCodeProps } from './code.type';
+import type { DocsCodeProps } from "./code.type";
 
 export const DocsCode = ({ html, language }: DocsCodeProps) => {
   return (

@@ -6,7 +6,7 @@
 // prevent any needless churn if they make breaking changes. Big thanks to Jenna
 // for the heavy lifting! https://github.com/jjenzz
 
-import type * as React from 'react';
+import type * as React from "react";
 
 type Merge<P1 = {}, P2 = {}> = Omit<P1, keyof P2> & P2;
 
@@ -41,7 +41,7 @@ type ForwardRefExoticComponent<E, OwnProps> =
     >
   >;
 
-interface ForwardRefComponent<
+type ForwardRefComponent<
   IntrinsicElementString,
   OwnProps = {},
 
@@ -49,10 +49,7 @@ interface ForwardRefComponent<
    * Extends original type to ensure built in React types play nice with
    * polymorphic components still e.g. `React.ElementRef` etc.
    */
-> extends ForwardRefExoticComponent<
-    IntrinsicElementString,
-    OwnProps
-  > {
+> = {
   //
   /*
    * When `as` prop is passed, use this overload. Merges original own props
@@ -63,30 +60,32 @@ interface ForwardRefComponent<
    * so that events are typed when using React.JSX.IntrinsicElements.
    */
   <As = IntrinsicElementString>(
-    props: As extends ''
+    props: As extends ""
       ? { as: keyof React.JSX.IntrinsicElements }
       : As extends React.ComponentType<infer P>
-      ? Merge<P, OwnProps & { as: As }>
-      : As extends keyof React.JSX.IntrinsicElements
-      ? Merge<React.JSX.IntrinsicElements[As], OwnProps & { as: As }>
-      : never,
+        ? Merge<P, OwnProps & { as: As }>
+        : As extends keyof React.JSX.IntrinsicElements
+          ? Merge<React.JSX.IntrinsicElements[As], OwnProps & { as: As }>
+          : never,
   ): React.ReactElement | null;
-}
+} & ForwardRefExoticComponent<
+  IntrinsicElementString,
+  OwnProps
+>;
 
-interface MemoComponent<IntrinsicElementString, OwnProps = {}>
-  extends React.MemoExoticComponent<
-    ForwardRefComponent<IntrinsicElementString, OwnProps>
-  > {
+type MemoComponent<IntrinsicElementString, OwnProps = {}> = {
   <As = IntrinsicElementString>(
-    props: As extends ''
+    props: As extends ""
       ? { as: keyof React.JSX.IntrinsicElements }
       : As extends React.ComponentType<infer P>
-      ? Merge<P, OwnProps & { as: As }>
-      : As extends keyof React.JSX.IntrinsicElements
-      ? Merge<React.JSX.IntrinsicElements[As], OwnProps & { as: As }>
-      : never,
+        ? Merge<P, OwnProps & { as: As }>
+        : As extends keyof React.JSX.IntrinsicElements
+          ? Merge<React.JSX.IntrinsicElements[As], OwnProps & { as: As }>
+          : never,
   ): React.ReactElement | null;
-}
+} & React.MemoExoticComponent<
+  ForwardRefComponent<IntrinsicElementString, OwnProps>
+>;
 
 export type {
   ForwardRefComponent,

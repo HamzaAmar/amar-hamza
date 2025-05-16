@@ -1,13 +1,14 @@
-import { Send } from '@components/icons';
-import { Meta } from '@storybook/react';
+import type { Meta } from "@storybook/react";
 
-import { Input } from '..';
+import { Send } from "@components/icons";
+
+import { Input } from "..";
 
 export default {
-  title: 'Components/Core/Input',
+  title: "Components/Core/Input",
   component: Input,
   args: {
-    placeholder: 'Send Mail',
+    placeholder: "Send Mail",
   },
   argTypes: {
     className: {
@@ -35,14 +36,14 @@ export const InputWithIcon = {
 
 export const InputWithError = {
   args: {
-    error: 'nice',
+    error: "nice",
     touched: true,
   },
 };
 
 export const InputWithErrorAndIcon = {
   args: {
-    error: 'nice',
+    error: "nice",
     touched: true,
     icon: <Send width="16" />,
   },
@@ -51,7 +52,7 @@ export const InputWithErrorAndIcon = {
 export const InputWithVeryLongValue = {
   args: {
     value:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero praesentium commodi ducimus ipsum voluptatibus, a nam tempore, doloremque delectus sint placeat maiores quod perferendis voluptatem distinctio officiis minus repudiandae omnis.  ',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero praesentium commodi ducimus ipsum voluptatibus, a nam tempore, doloremque delectus sint placeat maiores quod perferendis voluptatem distinctio officiis minus repudiandae omnis.  ",
   },
 };
 
@@ -59,6 +60,6 @@ export const InputWithVeryLongValueAndIcon = {
   args: {
     icon: <Send width="16" />,
     value:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero praesentium commodi ducimus ipsum voluptatibus, a nam tempore, doloremque delectus sint placeat maiores quod perferendis voluptatem distinctio officiis minus repudiandae omnis.  ',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero praesentium commodi ducimus ipsum voluptatibus, a nam tempore, doloremque delectus sint placeat maiores quod perferendis voluptatem distinctio officiis minus repudiandae omnis.  ",
   },
 };

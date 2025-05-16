@@ -1,28 +1,31 @@
-import { getBlogPostBySlug, getBlogPosts } from 'api/blog';
-import { notFound } from 'next/navigation';
+import type { Metadata } from "next";
+import type { Article } from "schema-dts";
+
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { type CSSProperties, Suspense } from "react";
+
 import {
   Avatar,
   Flex,
   Heading,
   Social,
   Text,
-} from '@components/core';
-import { Github, Twitter } from '@components/icons';
-import { formatDate } from '@utils/formatDate';
-import { CustomMDX } from '@components/core/mdx';
-import type { Metadata } from 'next';
-import { DOMAIN } from '@constants/domain';
-import { type CSSProperties, Suspense } from 'react';
-import Image from 'next/image';
-import { incrementViews } from 'app/actions/views';
-import { PageViews } from './pageViews';
-import type { Article } from 'schema-dts';
+} from "@components/core";
+import { CustomMDX } from "@components/core/mdx";
+import { Github, Twitter } from "@components/icons";
+import { DOMAIN } from "@constants/domain";
+import { formatDate } from "@utils/formatDate";
+import { getBlogPostBySlug, getBlogPosts } from "api/blog";
+import { incrementViews } from "app/actions/views";
 
-interface ParamsReq {
+import { PageViews } from "./pageViews";
+
+type ParamsReq = {
   params: Promise<{
     slug: string;
   }>;
-}
+};
 
 export default async function Blog({ params }: ParamsReq) {
   const { slug } = await params;
@@ -50,23 +53,23 @@ export default async function Blog({ params }: ParamsReq) {
   const ogImage = image ? `${DOMAIN}/${image}` : img;
 
   const JSON_LD: Article = {
-    '@type': 'BlogPosting',
-    headline: title,
-    datePublished: publishedAt,
-    dateModified: lastModified,
-    description: excerpt,
-    image: ogImage,
-    url: `${DOMAIN}/blogs/${slug}`,
-    author: {
-      '@type': 'Person',
-      name: 'Hamza Miloud Amar',
-      url: 'https://www.miloudamar.com',
+    "@type": "BlogPosting",
+    "headline": title,
+    "datePublished": publishedAt,
+    "dateModified": lastModified,
+    "description": excerpt,
+    "image": ogImage,
+    "url": `${DOMAIN}/blogs/${slug}`,
+    "author": {
+      "@type": "Person",
+      "name": "Hamza Miloud Amar",
+      "url": "https://www.miloudamar.com",
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Hamza Miloud Amar',
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hamza Miloud Amar",
     },
-    keywords: tags,
+    "keywords": tags,
   };
 
   await incrementViews(slug);
@@ -78,7 +81,7 @@ export default async function Blog({ params }: ParamsReq) {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
+            "@context": "https://schema.org",
             ...JSON_LD,
           }),
         }}
@@ -138,7 +141,7 @@ export default async function Blog({ params }: ParamsReq) {
             className="l_cluster"
             style={
               {
-                '--cluster-justify': 'space-between',
+                "--cluster-justify": "space-between",
               } as CSSProperties
             }
           >
@@ -192,7 +195,7 @@ export default async function Blog({ params }: ParamsReq) {
               >
                 <img
                   height="36"
-                  style={{ border: 0, height: '36px' }}
+                  style={{ border: 0, height: "36px" }}
                   src="https://storage.ko-fi.com/cdn/kofi1.png?v=3"
                   alt="Buy Me a Coffee at ko-fi.com"
                 />
@@ -239,7 +242,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      type: 'article',
+      type: "article",
       publishedTime,
       url: `${DOMAIN}/blogs/${slug}`,
 
@@ -250,7 +253,7 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [ogImage],

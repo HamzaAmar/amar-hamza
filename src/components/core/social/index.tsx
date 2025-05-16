@@ -1,19 +1,20 @@
-import React from 'react';
-import { IconButton } from '@components/core';
-import SOCIALS from '@constants/socialMenu';
-import { c } from '@utils/classnames';
+import React from "react";
 
-import type SocialProps from './social.type';
+import { IconButton } from "@components/core";
+import SOCIALS from "@constants/socialMenu";
+import { c } from "@utils/classnames";
+
+import type SocialProps from "./social.type";
 
 export const Social = ({
   className,
-  direction = 'horizontal',
-  size = '5',
+  direction = "horizontal",
+  size = "5",
 }: SocialProps) => {
   return (
     <ul
-      {...c('so- u_column', {
-        'so-vertical': direction === 'vertical',
+      {...c("so- u_column", {
+        "so-vertical": direction === "vertical",
         [className!]: className,
       })}
     >

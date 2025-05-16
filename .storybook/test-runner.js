@@ -1,13 +1,13 @@
-import { injectAxe, checkA11y } from 'axe-playwright';
+import { checkA11y, injectAxe } from "axe-playwright";
 
 module.exports = {
-  prerender: async function (page) {
+  async prerender(page) {
     // inject Axe
     await injectAxe(page);
   },
-  postrender: async function (page) {
+  async postrender(page) {
     // run axe
-    await checkA11y(page, '#root', {
+    await checkA11y(page, "#root", {
       detailedReport: true,
       detailedReportOptions: { html: true },
     });

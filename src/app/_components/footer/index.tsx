@@ -1,7 +1,9 @@
-import { Button, Flex, Grid, Social, Text } from '@components/core';
-import React from 'react';
-import Link from 'next/link';
-import { Logo } from '../logo';
+import Link from "next/link";
+import React from "react";
+
+import { Button, Flex, Grid, Social, Text } from "@components/core";
+
+import { Logo } from "../logo";
 
 const Footer = () => {
   return (
@@ -40,7 +42,11 @@ const Footer = () => {
       </Grid>
       <Flex justify="center" items="center" className="fo-R">
         <Text>
-          © {new Date().getFullYear()} Hamza Miloud Amar. All Rights
+          ©
+          {" "}
+          {new Date().getFullYear()}
+          {" "}
+          Hamza Miloud Amar. All Rights
           Reserved
         </Text>
       </Flex>

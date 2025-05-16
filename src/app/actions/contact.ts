@@ -1,14 +1,17 @@
-'use server';
-import { verifyToken } from 'api/verifyToken';
-import { FormState } from 'app/contact/contact.type';
-import nodemailer from 'nodemailer';
-export interface ContactProps {
+"use server";
+import nodemailer from "nodemailer";
+
+import type { FormState } from "app/contact/contact.type";
+
+import { verifyToken } from "api/verifyToken";
+
+export type ContactProps = {
   message: string;
   email: string;
   name: string;
   subject: string;
   token: string;
-}
+};
 
 const mailContent = (
   name: string,
@@ -45,15 +48,15 @@ export async function sendMail(
   state: FormState,
   formData: FormData,
 ): Promise<Required<FormState>> {
-  const token = formData.get('cf-turnstile-response') as string;
-  const data =
-    (Object.fromEntries(formData) as any as ContactProps) ?? {};
+  const token = formData.get("cf-turnstile-response") as string;
+  const data
+    = (Object.fromEntries(formData) as any as ContactProps) ?? {};
   const { email, message, name, subject } = data;
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '587', 10),
-    secure: process.env.SMTP_SECURE === 'true',
+    port: Number.parseInt(process.env.SMTP_PORT || "587", 10),
+    secure: process.env.SMTP_SECURE === "true",
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
@@ -69,22 +72,23 @@ export async function sendMail(
   };
 
   try {
-    console.log('this is the value of the token', token);
-    if (!token)
-      throw new Error('Captcha verification token is required');
+    console.log("this is the value of the token", token);
+    if (!token) {
+      throw new Error("Captcha verification token is required");
+    }
     await verifyToken(token);
     await transporter.sendMail(content);
-    return { message: 'Email Send With Success', status: 'success' };
+    return { message: "Email Send With Success", status: "success" };
   } catch (err: unknown) {
     if (err instanceof Error) {
       return {
         message: err.message,
-        status: 'error',
+        status: "error",
       };
     }
     return {
-      message: 'Something wen wrong when we try to send Mail',
-      status: 'error',
+      message: "Something wen wrong when we try to send Mail",
+      status: "error",
     };
   }
 }

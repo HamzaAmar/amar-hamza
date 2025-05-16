@@ -1,6 +1,8 @@
-import React from 'react';
-import { svgProps } from './utils/config';
-import type { SvgType } from './utils/types';
+import React from "react";
+
+import type { SvgType } from "./utils/types";
+
+import { svgProps } from "./utils/config";
 
 const figma = (props: SvgType) => {
   return (

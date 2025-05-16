@@ -1,21 +1,21 @@
-import type { SvgType, Rotation } from './types';
+import type { Rotation, SvgType } from "./types";
 
 export const svgProps = {
-  viewBox: '0 0 24 24',
-  stroke: 'currentColor',
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
   strokeWidth: 2,
-  strokeLinecap: 'round',
-  strokeLinejoin: 'round',
-  fill: 'none',
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  fill: "none",
 } as SvgType;
 
 export const ROTATION: Record<Rotation, string> = {
-  left: '90',
-  right: '-90',
-  top: '180',
-  bottom: '0',
-  'left-top': '135',
-  'left-bottom': '45',
-  'right-top': '-135',
-  'right-bottom': '-45',
+  "left": "90",
+  "right": "-90",
+  "top": "180",
+  "bottom": "0",
+  "left-top": "135",
+  "left-bottom": "45",
+  "right-top": "-135",
+  "right-bottom": "-45",
 };

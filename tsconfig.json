@@ -1,19 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "incremental": true,
     "target": "esnext",
+    "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "baseUrl": "./src",
     "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
     "paths": {
       "@lib/*": ["./lib/*"],
       "@assets/*": ["./assets/*"],
@@ -26,7 +19,14 @@
       "@scss/*": ["./scss/*"],
       "react": ["./node_modules/@types/react"]
     },
-    "incremental": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
     "plugins": [
       {
         "name": "next"

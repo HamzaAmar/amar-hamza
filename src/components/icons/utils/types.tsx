@@ -1,17 +1,17 @@
-import type { SVGProps } from 'react';
+import type { SVGProps } from "react";
 
-import { ROTATION } from './config';
+import type { ROTATION } from "./config";
 
 export type Rotation =
-  | 'bottom'
-  | 'top'
-  | 'right'
-  | 'left'
-  | 'left-top'
-  | 'left-bottom'
-  | 'right-bottom'
-  | 'right-top';
-export interface SvgType extends SVGProps<SVGSVGElement> {}
-export interface SvgWithDirection extends SvgType {
+  | "bottom"
+  | "top"
+  | "right"
+  | "left"
+  | "left-top"
+  | "left-bottom"
+  | "right-bottom"
+  | "right-top";
+export type SvgType = {} & SVGProps<SVGSVGElement>;
+export type SvgWithDirection = {
   direction?: keyof typeof ROTATION;
-}
+} & SvgType;

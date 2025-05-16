@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useState, useCallback, useEffect } from 'react';
-import copy from 'copy-to-clipboard';
+import copy from "copy-to-clipboard";
+import { useCallback, useEffect, useState } from "react";
 
-export interface UseClipboardOptions {
+export type UseClipboardOptions = {
   timeout?: number;
 
   format?: string;
-}
+};
 
 /**
  * React hook to copy content to clipboard
  *
  * @param text the text or value to copy
- * @param {Number} [optionsOrTimeout=1500] optionsOrTimeout - delay (in ms) to switch back to initial state once copied.
- * @param {Object} optionsOrTimeout
+ * @param {number} [optionsOrTimeout] optionsOrTimeout - delay (in ms) to switch back to initial state once copied.
+ * @param {object} optionsOrTimeout
  * @param {string} optionsOrTimeout.format - set the desired MIME type
  * @param {number} optionsOrTimeout.timeout - delay (in ms) to switch back to initial state once copied.
  */
@@ -24,8 +24,8 @@ export function useClipboard(
 ) {
   const [hasCopied, setHasCopied] = useState(false);
 
-  const { timeout = 1500, ...copyOptions } =
-    typeof optionsOrTimeout === 'number'
+  const { timeout = 1500, ...copyOptions }
+    = typeof optionsOrTimeout === "number"
       ? { timeout: optionsOrTimeout }
       : optionsOrTimeout;
 

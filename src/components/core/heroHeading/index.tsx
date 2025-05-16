@@ -1,6 +1,8 @@
-import React from 'react';
-import { Heading, Text } from '../typography';
-import type { HeroHeadingProps } from './heroHeading.type';
+import React from "react";
+
+import type { HeroHeadingProps } from "./heroHeading.type";
+
+import { Heading, Text } from "../typography";
 
 export const HeroHeading = ({
   description,

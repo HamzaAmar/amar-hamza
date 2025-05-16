@@ -1,14 +1,14 @@
-interface Link {
+type Link = {
   site: string;
-  title: 'Figma' | 'Github' | 'Site';
-}
+  title: "Figma" | "Github" | "Site";
+};
 
-interface Image {
+type Image = {
   src: string;
   alt: string;
-}
+};
 
-export interface ProjectType {
+export type ProjectType = {
   id: string;
   img: Image;
   avatar: Image;
@@ -16,4 +16,4 @@ export interface ProjectType {
   links: Link[];
   description: string;
   technologies: string[];
-}
+};

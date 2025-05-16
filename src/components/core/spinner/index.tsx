@@ -1,8 +1,8 @@
-import type { SpinnerProps } from './spinner.type';
+import type { SpinnerProps } from "./spinner.type";
 
 export const Spinner = ({
-  color = 'p',
-  size = '4',
+  color = "p",
+  size = "4",
   invert,
 }: SpinnerProps) => {
   const root = `sp- sp-${size} C${color}`;

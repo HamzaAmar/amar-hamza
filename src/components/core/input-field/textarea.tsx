@@ -1,14 +1,16 @@
-import React from 'react';
-import { c } from '@utils/classnames';
+import React from "react";
 
-import type { TextAreaProps } from './input-field.type';
-import InputField from './field-input';
+import { c } from "@utils/classnames";
+
+import type { TextAreaProps } from "./input-field.type";
+
+import InputField from "./field-input";
 
 const TextArea = (props: TextAreaProps) => {
   const { error, touched, icon, value, ...rest } = props;
 
-  const iconClassName = c('fi-', {
-    ['fi-I']: !!icon,
+  const iconClassName = c("fi-", {
+    "fi-I": !!icon,
   });
 
   return (

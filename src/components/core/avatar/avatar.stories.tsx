@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Avatar } from '.';
-import { Flex } from '../flex';
+import { Avatar } from ".";
+import { Flex } from "../flex";
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Components/Core/Avatar',
+  title: "Components/Core/Avatar",
   component: Avatar,
   args: {
-    title: 'Hamza Milord Amar',
+    title: "Hamza Milord Amar",
   },
 };
 

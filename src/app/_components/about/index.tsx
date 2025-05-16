@@ -1,7 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import { Arrow, File } from '@components/icons';
-import { Button, Social, Text } from '@components/core';
+import Link from "next/link";
+import React from "react";
+
+import { Button, Social, Text } from "@components/core";
+import { Arrow, File } from "@components/icons";
 
 const About = () => {
   return (

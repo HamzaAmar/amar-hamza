@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { forwardRef } from 'react';
+import { forwardRef } from "react";
+
 import type { ForwardRefComponent } from '@type/polymorphic.type';
+
 import { c } from '@utils/classnames';
 
-import { Spinner } from '..';
-
 import type { ButtonProps, IconButtonProps } from './button.type';
+
+import { Spinner } from '..';
 
 /*
 =====================================================================================
@@ -13,7 +15,7 @@ import type { ButtonProps, IconButtonProps } from './button.type';
 =====================================================================================
 */
 
-export const Button = forwardRef((props, forwardedRef) => {
+export const Button = ({ ref: forwardedRef, ...props }) => {
   const {
     color = 'p',
     size = '5',
@@ -58,9 +60,9 @@ export const Button = forwardRef((props, forwardedRef) => {
       {loadingUI}
     </Comp>
   );
-}) as ForwardRefComponent<'button', ButtonProps>;
+} as ForwardRefComponent<"button", ButtonProps>;
 
-Button.displayName = 'Button';
+Button.displayName = "Button";
 
 /*
 =====================================================================================
@@ -68,20 +70,8 @@ Button.displayName = 'Button';
 =====================================================================================
 */
 
-export const IconButton = forwardRef(
-  (
-    {
-      icon,
-      title,
-      corner = 'circle',
-      color = 'b',
-      size = '5',
-      variant = 'transparent',
-      className,
-      as: Tag = 'button',
-      ...rest
-    },
-    forwardedRef,
+export const IconButton = (
+    { ref: forwardedRef, icon, title, corner = 'circle', color = 'b', size = '5', variant = 'transparent', className, as: Tag = 'button', ...rest },
   ) => {
     const iconButtonClassname = c(
       `ba-I ba-${size} ba-${corner} C${color} Fc`,
@@ -94,7 +84,6 @@ export const IconButton = forwardRef(
         <span className="Fc">{icon}</span>
       </Tag>
     );
-  },
-) as ForwardRefComponent<'button', IconButtonProps>;
+  } as ForwardRefComponent<"button", IconButtonProps>;
 
-IconButton.displayName = 'Icon Button';
+IconButton.displayName = "Icon Button";

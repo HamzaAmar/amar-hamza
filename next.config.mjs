@@ -1,7 +1,7 @@
-import withBundleAnalyzer from '@next/bundle-analyzer';
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const withBundleAnalyzerInstance = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
+  enabled: process.env.ANALYZE === "true",
 });
 
 const nextConfig = {
@@ -14,19 +14,19 @@ const nextConfig = {
     return [
       {
         source:
-          '/blogs/client-side-rendering-dynamic-user-experiences',
-        destination: '/blogs/client-side-rendering',
+          "/blogs/client-side-rendering-dynamic-user-experiences",
+        destination: "/blogs/client-side-rendering",
         permanent: true,
       },
       {
         source:
-          '/blogs/multi-page-application-traditional-yet-powerful',
-        destination: '/blogs/multi-page-application',
+          "/blogs/multi-page-application-traditional-yet-powerful",
+        destination: "/blogs/multi-page-application",
         permanent: true,
       },
     ];
   },
-  transpilePackages: ['next-mdx-remote'],
+  transpilePackages: ["next-mdx-remote"],
 };
 
 export default withBundleAnalyzerInstance(nextConfig);

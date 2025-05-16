@@ -1,6 +1,6 @@
-import { Color } from '@type/utils';
+import type { Color } from "@type/utils";
 
-export interface ProgressCircleProps {
+export type ProgressCircleProps = {
   color?: Color;
   value: number;
-}
+};

@@ -1,21 +1,21 @@
-const { promises: fs } = require('fs');
-const path = require('path');
-const RSS = require('rss');
-const matter = require('gray-matter');
+const matter = require("gray-matter");
+const { promises: fs } = require("node:fs");
+const path = require("node:path");
+const RSS = require("rss");
 
 const pathFromRootToBlog = path.join(
   process.cwd(),
-  'src',
-  'data',
-  'blog',
+  "src",
+  "data",
+  "blog",
 );
 const { NEXT_PUBLIC_DOMAIN_NAME } = process.env;
 
 async function generate() {
   const feed = new RSS({
-    title: 'Hamza Miloud Amar',
-    site_url: 'https://www.miloudamar.com',
-    feed_url: 'https://www.miloudamar.com/feed.xml',
+    title: "Hamza Miloud Amar",
+    site_url: "https://www.miloudamar.com",
+    feed_url: "https://www.miloudamar.com/feed.xml",
   });
   try {
     const posts = await fs.readdir(pathFromRootToBlog);
@@ -31,7 +31,7 @@ async function generate() {
           title: frontmatter.data.title,
           url: `https://www.miloudamar.com/blog + ${post.replace(
             /\.mdx?/,
-            '',
+            "",
           )}`,
           date: frontmatter.data.publishedAt,
           description: frontmatter.data.summary,
@@ -40,7 +40,7 @@ async function generate() {
     );
 
     await fs.writeFile(
-      './public/feed.xml',
+      "./public/feed.xml",
       feed.xml({ indent: true }),
     );
   } catch (err) {

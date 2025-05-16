@@ -1,6 +1,6 @@
-import type { SvgType } from './utils/types';
+import type { SvgType } from "./utils/types";
 
-import { svgProps } from './utils/config';
+import { svgProps } from "./utils/config";
 
 const ui = (props: SvgType) => (
   <svg {...svgProps} {...props}>

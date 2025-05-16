@@ -1,4 +1,4 @@
-import type { InputFieldProps } from './input-field.type';
+import type { InputFieldProps } from "./input-field.type";
 
 const InputField = (props: InputFieldProps) => {
   const { icon, children, touched, error } = props;

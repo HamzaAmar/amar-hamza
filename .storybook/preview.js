@@ -1,5 +1,5 @@
-import '../src/scss/main.scss';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import "../src/scss/main.scss";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 export const parameters = {
   controls: {
@@ -9,11 +9,11 @@ export const parameters = {
     },
   },
   themes: {
-    default: 'dark',
-    target: 'html',
+    default: "dark",
+    target: "html",
     list: [
-      { name: 'dark', class: 'dark', color: 'hsl(0deg 0% 5%)' },
-      { name: 'light', class: 'light', color: 'hsl(0deg 0% 95%)' },
+      { name: "dark", class: "dark", color: "hsl(0deg 0% 5%)" },
+      { name: "light", class: "light", color: "hsl(0deg 0% 95%)" },
     ],
   },
   viewport: {
@@ -21,8 +21,8 @@ export const parameters = {
   },
   nextRouter: {
     query: {
-      foo: 'this-is-a-global-override',
+      foo: "this-is-a-global-override",
     },
   },
 };
-export const tags = ['autodocs'];
+export const tags = ["autodocs"];

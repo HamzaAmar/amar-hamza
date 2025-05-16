@@ -1,4 +1,7 @@
-'use client';
+"use client";
+
+import { Turnstile } from "@marsidev/react-turnstile";
+import React, { useActionState, useEffect } from "react";
 
 import {
   Alert,
@@ -6,16 +9,15 @@ import {
   FormContainer,
   Input,
   Textarea,
-} from '@components/core';
-import { Email, Message, Send, User } from '@components/icons';
-import { sendMail } from 'app/actions/contact';
-import React, { useActionState, useEffect } from 'react';
-import { Turnstile } from '@marsidev/react-turnstile';
-import { FormState, StatusProps } from './contact.type';
+} from "@components/core";
+import { Email, Message, Send, User } from "@components/icons";
+import { sendMail } from "app/actions/contact";
+
+import type { FormState, StatusProps } from "./contact.type";
 
 export const initialState: FormState = {
-  message: '',
-  status: 'idle',
+  message: "",
+  status: "idle",
 };
 
 const Form = () => {
@@ -23,11 +25,11 @@ const Form = () => {
     sendMail,
     initialState,
   );
-  const [status, setStatus] = React.useState<StatusProps>('idle');
+  const [status, setStatus] = React.useState<StatusProps>("idle");
   const formRef = React.useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    if (state.status === 'success') {
+    if (state.status === "success") {
       formRef.current?.reset();
     }
   }, [state.status]);
@@ -41,8 +43,8 @@ const Form = () => {
     >
       {state?.message && (
         <Alert
-          color={state.status === 'error' ? 'd' : 's'}
-          title={state.status ?? ''}
+          color={state.status === "error" ? "d" : "s"}
+          title={state.status ?? ""}
           message={state.message}
           aria-live="polite"
         />
@@ -81,15 +83,15 @@ const Form = () => {
         </FormContainer>
         <Turnstile
           siteKey={process.env.NEXT_PUBLIC_SITE_KEY as string}
-          onError={() => setStatus('error')}
-          onExpire={() => setStatus('expired')}
-          onSuccess={() => setStatus('solved')}
+          onError={() => setStatus("error")}
+          onExpire={() => setStatus("expired")}
+          onSuccess={() => setStatus("solved")}
         />
 
         <Button
-          disabled={status !== 'solved'}
+          disabled={status !== "solved"}
           icon={<Send width="15" fill="currentColor" />}
-          status={pending ? 'loading' : 'idle'}
+          status={pending ? "loading" : "idle"}
         >
           Contact
         </Button>

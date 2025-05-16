@@ -19,7 +19,7 @@
   & > svg {
     width: 1em;
   }
-  &:not([class~='btn-icon']):hover {
+  &:not([class~="btn-icon"]):hover {
     background: var(--C10);
     transform: translateY(-0.5px);
     border-color: var(--C11);

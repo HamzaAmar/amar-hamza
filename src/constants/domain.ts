@@ -1,1 +1,1 @@
-export const DOMAIN = 'https://www.miloudamar.com';
+export const DOMAIN = "https://www.miloudamar.com";

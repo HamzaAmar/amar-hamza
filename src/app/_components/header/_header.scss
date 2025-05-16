@@ -1,4 +1,4 @@
-@use '../../../scss/settings/media' as *;
+@use "../../../scss/settings/media" as *;
 
 .h-e {
   position: sticky;
@@ -24,7 +24,7 @@
 }
 
 .h-e-lst,
-.h-e-itm:not([data-mobile='true']),
+.h-e-itm:not([data-mobile="true"]),
 .h-e-lnk {
   height: 100%;
   min-width: 4rem;
@@ -45,25 +45,21 @@
     box-shadow: inset 0 0 1rem -2px var(--P7);
   }
 
-  &[data-mobile='true'] {
+  &[data-mobile="true"] {
     padding: 1.5rem;
     width: fit-content;
   }
 
-  &:not([data-mobile='true'])::after {
+  &:not([data-mobile="true"])::after {
     --sz: 3px;
 
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: var(--sz);
-    background-image: linear-gradient(
-      to right,
-      var(--P8),
-      var(--P10)
-    );
+    background-image: linear-gradient(to right, var(--P8), var(--P10));
     transform: translateX(-105%);
     transition: transform 0.4s ease-in-out;
     border-radius: var(--sz);
@@ -74,12 +70,12 @@
   // }
 
   &:hover::after,
-  &[aria-current='page']::after,
+  &[aria-current="page"]::after,
   &:focus::after {
     transform: translateX(0);
   }
 
-  &[aria-current='page'] {
+  &[aria-current="page"] {
     color: var(--P11);
   }
 }
@@ -92,7 +88,9 @@
   display: none;
   opacity: 0;
   transform: rotate(90deg);
-  transition: transform 0.25s, opacity 0.25s;
+  transition:
+    transform 0.25s,
+    opacity 0.25s;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -103,16 +101,18 @@
   padding: 1.5rem;
   background: var(--B1);
 
-  &[data-visible='true'] {
+  &[data-visible="true"] {
     flex-direction: column;
     opacity: 1;
     transform: translateX(0);
-    transition: transform 0.3s, opacity 0.2s;
+    transition:
+      transform 0.3s,
+      opacity 0.2s;
     display: none;
   }
 }
 
-[data-mobile='true'] {
+[data-mobile="true"] {
   .h-e-lnk {
     justify-content: flex-start !important;
   }
@@ -127,7 +127,7 @@
     display: flex !important;
   }
 
-  .h-e-mob[data-visible='true'] {
+  .h-e-mob[data-visible="true"] {
     display: flex;
   }
 }

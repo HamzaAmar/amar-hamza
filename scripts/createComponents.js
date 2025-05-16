@@ -1,10 +1,9 @@
-/* eslint-disable no-useless-return */
-import fs from 'fs';
-import path from 'path';
+import fs from "node:fs";
+import path from "node:path";
 
 function debug(message, variant) {
-  const color = variant === 'success' ? '\x1b[32m' : '\x1b[31m';
-  const symbol = variant === 'success' ? '✓' : '✖';
+  const color = variant === "success" ? "\x1B[32m" : "\x1B[31m";
+  const symbol = variant === "success" ? "✓" : "✖";
 }
 
 function getFiles(component) {
@@ -24,7 +23,7 @@ function getFiles(component) {
   /*  Index File */
 
   const indexFile = {
-    title: 'index.tsx',
+    title: "index.tsx",
     content: `export {default} from "./${component}"`,
   };
 
@@ -101,35 +100,35 @@ function makeFiles(directory, component, parent) {
   // TODO MAKE IT GENERAC TO WORK IN EVERY PROJECT
   const arrayDir = directory.split(path.sep);
   const directoryProjectIndex = arrayDir.findIndex(
-    (value) => value === 'my-ui-starter',
+    value => value === "my-ui-starter",
   );
   const directoryProject = arrayDir
     .slice(directoryProjectIndex + 2)
     .join(path.sep);
-  const fullDirectory = path.join('..', '..', '..', directoryProject);
+  const fullDirectory = path.join("..", "..", "..", directoryProject);
 
   files.forEach(({ title, content }) => {
     const file = path.join(directory, title);
 
-    fs.writeFileSync(file, content, 'UTF8');
+    fs.writeFileSync(file, content, "UTF8");
     if (/.scss$/.test(title)) {
       const pathParent = path.join(
         process.cwd(),
-        'src',
-        'scss',
-        'components',
+        "src",
+        "scss",
+        "components",
         `_${parent}`,
       );
       const componentPath = path
         .join(fullDirectory, title)
         .split(path.sep)
-        .join('/');
+        .join("/");
 
       if (!fs.existsSync(pathParent)) {
         fs.mkdirSync(pathParent);
       }
       appendToFileIfExist(
-        path.join(pathParent, '_index.scss'),
+        path.join(pathParent, "_index.scss"),
         `@forward "${componentPath}";`,
       );
     }
@@ -137,16 +136,16 @@ function makeFiles(directory, component, parent) {
 }
 
 function makeComponent(parent, component) {
-  const UppercaseFirstLetter =
-    component[0].toUpperCase() + component.slice(1);
+  const UppercaseFirstLetter
+    = component[0].toUpperCase() + component.slice(1);
 
   const directoryParent = path.join(
     process.cwd(),
-    'src',
-    'components',
+    "src",
+    "components",
     parent,
   );
-  const indexParent = path.join(directoryParent, 'index.ts');
+  const indexParent = path.join(directoryParent, "index.ts");
   const directory = path.join(directoryParent, component);
   if (!fs.existsSync(directory)) {
     fs.mkdirSync(directory);
@@ -161,7 +160,7 @@ function makeComponent(parent, component) {
   debug(
     `directory with the name ${component} already exist please try with another name or
      please look at this path for the component ▼ \n ${directory}`,
-    'danger',
+    "danger",
   );
 }
 

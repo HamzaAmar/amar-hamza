@@ -1,12 +1,15 @@
-import { c } from '@utils/classnames';
-import { forwardRef } from 'react';
 import type { CSSProperties } from 'react';
+
+import { forwardRef } from 'react';
+
 import type { ForwardRefComponent } from '@type/polymorphic.type';
 
-import type { GridItemProps, GridProps } from './grid.type';
+import { c } from '@utils/classnames';
+
+import type { GridItemProps, GridProps } from "./grid.type";
 
 const getStyles = (obj?: { [key: string]: unknown }) => {
-  if (!obj) return;
+  if (!obj) {return;}
   const newObj: { [key: string]: unknown } = {};
   for (const [key, value] of Object.entries(obj)) {
     if (value) {
@@ -16,7 +19,7 @@ const getStyles = (obj?: { [key: string]: unknown }) => {
   return newObj as CSSProperties;
 };
 
-const Item = forwardRef((props, ref) => {
+const Item = ({ ref, ...props }) => {
   const {
     column,
     row,
@@ -45,11 +48,11 @@ const Item = forwardRef((props, ref) => {
       {children}
     </Tag>
   );
-}) as ForwardRefComponent<'div', GridItemProps>;
+} as ForwardRefComponent<"div", GridItemProps>;
 
-Item.displayName = 'GridItem';
+Item.displayName = "GridItem";
 
-export const Grid = forwardRef((props, forwardedRef) => {
+export const Grid = ({ ref: forwardedRef, ...props }) => {
   const {
     gap,
     columns,
@@ -83,6 +86,6 @@ export const Grid = forwardRef((props, forwardedRef) => {
       {children}
     </Tag>
   );
-}) as ForwardRefComponent<'div', GridProps> & { Item: typeof Item };
+} as ForwardRefComponent<"div", GridProps> & { Item: typeof Item };
 
 Grid.Item = Item;

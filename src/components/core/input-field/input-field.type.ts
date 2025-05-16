@@ -3,25 +3,21 @@ import type {
   ReactElement,
   ReactNode,
   TextareaHTMLAttributes,
-} from 'react';
+} from "react";
 
-interface BaseProps {
+type BaseProps = {
   icon: ReactElement;
   error?: string;
   touched?: boolean;
-}
+};
 
-export interface InputProps
-  extends InputHTMLAttributes<HTMLInputElement>,
-    BaseProps {}
+export type InputProps = {} & InputHTMLAttributes<HTMLInputElement> & BaseProps;
 
-export interface TextAreaProps
-  extends TextareaHTMLAttributes<HTMLTextAreaElement>,
-    BaseProps {}
+export type TextAreaProps = {} & TextareaHTMLAttributes<HTMLTextAreaElement> & BaseProps;
 
-export interface InputFieldProps {
+export type InputFieldProps = {
   children: ReactNode;
   icon: ReactElement;
   error?: string;
   touched?: boolean;
-}
+};

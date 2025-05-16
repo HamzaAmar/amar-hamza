@@ -1,27 +1,27 @@
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from "react";
 
-interface Image {
+type Image = {
   src: string;
   alt: string;
-}
+};
 
-interface Link {
+type Link = {
   title: string;
   site: string;
-}
+};
 
-interface BaseAsideProps {
+type BaseAsideProps = {
   title: string;
-}
+};
 
-export interface AsideItemProps extends BaseAsideProps {
+export type AsideItemProps = {
   children?: ReactNode;
   icon: ReactElement;
-}
+} & BaseAsideProps;
 
-export interface AsideProps extends BaseAsideProps {
+export type AsideProps = {
   img: Image;
   description?: string;
   links: Link[];
   technologies: string[];
-}
+} & BaseAsideProps;

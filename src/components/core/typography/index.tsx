@@ -1,10 +1,13 @@
 // this c is a little bit different than the the classic one it return obj not a string
-import { forwardRef } from 'react';
-import type { TypographyProps } from './typography.type';
-import { c } from '@utils/classnames';
+import { forwardRef } from "react";
+
 import type { ForwardRefComponent } from '@type/polymorphic.type';
 
-export const Text = forwardRef((props, forwardedRef) => {
+import { c } from '@utils/classnames';
+
+import type { TypographyProps } from './typography.type';
+
+export const Text = ({ ref: forwardedRef, ...props }) => {
   const {
     as: Tag = 'p',
     size,
@@ -41,23 +44,20 @@ export const Text = forwardRef((props, forwardedRef) => {
       {children}
     </Tag>
   );
-}) as ForwardRefComponent<'p', TypographyProps>;
-Text.displayName = 'Text';
+} as ForwardRefComponent<"p", TypographyProps>;
+Text.displayName = "Text";
 
-export const Heading = forwardRef(
-  ({ as: Tag = 'h1', children, ...rest }, forwardedRef) => {
+export const Heading = ({ ref: forwardedRef, as: Tag = 'h1', children, ...rest }) => {
     return (
       <Text as={Tag} className="ty-_hdg" ref={forwardedRef} {...rest}>
         {children}
       </Text>
     );
-  },
-) as ForwardRefComponent<'h1', TypographyProps>;
+  } as ForwardRefComponent<"h1", TypographyProps>;
 
-Heading.displayName = 'Heading';
+Heading.displayName = "Heading";
 
-export const Link = forwardRef(
-  ({ children, ...rest }, forwardedRef) => {
+export const Link = ({ ref: forwardedRef, children, ...rest }) => {
     return (
       <Text
         ref={forwardedRef}
@@ -70,9 +70,8 @@ export const Link = forwardRef(
         {children}
       </Text>
     );
-  },
-) as ForwardRefComponent<'a', TypographyProps>;
+  } as ForwardRefComponent<"a", TypographyProps>;
 
-Link.displayName = 'Link';
+Link.displayName = "Link";
 
-export type { TypographyProps } from './typography.type';
+export type { TypographyProps } from "./typography.type";

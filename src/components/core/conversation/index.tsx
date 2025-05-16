@@ -1,4 +1,5 @@
-import React, { Children, type ReactNode } from 'react';
+import React, { Children, type ReactNode } from "react";
+
 import {
   Browser,
   Server,
@@ -6,17 +7,18 @@ import {
   User,
   Users,
   World,
-} from '@components/icons';
-import { Text } from '../typography';
+} from "@components/icons";
 
-interface ThreadProps {
-  from: 'browser' | 'server' | 'user';
-  children: ReactNode;
-}
+import { Text } from "../typography";
 
-interface ConversationProps {
+type ThreadProps = {
+  from: "browser" | "server" | "user";
   children: ReactNode;
-}
+};
+
+type ConversationProps = {
+  children: ReactNode;
+};
 
 const LOGO = {
   user: <User width="24" />,
@@ -45,13 +47,15 @@ const Thread = ({ from, children }: ThreadProps) => {
         <div className="th-A C Fc">{LOGO[from]}</div>
       </div>
       <div className="th-C">
-        {Children.count(children) > 1 ? (
-          Children.map(children, (child, index) => (
-            <Message key={index} children={child} from={from} />
-          ))
-        ) : (
-          <Message children={children} from={from} />
-        )}
+        {Children.count(children) > 1
+          ? (
+              Children.map(children, (child, index) => (
+                <Message key={index} children={child} from={from} />
+              ))
+            )
+          : (
+              <Message children={children} from={from} />
+            )}
       </div>
     </article>
   );

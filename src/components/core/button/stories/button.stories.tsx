@@ -1,13 +1,14 @@
-import { Facebook, Github, Message } from '@components/icons';
-import { type Meta, StoryFn } from '@storybook/react';
+import type { Meta } from "@storybook/react";
 
-import { Button, Flex } from '../..';
+import { Message } from "@components/icons";
+
+import { Button, Flex } from "../..";
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Core/Button',
+  title: "Components/Core/Button",
   component: Button,
   args: {
-    children: 'Connect',
+    children: "Connect",
   },
   argTypes: {
     className: {

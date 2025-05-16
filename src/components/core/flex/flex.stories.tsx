@@ -1,13 +1,12 @@
-import React from 'react';
-import {  Meta } from '@storybook/react';
+import type { Meta } from "@storybook/react";
 
-import { Flex } from '.';
+import { Flex } from ".";
 
 export default {
-  title: 'COMPONENTS/CORE/Flex',
+  title: "COMPONENTS/CORE/Flex",
   component: Flex,
   args: {
-    children: 'Hello world',
+    children: "Hello world",
   },
 } as Meta<typeof Flex>;
 

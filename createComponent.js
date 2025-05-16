@@ -1,3 +1,3 @@
-import { createComponent } from './scripts/createComponents.js';
+import { createComponent } from "./scripts/createComponents.js";
 
 createComponent();

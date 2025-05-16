@@ -1,8 +1,10 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import Link from 'next/link';
-import { Menu, Moon, Sun } from '@components/icons';
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
+
 import {
   Button,
   Flex,
@@ -10,19 +12,20 @@ import {
   Social,
   Spinner,
   Text,
-} from '@components/core';
-import useBoolean from '@hooks/useBoolean';
-import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import NavLink from './navLink';
-import { Logo } from '../logo';
-import type { ItemProps, MenuProps } from './header.type';
+} from "@components/core";
+import { Menu, Moon, Sun } from "@components/icons";
+import useBoolean from "@hooks/useBoolean";
+
+import type { ItemProps, MenuProps } from "./header.type";
+
+import { Logo } from "../logo";
+import NavLink from "./navLink";
 
 const MENU: MenuProps[] = [
-  { id: 1, name: 'Home', path: '/' },
-  { id: 2, name: 'Blog', path: '/blogs' },
-  { id: 3, name: 'Contact', path: '/contact' },
-  { id: 4, name: 'Resume', path: '/resume' },
+  { id: 1, name: "Home", path: "/" },
+  { id: 2, name: "Blog", path: "/blogs" },
+  { id: 3, name: "Contact", path: "/contact" },
+  { id: 4, name: "Resume", path: "/resume" },
 ];
 
 const Switcher = () => {
@@ -38,14 +41,16 @@ const Switcher = () => {
     return <Spinner size="6" />;
   }
 
-  const nextMode = resolvedTheme === 'dark' ? 'light' : 'dark';
+  const nextMode = resolvedTheme === "dark" ? "light" : "dark";
 
-  const icon =
-    resolvedTheme === 'dark' ? (
-      <Sun width="30" aria-hidden="true" focusable="false" />
-    ) : (
-      <Moon width="30" aria-hidden="true" focusable="false" />
-    );
+  const icon
+    = resolvedTheme === "dark"
+      ? (
+          <Sun width="30" aria-hidden="true" focusable="false" />
+        )
+      : (
+          <Moon width="30" aria-hidden="true" focusable="false" />
+        );
 
   return (
     <IconButton
@@ -58,7 +63,7 @@ const Switcher = () => {
 
 const Item = ({ name, path, mobile, handleClose }: ItemProps) => {
   const close = handleClose ? { onClick: handleClose } : {};
-  const onlyDesktop = mobile ? {} : ({ justify: 'center' } as const);
+  const onlyDesktop = mobile ? {} : ({ justify: "center" } as const);
 
   return (
     <li className="h-e-itm" data-mobile={mobile}>

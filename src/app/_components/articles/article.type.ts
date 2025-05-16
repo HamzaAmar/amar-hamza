@@ -1,15 +1,15 @@
-import { Post } from '@type/post';
+import type { Post } from "@type/post";
 
-interface Posts {
+type Posts = {
   metadata: Post;
   content: string;
-}
+};
 [];
 
-export interface ArticlesProps {
+export type ArticlesProps = {
   posts: Posts[];
   title?: string;
   description?: string;
-}
+};
 
-export interface ArticleProps extends Post {}
+export type ArticleProps = {} & Post;

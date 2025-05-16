@@ -1,10 +1,10 @@
-import { DOMAIN } from '@constants/domain';
+import { DOMAIN } from "@constants/domain";
 
 export default function robots() {
   return {
     rules: [
       {
-        userAgent: '*',
+        userAgent: "*",
       },
     ],
     sitemap: `${DOMAIN}/sitemap.xml`,

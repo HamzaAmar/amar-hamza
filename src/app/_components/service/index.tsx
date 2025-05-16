@@ -1,6 +1,8 @@
-import { Flex, Grid, HeroHeading, Text } from '@components/core';
-import React from 'react';
-import { SERVICES } from './services.data';
+import React from "react";
+
+import { Flex, Grid, HeroHeading, Text } from "@components/core";
+
+import { SERVICES } from "./services.data";
 
 const services = () => {
   return (

@@ -1,12 +1,12 @@
-import type { Meta } from '@storybook/react';
+import type { Meta } from "@storybook/react";
 
-import { Grid } from '.';
+import { Grid } from ".";
 
 export default {
-  title: 'COMPONENTS/CORE/Grid',
+  title: "COMPONENTS/CORE/Grid",
   component: Grid,
   args: {
-    children: 'Hello world',
+    children: "Hello world",
   },
 } as Meta<typeof Grid>;
 
@@ -18,9 +18,9 @@ export const EqualColumns = () => {
           key={index}
           style={{
             background: `${
-              index % 2 === 0 ? 'var(--indigo-8)' : 'var(--indigo-9)'
+              index % 2 === 0 ? "var(--indigo-8)" : "var(--indigo-9)"
             }`,
-            borderRadius: '.375rem',
+            borderRadius: ".375rem",
           }}
         />
       ))}
@@ -34,7 +34,7 @@ export const ResponsiveColumns = () => {
       {Array.from({ length: 24 }, (_, index) => (
         <div
           key={index}
-          style={{ background: 'var(--indigo-9)', minHeight: '5rem' }}
+          style={{ background: "var(--indigo-9)", minHeight: "5rem" }}
         />
       ))}
     </Grid>
@@ -45,24 +45,24 @@ export const SpanningColumns = () => {
   return (
     <Grid gap="4" columns="200px 1fr 1fr" rows="1fr 1fr">
       <Grid.Item
-        style={{ minHeight: '10rem', background: 'var(--indigo-8)' }}
+        style={{ minHeight: "10rem", background: "var(--indigo-8)" }}
         row="span 2"
       >
         Nice to Meet You
       </Grid.Item>
       <Grid.Item
-        style={{ height: '10rem', background: 'var(--indigo-8)' }}
+        style={{ height: "10rem", background: "var(--indigo-8)" }}
       >
         Hello
       </Grid.Item>
 
       <Grid.Item
-        style={{ height: '10rem', background: 'var(--indigo-8)' }}
+        style={{ height: "10rem", background: "var(--indigo-8)" }}
       >
         Hello
       </Grid.Item>
       <Grid.Item
-        style={{ height: '10rem', background: 'var(--indigo-8)' }}
+        style={{ height: "10rem", background: "var(--indigo-8)" }}
         column="span 2"
       >
         Hello

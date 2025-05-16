@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Heading, Text } from "@components/core";
 
 const NotFoundPage = () => {

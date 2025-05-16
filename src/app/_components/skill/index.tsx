@@ -1,14 +1,16 @@
-import React from 'react';
+import React from "react";
+
 import {
-  Flex,
-  Text,
   CircleProgress,
+  Flex,
   Grid,
   HeroHeading,
-} from '@components/core';
+  Text,
+} from "@components/core";
 
-import SKILLS from './skills.data';
-import type { ItemSkillProps } from './skills.type';
+import type { ItemSkillProps } from "./skills.type";
+
+import SKILLS from "./skills.data";
 
 const Item = ({
   title,
@@ -16,11 +18,13 @@ const Item = ({
   level,
   description,
 }: ItemSkillProps) => {
-  const iconUI = icon ? (
-    <div className="sk-C">
-      <div className="sk-I">{icon}</div>
-    </div>
-  ) : null;
+  const iconUI = icon
+    ? (
+        <div className="sk-C">
+          <div className="sk-I">{icon}</div>
+        </div>
+      )
+    : null;
   return (
     <Flex
       as="li"

@@ -14,7 +14,7 @@
     outline: 2px solid transparent;
     border-color: var(--P8);
   }
-  &[data-error='true'] {
+  &[data-error="true"] {
     color: var(--R8);
     border-color: var(--R8);
   }
@@ -54,7 +54,7 @@
 
 /*
 ==============================================================================================
-  Form Container Style Section 
+  Form Container Style Section
 ==============================================================================================
 */
 .fc- {
