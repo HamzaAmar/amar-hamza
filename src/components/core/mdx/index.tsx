@@ -12,11 +12,18 @@ import { Alert, Button, Conversation, DocsCode } from '..';
 type CustomLinkProps = {} & Omit<LinkProps, 'href'> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-function getStringFromChildren(
-  children: React.ReactNode,
-): string | null {
+interface CodeProps {
+  children: string;
+  className: string;
+}
+
+function getStringFromChildren(children: React.ReactNode) {
   if (React.isValidElement(children) && children.type === 'code') {
-    return children.props.children;
+    const prop = children.props as CodeProps;
+    return {
+      code: prop.children,
+      language: prop.className.split('-')[1],
+    };
   }
   return null;
 }
@@ -81,11 +88,12 @@ async function Code({
   children: string;
   className: string;
 }) {
-  const code = getStringFromChildren(children);
+  const { code = '', language = '' } =
+    getStringFromChildren(children) ?? {};
   if (code === null) return <pre {...props}>{children}</pre>;
   const html = highlight(code);
 
-  return <DocsCode html={html} />;
+  return <DocsCode html={html} language={language} />;
 }
 
 function createHeading(level: number) {
