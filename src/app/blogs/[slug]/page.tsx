@@ -18,22 +18,21 @@ import { incrementViews } from 'app/actions/views';
 import { PageViews } from './pageViews';
 import type { Article } from 'schema-dts';
 
-interface Params {
-  slug: string;
-}
-
 interface ParamsReq {
-  params: Params;
+  params: Promise<{
+    slug: string;
+  }>;
 }
 
 export default async function Blog({ params }: ParamsReq) {
-  const post = getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
-  const permalink = `${DOMAIN}/blogs/${params.slug}`;
+  const permalink = `${DOMAIN}/blogs/${slug}`;
 
   const { content, metadata } = post;
   const {
@@ -42,7 +41,6 @@ export default async function Blog({ params }: ParamsReq) {
     publishedAt,
     image,
     readingTime,
-    slug,
     excerpt,
     lastModified,
     tags,
@@ -218,7 +216,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ParamsReq): Promise<Metadata | undefined> {
-  const post = getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
   if (!post) {
     return;
   }
@@ -228,7 +227,6 @@ export async function generateMetadata({
     publishedAt: publishedTime,
     excerpt: description,
     image,
-    slug,
     tags,
   } = post.metadata;
   const img = `${DOMAIN}/favicon/logo-512X512.png`;

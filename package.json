@@ -5,10 +5,10 @@
   "repository": "git@github.com:HamzaAmar/amar-hamza.git",
   "author": "Hamza Miloud Amar <hamzamiloudamar@gmail.com>",
   "scripts": {
-    "next:dev": "next dev --turbo",
+    "next:dev": "next dev --turbopack",
     "storybook": "storybook dev -p 6006",
     "dev": "concurrently \"yarn next:dev\" \"yarn storybook\"",
-    "build": "next build",
+    "build": "next build --turbopack",
     "bundle-check": "ANALYZE=true yarn build",
     "start": "next start",
     "lint": "eslint",

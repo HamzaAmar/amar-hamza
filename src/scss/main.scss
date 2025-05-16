@@ -1,9 +1,9 @@
 // Inside Setting Wee have every thing about css Variable and Font
-@import 'generics';
-@import 'theme';
-@import 'base';
-@import 'layout';
-@import 'utilities';
-@import 'components';
-@import 'media';
-@import 'animation';
+@use 'generics';
+@use 'theme';
+@use 'base';
+@use 'layout';
+@use 'utilities';
+@use 'components';
+@use 'media';
+@use 'animation';
