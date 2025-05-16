@@ -9,7 +9,7 @@
     "storybook": "storybook dev -p 6006",
     "devss": "concurrently \"yarn next:dev\" \"yarn storybook\"",
     "dev": "yarn next:dev",
-    "build": "next build",
+    "build": "next build --turbopack",
     "bundle-check": "ANALYZE=true yarn build",
     "start": "next start",
     "lint": "eslint",
