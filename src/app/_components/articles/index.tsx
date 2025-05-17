@@ -9,7 +9,6 @@ import {
   Button,
   Flex,
   Grid,
-  Heading,
   HeroHeading,
   Tag,
   Text,
@@ -90,7 +89,9 @@ const Article = ({
             </div>
           </Flex>
         </Flex>
-        <Heading
+        <Text
+
+          type="heading"
           id={headingId}
           as="h3"
           align="start"
@@ -98,7 +99,7 @@ const Article = ({
           truncate="2"
         >
           {title}
-        </Heading>
+        </Text>
         <Text className="ard-" low color="b" size="4" truncate="4">
           {excerpt}
         </Text>

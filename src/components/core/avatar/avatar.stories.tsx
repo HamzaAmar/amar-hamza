@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 
 import { Avatar } from ".";
 import { Flex } from "../flex";
@@ -12,8 +12,6 @@ const meta: Meta<typeof Avatar> = {
 };
 
 export default meta;
-
-type Story = StoryObj<typeof Avatar>;
 
 export const ButtonsSize = () => (
   <Flex items="center" gap="4">

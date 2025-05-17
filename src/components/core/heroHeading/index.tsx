@@ -2,7 +2,7 @@ import React from "react";
 
 import type { HeroHeadingProps } from "./heroHeading.type";
 
-import { Heading, Text } from "../typography";
+import { Text } from "../typography";
 
 export const HeroHeading = ({
   description,
@@ -12,7 +12,8 @@ export const HeroHeading = ({
 }: HeroHeadingProps) => {
   return (
     <div className="Sf-1">
-      <Heading
+      <Text
+        type="heading"
         className="Sf-2 text-scroll"
         size="5"
         weight="5"
@@ -28,7 +29,7 @@ export const HeroHeading = ({
           {heading}
         </Text>
         <span className="text-scroll">{subHeading}</span>
-      </Heading>
+      </Text>
 
       {description && (
         <Text className="text-scroll" color="b" size="4" low>

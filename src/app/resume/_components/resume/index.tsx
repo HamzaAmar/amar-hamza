@@ -1,4 +1,4 @@
-import { Avatar, Flex, Grid, Heading, Text } from "@components/core";
+import { Avatar, Flex, Grid, Text } from "@components/core";
 import {
   Arabic,
   Call,
@@ -39,15 +39,15 @@ const AsideItem = ({ icon, title, children }: AsideItemProps) => {
 const Education = () => {
   return (
     <section className="re- section Sf-5">
-      <Heading as="h2">Experience</Heading>
+      <Text type="heading" as="h2">Experience</Text>
 
       {EDUCATION_DATA.map(({ id, date, title, lists }) => (
         <Flex key={id} gap="5" className="re-E">
           <div className="Sf-3">
             <div>
-              <Heading color="p" low weight="5" as="h3" size="4">
+              <Text type="heading" color="p" low weight="5" as="h3" size="4">
                 {title}
-              </Heading>
+              </Text>
               <Text
                 size="3"
                 className="re-D u_flex-none"
@@ -85,9 +85,9 @@ const Resume = () => {
               />
             </div>
             <div>
-              <Heading weight="5" align="start" size="6">
+              <Text type="heading" as="h1" weight="5" align="start" size="6">
                 Hamza Miloud Amar
-              </Heading>
+              </Text>
               <Text
                 color="b"
                 low
@@ -118,7 +118,7 @@ const Resume = () => {
       <aside className="re-A">
         <div className="Sf-5">
           <div className="Sf-5">
-            <Heading>Contact</Heading>
+            <Text type="heading" as="h2">Contact</Text>
             <ul className="re-L Sf-4">
               <AsideItem
                 icon={<Pen width={16} />}
@@ -140,7 +140,7 @@ const Resume = () => {
           </div>
 
           <div className="re-L Sf-4">
-            <Heading>Skills</Heading>
+            <Text type="heading" as="h2">Skills</Text>
             <ul className="Sf-5">
               <AsideItem icon={<Css width={16} />} title="Css">
                 <Level level={4} width="36" />
@@ -186,7 +186,7 @@ const Resume = () => {
           </div>
 
           <div className="Sf-5">
-            <Heading>Language</Heading>
+            <Text type="heading" as="h2">Language</Text>
             <ul className="re-L Sf-4">
               <AsideItem icon={<Arabic width={16} />} title="Arabic">
                 <Level level={4} width="36" />
@@ -203,7 +203,7 @@ const Resume = () => {
             </ul>
           </div>
           <div className="Sf-5">
-            <Heading>Books I love</Heading>
+            <Text type="heading" as="h2">Books I love</Text>
             <ul className="re-L Sf-4">
               {BOOKS.map(({ key, title }) => (
                 <Text size="3" low color="b" as="li" key={key}>

@@ -1,15 +1,28 @@
 // this c is a little bit different than the the classic one it return obj not a string
-import { forwardRef } from "react";
 
-import type { ForwardRefComponent } from '@type/polymorphic.type';
+import type * as React from "react";
 
-import { c } from '@utils/classnames';
+import type { Polymorphic } from "@type/polymorphic.type";
 
-import type { TypographyProps } from './typography.type';
+import { c } from "@utils/classnames";
 
-export const Text = ({ ref: forwardedRef, ...props }) => {
+import type { TypographyProps } from "./typography.type";
+
+export type PolymorphicProps<
+  E extends React.ElementType,
+  P,
+> = P &
+  Omit<React.ComponentPropsWithoutRef<E>, keyof P> & {
+    /**
+     * The component or HTML tag to render as
+     */
+    as?: E;
+  };
+
+export const Text: Polymorphic<"p", TypographyProps> = (props) => {
   const {
-    as: Tag = 'p',
+    as: Tag = "p",
+    type = "text",
     size,
     truncate,
     className,
@@ -20,12 +33,12 @@ export const Text = ({ ref: forwardedRef, ...props }) => {
     decoration,
     color,
     fontStyle,
-    low = 'false',
+    low = "false",
     children,
     ...rest
   } = props;
 
-  const classNames = c('ty-', {
+  const classNames = c("ty-", {
     [`Fs-${size}`]: !!size,
     [`T${truncate}`]: !!truncate,
     [`Tt-${transform}`]: !!transform,
@@ -35,43 +48,16 @@ export const Text = ({ ref: forwardedRef, ...props }) => {
     [`u_leading_${leading}`]: !!leading,
     [`Fsy-${fontStyle}`]: !!fontStyle,
     [`C${color}`]: !!color,
-    'ty-low': !!low,
+    "ty-low": !!low,
+    [`ty-${type}`]: type !== "text",
     [className!]: !!className,
   });
 
   return (
-    <Tag {...classNames} ref={forwardedRef} {...rest}>
+    <Tag {...classNames} {...rest}>
       {children}
     </Tag>
   );
-} as ForwardRefComponent<"p", TypographyProps>;
-Text.displayName = "Text";
-
-export const Heading = ({ ref: forwardedRef, as: Tag = 'h1', children, ...rest }) => {
-    return (
-      <Text as={Tag} className="ty-_hdg" ref={forwardedRef} {...rest}>
-        {children}
-      </Text>
-    );
-  } as ForwardRefComponent<"h1", TypographyProps>;
-
-Heading.displayName = "Heading";
-
-export const Link = ({ ref: forwardedRef, children, ...rest }) => {
-    return (
-      <Text
-        ref={forwardedRef}
-        color="p"
-        low
-        className="ty-_lnk"
-        as="a"
-        {...rest}
-      >
-        {children}
-      </Text>
-    );
-  } as ForwardRefComponent<"a", TypographyProps>;
-
-Link.displayName = "Link";
+};
 
 export type { TypographyProps } from "./typography.type";

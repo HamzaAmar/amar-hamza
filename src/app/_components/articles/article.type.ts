@@ -4,7 +4,6 @@ type Posts = {
   metadata: Post;
   content: string;
 };
-[];
 
 export type ArticlesProps = {
   posts: Posts[];

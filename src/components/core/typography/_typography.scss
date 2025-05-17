@@ -8,11 +8,11 @@
 .ty-low {
   color: var(--C11);
 }
-.ty-hdg {
+.ty-heading {
   font-size: calc(var(--typography-size, 1rem) * 1.25);
 }
 
-.ty-lnk {
+.ty-link {
   padding: 2px;
   text-decoration: none;
   color: var(--P11);

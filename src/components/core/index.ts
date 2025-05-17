@@ -12,4 +12,4 @@ export { CircleProgress } from "./progress";
 export { Social } from "./social";
 export { Spinner } from "./spinner";
 export { Tag } from "./tag";
-export { Heading, Text } from "./typography";
+export { Text } from "./typography";

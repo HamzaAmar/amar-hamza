@@ -1,15 +1,15 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties } from "react";
 
-import { forwardRef } from 'react';
+import type { Polymorphic } from "@type/polymorphic.type";
 
-import type { ForwardRefComponent } from '@type/polymorphic.type';
-
-import { c } from '@utils/classnames';
+import { c } from "@utils/classnames";
 
 import type { GridItemProps, GridProps } from "./grid.type";
 
 const getStyles = (obj?: { [key: string]: unknown }) => {
-  if (!obj) {return;}
+  if (!obj) {
+    return;
+  }
   const newObj: { [key: string]: unknown } = {};
   for (const [key, value] of Object.entries(obj)) {
     if (value) {
@@ -19,7 +19,7 @@ const getStyles = (obj?: { [key: string]: unknown }) => {
   return newObj as CSSProperties;
 };
 
-const Item = ({ ref, ...props }) => {
+export const GridItem: Polymorphic<"div", GridItemProps> = (props) => {
   const {
     column,
     row,
@@ -27,10 +27,10 @@ const Item = ({ ref, ...props }) => {
     children,
     style,
     className,
-    as: Tag = 'div',
+    as: Tag = "div",
   } = props;
 
-  const gridClassName = c('g-r-itm', {
+  const gridClassName = c("g-r-itm", {
     className: Boolean(className),
     style: Boolean(style),
   });
@@ -48,11 +48,9 @@ const Item = ({ ref, ...props }) => {
       {children}
     </Tag>
   );
-} as ForwardRefComponent<"div", GridItemProps>;
+};
 
-Item.displayName = "GridItem";
-
-export const Grid = ({ ref: forwardedRef, ...props }) => {
+export const Grid: Polymorphic<"div", GridProps> = (props) => {
   const {
     gap,
     columns,
@@ -63,9 +61,9 @@ export const Grid = ({ ref: forwardedRef, ...props }) => {
     children,
     style,
     className,
-    as: Tag = 'div',
+    as: Tag = "div",
   } = props;
-  const gridClassName = c('g-r', {
+  const gridClassName = c("g-r", {
     [`u_justify-${justify}`]: Boolean(justify),
     [`u_items-${items}`]: Boolean(items),
     [`S-${gap}`]: Boolean(gap),
@@ -81,11 +79,8 @@ export const Grid = ({ ref: forwardedRef, ...props }) => {
         ...style,
       }}
       {...gridClassName}
-      ref={forwardedRef}
     >
       {children}
     </Tag>
   );
-} as ForwardRefComponent<"div", GridProps> & { Item: typeof Item };
-
-Grid.Item = Item;
+};

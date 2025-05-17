@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable react/no-array-index-key */
 import type { ImageProps } from "next/image";
 import type { LinkProps } from "next/link";
 
@@ -44,7 +46,6 @@ function CustomLink(props: CustomLinkProps) {
   if (href.startsWith("#")) {
     return <a {...props} />;
   }
-
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 function Table({
@@ -53,14 +54,11 @@ function Table({
   data: { headers: string[]; rows: string[][] };
 }) {
   const headers = data.headers.map((header, index) => (
-    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
     <th key={index}>{header}</th>
   ));
   const rows = data.rows.map((row, index) => (
-    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
     <tr key={index}>
       {row.map((cell, cellIndex) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <td key={cellIndex}>{cell}</td>
       ))}
     </tr>

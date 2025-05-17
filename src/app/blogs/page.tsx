@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
-import { Flex, Heading, Text } from "@components/core";
+import { Flex, Text } from "@components/core";
 import { getBlogPosts } from "api/blog";
 import { Articles } from "app/_components";
 
@@ -19,10 +19,10 @@ export default async function Blog() {
         wrap
       >
         <div className=" Sf-6" style={{ maxWidth: "80ch" }}>
-          <Heading as="h1" size="7" weight="4">
+          <Text type="heading" as="h1" size="7" weight="4">
             Frontend Fundamentals & Beyond: Explore In-Depth Articles,
             Step-by-Step Series & Web Development Tips
-          </Heading>
+          </Text>
 
           <Text>
             Dive into our

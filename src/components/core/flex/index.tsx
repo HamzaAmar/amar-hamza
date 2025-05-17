@@ -1,13 +1,12 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import React, { forwardRef } from 'react';
+import React from "react";
 
-import type { ForwardRefComponent } from '@type/polymorphic.type';
+import type { Polymorphic } from "@type/polymorphic.type";
 
-import { c } from '@utils/classnames';
+import { c } from "@utils/classnames";
 
 import type { FlexProps } from "./flex.type";
 
-export const Flex = ({ ref: forwardedRef, ...props }) => {
+export const Flex: Polymorphic<"div", FlexProps> = (props) => {
   const {
     children,
     justify,
@@ -16,27 +15,25 @@ export const Flex = ({ ref: forwardedRef, ...props }) => {
     direction,
     wrap,
     inline,
-    as: Tag = 'div',
+    as: Tag = "div",
     gap,
     className,
     ...rest
   } = props;
-  const flexClassName = c('flex', {
+  const flexClassName = c("flex", {
     [`u_justify-${justify}`]: Boolean(justify),
     [`u_items-${items}`]: Boolean(items),
     [`u_direction-${direction}`]:
-      Boolean(direction) && direction === 'column',
-    'u_wrap-wrap': Boolean(wrap),
-    'u_flex-inline': Boolean(inline),
+      Boolean(direction) && direction === "column",
+    "u_wrap-wrap": Boolean(wrap),
+    "u_flex-inline": Boolean(inline),
     [`S-${gap}`]: Boolean(gap),
     [className!]: Boolean(className),
   });
 
   return (
-    <Tag ref={forwardedRef} {...flexClassName} {...rest}>
+    <Tag {...flexClassName} {...rest}>
       {children}
     </Tag>
   );
-} as ForwardRefComponent<"div", FlexProps>;
-
-Flex.displayName = "Flex";
+};

@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
 
-import { Grid } from ".";
+import { Grid, GridItem } from ".";
 
 export default {
   title: "COMPONENTS/CORE/Grid",
@@ -44,29 +44,29 @@ export const ResponsiveColumns = () => {
 export const SpanningColumns = () => {
   return (
     <Grid gap="4" columns="200px 1fr 1fr" rows="1fr 1fr">
-      <Grid.Item
+      <GridItem
         style={{ minHeight: "10rem", background: "var(--indigo-8)" }}
         row="span 2"
       >
         Nice to Meet You
-      </Grid.Item>
-      <Grid.Item
+      </GridItem>
+      <GridItem
         style={{ height: "10rem", background: "var(--indigo-8)" }}
       >
         Hello
-      </Grid.Item>
+      </GridItem>
 
-      <Grid.Item
+      <GridItem
         style={{ height: "10rem", background: "var(--indigo-8)" }}
       >
         Hello
-      </Grid.Item>
-      <Grid.Item
+      </GridItem>
+      <GridItem
         style={{ height: "10rem", background: "var(--indigo-8)" }}
         column="span 2"
       >
         Hello
-      </Grid.Item>
+      </GridItem>
     </Grid>
   );
 };

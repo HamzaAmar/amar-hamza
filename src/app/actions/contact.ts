@@ -72,7 +72,6 @@ export async function sendMail(
   };
 
   try {
-    console.log("this is the value of the token", token);
     if (!token) {
       throw new Error("Captcha verification token is required");
     }

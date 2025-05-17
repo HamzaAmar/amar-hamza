@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Grid, Heading, Social, Text } from "@components/core";
+import { Grid, Social, Text } from "@components/core";
 
 import type { ContactItemProps } from "./utils/contact.type";
 
@@ -31,9 +31,9 @@ const contact = () => {
   return (
     <Grid columns="1fr 1fr" className="sm_grid-one p-co">
       <div className="p-co-info  Sf-5">
-        <Heading as="h1" weight="4" size="3xl">
+        <Text type="heading" as="h1" weight="4" size="3xl">
           Let's Collaborate on Your Next Web Project
-        </Heading>
+        </Text>
 
         <Text color="b" size="6" low>
           I'm a

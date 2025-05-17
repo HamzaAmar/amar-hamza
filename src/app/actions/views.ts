@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 import { unstable_noStore as noStore } from "next/cache";
 
 import { SupabaseAdmin } from "@utils/supabase/client";

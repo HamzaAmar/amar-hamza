@@ -10,6 +10,7 @@ import type { Post } from "@type/post";
 function parseFrontmatter(fileContent: string, filename: string) {
   // Split the file content into frontmatter and content
 
+  // eslint-disable-next-line regexp/no-super-linear-backtracking
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
   const frontMatterBlock = match?.[1] ?? "";

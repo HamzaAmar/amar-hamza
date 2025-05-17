@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import type { Article } from "schema-dts";
 
@@ -8,7 +9,6 @@ import { type CSSProperties, Suspense } from "react";
 import {
   Avatar,
   Flex,
-  Heading,
   Social,
   Text,
 } from "@components/core";
@@ -79,6 +79,7 @@ export default async function Blog({ params }: ParamsReq) {
       <script
         type="application/ld+json"
         suppressHydrationWarning
+        // eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -87,9 +88,9 @@ export default async function Blog({ params }: ParamsReq) {
         }}
       />
       <div className="reading-layout Sf-6">
-        <Heading as="h1" size="7" weight="4">
+        <Text type="heading" as="h1" size="7" weight="4">
           {title}
-        </Heading>
+        </Text>
         {author && (
           <div>
             <Flex items="center" gap="4">
