@@ -14,7 +14,7 @@ import {
   Text,
 } from "@components/core";
 import { Arrow } from "@components/icons";
-import { formatDate } from "@utils/formatDate";
+import { formatDate } from "@utils/format-date";
 
 import type { ArticleProps, ArticlesProps } from "./article.type";
 

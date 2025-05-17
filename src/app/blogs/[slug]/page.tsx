@@ -15,11 +15,11 @@ import {
 import { CustomMDX } from "@components/core/mdx";
 import { Github, Twitter } from "@components/icons";
 import { DOMAIN } from "@constants/domain";
-import { formatDate } from "@utils/formatDate";
+import { formatDate } from "@utils/format-date";
 import { getBlogPostBySlug, getBlogPosts } from "api/blog";
 import { incrementViews } from "app/actions/views";
 
-import { PageViews } from "./pageViews";
+import { PageViews } from "./page-views";
 
 type ParamsReq = {
   params: Promise<{

@@ -1,9 +1,8 @@
 "use server";
+import { verifyToken } from "api/verifyToken";
 import nodemailer from "nodemailer";
 
 import type { FormState } from "app/contact/contact.type";
-
-import { verifyToken } from "api/verifyToken";
 
 export type ContactProps = {
   message: string;
