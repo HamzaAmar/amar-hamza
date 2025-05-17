@@ -9,15 +9,6 @@ export type UseClipboardOptions = {
   format?: string;
 };
 
-/**
- * React hook to copy content to clipboard
- *
- * @param text the text or value to copy
- * @param {number} [optionsOrTimeout] optionsOrTimeout - delay (in ms) to switch back to initial state once copied.
- * @param {object} optionsOrTimeout
- * @param {string} optionsOrTimeout.format - set the desired MIME type
- * @param {number} optionsOrTimeout.timeout - delay (in ms) to switch back to initial state once copied.
- */
 export function useClipboard(
   text: string,
   optionsOrTimeout: number | UseClipboardOptions = {},

@@ -57,8 +57,8 @@ const Education = () => {
                 {date}
               </Text>
               <ul className="Sf-3">
-                {lists.map((item, index) => (
-                  <Text as="li" size="4" key={index}>
+                {lists.map(item => (
+                  <Text as="li" size="4" key={item}>
                     {item}
                   </Text>
                 ))}
