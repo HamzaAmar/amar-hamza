@@ -1,6 +1,5 @@
 "use client";
 
-import useBoolean from "@hooks/useBoolean";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,11 +14,12 @@ import {
   Text,
 } from "@components/core";
 import { Menu, Moon, Sun } from "@components/icons";
+import useBoolean from "@hooks/use-boolean";
 
 import type { ItemProps, MenuProps } from "./header.type";
 
 import { Logo } from "../logo";
-import NavLink from "./navLink";
+import NavLink from "./nav-link";
 
 const MENU: MenuProps[] = [
   { id: 1, name: "Home", path: "/" },

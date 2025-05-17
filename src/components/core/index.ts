@@ -5,7 +5,7 @@ export { DocsCode } from "./code";
 export { Conversation } from "./conversation";
 export { Flex } from "./flex";
 export { Grid } from "./grid";
-export { HeroHeading } from "./heroHeading";
+export { HeroHeading } from "./hero-heading";
 export { FormContainer, Input, Textarea } from "./input-field";
 export { CustomMDX } from "./mdx";
 export { CircleProgress } from "./progress";

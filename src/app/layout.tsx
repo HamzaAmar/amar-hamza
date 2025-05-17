@@ -7,7 +7,7 @@ import { DOMAIN } from "@constants/domain";
 
 import "../scss/main.scss";
 import { Footer, Header } from "./_components";
-import NextThemeProvider from "./_components/themeProvider";
+import NextThemeProvider from "./_components/theme-provider";
 
 type Meta = {
   title?: string;

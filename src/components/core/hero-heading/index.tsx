@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { HeroHeadingProps } from "./heroHeading.type";
+import type { HeroHeadingProps } from "./hero-heading.type";
 
 import { Text } from "../typography";
 

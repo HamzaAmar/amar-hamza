@@ -1,7 +1,7 @@
-import SOCIALS from "@constants/socialMenu";
 import React from "react";
 
 import { IconButton } from "@components/core";
+import SOCIALS from "@constants/social-menu";
 import { c } from "@utils/classnames";
 
 import type SocialProps from "./social.type";
