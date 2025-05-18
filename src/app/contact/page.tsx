@@ -30,7 +30,7 @@ const InfoItem = ({ icon, info, ...rest }: ContactItemProps) => {
 const contact = () => {
   return (
     <Grid columns="1fr 1fr" className="sm_grid-one p-co">
-      <div className="p-co-info  Sf-5">
+      <div className="p-co-info Sf-5">
         <Text type="heading" as="h1" weight="4" size="3xl">
           Let's Collaborate on Your Next Web Project
         </Text>

@@ -13,6 +13,8 @@ Welcome! This portfolio website is a showcase of my work and expertise in web de
 
 - **Projects:** Explore a selection of my projects that demonstrate my proficiency in various web technologies and my ability to solve real-world problems.
 - **Blog:** Occasionally, I share my thoughts, experiences, and learnings through blog posts on relevant web development topics.
+- - **Resume:** A page dedicated to showcasing my professional experience and skills.
+- **Contact:** A form for you to get in touch with me and share your inquiries or projects.
 
 ## Interested in Hiring Me?
 

@@ -73,7 +73,10 @@ export async function sendMail(
 
   try {
     if (!token) {
-      throw new Error("Captcha verification token is required");
+      return {
+        message: "Captcha verification token is required",
+        status: "error",
+      };
     }
     await verifyToken(token);
     await transporter.sendMail(content);

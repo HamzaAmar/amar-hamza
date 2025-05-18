@@ -15,10 +15,7 @@ export async function PageViews({ slug }: PageViewsProps) {
 
   return (
     <Text size="4">
-      {views}
-      {" "}
-      View
-      {views > 1 ? "s" : ""}
+      {`${views} View${views > 1 ? "s" : ""}`}
     </Text>
   );
 }
