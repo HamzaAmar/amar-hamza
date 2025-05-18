@@ -1,4 +1,46 @@
-export const EDUCATION_DATA = [
+import {
+  Arabic,
+  Call,
+  Css,
+  English,
+  French,
+  Gatsby,
+  Globe,
+  Html,
+  Linkdin,
+  NextIcon,
+  Node,
+  Pen,
+  ReactIcon,
+  TypeScript,
+} from "@components/icons";
+
+export const LANGUAGES = [
+  { icon: <Arabic width={16} />, title: "Arabic", level: 4 },
+  { icon: <English width={16} />, title: "English", level: 3 },
+  { icon: <French width={16} />, title: "French", level: 2 },
+];
+
+export const CONTACTS = [
+  { icon: <Pen width={16} />, title: "Morocco Marrakech" },
+  { icon: <Call width={16} />, title: "+212 6 3037 1320" },
+  { icon: <Linkdin width={16} />, title: "hamza-miloud-amar-463b24167" },
+  { icon: <Globe width={16} />, title: "https://miloudamar.com/" },
+];
+
+export const SKILLS = [
+  { icon: <Css width={16} />, title: "Css", level: 4 },
+  { icon: <ReactIcon width={16} />, title: "React js", level: 4 },
+  { icon: <NextIcon width={16} />, title: "Next js", level: 4 },
+  { icon: <Html width={16} />, title: "HTML", level: 4 },
+  { icon: <TypeScript width={16} />, title: "TypeScript", level: 4 },
+  { icon: <Node width={16} />, title: "Javascript", level: 4 },
+  { icon: <Html width={16} />, title: "Remix", level: 4 },
+  { icon: <Gatsby width={16} />, title: "Gatsby", level: 2 },
+  { icon: <Node width={16} />, title: "NodeJS", level: 2 },
+];
+
+export const EDUCATIONS = [
   {
     id: "pillar-1",
     title: "Pillar-UI",

@@ -21,10 +21,12 @@ import { incrementViews } from "app/actions/views";
 
 import { PageViews } from "./page-views";
 
+type Params = {
+  slug: string;
+};
+
 type ParamsReq = {
-  params: Promise<{
-    slug: string;
-  }>;
+  params: Promise<Params>;
 };
 
 export default async function Blog({ params }: ParamsReq) {
