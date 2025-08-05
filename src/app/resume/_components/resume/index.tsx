@@ -1,17 +1,16 @@
-import { Avatar, Flex, Grid, Text } from "@components/core";
+import { Avatar, Flex, Grid, Tag, Text } from "@components/core";
 import { Level } from "@components/icons";
 
 import type { AsideItemProps } from "./resume.type";
 
-import Project from "../../../_components/project";
-import { BOOKS, CONTACTS, EDUCATIONS, LANGUAGES, SKILLS } from "./resume.data";
+import { BOOKS, CONTACTS, Education, EXPERIENCES, Interests, LANGUAGES, SKILLS } from "./resume.data";
 
 const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   return (
     <Flex as="li" justify="between">
       <Flex gap="3" items="center">
         <div className="Fc">{icon}</div>
-        <Text size="4" low color="b">
+        <Text size="4" low color="b" style={{ wordBreak: "break-all" }}>
           {title}
         </Text>
       </Flex>
@@ -20,26 +19,34 @@ const AsideItem = ({ icon, title, children }: AsideItemProps) => {
   );
 };
 
-const Education = () => {
+const Experience = () => {
   return (
     <section className="re- section Sf-5">
       <Text type="heading" as="h2">Experience</Text>
 
-      {EDUCATIONS.map(({ id, date, title, lists }) => (
+      {EXPERIENCES.map(({ id, date, title, lists, skills, tags }) => (
         <Flex key={id} gap="5" className="re-E">
           <div className="Sf-3">
-            <div>
-              <Text type="heading" color="p" low weight="5" as="h3" size="4">
-                {title}
-              </Text>
-              <Text
-                size="3"
-                className="re-D u_flex-none"
-                color="b"
-                low
-              >
-                {date}
-              </Text>
+            <div className="Sf-3">
+              <div>
+                <Flex gap="4" items="center">
+                  <Text type="heading" color="p" low weight="5" as="h3" size="4">
+                    {title}
+                  </Text>
+                  <Flex gap="2">
+                    {tags?.map(item => (
+                      <Tag color="s" title={item} key={item} />
+                    ))}
+                  </Flex>
+                </Flex>
+                <Text
+                  size="3"
+                  color="b"
+                  low
+                >
+                  {date}
+                </Text>
+              </div>
               <ul className="Sf-3">
                 {lists.map(item => (
                   <Text as="li" size="4" key={item}>
@@ -48,6 +55,11 @@ const Education = () => {
                 ))}
               </ul>
             </div>
+            <Flex wrap gap="3" items="center">
+              {skills.map(item => (
+                <Tag title={item} key={item} />
+              ))}
+            </Flex>
           </div>
         </Flex>
       ))}
@@ -73,37 +85,29 @@ const Resume = () => {
                 Hamza Miloud Amar
               </Text>
               <Text
-                color="b"
+                color="p"
                 low
                 weight="1"
                 align="start"
                 size="4"
                 as="h2"
               >
-                Front End Developer
+                Expert React Developer & CSS Enthusiast
               </Text>
             </div>
           </Flex>
           <Text color="b" low>
-            Senior frontend developer with nearly a decade of
-            experience using React, TypeScript, Next.js, and Remix to
-            build complex, scalable user interfaces. Combines
-            expert-level CSS skills and a strong focus on web
-            performance and accessibility. Excels at architecting
-            robust design systems and transforming technical
+            Expert Frontend Developer with a decade of experience in building enterprise-scale design systems and accessible web applications. Architecting large-scale projects with Next.js, optimizing web performance, and ensuring WCAG compliance across diverse user needs. Proven leader in scaling frontend architecture and implementing inclusive design practices, resulting in an 80% reduction in production issues while maintaining AA/AAA accessibility standards.
           </Text>
         </div>
 
-        <div>
-          <Education />
-          <Project className="md_grid-one" />
-        </div>
+        <Experience />
       </div>
       <aside className="re-A">
         <div className="Sf-5">
           <div className="Sf-5">
             <Text type="heading" as="h2">Contact</Text>
-            <ul className="re-L Sf-4">
+            <ul className="re-L Sf-2">
               {CONTACTS.map(({ icon, title }) => (
                 <AsideItem icon={icon} title={title} key={title} />
               ))}
@@ -112,8 +116,41 @@ const Resume = () => {
 
           <div className="re-L Sf-4">
             <Text type="heading" as="h2">Skills</Text>
-            <ul className="Sf-5">
-              {SKILLS.map(({ icon, title, level }) => (
+            <ul className="Sf-2">
+              {SKILLS.map(([title, skills]) => (
+                <div key={title}>
+                  <Text as="span" weight="6">
+                    {title}
+                    {": "}
+                  </Text>
+
+                  {skills.map((skill, index) => (
+                    <Text as="span" color="b" size="3" key={skill}>
+                      {skill}
+                      {index !== skills.length - 1 && ", "}
+                    </Text>
+                  ))}
+                </div>
+              ))}
+            </ul>
+          </div>
+
+          <div className="Sf-5">
+            <Text type="heading" as="h2">Education</Text>
+            <div className="re-L">
+              <Text size="4" weight="5">
+                {Education.title}
+              </Text>
+              <Text size="3" low color="b">
+                {Education.date}
+              </Text>
+            </div>
+          </div>
+
+          <div className="Sf-5">
+            <Text type="heading" as="h2">Language</Text>
+            <ul className="re-L">
+              {LANGUAGES.map(({ icon, title, level }) => (
                 <AsideItem icon={icon} title={title} key={title}>
                   <Level level={level} width="36" />
                 </AsideItem>
@@ -122,18 +159,18 @@ const Resume = () => {
           </div>
 
           <div className="Sf-5">
-            <Text type="heading" as="h2">Language</Text>
-            <ul className="re-L Sf-4">
-              {LANGUAGES.map(({ icon, title, level }) => (
-                <AsideItem icon={icon} title={title} key={title}>
-                  <Level level={level} width="36" />
-                </AsideItem>
+            <Text type="heading" as="h2">Interests</Text>
+            <ul className="re-L Sf-2">
+              {Interests.map(title => (
+                <Text size="3" low color="b" as="li" key={title}>
+                  {title}
+                </Text>
               ))}
             </ul>
           </div>
           <div className="Sf-5">
             <Text type="heading" as="h2">Books I love</Text>
-            <ul className="re-L Sf-4">
+            <ul className="re-L Sf-2">
               {BOOKS.map(({ key, title }) => (
                 <Text size="3" low color="b" as="li" key={key}>
                   {title}
