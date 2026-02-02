@@ -11,11 +11,13 @@ import { linkdin } from "./linkdin";
 import { openHand } from "./open-hand";
 import { pillar } from "./pillar";
 import { pillarDashboard } from "./pillar-dashaboard";
+import { taouafiRent } from "./taouafi";
 import { uiLego } from "./ui-lego";
 
 export const PROJECTS: ProjectType[] = [
   pillar,
   openHand,
+  taouafiRent,
   pillarDashboard,
   huna,
   dashboard,
