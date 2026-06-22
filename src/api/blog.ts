@@ -1,75 +1,66 @@
-import { compareDesc } from "date-fns";
 import fs from "node:fs";
-// import fs from 'fs';
 import path from "node:path";
+
+import { type Post } from "@type/post";
+import type { Project } from "@type/project";
+import { compareDesc } from "date-fns";
 import readingTime from "reading-time";
 import { parse } from "yaml";
 
-import type { Project } from "@type/project";
-
 function parseFrontmatter<E>(fileContent: string, filename: string) {
-	// Split the file content into frontmatter and content
+  // Split the file content into frontmatter and content
 
-	// eslint-disable-next-line regexp/no-super-linear-backtracking
-	const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
-	const match = frontmatterRegex.exec(fileContent);
-	const frontMatterBlock = match?.[1] ?? "";
-	const content = fileContent.replace(frontmatterRegex, "").trim();
-	// Parse the frontmatter as YAML
-	const frontmatter = parse(frontMatterBlock);
-	const slug = filename;
-	const stats = readingTime(content);
-	const metadata = {
-		...frontmatter,
-		readingTime: stats,
-		slug,
-	} as E;
+  const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
+  const match = frontmatterRegex.exec(fileContent);
+  const frontMatterBlock = match?.[1] ?? "";
+  const content = fileContent.replace(frontmatterRegex, "").trim();
+  // Parse the frontmatter as YAML
+  const frontmatter = parse(frontMatterBlock);
+  const slug = filename;
+  const stats = readingTime(content);
+  const metadata = {
+    ...frontmatter,
+    readingTime: stats,
+    slug,
+  } as E;
 
-	return {
-		metadata,
-		content,
-	};
+  return {
+    metadata,
+    content,
+  };
 }
 
 function getMDXFiles(dir: string) {
-	return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
+  return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 
 function readMDXFile<E>(filePath: string, filename: string) {
-	const fileContent = fs.readFileSync(filePath, "utf-8");
-	return parseFrontmatter<E>(fileContent, filename);
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  return parseFrontmatter<E>(fileContent, filename);
 }
 
 function getMDXData<E>(dir: string) {
-	const mdxFiles = getMDXFiles(dir);
-	return mdxFiles.map((file) => {
-		const [filename] = file.split(".");
+  const mdxFiles = getMDXFiles(dir);
+  return mdxFiles.map((file) => {
+    const [filename] = file.split(".");
 
-		const { metadata, content } = readMDXFile<E>(
-			path.join(dir, file),
-			filename,
-		);
-		return {
-			metadata,
-			content,
-		};
-	});
+    const { metadata, content } = readMDXFile<E>(path.join(dir, file), filename);
+    return {
+      metadata,
+      content,
+    };
+  });
 }
 
 export const getContentList =
-	<E>(where = "content") =>
-	() => {
-		return getMDXData<E>(path.join(process.cwd(), where)).sort(
-			(first, second) => {
-				return compareDesc(
-					new Date(first.metadata.publishedAt),
-					new Date(second.metadata.publishedAt),
-				);
-			},
-		);
-	};
+  <E extends Post | Project>(where = "content") =>
+  () => {
+    return getMDXData<E>(path.join(process.cwd(), where)).sort((first, second) => {
+      return compareDesc(new Date(first.metadata.publishedAt), new Date(second.metadata.publishedAt));
+    });
+  };
 
-export const getBlogPosts = getContentList<Project>("content");
+export const getBlogPosts = getContentList<Post>("content");
 export const getProjects = getContentList<Project>("projects");
 
 // export const getProjects = () => {
@@ -87,17 +78,17 @@ export const getProjects = getContentList<Project>("projects");
 // };
 
 export function getBlogPostsWithLimit(max: number) {
-	const blogs = getBlogPosts();
-	const length = Math.min(max, blogs.length);
-	const posts = Array.from({ length }).map((_, index) => blogs[index]);
-	return posts;
+  const blogs = getBlogPosts();
+  const length = Math.min(max, blogs.length);
+  const posts = Array.from({ length }).map((_, index) => blogs[index]);
+  return posts;
 }
 
 export const getProjectBySlug = (slug: string) => {
-	const projects = getProjects();
-	return projects.find(({ metadata }) => metadata.slug === slug);
+  const projects = getProjects();
+  return projects.find(({ metadata }) => metadata.slug === slug);
 };
 export const getBlogPostBySlug = (slug: string) => {
-	const posts = getBlogPosts();
-	return posts.find(({ metadata }) => metadata.slug === slug);
+  const posts = getBlogPosts();
+  return posts.find(({ metadata }) => metadata.slug === slug);
 };

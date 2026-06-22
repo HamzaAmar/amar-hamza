@@ -1,124 +1,90 @@
 ---
-title: 'Hydration: Enhance Web Apps with Server & Client Rendering'
-excerpt: 'Learn Hydration: an intelligent blend to make your web app faster & smoother for users via the way we stack up how pages are loaded.'
+title: "Hydration: Enhance Web Apps with Server & Client Rendering"
+excerpt: "Learn Hydration: an intelligent blend to make your web app faster & smoother for users via the way we stack up how pages are loaded."
 image:
   src: "/assets/blog/rendering/hydration-server-client-rendering.webp"
   alt: "Hydration web rendering illustration for server-client rendered interactive applications"
-publishedAt: '2024-06-13T05:35:07.322Z'
-lastModified: '2024-07-25T05:35:07.322Z'
+publishedAt: "2024-06-13T05:35:07.322Z"
+lastModified: "2024-07-25T05:35:07.322Z"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['Hydration', 'Server-Client Rendering', 'Web Performance', 'React', 'SEO', 'Interactive Web Apps']
+  picture: "/me.jpg"
+tags: ["Hydration", "Server-Client Rendering", "Web Performance", "React", "SEO", "Interactive Web Apps"]
 ---
 
 Welcome back! In our previous post, we discussed Client Side Rendering. Today, we'll explore Hydration, a technique that enhances the performance of Single Page Applications by combining the benefits of Multi page Application and Client Side Rendering. Hydration involves rendering the initial HTML on the server and then hydrating it on the client side with JavaScript to make it interactive.
 
 <Conversation>
   <Conversation.Thread from="user">
-    Hey Chat, could you explain Hydration in simple terms, assuming I
-    have no idea about **rendering patterns**? 🤔🤔
+    Hey Chat, could you explain Hydration in simple terms, assuming I have no idea about **rendering patterns**? 🤔🤔
   </Conversation.Thread>
   <Conversation.Thread from="narrator">
-    Imagine an artist who creates a black and white sketch. This
-    sketch is like the server rendered HTML sent to the browser.
-    Hydration is when the artist starts to paint over the sketch,
-    adding colors and details to make the drawing vibrant and
-    interactive. This process attaches the necessary JavaScript to the
-    static HTML, enabling interactions and dynamic behavior just like
-    adding colors brings the sketch to life.
+    Imagine an artist who creates a black and white sketch. This sketch is like the server rendered HTML sent to the
+    browser. Hydration is when the artist starts to paint over the sketch, adding colors and details to make the drawing
+    vibrant and interactive. This process attaches the necessary JavaScript to the static HTML, enabling interactions
+    and dynamic behavior just like adding colors brings the sketch to life.
   </Conversation.Thread>
   <Conversation.Thread from="user">
-    Mmm, that sounds interesting! Could you explain a real world
-    example, showing the step by step process of how the server and
-    browser work together to make this happen? 🤔
+    Mmm, that sounds interesting! Could you explain a real world example, showing the step by step process of how the
+    server and browser work together to make this happen? 🤔
   </Conversation.Thread>
   <Conversation.Thread from="server">
-    OK let me explain! my role as the server is to render your
-    application's components into a fully formed HTML document. This
-    is then transmitted to the browser, ensuring a faster initial page
-    load (Note that hydration, the process of making the page
-    interactive, is handled by the browser, not the server).
+    OK let me explain! my role as the server is to render your application's components into a fully formed HTML
+    document. This is then transmitted to the browser, ensuring a faster initial page load (Note that hydration, the
+    process of making the page interactive, is handled by the browser, not the server).
   </Conversation.Thread>
   <Conversation.Thread from="browser">
-    Exactly! Once I receive that HTML, I show it to the user right
-    away. But, this initial version is static, kind of like a picture.
-    Hydration is where I come in to make it interactive.
+    Exactly! Once I receive that HTML, I show it to the user right away. But, this initial version is static, kind of
+    like a picture. Hydration is where I come in to make it interactive.
   </Conversation.Thread>
-  <Conversation.Thread from="user">
-    So, hydration is what makes the page interactive?
-  </Conversation.Thread>
+  <Conversation.Thread from="user">So, hydration is what makes the page interactive?</Conversation.Thread>
   <Conversation.Thread from="browser">
-    You got it! Hydration is a process that happens on the client side
-    (that's me, the browser!). I run the JavaScript code that came
-    along with the HTML. This code does things like attach event
-    listeners so you can click on buttons, make dynamic updates, and
-    add application state. Basically, it turns a static page into a
-    fully interactive web app.
+    You got it! Hydration is a process that happens on the client side (that's me, the browser!). I run the JavaScript
+    code that came along with the HTML. This code does things like attach event listeners so you can click on buttons,
+    make dynamic updates, and add application state. Basically, it turns a static page into a fully interactive web app.
   </Conversation.Thread>
-  <Conversation.Thread from="user">
-    Hmm. How is hydration different from isomorphic rendering?
-  </Conversation.Thread>
+  <Conversation.Thread from="user">Hmm. How is hydration different from isomorphic rendering?</Conversation.Thread>
   <Conversation.Thread from="server">
-    That's a great question. Isomorphic rendering (also called
-    universal rendering) consists of two phases: rendering on the
-    server, which delivers initial content quickly, and client side
-    hydration, which makes the rendered content interactive. this
-    means that hydration is part of the isomorphic rendering.
+    That's a great question. Isomorphic rendering (also called universal rendering) consists of two phases: rendering on
+    the server, which delivers initial content quickly, and client side hydration, which makes the rendered content
+    interactive. this means that hydration is part of the isomorphic rendering.
   </Conversation.Thread>
   <Conversation.Thread from="user">
-    That's much clearer now. Are there any potential issues that can
-    arise during hydration?
+    That's much clearer now. Are there any potential issues that can arise during hydration?
   </Conversation.Thread>
   <Conversation.Thread from="browser">
-    Good question! Hydration relies on the server and client being the
-    same. If there are any inconsistencies between the server rendered
-    HTML and what the client side JavaScript expects, it can cause
-    errors.
+    Good question! Hydration relies on the server and client being the same. If there are any inconsistencies between
+    the server rendered HTML and what the client side JavaScript expects, it can cause errors.
   </Conversation.Thread>
-  <Conversation.Thread from="user">
-    That makes sense. But what's the drawback of hydration?
-  </Conversation.Thread>
+  <Conversation.Thread from="user">That makes sense. But what's the drawback of hydration?</Conversation.Thread>
   <Conversation.Thread from="browser">
     <div>
-      **Slow Time to Interactive**: Hydration can slow down how
-      quickly a page becomes interactive (TTI) because the browser
-      needs to download and run all the JavaScript code that makes the
-      page interactive.{' '}
+      **Slow Time to Interactive**: Hydration can slow down how quickly a page becomes interactive (TTI) because the
+      browser needs to download and run all the JavaScript code that makes the page interactive.{" "}
     </div>
     <div>
-      **Duplicate Execution**: The same app logic might need to run
-      twice – first on the server to generate the initial HTML, and
-      then again in the browser during hydration to add interactivity.
+      **Duplicate Execution**: The same app logic might need to run twice – first on the server to generate the initial
+      HTML, and then again in the browser during hydration to add interactivity.
     </div>
   </Conversation.Thread>
-  <Conversation.Thread from="user">
-    Ah, I see. Is there a way to solve this problem?
-  </Conversation.Thread>
+  <Conversation.Thread from="user">Ah, I see. Is there a way to solve this problem?</Conversation.Thread>
   <Conversation.Thread from="browser">
-    We'll dive deeper into these performance enhancing techniques in
-    our upcoming articles on [Progressive
+    We'll dive deeper into these performance enhancing techniques in our upcoming articles on [Progressive
     Hydration](/blogs/progressive-hydration) | [Island
-    architecture](/blogs/http://localhost:3000/blogs/island-architecture)
-    | [Server Components](/blogs/react-server-components) , and more.
-    Stay tuned!
+    architecture](/blogs/http://localhost:3000/blogs/island-architecture) | [Server
+    Components](/blogs/react-server-components) , and more. Stay tuned!
   </Conversation.Thread>
   <Conversation.Thread from="user">
-    Thank you for the detailed explanation. I have a much better
-    understanding of hydration and its importance in Isomorphic
-    rendering now.
+    Thank you for the detailed explanation. I have a much better understanding of hydration and its importance in
+    Isomorphic rendering now.
   </Conversation.Thread>
   <Conversation.Thread from="browser">
-    You're welcome! Feel free to ask if you have any more questions.
-    I'm always here to help!
+    You're welcome! Feel free to ask if you have any more questions. I'm always here to help!
   </Conversation.Thread>
   <Conversation.Thread from="me">
-    Thanks for taking the time to read my article! I'd love to hear
-    your feedback – any questions, suggestions, or different
-    perspectives are welcome. Your input helps me improve and create
-    even better content. Feel free to follow me and continue the
-    conversation [on 𝕏](https://x.com/HamzaMiloudAma1) to continue the
-    discussion.
+    Thanks for taking the time to read my article! I'd love to hear your feedback – any questions, suggestions, or
+    different perspectives are welcome. Your input helps me improve and create even better content. Feel free to follow
+    me and continue the conversation [on 𝕏](https://x.com/HamzaMiloudAma1) to continue the discussion.
   </Conversation.Thread>
 </Conversation>
 

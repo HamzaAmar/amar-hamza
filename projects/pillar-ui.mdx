@@ -2,10 +2,10 @@
 id: "pillar-ui"
 title: "Pillar UI — Open-Source React Component Library & Design System"
 excerpt: "A lightweight, CSS-only open-source React component library built by senior fullstack developer Hamza Miloud Amar. Features 30+ accessible components, dark mode, RTL support, and zero-runtime CSS-in-JS."
-image: 
+image:
   src: "/assets/project/pillar/pillar-ui-react-component-library-accessible-design-system.png"
   alt: Pillar UI logo — React UI library for scalable web applications by freelance developer Hamza Miloud Amar
-avatar: 
+avatar:
   src: "/assets/project/pillar/pillar-ui-logo-react-developer-hamza-miloud-amar.jpg"
   alt: Pillar UI — Open-Source React Component Library & Design System
 publishedAt: "2023-01-15T00:00:00.000Z"
@@ -13,14 +13,26 @@ lastModified: "2024-12-01T00:00:00.000Z"
 author:
   name: Hamza Miloud Amar
   picture: "/me.jpg"
-technologies: ["React", "TypeScript", "Storybook", "Accessibility", "WCAG", "Monorepo", "Design System", "Open Source", "CSS-only", "Lightweight"]
+technologies:
+  [
+    "React",
+    "TypeScript",
+    "Storybook",
+    "Accessibility",
+    "WCAG",
+    "Monorepo",
+    "Design System",
+    "Open Source",
+    "CSS-only",
+    "Lightweight",
+  ]
 projectType: "Open Source"
 role: "Creator & Maintainer"
 client: "Personal Project / Open Source Community"
 location: "Morocco (Worldwide)"
 status: "Active Development"
 duration: "2023 — Present"
-links: 
+links:
   - site: "https://www.pillar-ui.com/"
     title: "Site"
   - site: "https://github.com/HamzaAmar/pillar-ui/tree/develop"
@@ -35,6 +47,7 @@ rank: 1
 ## The Problem
 
 Most popular React UI libraries (MUI, Chakra UI, Mantine) use CSS-in-JS or utility-first CSS frameworks internally. This creates several issues:
+
 - **Runtime overhead** from CSS-in-JS injection
 - **Bundle bloat** from heavy styling engines
 - **Vendor lock-in** to specific styling approaches
@@ -43,6 +56,7 @@ Most popular React UI libraries (MUI, Chakra UI, Mantine) use CSS-in-JS or utili
 ## My Role
 
 As the **creator and sole maintainer** (with 4 contributors), I architected the entire library from scratch:
+
 - Designed the component API and theming system
 - Built the monorepo infrastructure with Turborepo
 - Implemented accessibility compliance (WCAG 2.1 AA)
@@ -51,14 +65,14 @@ As the **creator and sole maintainer** (with 4 contributors), I architected the 
 
 ## Technical Architecture
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| Components | React + TypeScript | Type-safe, reusable UI primitives |
-| Styling | Plain CSS + CSS Variables | Zero-runtime, framework-agnostic styles |
-| Theming | CSS Custom Properties | Dark mode, RTL, and brand theming |
-| Documentation | Storybook | Interactive component docs and testing |
-| Monorepo | Turborepo + pnpm | Scalable package management |
-| Testing | Jest + Axe + Screen Readers | Accessibility and unit testing |
+| Layer         | Technology                  | Purpose                                 |
+| ------------- | --------------------------- | --------------------------------------- |
+| Components    | React + TypeScript          | Type-safe, reusable UI primitives       |
+| Styling       | Plain CSS + CSS Variables   | Zero-runtime, framework-agnostic styles |
+| Theming       | CSS Custom Properties       | Dark mode, RTL, and brand theming       |
+| Documentation | Storybook                   | Interactive component docs and testing  |
+| Monorepo      | Turborepo + pnpm            | Scalable package management             |
+| Testing       | Jest + Axe + Screen Readers | Accessibility and unit testing          |
 
 ## Key Features
 
@@ -72,17 +86,22 @@ As the **creator and sole maintainer** (with 4 contributors), I architected the 
 ## Challenges & Solutions
 
 ### Challenge 1: Monorepo Complexity
+
 Managing multiple packages (core, hooks, icons, themes) with shared configurations required careful tooling setup. I used **Turborepo** with remote caching and unified build pipelines to keep CI fast and developer experience smooth.
 
 ### Challenge 2: Accessibility at Scale
+
 Ensuring every component works with screen readers and keyboard navigation is labor-intensive. I implemented:
+
 - Manual testing with NVDA and VoiceOver
 - Automated Axe accessibility scans in Storybook
 - Semantic HTML patterns and ARIA attributes
 - Focus management for interactive components
 
 ### Challenge 3: Bundle Size Optimization
+
 Without a CSS-in-JS runtime to hide bloat, every byte matters. I optimized through:
+
 - Tree-shakeable ES module exports
 - CSS variable-based theming (no duplicate styles)
 - Minimal runtime dependencies
@@ -106,4 +125,4 @@ Building Pillar UI taught me that **simplicity is a feature**. By stripping away
 
 ---
 
-*Want a custom design system or component library for your product?* [Contact me](/contact) to discuss your project.
+_Want a custom design system or component library for your product?_ [Contact me](/contact) to discuss your project.

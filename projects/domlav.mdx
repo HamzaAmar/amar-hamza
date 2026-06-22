@@ -2,24 +2,38 @@
 id: "domlav"
 title: "DOMLAV — Fullstack On-Demand Laundry Service App (Next.js + Node.js + MongoDB)"
 excerpt: "A fullstack on-demand laundry and dry cleaning service application serving customers across Morocco. Built by senior fullstack developer Hamza Miloud Amar with Next.js, Node.js, Express, MongoDB, and Firebase."
-image: 
+image:
   src: "/assets/project/domlav/domlav-laundry-service-app-nextjs-fullstack-mongodb-nodejs.png"
   alt: DOMLAV — fullstack laundry service web application built with Next.js, Node.js, Express, and MongoDB by developer Hamza Miloud Amar
-avatar: 
+avatar:
   src: "/assets/project/domlav/domlav-logo-laundry-service-morocco.jpg"
   alt: DOMLAV logo — on-demand laundry and dry cleaning service in Morocco
 lastModified: "2024-05-20T00:00:00.000Z"
 author:
   name: Hamza Miloud Amar
   picture: "/me.jpg"
-technologies: ["React", "Next.js", "Node.js", "Express", "MongoDB", "Firebase", "Fullstack", "Real-time", "Authentication", "On-Demand", "Service App", "Morocco"]
+technologies:
+  [
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Firebase",
+    "Fullstack",
+    "Real-time",
+    "Authentication",
+    "On-Demand",
+    "Service App",
+    "Morocco",
+  ]
 projectType: "Client Project"
 role: "Senior Fullstack Developer"
 client: "DOMLAV (Morocco)"
 location: "Morocco"
 status: "Live & Active"
 duration: "5 months"
-links: 
+links:
   - site: "https://www.domlav.com/"
     title: "Site"
 rank: 4
@@ -32,6 +46,7 @@ rank: 4
 ## The Problem
 
 Traditional laundry services in Morocco are fragmented and inconvenient:
+
 - **Customers** waste time dropping off and picking up laundry
 - **Quality inconsistency** — No way to verify cleaner reputation before trying
 - **No transparency** — Unclear pricing, timing, and handling processes
@@ -41,6 +56,7 @@ Traditional laundry services in Morocco are fragmented and inconvenient:
 ## My Role
 
 As the **lead senior fullstack developer**, I was responsible for:
+
 - Complete system architecture and database design
 - Frontend development with Next.js and Pillar UI
 - Backend API development with Node.js and Express
@@ -52,24 +68,25 @@ As the **lead senior fullstack developer**, I was responsible for:
 
 ## Technical Architecture
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| Frontend | Next.js 14 (App Router) | SSR for SEO, dynamic routing, image optimization |
-| UI Library | Pillar UI | Custom accessible component system |
-| Styling | CSS Modules + CSS Variables | Maintainable, themeable styles |
-| Backend | Express.js | REST API for business logic |
-| Database | MongoDB | Flexible schema for orders, users, services |
-| ORM | Mongoose | Schema validation and query building |
-| Auth | Firebase Authentication | Secure user auth with phone OTP |
-| Real-time | Firebase Cloud Messaging | Push notifications for order updates |
-| Storage | Firebase Storage | Order photos, receipts, profile images |
-| Payments | Stripe | Secure online payment processing |
-| Maps | Google Maps API | Pickup/delivery location and route tracking |
-| Deployment | Vercel + Railway | Frontend and backend separation |
+| Layer      | Technology                  | Purpose                                          |
+| ---------- | --------------------------- | ------------------------------------------------ |
+| Frontend   | Next.js 14 (App Router)     | SSR for SEO, dynamic routing, image optimization |
+| UI Library | Pillar UI                   | Custom accessible component system               |
+| Styling    | CSS Modules + CSS Variables | Maintainable, themeable styles                   |
+| Backend    | Express.js                  | REST API for business logic                      |
+| Database   | MongoDB                     | Flexible schema for orders, users, services      |
+| ORM        | Mongoose                    | Schema validation and query building             |
+| Auth       | Firebase Authentication     | Secure user auth with phone OTP                  |
+| Real-time  | Firebase Cloud Messaging    | Push notifications for order updates             |
+| Storage    | Firebase Storage            | Order photos, receipts, profile images           |
+| Payments   | Stripe                      | Secure online payment processing                 |
+| Maps       | Google Maps API             | Pickup/delivery location and route tracking      |
+| Deployment | Vercel + Railway            | Frontend and backend separation                  |
 
 ## User Journeys
 
 ### Customer Flow
+
 1. **Register/Login** — Phone number with OTP verification
 2. **Select Service** — Wash & fold, dry cleaning, ironing, specialty items
 3. **Schedule Pickup** — Date, time window, and address selection
@@ -80,6 +97,7 @@ As the **lead senior fullstack developer**, I was responsible for:
 8. **Rate & Pay** — Review service quality, automatic payment processing
 
 ### Driver Flow
+
 1. **Accept Order** — View available pickups in assigned zone
 2. **Navigate to Pickup** — GPS directions to customer address
 3. **Scan QR Code** — Verify correct order, update status
@@ -88,6 +106,7 @@ As the **lead senior fullstack developer**, I was responsible for:
 6. **Deliver to Customer** — Final drop-off, confirm delivery
 
 ### Cleaner/Partner Flow
+
 1. **Receive Orders** — View incoming laundry batches
 2. **Update Status** — Mark items as washing, drying, ironing, ready
 3. **Quality Check** — Photo documentation before packaging
@@ -96,6 +115,7 @@ As the **lead senior fullstack developer**, I was responsible for:
 ## Key Features
 
 ### Customer Features
+
 - **Service Selection** — Multiple service types with transparent pricing
 - **Smart Scheduling** — Pickup and delivery time slots with availability
 - **Real-Time Tracking** — Live driver location and ETA on map
@@ -104,12 +124,14 @@ As the **lead senior fullstack developer**, I was responsible for:
 - **Referral Program** — Earn credits by inviting friends
 
 ### Driver Features
+
 - **Route Optimization** — Efficient multi-stop pickup and delivery routes
 - **Earnings Dashboard** — Daily/weekly earnings with breakdown
 - **Rating System** — Customer feedback on delivery service
 - **Offline Support** — Queue updates when connectivity is poor
 
 ### Admin Features
+
 - **Order Management** — Full overview of all active and completed orders
 - **Driver Dispatch** — Assign orders, monitor routes, handle exceptions
 - **Cleaner Partners** — Manage partner network, quality standards, payments
@@ -117,6 +139,7 @@ As the **lead senior fullstack developer**, I was responsible for:
 - **Customer Support** — Issue tracking, refunds, dispute resolution
 
 ### Real-Time Features
+
 - **Live Driver Tracking** — Customers see driver on map approaching
 - **Push Notifications** — Status updates, promotions, delivery alerts
 - **In-App Chat** — Customer support and driver communication
@@ -125,27 +148,35 @@ As the **lead senior fullstack developer**, I was responsible for:
 ## Challenges & Solutions
 
 ### Challenge 1: Real-Time Order Tracking
+
 Customers expect Uber-like tracking for laundry. I implemented:
+
 - **Firebase Realtime Database** for live location updates
 - **Geofencing** to trigger status changes automatically
 - **Optimized location polling** — Battery-efficient tracking for drivers
 - **Fallback SMS** — Status updates via text when app is closed
 
 ### Challenge 2: Handling Different Service Types
+
 Laundry, dry cleaning, and ironing have different workflows. I designed:
+
 - **Flexible order schema** in MongoDB for variable service pipelines
 - **Status machine** — Each service type has its own state transitions
 - **Price calculation engine** — Weight, item count, fabric type, urgency
 
 ### Challenge 3: Driver-Cleaner Coordination
+
 Multiple stakeholders need seamless handoffs. I built:
+
 - **QR code system** — Each order bag has unique QR for scanning
 - **Photo verification** — Drivers photograph bags at pickup/delivery
 - **Digital signatures** — Customer confirmation on delivery
 - **Dispute resolution** — Photo evidence for damage/loss claims
 
 ### Challenge 4: Payment Trust
+
 Moroccan customers are cautious about online payments. I addressed:
+
 - **Cash on delivery option** — For customers preferring physical payment
 - **Transparent pricing** — Full cost breakdown before confirmation
 - **Secure Stripe integration** — PCI-compliant payment processing
@@ -164,7 +195,7 @@ Moroccan customers are cautious about online payments. I addressed:
 
 ## Testimonial
 
-> *"Hamza built us a complete logistics platform that handles the complexity of coordinating customers, drivers, and cleaners. The real-time tracking and automated workflows have transformed our operations."*
+> _"Hamza built us a complete logistics platform that handles the complexity of coordinating customers, drivers, and cleaners. The real-time tracking and automated workflows have transformed our operations."_
 > — **DOMLAV Founder**
 
 ## Lessons Learned
@@ -180,4 +211,4 @@ Building DOMLAV taught me that **on-demand service apps are logistics platforms 
 
 ---
 
-*Need a fullstack on-demand service platform?* [Contact me](/contact) to discuss your project.
+_Need a fullstack on-demand service platform?_ [Contact me](/contact) to discuss your project.

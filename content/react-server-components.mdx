@@ -1,15 +1,15 @@
 ---
-title: 'React Server Components'
-excerpt: 'Discover React Server Components, an upcoming feature in React that enables server-side rendering of components.'
-publishedAt: '2024-07-02T10:00:00.000Z'
+title: "React Server Components"
+excerpt: "Discover React Server Components, an upcoming feature in React that enables server-side rendering of components."
+publishedAt: "2024-07-02T10:00:00.000Z"
 image:
   src: "/assets/blog/rendering/react-server-components.webp"
   alt: "React Server Components illustration for server-rendered React performance and simplified data fetching"
-lastModified: '2024-07-25T05:35:07.322Z'
+lastModified: "2024-07-25T05:35:07.322Z"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['React Server Components', 'RSC', 'Server Rendering', 'React', 'Web Performance', 'SEO']
+  picture: "/me.jpg"
+tags: ["React Server Components", "RSC", "Server Rendering", "React", "Web Performance", "SEO"]
 ---
 
 In our previous article, we discussed Island Architecture. Today, we shift our focus to React Server Components. This paradigm allows developers to render specific components exclusively on the server side, optimizing overall application performance and simplifying data fetching.
@@ -17,76 +17,62 @@ In our previous article, we discussed Island Architecture. Today, we shift our f
 <Conversation>
 
 <Conversation.Thread from="user">
-  Hey Chat, could you explain **React Server Components** in simple
-  terms, assuming I have no idea about **rendering patterns**? 🤔
+  Hey Chat, could you explain **React Server Components** in simple terms, assuming I have no idea about **rendering
+  patterns**? 🤔
 </Conversation.Thread>
 
 <Conversation.Thread from="narrator">
   <div>
-    Imagine your web app as a restaurant experience. The server, like
-    the head chef, prepares all the dishes in the kitchen. Some
-    dishes, like a salad, are fully prepared in the kitchen and ready
-    to be enjoyed as is (server components). Others, like a burger,
-    are mostly prepared in the kitchen but require a final touch at
-    the your table perhaps a melted cheese added by the waiter to
-    complete the perfect meal (client component).
+    Imagine your web app as a restaurant experience. The server, like the head chef, prepares all the dishes in the
+    kitchen. Some dishes, like a salad, are fully prepared in the kitchen and ready to be enjoyed as is (server
+    components). Others, like a burger, are mostly prepared in the kitchen but require a final touch at the your table
+    perhaps a melted cheese added by the waiter to complete the perfect meal (client component).
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Mmm, that sounds interesting! Could you explain a real-world example
-  using ss, showing the step by step process of how the server and
-  browser work together to make this happen? 🤔
+  Mmm, that sounds interesting! Could you explain a real-world example using ss, showing the step by step process of how
+  the server and browser work together to make this happen? 🤔
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
   <div>
-    As a server, my primary function is to generate the initial HTML
-    structure of a web page. However, this process involves two
-    distinct component types: server components and client components
+    As a server, my primary function is to generate the initial HTML structure of a web page. However, this process
+    involves two distinct component types: server components and client components
   </div>
   <div>
-    **Server components:** I render these entirely on the server,
-    generating their HTML output. No JavaScript code is sent to the
-    client, eliminating the need for hydration.
+    **Server components:** I render these entirely on the server, generating their HTML output. No JavaScript code is
+    sent to the client, eliminating the need for hydration.
   </div>
   <div>
-    **Client components:** on the other hand, are rendered by me but
-    also include JavaScript code that is sent to the browser (for
-    application state, event handlers, and access to DOM nodes). This
-    allows the browser to hydrate these components, enabling
-    interactive features and dynamic updates within the web page.
+    **Client components:** on the other hand, are rendered by me but also include JavaScript code that is sent to the
+    browser (for application state, event handlers, and access to DOM nodes). This allows the browser to hydrate these
+    components, enabling interactive features and dynamic updates within the web page.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
-  Thanks for explaining, server! My role as the browser becomes more
-  streamlined. I receive the generated HTML from the server and
-  display it to the user. Since the heavy lifting is done server
-  component, I have less JavaScript to parse and execute, leading to
-  faster Time to interact (TTI).
+  Thanks for explaining, server! My role as the browser becomes more streamlined. I receive the generated HTML from the
+  server and display it to the user. Since the heavy lifting is done server component, I have less JavaScript to parse
+  and execute, leading to faster Time to interact (TTI).
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Thanks for the explanation. I understand that client components are
-  the traditional components we use, which render on the server and
-  hydrate on the client. However, I'm still a bit confused about
-  server components. Could you provide some examples to help me
-  understand them better?
+  Thanks for the explanation. I understand that client components are the traditional components we use, which render on
+  the server and hydrate on the client. However, I'm still a bit confused about server components. Could you provide
+  some examples to help me understand them better?
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
   <div>
-    Okay, let's simplify it: Server Components run exclusively on the
-    server. Let me give you an example to illustrate this...
+    Okay, let's simplify it: Server Components run exclusively on the server. Let me give you an example to illustrate
+    this...
   </div>
   <div>
-    Let's take a component that displays the date in the format
-    (YYYY.MM.DD). With traditional client components, we'd send the
-    raw date and JavaScript code to the browser to hydrate it. Server
-    components, however, allow us to format the date directly on the
-    server and send only the formatted result in HTML, simplifying the
-    process and reducing client-side load.
+    Let's take a component that displays the date in the format (YYYY.MM.DD). With traditional client components, we'd
+    send the raw date and JavaScript code to the browser to hydrate it. Server components, however, allow us to format
+    the date directly on the server and send only the formatted result in HTML, simplifying the process and reducing
+    client-side load.
   </div>
 </Conversation.Thread>
 
@@ -138,126 +124,97 @@ In our previous article, we discussed Island Architecture. Today, we shift our f
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  When should you opt for a client component instead of a server
-  component?
+  When should you opt for a client component instead of a server component?
 </Conversation.Thread>
 <Conversation.Thread from="server">
   <div>
-    In general, you should aim to use Server Components whenever
-    possible. They reduce the JavaScript bundle size, improve
-    performance, and simplify data fetching. However, there are
-    specific scenarios where Client Components become necessary:
+    In general, you should aim to use Server Components whenever possible. They reduce the JavaScript bundle size,
+    improve performance, and simplify data fetching. However, there are specific scenarios where Client Components
+    become necessary:
   </div>
   <div>
-    **Managing State**: If your component needs to maintain and update
-    its own internal state, a Client Component is required.
+    **Managing State**: If your component needs to maintain and update its own internal state, a Client Component is
+    required.
   </div>
   <div>
-    **Leveraging Effects**: To perform side effects like subscribing
-    to external events or running code when a component mounts or
-    unmounts, you'll need a Client Component. Server Components do not
-    have a lifecycle for managing these types of operations.
+    **Leveraging Effects**: To perform side effects like subscribing to external events or running code when a component
+    mounts or unmounts, you'll need a Client Component. Server Components do not have a lifecycle for managing these
+    types of operations.
   </div>
   <div>
-    **Interacting with Browser APIs**: When your component needs to
-    interact directly with browser APIs (e.g., accessing geolocation,
-    or working with local storage), a Client Component is necessary.
-    These APIs aren't available on the server.
+    **Interacting with Browser APIs**: When your component needs to interact directly with browser APIs (e.g., accessing
+    geolocation, or working with local storage), a Client Component is necessary. These APIs aren't available on the
+    server.
   </div>
   <div>
-    **manipulating the DOM**: If your component needs to directly
-    interact with the DOM (e.g., for focusing an input, measuring
-    dimensions, applying animations, or handling click events), you'll
-    need to use a Client Component. Server Components don't have
-    access to the browser's DOM.
+    **manipulating the DOM**: If your component needs to directly interact with the DOM (e.g., for focusing an input,
+    measuring dimensions, applying animations, or handling click events), you'll need to use a Client Component. Server
+    Components don't have access to the browser's DOM.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  I'm really liking this React Server Components Pattern! I'm curious,
-  though, are there any potential performance issues I should be aware
-  of?
+  I'm really liking this React Server Components Pattern! I'm curious, though, are there any potential performance
+  issues I should be aware of?
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
   <div>
-    Absolutely! While server components offer many benefits, there are
-    some potential performance considerations to keep in mind.
+    Absolutely! While server components offer many benefits, there are some potential performance considerations to keep
+    in mind.
   </div>
   <div>One such consideration is larger file sizes.</div>
+  <div>Additionally, time-consuming data fetching can slow down the page's First Contentful Paint (FCP).</div>
   <div>
-    Additionally, time-consuming data fetching can slow down the
-    page's First Contentful Paint (FCP).
-  </div>
-  <div>
-    Furthermore, increased server load due to rendering components can
-    also impact performance, especially under heavy traffic.
+    Furthermore, increased server load due to rendering components can also impact performance, especially under heavy
+    traffic.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  <div>
-    That makes sense. So, what can I do to prevent this performance
-    issues?
-  </div>
+  <div>That makes sense. So, what can I do to prevent this performance issues?</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
+  <div>Certainly! There are several effective strategies for optimizing the performance of Server Components.</div>
   <div>
-    Certainly! There are several effective strategies for optimizing
-    the performance of Server Components.
-  </div>
-  <div>
-    To enhance site size performance, you can implement techniques
-    outlined in this guide: [Static Site
+    To enhance site size performance, you can implement techniques outlined in this guide: [Static Site
     Enhancement.](/blogs/static-website#static-site-enhancement)
   </div>
   <div>
-    For the issue of slow loading page sections due to database calls
-    or other processes, we can leverage
-    [Streaming](/blogs/streaming-server-side-rendering) to ensure that
-    the rest of your page content is displayed promptly without being
-    held back by slower components.
+    For the issue of slow loading page sections due to database calls or other processes, we can leverage
+    [Streaming](/blogs/streaming-server-side-rendering) to ensure that the rest of your page content is displayed
+    promptly without being held back by slower components.
   </div>
   <div>
     [Leveraging caching mechanisms on both the server and
-    client-side](https://nextjs.org/docs/app/building-your-application/caching)
-    can significantly reduce server load and improve overall
-    performance.
+    client-side](https://nextjs.org/docs/app/building-your-application/caching) can significantly reduce server load and
+    improve overall performance.
   </div>
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  Thanks Chat ! This helps a lot. Any final tips?
-</Conversation.Thread>
+<Conversation.Thread from="user">Thanks Chat ! This helps a lot. Any final tips?</Conversation.Thread>
 
 <Conversation.Thread from="server">
-  You're welcome! Remember that Server Components can significantly
-  enhance the performance and user experience of your web
-  applications. Use them strategically to offload work from the client
-  to the server, and combine them with Client Components for
-  interactivity. Keep experimenting and monitoring your application’s
-  performance to get the best results.
+  You're welcome! Remember that Server Components can significantly enhance the performance and user experience of your
+  web applications. Use them strategically to offload work from the client to the server, and combine them with Client
+  Components for interactivity. Keep experimenting and monitoring your application’s performance to get the best
+  results.
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
-  Stay tuned for our next conversation where we’ll dive into more
-  advanced techniques for optimizing web performance. See you next
-  time!
+  Stay tuned for our next conversation where we’ll dive into more advanced techniques for optimizing web performance.
+  See you next time!
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  Looking forward to it!
-</Conversation.Thread>
+<Conversation.Thread from="user">Looking forward to it!</Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="me">
-  Thanks for taking the time to read my article! I'd love to hear your
-  feedback – any questions, suggestions, or different perspectives are
-  welcome. Your input helps me improve and create even better content.
-  Feel free to follow me and continue the conversation [on
-  𝕏](https://x.com/HamzaMiloudAma1) to continue the discussion.
+  Thanks for taking the time to read my article! I'd love to hear your feedback – any questions, suggestions, or
+  different perspectives are welcome. Your input helps me improve and create even better content. Feel free to follow me
+  and continue the conversation [on 𝕏](https://x.com/HamzaMiloudAma1) to continue the discussion.
 </Conversation.Thread>
 
 </Conversation>

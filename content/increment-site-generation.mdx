@@ -1,15 +1,15 @@
 ---
-title: 'Incremental Site Generation: Combining Static and Dynamic'
-excerpt: 'Understand how Incremental Site Generation (ISG) uses the best of both worlds: fast static sites and dynamic updates for maximal web performance.'
+title: "Incremental Site Generation: Combining Static and Dynamic"
+excerpt: "Understand how Incremental Site Generation (ISG) uses the best of both worlds: fast static sites and dynamic updates for maximal web performance."
 image:
   src: "/assets/blog/rendering/incremental-site-generation-isg-performance.webp"
   alt: "Incremental site generation ISG visualization for fast scalable websites"
-publishedAt: '2024-06-24T05:35:07.322Z'
-lastModified: '2024-07-25T05:35:07.322Z'
+publishedAt: "2024-06-24T05:35:07.322Z"
+lastModified: "2024-07-25T05:35:07.322Z"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['Incremental Site Generation', 'ISG', 'Static Site', 'Web Performance', 'Scalability', 'SEO']
+  picture: "/me.jpg"
+tags: ["Incremental Site Generation", "ISG", "Static Site", "Web Performance", "Scalability", "SEO"]
 ---
 
 In our last post, we covered Server-Side Rendering. Today, we'll delve into Incremental Site Generation (ISG), a technique that builds upon Static Site Generation by allowing pages to be generated or updated incrementally after the initial build. ISG ensures that your site remains fast and up-to-date without needing a full rebuild for every change.
@@ -18,69 +18,47 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
 
 <Conversation.Thread from="user">
   <div>
-    Hey Chat, could you explain Incremental Static Regeneration (ISR)
-    in simple terms, assuming I have no idea about **rendering
-    patterns**?
+    Hey Chat, could you explain Incremental Static Regeneration (ISR) in simple terms, assuming I have no idea about
+    **rendering patterns**?
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="narrator">
   <div>
-    Imagine a traditional Moroccan wedding feast where up to four
-    different courses are served. If all the courses were prepared at
-    once, it would create a lot of stress for the chefs and could
-    delay the feast.
+    Imagine a traditional Moroccan wedding feast where up to four different courses are served. If all the courses were
+    prepared at once, it would create a lot of stress for the chefs and could delay the feast.
   </div>
   <div>
-    Instead, the chefs prepare the first course in advance so it's
-    ready to serve as soon as the guests arrive. While the guests
-    enjoy the first course, the chefs start preparing the next course
-    and so on. This way, each dish is ready just in time, keeping the
-    process smooth and efficient.
+    Instead, the chefs prepare the first course in advance so it's ready to serve as soon as the guests arrive. While
+    the guests enjoy the first course, the chefs start preparing the next course and so on. This way, each dish is ready
+    just in time, keeping the process smooth and efficient.
   </div>
   <div>
-    Incremental Static Regeneration (ISR) – is where some content is
-    pre-rendered. As users interact with the site, new or updated
-    content is generated on demand, keeping the experience fresh and
-    current without overloading the system.
+    Incremental Static Regeneration (ISR) – is where some content is pre-rendered. As users interact with the site, new
+    or updated content is generated on demand, keeping the experience fresh and current without overloading the system.
   </div>
-  <div>
-    ISR uses two techniques that differ from SSG: the fallback
-    technique and interval caching.
-  </div>
+  <div>ISR uses two techniques that differ from SSG: the fallback technique and interval caching.</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  <div>
-    Can you please explain the fallback technique and its use?
-  </div>
+  <div>Can you please explain the fallback technique and its use?</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="narrator">
+  <div>Of course! The fallback technique is used to generate pages on demand that don't already exist.</div>
   <div>
-    Of course! The fallback technique is used to generate pages on
-    demand that don't already exist.
+    Imagine a large UI library documentation site with thousands of pages stored in a database or CMS. Instead of
+    pre-rendering all the pages at once, which can take a long time, we pre-render only the most visited pages.
   </div>
   <div>
-    Imagine a large UI library documentation site with thousands of
-    pages stored in a database or CMS. Instead of pre-rendering all
-    the pages at once, which can take a long time, we pre-render only
-    the most visited pages.
-  </div>
-  <div>
-    For less visited pages, we generate them when they are first
-    requested, similar to Server-Side Rendering (SSR). But unlike SSR,
-    once a page is generated, it is saved as static HTML. So the next
-    time someone visits, the server can quickly serve the pre-rendered
-    static page.
+    For less visited pages, we generate them when they are first requested, similar to Server-Side Rendering (SSR). But
+    unlike SSR, once a page is generated, it is saved as static HTML. So the next time someone visits, the server can
+    quickly serve the pre-rendered static page.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  <div>
-    That's helpful, but what about the interval caching technique and
-    when do we use it?
-  </div>
+  <div>That's helpful, but what about the interval caching technique and when do we use it?</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="narrator">
@@ -136,9 +114,8 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
-  Once I receive the generated HTML, I display it to the user. For
-  subsequent requests, I can serve the cached version until the
-  interval cache expires.
+  Once I receive the generated HTML, I display it to the user. For subsequent requests, I can serve the cached version
+  until the interval cache expires.
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
@@ -146,19 +123,14 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  <div>
-    Are there any technical considerations or potential challenges
-    associated with implementing ISR?
-  </div>
+  <div>Are there any technical considerations or potential challenges associated with implementing ISR?</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
   <div>
-    Yes, there are some challenges. Implementing robust cache
-    invalidation strategies and ensuring data consistency across
-    static and dynamic content can be tricky. Additionally, you need
-    to carefully decide when to trigger the regeneration of pages and
-    how often to do it, depending on your specific needs.
+    Yes, there are some challenges. Implementing robust cache invalidation strategies and ensuring data consistency
+    across static and dynamic content can be tricky. Additionally, you need to carefully decide when to trigger the
+    regeneration of pages and how often to do it, depending on your specific needs.
   </div>
 </Conversation.Thread>
 
@@ -167,25 +139,13 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
+  <div>Performance: Pre-rendered pages load very quickly, providing a better user experience.</div>
+  <div>SEO: Static pages are easily indexed by search engines, improving SEO.</div>
+  <div>Scalability: Only the most visited pages are pre-rendered, reducing the build time and server load.</div>
+  <div>Content Freshness: Pages can be updated without a full site rebuild, ensuring content is always up-to-date.</div>
   <div>
-    Performance: Pre-rendered pages load very quickly, providing a
-    better user experience.
-  </div>
-  <div>
-    SEO: Static pages are easily indexed by search engines, improving
-    SEO.
-  </div>
-  <div>
-    Scalability: Only the most visited pages are pre-rendered,
-    reducing the build time and server load.
-  </div>
-  <div>
-    Content Freshness: Pages can be updated without a full site
-    rebuild, ensuring content is always up-to-date.
-  </div>
-  <div>
-    Flexibility: Combines the best aspects of static and dynamic
-    rendering, allowing for on-demand generation and updates.
+    Flexibility: Combines the best aspects of static and dynamic rendering, allowing for on-demand generation and
+    updates.
   </div>
 </Conversation.Thread>
 
@@ -194,28 +154,19 @@ In our last post, we covered Server-Side Rendering. Today, we'll delve into Incr
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
+  <div>Complexity: Implementing ISR requires careful planning for cache invalidation and content updates.</div>
+  <div>Consistency: Ensuring data consistency across static and dynamic content can be challenging.</div>
   <div>
-    Complexity: Implementing ISR requires careful planning for cache
-    invalidation and content updates.
+    Build Process: Determining the optimal re-generation triggers and intervals can be tricky and might need adjustments
+    over time.
   </div>
   <div>
-    Consistency: Ensuring data consistency across static and dynamic
-    content can be challenging.
-  </div>
-  <div>
-    Build Process: Determining the optimal re-generation triggers and
-    intervals can be tricky and might need adjustments over time.
-  </div>
-  <div>
-    Resource Management: Properly managing server resources to handle
-    both static and dynamic content generation is crucial.
+    Resource Management: Properly managing server resources to handle both static and dynamic content generation is
+    crucial.
   </div>
 </Conversation.Thread>
 <Conversation.Thread from="user">
-  <div>
-    Thanks, Server and Browser! This was really helpful. Any final
-    thoughts?
-  </div>
+  <div>Thanks, Server and Browser! This was really helpful. Any final thoughts?</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="server">

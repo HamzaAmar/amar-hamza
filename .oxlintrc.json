@@ -1,0 +1,84 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["unicorn", "typescript", "oxc", "import", "react", "nextjs", "jsx-a11y"],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.next/**",
+    "**/coverage/**",
+    "**/.turbo/**",
+    "**/*.min.js",
+    "**/yarn.lock",
+    "**/pnpm-lock.yaml",
+    "**/package-lock.json",
+    "**/* copy/**",
+    "**/* copy.*",
+    "**/forget-password copy/**"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "off",
+    "pedantic": "off",
+    "perf": "off",
+    "style": "off",
+    "restriction": "off",
+    "nursery": "off"
+  },
+  "rules": {
+    "import/no-duplicates": "error",
+    "import/no-self-import": "error",
+    "import/no-named-export": "off",
+    "import/prefer-default-export": "off",
+
+    "sort-imports": "off",
+    "capitalized-comments": "off",
+
+    "unicorn/no-array-for-each": "off",
+    "unicorn/numeric-separators-style": "off",
+    "unicorn/prefer-global-this": "off",
+    "typescript/no-explicit-any": "off",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "kebabCase"
+      }
+    ],
+    "typescript/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "typescript/consistent-type-imports": ["warn", { "prefer": "type-imports", "fixStyle": "inline-type-imports" }],
+
+    "no-console": ["warn", { "allow": ["warn", "error", "info", "debug"] }]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{spec,test}.{js,mjs,cjs,ts,mts,cts,tsx}", "**/__tests__/**/*", "**/test/**/*"],
+      "plugins": ["jest"],
+      "env": { "jest": true },
+      "rules": {
+        "no-console": "off",
+        "typescript/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": [
+        "**/scripts/**/*",
+        "**/*.{config,setup}.{js,mjs,cjs,ts}",
+        "**/drizzle.config.ts",
+        "**/main.ts",
+        "**/seed.ts",
+        "**/*.strategy.ts",
+        "**/auth.service.ts"
+      ],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

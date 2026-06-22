@@ -1,15 +1,15 @@
 ---
-title: 'Static Site Generation: Pre-Rendered Performance'
-excerpt: 'Unlock the power of Static Site Generation (SSG) with Hydration, a method that delivers blazing-fast websites with interactive features for optimal user experiences.'
+title: "Static Site Generation: Pre-Rendered Performance"
+excerpt: "Unlock the power of Static Site Generation (SSG) with Hydration, a method that delivers blazing-fast websites with interactive features for optimal user experiences."
 image:
   src: "/assets/blog/rendering/static-site-generation-ssg-performance.webp"
   alt: "Static site generation SSG illustration for fast pre-rendered website performance"
-publishedAt: '2024-06-16T05:35:07.322Z'
-lastModified: '2024-07-25T05:35:07.322Z'
+publishedAt: "2024-06-16T05:35:07.322Z"
+lastModified: "2024-07-25T05:35:07.322Z"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['Static Site Generation', 'SSG', 'Pre-rendering', 'Web Performance', 'SEO', 'Jamstack']
+  picture: "/me.jpg"
+tags: ["Static Site Generation", "SSG", "Pre-rendering", "Web Performance", "SEO", "Jamstack"]
 ---
 
 In our last post, we covered Hydration. Today, we'll focus on Static Site Generation (SSG), a technique that pre-renders web pages at build time, resulting in fast and secure static files. SSG combines the best of both worlds by offering the performance of static sites with the ability to fetch dynamic content at build time.
@@ -43,123 +43,93 @@ Imagine you're hosting a big dinner party. You prepare all the dishes in advance
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
-  Once I receive the pre-rendered HTML, I display the initial page
-  layout to the user. Then, I execute the JavaScript code, adding
-  interactive elements and any additional content to create a dynamic
-  user experience. 💻
+  Once I receive the pre-rendered HTML, I display the initial page layout to the user. Then, I execute the JavaScript
+  code, adding interactive elements and any additional content to create a dynamic user experience. 💻
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Those sound like good reasons. What are the main advantages of using
-  SSG with hydration? 👍
+  Those sound like good reasons. What are the main advantages of using SSG with hydration? 👍
 </Conversation.Thread>
 <Conversation.Thread from="server">
   <div>Here's a quick overview of the pros:</div>
   <div>
-    **Blazing Fast:** Like static websites, SSG with hydration loads
-    incredibly quickly because the initial content is pre-generated.
-    ⚡
+    **Blazing Fast:** Like static websites, SSG with hydration loads incredibly quickly because the initial content is
+    pre-generated. ⚡
   </div>
   <div>
-    **Interactive:** The hydration process adds JavaScript, making the
-    site feel like an app with interactive features. ✨
+    **Interactive:** The hydration process adds JavaScript, making the site feel like an app with interactive features.
+    ✨
   </div>
-  <div>
-    **Better Security:** Less server-side code means fewer
-    vulnerabilities for hackers to exploit. 🛡️
-  </div>
-  <div>
-    **SEO Friendly:** Search engines still love them because of their
-    speed and simple structure. 🏆
-  </div>
+  <div>**Better Security:** Less server-side code means fewer vulnerabilities for hackers to exploit. 🛡️</div>
+  <div>**SEO Friendly:** Search engines still love them because of their speed and simple structure. 🏆</div>
 </Conversation.Thread>
 <Conversation.Thread from="cdn">
   <div>
-    And don't forget! I'm a caching whiz, making it super easy for me
-    to cache your site and deliver it lightning-fast to your users,
-    wherever they are. ⚡
+    And don't forget! I'm a caching whiz, making it super easy for me to cache your site and deliver it lightning-fast
+    to your users, wherever they are. ⚡
   </div>
 </Conversation.Thread>
 <Conversation.Thread from="user">
-  Those are some impressive advantages! But are there any downsides?
-  👎
+  Those are some impressive advantages! But are there any downsides? 👎
 </Conversation.Thread>
 <Conversation.Thread from="server">
   <div>Here are a few things to keep in mind: </div>
   <div>
-    **Limited Real-Time Features**: SSG sites can handle simple
-    interactions, but they may not be the best choice if you need
-    features like live chats or real-time updates.
+    **Limited Real-Time Features**: SSG sites can handle simple interactions, but they may not be the best choice if you
+    need features like live chats or real-time updates.
   </div>
   <div>
-    **Build Time:** Generating all those pages upfrontcan
-    significantly slow down the build process, especially for very
+    **Build Time:** Generating all those pages upfrontcan significantly slow down the build process, especially for very
     large sites.
   </div>
-  <div>
-    **Content Deployment:** Updating content requires a new deployment
-    of the site 🛠️.
-  </div>
+  <div>**Content Deployment:** Updating content requires a new deployment of the site 🛠️.</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  I'm really liking this SSG with hydration concept! I'm curious,
-  though, are there any potential performance issues I should be aware
-  of?
+  I'm really liking this SSG with hydration concept! I'm curious, though, are there any potential performance issues I
+  should be aware of?
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
   <div>Absolutely!</div>
   <div>
-    If your website includes large files it may take longer to load,
-    particularly on slower internet connections.
+    If your website includes large files it may take longer to load, particularly on slower internet connections.
   </div>
   <div>
-    Additionally, if there are a large number of pages that require
-    pre-rendering, this process can also be time-consuming.
+    Additionally, if there are a large number of pages that require pre-rendering, this process can also be
+    time-consuming.
   </div>
 </Conversation.Thread>
 <Conversation.Thread from="user">
-  <div>
-    That makes sense. So, what can we address these performance issues
-    🛠️? ?
-  </div>
+  <div>That makes sense. So, what can we address these performance issues 🛠️? ?</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
   <div>
-    There are several ways to optimize those files. We've already
-    covered some of them
-    [here](/blogs/static-website#static-site-enhancement), and we'll
-    delve into even more modern JavaScript optimization techniques,
-    such as [Progressive Hydration](/blogs/progressive-hydration) and
-    [Server Components](/blogs/react-server-components), in a later
-    section.
+    There are several ways to optimize those files. We've already covered some of them
+    [here](/blogs/static-website#static-site-enhancement), and we'll delve into even more modern JavaScript optimization
+    techniques, such as [Progressive Hydration](/blogs/progressive-hydration) and [Server
+    Components](/blogs/react-server-components), in a later section.
   </div>
   <div>
-    Additionally, consider using [Incremental Static Regeneration
-    (ISR)](/blogs/increment-site-generation) to improve build times.
+    Additionally, consider using [Incremental Static Regeneration (ISR)](/blogs/increment-site-generation) to improve
+    build times.
   </div>
   <div>
-    Furthermore, techniques like **Navigation Prefetching** can be
-    employed to pre-load links to other pages on your site, making
-    navigation feel incredibly fast.
+    Furthermore, techniques like **Navigation Prefetching** can be employed to pre-load links to other pages on your
+    site, making navigation feel incredibly fast.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  GOOD But I'm curious, which framework would you recommend for
-  building a static site generator (SSG)?
+  GOOD But I'm curious, which framework would you recommend for building a static site generator (SSG)?
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
-  Here are a few popular options: **Gatsby** | **Next.js** |
-  **Nuxt.js**
+  Here are a few popular options: **Gatsby** | **Next.js** | **Nuxt.js**
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  Thank you for this insightful overview. I appreciate the clarity.
-</Conversation.Thread>
+<Conversation.Thread from="user">Thank you for this insightful overview. I appreciate the clarity.</Conversation.Thread>
 
 <Conversation.Thread from="server">
   You're most welcome! 😊 If you're ready to take it to the next level, check out our upcoming post on [Server-Side Rendering (SSR)](/blogs/server-side-rendering). It's like having a personal chef cook up a customized meal for each of your guests on the spot! 🧑‍🍳

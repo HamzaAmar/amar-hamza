@@ -1,15 +1,15 @@
 ---
-title: 'CSS Cascade deep dive'
-excerpt: 'master the CSS cascade: Learn about origin, context, inline styles, cascade layers, specificity, scope, proximity, and order of appearance.'
+title: "CSS Cascade deep dive"
+excerpt: "master the CSS cascade: Learn about origin, context, inline styles, cascade layers, specificity, scope, proximity, and order of appearance."
 image:
   src: "/assets/blog/cascade/css-cascade-specificity-performance.webp"
   alt: "CSS cascade illustration for specificity, inheritance, and performance in styling"
-publishedAt: '2024-09-02T05:35:07.322Z'
-lastModified: '2024-09-02T05:35:07.322Z'
+publishedAt: "2024-09-02T05:35:07.322Z"
+lastModified: "2024-09-02T05:35:07.322Z"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['CSS Cascade', 'CSS Specificity', 'Web Performance', 'CSS Architecture', 'Frontend', 'Styling']
+  picture: "/me.jpg"
+tags: ["CSS Cascade", "CSS Specificity", "Web Performance", "CSS Architecture", "Frontend", "Styling"]
 ---
 
 In this post we’ll go deeper into CSS cascade, one of the CSS core concept that I believe everyone should understand. this concept can be tricky even for experienced developers. We’ll help you understand why your styles don’t work as expected or why certain styles are applied even though you didn’t add them.
@@ -80,11 +80,9 @@ div {
   message="I'd like to highlight a common mistake some people make by considering specificity at this stage, thinking they need to increase it to override (User, User Agent) styles. Specificity is the fifth layer in the cascade, and we don't think about it until we reach that specific layer."
   title="Don't Overthink Specificity"
 />
-In this example, we aim to highlight all potential scenarios of a conflict,
-including those with normal declarations, with important declarations,
-and those with both. But before going through the conflict, let's begin
-by identifying styles that don't have any conflicts; they will be apply
-directly without the need for cascade resolution.
+In this example, we aim to highlight all potential scenarios of a conflict, including those with normal declarations,
+with important declarations, and those with both. But before going through the conflict, let's begin by identifying
+styles that don't have any conflicts; they will be apply directly without the need for cascade resolution.
 
 ```css
 display: block;
@@ -157,12 +155,10 @@ In the last section, we spoke about the origin of stylesheet, it's time to talk 
 
 ```js
 customElements.define(
-  'c-button',
+  "c-button",
   class extends HTMLElement {
     connectedCallback() {
-      this.attachShadow({ mode: 'open' }).append(
-        button.content.cloneNode(true),
-      );
+      this.attachShadow({ mode: "open" }).append(button.content.cloneNode(true));
     }
   },
 );
@@ -399,11 +395,11 @@ ul {
 :disabled {
 }
 /* Attribute Selector */
-[aria-current='page'] {
+[aria-current="page"] {
 }
-[data-orientation='vertical'] {
+[data-orientation="vertical"] {
 }
-[href$='.com' i] {
+[href$=".com" i] {
 }
 ```
 
@@ -477,8 +473,8 @@ Let's work through another example to gain more practice and show other issues t
 
 ```css
 /* Reset Style Section Specificity score: 0.1.1 */
-input[type='submit'],
-input[type='button'] {
+input[type="submit"],
+input[type="button"] {
   background: none;
   cursor: pointer;
 }
@@ -506,11 +502,11 @@ Let's explain what `:where` and `:is` doing but only the related part of the cas
 
 ```css
 /* Know the reset Selector has No specificity 0.0.0 */
-:where(input[type='submit']) {
+:where(input[type="submit"]) {
   background: none;
 }
 /* The specificity Become 0.1.0 */
-:is(input[type='submit']) {
+:is(input[type="submit"]) {
   background: none;
 }
 /* The specificity Become 1.0.0 */
@@ -537,11 +533,11 @@ button {
   background: var(--p);
 }
 
-[lang='ar'] * {
+[lang="ar"] * {
   --p: brown;
 }
 
-[lang='en'] * {
+[lang="en"] * {
   --p: orange;
 }
 ```
@@ -595,7 +591,7 @@ Another thing to pay attention to is that declaring shorthand versions of CSS pr
 
 ```css
 .btn {
-  background-image: url('/button.png');
+  background-image: url("/button.png");
   background: orange;
 }
 ```
@@ -618,7 +614,7 @@ When using shorthand properties remember what other styles you may be overriding
 ```css
 .btn {
   background: orange;
-  background-image: url('/button.png');
+  background-image: url("/button.png");
 }
 ```
 

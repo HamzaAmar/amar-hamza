@@ -1,15 +1,15 @@
 ---
-title: 'Streaming Server-Side Rendering: Efficient Content Delivery'
-excerpt: 'Explore Streaming Server-Side Rendering (SSR), a cutting-edge technique that streams HTML content for faster initial page loads and improved user experiences.'
+title: "Streaming Server-Side Rendering: Efficient Content Delivery"
+excerpt: "Explore Streaming Server-Side Rendering (SSR), a cutting-edge technique that streams HTML content for faster initial page loads and improved user experiences."
 image:
   src: "/assets/blog/rendering/streaming-ssr-performance.webp"
   alt: "Streaming SSR illustration for fast progressive page rendering and improved SEO"
-publishedAt: '2024-06-29T07:00:00.000Z'
-lastModified: '2024-07-25T05:35:07.322Z'
+publishedAt: "2024-06-29T07:00:00.000Z"
+lastModified: "2024-07-25T05:35:07.322Z"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['Streaming SSR', 'Server-Side Rendering', 'Performance', 'SEO', 'Progressive Rendering', 'Web Performance']
+  picture: "/me.jpg"
+tags: ["Streaming SSR", "Server-Side Rendering", "Performance", "SEO", "Progressive Rendering", "Web Performance"]
 ---
 
 In our last post, we covered Progressive Hydration. Today, we'll focus on Streaming Server-Side Rendering, an innovative approach that streams HTML content from the server to the client as it is being rendered. This technique reduces time-to-first-byte and improves perceived performance by allowing users to see content faster.
@@ -17,86 +17,66 @@ In our last post, we covered Progressive Hydration. Today, we'll focus on Stream
 <Conversation>
 
 <Conversation.Thread from="user">
-  Hey Chat, could you explain Streaming Server-Side Rendering in
-  simple terms, assuming I have no idea about **rendering patterns**?
-  🤔
+  Hey Chat, could you explain Streaming Server-Side Rendering in simple terms, assuming I have no idea about **rendering
+  patterns**? 🤔
 </Conversation.Thread>
 
 <Conversation.Thread from="narrator">
   <div>
-    Imagine you're at a fancy restaurant and you order a multi-course
-    meal. Instead of waiting for the entire meal to be prepared, the
-    chef sends out each dish as soon as it's ready, starting with the
-    quickest to prepare and ending with the dish that takes the
-    longest. This way, you start enjoying your meal faster without
-    waiting for everything to be finished.
+    Imagine you're at a fancy restaurant and you order a multi-course meal. Instead of waiting for the entire meal to be
+    prepared, the chef sends out each dish as soon as it's ready, starting with the quickest to prepare and ending with
+    the dish that takes the longest. This way, you start enjoying your meal faster without waiting for everything to be
+    finished.
   </div>
   <div>
-    With streaming server-side rendering, you don't have to wait for
-    an entire webpage to load before seeing it. Instead, the server
-    sends parts of the page as soon as they are ready. This allows you
-    to start viewing and interacting with the initial content while
-    the rest is still being processed and delivered. Think of it like
+    With streaming server-side rendering, you don't have to wait for an entire webpage to load before seeing it.
+    Instead, the server sends parts of the page as soon as they are ready. This allows you to start viewing and
+    interacting with the initial content while the rest is still being processed and delivered. Think of it like
     enjoying an appetizer while the chef prepares the main course.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Mmm, that sounds interesting! Could you explain a real world
-  example, showing the step by step process of how the server and
-  browser work together to make this happen? 🤔
+  Mmm, that sounds interesting! Could you explain a real world example, showing the step by step process of how the
+  server and browser work together to make this happen? 🤔
 </Conversation.Thread>
 <Conversation.Thread from="server">
-  When you request a webpage, my job is to render it as HTML. However,
-  instead of making you wait for the entire page to load, I send you
-  sections of the page as they are ready, prioritizing the fastest
-  elements first. This allows you to start viewing content on your
-  screen sooner than if you had to wait for the entire page to be
-  fully generated.
+  When you request a webpage, my job is to render it as HTML. However, instead of making you wait for the entire page to
+  load, I send you sections of the page as they are ready, prioritizing the fastest elements first. This allows you to
+  start viewing content on your screen sooner than if you had to wait for the entire page to be fully generated.
 </Conversation.Thread>
 <Conversation.Thread from="browser">
   <div>
-    As I receive each chunk, I add it to the page and immediately
-    hydrate it to make it interactive. So You can start exploring the
-    content before the entire page has finished loading, resulting in
-    a much smoother and faster browsing experience!
+    As I receive each chunk, I add it to the page and immediately hydrate it to make it interactive. So You can start
+    exploring the content before the entire page has finished loading, resulting in a much smoother and faster browsing
+    experience!
   </div>
 </Conversation.Thread>
-<Conversation.Thread from="user">
-  Wow, that sounds like it would make websites load much faster! 🚀
-</Conversation.Thread>
+<Conversation.Thread from="user">Wow, that sounds like it would make websites load much faster! 🚀</Conversation.Thread>
 <Conversation.Thread from="browser">
-  Precisely! Since users see content earlier, the perceived load time
-  is significantly reduced. Plus, streaming allows for better handling
-  of slow network connections on large pages.
+  Precisely! Since users see content earlier, the perceived load time is significantly reduced. Plus, streaming allows
+  for better handling of slow network connections on large pages.
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  I see. What are the main benefits of using Streaming SSR? 🌟
-</Conversation.Thread>
+<Conversation.Thread from="user">I see. What are the main benefits of using Streaming SSR? 🌟</Conversation.Thread>
 
 <Conversation.Thread from="server">
   <div>
-    **performance improvement:** Streaming delivers page
-    incrementally. This significantly improves perceived performance,
-    especially for larger or more complex pages, by reducing Time to
-    First Byte (TTFB) and allowing for faster First Paint (FP) and
-    First Contentful Paint (FCP).
+    **performance improvement:** Streaming delivers page incrementally. This significantly improves perceived
+    performance, especially for larger or more complex pages, by reducing Time to First Byte (TTFB) and allowing for
+    faster First Paint (FP) and First Contentful Paint (FCP).
   </div>
   <div>
-    **Selective Hydration:** Each part of the page is made interactive
-    (hydrated) as soon as it arrives from the server, providing a
-    seamless and responsive user experience.
+    **Selective Hydration:** Each part of the page is made interactive (hydrated) as soon as it arrives from the server,
+    providing a seamless and responsive user experience.
   </div>
   <div>
-    **SEO friendly**: Search engines love static websites because of
-    their simple structure and fast loading times. 🏆
+    **SEO friendly**: Search engines love static websites because of their simple structure and fast loading times. 🏆
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  What are the potential challenges or considerations with Streaming
-  SSR? 🤔
+  What are the potential challenges or considerations with Streaming SSR? 🤔
 </Conversation.Thread>
 
 <Conversation.Thread from="server">
@@ -124,42 +104,26 @@ In our last post, we covered Progressive Hydration. Today, we'll focus on Stream
 <Conversation.Thread from="server">
 Yes, several frameworks support Streaming SSR. Some popular ones include:
 
-<div>
-  **Next.js:** Offers built-in support for both SSR and Streaming SSR.
-</div>
-<div>
-  **Hydrogen:** A framework by Shopify that leverages Streaming SSR
-  for e-commerce sites.
-</div>
-<div>
-  **React:** With React 18, features like Suspense for data fetching
-  enhance Streaming SSR capabilities. 🌐
-</div>
+<div>**Next.js:** Offers built-in support for both SSR and Streaming SSR.</div>
+<div>**Hydrogen:** A framework by Shopify that leverages Streaming SSR for e-commerce sites.</div>
+<div>**React:** With React 18, features like Suspense for data fetching enhance Streaming SSR capabilities. 🌐</div>
 
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  Thanks, Chat! This was really helpful. Any final thoughts? 😊
-</Conversation.Thread>
+<Conversation.Thread from="user">Thanks, Chat! This was really helpful. Any final thoughts? 😊</Conversation.Thread>
 
 <Conversation.Thread from="server">
-  You're welcome! Streaming SSR is a powerful technique for building
-  fast, efficient web applications. By streaming content as it becomes
-  available, you can significantly improve user experience and
-  performance. If you're interested, next time we can dive into
-  practical implementation examples. Stay tuned! 📚
+  You're welcome! Streaming SSR is a powerful technique for building fast, efficient web applications. By streaming
+  content as it becomes available, you can significantly improve user experience and performance. If you're interested,
+  next time we can dive into practical implementation examples. Stay tuned! 📚
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  Looking forward to it! 📖
-</Conversation.Thread>
+<Conversation.Thread from="user">Looking forward to it! 📖</Conversation.Thread>
 
 <Conversation.Thread from="me">
-  Thanks for taking the time to read my article! I'd love to hear your
-  feedback – any questions, suggestions, or different perspectives are
-  welcome. Your input helps me improve and create even better content.
-  Feel free to follow me and continue the conversation [on
-  𝕏](https://x.com/HamzaMiloudAma1) to continue the discussion.
+  Thanks for taking the time to read my article! I'd love to hear your feedback – any questions, suggestions, or
+  different perspectives are welcome. Your input helps me improve and create even better content. Feel free to follow me
+  and continue the conversation [on 𝕏](https://x.com/HamzaMiloudAma1) to continue the discussion.
 </Conversation.Thread>
 
 </Conversation>

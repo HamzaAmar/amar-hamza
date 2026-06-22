@@ -1,15 +1,15 @@
 ---
-title: 'Server-Side Rendering: Dynamic Content Delivery'
-excerpt: 'Unlock the power of Server-Side Rendering (SSR) and Hydration for lightning-fast web pages, improved SEO, and seamless user interactions.'
+title: "Server-Side Rendering: Dynamic Content Delivery"
+excerpt: "Unlock the power of Server-Side Rendering (SSR) and Hydration for lightning-fast web pages, improved SEO, and seamless user interactions."
 image:
   src: "/assets/blog/rendering/server-side-rendering-ssr.webp"
   alt: "Server-side rendering SSR illustration for dynamic SEO optimized content delivery"
-publishedAt: '2024-06-22T05:35:07.322Z'
-lastModified: '2024-07-25T05:35:07.322Z'
+publishedAt: "2024-06-22T05:35:07.322Z"
+lastModified: "2024-07-25T05:35:07.322Z"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['Server-Side Rendering', 'SSR', 'Hydration', 'SEO', 'Dynamic Content', 'Performance']
+  picture: "/me.jpg"
+tags: ["Server-Side Rendering", "SSR", "Hydration", "SEO", "Dynamic Content", "Performance"]
 ---
 
 Welcome back! Previously, we discussed Static Site Generation. Today, we shift our focus to Server-Side Rendering (SSR), a technique where the server generates the HTML for a page on each request. SSR enhances performance and SEO by delivering fully rendered pages to the client, improving load times and user experience.
@@ -21,115 +21,85 @@ Welcome back! Previously, we discussed Static Site Generation. Today, we shift o
 
 <Conversation.Thread from="narrator">
   <div>
-    Imagine you're at a fancy restaurant where the chef prepares each
-    dish to order. When you place your order, the chef cooks the meal
-    in the kitchen and delivers it to you, fresh and hot. You get to
-    enjoy a dish that's made specifically for you at that moment. 🍽️
+    Imagine you're at a fancy restaurant where the chef prepares each dish to order. When you place your order, the chef
+    cooks the meal in the kitchen and delivers it to you, fresh and hot. You get to enjoy a dish that's made
+    specifically for you at that moment. 🍽️
   </div>
   <div>
-    Once the dish is served, the waiter adds finishing touches like
-    seasoning or garnishes right at your table to enhance the
-    experience. This is like hydration – adding interactivity and
-    dynamic elements to the freshly served content, making it more
-    engaging and responsive for the user.
+    Once the dish is served, the waiter adds finishing touches like seasoning or garnishes right at your table to
+    enhance the experience. This is like hydration – adding interactivity and dynamic elements to the freshly served
+    content, making it more engaging and responsive for the user.
   </div>
 </Conversation.Thread>
 <Conversation.Thread from="user">
-  Mmm, that sounds interesting! Could you explain a real world
-  example, showing the step by step process of how the server and
-  browser work together to make this happen? 🤔
+  Mmm, that sounds interesting! Could you explain a real world example, showing the step by step process of how the
+  server and browser work together to make this happen? 🤔
 </Conversation.Thread>
 <Conversation.Thread from="server">
-  Certainly. In SSR with Hydration, my primary responsibility is to
-  render the initial HTML of the web page on the server. This includes
-  fetching necessary data, executing application logic, and generating
-  the complete HTML structure, which is then sent to the Browser.
+  Certainly. In SSR with Hydration, my primary responsibility is to render the initial HTML of the web page on the
+  server. This includes fetching necessary data, executing application logic, and generating the complete HTML
+  structure, which is then sent to the Browser.
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
   <div>
-    Thank you, Server. my role is to receive that server-rendered HTML
-    and immediately display it to the user. However, my work doesn't
-    end there. I then utilize JavaScript to hydrate the static HTML.
-    This involves attaching event listeners and adding application
-    state, effectively transforming the static content into a fully
-    interactive web application. 💻 [You can check the last article
-    about Hydration for more details.](/blogs/hydration)
+    Thank you, Server. my role is to receive that server-rendered HTML and immediately display it to the user. However,
+    my work doesn't end there. I then utilize JavaScript to hydrate the static HTML. This involves attaching event
+    listeners and adding application state, effectively transforming the static content into a fully interactive web
+    application. 💻 [You can check the last article about Hydration for more details.](/blogs/hydration)
   </div>
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  Why would one choose to use SSR over other rendering methods?
-</Conversation.Thread>
+<Conversation.Thread from="user">Why would one choose to use SSR over other rendering methods?</Conversation.Thread>
 
 <Conversation.Thread from="server">
   <div>
-    It significantly improves the initial page load performance. Users
-    can view the content almost instantly, as they receive a fully
-    rendered page rather than waiting for JavaScript to execute and
-    render the content on the client-side.
+    It significantly improves the initial page load performance. Users can view the content almost instantly, as they
+    receive a fully rendered page rather than waiting for JavaScript to execute and render the content on the
+    client-side.
   </div>
   <div>
-    It's also SEO-friendly because search engines can easily crawl and
-    index the server-rendered content, leading to better visibility in
-    search results. 🏆
+    It's also SEO-friendly because search engines can easily crawl and index the server-rendered content, leading to
+    better visibility in search results. 🏆
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
-  Additionally, hydration allows us to maintain the benefits of
-  client-side interactivity. By incrementally attaching JavaScript
-  behavior to the existing HTML structure, we avoid the need for full
-  page reloads, resulting in a seamless and responsive user
-  experience.
+  Additionally, hydration allows us to maintain the benefits of client-side interactivity. By incrementally attaching
+  JavaScript behavior to the existing HTML structure, we avoid the need for full page reloads, resulting in a seamless
+  and responsive user experience.
 </Conversation.Thread>
 
-<Conversation.Thread from="user">
-  Are there any potential drawbacks to this approach?
-</Conversation.Thread>
+<Conversation.Thread from="user">Are there any potential drawbacks to this approach?</Conversation.Thread>
 
 <Conversation.Thread from="server">
   <div>Yes, there are a few considerations:</div>
-  <div>
-    Increased server load, especially for complex pages or high
-    traffic.
-  </div>
-  <div>
-    More complex development process compared to purely static sites
-    or Client Side rendering.
-  </div>
-  <div>
-    Large JavaScript files can make it take longer for your website to
-    become interactive.
-  </div>
+  <div>Increased server load, especially for complex pages or high traffic.</div>
+  <div>More complex development process compared to purely static sites or Client Side rendering.</div>
+  <div>Large JavaScript files can make it take longer for your website to become interactive.</div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Is there a way to reduce Time to Interactive (TTI) in this approach?
-  It seems like there might be a delay before users can interact with
-  the page fully.
+  Is there a way to reduce Time to Interactive (TTI) in this approach? It seems like there might be a delay before users
+  can interact with the page fully.
 </Conversation.Thread>
 
 <Conversation.Thread from="browser">
   <div>Absolutely.</div>
   <div>
-    [The optimizations that enhance static sites can also be
-    effectively implemented in
+    [The optimizations that enhance static sites can also be effectively implemented in
     SSR.](/blogs/static-website#static-site-enhancement)
   </div>
   <div>
-    **Efficient Hydration:** Techniques like [partial
-    hydration](/blogs/island-architecture) or [progressive
-    hydration](/blogs/progressive-hydration) can be employed. In our
-    upcoming articles, we'll delve deeper into partial and progressive
-    hydration.
+    **Efficient Hydration:** Techniques like [partial hydration](/blogs/island-architecture) or [progressive
+    hydration](/blogs/progressive-hydration) can be employed. In our upcoming articles, we'll delve deeper into partial
+    and progressive hydration.
   </div>
 </Conversation.Thread>
 
 <Conversation.Thread from="user">
-  Overall, it seems like SSR with Hydration presents a compelling
-  solution for achieving fast initial page loads while maintaining
-  dynamic functionality.
+  Overall, it seems like SSR with Hydration presents a compelling solution for achieving fast initial page loads while
+  maintaining dynamic functionality.
 </Conversation.Thread>
 
   <Conversation.Thread from="server">

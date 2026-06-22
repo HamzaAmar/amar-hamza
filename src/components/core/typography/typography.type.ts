@@ -10,16 +10,16 @@ type FontStyle = "italic" | "oblique";
 type Decoration = "line-through" | "underline" | "overline";
 
 export type TypographyProps = {
-	size?: TypographySize;
-	className?: string;
-	align?: Align;
-	transform?: Transform;
-	weight?: Weight;
-	color?: Color;
-	low?: boolean;
-	fontStyle?: FontStyle;
-	decoration?: Decoration;
-	leading?: Leading;
-	truncate?: Truncate;
-	type?: "text" | "heading" | "link";
+  size?: TypographySize;
+  className?: string;
+  align?: Align;
+  transform?: Transform;
+  weight?: Weight;
+  color?: Color;
+  low?: boolean;
+  fontStyle?: FontStyle;
+  decoration?: Decoration;
+  leading?: Leading;
+  truncate?: Truncate;
+  type?: "text" | "heading" | "link";
 };

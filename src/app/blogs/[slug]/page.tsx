@@ -1,263 +1,232 @@
-/* eslint-disable @next/next/no-img-element */
-import type { Metadata } from "next";
-import type { Article } from "schema-dts";
-
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import { type CSSProperties, Suspense } from "react";
-
+// oxlint-disable next/no-img-element
 import { Avatar, Flex, Social, Text } from "@components/core";
 import { CustomMDX } from "@components/core/mdx";
 import { Github, Twitter } from "@components/icons";
 import { DOMAIN } from "@constants/domain";
 import { formatDate } from "@utils/format-date";
-import { getBlogPostBySlug, getBlogPosts } from "api/blog";
-import { incrementViews } from "app/actions/views";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { type CSSProperties, Suspense } from "react";
+import type { Article } from "schema-dts";
 
+import { getBlogPostBySlug, getBlogPosts } from "../../../api/blog";
+import { incrementViews } from "../../actions/views";
 import { PageViews } from "./page-views";
 
 type Params = {
-	slug: string;
+  slug: string;
 };
 
 type ParamsReq = {
-	params: Promise<Params>;
+  params: Promise<Params>;
 };
 
 export default async function Blog({ params }: ParamsReq) {
-	const { slug } = await params;
-	const post = getBlogPostBySlug(slug);
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
-	if (!post) {
-		notFound();
-	}
+  if (!post) {
+    notFound();
+  }
 
-	const permalink = `${DOMAIN}/blogs/${slug}`;
+  const permalink = `${DOMAIN}/blogs/${slug}`;
 
-	const { content, metadata } = post;
-	const {
-		author,
-		title,
-		publishedAt,
-		image,
-		readingTime,
-		excerpt,
-		lastModified,
-		tags,
-	} = metadata;
+  const { content, metadata } = post;
+  const { author, title, publishedAt, image, readingTime, excerpt, lastModified, tags } = metadata;
 
-	const imageMetadata =
-		typeof image === "string" ? { src: image, alt: title } : image;
+  const imageMetadata = typeof image === "string" ? { src: image, alt: title } : image;
 
-	const img = `${DOMAIN}/favicon/logo-512X512.png`;
-	const ogImage = imageMetadata?.src ? `${DOMAIN}/${imageMetadata.src}` : img;
+  const img = `${DOMAIN}/favicon/logo-512X512.png`;
+  const ogImage = imageMetadata?.src ? `${DOMAIN}/${imageMetadata.src}` : img;
 
-	const JSON_LD: Article = {
-		"@type": "BlogPosting",
-		headline: title,
-		datePublished: publishedAt,
-		dateModified: lastModified,
-		description: excerpt,
-		image: ogImage,
-		url: `${DOMAIN}/blogs/${slug}`,
-		author: {
-			"@type": "Person",
-			name: "Hamza Miloud Amar",
-			url: "https://www.miloudamar.com",
-		},
-		publisher: {
-			"@type": "Organization",
-			name: "Hamza Miloud Amar",
-		},
-		keywords: tags,
-	};
+  const JSON_LD: Article = {
+    "@type": "BlogPosting",
+    headline: title,
+    datePublished: publishedAt,
+    dateModified: lastModified,
+    description: excerpt,
+    image: ogImage,
+    url: `${DOMAIN}/blogs/${slug}`,
+    author: {
+      "@type": "Person",
+      name: "Hamza Miloud Amar",
+      url: "https://www.miloudamar.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Hamza Miloud Amar",
+    },
+    keywords: tags,
+  };
 
-	await incrementViews(slug);
+  await incrementViews(slug);
 
-	return (
-		<>
-			<script
-				type="application/ld+json"
-				suppressHydrationWarning
-				// eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						...JSON_LD,
-					}),
-				}}
-			/>
-			<div className="reading-layout Sf-6">
-				<Text type="heading" as="h1" size="7" weight="4">
-					{title}
-				</Text>
-				{author && (
-					<div>
-						<Flex items="center" gap="4">
-							<div>
-								<Avatar
-									image={author.picture}
-									title="Hamza Miloud Amar Avatar"
-								/>
-							</div>
-							<Flex gap="2" direction="column" className="u_flex-1">
-								<Text size="4" weight="5">
-									{author.name}
-								</Text>
-								<Suspense
-									fallback={<div className="reading-layout--fallback" />}
-								>
-									<PageViews slug={slug} />
-								</Suspense>
-								<Social size="4" />
-							</Flex>
-							<div>
-								<Text size="4">{formatDate(publishedAt)}</Text>
-								<Text align="center" size="4" color="b" low>
-									{readingTime.text}
-								</Text>
-							</div>
-						</Flex>
-					</div>
-				)}
-				<div className="reading-layout--avatar-container">
-					<Image
-						fill
-						placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
-						className="reading-layout--avatar"
-						src={imageMetadata?.src ?? ""}
-						alt={imageMetadata?.alt ?? title}
-						priority
-					/>
-				</div>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            ...JSON_LD,
+          }),
+        }}
+      />
+      <div className="reading-layout Sf-6">
+        <Text type="heading" as="h1" size="7" weight="4">
+          {title}
+        </Text>
+        {author && (
+          <div>
+            <Flex items="center" gap="4">
+              <div>
+                <Avatar image={author.picture} title="Hamza Miloud Amar Avatar" />
+              </div>
+              <Flex gap="2" direction="column" className="u_flex-1">
+                <Text size="4" weight="5">
+                  {author.name}
+                </Text>
+                <Suspense fallback={<div className="reading-layout--fallback" />}>
+                  <PageViews slug={slug} />
+                </Suspense>
+                <Social size="4" />
+              </Flex>
+              <div>
+                <Text size="4">{formatDate(publishedAt)}</Text>
+                <Text align="center" size="4" color="b" low>
+                  {readingTime.text}
+                </Text>
+              </div>
+            </Flex>
+          </div>
+        )}
+        <div className="reading-layout--avatar-container">
+          <Image
+            fill
+            placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
+            className="reading-layout--avatar"
+            src={imageMetadata?.src ?? ""}
+            alt={imageMetadata?.alt ?? title}
+            priority
+          />
+        </div>
 
-				<div className="prose Sf-5">
-					<CustomMDX source={content} />
-				</div>
+        <div className="prose Sf-5">
+          <CustomMDX source={content} />
+        </div>
 
-				<div className="reading-layout--footer Sf-5">
-					<div
-						className="l_cluster"
-						style={
-							{
-								"--cluster-justify": "space-between",
-							} as CSSProperties
-						}
-					>
-						<a
-							className="reading-layout--link u_column"
-							target="_blank"
-							rel="noreferrer noopener"
-							href={`https://x.com/intent/tweet?${new URLSearchParams({
-								url: permalink,
-								text: `Just finished reading this article |${title}| by Hamza Miloud Amar. Highly recommend it to anyone interested in #webdev. Give it a read and share your thoughts!\n\n #frontend #nextjs #remix \n\n`,
-							})}`}
-						>
-							<Twitter width="20" strokeWidth="1.5" />
-							Share on 𝕏
-						</a>
-						<div className="l_cluster">
-							<a
-								className="reading-layout--link u_column"
-								target="_blank"
-								rel="noreferrer noopener"
-								href={`https://x.com/search?${new URLSearchParams({
-									q: permalink,
-								})}`}
-							>
-								Discuss on 𝕏
-							</a>
-							<a
-								className="reading-layout--link u_column"
-								target="_blank"
-								rel="noreferrer noopener"
-								href={`https://github.com/HamzaAmar/amar-hamza/tree/main/content/${slug}.mdx?plain=1`}
-							>
-								<Github width="20" strokeWidth="1.5" />
-								Improve Post Github
-							</a>
-						</div>
-					</div>
+        <div className="reading-layout--footer Sf-5">
+          <div
+            className="l_cluster"
+            style={
+              {
+                "--cluster-justify": "space-between",
+              } as CSSProperties
+            }
+          >
+            <a
+              className="reading-layout--link u_column"
+              target="_blank"
+              rel="noreferrer noopener"
+              href={`https://x.com/intent/tweet?${new URLSearchParams({
+                url: permalink,
+                text: `Just finished reading this article |${title}| by Hamza Miloud Amar. Highly recommend it to anyone interested in #webdev. Give it a read and share your thoughts!\n\n #frontend #nextjs #remix \n\n`,
+              })}`}
+            >
+              <Twitter width="20" strokeWidth="1.5" />
+              Share on 𝕏
+            </a>
+            <div className="l_cluster">
+              <a
+                className="reading-layout--link u_column"
+                target="_blank"
+                rel="noreferrer noopener"
+                href={`https://x.com/search?${new URLSearchParams({
+                  q: permalink,
+                })}`}
+              >
+                Discuss on 𝕏
+              </a>
+              <a
+                className="reading-layout--link u_column"
+                target="_blank"
+                rel="noreferrer noopener"
+                href={`https://github.com/HamzaAmar/amar-hamza/tree/main/content/${slug}.mdx?plain=1`}
+              >
+                <Github width="20" strokeWidth="1.5" />
+                Improve Post Github
+              </a>
+            </div>
+          </div>
 
-					<div className="Sf-3">
-						<Text>
-							Your support helps me create more helpful content. If you enjoyed
-							this, please consider buying me a coffee.
-						</Text>
-						<div>
-							<a
-								href="https://ko-fi.com/Y8Y210RGNC"
-								target="_blank"
-								rel="noreferrer"
-							>
-								<img
-									height="36"
-									style={{ border: 0, height: "36px" }}
-									src="https://storage.ko-fi.com/cdn/kofi1.png?v=3"
-									alt="Buy Me a Coffee at ko-fi.com"
-								/>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+          <div className="Sf-3">
+            <Text>
+              Your support helps me create more helpful content. If you enjoyed this, please consider buying me a
+              coffee.
+            </Text>
+            <div>
+              <a href="https://ko-fi.com/Y8Y210RGNC" target="_blank" rel="noreferrer">
+                <img
+                  height="36"
+                  style={{ border: 0, height: "36px" }}
+                  src="https://storage.ko-fi.com/cdn/kofi1.png?v=3"
+                  alt="Buy Me a Coffee at ko-fi.com"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export async function generateStaticParams() {
-	const posts = getBlogPosts().map(({ metadata }) => ({
-		slug: metadata.slug,
-	}));
+  const posts = getBlogPosts().map(({ metadata }) => ({
+    slug: metadata.slug,
+  }));
 
-	return posts;
+  return posts;
 }
 
-export async function generateMetadata({
-	params,
-}: ParamsReq): Promise<Metadata | undefined> {
-	const { slug } = await params;
-	const post = getBlogPostBySlug(slug);
-	if (!post) {
-		return;
-	}
+export async function generateMetadata({ params }: ParamsReq): Promise<Metadata | undefined> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+  if (!post) {
+    return;
+  }
 
-	const {
-		title,
-		publishedAt: publishedTime,
-		excerpt: description,
-		image,
-		tags,
-	} = post.metadata;
+  const { title, publishedAt: publishedTime, excerpt: description, image, tags } = post.metadata;
 
-	const imageMetadata =
-		typeof image === "string" ? { src: image, alt: title } : image;
+  const imageMetadata = typeof image === "string" ? { src: image, alt: title } : image;
 
-	const img = `${DOMAIN}/favicon/logo-512X512.png`;
-	const ogImage = imageMetadata?.src ? `${DOMAIN}/${imageMetadata.src}` : img;
+  const img = `${DOMAIN}/favicon/logo-512X512.png`;
+  const ogImage = imageMetadata?.src ? `${DOMAIN}/${imageMetadata.src}` : img;
 
-	return {
-		title,
-		description,
-		keywords: tags,
-		openGraph: {
-			title,
-			description,
-			type: "article",
-			publishedTime,
-			url: `${DOMAIN}/blogs/${slug}`,
+  return {
+    title,
+    description,
+    keywords: tags,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime,
+      url: `${DOMAIN}/blogs/${slug}`,
 
-			images: [
-				{
-					url: ogImage,
-				},
-			],
-		},
-		twitter: {
-			card: "summary_large_image",
-			title,
-			description,
-			images: [ogImage],
-		},
-	};
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
 }

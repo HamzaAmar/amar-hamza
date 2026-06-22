@@ -1,15 +1,16 @@
 ---
-title: 'Optimizing Web App Performance Island Architecture'
-excerpt: 'Find out more about Island Architecture, an innovative method of rendering with isolated, interactive components that will help you speed up and maintain web application performance.'
-publishedAt: '2024-07-01T12:45:00.000Z'
-lastModified: '2024-07-25T05:35:07.322Z'
+title: "Optimizing Web App Performance Island Architecture"
+excerpt: "Find out more about Island Architecture, an innovative method of rendering with isolated, interactive components that will help you speed up and maintain web application performance."
+publishedAt: "2024-07-01T12:45:00.000Z"
+lastModified: "2024-07-25T05:35:07.322Z"
 image:
   src: "/assets/blog/rendering/island-architecture-performance.webp"
   alt: "Island architecture illustration for isolated interactive components and faster page performance"
 author:
   name: Hamza Miloud Amar
-  picture: '/me.jpg'
-tags: ['Island Architecture', 'Partial Hydration', 'Web Performance', 'Interactive Components', 'SEO', 'Web Development']
+  picture: "/me.jpg"
+tags:
+  ["Island Architecture", "Partial Hydration", "Web Performance", "Interactive Components", "SEO", "Web Development"]
 ---
 
 Welcome back! Previously, we discussed Streaming Server-Side Rendering. Today, we'll delve into Island Architecture, a rendering pattern that breaks down a web page into "islands" of interactivity. Each island can be rendered and hydrated independently, improving performance and maintainability by reducing the complexity of the overall page.
@@ -50,158 +51,116 @@ Welcome back! Previously, we discussed Streaming Server-Side Rendering. Today, w
 {' '}
 
 <Conversation.Thread from="server">
-  Certainly. my primary responsibility is rendering the initial HTML
-  page. This includes fetching necessary data, executing application
-  logic, and generating the complete HTML structure.
+  Certainly. my primary responsibility is rendering the initial HTML page. This includes fetching necessary data,
+  executing application logic, and generating the complete HTML structure.
 </Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="browser">
-  Thank you, Server. My role is to receive this server-rendered HTML,
-  and immediately display it to the user. my approach to hydration is
-  unique. Instead of hydrating the entire page at once, I
-  progressively hydrate only the interactive component ("island") as
-  needed. This is often triggered by user interaction with the
-  component or when it comes into view on the screen.
+  Thank you, Server. My role is to receive this server-rendered HTML, and immediately display it to the user. my
+  approach to hydration is unique. Instead of hydrating the entire page at once, I progressively hydrate only the
+  interactive component ("island") as needed. This is often triggered by user interaction with the component or when it
+  comes into view on the screen.
 </Conversation.Thread>
 
 {' '}
 
-<Conversation.Thread from="user">
-  What are the benefits of using Island Architecture?
-</Conversation.Thread>
+<Conversation.Thread from="user">What are the benefits of using Island Architecture?</Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="server">
   <div>
-    **Better Resource Management**: Each island is self-contained, so
-    resources are only loaded when needed, reducing unnecessary data
-    transfer and processing.
+    **Better Resource Management**: Each island is self-contained, so resources are only loaded when needed, reducing
+    unnecessary data transfer and processing.
   </div>
   <div>
-    **Enhanced User Experience**: Users can interact with different
-    parts of the page independently, giving a smoother and faster
-    interactive experience.
+    **Enhanced User Experience**: Users can interact with different parts of the page independently, giving a smoother
+    and faster interactive experience.
   </div>
-  <div>
-    **SEO Friendly**: Search engines still love them because of their
-    speed and simple structure. 🏆
-  </div>
+  <div>**SEO Friendly**: Search engines still love them because of their speed and simple structure. 🏆</div>
 </Conversation.Thread>
-<Conversation.Thread from="user">
-  What are the Drawbacks of using Island Architecture?
-</Conversation.Thread>
+<Conversation.Thread from="user">What are the Drawbacks of using Island Architecture?</Conversation.Thread>
 <Conversation.Thread from="server">
+  <div>**Limited Tooling and Frameworks**: The ecosystem for island architecture is still maturing.</div>
   <div>
-    **Limited Tooling and Frameworks**: The ecosystem for island
-    architecture is still maturing.
+    **Not Ideal for Highly Interactive Apps**: Island architecture may not be the best fit for applications with
+    extensive interactivity, as managing numerous islands and their communication can become cumbersome.
   </div>
   <div>
-    **Not Ideal for Highly Interactive Apps**: Island architecture may
-    not be the best fit for applications with extensive interactivity,
-    as managing numerous islands and their communication can become
-    cumbersome.
-  </div>
-  <div>
-    **Full Page Reloads on Navigation**: Due to the nature of how
-    islands are loaded and updated, navigating between pages often
-    requires a full page reload, potentially impacting the user
-    experience.
+    **Full Page Reloads on Navigation**: Due to the nature of how islands are loaded and updated, navigating between
+    pages often requires a full page reload, potentially impacting the user experience.
   </div>
 </Conversation.Thread>
 <Conversation.Thread from="user">
-  Can you give an example of how Island Architecture works in
-  practice?
+  Can you give an example of how Island Architecture works in practice?
 </Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="server">
-  Sure! Let's say you have a news website. The homepage can be split
-  into several islands, like the header, the main news feed, a sidebar
-  with trending topics, and a footer. Each island loads its content
-  and JavaScript separately.
+  Sure! Let's say you have a news website. The homepage can be split into several islands, like the header, the main
+  news feed, a sidebar with trending topics, and a footer. Each island loads its content and JavaScript separately.
 </Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="browser">
-  For example, when a user first visits the page, only the essential
-  parts like the header and main news feed are loaded and made
-  interactive. As the user scrolls down or interacts with the sidebar,
-  the JavaScript for those parts is loaded, making them interactive
-  when needed. This way, the initial load is faster, and the user can
-  start reading the news right away.
+  For example, when a user first visits the page, only the essential parts like the header and main news feed are loaded
+  and made interactive. As the user scrolls down or interacts with the sidebar, the JavaScript for those parts is
+  loaded, making them interactive when needed. This way, the initial load is faster, and the user can start reading the
+  news right away.
 </Conversation.Thread>
 
 {' '}
 
-<Conversation.Thread from="user">
-  What are some best practices for using Island Architecture?
-</Conversation.Thread>
+<Conversation.Thread from="user">What are some best practices for using Island Architecture?</Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="server">
+  <div>**Keep Islands Small**: Smaller islands are easier to manage and have less impact on performance.</div>
   <div>
-    **Keep Islands Small**: Smaller islands are easier to manage and
-    have less impact on performance.
+    **Prioritize Critical Islands**: Ensure that the most important islands are loaded and made interactive first to
+    provide a better user experience.
   </div>
   <div>
-    **Prioritize Critical Islands**: Ensure that the most important
-    islands are loaded and made interactive first to provide a better
-    user experience.
+    **Lazy Load Non-Essential Islands**: Consider using lazy loading for less critical islands so they only load when
+    they're about to become visible. Save the best for last! 🍰
   </div>
   <div>
-    **Lazy Load Non-Essential Islands**: Consider using lazy loading
-    for less critical islands so they only load when they're about to
-    become visible. Save the best for last! 🍰
-  </div>
-  <div>
-    **Monitor Performance**: Continuously monitor the performance of
-    your islands to identify and fix any bottlenecks.
+    **Monitor Performance**: Continuously monitor the performance of your islands to identify and fix any bottlenecks.
   </div>
 </Conversation.Thread>
-<Conversation.Thread from="user">
-  Thanks Chat, This helps a lot. Any final tips?
-</Conversation.Thread>
+<Conversation.Thread from="user">Thanks Chat, This helps a lot. Any final tips?</Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="server">
-  Island Architecture is a powerful technique for building modern web
-  applications with better performance and user experience. By
-  dividing a webpage into smaller, self-contained islands, you can
-  optimize resource loading and provide a smoother, more responsive
-  experience for your users. Remember to keep islands small,
-  prioritize critical islands, and continuously monitor performance to
-  get the most out of this approach.
+  Island Architecture is a powerful technique for building modern web applications with better performance and user
+  experience. By dividing a webpage into smaller, self-contained islands, you can optimize resource loading and provide
+  a smoother, more responsive experience for your users. Remember to keep islands small, prioritize critical islands,
+  and continuously monitor performance to get the most out of this approach.
 </Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="browser">
-  Stay tuned for our next conversation where we’ll dive into more
-  advanced optimization techniques for web performance. See you next
-  time!
+  Stay tuned for our next conversation where we’ll dive into more advanced optimization techniques for web performance.
+  See you next time!
 </Conversation.Thread>
 
 {' '}
 
-<Conversation.Thread from="user">
-  Looking forward to it!
-</Conversation.Thread>
+<Conversation.Thread from="user">Looking forward to it!</Conversation.Thread>
 
 {' '}
 
 <Conversation.Thread from="me">
-  Thanks for taking the time to read my article! I'd love to hear your
-  feedback – any questions, suggestions, or different perspectives are
-  welcome. Your input helps me improve and create even better content.
-  Feel free to follow me and continue the conversation [on
-  𝕏](https://x.com/HamzaMiloudAma1) to continue the discussion.
+  Thanks for taking the time to read my article! I'd love to hear your feedback – any questions, suggestions, or
+  different perspectives are welcome. Your input helps me improve and create even better content. Feel free to follow me
+  and continue the conversation [on 𝕏](https://x.com/HamzaMiloudAma1) to continue the discussion.
 </Conversation.Thread>
 
 </Conversation>

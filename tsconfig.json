@@ -1,46 +1,45 @@
 {
-	"compilerOptions": {
-		"incremental": true,
-		"target": "esnext",
-		"jsx": "react-jsx",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"baseUrl": "./src",
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"paths": {
-			"@lib/*": ["./lib/*"],
-			"@assets/*": ["./assets/*"],
-			"@components/*": ["./components/*"],
-			"@constants/*": ["./constants/*"],
-			"@hooks/*": ["./hooks/*"],
-			"@type/*": ["./type/*"],
-			"@utils/*": ["./utils/*"],
-			"@helpers/*": ["./helpers/*"],
-			"@scss/*": ["./scss/*"],
-			"react": ["./node_modules/@types/react"]
-		},
-		"resolveJsonModule": true,
-		"allowJs": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"isolatedModules": true,
-		"skipLibCheck": true,
-		"plugins": [
-			{
-				"name": "next"
-			}
-		]
-	},
-	"include": [
-		"next-env.d.ts",
-		"src/**/*.ts",
-		"src/**/*.js",
-		"src/**/*.tsx",
-		"src/helpers/context.jsx",
-		".next/types/**/*.ts",
-		".next/dev/types/**/*.ts"
-	],
-	"exclude": ["node_modules", "scripts/*"]
+  "compilerOptions": {
+    "incremental": true,
+    "target": "esnext",
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@lib/*": ["./src/lib/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@type/*": ["./src/type/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@scss/*": ["./src/scss/*"],
+      "react": ["./src/node_modules/@types/react"]
+    },
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.tsx",
+    "src/helpers/context.jsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "scripts/*"]
 }

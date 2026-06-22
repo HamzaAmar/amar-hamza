@@ -2,10 +2,10 @@
 id: "taouafi-rent"
 title: "Taouafi Rent Car — Fullstack Luxury Vehicle Rental Platform (Next.js + NestJS)"
 excerpt: "A premium car rental platform for luxury and exotic vehicles in Marrakech, Morocco. Built by senior fullstack developer Hamza Miloud Amar with Next.js, NestJS, PostgreSQL, and Drizzle ORM."
-image: 
+image:
   src: "/assets/project/taouafi/taouafi-luxury-car-rental-marrakech-nextjs-nestjs-fullstack-web-app.png"
   alt: Taouafi Rent Car — luxury car rental platform in Marrakech built with Next.js, NestJS, and PostgreSQL by fullstack developer Hamza Miloud Amar
-avatar: 
+avatar:
   src: "/assets/project/taouafi/taouafi-rent-car-logo-luxury-vehicle-rental-morocco.ico"
   alt: Taouafi Rent Car logo — premium vehicle rental service in Morocco
 publishedAt: "2024-02-01T00:00:00.000Z"
@@ -13,14 +13,26 @@ lastModified: "2024-11-15T00:00:00.000Z"
 author:
   name: Hamza Miloud Amar
   picture: "/me.jpg"
-technologies: ["Next.js", "NestJS", "PostgreSQL", "Drizzle ORM", "Pillar UI", "Fullstack", "Booking System", "E-commerce", "Morocco", "Marrakech"]
+technologies:
+  [
+    "Next.js",
+    "NestJS",
+    "PostgreSQL",
+    "Drizzle ORM",
+    "Pillar UI",
+    "Fullstack",
+    "Booking System",
+    "E-commerce",
+    "Morocco",
+    "Marrakech",
+  ]
 projectType: "Client Project"
 role: "Senior Fullstack Developer"
 client: "Taouafi Rent Car (Marrakech, Morocco)"
 location: "Marrakech, Morocco"
 status: "Live & Active"
 duration: "4 months"
-links: 
+links:
   - site: "https://www.taouafi-rent-car.com/"
     title: "Site"
   - site: "https://www.figma.com/design/GfHXOm8FPVWkejZ6T65gX6/Taouafi-Project?node-id=0-1&p=f&t=ukTPLwmn3mXF97O4-0"
@@ -35,6 +47,7 @@ rank: 2
 ## The Problem
 
 The client operated successfully offline but faced growth limitations:
+
 - **No online presence** — Potential customers couldn't discover or book vehicles digitally
 - **Manual booking process** — Phone/email only, leading to double-bookings and lost revenue
 - **No fleet visibility** — Customers couldn't browse available vehicles, specs, or pricing
@@ -44,6 +57,7 @@ The client operated successfully offline but faced growth limitations:
 ## My Role
 
 I served as the **lead senior fullstack developer**, handling:
+
 - Complete system architecture and database design
 - Frontend development with Next.js and Pillar UI
 - Backend API development with NestJS
@@ -54,18 +68,18 @@ I served as the **lead senior fullstack developer**, handling:
 
 ## Technical Architecture
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| Frontend | Next.js 14 (App Router) | SSR/SSG for SEO, image optimization |
-| UI Library | Pillar UI | Consistent, accessible component system |
-| Styling | CSS Modules + CSS Variables | Custom theming for luxury brand feel |
-| Backend | NestJS | Modular, scalable REST API architecture |
-| Database | PostgreSQL | Relational data for bookings, vehicles, users |
-| ORM | Drizzle ORM | Type-safe database queries and migrations |
-| Auth | NextAuth.js | Secure authentication with role-based access |
-| Payments | Stripe | Secure online payment processing |
-| Search | PostgreSQL Full-Text | Vehicle search and filtering |
-| Deployment | Vercel + Railway | Frontend and backend separation |
+| Layer      | Technology                  | Purpose                                       |
+| ---------- | --------------------------- | --------------------------------------------- |
+| Frontend   | Next.js 14 (App Router)     | SSR/SSG for SEO, image optimization           |
+| UI Library | Pillar UI                   | Consistent, accessible component system       |
+| Styling    | CSS Modules + CSS Variables | Custom theming for luxury brand feel          |
+| Backend    | NestJS                      | Modular, scalable REST API architecture       |
+| Database   | PostgreSQL                  | Relational data for bookings, vehicles, users |
+| ORM        | Drizzle ORM                 | Type-safe database queries and migrations     |
+| Auth       | NextAuth.js                 | Secure authentication with role-based access  |
+| Payments   | Stripe                      | Secure online payment processing              |
+| Search     | PostgreSQL Full-Text        | Vehicle search and filtering                  |
+| Deployment | Vercel + Railway            | Frontend and backend separation               |
 
 ## Booking Flow
 
@@ -90,20 +104,26 @@ I served as the **lead senior fullstack developer**, handling:
 ## Challenges & Solutions
 
 ### Challenge 1: Real-Time Availability with Concurrent Bookings
+
 Multiple users could attempt to book the same vehicle simultaneously. I solved this with:
+
 - **Pessimistic locking** at the database level during checkout
 - **Reservation holds** (15-minute window) during payment
 - **Atomic transactions** in Drizzle ORM to prevent race conditions
 
 ### Challenge 2: Local SEO for Competitive Market
+
 Marrakech car rental is highly competitive. I implemented:
+
 - **Localized content** in French and Arabic
 - **Schema.org structured data** for vehicle listings
 - **Google Business Profile integration** for local pack rankings
 - **Performance optimization** (Core Web Vitals) for ranking signals
 
 ### Challenge 3: Luxury Brand Experience
+
 The site needed to feel premium. I designed:
+
 - **Dark, cinematic aesthetic** with gold accents
 - **High-resolution vehicle galleries** with zoom and 360° views
 - **Smooth page transitions** using Next.js App Router
@@ -119,9 +139,9 @@ The site needed to feel premium. I designed:
 
 ## Testimonial
 
-> *"Hamza didn't just build us a website — he built a complete booking engine that transformed our business. Our customers love how easy it is to book, and we love how it runs itself."*
+> _"Hamza didn't just build us a website — he built a complete booking engine that transformed our business. Our customers love how easy it is to book, and we love how it runs itself."_
 > — **Taouafi Rent Car Management**
 
 ---
 
-*Need a booking platform or e-commerce site for your business?* [Contact me](/contact) to discuss your project.
+_Need a booking platform or e-commerce site for your business?_ [Contact me](/contact) to discuss your project.
