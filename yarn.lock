@@ -3778,12 +3778,12 @@ __metadata:
     axe-playwright: "npm:^2.2.2"
     concurrently: "npm:^9.2.1"
     copy-to-clipboard: "npm:^3.3.3"
-    date-fns: "npm:4.1.0"
+    date-fns: "npm:4.4.0"
     git-cz: "npm:^4.9.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     msw: "npm:^2.12.4"
-    next: "npm:^16.1.1"
+    next: "npm:^16.2.9"
     next-mdx-remote: "npm:^5.0.0"
     next-themes: "npm:^0.4.6"
     nodemailer: "npm:^7.0.12"
@@ -3791,8 +3791,8 @@ __metadata:
     oxfmt: "npm:^0.56.0"
     oxlint: "npm:^1.71.0"
     playwright: "npm:^1.57.0"
-    react: "npm:^19.2.3"
-    react-dom: "npm:^19.2.3"
+    react: "npm:^19.2.7"
+    react-dom: "npm:^19.2.7"
     reading-time: "npm:^1.5.0"
     remark-gfm: "npm:^4.0.1"
     rss: "npm:^1.2.2"
@@ -3807,8 +3807,8 @@ __metadata:
     sugar-high: "npm:^0.9.5"
     tsconfig-paths-webpack-plugin: "npm:^3.5.2"
     typescript: "npm:^5.9.3"
-    vitest: "npm:^3.2.4"
-    yaml: "npm:^2.8.2"
+    vitest: "npm:^3.2.6"
+    yaml: "npm:^2.9.0"
   languageName: unknown
   linkType: soft
 
@@ -4494,10 +4494,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:4.1.0":
-  version: 4.1.0
-  resolution: "date-fns@npm:4.1.0"
-  checksum: 10c0/b79ff32830e6b7faa009590af6ae0fb8c3fd9ffad46d930548fbb5acf473773b4712ae887e156ba91a7b3dc30591ce0f517d69fd83bd9c38650fdc03b4e0bac8
+"date-fns@npm:4.4.0":
+  version: 4.4.0
+  resolution: "date-fns@npm:4.4.0"
+  checksum: 10c0/988f0a13db183f5dfc85c36bbb6847a9c135a9225888bbea4005876ec15539a8613c21a07370a4e7ea543918d5a1cafb423c528b42cdbbde5fdfddb178126b21
   languageName: node
   linkType: hard
 
@@ -8341,7 +8341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^16.1.1":
+"next@npm:^16.2.9":
   version: 16.2.9
   resolution: "next@npm:16.2.9"
   dependencies:
@@ -9234,7 +9234,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0, react-dom@npm:^19.2.3":
+"react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0, react-dom@npm:^19.2.7":
   version: 19.2.7
   resolution: "react-dom@npm:19.2.7"
   dependencies:
@@ -9259,7 +9259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0, react@npm:^19.2.3":
+"react@npm:^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0, react@npm:^19.2.7":
   version: 19.2.7
   resolution: "react@npm:19.2.7"
   checksum: 10c0/0bd0e2f1bbd4ba97561c6597bf8a5fec05e6476fe61e165c1065598d16668efc6715205599c94d3ddd49d36cb0f21cbf1b9bcc18ee840b805ce222c3e8d558ac
@@ -11407,7 +11407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^3.2.4":
+"vitest@npm:^3.2.6":
   version: 3.2.6
   resolution: "vitest@npm:3.2.6"
   dependencies:
@@ -11787,7 +11787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.0.0, yaml@npm:^2.8.2":
+"yaml@npm:^2.0.0, yaml@npm:^2.9.0":
   version: 2.9.0
   resolution: "yaml@npm:2.9.0"
   bin:
