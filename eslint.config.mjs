@@ -6,70 +6,76 @@ import playwright from "eslint-plugin-playwright";
 import testingLibrary from "eslint-plugin-testing-library";
 
 export default antfu(
-  {
-    type: "app",
-    react: true,
-    typescript: true,
+	{
+		type: "app",
+		react: true,
+		typescript: true,
 
-    lessOpinionated: true,
-    isInEditor: false,
+		lessOpinionated: true,
+		isInEditor: false,
 
-    stylistic: {
-      semi: true,
-      indent: 2,
-      quotes: "double",
-    },
+		stylistic: {
+			semi: true,
+			indent: 2,
+			quotes: "double",
+		},
 
-    formatters: true,
+		formatters: true,
 
-    ignores: [
-      "migrations/**/*",
-      "next-env.d.ts",
-      "yarn.lock",
-      "node_modules/",
-      ".git/",
-    ],
-  },
-  jsxA11y.flatConfigs.recommended,
-  {
-    plugins: {
-      "@next/next": nextPlugin,
-    },
-    rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules,
-    },
-  },
-  {
-    files: ["**/*.test.ts?(x)"],
-    ...testingLibrary.configs["flat/react"],
-    ...jestDom.configs["flat/recommended"],
-  },
-  {
-    files: ["**/*.spec.ts", "**/*.e2e.ts"],
-    ...playwright.configs["flat/recommended"],
-  },
-  {
-    rules: {
-      "antfu/no-top-level-await": "off", // Allow top-level await
-      "style/brace-style": ["error", "1tbs"], // Use the default brace style
-      "ts/consistent-type-definitions": ["error", "type"], // Use `type` instead of `interface`
-      "react/prefer-destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
-      "node/prefer-global/process": "off", // Allow using `process.env`
-      "test/padding-around-all": "error", // Add padding in test files
-      "test/prefer-lowercase-title": "off", // Allow using uppercase titles in test titles
-      "perfectionist/sort-imports": ["error", {
-        tsconfigRootDir: ".",
-      }],
-      "unicorn/filename-case": ["error", {
-        case: "kebabCase",
-        ignore: [
-          "README.md",
-          "CODE_OF_CONDUCT.md",
-          "CONTRIBUTING.md",
-          "stories",
-        ],
-      }],
-    },
-  },
+		ignores: [
+			"migrations/**/*",
+			"next-env.d.ts",
+			"yarn.lock",
+			"node_modules/",
+			".git/",
+		],
+	},
+	jsxA11y.flatConfigs.recommended,
+	{
+		plugins: {
+			"@next/next": nextPlugin,
+		},
+		rules: {
+			...nextPlugin.configs.recommended.rules,
+			...nextPlugin.configs["core-web-vitals"].rules,
+		},
+	},
+	{
+		files: ["**/*.test.ts?(x)"],
+		...testingLibrary.configs["flat/react"],
+		...jestDom.configs["flat/recommended"],
+	},
+	{
+		files: ["**/*.spec.ts", "**/*.e2e.ts"],
+		...playwright.configs["flat/recommended"],
+	},
+	{
+		rules: {
+			"antfu/no-top-level-await": "off", // Allow top-level await
+			"style/brace-style": ["error", "1tbs"], // Use the default brace style
+			"ts/consistent-type-definitions": ["error", "type"], // Use `type` instead of `interface`
+			"react/prefer-destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+			"node/prefer-global/process": "off", // Allow using `process.env`
+			"test/padding-around-all": "error", // Add padding in test files
+			"test/prefer-lowercase-title": "off", // Allow using uppercase titles in test titles
+			"perfectionist/sort-imports": [
+				"error",
+				{
+					tsconfigRootDir: ".",
+				},
+			],
+			"unicorn/filename-case": [
+				"error",
+				{
+					case: "kebabCase",
+					ignore: [
+						"README.md",
+						"CODE_OF_CONDUCT.md",
+						"CONTRIBUTING.md",
+						"stories",
+					],
+				},
+			],
+		},
+	},
 );

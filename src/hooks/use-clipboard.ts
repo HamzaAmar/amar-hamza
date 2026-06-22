@@ -4,42 +4,42 @@ import copy from "copy-to-clipboard";
 import { useCallback, useEffect, useState } from "react";
 
 export type UseClipboardOptions = {
-  timeout?: number;
+	timeout?: number;
 
-  format?: string;
+	format?: string;
 };
 
 export function useClipboard(
-  text: string,
-  optionsOrTimeout: number | UseClipboardOptions = {},
+	text: string,
+	optionsOrTimeout: number | UseClipboardOptions = {},
 ) {
-  const [hasCopied, setHasCopied] = useState(false);
+	const [hasCopied, setHasCopied] = useState(false);
 
-  const { timeout = 1500, ...copyOptions }
-    = typeof optionsOrTimeout === "number"
-      ? { timeout: optionsOrTimeout }
-      : optionsOrTimeout;
+	const { timeout = 1500, ...copyOptions } =
+		typeof optionsOrTimeout === "number"
+			? { timeout: optionsOrTimeout }
+			: optionsOrTimeout;
 
-  const onCopy = useCallback(() => {
-    const didCopy = copy(text, copyOptions);
-    setHasCopied(didCopy);
-  }, [text, copyOptions]);
+	const onCopy = useCallback(() => {
+		const didCopy = copy(text, copyOptions);
+		setHasCopied(didCopy);
+	}, [text, copyOptions]);
 
-  useEffect(() => {
-    let timeoutId: number | null = null;
+	useEffect(() => {
+		let timeoutId: number | null = null;
 
-    if (hasCopied) {
-      timeoutId = window.setTimeout(() => {
-        setHasCopied(false);
-      }, timeout);
-    }
+		if (hasCopied) {
+			timeoutId = window.setTimeout(() => {
+				setHasCopied(false);
+			}, timeout);
+		}
 
-    return () => {
-      if (timeoutId) {
-        window.clearTimeout(timeoutId);
-      }
-    };
-  }, [timeout, hasCopied]);
+		return () => {
+			if (timeoutId) {
+				window.clearTimeout(timeoutId);
+			}
+		};
+	}, [timeout, hasCopied]);
 
-  return { value: text, onCopy, hasCopied };
+	return { value: text, onCopy, hasCopied };
 }

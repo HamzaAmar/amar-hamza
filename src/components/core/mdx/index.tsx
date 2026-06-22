@@ -8,141 +8,124 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { highlight } from "sugar-high";
-
+import remarkGfm from "remark-gfm";
 import { slugify } from "@utils/slugify";
 
 import { Alert, Button, Conversation, DocsCode } from "..";
 
 type CustomLinkProps = {} & Omit<LinkProps, "href"> &
-  React.AnchorHTMLAttributes<HTMLAnchorElement>;
+	React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 type CodeProps = {
-  children: string;
-  className: string;
+	children: string;
+	className: string;
 };
 
 function getStringFromChildren(children: React.ReactNode) {
-  if (React.isValidElement(children) && children.type === "code") {
-    const prop = children.props as CodeProps;
-    return {
-      code: prop.children,
-      language: prop.className.split("-")[1],
-    };
-  }
-  return null;
+	if (React.isValidElement(children) && children.type === "code") {
+		const prop = children.props as CodeProps;
+		return {
+			code: prop.children,
+			language: prop.className.split("-")[1],
+		};
+	}
+	return null;
 }
 
 function CustomLink(props: CustomLinkProps) {
-  const href = props.href ?? "";
+	const href = props.href ?? "";
 
-  if (href.startsWith("/")) {
-    return (
-      <Link href={href} {...props}>
-        {props.children}
-      </Link>
-    );
-  }
+	if (href.startsWith("/")) {
+		return (
+			<Link href={href} {...props}>
+				{props.children}
+			</Link>
+		);
+	}
 
-  if (href.startsWith("#")) {
-    return <a {...props} />;
-  }
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+	if (href.startsWith("#")) {
+		return <a {...props} />;
+	}
+	return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
-function Table({
-  data,
-}: {
-  data: { headers: string[]; rows: string[][] };
-}) {
-  const headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
-  const rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
 
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  );
+async function Table({ children }: { children: string; className: string }) {
+	return (
+		<div className="doc-table">
+			<table>{children}</table>
+		</div>
+	);
 }
 
 type RoundedImageProps = {
-  altText: string;
+	altText: string;
 } & Omit<ImageProps, "alt">;
 function RoundedImage(props: RoundedImageProps) {
-  return <Image alt={props.altText} {...props} />;
+	return <Image alt={props.altText} {...props} />;
 }
 
 async function Code({
-  children,
-  ...props
+	children,
+	...props
 }: {
-  children: string;
-  className: string;
+	children: string;
+	className: string;
 }) {
-  const { code = "", language = "" }
-    = getStringFromChildren(children) ?? {};
-  if (code === null) {
-    return <pre {...props}>{children}</pre>;
-  }
-  const html = highlight(code);
+	const { code = "", language = "" } = getStringFromChildren(children) ?? {};
+	if (code === null) {
+		return <pre {...props}>{children}</pre>;
+	}
+	const html = highlight(code);
 
-  return <DocsCode html={html} language={language} />;
+	return <DocsCode html={html} language={language} />;
 }
 
 function createHeading(level: number) {
-  const Heading = ({ children }: { children: string }) => {
-    const slug = slugify(children);
-    return React.createElement(
-      `h${level}`,
-      { id: slug },
-      [
-        React.createElement("a", {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: "anchor scroll-pt-36",
-        }),
-      ],
-      children,
-    );
-  };
+	const Heading = ({ children }: { children: string }) => {
+		const slug = slugify(children);
+		return React.createElement(
+			`h${level}`,
+			{ id: slug },
+			[
+				React.createElement("a", {
+					href: `#${slug}`,
+					key: `link-${slug}`,
+					className: "anchor scroll-pt-36",
+				}),
+			],
+			children,
+		);
+	};
 
-  Heading.displayName = `Heading${level}`;
+	Heading.displayName = `Heading${level}`;
 
-  return Heading;
+	return Heading;
 }
 
 const components = {
-  h1: createHeading(1),
-  h2: createHeading(2),
-  h3: createHeading(3),
-  h4: createHeading(4),
-  h5: createHeading(5),
-  h6: createHeading(6),
-  image: RoundedImage,
-  a: CustomLink,
-  pre: Code,
-  Table,
-  Conversation,
-  Button,
-  Link,
-  Alert,
+	h1: createHeading(1),
+	h2: createHeading(2),
+	h3: createHeading(3),
+	h4: createHeading(4),
+	h5: createHeading(5),
+	h6: createHeading(6),
+	image: RoundedImage,
+	a: CustomLink,
+	pre: Code,
+	table: Table,
+	Conversation,
+	Button,
+	Link,
+	Alert,
 };
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: fix later
 export function CustomMDX(props: any) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-  );
+	return (
+		<MDXRemote
+			options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+			{...props}
+			components={{ ...components, ...(props.components || {}) }}
+		/>
+	);
 }

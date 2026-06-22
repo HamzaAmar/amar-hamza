@@ -1,0 +1,44 @@
+
+.doc-table {
+  overflow-x: auto;
+  min-width: 100%;
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    background-color: var(--B6);
+    border-bottom-width: 1px;
+    border-color: var(--B6);
+    border-top-width: 1px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+
+  
+  }
+
+  td,
+  th {
+    border: var(--B5) 1px solid;
+    background: var(--B1);
+    text-align: start;
+    font-size: 0.85em;
+    padding: 0.5em;
+  }
+
+  tr {
+    border-block-end: var(--B5) 1px solid;
+    background: var(--B1);
+    width: 100%;
+  }
+
+  th {
+    font-weight: 500;
+    background: var(--B4);
+  }
+}

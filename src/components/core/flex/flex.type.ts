@@ -5,11 +5,11 @@ type Direction = "column" | "row";
 type Gap = "2" | "3" | "4" | "5" | "6" | "7" | "8";
 
 export type FlexProps = {
-  items?: Items;
-  justify?: Justify;
-  gap?: Gap;
-  flex?: Flex;
-  direction?: Direction;
-  wrap?: boolean;
-  inline?: boolean;
+	items?: Items;
+	justify?: Justify;
+	gap?: Gap;
+	flex?: Flex;
+	direction?: Direction;
+	wrap?: boolean;
+	inline?: boolean;
 };
