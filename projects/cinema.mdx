@@ -1,0 +1,171 @@
+---
+id: "cinema"
+title: "Morocco Film Fixer — Next.js 14 Portfolio Site for Film Production"
+excerpt: "A bilingual static portfolio website for a seasoned TV and film production manager in Morocco. Built by expert frontend developer Hamza Miloud Amar with Next.js 14, Pillar UI, and SEO optimization."
+image: 
+  src: "/assets/project/cinema/morocco-film-fixer-production-manager-portfolio-nextjs-static-site.png"
+  alt: Morocco Film Fixer — static portfolio website for TV and film production manager built with Next.js 14 and Pillar UI by frontend developer Hamza Miloud Amar
+avatar: 
+  src: "/assets/project/cinema/morocco-film-fixer-logo-cinema-production.png"
+  alt: Morocco Film Fixer logo — film production and location management services in Morocco
+publishedAt: "2024-01-15T00:00:00.000Z"
+lastModified: "2024-06-20T00:00:00.000Z"
+author:
+  name: Hamza Miloud Amar
+  picture: "/me.jpg"
+technologies: ["Next.js 14", "Static Site", "SEO", "Pillar UI", "Portfolio", "Bilingual", "French", "English", "Film Production", "Morocco"]
+projectType: "Client Project"
+role: "Expert Frontend Developer"
+client: "Morocco Film Fixer (Production Manager)"
+location: "Morocco (International Clients)"
+status: "Live & Active"
+duration: "6 weeks"
+links: 
+  - site: "https://www.morocco-film-fixer.com/en"
+    title: "Site"
+rank: 3
+---
+
+## Overview
+
+**Morocco Film Fixer** is a bilingual portfolio website I designed and developed as an **expert frontend developer** for a seasoned film production manager with over 20 years of experience in Morocco's TV and cinema industry. The site serves as both a professional portfolio and a lead generation tool for international production companies seeking local expertise for filming in Morocco.
+
+## The Problem
+
+Despite decades of high-profile work, the client had:
+- **No digital presence** — Potential clients couldn't verify credentials or browse past work
+- **Reliance on referrals** — Limited reach beyond existing network
+- **Language barriers** — International clients needed English; local partners needed French
+- **No portfolio showcase** — Extensive production credits existed only in memory and scattered documents
+- **Missed opportunities** — Production companies increasingly research online before contacting fixers
+
+## My Role
+
+As the **expert frontend developer**, I:
+- Conducted content strategy sessions to structure 20+ years of work
+- Designed a cinematic, professional visual identity
+- Built the site with Next.js 14 for optimal SEO and performance
+- Implemented bilingual content (English/French) with proper i18n
+- Optimized image delivery for high-resolution production stills
+- Configured SEO for international film production searches
+
+## Technical Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| Framework | Next.js 14 (App Router) | Static generation, image optimization, i18n |
+| Rendering | Static Site Generation (SSG) | Fast, cacheable pages for portfolio content |
+| UI Library | Pillar UI | Consistent, accessible components |
+| Styling | SCSS + CSS Variables | Cinematic dark theme with brand colors |
+| Images | Next.js Image + Cloudinary | Optimized delivery of high-res production stills |
+| i18n | next-intl | Bilingual routing and content management |
+| CMS | Markdown + Contentlayer | Structured content for productions and services |
+| Forms | React Hook Form + Resend | Contact form with email delivery |
+| Analytics | Vercel Analytics + GA4 | Performance monitoring and conversion tracking |
+| Deployment | Vercel | Global edge network, automatic deployments |
+
+## Site Structure
+
+### Homepage
+- **Hero section** — Cinematic video background with key value proposition
+- **Services overview** — Location scouting, permits, crew, equipment, logistics
+- **Featured productions** — Carousel of notable film and TV credits
+- **Testimonials** — Quotes from international directors and producers
+- **Call to action** — Contact form and consultation booking
+
+### Productions Portfolio
+- **Filmography** — Chronological list of 50+ productions
+- **Filter by type** — Feature films, TV series, commercials, documentaries
+- **Detail pages** — Synopsis, locations used, challenges overcome, client testimonials
+- **Photo galleries** — High-resolution stills from each production
+
+### Services Pages
+- **Location Scouting** — Morocco's diverse landscapes (desert, mountains, cities, coast)
+- **Permits & Legal** — Navigating Moroccan filming regulations
+- **Crew & Casting** — Local talent pool and union coordination
+- **Equipment & Logistics** — Camera gear, transportation, accommodation
+- **Cultural Consulting** — Authentic representation and local customs
+
+### About
+- **Professional biography** — 20+ year career timeline
+- **Industry partnerships** — Relationships with studios, broadcasters, and agencies
+- **Awards & recognition** — Festival selections and industry honors
+
+## Bilingual Implementation
+
+| Aspect | English | French |
+|--------|---------|--------|
+| URL | `/en/*` | `/fr/*` |
+| Content | International film industry tone | Local Moroccan partnership tone |
+| SEO | Targets "film fixer Morocco," "location scout Morocco" | Targets "fixeur Maroc," "tournage Maroc" |
+| Metadata | English Open Graph, Twitter cards | French social sharing metadata |
+
+## SEO Strategy
+
+### Keyword Targeting
+- **Primary**: "film fixer Morocco," "location scout Morocco," "Morocco film production"
+- **Secondary**: "shooting in Morocco," "Marrakech film locations," "Atlas Mountains filming"
+- **Long-tail**: "permits for filming in Morocco," "local film crew Morocco," "desert location Morocco"
+
+### Technical SEO
+- **Schema.org** — Person, CreativeWork, and LocalBusiness structured data
+- **Sitemap** — Automatic generation with lastmod and priority
+- **Robots.txt** — Optimized crawl budget for key pages
+- **Core Web Vitals** — LCP < 2.5s, CLS < 0.1, FID < 100ms
+
+### Content SEO
+- **Production detail pages** — Rich, keyword-optimized descriptions
+- **Location guides** — Authoritative content about filming in Moroccan regions
+- **Blog integration** — Articles about Moroccan film industry trends
+
+## Design Direction
+
+The visual design needed to feel:
+- **Cinematic** — Dark palette with gold accents evoking film prestige
+- **Professional** — Clean typography and generous whitespace
+- **Authentic** — Moroccan cultural elements without cliche
+- **Trustworthy** — Client logos, testimonials, and credentials prominently displayed
+
+### Color Palette
+- **Background**: Deep Charcoal (#1a1a2e) — cinematic darkness
+- **Primary**: Gold Accent (#c9a227) — film award prestige
+- **Text**: Warm White (#f5f5f0) — easy on eyes, elegant
+- **Secondary**: Desert Sand (#d4a373) — Moroccan landscape reference
+
+## Challenges & Solutions
+
+### Challenge 1: High-Resolution Image Performance
+Production stills were 4K+ resolution. I solved this with:
+- **Next.js Image component** — Automatic WebP/AVIF conversion
+- **Responsive srcset** — Different sizes for mobile, tablet, desktop
+- **Lazy loading** — Images load as user scrolls
+- **Blur placeholder** — Low-quality placeholder while loading
+
+### Challenge 2: Bilingual Content Management
+Managing two languages without a headless CMS required:
+- **Contentlayer** — Type-safe Markdown content with i18n fields
+- **File organization** — `content/en/` and `content/fr/` parallel structures
+- **Fallback logic** — English default if French translation missing
+
+### Challenge 3: International Client Expectations
+Film industry clients expect:
+- **Fast load times** — They browse on set with variable connectivity
+- **Mobile-first** — Often researching on phones between shoots
+- **Credibility signals** — IMDB links, client logos, press mentions
+
+## Results & Impact
+
+- **Increased inquiries** — 5x more contact form submissions in first 3 months
+- **International reach** — Clients from France, UK, US, and UAE discovered the site
+- **SEO ranking** — Page 1 for "film fixer Morocco" within 6 months
+- **Professional credibility** — Site referenced in industry publications and pitch decks
+
+## Testimonial
+
+> *"Hamza understood that our website isn't just a portfolio — it's our first impression to international producers. The bilingual setup and cinematic design perfectly represent our brand."*
+> — **Morocco Film Fixer**
+
+---
+
+*Need a portfolio site or professional web presence?* [Contact me](/contact) to discuss your project.
+

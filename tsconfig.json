@@ -2,22 +2,46 @@
   "compilerOptions": {
     "incremental": true,
     "target": "esnext",
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "baseUrl": "./src",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "paths": {
-      "@lib/*": ["./lib/*"],
-      "@assets/*": ["./assets/*"],
-      "@components/*": ["./components/*"],
-      "@constants/*": ["./constants/*"],
-      "@hooks/*": ["./hooks/*"],
-      "@type/*": ["./type/*"],
-      "@utils/*": ["./utils/*"],
-      "@helpers/*": ["./helpers/*"],
-      "@scss/*": ["./scss/*"],
-      "react": ["./node_modules/@types/react"]
+      "@lib/*": [
+        "./lib/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@constants/*": [
+        "./constants/*"
+      ],
+      "@hooks/*": [
+        "./hooks/*"
+      ],
+      "@type/*": [
+        "./type/*"
+      ],
+      "@utils/*": [
+        "./utils/*"
+      ],
+      "@helpers/*": [
+        "./helpers/*"
+      ],
+      "@scss/*": [
+        "./scss/*"
+      ],
+      "react": [
+        "./node_modules/@types/react"
+      ]
     },
     "resolveJsonModule": true,
     "allowJs": true,
@@ -39,7 +63,11 @@
     "src/**/*.js",
     "src/**/*.tsx",
     "src/helpers/context.jsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "scripts/*"]
+  "exclude": [
+    "node_modules",
+    "scripts/*"
+  ]
 }

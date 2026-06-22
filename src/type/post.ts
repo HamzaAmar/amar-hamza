@@ -5,13 +5,18 @@ type Author = {
   picture: string;
 };
 
+export type ImageMetadata = {
+  src: string;
+  alt: string;
+};
+
 export type Post = {
   title: string;
   publishedAt: string;
   lastModified: string;
   author: Author;
   excerpt: string;
-  image: string;
+  image: string | ImageMetadata;
   content: string;
   tags: string[];
   slug: string;

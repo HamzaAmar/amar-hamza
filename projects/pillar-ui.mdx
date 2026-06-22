@@ -1,0 +1,109 @@
+---
+id: "pillar-ui"
+title: "Pillar UI — Open-Source React Component Library & Design System"
+excerpt: "A lightweight, CSS-only open-source React component library built by senior fullstack developer Hamza Miloud Amar. Features 30+ accessible components, dark mode, RTL support, and zero-runtime CSS-in-JS."
+image: 
+  src: "/assets/project/pillar/pillar-ui-react-component-library-accessible-design-system.png"
+  alt: Pillar UI logo — React UI library for scalable web applications by freelance developer Hamza Miloud Amar
+avatar: 
+  src: "/assets/project/pillar/pillar-ui-logo-react-developer-hamza-miloud-amar.jpg"
+  alt: Pillar UI — Open-Source React Component Library & Design System
+publishedAt: "2023-01-15T00:00:00.000Z"
+lastModified: "2024-12-01T00:00:00.000Z"
+author:
+  name: Hamza Miloud Amar
+  picture: "/me.jpg"
+technologies: ["React", "TypeScript", "Storybook", "Accessibility", "WCAG", "Monorepo", "Design System", "Open Source", "CSS-only", "Lightweight"]
+projectType: "Open Source"
+role: "Creator & Maintainer"
+client: "Personal Project / Open Source Community"
+location: "Morocco (Worldwide)"
+status: "Active Development"
+duration: "2023 — Present"
+links: 
+  - site: "https://www.pillar-ui.com/"
+    title: "Site"
+  - site: "https://github.com/HamzaAmar/pillar-ui/tree/develop"
+    title: "Github"
+rank: 1
+---
+
+## Overview
+
+**Pillar UI** is an open-source React component library and design system I created and maintain as a **senior fullstack developer** based in Morocco, serving developers worldwide. Unlike most UI libraries that rely on CSS-in-JS or Tailwind under the hood, Pillar UI is built entirely on **plain CSS** — making it lightweight, fast, and framework-agnostic at the styling layer.
+
+## The Problem
+
+Most popular React UI libraries (MUI, Chakra UI, Mantine) use CSS-in-JS or utility-first CSS frameworks internally. This creates several issues:
+- **Runtime overhead** from CSS-in-JS injection
+- **Bundle bloat** from heavy styling engines
+- **Vendor lock-in** to specific styling approaches
+- **Complexity** for developers who prefer standard CSS
+
+## My Role
+
+As the **creator and sole maintainer** (with 4 contributors), I architected the entire library from scratch:
+- Designed the component API and theming system
+- Built the monorepo infrastructure with Turborepo
+- Implemented accessibility compliance (WCAG 2.1 AA)
+- Created comprehensive Storybook documentation
+- Managed releases, issues, and community contributions
+
+## Technical Architecture
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| Components | React + TypeScript | Type-safe, reusable UI primitives |
+| Styling | Plain CSS + CSS Variables | Zero-runtime, framework-agnostic styles |
+| Theming | CSS Custom Properties | Dark mode, RTL, and brand theming |
+| Documentation | Storybook | Interactive component docs and testing |
+| Monorepo | Turborepo + pnpm | Scalable package management |
+| Testing | Jest + Axe + Screen Readers | Accessibility and unit testing |
+
+## Key Features
+
+- **30+ Production-Ready Components** — Buttons, inputs, modals, tables, navigation, and more
+- **Dark Mode & RTL Support** — Built-in via CSS custom properties, no JavaScript hacks
+- **WCAG 2.1 AA Compliant** — Tested with NVDA, VoiceOver, and automated Axe scans
+- **Zero Runtime CSS** — No styled-components, no emotion, no Tailwind runtime
+- **Modular Imports** — Tree-shakeable, import only what you need
+- **Storybook Documentation** — Interactive playground for every component
+
+## Challenges & Solutions
+
+### Challenge 1: Monorepo Complexity
+Managing multiple packages (core, hooks, icons, themes) with shared configurations required careful tooling setup. I used **Turborepo** with remote caching and unified build pipelines to keep CI fast and developer experience smooth.
+
+### Challenge 2: Accessibility at Scale
+Ensuring every component works with screen readers and keyboard navigation is labor-intensive. I implemented:
+- Manual testing with NVDA and VoiceOver
+- Automated Axe accessibility scans in Storybook
+- Semantic HTML patterns and ARIA attributes
+- Focus management for interactive components
+
+### Challenge 3: Bundle Size Optimization
+Without a CSS-in-JS runtime to hide bloat, every byte matters. I optimized through:
+- Tree-shakeable ES module exports
+- CSS variable-based theming (no duplicate styles)
+- Minimal runtime dependencies
+
+## Results & Impact
+
+- **Growing adoption** among developers seeking lightweight alternatives
+- **Skill development** in monorepo architecture, accessibility engineering, and open-source community management
+- **Foundation for client projects** — used in Taouafi Rent Car, Open Hand Morocco, and DOMLAV
+
+## Lessons Learned
+
+Building Pillar UI taught me that **simplicity is a feature**. By stripping away abstraction layers and relying on the web platform (CSS variables, semantic HTML), I created something that is easier to maintain, faster for users, and more approachable for contributors.
+
+## Future Plans
+
+- Recruit additional maintainers and core contributors
+- Expand component coverage to 50+ primitives
+- Add React Server Components support
+- Publish official Figma design kit
+
+---
+
+*Want a custom design system or component library for your product?* [Contact me](/contact) to discuss your project.

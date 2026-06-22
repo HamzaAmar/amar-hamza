@@ -1,25 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import type { Article } from "schema-dts";
 
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { type CSSProperties, Suspense } from "react";
 
-import {
-  Avatar,
-  Flex,
-  Social,
-  Text,
-} from "@components/core";
-import { CustomMDX } from "@components/core/mdx";
-import { Github, Twitter } from "@components/icons";
+import { Avatar, Button, CustomMDX, Flex, Text } from "@components/core";
+import { Call, Email, Github, Twitter } from "@components/icons";
 import { DOMAIN } from "@constants/domain";
-import { formatDate } from "@utils/format-date";
-import { getBlogPostBySlug, getBlogPosts } from "api/blog";
-import { incrementViews } from "app/actions/views";
-
-import { PageViews } from "./page-views";
+import { getProjectBySlug, getProjects } from "api/blog";
 
 type Params = {
   slug: string;
@@ -29,9 +18,11 @@ type ParamsReq = {
   params: Promise<Params>;
 };
 
-export default async function Blog({ params }: ParamsReq) {
+export default async function Project({ params }: ParamsReq) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = getProjectBySlug(slug);
+
+  console.log("this is the value of pôst", post);
 
   if (!post) {
     notFound();
@@ -45,10 +36,9 @@ export default async function Blog({ params }: ParamsReq) {
     title,
     publishedAt,
     image,
-    readingTime,
     excerpt,
     lastModified,
-    tags,
+    technologies,
   } = metadata;
 
   const imageMetadata = typeof image === "string"
@@ -75,10 +65,8 @@ export default async function Blog({ params }: ParamsReq) {
       "@type": "Organization",
       "name": "Hamza Miloud Amar",
     },
-    "keywords": tags,
+    "keywords": technologies,
   };
-
-  await incrementViews(slug);
 
   return (
     <>
@@ -94,40 +82,20 @@ export default async function Blog({ params }: ParamsReq) {
         }}
       />
       <div className="reading-layout Sf-6">
-        <Text type="heading" as="h1" size="7" weight="4">
+        <div className="Sf-5">
+          <div className="Sf-2">
+          <Text type="heading" as="h1" size="7" weight="4">
           {title}
         </Text>
-        {author && (
-          <div>
-            <Flex items="center" gap="4">
-              <div>
-                <Avatar
-                  image={author.picture}
-                  title="Hamza Miloud Amar Avatar"
-                />
-              </div>
-              <Flex gap="2" direction="column" className="u_flex-1">
-                <Text size="4" weight="5">
-                  {author.name}
-                </Text>
-                <Suspense
-                  fallback={
-                    <div className="reading-layout--fallback" />
-                  }
-                >
-                  <PageViews slug={slug} />
-                </Suspense>
-                <Social size="4" />
-              </Flex>
-              <div>
-                <Text size="4">{formatDate(publishedAt)}</Text>
-                <Text align="center" size="4" color="b" low>
-                  {readingTime.text}
-                </Text>
-              </div>
-            </Flex>
-          </div>
-        )}
+       <Text type="heading"  size="7" weight="3">
+          {excerpt}
+        </Text>
+        </div>
+        <Flex gap='4'>
+          <Button icon={<Call/>}>Call Us</Button>
+          <Button icon={<Email/>} variant='soft'>Contact Us</Button>
+        </Flex>
+        </div>
         <div className="reading-layout--avatar-container">
           <Image
             fill
@@ -216,7 +184,7 @@ export default async function Blog({ params }: ParamsReq) {
 }
 
 export async function generateStaticParams() {
-  const posts = getBlogPosts().map(({ metadata }) => ({
+  const posts = getProjects().map(({metadata}) => ({
     slug: metadata.slug,
   }));
 
@@ -227,7 +195,7 @@ export async function generateMetadata({
   params,
 }: ParamsReq): Promise<Metadata | undefined> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = getProjectBySlug(slug);
   if (!post) {
     return;
   }
@@ -237,20 +205,16 @@ export async function generateMetadata({
     publishedAt: publishedTime,
     excerpt: description,
     image,
-    tags,
+    technologies,
   } = post.metadata;
 
-  const imageMetadata = typeof image === "string"
-    ? { src: image, alt: title }
-    : image;
-
   const img = `${DOMAIN}/favicon/logo-512X512.png`;
-  const ogImage = imageMetadata?.src ? `${DOMAIN}/${imageMetadata.src}` : img;
+  const ogImage = image?.src ? `${DOMAIN}/${image.src}` : img;
 
   return {
     title,
     description,
-    keywords: tags,
+    keywords: technologies,
     openGraph: {
       title,
       description,

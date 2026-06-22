@@ -1,18 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import React, { useId } from "react";
+import Link from "next/link";
+import React from "react";
 
-import type { ProjectType } from "@constants/project/project.type";
+import type { Project as ProjectType } from "@type/project";
 
-import { Flex, Grid, HeroHeading, Tag, Text } from "@components/core";
+import { Button, Flex, Grid, HeroHeading, Tag, Text } from "@components/core";
 import { Figma, Github, Globe } from "@components/icons";
-import { PROJECTS } from "@constants/project";
 import { c } from "@utils/classnames";
 
 const ICONS = {
   site: <Globe width="20" />,
-  figma: <Figma width="20" />,
+  design: <Figma width="20" />,
   github: <Github width="20" />,
 } satisfies Record<string, React.ReactNode>;
 
@@ -23,39 +23,36 @@ const ICONS = {
 */
 
 const Project = ({
-  img,
+  image,
   title,
   links,
-  description,
+  excerpt,
   technologies,
-}: Omit<ProjectType, "id">) => {
+  slug,
+}: ProjectType) => {
   const imageRef = React.useRef(null);
-  const id = `project-${useId()}-id`;
 
   return (
     <Flex
       direction="column"
-      gap="4"
+      gap="2"
       className="h-pr l_box-article projects-scroll"
       as="article"
-      aria-labelledby={id}
+      aria-labelledby={slug}
     >
       <div className="h-pr-imgC">
         <Image
           className="h-pr-img"
-          src={img.src}
-          alt={img.alt}
+          src={image.src}
+          alt={image.alt}
           ref={imageRef}
           loading="lazy"
           placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0Cdx0BgAD/QIFYj/1qAAAAABJRU5ErkJggg=="
           fill
         />
       </div>
-      <Flex items="center" justify="between" gap="3">
-        <Text id={id} weight="5" size="5">
-          {title}
-        </Text>
-        <div className="resume__projects l_cluster">
+      <div className="Sf-2">
+        <Flex gap="2" className="resume__projects l_cluster">
           {links.map((link) => {
             const type
               = link.title.toLowerCase() as keyof typeof ICONS;
@@ -70,10 +67,13 @@ const Project = ({
               </a>
             );
           })}
-        </div>
-      </Flex>
+        </Flex>
+        <Text id={slug} weight="5" size="5">
+          {title}
+        </Text>
+      </div>
       <Text color="b" low size="4">
-        {description}
+        {excerpt}
       </Text>
       <Flex className="h-pr-tags" gap="3" wrap>
         {technologies.map(technology => (
@@ -85,6 +85,8 @@ const Project = ({
           />
         ))}
       </Flex>
+
+      <Button as={Link} href={`project/${slug}`}>Project Details</Button>
     </Flex>
   );
 };
@@ -95,7 +97,13 @@ const Project = ({
 ====================================================================================================
 */
 
-const Projects = ({ className }: { className?: string }) => {
+const Projects = ({
+  className,
+  projects,
+}: {
+  className?: string;
+  projects?: ProjectType[];
+}) => {
   return (
     <section
       aria-labelledby="projects-id-section"
@@ -113,8 +121,8 @@ const Projects = ({ className }: { className?: string }) => {
           [className!]: className,
         })}
       >
-        {PROJECTS.map(({ id, ...rest }) => (
-          <Project key={id} {...rest} />
+        {projects?.map(project => (
+          <Project key={project.id} {...project} />
         ))}
       </Grid>
     </section>

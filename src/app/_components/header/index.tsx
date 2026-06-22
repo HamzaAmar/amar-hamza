@@ -24,6 +24,7 @@ import NavLink from "./nav-link";
 const MENU: MenuProps[] = [
   { id: 1, name: "Home", path: "/" },
   { id: 2, name: "Blog", path: "/blogs" },
+  { id: 5, name: "Projects", path: "/project" },
   { id: 3, name: "Contact", path: "/contact" },
   { id: 4, name: "Resume", path: "/resume" },
 ];
